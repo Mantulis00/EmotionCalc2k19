@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace EmoCalc.Tools
+namespace EmotionCalculator.EmotionCalculator.Tools.Web
 {
     class ImageDownloader
     {
