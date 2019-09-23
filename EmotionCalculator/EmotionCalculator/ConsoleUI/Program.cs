@@ -20,9 +20,8 @@ namespace EmotionCalculator.EmotionCalculator.ConsoleUI
             stopwatch.Start();
 
             //TO DO: exceptions
-            var image = GetByteArrayFromUrl(imageURL);
             FaceAPIRequester faceAPIRequester = new FaceAPIRequester(new FaceAPIKey(subKey, endpoint));
-            string JSONresponse = faceAPIRequester.RequestImageDataAsync(image).Result;
+            string JSONresponse = faceAPIRequester.RequestImageDataAsync(imageURL).Result;
 
             stopwatch.Stop();
             float ellapsedSeconds = stopwatch.ElapsedMilliseconds / 1000f;

@@ -31,9 +31,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
 
-            byte[] image = GetByteArrayFromUrl(imageUrlTextBox.Text);
+            string url = imageUrlTextBox.Text;
 
-            string response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(image)).Result;
+            string response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(url)).Result;
 
             operationResultLabel.Text = response;
         }

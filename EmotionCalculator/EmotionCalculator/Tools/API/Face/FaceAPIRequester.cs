@@ -13,6 +13,13 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
             apiKey = faceAPIKey;
         }
 
+        public async Task<string> RequestImageDataAsync(string imageURL)
+        {
+            var image = Web.ImageDownloader.GetByteArrayFromUrl(imageURL);
+
+            return await RequestImageDataAsync(image);
+        }
+
         public async Task<string> RequestImageDataAsync(byte[] imageByteArray)
         {
             using (HttpClient client = new HttpClient())

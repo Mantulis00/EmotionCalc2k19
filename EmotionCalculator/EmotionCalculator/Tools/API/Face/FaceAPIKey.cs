@@ -1,4 +1,5 @@
-﻿namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
+﻿
+namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
     struct FaceAPIKey
     {
