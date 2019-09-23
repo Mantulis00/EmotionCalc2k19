@@ -1,9 +1,9 @@
-﻿using System;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
+using System;
 using System.Diagnostics;
-using static EmoCalc.Tools.ImageDownloader;
-using static EmoCalc.Tools.TempAPI;
+using static EmotionCalculator.EmotionCalculator.Tools.Web.ImageDownloader;
 
-namespace EmoCalc.ConsoleUI
+namespace EmotionCalculator.EmotionCalculator.ConsoleUI
 {
     class Program
     {
@@ -20,8 +20,8 @@ namespace EmoCalc.ConsoleUI
             stopwatch.Start();
 
             //TO DO: exceptions
-            byte[] imageBytes = GetByteArrayFromUrl(imageURL);
-            string JSONresponse = RequestImageData(imageBytes, endpoint, subKey).Result;
+            FaceAPIRequester faceAPIRequester = new FaceAPIRequester(new FaceAPIKey(subKey, endpoint));
+            string JSONresponse = faceAPIRequester.RequestImageDataAsync(imageURL).Result;
 
             stopwatch.Stop();
             float ellapsedSeconds = stopwatch.ElapsedMilliseconds / 1000f;
@@ -35,6 +35,8 @@ namespace EmoCalc.ConsoleUI
             //JSONParser.TryParse(JSONResponse, ...) ...
             //API reference + Error codes:
             //https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236
+
+            Console.ReadLine();
         }
 
         static string GetInput(string query)

@@ -1,7 +1,9 @@
-D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.csprojAssemblyReference.cache
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.csproj.CoreCompileInputs.cache
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\bin\Debug\WindowsApplication.exe.config
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\bin\Debug\WindowsApplication.exe
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\bin\Debug\WindowsApplication.pdb
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\WindowsApplication.exe
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\WindowsApplication.pdb
+D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.csprojAssemblyReference.cache
+D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.EmotionCalculator.FormsUI.BaseForm.resources
+D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.csproj.GenerateResource.cache

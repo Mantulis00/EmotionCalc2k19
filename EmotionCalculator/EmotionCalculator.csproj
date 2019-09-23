@@ -74,11 +74,17 @@
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
     <Compile Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.AssemblyInfo.cs" />
-    <Compile Include="EmotionCalculator\Tools\ImageDownloader.cs" />
-    <Compile Include="EmotionCalculator\Tools\TempAPI.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
+    <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EmotionCalculator\obj\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

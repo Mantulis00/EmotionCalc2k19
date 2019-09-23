@@ -2,21 +2,35 @@
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace EmoCalc.Tools
+namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
-    class TempAPI
+    class FaceAPIRequester
     {
-        public static async Task<string> RequestImageData(byte[] imageByteArray, string endpointURL, string subscriptionKey)
+        private FaceAPIKey apiKey;
+
+        internal FaceAPIRequester(FaceAPIKey faceAPIKey)
+        {
+            apiKey = faceAPIKey;
+        }
+
+        public async Task<string> RequestImageDataAsync(string imageURL)
+        {
+            var image = Web.ImageDownloader.GetByteArrayFromUrl(imageURL);
+
+            return await RequestImageDataAsync(image);
+        }
+
+        public async Task<string> RequestImageDataAsync(byte[] imageByteArray)
         {
             using (HttpClient client = new HttpClient())
             {
                 //API reference:
                 //https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236
 
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey.SubscriptionKey);
 
                 string requestParameters = "&returnFaceAttributes=emotion";
-                string requestURL = endpointURL + "/detect?" + requestParameters;
+                string requestURL = apiKey.APIEndpoint + "/detect?" + requestParameters;
 
                 using (ByteArrayContent content = new ByteArrayContent(imageByteArray))
                 {
