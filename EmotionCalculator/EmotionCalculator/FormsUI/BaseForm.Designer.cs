@@ -45,7 +45,7 @@
             // 
             this.apiEndpointTextBox.Location = new System.Drawing.Point(118, 28);
             this.apiEndpointTextBox.Name = "apiEndpointTextBox";
-            this.apiEndpointTextBox.Size = new System.Drawing.Size(209, 20);
+            this.apiEndpointTextBox.Size = new System.Drawing.Size(351, 20);
             this.apiEndpointTextBox.TabIndex = 0;
             // 
             // apiEndpointLabel
@@ -71,7 +71,7 @@
             // 
             this.subscriptionKeyTextBox.Location = new System.Drawing.Point(118, 54);
             this.subscriptionKeyTextBox.Name = "subscriptionKeyTextBox";
-            this.subscriptionKeyTextBox.Size = new System.Drawing.Size(209, 20);
+            this.subscriptionKeyTextBox.Size = new System.Drawing.Size(351, 20);
             this.subscriptionKeyTextBox.TabIndex = 2;
             // 
             // imageUrlLabel
@@ -87,12 +87,12 @@
             // 
             this.imageUrlTextBox.Location = new System.Drawing.Point(118, 80);
             this.imageUrlTextBox.Name = "imageUrlTextBox";
-            this.imageUrlTextBox.Size = new System.Drawing.Size(209, 20);
+            this.imageUrlTextBox.Size = new System.Drawing.Size(351, 20);
             this.imageUrlTextBox.TabIndex = 4;
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(333, 78);
+            this.submitButton.Location = new System.Drawing.Point(475, 78);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(95, 23);
             this.submitButton.TabIndex = 6;
