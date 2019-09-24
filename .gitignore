@@ -3,6 +3,9 @@
 /EmotionCalculator/.vs/EmotionCalculator/v16
 /EmotionCalculator/bin
 
+#Stop-+100k
+WindowsApplication.exe
+
 # New-version
 # User-specific files
 *.suo
