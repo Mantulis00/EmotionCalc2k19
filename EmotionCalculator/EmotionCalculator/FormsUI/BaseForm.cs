@@ -25,7 +25,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+
+            
+
+
             FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
+
+
+            
+
 
             Console.WriteLine(faceApiKey.SubscriptionKey + " " + faceApiKey.APIEndpoint);
 
@@ -36,6 +44,19 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             string response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(url)).Result;
 
             operationResultLabel.Text = response;
+        }
+
+        private void OpenFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            ///
+            Tools.FileHandler.ImageHan handler = new Tools.FileHandler.ImageHan();
+            handler.GetPicture(pictureBox1);
+            ///
         }
     }
 }
