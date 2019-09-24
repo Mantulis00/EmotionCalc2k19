@@ -24,17 +24,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-
-            
-
-
             FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
-
-
-            
-
-
-            Console.WriteLine(faceApiKey.SubscriptionKey + " " + faceApiKey.APIEndpoint);
 
             FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
 
