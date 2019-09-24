@@ -57,7 +57,6 @@
     <None Include=".vs\EmotionCalculator\v16\Server\sqlite3\db.lock" />
     <None Include=".vs\EmotionCalculator\v16\Server\sqlite3\storage.ide" />
     <None Include="app.config" />
-    <None Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.AssemblyInfoInputs.cache" />
     <None Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.assets.cache" />
     <None Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.csproj.CoreCompileInputs.cache" />
     <None Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.csprojAssemblyReference.cache" />
@@ -78,7 +77,6 @@
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
-    <Compile Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.AssemblyInfo.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParser.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
@@ -89,6 +87,7 @@
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParseResult.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceData.cs" />
     <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EmotionCalculator\obj\Release\" />
