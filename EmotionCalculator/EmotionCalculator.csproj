@@ -77,7 +77,7 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
-    <Compile Include="EmotionCalculator\Logic\EmotionCalculator.cs" />
+    <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
     <Compile Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.AssemblyInfo.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParser.cs" />
@@ -88,7 +88,6 @@
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParseResult.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceData.cs" />
     <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
-    <Compile Include="Tools\Logic\EmotionCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EmotionCalculator\obj\Release\" />
