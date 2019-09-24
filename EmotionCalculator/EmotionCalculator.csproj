@@ -39,6 +39,9 @@
     <StartupObject>EmotionCalculator.EmotionCalculator.FormsUI.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -63,6 +66,7 @@
     <None Include="EmotionCalculator\obj\EmotionCalculator.csproj.nuget.g.props" />
     <None Include="EmotionCalculator\obj\EmotionCalculator.csproj.nuget.g.targets" />
     <None Include="EmotionCalculator\obj\project.assets.json" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmotionCalculator\ConsoleUI\Program.cs" />
@@ -73,13 +77,22 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
+    <Compile Include="EmotionCalculator\Logic\EmotionCalculator.cs" />
     <Compile Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.AssemblyInfo.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\EmotionData.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParser.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\Emotion.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParseResult.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\FaceData.cs" />
+    <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
+    <Compile Include="Tools\Logic\EmotionCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EmotionCalculator\obj\Release\" />
+    <Folder Include="Logic\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\BaseForm.resx">

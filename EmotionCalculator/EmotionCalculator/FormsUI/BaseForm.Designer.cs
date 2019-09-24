@@ -39,6 +39,8 @@
             this.operationResultLabel = new System.Windows.Forms.Label();
             this.errorTextLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.faceCountTextLabel = new System.Windows.Forms.Label();
+            this.faceCountLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // apiEndpointTextBox
@@ -136,11 +138,32 @@
             this.errorLabel.TabIndex = 9;
             this.errorLabel.Text = "Error:";
             // 
+            // faceNumberTextLabel
+            // 
+            this.faceCountTextLabel.AutoSize = true;
+            this.faceCountTextLabel.Location = new System.Drawing.Point(118, 172);
+            this.faceCountTextLabel.Name = "faceNumberTextLabel";
+            this.faceCountTextLabel.Size = new System.Drawing.Size(40, 13);
+            this.faceCountTextLabel.TabIndex = 12;
+            this.faceCountTextLabel.Text = "< . . . >";
+            // 
+            // faceNumberLabel
+            // 
+            this.faceCountLabel.AutoSize = true;
+            this.faceCountLabel.Location = new System.Drawing.Point(44, 172);
+            this.faceCountLabel.Name = "faceNumberLabel";
+            this.faceCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.faceCountLabel.Size = new System.Drawing.Size(69, 13);
+            this.faceCountLabel.TabIndex = 11;
+            this.faceCountLabel.Text = "Faces found:";
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 454);
+            this.Controls.Add(this.faceCountTextLabel);
+            this.Controls.Add(this.faceCountLabel);
             this.Controls.Add(this.errorTextLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.operationResultLabel);
@@ -173,5 +196,7 @@
         private System.Windows.Forms.Label operationResultLabel;
         private System.Windows.Forms.Label errorTextLabel;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label faceCountTextLabel;
+        private System.Windows.Forms.Label faceCountLabel;
     }
 }

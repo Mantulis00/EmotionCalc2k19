@@ -2,7 +2,6 @@
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static EmotionCalculator.EmotionCalculator.Tools.Web.ImageDownloader;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -35,7 +34,27 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             string response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(url)).Result;
 
-            operationResultLabel.Text = response;
+            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
+
+            if (parseResult.Faces.Count > 0)
+            {
+                operationResultLabel.Text = Logic.EmotionJudge.GetEmotion(parseResult.Faces[0].EmotionData).ToString();
+            }
+            else
+            {
+                operationResultLabel.Text = "< . . . >";
+            }
+
+            faceCountTextLabel.Text = parseResult.Faces.Count.ToString();
+
+            if (parseResult.Errors.Count > 0)
+            {
+                errorTextLabel.Text = parseResult.Errors[0].Message;
+            }
+            else
+            {
+                errorTextLabel.Text = "< . . . >";
+            }
         }
     }
 }

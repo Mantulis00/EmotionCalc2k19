@@ -7,3 +7,6 @@ D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\WindowsAppl
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.csprojAssemblyReference.cache
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.EmotionCalculator.FormsUI.BaseForm.resources
 D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.csproj.GenerateResource.cache
+D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\bin\Debug\Newtonsoft.Json.dll
+D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\bin\Debug\Newtonsoft.Json.xml
+D:\Viskas\Code\repos\EmotionCalc2k19\EmotionCalculator\obj\x86\Debug\EmotionCalculator.csproj.CopyComplete
