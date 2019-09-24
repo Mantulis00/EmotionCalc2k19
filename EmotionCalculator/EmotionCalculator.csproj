@@ -86,6 +86,7 @@
     <Compile Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.AssemblyInfo.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
+    <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHan.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
   </ItemGroup>
   <ItemGroup>
