@@ -43,6 +43,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.faceCountTextLabel = new System.Windows.Forms.Label();
+            this.faceCountLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // apiEndpointTextBox
@@ -163,6 +165,24 @@
             this.button1.Text = "Add Image";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // faceNumberTextLabel
+            // 
+            this.faceCountTextLabel.AutoSize = true;
+            this.faceCountTextLabel.Location = new System.Drawing.Point(118, 172);
+            this.faceCountTextLabel.Name = "faceNumberTextLabel";
+            this.faceCountTextLabel.Size = new System.Drawing.Size(40, 13);
+            this.faceCountTextLabel.TabIndex = 12;
+            this.faceCountTextLabel.Text = "< . . . >";
+            // 
+            // faceNumberLabel
+            // 
+            this.faceCountLabel.AutoSize = true;
+            this.faceCountLabel.Location = new System.Drawing.Point(44, 172);
+            this.faceCountLabel.Name = "faceNumberLabel";
+            this.faceCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.faceCountLabel.Size = new System.Drawing.Size(69, 13);
+            this.faceCountLabel.TabIndex = 11;
+            this.faceCountLabel.Text = "Faces found:";
             // 
             // BaseForm
             // 
@@ -171,6 +191,8 @@
             this.ClientSize = new System.Drawing.Size(769, 454);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.faceCountTextLabel);
+            this.Controls.Add(this.faceCountLabel);
             this.Controls.Add(this.errorTextLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.operationResultLabel);
@@ -207,5 +229,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label faceCountTextLabel;
+        private System.Windows.Forms.Label faceCountLabel;
     }
 }
