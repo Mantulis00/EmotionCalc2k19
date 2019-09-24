@@ -1,6 +1,7 @@
 # Old-version
 /.vs
 /EmotionCalculator/.vs/EmotionCalculator/v16
+/EmotionCalculator/bin
 
 # New-version
 # User-specific files
