@@ -44,6 +44,8 @@
             this.buttonUpload = new System.Windows.Forms.Button();
             this.faceCountTextLabel = new System.Windows.Forms.Label();
             this.faceCountLabel = new System.Windows.Forms.Label();
+            this.camStartButton = new System.Windows.Forms.Button();
+            this.camStopButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,9 +146,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(142, 242);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 205);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 131);
+            this.pictureBox1.Size = new System.Drawing.Size(343, 237);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -164,7 +166,7 @@
             this.buttonUpload.TabIndex = 12;
             this.buttonUpload.Text = "Add Image";
             this.buttonUpload.UseVisualStyleBackColor = true;
-            this.buttonUpload.Click += new System.EventHandler(this.B_Click);
+            this.buttonUpload.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
             // faceCountTextLabel
             // 
@@ -185,11 +187,33 @@
             this.faceCountLabel.TabIndex = 11;
             this.faceCountLabel.Text = "Faces found:";
             // 
+            // camStartButton
+            // 
+            this.camStartButton.Location = new System.Drawing.Point(580, 381);
+            this.camStartButton.Name = "camStartButton";
+            this.camStartButton.Size = new System.Drawing.Size(177, 61);
+            this.camStartButton.TabIndex = 13;
+            this.camStartButton.Text = "Start";
+            this.camStartButton.UseVisualStyleBackColor = true;
+            this.camStartButton.Click += new System.EventHandler(this.CamButton_Click);
+            // 
+            // camStopButton
+            // 
+            this.camStopButton.Location = new System.Drawing.Point(397, 381);
+            this.camStopButton.Name = "camStopButton";
+            this.camStopButton.Size = new System.Drawing.Size(177, 61);
+            this.camStopButton.TabIndex = 14;
+            this.camStopButton.Text = "Stop";
+            this.camStopButton.UseVisualStyleBackColor = true;
+            this.camStopButton.Click += new System.EventHandler(this.CamButton2_Click);
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 454);
+            this.Controls.Add(this.camStopButton);
+            this.Controls.Add(this.camStartButton);
             this.Controls.Add(this.buttonUpload);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.faceCountTextLabel);
@@ -207,6 +231,7 @@
             this.Controls.Add(this.apiEndpointTextBox);
             this.Name = "BaseForm";
             this.Text = "BaseForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
             this.Load += new System.EventHandler(this.BaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -232,5 +257,7 @@
         private System.Windows.Forms.Button buttonUpload;
         private System.Windows.Forms.Label faceCountTextLabel;
         private System.Windows.Forms.Label faceCountLabel;
+        private System.Windows.Forms.Button camStartButton;
+        private System.Windows.Forms.Button camStopButton;
     }
 }

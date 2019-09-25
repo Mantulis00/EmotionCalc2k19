@@ -1,4 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
+using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -7,10 +8,19 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
+
+
         public BaseForm()
         {
             InitializeComponent();
+            cam = new CamHan(pictureBox1);
         }
+
+        private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cam.Stop();
+        }
+
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
@@ -60,12 +70,33 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         }
 
-        private void B_Click(object sender, EventArgs e)
+        private void OpenFileButton_Click(object sender, EventArgs e)
         {
             ///
             Tools.FileHandler.ImageHan handler = new Tools.FileHandler.ImageHan();
             handler.GetPicture(pictureBox1);
             ///
         }
+
+        /// 
+
+        private CamHan cam;
+
+        private void CamButton_Click(object sender, EventArgs e)
+        {
+            cam.Start();
+        }
+
+        private void CamButton2_Click(object sender, EventArgs e)
+        {
+            cam.Stop();
+                
+        }
+
+
+
+        ///
+
+
     }
 }
