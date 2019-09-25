@@ -39,6 +39,15 @@
     <StartupObject>EmotionCalculator.EmotionCalculator.FormsUI.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\..\..\OneDrive\Desktop\dll\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\..\..\OneDrive\Desktop\dll\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\..\..\OneDrive\Desktop\dll\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -81,6 +90,7 @@
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParser.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
+    <Compile Include="EmotionCalculator\Tools\FileHandler\CamHan.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHan.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\Emotion.cs" />
