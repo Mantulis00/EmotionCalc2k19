@@ -60,7 +60,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void B_Click(object sender, EventArgs e)
         {
             ///
             Tools.FileHandler.ImageHan handler = new Tools.FileHandler.ImageHan();
