@@ -16,6 +16,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             cam = new CamHan(pictureBox1);
         }
 
+        private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cam.Stop();
+        }
+
+
         private void BaseForm_Load(object sender, EventArgs e)
         {
 
@@ -86,6 +92,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             cam.Stop();
                 
         }
+
+
 
         ///
 
