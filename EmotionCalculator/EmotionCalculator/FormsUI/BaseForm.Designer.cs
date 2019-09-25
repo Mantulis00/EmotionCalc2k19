@@ -44,8 +44,8 @@
             this.buttonUpload = new System.Windows.Forms.Button();
             this.faceCountTextLabel = new System.Windows.Forms.Label();
             this.faceCountLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.camStartButton = new System.Windows.Forms.Button();
+            this.camStopButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,33 +187,33 @@
             this.faceCountLabel.TabIndex = 11;
             this.faceCountLabel.Text = "Faces found:";
             // 
-            // button1
+            // camStartButton
             // 
-            this.button1.Location = new System.Drawing.Point(580, 381);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 61);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.CamButton_Click);
+            this.camStartButton.Location = new System.Drawing.Point(580, 381);
+            this.camStartButton.Name = "camStartButton";
+            this.camStartButton.Size = new System.Drawing.Size(177, 61);
+            this.camStartButton.TabIndex = 13;
+            this.camStartButton.Text = "Start";
+            this.camStartButton.UseVisualStyleBackColor = true;
+            this.camStartButton.Click += new System.EventHandler(this.CamButton_Click);
             // 
-            // button2
+            // camStopButton
             // 
-            this.button2.Location = new System.Drawing.Point(397, 381);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 61);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.CamButton2_Click);
+            this.camStopButton.Location = new System.Drawing.Point(397, 381);
+            this.camStopButton.Name = "camStopButton";
+            this.camStopButton.Size = new System.Drawing.Size(177, 61);
+            this.camStopButton.TabIndex = 14;
+            this.camStopButton.Text = "Stop";
+            this.camStopButton.UseVisualStyleBackColor = true;
+            this.camStopButton.Click += new System.EventHandler(this.CamButton2_Click);
             // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 454);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.camStopButton);
+            this.Controls.Add(this.camStartButton);
             this.Controls.Add(this.buttonUpload);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.faceCountTextLabel);
@@ -256,7 +256,7 @@
         private System.Windows.Forms.Button buttonUpload;
         private System.Windows.Forms.Label faceCountTextLabel;
         private System.Windows.Forms.Label faceCountLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button camStartButton;
+        private System.Windows.Forms.Button camStopButton;
     }
 }
