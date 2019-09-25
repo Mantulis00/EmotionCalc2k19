@@ -13,7 +13,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         public BaseForm()
         {
             InitializeComponent();
-            cam = new CamHan(pictureBox1);
+            cam = new CamHandle(webcamPictureBox);
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,13 +74,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             ///
             Tools.FileHandler.ImageHan handler = new Tools.FileHandler.ImageHan();
-            handler.GetPicture(pictureBox1);
+            handler.GetPicture(imageUploadPictureBox);
             ///
         }
 
         /// 
 
-        private CamHan cam;
+        private CamHandle cam;
 
         private void CamButton_Click(object sender, EventArgs e)
         {
@@ -90,10 +90,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void CamButton2_Click(object sender, EventArgs e)
         {
             cam.Stop();
-                
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
 
+        }
 
         ///
 
