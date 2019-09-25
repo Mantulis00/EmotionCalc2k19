@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Drawing;
-using AForge;
+﻿using AForge.Video;
 using AForge.Video.DirectShow;
-using AForge.Video;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 {
-    class CamHan
+    class CamHandle
     {
-
         private VideoCaptureDevice camera;
         private FilterInfoCollection cameraHW;
-        private PictureBox pic ;
+        private PictureBox pic;
 
         public bool cameraIsRoling { get; set; }
 
-        public CamHan(PictureBox pic)
+        public CamHandle(PictureBox pic)
         {
             cameraHW = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             camera = new VideoCaptureDevice(cameraHW[0].MonikerString);
@@ -32,7 +25,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
             cameraIsRoling = false;
         }
 
-       public void Start()
+        public void Start()
         {
             if (!cameraIsRoling)
             {
@@ -54,7 +47,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
             }
             catch (Exception e)
             {
-
+                //
             }
         }
 
@@ -65,12 +58,14 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
             {
                 camera.Stop();
                 cameraIsRoling = false;
+
+                pic.Image = null;
             }
             else
             {
                 //
             }
-                
+
         }
 
     }

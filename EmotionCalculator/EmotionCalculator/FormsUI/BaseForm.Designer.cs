@@ -39,14 +39,18 @@
             this.operationResultLabel = new System.Windows.Forms.Label();
             this.errorTextLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.webcamPictureBox = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.buttonUpload = new System.Windows.Forms.Button();
             this.faceCountTextLabel = new System.Windows.Forms.Label();
             this.faceCountLabel = new System.Windows.Forms.Label();
             this.camStartButton = new System.Windows.Forms.Button();
             this.camStopButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.imageUploadPictureBox = new System.Windows.Forms.PictureBox();
+            this.submitWebCamButton = new System.Windows.Forms.Button();
+            this.submitUploadedImageButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // apiEndpointTextBox
@@ -144,14 +148,15 @@
             this.errorLabel.TabIndex = 9;
             this.errorLabel.Text = "Error:";
             // 
-            // pictureBox1
+            // webcamPictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 205);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(343, 237);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.webcamPictureBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.webcamPictureBox.Location = new System.Drawing.Point(397, 138);
+            this.webcamPictureBox.Name = "webcamPictureBox";
+            this.webcamPictureBox.Size = new System.Drawing.Size(360, 237);
+            this.webcamPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.webcamPictureBox.TabIndex = 11;
+            this.webcamPictureBox.TabStop = false;
             // 
             // openFileDialog1
             // 
@@ -160,9 +165,10 @@
             // 
             // buttonUpload
             // 
-            this.buttonUpload.Location = new System.Drawing.Point(475, 148);
+            this.buttonUpload.Font = new System.Drawing.Font("Lucida Bright", 10F);
+            this.buttonUpload.Location = new System.Drawing.Point(29, 381);
             this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.Size = new System.Drawing.Size(149, 41);
+            this.buttonUpload.Size = new System.Drawing.Size(112, 61);
             this.buttonUpload.TabIndex = 12;
             this.buttonUpload.Text = "Add Image";
             this.buttonUpload.UseVisualStyleBackColor = true;
@@ -189,33 +195,70 @@
             // 
             // camStartButton
             // 
-            this.camStartButton.Location = new System.Drawing.Point(580, 381);
+            this.camStartButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
+            this.camStartButton.Location = new System.Drawing.Point(397, 381);
             this.camStartButton.Name = "camStartButton";
-            this.camStartButton.Size = new System.Drawing.Size(177, 61);
+            this.camStartButton.Size = new System.Drawing.Size(115, 61);
             this.camStartButton.TabIndex = 13;
-            this.camStartButton.Text = "Start";
+            this.camStartButton.Text = "Start WebCam";
             this.camStartButton.UseVisualStyleBackColor = true;
             this.camStartButton.Click += new System.EventHandler(this.CamButton_Click);
             // 
             // camStopButton
             // 
-            this.camStopButton.Location = new System.Drawing.Point(397, 381);
+            this.camStopButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
+            this.camStopButton.Location = new System.Drawing.Point(518, 381);
             this.camStopButton.Name = "camStopButton";
-            this.camStopButton.Size = new System.Drawing.Size(177, 61);
+            this.camStopButton.Size = new System.Drawing.Size(118, 61);
             this.camStopButton.TabIndex = 14;
-            this.camStopButton.Text = "Stop";
+            this.camStopButton.Text = "Stop WebCam";
             this.camStopButton.UseVisualStyleBackColor = true;
             this.camStopButton.Click += new System.EventHandler(this.CamButton2_Click);
+            // 
+            // imageUploadPictureBox
+            // 
+            this.imageUploadPictureBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.imageUploadPictureBox.Location = new System.Drawing.Point(29, 210);
+            this.imageUploadPictureBox.Name = "imageUploadPictureBox";
+            this.imageUploadPictureBox.Size = new System.Drawing.Size(241, 165);
+            this.imageUploadPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageUploadPictureBox.TabIndex = 15;
+            this.imageUploadPictureBox.TabStop = false;
+            // 
+            // submitWebCamButton
+            // 
+            this.submitWebCamButton.Enabled = false;
+            this.submitWebCamButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
+            this.submitWebCamButton.Location = new System.Drawing.Point(642, 381);
+            this.submitWebCamButton.Name = "submitWebCamButton";
+            this.submitWebCamButton.Size = new System.Drawing.Size(115, 61);
+            this.submitWebCamButton.TabIndex = 16;
+            this.submitWebCamButton.Text = "Submit";
+            this.submitWebCamButton.UseVisualStyleBackColor = true;
+            // 
+            // submitUploadedImageButton
+            // 
+            this.submitUploadedImageButton.Enabled = false;
+            this.submitUploadedImageButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
+            this.submitUploadedImageButton.Location = new System.Drawing.Point(147, 381);
+            this.submitUploadedImageButton.Name = "submitUploadedImageButton";
+            this.submitUploadedImageButton.Size = new System.Drawing.Size(123, 61);
+            this.submitUploadedImageButton.TabIndex = 17;
+            this.submitUploadedImageButton.Text = "Submit";
+            this.submitUploadedImageButton.UseVisualStyleBackColor = true;
             // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 454);
+            this.Controls.Add(this.submitUploadedImageButton);
+            this.Controls.Add(this.submitWebCamButton);
+            this.Controls.Add(this.imageUploadPictureBox);
             this.Controls.Add(this.camStopButton);
             this.Controls.Add(this.camStartButton);
             this.Controls.Add(this.buttonUpload);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.webcamPictureBox);
             this.Controls.Add(this.faceCountTextLabel);
             this.Controls.Add(this.faceCountLabel);
             this.Controls.Add(this.errorTextLabel);
@@ -229,11 +272,13 @@
             this.Controls.Add(this.subscriptionKeyTextBox);
             this.Controls.Add(this.apiEndpointLabel);
             this.Controls.Add(this.apiEndpointTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BaseForm";
-            this.Text = "BaseForm";
+            this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
             this.Load += new System.EventHandler(this.BaseForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,12 +297,15 @@
         private System.Windows.Forms.Label operationResultLabel;
         private System.Windows.Forms.Label errorTextLabel;
         private System.Windows.Forms.Label errorLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox webcamPictureBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button buttonUpload;
         private System.Windows.Forms.Label faceCountTextLabel;
         private System.Windows.Forms.Label faceCountLabel;
         private System.Windows.Forms.Button camStartButton;
         private System.Windows.Forms.Button camStopButton;
+        private System.Windows.Forms.PictureBox imageUploadPictureBox;
+        private System.Windows.Forms.Button submitWebCamButton;
+        private System.Windows.Forms.Button submitUploadedImageButton;
     }
 }
