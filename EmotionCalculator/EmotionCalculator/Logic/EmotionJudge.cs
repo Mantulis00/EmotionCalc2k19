@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic
 {
-    class EmotionJudge
+    static class EmotionJudge
     {
-        private static readonly float dominationPoint = 0.5f;
+        private static readonly float dominationPoint = 0.3f;
 
         internal static Emotion GetEmotion(EmotionData emotionData)
         {

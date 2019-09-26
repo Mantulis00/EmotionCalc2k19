@@ -1,7 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -13,7 +12,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         public BaseForm()
         {
             InitializeComponent();
-            cam = new CamHandle(webcamPictureBox);
+            cam = new CameraHandle(webcamPictureBox);
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,7 +31,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         }
 
-        private void SubmitButton_Click(object sender, EventArgs e)
+        private async void SubmitButton_Click(object sender, EventArgs e)
         {
             FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
 
@@ -40,7 +39,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             string url = imageUrlTextBox.Text;
 
-            string response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(url)).Result;
+            string response = await faceAPIRequester.RequestImageDataAsync(url);
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
 
@@ -73,14 +72,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
             ///
-            Tools.FileHandler.ImageHan handler = new Tools.FileHandler.ImageHan();
+            Tools.FileHandler.ImageHandle handler = new Tools.FileHandler.ImageHandle();
             handler.GetPicture(imageUploadPictureBox);
             ///
         }
 
         /// 
 
-        private CamHandle cam;
+        private CameraHandle cam;
 
         private void CamButton_Click(object sender, EventArgs e)
         {

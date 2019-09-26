@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
-    class FaceAPIParser
+    static class FaceAPIParser
     {
         internal static FaceAPIParseResult ParseJSON(string jsonString)
         {

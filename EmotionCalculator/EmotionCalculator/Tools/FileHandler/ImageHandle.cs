@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Windows.Forms;
+﻿
 using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 {
-    class ImageHan
+    class ImageHandle
     {
-     private  OpenFileDialog file;
+        private OpenFileDialog file;
 
-       public ImageHan()
+        public ImageHandle()
         {
             file = new OpenFileDialog();
             file.Filter = "JPG(*.JPG)|*.jpg";
         }
 
-
-       public PictureBox GetPicture (PictureBox box)
+        public PictureBox GetPicture(PictureBox box)
         {
             Image image;
 
@@ -33,12 +27,5 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
             return box;
         }
-
-
-
-
-
-
-
     }
 }

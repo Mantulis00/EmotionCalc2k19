@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 {
-    class CamHandle
+    class CameraHandle
     {
         private VideoCaptureDevice camera;
         private FilterInfoCollection cameraHW;
@@ -14,7 +14,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
         public bool cameraIsRoling { get; set; }
 
-        public CamHandle(PictureBox pic)
+        public CameraHandle(PictureBox pic)
         {
             cameraHW = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             camera = new VideoCaptureDevice(cameraHW[0].MonikerString);

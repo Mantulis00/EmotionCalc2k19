@@ -15,7 +15,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 
         public async Task<string> RequestImageDataAsync(string imageURL)
         {
-            var image = Web.ImageDownloader.GetByteArrayFromUrl(imageURL);
+            var image = (await Web.ImageDownloader.GetByteArrayFromUrlAsync(imageURL));
 
             return await RequestImageDataAsync(image);
         }
