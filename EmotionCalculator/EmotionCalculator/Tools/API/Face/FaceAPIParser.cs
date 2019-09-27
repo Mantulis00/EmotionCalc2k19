@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
-    class FaceAPIParser
+    static class FaceAPIParser
     {
         internal static FaceAPIParseResult ParseJSON(string jsonString)
         {
@@ -28,52 +28,56 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
                     {
                         //NEW OBJECT
                         JObject jObject = JObject.Load(jsonReader);
-
-                        List<JProperty> children = jObject.Properties().ToList();
-
-                        FaceData face = new FaceData();
-                        bool faceFound = true;
-
-                        foreach (var child in children)
-                        {
-                            string childName = child.Name;
-
-                            switch (childName)
-                            {
-                                case "error":
-                                    {
-                                        errors.Add(ParseError(child));
-
-                                        faceFound = false;
-                                    }
-                                    break;
-                                case "faceId":
-                                    {
-                                        face.Id = ParseId(child);
-                                    }
-                                    break;
-                                case "faceRectangle":
-                                    {
-                                        //...
-                                    }
-                                    break;
-                                case "faceAttributes":
-                                    {
-                                        face.EmotionData = ParseEmotions(child);
-                                    }
-                                    break;
-                            }
-                        }
-
-                        if (faceFound)
-                        {
-                            faces.Add(face);
-                        }
+                        jObject.ParseFaceAPIObject(faces, errors);
                     }
                 }
             }
 
             return new FaceAPIParseResult(faces, errors);
+        }
+
+        private static void ParseFaceAPIObject(this JObject jObject, List<FaceData> faces, List<ErrorLog> errors)
+        {
+            List<JProperty> children = jObject.Properties().ToList();
+
+            FaceData face = new FaceData();
+            bool faceFound = true;
+
+            foreach (var child in children)
+            {
+                string childName = child.Name;
+
+                switch (childName)
+                {
+                    case "error":
+                        {
+                            errors.Add(ParseError(child));
+
+                            faceFound = false;
+                        }
+                        break;
+                    case "faceId":
+                        {
+                            face.Id = ParseId(child);
+                        }
+                        break;
+                    case "faceRectangle":
+                        {
+                            //...
+                        }
+                        break;
+                    case "faceAttributes":
+                        {
+                            face.EmotionData = ParseEmotions(child);
+                        }
+                        break;
+                }
+            }
+
+            if (faceFound)
+            {
+                faces.Add(face);
+            }
         }
 
         private static ErrorLog ParseError(JProperty property)

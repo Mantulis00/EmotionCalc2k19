@@ -90,8 +90,8 @@
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParser.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
-    <Compile Include="EmotionCalculator\Tools\FileHandler\CamHan.cs" />
-    <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHan.cs" />
+    <Compile Include="EmotionCalculator\Tools\FileHandler\CameraHandle.cs" />
+    <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHandle.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\Emotion.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParseResult.cs" />

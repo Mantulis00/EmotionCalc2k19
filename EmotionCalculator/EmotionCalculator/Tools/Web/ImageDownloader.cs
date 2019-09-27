@@ -1,14 +1,15 @@
-﻿using System.Net;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace EmotionCalculator.EmotionCalculator.Tools.Web
 {
-    class ImageDownloader
+    static class ImageDownloader
     {
-        public static byte[] GetByteArrayFromUrl(string imageURL)
+        public static async Task<byte[]> GetByteArrayFromUrlAsync(string imageURL)
         {
-            using (WebClient client = new WebClient())
+            using (HttpClient client = new HttpClient())
             {
-                return client.DownloadData(imageURL);
+                return await client.GetByteArrayAsync(imageURL);
             }
         }
     }
