@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Drawing;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
@@ -12,13 +13,25 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
         {
             apiKey = faceAPIKey;
         }
-
+        
         public async Task<string> RequestImageDataAsync(string imageURL)
         {
             var image = (await Web.ImageDownloader.GetByteArrayFromUrlAsync(imageURL));
 
             return await RequestImageDataAsync(image);
         }
+
+        //
+        public async Task<string> RequestImageDataAsync(Image imageIn)
+        {
+            using (var imgOut = new System.IO.MemoryStream())
+            {
+                imageIn.Save(imgOut, imageIn.RawFormat);
+                return await RequestImageDataAsync(imgOut.ToArray());
+            }
+
+        }
+        //
 
         public async Task<string> RequestImageDataAsync(byte[] imageByteArray)
         {

@@ -1,34 +1,31 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
+        private CameraHandle cam;
+        ImageHandle handle;
+
+        /// <summary>
+        /// Bugless patch is Bestest patch
+        /// </summary>
 
 
         public BaseForm()
         {
             InitializeComponent();
             cam = new CameraHandle(webcamPictureBox);
+            handle = new ImageHandle();
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             cam.Stop();
-        }
-
-
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private async void SubmitButton_Click(object sender, EventArgs e)
@@ -42,7 +39,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             string response = await faceAPIRequester.RequestImageDataAsync(url);
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
+            UpdateUIAfterParsing(parseResult);
+        }
 
+        private void UpdateUIAfterParsing(FaceAPIParseResult parseResult)
+        {
             if (parseResult.Faces.Count > 0)
             {
                 operationResultLabel.Text = Logic.EmotionJudge.GetEmotion(parseResult.Faces[0].EmotionData).ToString();
@@ -64,36 +65,57 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
         }
 
-        private void OpenFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
             ///
-            Tools.FileHandler.ImageHandle handler = new Tools.FileHandler.ImageHandle();
-            handler.GetPicture(imageUploadPictureBox);
+            ImageHandle handle = new ImageHandle();
+            handle.GetPicture(imageUploadPictureBox);
             ///
         }
 
         /// 
 
-        private CameraHandle cam;
 
-        private void CamButton_Click(object sender, EventArgs e)
+        private void CameraStartButton_Click(object sender, EventArgs e)
         {
             cam.Start();
         }
 
-        private void CamButton2_Click(object sender, EventArgs e)
+        private void CameraStopButton_Click(object sender, EventArgs e)
         {
             cam.Stop();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private async void SubmitWebCamButton_Click(object sender, EventArgs e)
         {
 
+            FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
+
+            FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
+
+            Image image;
+
+            image = webcamPictureBox.Image;
+            image = handle.imageProcess(image);
+
+            string response = await faceAPIRequester.RequestImageDataAsync(image);
+
+            image.Dispose();
+
+            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
+            UpdateUIAfterParsing(parseResult);
+        }
+
+        private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)
+        {
+            FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
+
+            FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
+
+            string response = await faceAPIRequester.RequestImageDataAsync(imageUploadPictureBox.Image);
+
+            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
+            UpdateUIAfterParsing(parseResult);
         }
 
         ///

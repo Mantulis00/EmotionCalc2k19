@@ -1,7 +1,7 @@
 ﻿
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
-
 
 namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 {
@@ -26,6 +26,15 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
             }
 
             return box;
+        }
+
+        public Image imageProcess(Image img)
+        {
+            img.Save("tempImg.jpg", ImageFormat.Jpeg);
+
+            Image returnedImage = Image.FromFile("tempImg.jpg");
+
+            return returnedImage;
         }
     }
 }

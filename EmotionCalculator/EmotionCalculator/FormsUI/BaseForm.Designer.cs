@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.apiEndpointTextBox = new System.Windows.Forms.TextBox();
             this.apiEndpointLabel = new System.Windows.Forms.Label();
             this.susbcriptionKeyLabel = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.imageUploadPictureBox = new System.Windows.Forms.PictureBox();
             this.submitWebCamButton = new System.Windows.Forms.Button();
             this.submitUploadedImageButton = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,6 @@
             this.apiEndpointLabel.Size = new System.Drawing.Size(68, 13);
             this.apiEndpointLabel.TabIndex = 1;
             this.apiEndpointLabel.Text = "API endpoint";
-            this.apiEndpointLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // susbcriptionKeyLabel
             // 
@@ -161,7 +162,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog1_FileOk);
             // 
             // buttonUpload
             // 
@@ -202,7 +202,7 @@
             this.camStartButton.TabIndex = 13;
             this.camStartButton.Text = "Start WebCam";
             this.camStartButton.UseVisualStyleBackColor = true;
-            this.camStartButton.Click += new System.EventHandler(this.CamButton_Click);
+            this.camStartButton.Click += new System.EventHandler(this.CameraStartButton_Click);
             // 
             // camStopButton
             // 
@@ -213,7 +213,7 @@
             this.camStopButton.TabIndex = 14;
             this.camStopButton.Text = "Stop WebCam";
             this.camStopButton.UseVisualStyleBackColor = true;
-            this.camStopButton.Click += new System.EventHandler(this.CamButton2_Click);
+            this.camStopButton.Click += new System.EventHandler(this.CameraStopButton_Click);
             // 
             // imageUploadPictureBox
             // 
@@ -227,7 +227,6 @@
             // 
             // submitWebCamButton
             // 
-            this.submitWebCamButton.Enabled = false;
             this.submitWebCamButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
             this.submitWebCamButton.Location = new System.Drawing.Point(642, 381);
             this.submitWebCamButton.Name = "submitWebCamButton";
@@ -235,10 +234,10 @@
             this.submitWebCamButton.TabIndex = 16;
             this.submitWebCamButton.Text = "Submit";
             this.submitWebCamButton.UseVisualStyleBackColor = true;
+            this.submitWebCamButton.Click += new System.EventHandler(this.SubmitWebCamButton_Click);
             // 
             // submitUploadedImageButton
             // 
-            this.submitUploadedImageButton.Enabled = false;
             this.submitUploadedImageButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
             this.submitUploadedImageButton.Location = new System.Drawing.Point(147, 381);
             this.submitUploadedImageButton.Name = "submitUploadedImageButton";
@@ -246,6 +245,13 @@
             this.submitUploadedImageButton.TabIndex = 17;
             this.submitUploadedImageButton.Text = "Submit";
             this.submitUploadedImageButton.UseVisualStyleBackColor = true;
+            this.submitUploadedImageButton.Click += new System.EventHandler(this.SubmitUploadedImageButton_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // BaseForm
             // 
@@ -276,7 +282,6 @@
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
-            this.Load += new System.EventHandler(this.BaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -307,5 +312,6 @@
         private System.Windows.Forms.PictureBox imageUploadPictureBox;
         private System.Windows.Forms.Button submitWebCamButton;
         private System.Windows.Forms.Button submitUploadedImageButton;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
