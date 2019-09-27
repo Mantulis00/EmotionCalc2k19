@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.apiEndpointTextBox = new System.Windows.Forms.TextBox();
             this.apiEndpointLabel = new System.Windows.Forms.Label();
             this.susbcriptionKeyLabel = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.imageUploadPictureBox = new System.Windows.Forms.PictureBox();
             this.submitWebCamButton = new System.Windows.Forms.Button();
             this.submitUploadedImageButton = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +61,7 @@
             this.apiEndpointTextBox.Name = "apiEndpointTextBox";
             this.apiEndpointTextBox.Size = new System.Drawing.Size(351, 20);
             this.apiEndpointTextBox.TabIndex = 0;
+            this.apiEndpointTextBox.TextChanged += new System.EventHandler(this.ApiEndpointTextBox_TextChanged);
             // 
             // apiEndpointLabel
             // 
@@ -157,6 +160,7 @@
             this.webcamPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.webcamPictureBox.TabIndex = 11;
             this.webcamPictureBox.TabStop = false;
+            this.webcamPictureBox.Click += new System.EventHandler(this.WebcamPictureBox_Click);
             // 
             // openFileDialog1
             // 
@@ -224,6 +228,7 @@
             this.imageUploadPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageUploadPictureBox.TabIndex = 15;
             this.imageUploadPictureBox.TabStop = false;
+            this.imageUploadPictureBox.Click += new System.EventHandler(this.ImageUploadPictureBox_Click);
             // 
             // submitWebCamButton
             // 
@@ -235,6 +240,7 @@
             this.submitWebCamButton.TabIndex = 16;
             this.submitWebCamButton.Text = "Submit";
             this.submitWebCamButton.UseVisualStyleBackColor = true;
+            this.submitWebCamButton.Click += new System.EventHandler(this.SubmitWebCamButton_Click);
             // 
             // submitUploadedImageButton
             // 
@@ -246,6 +252,12 @@
             this.submitUploadedImageButton.TabIndex = 17;
             this.submitUploadedImageButton.Text = "Submit";
             this.submitUploadedImageButton.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // BaseForm
             // 
@@ -307,5 +319,6 @@
         private System.Windows.Forms.PictureBox imageUploadPictureBox;
         private System.Windows.Forms.Button submitWebCamButton;
         private System.Windows.Forms.Button submitUploadedImageButton;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -1,6 +1,8 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,11 +11,18 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     public partial class BaseForm : Form
     {
 
+        /// <summary>
+        /// Bugless patch is Bestest patch
+        /// </summary>
+
 
         public BaseForm()
         {
             InitializeComponent();
             cam = new CamHandle(webcamPictureBox);
+            handler = new Tools.FileHandler.ImageHan();
+
+            img = null;
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,15 +41,49 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         }
 
+        Image img;
+
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
+            FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text , "https://" + apiEndpointTextBox.Text + ".cognitiveservices.azure.com/face/v1.0");
 
             FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
 
             string url = imageUrlTextBox.Text;
 
-            string response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(url)).Result;
+            ///
+
+            string response;
+
+          
+
+            if (url.Length >= 5)
+            {
+                 response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(url)).Result;
+            }
+            else if (cam.cameraIsRoling && webcamPictureBox.Image != null)
+            {
+                img = webcamPictureBox.Image;
+                img = handler.imageProcess(img);
+
+                response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(img)).Result;
+
+                img.Dispose();
+
+            }
+            else if (imageUploadPictureBox.Image != null)
+            {
+                
+                response = Task.Run(async () => await faceAPIRequester.RequestImageDataAsync(imageUploadPictureBox.Image)).Result;
+            }
+            else
+            {
+                 response = "";
+            }
+
+
+            // 
+
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
 
@@ -70,10 +113,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         }
 
+
+        Tools.FileHandler.ImageHan handler;
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
             ///
-            Tools.FileHandler.ImageHan handler = new Tools.FileHandler.ImageHan();
             handler.GetPicture(imageUploadPictureBox);
             ///
         }
@@ -93,6 +137,26 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         }
 
         private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WebcamPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImageUploadPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SubmitWebCamButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ApiEndpointTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
