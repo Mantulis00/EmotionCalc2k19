@@ -39,14 +39,14 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
         public  Image imageProcess(Image img)
         {
-            if (File.Exists(@"C:\Users\ggwpk\OneDrive\Desktop\" + "tempImg.jpg"))
+            if (File.Exists("tempImg.jpg"))
             {
-                File.Delete(@"C:\Users\ggwpk\OneDrive\Desktop\" + "tempImg.jpg");
+                File.Delete("tempImg.jpg");
 
             }
-                img.Save(@"C:\Users\ggwpk\OneDrive\Desktop\" + "tempImg.jpg", ImageFormat.Jpeg);
+                img.Save("tempImg.jpg", ImageFormat.Jpeg);
 
-                return Image.FromFile(@"C:\Users\ggwpk\OneDrive\Desktop\" + "tempImg.jpg");
+                return Image.FromFile("tempImg.jpg");
         }
 
 
