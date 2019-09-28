@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.apiEndpointTextBox = new System.Windows.Forms.TextBox();
-            this.apiEndpointLabel = new System.Windows.Forms.Label();
-            this.susbcriptionKeyLabel = new System.Windows.Forms.Label();
-            this.subscriptionKeyTextBox = new System.Windows.Forms.TextBox();
             this.imageUrlLabel = new System.Windows.Forms.Label();
             this.imageUrlTextBox = new System.Windows.Forms.TextBox();
             this.submitButton = new System.Windows.Forms.Button();
@@ -51,41 +47,18 @@
             this.submitWebCamButton = new System.Windows.Forms.Button();
             this.submitUploadedImageButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configureAPIKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // apiEndpointTextBox
-            // 
-            this.apiEndpointTextBox.Location = new System.Drawing.Point(118, 28);
-            this.apiEndpointTextBox.Name = "apiEndpointTextBox";
-            this.apiEndpointTextBox.Size = new System.Drawing.Size(351, 20);
-            this.apiEndpointTextBox.TabIndex = 0;
-            // 
-            // apiEndpointLabel
-            // 
-            this.apiEndpointLabel.AutoSize = true;
-            this.apiEndpointLabel.Location = new System.Drawing.Point(44, 31);
-            this.apiEndpointLabel.Name = "apiEndpointLabel";
-            this.apiEndpointLabel.Size = new System.Drawing.Size(68, 13);
-            this.apiEndpointLabel.TabIndex = 1;
-            this.apiEndpointLabel.Text = "API endpoint";
-            // 
-            // susbcriptionKeyLabel
-            // 
-            this.susbcriptionKeyLabel.AutoSize = true;
-            this.susbcriptionKeyLabel.Location = new System.Drawing.Point(26, 57);
-            this.susbcriptionKeyLabel.Name = "susbcriptionKeyLabel";
-            this.susbcriptionKeyLabel.Size = new System.Drawing.Size(86, 13);
-            this.susbcriptionKeyLabel.TabIndex = 3;
-            this.susbcriptionKeyLabel.Text = "Subscription Key";
-            // 
-            // subscriptionKeyTextBox
-            // 
-            this.subscriptionKeyTextBox.Location = new System.Drawing.Point(118, 54);
-            this.subscriptionKeyTextBox.Name = "subscriptionKeyTextBox";
-            this.subscriptionKeyTextBox.Size = new System.Drawing.Size(351, 20);
-            this.subscriptionKeyTextBox.TabIndex = 2;
             // 
             // imageUrlLabel
             // 
@@ -253,6 +226,69 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(769, 24);
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configureAPIKeyToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // configureAPIKeyToolStripMenuItem
+            // 
+            this.configureAPIKeyToolStripMenuItem.Name = "configureAPIKeyToolStripMenuItem";
+            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.configureAPIKeyToolStripMenuItem.Text = "Configure API key";
+            this.configureAPIKeyToolStripMenuItem.Click += new System.EventHandler(this.ConfigureAPIKeyToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,27 +310,22 @@
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.imageUrlLabel);
             this.Controls.Add(this.imageUrlTextBox);
-            this.Controls.Add(this.susbcriptionKeyLabel);
-            this.Controls.Add(this.subscriptionKeyTextBox);
-            this.Controls.Add(this.apiEndpointLabel);
-            this.Controls.Add(this.apiEndpointTextBox);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox apiEndpointTextBox;
-        private System.Windows.Forms.Label apiEndpointLabel;
-        private System.Windows.Forms.Label susbcriptionKeyLabel;
-        private System.Windows.Forms.TextBox subscriptionKeyTextBox;
         private System.Windows.Forms.Label imageUrlLabel;
         private System.Windows.Forms.TextBox imageUrlTextBox;
         private System.Windows.Forms.Button submitButton;
@@ -313,5 +344,13 @@
         private System.Windows.Forms.Button submitWebCamButton;
         private System.Windows.Forms.Button submitUploadedImageButton;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configureAPIKeyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

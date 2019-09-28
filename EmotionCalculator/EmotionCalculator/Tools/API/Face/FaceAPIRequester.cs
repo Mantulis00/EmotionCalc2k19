@@ -7,21 +7,20 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
     class FaceAPIRequester
     {
-        private FaceAPIKey apiKey;
+        internal FaceAPIKey apiKey { get; private set; }
 
         internal FaceAPIRequester(FaceAPIKey faceAPIKey)
         {
             apiKey = faceAPIKey;
         }
-        
+
         public async Task<string> RequestImageDataAsync(string imageURL)
         {
-            var image = (await Web.ImageDownloader.GetByteArrayFromUrlAsync(imageURL));
+            byte[] image = (await Web.ImageDownloader.GetByteArrayFromUrlAsync(imageURL));
 
             return await RequestImageDataAsync(image);
         }
 
-        //
         public async Task<string> RequestImageDataAsync(Image imageIn)
         {
             using (var imgOut = new System.IO.MemoryStream())
@@ -31,7 +30,6 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
             }
 
         }
-        //
 
         public async Task<string> RequestImageDataAsync(byte[] imageByteArray)
         {
