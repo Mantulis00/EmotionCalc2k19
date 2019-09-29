@@ -63,7 +63,7 @@
             // imageUrlLabel
             // 
             this.imageUrlLabel.AutoSize = true;
-            this.imageUrlLabel.Location = new System.Drawing.Point(44, 83);
+            this.imageUrlLabel.Location = new System.Drawing.Point(9, 36);
             this.imageUrlLabel.Name = "imageUrlLabel";
             this.imageUrlLabel.Size = new System.Drawing.Size(61, 13);
             this.imageUrlLabel.TabIndex = 5;
@@ -71,14 +71,14 @@
             // 
             // imageUrlTextBox
             // 
-            this.imageUrlTextBox.Location = new System.Drawing.Point(118, 80);
+            this.imageUrlTextBox.Location = new System.Drawing.Point(76, 33);
             this.imageUrlTextBox.Name = "imageUrlTextBox";
-            this.imageUrlTextBox.Size = new System.Drawing.Size(351, 20);
+            this.imageUrlTextBox.Size = new System.Drawing.Size(291, 20);
             this.imageUrlTextBox.TabIndex = 4;
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(475, 78);
+            this.submitButton.Location = new System.Drawing.Point(373, 31);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(95, 23);
             this.submitButton.TabIndex = 6;
@@ -89,7 +89,7 @@
             // resultLabel
             // 
             this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(72, 124);
+            this.resultLabel.Location = new System.Drawing.Point(38, 68);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(40, 13);
             this.resultLabel.TabIndex = 7;
@@ -98,7 +98,7 @@
             // operationResultLabel
             // 
             this.operationResultLabel.AutoSize = true;
-            this.operationResultLabel.Location = new System.Drawing.Point(118, 124);
+            this.operationResultLabel.Location = new System.Drawing.Point(84, 68);
             this.operationResultLabel.Name = "operationResultLabel";
             this.operationResultLabel.Size = new System.Drawing.Size(40, 13);
             this.operationResultLabel.TabIndex = 8;
@@ -107,7 +107,7 @@
             // errorTextLabel
             // 
             this.errorTextLabel.AutoSize = true;
-            this.errorTextLabel.Location = new System.Drawing.Point(118, 148);
+            this.errorTextLabel.Location = new System.Drawing.Point(84, 92);
             this.errorTextLabel.Name = "errorTextLabel";
             this.errorTextLabel.Size = new System.Drawing.Size(40, 13);
             this.errorTextLabel.TabIndex = 10;
@@ -116,7 +116,7 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(80, 148);
+            this.errorLabel.Location = new System.Drawing.Point(46, 92);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(32, 13);
             this.errorLabel.TabIndex = 9;
@@ -125,9 +125,9 @@
             // webcamPictureBox
             // 
             this.webcamPictureBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.webcamPictureBox.Location = new System.Drawing.Point(397, 138);
+            this.webcamPictureBox.Location = new System.Drawing.Point(474, 269);
             this.webcamPictureBox.Name = "webcamPictureBox";
-            this.webcamPictureBox.Size = new System.Drawing.Size(360, 237);
+            this.webcamPictureBox.Size = new System.Drawing.Size(241, 165);
             this.webcamPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.webcamPictureBox.TabIndex = 11;
             this.webcamPictureBox.TabStop = false;
@@ -139,7 +139,7 @@
             // buttonUpload
             // 
             this.buttonUpload.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.buttonUpload.Location = new System.Drawing.Point(29, 381);
+            this.buttonUpload.Location = new System.Drawing.Point(474, 202);
             this.buttonUpload.Name = "buttonUpload";
             this.buttonUpload.Size = new System.Drawing.Size(112, 61);
             this.buttonUpload.TabIndex = 12;
@@ -150,7 +150,7 @@
             // faceCountTextLabel
             // 
             this.faceCountTextLabel.AutoSize = true;
-            this.faceCountTextLabel.Location = new System.Drawing.Point(118, 172);
+            this.faceCountTextLabel.Location = new System.Drawing.Point(84, 116);
             this.faceCountTextLabel.Name = "faceCountTextLabel";
             this.faceCountTextLabel.Size = new System.Drawing.Size(40, 13);
             this.faceCountTextLabel.TabIndex = 12;
@@ -159,7 +159,7 @@
             // faceCountLabel
             // 
             this.faceCountLabel.AutoSize = true;
-            this.faceCountLabel.Location = new System.Drawing.Point(44, 172);
+            this.faceCountLabel.Location = new System.Drawing.Point(10, 116);
             this.faceCountLabel.Name = "faceCountLabel";
             this.faceCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.faceCountLabel.Size = new System.Drawing.Size(69, 13);
@@ -168,10 +168,10 @@
             // 
             // camStartButton
             // 
-            this.camStartButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.camStartButton.Location = new System.Drawing.Point(397, 381);
+            this.camStartButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
+            this.camStartButton.Location = new System.Drawing.Point(474, 440);
             this.camStartButton.Name = "camStartButton";
-            this.camStartButton.Size = new System.Drawing.Size(115, 61);
+            this.camStartButton.Size = new System.Drawing.Size(71, 61);
             this.camStartButton.TabIndex = 13;
             this.camStartButton.Text = "Start WebCam";
             this.camStartButton.UseVisualStyleBackColor = true;
@@ -179,10 +179,10 @@
             // 
             // camStopButton
             // 
-            this.camStopButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.camStopButton.Location = new System.Drawing.Point(518, 381);
+            this.camStopButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
+            this.camStopButton.Location = new System.Drawing.Point(551, 440);
             this.camStopButton.Name = "camStopButton";
-            this.camStopButton.Size = new System.Drawing.Size(118, 61);
+            this.camStopButton.Size = new System.Drawing.Size(83, 61);
             this.camStopButton.TabIndex = 14;
             this.camStopButton.Text = "Stop WebCam";
             this.camStopButton.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             // imageUploadPictureBox
             // 
             this.imageUploadPictureBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.imageUploadPictureBox.Location = new System.Drawing.Point(29, 210);
+            this.imageUploadPictureBox.Location = new System.Drawing.Point(474, 31);
             this.imageUploadPictureBox.Name = "imageUploadPictureBox";
             this.imageUploadPictureBox.Size = new System.Drawing.Size(241, 165);
             this.imageUploadPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -200,10 +200,10 @@
             // 
             // submitWebCamButton
             // 
-            this.submitWebCamButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.submitWebCamButton.Location = new System.Drawing.Point(642, 381);
+            this.submitWebCamButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
+            this.submitWebCamButton.Location = new System.Drawing.Point(640, 440);
             this.submitWebCamButton.Name = "submitWebCamButton";
-            this.submitWebCamButton.Size = new System.Drawing.Size(115, 61);
+            this.submitWebCamButton.Size = new System.Drawing.Size(75, 61);
             this.submitWebCamButton.TabIndex = 16;
             this.submitWebCamButton.Text = "Submit";
             this.submitWebCamButton.UseVisualStyleBackColor = true;
@@ -212,7 +212,7 @@
             // submitUploadedImageButton
             // 
             this.submitUploadedImageButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.submitUploadedImageButton.Location = new System.Drawing.Point(147, 381);
+            this.submitUploadedImageButton.Location = new System.Drawing.Point(592, 202);
             this.submitUploadedImageButton.Name = "submitUploadedImageButton";
             this.submitUploadedImageButton.Size = new System.Drawing.Size(123, 61);
             this.submitUploadedImageButton.TabIndex = 17;
@@ -235,7 +235,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(769, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(723, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -293,7 +293,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 454);
+            this.ClientSize = new System.Drawing.Size(723, 507);
             this.Controls.Add(this.submitUploadedImageButton);
             this.Controls.Add(this.submitWebCamButton);
             this.Controls.Add(this.imageUploadPictureBox);
