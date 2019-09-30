@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.imageUrlLabel = new System.Windows.Forms.Label();
             this.imageUrlTextBox = new System.Windows.Forms.TextBox();
             this.submitButton = new System.Windows.Forms.Button();
@@ -55,9 +56,12 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.calendarBackground = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // imageUrlLabel
@@ -127,7 +131,7 @@
             this.webcamPictureBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.webcamPictureBox.Location = new System.Drawing.Point(474, 269);
             this.webcamPictureBox.Name = "webcamPictureBox";
-            this.webcamPictureBox.Size = new System.Drawing.Size(241, 165);
+            this.webcamPictureBox.Size = new System.Drawing.Size(241, 159);
             this.webcamPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.webcamPictureBox.TabIndex = 11;
             this.webcamPictureBox.TabStop = false;
@@ -169,7 +173,7 @@
             // camStartButton
             // 
             this.camStartButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.camStartButton.Location = new System.Drawing.Point(474, 440);
+            this.camStartButton.Location = new System.Drawing.Point(474, 434);
             this.camStartButton.Name = "camStartButton";
             this.camStartButton.Size = new System.Drawing.Size(71, 61);
             this.camStartButton.TabIndex = 13;
@@ -180,9 +184,9 @@
             // camStopButton
             // 
             this.camStopButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.camStopButton.Location = new System.Drawing.Point(551, 440);
+            this.camStopButton.Location = new System.Drawing.Point(551, 434);
             this.camStopButton.Name = "camStopButton";
-            this.camStopButton.Size = new System.Drawing.Size(83, 61);
+            this.camStopButton.Size = new System.Drawing.Size(79, 61);
             this.camStopButton.TabIndex = 14;
             this.camStopButton.Text = "Stop WebCam";
             this.camStopButton.UseVisualStyleBackColor = true;
@@ -201,7 +205,7 @@
             // submitWebCamButton
             // 
             this.submitWebCamButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.submitWebCamButton.Location = new System.Drawing.Point(640, 440);
+            this.submitWebCamButton.Location = new System.Drawing.Point(636, 434);
             this.submitWebCamButton.Name = "submitWebCamButton";
             this.submitWebCamButton.Size = new System.Drawing.Size(75, 61);
             this.submitWebCamButton.TabIndex = 16;
@@ -289,11 +293,31 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(12, 150);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(456, 20);
+            this.dateTimePicker.TabIndex = 19;
+            // 
+            // calendarBackground
+            // 
+            this.calendarBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.calendarBackground.Image = ((System.Drawing.Image)(resources.GetObject("calendarBackground.Image")));
+            this.calendarBackground.InitialImage = null;
+            this.calendarBackground.Location = new System.Drawing.Point(12, 176);
+            this.calendarBackground.Name = "calendarBackground";
+            this.calendarBackground.Size = new System.Drawing.Size(456, 319);
+            this.calendarBackground.TabIndex = 20;
+            this.calendarBackground.TabStop = false;
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 507);
+            this.Controls.Add(this.calendarBackground);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.submitUploadedImageButton);
             this.Controls.Add(this.submitWebCamButton);
             this.Controls.Add(this.imageUploadPictureBox);
@@ -313,6 +337,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
@@ -320,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +378,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.PictureBox calendarBackground;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }

@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
+﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
+using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
 using System.Drawing;
@@ -11,6 +12,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private CameraHandle cam;
         private ImageHandle handle;
         private FaceAPIRequester faceAPIRequester;
+        private CalendarGenerator calendarGenerator;
 
         internal BaseForm()
         {
@@ -18,6 +20,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             cam = new CameraHandle(webcamPictureBox);
             handle = new ImageHandle();
             faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
+
+            calendarGenerator = new CalendarGenerator(dateTimePicker, calendarBackground);
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -69,7 +73,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             ImageHandle handle = new ImageHandle();
             handle.GetPicture(imageUploadPictureBox);
         }
-
 
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
