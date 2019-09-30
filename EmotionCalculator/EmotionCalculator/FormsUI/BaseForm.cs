@@ -9,31 +9,30 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     public partial class BaseForm : Form
     {
         private CameraHandle cam;
-        ImageHandle handle;
+        private ImageHandle handle;
+        private FaceAPIRequester faceAPIRequester;
 
-        /// <summary>
-        /// Bugless patch is Bestest patch
-        /// </summary>
-
-
-        public BaseForm()
+        internal BaseForm()
         {
             InitializeComponent();
             cam = new CameraHandle(webcamPictureBox);
             handle = new ImageHandle();
+            faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            ExitApplication();
+        }
+
+        private void ExitApplication()
+        {
             cam.Stop();
+            Application.Exit();
         }
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
-            FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
-
-            FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
-
             string url = imageUrlTextBox.Text;
 
             string response = await faceAPIRequester.RequestImageDataAsync(url);
@@ -67,13 +66,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
-            ///
             ImageHandle handle = new ImageHandle();
             handle.GetPicture(imageUploadPictureBox);
-            ///
         }
-
-        /// 
 
 
         private void CameraStartButton_Click(object sender, EventArgs e)
@@ -88,11 +83,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitWebCamButton_Click(object sender, EventArgs e)
         {
-
-            FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
-
-            FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
-
             Image image;
 
             image = webcamPictureBox.Image;
@@ -108,18 +98,30 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)
         {
-            FaceAPIKey faceApiKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
-
-            FaceAPIRequester faceAPIRequester = new FaceAPIRequester(faceApiKey);
-
             string response = await faceAPIRequester.RequestImageDataAsync(imageUploadPictureBox.Image);
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
             UpdateUIAfterParsing(parseResult);
         }
 
-        ///
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExitApplication();
+        }
 
+        private void ConfigureAPIKeyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
 
+            Form apiForm = new APISettingsForm(FaceAPIConfig.LoadConfig());
+            apiForm.Show();
+
+            apiForm.FormClosed +=
+                (o, ev) =>
+                {
+                    Enabled = true;
+                    faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
+                };
+        }
     }
 }

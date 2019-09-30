@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
+using System;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -13,7 +14,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaseForm());
+
+            if (FaceAPIConfig.ConfigExists())
+            {
+                (new BaseForm()).Show();
+            }
+            else
+            {
+                (new APISettingsForm()).Show();
+            }
+
+            Application.Run();
         }
     }
 }
