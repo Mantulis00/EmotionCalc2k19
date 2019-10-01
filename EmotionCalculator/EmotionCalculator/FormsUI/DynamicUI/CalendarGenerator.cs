@@ -1,45 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 {
-    class CalendarGenerator
+    static class CalendarGenerator
     {
         private static readonly int rowLength = 7;
         private static readonly int numberOfRows = 6;
 
-        private static readonly int buttonSize = 40;
+        private static readonly int cellSize = 40;
 
-        private DateTimePicker dateTimePicker;
-        private PictureBox cellBackgroundBox;
-
-        private static readonly Color defaultCellColor = Color.FromArgb(120, 255, 255, 255);
-        private static readonly Color currentMonthColor = Color.FromArgb(220, 255, 255, 255);
-        private static readonly Color currentDayColor = Color.FromArgb(220, 255, 100, 100);
-
-        private List<PictureBox> cells = new List<PictureBox>();
-        internal IReadOnlyList<PictureBox> Cells { get { return cells.AsReadOnly(); } }
-
-        internal CalendarGenerator(DateTimePicker dateTimePicker, PictureBox pictureBox)
+        internal static IEnumerable<PictureBox> GenerateCells(PictureBox pictureBox)
         {
-            this.dateTimePicker = dateTimePicker;
-            cellBackgroundBox = pictureBox;
+            Size backgroundSize = pictureBox.Size;
 
-            GenerateCells();
-
-            dateTimePicker.ValueChanged += new EventHandler(SelectCurrentMonth);
-
-            SelectCurrentMonth(this, null);
-        }
-
-        private void GenerateCells()
-        {
-            Size backgroundSize = cellBackgroundBox.Size;
-
-            int horizontalGap = (backgroundSize.Width - (buttonSize * rowLength)) / (rowLength + 1);
-            int verticalGap = (backgroundSize.Height - (buttonSize * numberOfRows)) / (numberOfRows + 1);
+            int horizontalGap = (backgroundSize.Width - (cellSize * rowLength)) / (rowLength + 1);
+            int verticalGap = (backgroundSize.Height - (cellSize * numberOfRows)) / (numberOfRows + 1);
 
             for (int i = 0; i < numberOfRows; i++)
             {
@@ -48,60 +25,44 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                     PictureBox cell = new PictureBox();
 
                     cell.Location = new Point(
-                            horizontalGap + j * (buttonSize + horizontalGap),
-                            verticalGap + i * (buttonSize + verticalGap));
+                            horizontalGap + j * (cellSize + horizontalGap),
+                            verticalGap + i * (cellSize + verticalGap));
 
-                    cell.Size = new Size(buttonSize, buttonSize);
-                    cell.BackColor = defaultCellColor;
+                    cell.Size = new Size(cellSize, cellSize);
+                    cell.BackColor = CalendarUpdater.defaultCellColor;
 
-                    cellBackgroundBox.Controls.Add(cell);
+                    pictureBox.Controls.Add(cell);
                     cell.BringToFront();
-
-                    cell.Enabled = true;
-
-                    cells.Add(cell);
+                    yield return cell;
                 }
             }
         }
 
-        private void SelectCurrentMonth(object sender, object e)
-        {
-            ResetColors();
-
-            DateTime selectedDate = dateTimePicker.Value;
-
-            DayOfWeek dayOfWeek = new DateTime(selectedDate.Year, selectedDate.Month, 1).DayOfWeek;
-
-            //Sunday = 0
-            //Monday = 1
-
-            int cellNumber = (int)dayOfWeek;
-
-            if (cellNumber == 0)
-                cellNumber += 6;
-            else
-                cellNumber--;
-
-            for (int i = 0; i < DateTime.DaysInMonth(selectedDate.Year, selectedDate.Month); i++)
-            {
-                var cell = Cells[cellNumber + i];
-
-                if (i + 1 != selectedDate.Day)
-                {
-                    cell.BackColor = currentMonthColor;
-                }
-                else
-                {
-                    cell.BackColor = currentDayColor;
-                }
-            }
-        }
-
-        private void ResetColors()
+        internal static IEnumerable<Label> GenerateNumberLabels(IEnumerable<PictureBox> cells)
         {
             foreach (var cell in cells)
             {
-                cell.BackColor = defaultCellColor;
+                Label number = new Label();
+                number.BackColor = Color.Transparent;
+
+                cell.Controls.Add(number);
+                number.BringToFront();
+                yield return number;
+            }
+        }
+
+        internal static IEnumerable<Label> GenerateEmotionLabels(IEnumerable<PictureBox> cells)
+        {
+            foreach (var cell in cells)
+            {
+                Label emotionLabel = new Label();
+                emotionLabel.BackColor = Color.Transparent;
+                emotionLabel.Location = new Point(0, cellSize / 2);
+                emotionLabel.Text = "blank";
+
+                cell.Controls.Add(emotionLabel);
+                emotionLabel.BringToFront();
+                yield return emotionLabel;
             }
         }
     }

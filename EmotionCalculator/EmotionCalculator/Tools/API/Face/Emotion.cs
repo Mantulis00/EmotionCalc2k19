@@ -2,6 +2,7 @@
 {
     enum Emotion
     {
+        NotSet,
         Emotionless,
         Anger,
         Contempt,

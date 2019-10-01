@@ -58,6 +58,8 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.calendarBackground = new System.Windows.Forms.PictureBox();
+            this.leftButton = new System.Windows.Forms.Button();
+            this.rightButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -295,9 +297,9 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(12, 150);
+            this.dateTimePicker.Location = new System.Drawing.Point(139, 150);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(456, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(329, 20);
             this.dateTimePicker.TabIndex = 19;
             // 
             // calendarBackground
@@ -311,11 +313,35 @@
             this.calendarBackground.TabIndex = 20;
             this.calendarBackground.TabStop = false;
             // 
+            // leftButton
+            // 
+            this.leftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.leftButton.Location = new System.Drawing.Point(13, 150);
+            this.leftButton.Name = "leftButton";
+            this.leftButton.Size = new System.Drawing.Size(57, 20);
+            this.leftButton.TabIndex = 21;
+            this.leftButton.Text = "<<";
+            this.leftButton.UseVisualStyleBackColor = true;
+            this.leftButton.Click += new System.EventHandler(this.LeftButton_Click);
+            // 
+            // rightButton
+            // 
+            this.rightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.rightButton.Location = new System.Drawing.Point(76, 150);
+            this.rightButton.Name = "rightButton";
+            this.rightButton.Size = new System.Drawing.Size(57, 20);
+            this.rightButton.TabIndex = 22;
+            this.rightButton.Text = ">>";
+            this.rightButton.UseVisualStyleBackColor = true;
+            this.rightButton.Click += new System.EventHandler(this.RightButton_Click);
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 507);
+            this.Controls.Add(this.rightButton);
+            this.Controls.Add(this.leftButton);
             this.Controls.Add(this.calendarBackground);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.submitUploadedImageButton);
@@ -380,5 +406,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.PictureBox calendarBackground;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button leftButton;
+        private System.Windows.Forms.Button rightButton;
     }
 }
