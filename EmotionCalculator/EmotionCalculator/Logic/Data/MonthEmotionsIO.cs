@@ -3,11 +3,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
-    static class MonthEmotionsIO
+    class MonthEmotionsIO : IMonthLogger
     {
         private static readonly string folderName = @"data";
 
-        internal static MonthEmotions LoadMonth(int year, Month month)
+        public MonthEmotions LoadMonth(int year, Month month)
         {
             if (MonthSavedExists(year, month))
             {
@@ -25,7 +25,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
             }
         }
 
-        internal static void SaveMonth(MonthEmotions monthEmotions)
+        public void SaveMonth(MonthEmotions monthEmotions)
         {
             string directory = GetFullDirectory(monthEmotions.Year, monthEmotions.Month);
 
@@ -36,7 +36,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
             }
         }
 
-        internal static bool MonthSavedExists(int year, Month month)
+        private static bool MonthSavedExists(int year, Month month)
         {
             if (!Directory.Exists(folderName))
                 Directory.CreateDirectory(folderName);

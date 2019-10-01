@@ -1,5 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
@@ -16,6 +17,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private FaceAPIRequester faceAPIRequester;
         private CalendarUpdater calendarUpdater;
 
+        private MonthManager monthManager;
+
         internal BaseForm()
         {
             InitializeComponent();
@@ -23,7 +26,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             handle = new ImageHandle();
             faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
 
-            calendarUpdater = new CalendarUpdater(dateTimePicker, calendarBackground);
+            monthManager = new MonthManager(new MonthEmotionsIO(),
+                new CalendarUpdater(calendarBackground), dateTimePicker.Value);
+
+            dateTimePicker.ValueChanged +=
+                (o, e) =>
+                {
+                    monthManager.ChangeTime(dateTimePicker.Value);
+                };
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -33,6 +43,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
+            monthManager.Save();
             cam.Stop();
             Application.Exit();
         }
@@ -52,8 +63,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             UpdateParsedDataUI(parseResult);
 
             if (parseResult.Faces.Count > 0)
-                calendarUpdater.SubmitChange(dateTimePicker.Value.Day,
-                    parseResult.Faces.First().EmotionData.GetEmotion());
+            {
+                monthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
+            }
+
+            //if (parseResult.Faces.Count > 0)
+            //    calendarUpdater.SubmitChange(dateTimePicker.Value.Day,
+            //        parseResult.Faces.First().EmotionData.GetEmotion());
         }
 
         private void UpdateParsedDataUI(FaceAPIParseResult parseResult)

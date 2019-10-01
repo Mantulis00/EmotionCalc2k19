@@ -92,7 +92,9 @@
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarGenerator.cs" />
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarUpdater.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IMonthUpdatable.cs" />
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
+    <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />

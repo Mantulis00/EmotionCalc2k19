@@ -29,16 +29,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
             Month = month;
         }
 
-        internal static MonthEmotions GetByDate(int year, Month month)
-        {
-            return GetByDate(new DateTime(year, (int)month, 1));
-        }
-
-        internal static MonthEmotions GetByDate(DateTime dateTime)
-        {
-            return MonthEmotionsIO.LoadMonth(dateTime.Year, (Month)dateTime.Month);
-        }
-
         internal void SetEmotion(int dayOfTheMonth, Emotion emotion)
         {
             if (emotions.ContainsKey(dayOfTheMonth))

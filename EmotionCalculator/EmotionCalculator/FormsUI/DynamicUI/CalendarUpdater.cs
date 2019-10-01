@@ -8,83 +8,26 @@ using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 {
-    class CalendarUpdater
+    class CalendarUpdater : IMonthUpdatable
     {
         internal static readonly Color defaultCellColor = Color.FromArgb(100, 255, 255, 255);
         internal static readonly Color currentMonthColor = Color.FromArgb(220, 255, 255, 255);
         internal static readonly Color currentDayColor = Color.FromArgb(220, 255, 110, 110);
 
-        private DateTime previousDate;
-        private MonthEmotions monthEmotions;
-
         private IReadOnlyList<PictureBox> cells;
         private IReadOnlyList<Label> numbers;
         private IReadOnlyList<Label> emotionLabels;
 
-        private DateTimePicker dateTimePicker;
-
-        internal CalendarUpdater(DateTimePicker dateTimePicker, PictureBox backgroundBox)
+        internal CalendarUpdater(PictureBox backgroundBox)
         {
-            this.dateTimePicker = dateTimePicker;
-
             cells = CalendarGenerator.GenerateCells(backgroundBox).ToList();
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
-
-            previousDate = dateTimePicker.Value;
-
-            dateTimePicker.ValueChanged +=
-               (o, e) =>
-               {
-                   DateTime newDate = dateTimePicker.Value;
-                   if (previousDate.Year != newDate.Year
-                   || previousDate.Month != newDate.Month)
-                       UpdateMonth();
-                   else
-                       UpdateDay();
-
-                   previousDate = newDate;
-               };
-
-            UpdateMonth();
         }
 
-        private void UpdateDay()
+        public void Update(MonthEmotions monthEmotions, DateTime newDateTime)
         {
-            DateTime selectedDate = dateTimePicker.Value;
-            DayOfWeek dayOfWeek = new DateTime(selectedDate.Year, selectedDate.Month, 1).DayOfWeek;
-
-            //Sunday = 0
-            //Monday = 1
-
-            int cellNumber = (int)dayOfWeek;
-
-            if (cellNumber == 0)
-                cellNumber += 6;
-            else
-                cellNumber--;
-
-            //Sunday = 6
-            //Monday = 0
-
-            int selectedDay = selectedDate.Day;
-            int unselectedDay = previousDate.Day;
-
-            cells[cellNumber + selectedDay - 1].BackColor = currentDayColor;
-            cells[cellNumber + unselectedDay - 1].BackColor = currentMonthColor;
-        }
-
-        private void UpdateMonth()
-        {
-            DateTime selectedDate = dateTimePicker.Value;
-            DayOfWeek dayOfWeek = new DateTime(selectedDate.Year, selectedDate.Month, 1).DayOfWeek;
-
-            //Save month
-            if (monthEmotions != null)
-                MonthEmotionsIO.SaveMonth(monthEmotions);
-
-            //Reload month
-            monthEmotions = MonthEmotions.GetByDate(selectedDate.Year, (Month)selectedDate.Month);
+            DayOfWeek dayOfWeek = new DateTime(newDateTime.Year, newDateTime.Month, 1).DayOfWeek;
 
             ResetColors();
 
@@ -101,11 +44,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             //Sunday = 6
             //Monday = 0
 
-            for (int i = 0; i < DateTime.DaysInMonth(selectedDate.Year, selectedDate.Month); i++)
+            for (int i = 0; i < DateTime.DaysInMonth(newDateTime.Year, newDateTime.Month); i++)
             {
                 var cell = cells[cellNumber + i];
 
-                if (i + 1 == selectedDate.Day)
+                if (i + 1 == newDateTime.Day)
                 {
                     cell.BackColor = currentDayColor;
                 }
@@ -122,11 +65,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 var emotionLabel = emotionLabels[cellNumber + i];
 
                 if (monthEmotions[i + 1] == Emotion.NotSet)
+                {
                     emotionLabel.Text = string.Empty;
+                }
                 else
                 {
                     emotionLabel.Text = monthEmotions[i + 1].ToString();
                 }
+
                 emotionLabel.Visible = true;
             }
         }
@@ -149,12 +95,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 emotionLabel.Text = string.Empty;
                 emotionLabel.Visible = false;
             }
-        }
-
-        internal void SubmitChange(int dayOfTheMonth, Emotion emotion)
-        {
-            monthEmotions.SetEmotion(dayOfTheMonth, emotion);
-            UpdateMonth();
         }
     }
 }

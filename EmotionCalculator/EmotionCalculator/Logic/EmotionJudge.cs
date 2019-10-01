@@ -8,7 +8,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic
     {
         private static readonly float dominationPoint = 0.3f;
 
-
         internal static Emotion GetEmotion(this EmotionData emotionData)
         {
             //Emotion calculations
