@@ -1,7 +1,11 @@
-﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
+﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
+using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Logic.Data;
+using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -11,6 +15,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private CameraHandle cam;
         private ImageHandle handle;
         private FaceAPIRequester faceAPIRequester;
+        private CalendarUpdater calendarUpdater;
+
+        private MonthManager monthManager;
 
         internal BaseForm()
         {
@@ -18,6 +25,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             cam = new CameraHandle(webcamPictureBox);
             handle = new ImageHandle();
             faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
+
+            monthManager = new MonthManager(new MonthEmotionsIO(),
+                new CalendarUpdater(calendarBackground), dateTimePicker.Value);
+
+            dateTimePicker.ValueChanged +=
+                (o, e) =>
+                {
+                    monthManager.ChangeTime(dateTimePicker.Value);
+                };
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -27,6 +43,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
+            monthManager.Save();
             cam.Stop();
             Application.Exit();
         }
@@ -38,14 +55,28 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             string response = await faceAPIRequester.RequestImageDataAsync(url);
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
-            UpdateUIAfterParsing(parseResult);
+            UpdateParsedData(parseResult);
         }
 
-        private void UpdateUIAfterParsing(FaceAPIParseResult parseResult)
+        private void UpdateParsedData(FaceAPIParseResult parseResult)
+        {
+            UpdateParsedDataUI(parseResult);
+
+            if (parseResult.Faces.Count > 0)
+            {
+                monthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
+            }
+
+            //if (parseResult.Faces.Count > 0)
+            //    calendarUpdater.SubmitChange(dateTimePicker.Value.Day,
+            //        parseResult.Faces.First().EmotionData.GetEmotion());
+        }
+
+        private void UpdateParsedDataUI(FaceAPIParseResult parseResult)
         {
             if (parseResult.Faces.Count > 0)
             {
-                operationResultLabel.Text = Logic.EmotionJudge.GetEmotion(parseResult.Faces[0].EmotionData).ToString();
+                operationResultLabel.Text = parseResult.Faces[0].EmotionData.GetEmotion().ToString();
             }
             else
             {
@@ -70,7 +101,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             handle.GetPicture(imageUploadPictureBox);
         }
 
-
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
             cam.Start();
@@ -93,7 +123,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             image.Dispose();
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
-            UpdateUIAfterParsing(parseResult);
+            UpdateParsedData(parseResult);
         }
 
         private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)
@@ -101,7 +131,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             string response = await faceAPIRequester.RequestImageDataAsync(imageUploadPictureBox.Image);
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
-            UpdateUIAfterParsing(parseResult);
+            UpdateParsedData(parseResult);
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,6 +152,16 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     Enabled = true;
                     faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
                 };
+        }
+
+        private void LeftButton_Click(object sender, EventArgs e)
+        {
+            dateTimePicker.Value = dateTimePicker.Value.AddDays(-1);
+        }
+
+        private void RightButton_Click(object sender, EventArgs e)
+        {
+            dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
     }
 }
