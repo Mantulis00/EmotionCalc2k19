@@ -2,7 +2,6 @@
 
 # Follow Mantulis00 follow 4 follow
 
-## Main rules :
 #No Flame
 #No Throw
 
