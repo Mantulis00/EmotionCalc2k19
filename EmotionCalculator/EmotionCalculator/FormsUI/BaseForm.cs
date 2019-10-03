@@ -113,14 +113,22 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitWebCamButton_Click(object sender, EventArgs e)
         {
-            Image image;
+            Image image = null;
+            string response;
+            if (cam.cameraIsRoling)
+            {
+                image = webcamPictureBox.Image;
+                image = handle.imageProcess(image);
 
-            image = webcamPictureBox.Image;
-            image = handle.imageProcess(image);
 
-            string response = await faceAPIRequester.RequestImageDataAsync(image);
-
-            image.Dispose();
+                response = await faceAPIRequester.RequestImageDataAsync(image);
+                image.Dispose();
+            }
+            else
+            {
+                 response = " ";
+            }
+           
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
             UpdateParsedData(parseResult);
