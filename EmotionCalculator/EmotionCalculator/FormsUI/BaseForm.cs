@@ -15,7 +15,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private CameraHandle cam;
         private ImageHandle handle;
         private FaceAPIRequester faceAPIRequester;
-        private CalendarUpdater calendarUpdater;
+        //private CalendarUpdater calendarUpdater;
 
         private MonthManager monthManager;
 
@@ -51,7 +51,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
             string url = imageUrlTextBox.Text;
-
+            if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
+            {
+                MessageBox.Show("Invalid URL");
+                return;    
+            }
             string response = await faceAPIRequester.RequestImageDataAsync(url);
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
@@ -99,16 +103,24 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             ImageHandle handle = new ImageHandle();
             handle.GetPicture(imageUploadPictureBox);
+            if (imageUploadPictureBox.Image != null)
+            {
+                submitUploadedImageButton.Enabled = true;
+            }
         }
 
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
             cam.Start();
+            camStartButton.Enabled = false;
+            camStopButton.Enabled = true;
         }
 
         private void CameraStopButton_Click(object sender, EventArgs e)
         {
             cam.Stop();
+            camStopButton.Enabled = false;
+            camStartButton.Enabled = true;
         }
 
         private async void SubmitWebCamButton_Click(object sender, EventArgs e)
