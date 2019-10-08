@@ -15,7 +15,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private CameraHandle cam;
         private ImageHandle handle;
         private FaceAPIRequester faceAPIRequester;
-        //private CalendarUpdater calendarUpdater;
 
         private MonthManager monthManager;
 
@@ -53,8 +52,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             string url = imageUrlTextBox.Text;
             if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
             {
-                MessageBox.Show("Invalid URL");
-                return;    
+                MessageBox.Show("Invalid URL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             string response = await faceAPIRequester.RequestImageDataAsync(url);
 
@@ -64,38 +63,22 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void UpdateParsedData(FaceAPIParseResult parseResult)
         {
-            UpdateParsedDataUI(parseResult);
+            DisplayErrors(parseResult);
 
             if (parseResult.Faces.Count > 0)
             {
                 monthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
             }
-
-            //if (parseResult.Faces.Count > 0)
-            //    calendarUpdater.SubmitChange(dateTimePicker.Value.Day,
-            //        parseResult.Faces.First().EmotionData.GetEmotion());
         }
 
-        private void UpdateParsedDataUI(FaceAPIParseResult parseResult)
+        private void DisplayErrors(FaceAPIParseResult parseResult)
         {
-            if (parseResult.Faces.Count > 0)
-            {
-                operationResultLabel.Text = parseResult.Faces[0].EmotionData.GetEmotion().ToString();
-            }
-            else
-            {
-                operationResultLabel.Text = "< . . . >";
-            }
-
-            faceCountTextLabel.Text = parseResult.Faces.Count.ToString();
-
             if (parseResult.Errors.Count > 0)
             {
-                errorTextLabel.Text = parseResult.Errors[0].Message;
-            }
-            else
-            {
-                errorTextLabel.Text = "< . . . >";
+                foreach (var error in parseResult.Errors)
+                {
+                    MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -139,9 +122,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
             else
             {
-                 response = " ";
+                response = string.Empty;
             }
-           
+
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
             UpdateParsedData(parseResult);
