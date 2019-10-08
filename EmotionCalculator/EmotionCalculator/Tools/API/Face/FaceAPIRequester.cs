@@ -7,11 +7,11 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
     class FaceAPIRequester
     {
-        internal FaceAPIKey apiKey { get; private set; }
+        internal FaceAPIKey ApiKey { get; private set; }
 
         internal FaceAPIRequester(FaceAPIKey faceAPIKey)
         {
-            apiKey = faceAPIKey;
+            ApiKey = faceAPIKey;
         }
 
         public async Task<string> RequestImageDataAsync(string imageURL)
@@ -37,10 +37,10 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
                 //API reference:
                 //https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236
 
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey.SubscriptionKey);
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", ApiKey.SubscriptionKey);
 
                 string requestParameters = "&returnFaceAttributes=emotion";
-                string requestURL = apiKey.APIEndpoint + "/detect?" + requestParameters;
+                string requestURL = ApiKey.APIEndpoint + "/detect?" + requestParameters;
 
                 using (ByteArrayContent content = new ByteArrayContent(imageByteArray))
                 {

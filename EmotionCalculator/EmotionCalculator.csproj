@@ -107,6 +107,7 @@
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\CameraHandle.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHandle.cs" />
+    <Compile Include="EmotionCalculator\Tools\Web\ConnectionChecker.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\Emotion.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParseResult.cs" />

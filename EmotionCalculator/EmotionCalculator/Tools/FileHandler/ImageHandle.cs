@@ -12,8 +12,10 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
         public ImageHandle()
         {
-            file = new OpenFileDialog();
-            file.Filter = "JPG(*.JPG)|*.jpg";
+            file = new OpenFileDialog
+            {
+                Filter = "JPG(*.JPG)|*.jpg"
+            };
         }
 
         public PictureBox GetPicture(PictureBox box)
@@ -29,7 +31,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
             return box;
         }
 
-        public Image imageProcess(Image img)
+        public Image ImageProcess(Image img)
         {
             string fileName = "tempImg.jpg";
             using (MemoryStream memory = new MemoryStream())

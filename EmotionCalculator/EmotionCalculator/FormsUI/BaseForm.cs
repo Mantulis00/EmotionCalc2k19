@@ -3,6 +3,7 @@ using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -50,6 +51,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
+            if (!ConnectionChecker.IsConnectedToInternet())
+            {
+                return;
+            }
             string url = imageUrlTextBox.Text;
             if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
             {
@@ -125,13 +130,22 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitWebCamButton_Click(object sender, EventArgs e)
         {
+            if (!ConnectionChecker.IsConnectedToInternet())
+            {
+                return;
+            }
             submitWebCamButton.Enabled = false;
-            Image image = null;
+            Image image;
             string response;
             if (cam.cameraIsRoling)
             {
                 image = webcamPictureBox.Image;
-                image = handle.imageProcess(image);
+                if (image == null)
+                {
+                    submitWebCamButton.Enabled = true;
+                    return;
+                }
+                image = handle.ImageProcess(image);
 
 
                 response = await faceAPIRequester.RequestImageDataAsync(image);
@@ -150,6 +164,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)
         {
+            if (!ConnectionChecker.IsConnectedToInternet())
+            {
+                return;
+            }
             string response = await faceAPIRequester.RequestImageDataAsync(imageUploadPictureBox.Image);
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
