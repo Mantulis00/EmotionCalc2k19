@@ -57,10 +57,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             monthManager.Save();
             cameraHandle.Stop();
+
+            Application.Exit();
         }
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
+            DisableButtons();
+
             string url = imageUrlTextBox.Text;
             if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
             {
@@ -71,6 +75,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             APIParseResult parseResult = await apiManager.GetAPIRequester().RequestParseResultAsync(url);
 
             UpdateParsedData(parseResult);
+
+            EnableButtons();
         }
 
         private void UpdateParsedData(APIParseResult parseResult)
@@ -112,20 +118,27 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
             cameraHandle.Start();
+
             camStartButton.Enabled = false;
+
+            submitWebCamButton.Enabled = true;
             camStopButton.Enabled = true;
         }
 
         private void CameraStopButton_Click(object sender, EventArgs e)
         {
             cameraHandle.Stop();
+
             camStopButton.Enabled = false;
+            submitWebCamButton.Enabled = false;
+
             camStartButton.Enabled = true;
         }
 
         private async void SubmitWebCamButton_Click(object sender, EventArgs e)
         {
-            submitWebCamButton.Enabled = false;
+            DisableButtons();
+
             Image image = null;
 
             if (cameraHandle.cameraRunning)
@@ -140,14 +153,42 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 UpdateParsedData(parseResult);
                 submitWebCamButton.Enabled = true;
             }
+
+            EnableButtons();
         }
 
         private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)
         {
+            DisableButtons();
+
             APIParseResult parseResult = await apiManager.GetAPIRequester()
                 .RequestParseResultAsync(imageUploadPictureBox.Image);
 
             UpdateParsedData(parseResult);
+
+            EnableButtons();
+        }
+
+        private void DisableButtons()
+        {
+            submitButton.Enabled = false;
+            submitWebCamButton.Enabled = false;
+            submitUploadedImageButton.Enabled = false;
+        }
+
+        private void EnableButtons()
+        {
+            submitButton.Enabled = true;
+
+            if (cameraHandle.cameraRunning)
+            {
+                submitWebCamButton.Enabled = true;
+            }
+
+            if (imageUploadPictureBox.Image != null)
+            {
+                submitUploadedImageButton.Enabled = true;
+            }
         }
 
         private void ConfigureAPIKeyToolStripMenuItem_Click(object sender, EventArgs e)

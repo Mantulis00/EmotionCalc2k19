@@ -122,7 +122,6 @@
     <Compile Include="EmotionCalculator\Tools\API\IAPIRequester.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EmotionCalculator\ConsoleUI\" />
     <Folder Include="EmotionCalculator\obj\Release\" />
     <Folder Include="Logic\" />
     <Folder Include="Tools\API\Face\" />

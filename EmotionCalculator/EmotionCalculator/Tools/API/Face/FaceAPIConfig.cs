@@ -64,7 +64,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
             }
             else
             {
-                throw new FileNotFoundException();
+                return new FaceAPIKey();
             }
         }
     }

@@ -18,14 +18,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             IAPIManager apiManager = new FaceAPIManager();
             Form baseWindow = new BaseForm(apiManager);
-
-            Application.Run(baseWindow);
+            baseWindow.Show();
 
             if (!FaceAPIConfig.ConfigExists())
             {
                 baseWindow.Enabled = false;
 
                 Form settingsWindow = apiManager.GetSettingsForm();
+                settingsWindow.BringToFront();
                 settingsWindow.Show();
 
                 settingsWindow.FormClosed += (o, ev) =>
@@ -33,6 +33,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     baseWindow.Enabled = true;
                 };
             }
+
+            Application.Run(baseWindow);
         }
     }
 }

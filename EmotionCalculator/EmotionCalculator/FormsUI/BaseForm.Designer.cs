@@ -146,6 +146,7 @@
             // 
             // submitWebCamButton
             // 
+            this.submitWebCamButton.Enabled = false;
             this.submitWebCamButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
             this.submitWebCamButton.Location = new System.Drawing.Point(636, 434);
             this.submitWebCamButton.Name = "submitWebCamButton";
