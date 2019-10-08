@@ -113,6 +113,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitWebCamButton_Click(object sender, EventArgs e)
         {
+            submitWebCamButton.Enabled = false;
             Image image = null;
             string response;
             if (cam.cameraIsRoling)
@@ -132,6 +133,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
             UpdateParsedData(parseResult);
+            submitWebCamButton.Enabled = true;
         }
 
         private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)

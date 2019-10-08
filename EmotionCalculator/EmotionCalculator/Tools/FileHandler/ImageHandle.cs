@@ -1,6 +1,7 @@
 ﻿
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
@@ -30,9 +31,19 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
         public Image imageProcess(Image img)
         {
-            img.Save("tempImg.jpg", ImageFormat.Jpeg);
+            string fileName = "tempImg.jpg";
+            using (MemoryStream memory = new MemoryStream())
+            {
+                using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite, FileShare.None))
+                {
+                    img.Save(memory, ImageFormat.Jpeg);
+                    byte[] bytes = memory.ToArray();
+                    fs.Write(bytes, 0, bytes.Length);
+                }
+            }
+            //img.Save("tempImg.jpg", ImageFormat.Jpeg);
 
-            Image returnedImage = Image.FromFile("tempImg.jpg");
+            Image returnedImage = Image.FromFile(fileName);
 
             return returnedImage;
         }
