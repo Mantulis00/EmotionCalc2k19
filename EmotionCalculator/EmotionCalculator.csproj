@@ -77,12 +77,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmotionCalculator\ConsoleUI\Program.cs" />
-    <Compile Include="EmotionCalculator\FormsUI\APISettingsForm.cs">
+    <Compile Include="EmotionCalculator\FormsUI\FaceAPISettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\APISettingsForm.Designer.cs">
-      <DependentUpon>APISettingsForm.cs</DependentUpon>
+    <Compile Include="EmotionCalculator\FormsUI\FaceAPISettingsForm.Designer.cs">
+      <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\BaseForm.cs">
       <SubType>Form</SubType>
@@ -100,17 +99,19 @@
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
     <Compile Include="EmotionCalculator\Logic\MonthManager.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\EmotionData.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\IAPIManager.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Containers\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIConfig.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParser.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\CameraHandle.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHandle.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\Emotion.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParseResult.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\FaceData.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Containers\Emotion.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\APIParseResult.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Containers\FaceData.cs" />
     <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -118,14 +119,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="EmotionCalculator\Tools\API\IAPIRequester.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="EmotionCalculator\ConsoleUI\" />
     <Folder Include="EmotionCalculator\obj\Release\" />
     <Folder Include="Logic\" />
+    <Folder Include="Tools\API\Face\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\APISettingsForm.resx">
-      <DependentUpon>APISettingsForm.cs</DependentUpon>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\FaceAPISettingsForm.resx">
+      <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>

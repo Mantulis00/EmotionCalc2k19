@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
-    partial class APISettingsForm
+    partial class FaceAPISettingsForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API;
+using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using System;
 using System.Windows.Forms;
 
@@ -15,16 +16,23 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            if (FaceAPIConfig.ConfigExists())
-            {
-                (new BaseForm()).Show();
-            }
-            else
-            {
-                (new APISettingsForm()).Show();
-            }
+            IAPIManager apiManager = new FaceAPIManager();
+            Form baseWindow = new BaseForm(apiManager);
 
-            Application.Run();
+            Application.Run(baseWindow);
+
+            if (!FaceAPIConfig.ConfigExists())
+            {
+                baseWindow.Enabled = false;
+
+                Form settingsWindow = apiManager.GetSettingsForm();
+                settingsWindow.Show();
+
+                settingsWindow.FormClosed += (o, ev) =>
+                {
+                    baseWindow.Enabled = true;
+                };
+            }
         }
     }
 }
