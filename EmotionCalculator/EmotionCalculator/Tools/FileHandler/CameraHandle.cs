@@ -41,14 +41,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
         private void NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            try
-            {
-                pic.Image = (Image)eventArgs.Frame.Clone();
-            }
-            catch (Exception e)
-            {
-                //
-            }
+            pic.Image = (Image)eventArgs.Frame.Clone();
         }
 
 

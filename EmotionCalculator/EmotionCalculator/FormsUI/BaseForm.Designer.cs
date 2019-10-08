@@ -193,6 +193,7 @@
             this.camStopButton.Text = "Stop WebCam";
             this.camStopButton.UseVisualStyleBackColor = true;
             this.camStopButton.Click += new System.EventHandler(this.CameraStopButton_Click);
+            this.camStopButton.Enabled = false;
             // 
             // imageUploadPictureBox
             // 
@@ -225,6 +226,7 @@
             this.submitUploadedImageButton.Text = "Submit";
             this.submitUploadedImageButton.UseVisualStyleBackColor = true;
             this.submitUploadedImageButton.Click += new System.EventHandler(this.SubmitUploadedImageButton_Click);
+            this.submitUploadedImageButton.Enabled = false;
             // 
             // imageList1
             // 
