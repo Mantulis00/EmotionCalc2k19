@@ -47,11 +47,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         }
 
 
-        private void CameraBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void StartButton_Click(object sender, EventArgs e)
         {
             cameraHandle.Start();
@@ -85,9 +80,5 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             showButtons(true, true, true);
         }
 
-        private void CameraForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

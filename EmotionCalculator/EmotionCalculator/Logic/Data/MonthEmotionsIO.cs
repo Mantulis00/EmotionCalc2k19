@@ -9,7 +9,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
         public MonthEmotions LoadMonth(int year, Month month)
         {
-            return new MonthEmotions(year, month);
+            //return new MonthEmotions(year, month);
 
             if (MonthSavedExists(year, month))
             {

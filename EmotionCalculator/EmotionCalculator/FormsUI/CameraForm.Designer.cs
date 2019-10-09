@@ -45,7 +45,6 @@
             this.CameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CameraBox.TabIndex = 0;
             this.CameraBox.TabStop = false;
-            this.CameraBox.Click += new System.EventHandler(this.CameraBox_Click);
             // 
             // startButton
             // 
@@ -89,7 +88,6 @@
             this.Name = "CameraForm";
             this.Text = "CameraForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CameraForm_FormClosing);
-            this.Load += new System.EventHandler(this.CameraForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).EndInit();
             this.ResumeLayout(false);
 

@@ -18,7 +18,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         BaseForm baseF;
 
-        ImageHandle Imagehandle;
         internal UrlForm(BaseForm baseF)
         {
             InitializeComponent();
@@ -26,10 +25,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             this.baseF = baseF;
         }
 
-        private  void UrlBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
@@ -60,14 +56,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         }
 
 
-        private void ImageBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UrlForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             baseF.showButtons(true, true, true);
         }
+
     }
 }

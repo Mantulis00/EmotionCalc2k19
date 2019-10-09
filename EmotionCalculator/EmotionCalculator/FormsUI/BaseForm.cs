@@ -144,5 +144,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             cameraButton.Enabled = cam;
         }
 
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

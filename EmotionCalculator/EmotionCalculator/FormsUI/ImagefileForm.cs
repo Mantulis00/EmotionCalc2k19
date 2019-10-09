@@ -31,10 +31,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             showButtons();
         }
 
-        private void CameraBox_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void showButtons(bool upload = true, bool submit = false)
         {
@@ -67,11 +63,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             showButtons(true, true);
         }
 
-
-        private void ImagefileForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void ImagefileForm_FormClosing(object sender, FormClosingEventArgs e)
         {

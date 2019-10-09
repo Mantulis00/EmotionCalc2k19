@@ -40,7 +40,6 @@
             this.UrlBox.Name = "UrlBox";
             this.UrlBox.Size = new System.Drawing.Size(601, 20);
             this.UrlBox.TabIndex = 0;
-            this.UrlBox.TextChanged += new System.EventHandler(this.UrlBox_TextChanged);
             // 
             // SubmitButton
             // 
@@ -60,7 +59,6 @@
             this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBox.TabIndex = 2;
             this.imageBox.TabStop = false;
-            this.imageBox.Click += new System.EventHandler(this.ImageBox_Click);
             // 
             // UrlForm
             // 

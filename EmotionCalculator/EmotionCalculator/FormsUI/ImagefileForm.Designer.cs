@@ -62,7 +62,6 @@
             this.uploadImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.uploadImageBox.TabIndex = 2;
             this.uploadImageBox.TabStop = false;
-            this.uploadImageBox.Click += new System.EventHandler(this.CameraBox_Click);
             // 
             // ImagefileForm
             // 
@@ -75,7 +74,6 @@
             this.Name = "ImagefileForm";
             this.Text = "ImagefileForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImagefileForm_FormClosing);
-            this.Load += new System.EventHandler(this.ImagefileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uploadImageBox)).EndInit();
             this.ResumeLayout(false);
 
