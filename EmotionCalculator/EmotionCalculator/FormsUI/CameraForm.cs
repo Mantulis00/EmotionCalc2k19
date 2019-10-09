@@ -19,8 +19,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private ImageHandle imageHandle;
 
         BaseForm baseF;
-       // private IAPIManager apiManager;
-      //  private MonthManager monthManager;
 
         internal CameraForm(BaseForm baseF)
         {
@@ -30,9 +28,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             imageHandle = new ImageHandle();
 
             this.baseF = baseF;
-        //    this.apiManager = apiManager;
-
-          //  this.monthManager = monthManager;
 
             showButtons();
         }
