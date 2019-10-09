@@ -17,13 +17,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private IAPIManager apiManager;
         private MonthManager monthManager;
-        internal UrlForm(IAPIManager apiManager, MonthManager monthManager)
+
+        BaseForm baseF;
+        internal UrlForm(BaseForm baseF)
         {
             InitializeComponent();
 
-            this.apiManager = apiManager;
-
-            this.monthManager = monthManager;
+            this.baseF = baseF;
         }
 
         private  void UrlBox_TextChanged(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             APIParseResult parseResult = await apiManager.GetAPIRequester().RequestParseResultAsync(url);
 
-            BaseForm.UpdateParsedData(parseResult, monthManager);
+            baseF.UpdateParsedData(parseResult);
         }
     }
 }

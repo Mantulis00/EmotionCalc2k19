@@ -21,15 +21,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private IAPIManager apiManager;
         private MonthManager monthManager;
 
-        internal ImagefileForm(IAPIManager apiManager, MonthManager monthManager)
+        private BaseForm baseF;
+
+        internal ImagefileForm(BaseForm baseF)
         {
             InitializeComponent();
 
             imageHandle = new ImageHandle();
 
-            this.apiManager = apiManager;
-
-            this.monthManager = monthManager;
+            this.baseF = baseF;
 
             showButtons();
         }
@@ -65,7 +65,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             APIParseResult parseResult = await apiManager.GetAPIRequester()
                 .RequestParseResultAsync(uploadImageBox.Image);
 
-            BaseForm.UpdateParsedData(parseResult, monthManager);
+            baseF.UpdateParsedData(parseResult);
 
             showButtons(true, true);
         }

@@ -18,19 +18,21 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private CameraHandle cameraHandle;
         private ImageHandle imageHandle;
 
-        private IAPIManager apiManager;
-        private MonthManager monthManager;
+        BaseForm baseF;
+       // private IAPIManager apiManager;
+      //  private MonthManager monthManager;
 
-        internal CameraForm(IAPIManager apiManager, MonthManager monthManager)
+        internal CameraForm(BaseForm baseF)
         {
             InitializeComponent();
 
             cameraHandle = new CameraHandle(CameraBox);
             imageHandle = new ImageHandle();
 
-            this.apiManager = apiManager;
+            this.baseF = baseF;
+        //    this.apiManager = apiManager;
 
-            this.monthManager = monthManager;
+          //  this.monthManager = monthManager;
 
             showButtons();
         }
@@ -77,11 +79,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 image = CameraBox.Image;
                 image = imageHandle.imageProcess(image);
 
-                APIParseResult parseResult = await apiManager.GetAPIRequester().RequestParseResultAsync(image);
+                APIParseResult parseResult = await baseF.apiManager.GetAPIRequester().RequestParseResultAsync(image);
 
                 image.Dispose();
 
-                BaseForm.UpdateParsedData(parseResult, monthManager);
+                baseF.UpdateParsedData(parseResult);
             
 
             showButtons(true, true, true);
