@@ -65,7 +65,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
         }
 
-
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ExitApplication();
@@ -125,11 +124,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
-        }
-
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

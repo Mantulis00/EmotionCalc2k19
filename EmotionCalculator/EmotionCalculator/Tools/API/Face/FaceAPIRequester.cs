@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using EmotionCalculator.EmotionCalculator.Tools.Web;
+using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -22,12 +23,8 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 
         public async Task<APIParseResult> RequestParseResultAsync(Image imageIn)
         {
-            using (var imgOut = new System.IO.MemoryStream())
-            {
-                imageIn.Save(imgOut, imageIn.RawFormat);
-                return await RequestParseResultAsync(imgOut.ToArray());
-            }
-
+            return await RequestParseResultAsync(
+                ImageTools.ImageToByteArray(imageIn));
         }
 
         public async Task<APIParseResult> RequestParseResultAsync(byte[] imageByteArray)

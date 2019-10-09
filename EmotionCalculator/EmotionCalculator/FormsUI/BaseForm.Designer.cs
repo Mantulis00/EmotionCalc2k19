@@ -57,7 +57,7 @@
             this.urlButton.Name = "urlButton";
             this.urlButton.Size = new System.Drawing.Size(151, 21);
             this.urlButton.TabIndex = 6;
-            this.urlButton.Text = "Upload by URL";
+            this.urlButton.Text = "Upload from URL";
             this.urlButton.UseVisualStyleBackColor = true;
             this.urlButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
@@ -105,7 +105,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(526, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 

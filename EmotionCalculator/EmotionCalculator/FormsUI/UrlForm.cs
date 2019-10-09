@@ -1,55 +1,72 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
+using static EmotionCalculator.EmotionCalculator.Tools.Web.ImageTools;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class UrlForm : Form
     {
+        BaseForm baseForm;
+        string savedUrl;
 
-        BaseForm baseF;
-
-        internal UrlForm(BaseForm baseF)
+        internal UrlForm(BaseForm baseForm)
         {
             InitializeComponent();
 
-            this.baseF = baseF;
+            this.baseForm = baseForm;
+            EnableButtons();
         }
 
-
+        private void EnableButtons(bool cancel = true, bool upload = true, bool submit = false)
+        {
+            cancelButton.Enabled = cancel;
+            uploadButton.Enabled = upload;
+            submitButton.Enabled = submit;
+        }
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
-            SubmitButton.Enabled = false;
+            EnableButtons(false, false, false);
 
-            string url = UrlBox.Text;
-            if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
+            if (imageBox.Image != null && savedUrl != null)
+            {
+                APIParseResult parseResult = await baseForm.APIManager
+                    .GetAPIRequester().RequestParseResultAsync(savedUrl);
+
+                baseForm.UpdateParsedData(parseResult);
+            }
+
+            Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            EnableButtons(false, false, false);
+
+            Close();
+        }
+
+        private async void UploadButton_Click(object sender, EventArgs e)
+        {
+            EnableButtons(false, false, false);
+
+            string url = urlBox.Text;
+
+            if (Tools.Web.ImageDownloader.CheckIfValidURL(url))
+            {
+                savedUrl = url;
+                imageBox.Image = ByteArrayToImage(
+                    await Tools.Web.ImageDownloader.GetByteArrayFromUrlAsync(url));
+
+                EnableButtons(true, true, true);
+            }
+            else
             {
                 MessageBox.Show("Invalid URL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SubmitButton.Enabled = true;
-                return;
+
+                EnableButtons();
             }
-            imageBox.Image = byteArrayToImage(await Tools.Web.ImageDownloader.GetByteArrayFromUrlAsync(url));
-
-            APIParseResult parseResult = await baseF.APIManager.GetAPIRequester().RequestParseResultAsync(url);
-            baseF.UpdateParsedData(parseResult);
-
-            SubmitButton.Enabled = true;
-        }
-
-        public Image byteArrayToImage(byte[] bytesArr)
-        {
-            using (System.IO.MemoryStream memstr = new System.IO.MemoryStream(bytesArr))
-            {
-                Image img = Image.FromStream(memstr);
-                return img;
-            }
-        }
-
-        private void UrlForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -9,20 +9,18 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     public partial class CameraForm : Form
     {
         private CameraHandle cameraHandle;
-        private ImageHandle imageHandle;
 
-        BaseForm baseF;
+        BaseForm baseForm;
 
-        internal CameraForm(BaseForm baseF)
+        internal CameraForm(BaseForm baseForm)
         {
             InitializeComponent();
 
-            cameraHandle = new CameraHandle(CameraBox);
-            imageHandle = new ImageHandle();
+            cameraHandle = new CameraHandle(cameraBox);
 
-            this.baseF = baseF;
+            this.baseForm = baseForm;
 
-            showButtons();
+            EnableButtons();
         }
 
         private void CameraForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -31,50 +29,56 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         }
 
 
-        private void showButtons(bool start = true, bool stop = false, bool submit = false)
+        private void EnableButtons(bool start = true, bool stop = false,
+            bool submit = false, bool cancel = true)
         {
             startButton.Enabled = start;
             stopButton.Enabled = stop;
             submitButton.Enabled = submit;
+            cancelButton.Enabled = cancel;
         }
 
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+            EnableButtons(false, false, false, false);
+
             cameraHandle.Start();
-            showButtons(false, true, true);
+
+            EnableButtons(false, true, true, true);
         }
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            cameraHandle.Stop();
-            showButtons();
+            EnableButtons(false, false, false, false);
 
+            cameraHandle.Stop();
+
+            EnableButtons();
         }
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
-            showButtons(false, false, false);
+            EnableButtons(false, false, false, false);
 
-            Image image = null;
+            if (cameraBox.Image != null)
+            {
+                Image image = cameraBox.Image;
+                image = ImageHandle.ProcessImage(image);
 
+                APIParseResult parseResult = await baseForm.APIManager.GetAPIRequester().RequestParseResultAsync(image);
 
-            image = CameraBox.Image;
-            image = imageHandle.imageProcess(image);
+                image.Dispose();
 
-            APIParseResult parseResult = await baseF.APIManager.GetAPIRequester().RequestParseResultAsync(image);
+                baseForm.UpdateParsedData(parseResult);
+            }
 
-            image.Dispose();
-
-            baseF.UpdateParsedData(parseResult);
-
-
-            showButtons(true, true, true);
+            Close();
         }
 
-        private void CameraForm_Load(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }
