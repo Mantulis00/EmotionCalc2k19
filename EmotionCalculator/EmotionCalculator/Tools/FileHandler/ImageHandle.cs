@@ -29,11 +29,10 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
             return box;
         }
 
-
-
-        public Image imageProcess(Image img)
+        public static Image ProcessImage(Image img)
         {
             string fileName = "tempImg.jpg";
+
             using (MemoryStream memory = new MemoryStream())
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite, FileShare.None))
@@ -43,7 +42,6 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
                     fs.Write(bytes, 0, bytes.Length);
                 }
             }
-            //img.Save("tempImg.jpg", ImageFormat.Jpeg);
 
             Image returnedImage = Image.FromFile(fileName);
 

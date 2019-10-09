@@ -7,50 +7,52 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class ImagefileForm : Form
     {
+        private BaseForm baseForm;
 
-
-        private BaseForm baseF;
-
-        internal ImagefileForm(BaseForm baseF)
+        internal ImagefileForm(BaseForm baseForm)
         {
             InitializeComponent();
 
-            this.baseF = baseF;
+            this.baseForm = baseForm;
 
-            showButtons();
+            EnableButtons();
         }
 
-
-        private void showButtons(bool upload = true, bool submit = false)
+        private void EnableButtons(bool upload = true, bool submit = false, bool cancel = true)
         {
             uploadButton.Enabled = upload;
             submitButton.Enabled = submit;
+            cancelButton.Enabled = cancel;
         }
 
         private void UploadButton_Click(object sender, EventArgs e)
         {
-            showButtons(false, false);
+            EnableButtons(false, false);
 
             ImageHandle handle = new ImageHandle();
             handle.GetPicture(uploadImageBox);
 
             if (uploadImageBox.Image != null)
-                showButtons(true, true);
+                EnableButtons(true, true);
             else
-                showButtons();
+                EnableButtons();
         }
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
-            showButtons(false, false);
+            EnableButtons(false, false, false);
 
-            APIParseResult parseResult = await baseF.APIManager.GetAPIRequester()
+            APIParseResult parseResult = await baseForm.APIManager.GetAPIRequester()
                 .RequestParseResultAsync(uploadImageBox.Image);
 
-            baseF.UpdateParsedData(parseResult);
+            baseForm.UpdateParsedData(parseResult);
 
-            showButtons(true, true);
+            Close();
         }
 
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
