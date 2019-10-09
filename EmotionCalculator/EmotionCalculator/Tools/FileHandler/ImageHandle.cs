@@ -29,6 +29,8 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
             return box;
         }
 
+
+
         public Image imageProcess(Image img)
         {
             string fileName = "tempImg.jpg";

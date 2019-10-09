@@ -91,7 +91,7 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // APISettingsForm
+            // FaceAPISettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +103,7 @@
             this.Controls.Add(this.subscriptionKeyLabel);
             this.Controls.Add(this.apiEndpointLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "APISettingsForm";
+            this.Name = "FaceAPISettingsForm";
             this.Text = "Configure faceapi.config";
             this.ResumeLayout(false);
             this.PerformLayout();

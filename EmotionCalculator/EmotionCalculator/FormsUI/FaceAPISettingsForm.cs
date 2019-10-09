@@ -41,5 +41,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             Close();
         }
+
     }
 }
