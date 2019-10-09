@@ -70,7 +70,6 @@
             this.Controls.Add(this.UrlBox);
             this.Name = "UrlForm";
             this.Text = "UrlForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UrlForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
