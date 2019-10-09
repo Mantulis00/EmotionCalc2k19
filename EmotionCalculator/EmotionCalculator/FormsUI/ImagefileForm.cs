@@ -14,6 +14,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             InitializeComponent();
 
             this.baseForm = baseForm;
+
+            EnableButtons();
         }
 
         private void EnableButtons(bool upload = true, bool submit = false, bool cancel = true)
