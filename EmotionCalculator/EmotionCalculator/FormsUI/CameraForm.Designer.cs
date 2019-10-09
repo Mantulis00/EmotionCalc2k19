@@ -88,6 +88,7 @@
             this.Name = "CameraForm";
             this.Text = "CameraForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CameraForm_FormClosing);
+            this.Load += new System.EventHandler(this.CameraForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).EndInit();
             this.ResumeLayout(false);
 

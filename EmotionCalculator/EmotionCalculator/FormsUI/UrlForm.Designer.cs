@@ -70,6 +70,7 @@
             this.Controls.Add(this.UrlBox);
             this.Name = "UrlForm";
             this.Text = "UrlForm";
+            this.Load += new System.EventHandler(this.UrlForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

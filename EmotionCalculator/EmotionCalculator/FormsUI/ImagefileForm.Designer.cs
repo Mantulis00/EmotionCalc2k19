@@ -73,6 +73,7 @@
             this.Controls.Add(this.uploadButton);
             this.Name = "ImagefileForm";
             this.Text = "ImagefileForm";
+//            this.Load += new System.EventHandler(this.ImagefileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uploadImageBox)).EndInit();
             this.ResumeLayout(false);
 

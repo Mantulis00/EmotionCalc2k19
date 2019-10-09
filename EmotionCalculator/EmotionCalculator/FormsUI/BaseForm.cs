@@ -126,5 +126,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

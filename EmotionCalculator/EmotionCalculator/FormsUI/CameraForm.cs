@@ -72,5 +72,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             showButtons(true, true, true);
         }
 
+        private void CameraForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

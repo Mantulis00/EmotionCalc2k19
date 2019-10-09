@@ -42,19 +42,5 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             Close();
         }
 
-        private void FaceAPISettingsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ApiEndpointTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SubscriptionKeyTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

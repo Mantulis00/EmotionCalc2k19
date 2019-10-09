@@ -8,15 +8,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     public partial class ImagefileForm : Form
     {
 
-        private ImageHandle imageHandle;
 
         private BaseForm baseF;
 
         internal ImagefileForm(BaseForm baseF)
         {
             InitializeComponent();
-
-            imageHandle = new ImageHandle();
 
             this.baseF = baseF;
 
@@ -54,5 +51,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             showButtons(true, true);
         }
+
     }
 }

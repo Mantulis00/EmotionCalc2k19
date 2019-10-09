@@ -46,5 +46,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 return img;
             }
         }
+
+        private void UrlForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
