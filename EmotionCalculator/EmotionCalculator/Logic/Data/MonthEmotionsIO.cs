@@ -9,6 +9,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
         public MonthEmotions LoadMonth(int year, Month month)
         {
+            return new MonthEmotions(year, month);
+
             if (MonthSavedExists(year, month))
             {
                 string directory = GetFullDirectory(year, month);
@@ -31,6 +33,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
             using (FileStream fs = new FileStream(directory, FileMode.Create))
             {
+
+                
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(fs, monthEmotions);
             }

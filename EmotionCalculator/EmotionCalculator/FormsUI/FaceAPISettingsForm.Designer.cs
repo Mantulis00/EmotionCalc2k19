@@ -62,6 +62,7 @@
             this.apiEndpointTextBox.Name = "apiEndpointTextBox";
             this.apiEndpointTextBox.Size = new System.Drawing.Size(374, 20);
             this.apiEndpointTextBox.TabIndex = 2;
+            this.apiEndpointTextBox.TextChanged += new System.EventHandler(this.ApiEndpointTextBox_TextChanged);
             // 
             // subscriptionKeyTextBox
             // 
@@ -70,6 +71,7 @@
             this.subscriptionKeyTextBox.PasswordChar = '*';
             this.subscriptionKeyTextBox.Size = new System.Drawing.Size(374, 20);
             this.subscriptionKeyTextBox.TabIndex = 3;
+            this.subscriptionKeyTextBox.TextChanged += new System.EventHandler(this.SubscriptionKeyTextBox_TextChanged);
             // 
             // submitButton
             // 
@@ -91,7 +93,7 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // APISettingsForm
+            // FaceAPISettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,8 +105,9 @@
             this.Controls.Add(this.subscriptionKeyLabel);
             this.Controls.Add(this.apiEndpointLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "APISettingsForm";
+            this.Name = "FaceAPISettingsForm";
             this.Text = "Configure faceapi.config";
+            this.Load += new System.EventHandler(this.FaceAPISettingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

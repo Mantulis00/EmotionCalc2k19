@@ -75,6 +75,7 @@
             this.imageUrlTextBox.Name = "imageUrlTextBox";
             this.imageUrlTextBox.Size = new System.Drawing.Size(291, 20);
             this.imageUrlTextBox.TabIndex = 4;
+            this.imageUrlTextBox.TextChanged += new System.EventHandler(this.ImageUrlTextBox_TextChanged);
             // 
             // submitButton
             // 
@@ -95,6 +96,7 @@
             this.webcamPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.webcamPictureBox.TabIndex = 11;
             this.webcamPictureBox.TabStop = false;
+            this.webcamPictureBox.Click += new System.EventHandler(this.WebcamPictureBox_Click);
             // 
             // openFileDialog1
             // 
@@ -143,6 +145,7 @@
             this.imageUploadPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageUploadPictureBox.TabIndex = 15;
             this.imageUploadPictureBox.TabStop = false;
+            this.imageUploadPictureBox.Click += new System.EventHandler(this.ImageUploadPictureBox_Click);
             // 
             // submitWebCamButton
             // 
@@ -186,6 +189,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(723, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -198,7 +202,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -209,11 +213,12 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
             // configureAPIKeyToolStripMenuItem
             // 
             this.configureAPIKeyToolStripMenuItem.Name = "configureAPIKeyToolStripMenuItem";
-            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configureAPIKeyToolStripMenuItem.Text = "Configure API key";
             this.configureAPIKeyToolStripMenuItem.Click += new System.EventHandler(this.ConfigureAPIKeyToolStripMenuItem_Click);
             // 
@@ -254,6 +259,7 @@
             this.calendarBackground.Size = new System.Drawing.Size(456, 319);
             this.calendarBackground.TabIndex = 20;
             this.calendarBackground.TabStop = false;
+            this.calendarBackground.Click += new System.EventHandler(this.CalendarBackground_Click);
             // 
             // leftButton
             // 
@@ -303,6 +309,7 @@
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
+            this.Load += new System.EventHandler(this.BaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);

@@ -63,7 +63,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
-            DisableButtons();
+            /*DisableButtons();
 
             string url = imageUrlTextBox.Text;
             if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
@@ -74,12 +74,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             APIParseResult parseResult = await apiManager.GetAPIRequester().RequestParseResultAsync(url);
 
-            UpdateParsedData(parseResult);
+           // UpdateParsedData(parseResult,);
 
-            EnableButtons();
+            EnableButtons();*/
+
+            Form url = new UrlForm(apiManager, monthManager);
+            url.Show();
         }
 
-        private void UpdateParsedData(APIParseResult parseResult)
+        internal static void UpdateParsedData(APIParseResult parseResult, MonthManager monthManager)
         {
             DisplayErrors(parseResult);
 
@@ -89,7 +92,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
         }
 
-        private void DisplayErrors(APIParseResult parseResult)
+        internal static void DisplayErrors(APIParseResult parseResult)
         {
             if (parseResult.Faces.Count == 0)
             {
@@ -107,22 +110,29 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
+            /*submitButton.Enabled = false;
+
             ImageHandle handle = new ImageHandle();
             handle.GetPicture(imageUploadPictureBox);
-            if (imageUploadPictureBox.Image != null)
-            {
-                submitUploadedImageButton.Enabled = true;
-            }
+
+            submitButton.Enabled = true;*/
+
+            Form img = new ImagefileForm(apiManager, monthManager);
+            img.Show();
+
         }
 
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
+            /*
             cameraHandle.Start();
-
             camStartButton.Enabled = false;
-
             submitWebCamButton.Enabled = true;
             camStopButton.Enabled = true;
+            */
+
+            Form cam = new CameraForm( apiManager,  monthManager);
+            cam.Show();
         }
 
         private void CameraStopButton_Click(object sender, EventArgs e)
@@ -150,7 +160,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
                 image.Dispose();
 
-                UpdateParsedData(parseResult);
+              //  UpdateParsedData(parseResult);
                 submitWebCamButton.Enabled = true;
             }
 
@@ -164,7 +174,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             APIParseResult parseResult = await apiManager.GetAPIRequester()
                 .RequestParseResultAsync(imageUploadPictureBox.Image);
 
-            UpdateParsedData(parseResult);
+          //  UpdateParsedData(parseResult);
 
             EnableButtons();
         }
@@ -214,6 +224,41 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
+        }
+
+        private void EditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WebcamPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImageUploadPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CalendarBackground_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void ImageUrlTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
