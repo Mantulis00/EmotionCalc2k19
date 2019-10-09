@@ -1,6 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Face;
 using System;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -34,12 +35,22 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            FaceAPIKey updatedKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
+            Regex regexmach = new Regex("cognitiveservices.azure.com/face/v1.0");
+            if (regexmach.IsMatch(apiEndpointTextBox.Text))
+            {
+                FaceAPIKey updatedKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
 
-            faceAPIRequester.apiKey = updatedKey;
-            FaceAPIConfig.SaveConfig(updatedKey);
+                faceAPIRequester.apiKey = updatedKey;
+                FaceAPIConfig.SaveConfig(updatedKey);
 
-            Close();
+                 Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Add valid API Endpoint");
+            }
+            
         }
 
     }
