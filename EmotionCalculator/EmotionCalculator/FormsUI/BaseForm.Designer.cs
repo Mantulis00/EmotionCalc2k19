@@ -70,7 +70,7 @@
             this.imageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.imageButton.Location = new System.Drawing.Point(170, 29);
             this.imageButton.Name = "imageButton";
-            this.imageButton.Size = new System.Drawing.Size(167, 21);
+            this.imageButton.Size = new System.Drawing.Size(177, 21);
             this.imageButton.TabIndex = 12;
             this.imageButton.Text = "Upload from file";
             this.imageButton.UseVisualStyleBackColor = true;
@@ -78,10 +78,10 @@
             // 
             // cameraButton
             // 
-            this.cameraButton.Font = new System.Drawing.Font("Lucida Bright", 8.25F);
-            this.cameraButton.Location = new System.Drawing.Point(343, 29);
+            this.cameraButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cameraButton.Location = new System.Drawing.Point(353, 29);
             this.cameraButton.Name = "cameraButton";
-            this.cameraButton.Size = new System.Drawing.Size(171, 21);
+            this.cameraButton.Size = new System.Drawing.Size(161, 21);
             this.cameraButton.TabIndex = 13;
             this.cameraButton.Text = "Upload from webcam";
             this.cameraButton.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 

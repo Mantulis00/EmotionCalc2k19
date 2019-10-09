@@ -31,24 +31,25 @@
             this.uploadButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.uploadImageBox = new System.Windows.Forms.PictureBox();
+            this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uploadImageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // uploadButton
             // 
-            this.uploadButton.Location = new System.Drawing.Point(583, 290);
+            this.uploadButton.Location = new System.Drawing.Point(125, 296);
             this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(186, 51);
+            this.uploadButton.Size = new System.Drawing.Size(115, 29);
             this.uploadButton.TabIndex = 0;
-            this.uploadButton.Text = "Upload";
+            this.uploadButton.Text = "Upload File";
             this.uploadButton.UseVisualStyleBackColor = true;
             this.uploadButton.Click += new System.EventHandler(this.UploadButton_Click);
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(583, 369);
+            this.submitButton.Location = new System.Drawing.Point(246, 296);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(186, 50);
+            this.submitButton.Size = new System.Drawing.Size(107, 29);
             this.submitButton.TabIndex = 1;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -56,24 +57,36 @@
             // 
             // uploadImageBox
             // 
-            this.uploadImageBox.Location = new System.Drawing.Point(34, 38);
+            this.uploadImageBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.uploadImageBox.Location = new System.Drawing.Point(12, 12);
             this.uploadImageBox.Name = "uploadImageBox";
-            this.uploadImageBox.Size = new System.Drawing.Size(513, 381);
+            this.uploadImageBox.Size = new System.Drawing.Size(341, 278);
             this.uploadImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.uploadImageBox.TabIndex = 2;
             this.uploadImageBox.TabStop = false;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(12, 296);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(107, 29);
+            this.cancelButton.TabIndex = 3;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // ImagefileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(365, 337);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.uploadImageBox);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.uploadButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ImagefileForm";
-            this.Text = "ImagefileForm";
-//            this.Load += new System.EventHandler(this.ImagefileForm_Load);
+            this.Text = "Upload Image From File";
             ((System.ComponentModel.ISupportInitialize)(this.uploadImageBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -84,5 +97,6 @@
         private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.PictureBox uploadImageBox;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
