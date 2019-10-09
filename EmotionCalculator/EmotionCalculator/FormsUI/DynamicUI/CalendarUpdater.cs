@@ -10,8 +10,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 {
     class CalendarUpdater : IMonthUpdatable
     {
-        internal static readonly Color defaultCellColor = Color.FromArgb(100, 255, 255, 255);
-        internal static readonly Color currentMonthColor = Color.FromArgb(220, 255, 255, 255);
+        internal static readonly Color defaultCellColor = Color.FromArgb(60, 255, 255, 255);
+        internal static readonly Color currentMonthColor = Color.FromArgb(180, 255, 255, 255);
         internal static readonly Color currentDayColor = Color.FromArgb(220, 255, 110, 110);
 
         private IReadOnlyList<PictureBox> cells;

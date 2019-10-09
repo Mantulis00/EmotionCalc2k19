@@ -30,7 +30,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             MonthManager = new MonthManager(
                new MonthEmotionsIO(),
-               new CalendarUpdater(calendarBackground), dateTimePicker.Value);
+               new CalendarUpdater(calendarBackground),
+               dateTimePicker.Value);
 
             dateTimePicker.ValueChanged +=
                 (o, e) =>
