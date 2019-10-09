@@ -1,4 +1,4 @@
-﻿namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
+﻿namespace EmotionCalculator.EmotionCalculator.Tools.API.Containers
 {
     enum Emotion
     {

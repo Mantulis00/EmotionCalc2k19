@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
+namespace EmotionCalculator.EmotionCalculator.Tools.API.Containers
 {
     class EmotionData
     {

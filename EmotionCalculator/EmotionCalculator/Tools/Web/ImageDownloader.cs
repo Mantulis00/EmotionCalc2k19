@@ -27,8 +27,13 @@ namespace EmotionCalculator.EmotionCalculator.Tools.Web
             }
             catch (System.UriFormatException)
             {
-                return false; 
+                return false;
             }
+            catch (System.NotSupportedException)
+            {
+                return false;
+            }
+
             request.Method = "HEAD";
             try
             {

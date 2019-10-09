@@ -12,7 +12,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
         private FilterInfoCollection cameraHW;
         private PictureBox pic;
 
-        public bool cameraIsRoling { get; set; }
+        public bool cameraRunning { get; set; }
 
         public CameraHandle(PictureBox pic)
         {
@@ -22,15 +22,15 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
 
             this.pic = pic;
-            cameraIsRoling = false;
+            cameraRunning = false;
         }
 
         public void Start()
         {
-            if (!cameraIsRoling)
+            if (!cameraRunning)
             {
                 camera.Start();
-                cameraIsRoling = true;
+                cameraRunning = true;
             }
             else
             {
@@ -47,10 +47,10 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
         public void Stop()
         {
-            if (cameraIsRoling)
+            if (cameraRunning)
             {
                 camera.Stop();
-                cameraIsRoling = false;
+                cameraRunning = false;
 
                 pic.Image = null;
             }

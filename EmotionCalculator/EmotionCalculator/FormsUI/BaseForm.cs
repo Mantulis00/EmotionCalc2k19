@@ -1,7 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
-using EmotionCalculator.EmotionCalculator.Tools.API.Face;
+using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
 using System.Drawing;
@@ -12,21 +12,28 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        private CameraHandle cam;
-        private ImageHandle handle;
-        private FaceAPIRequester faceAPIRequester;
-        //private CalendarUpdater calendarUpdater;
+        private CameraHandle cameraHandle;
+        private ImageHandle imageHandle;
 
         private MonthManager monthManager;
 
-        internal BaseForm()
-        {
-            InitializeComponent();
-            cam = new CameraHandle(webcamPictureBox);
-            handle = new ImageHandle();
-            faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
+        private IAPIManager apiManager;
 
-            monthManager = new MonthManager(new MonthEmotionsIO(),
+        internal BaseForm(IAPIManager apiManager)
+        {
+            //UI
+            InitializeComponent();
+            cameraHandle = new CameraHandle(webcamPictureBox);
+            imageHandle = new ImageHandle();
+
+
+            //API
+            this.apiManager = apiManager;
+
+
+            //UI <-> API
+            monthManager = new MonthManager(
+                new MonthEmotionsIO(),
                 new CalendarUpdater(calendarBackground), dateTimePicker.Value);
 
             dateTimePicker.ValueChanged +=
@@ -41,61 +48,60 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             ExitApplication();
         }
 
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExitApplication();
+        }
+
         private void ExitApplication()
         {
             monthManager.Save();
-            cam.Stop();
+            cameraHandle.Stop();
+
             Application.Exit();
         }
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
+            DisableButtons();
+
             string url = imageUrlTextBox.Text;
             if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
             {
-                MessageBox.Show("Invalid URL");
-                return;    
+                MessageBox.Show("Invalid URL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            string response = await faceAPIRequester.RequestImageDataAsync(url);
 
-            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
+            APIParseResult parseResult = await apiManager.GetAPIRequester().RequestParseResultAsync(url);
+
             UpdateParsedData(parseResult);
+
+            EnableButtons();
         }
 
-        private void UpdateParsedData(FaceAPIParseResult parseResult)
+        private void UpdateParsedData(APIParseResult parseResult)
         {
-            UpdateParsedDataUI(parseResult);
+            DisplayErrors(parseResult);
 
             if (parseResult.Faces.Count > 0)
             {
                 monthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
             }
-
-            //if (parseResult.Faces.Count > 0)
-            //    calendarUpdater.SubmitChange(dateTimePicker.Value.Day,
-            //        parseResult.Faces.First().EmotionData.GetEmotion());
         }
 
-        private void UpdateParsedDataUI(FaceAPIParseResult parseResult)
+        private void DisplayErrors(APIParseResult parseResult)
         {
-            if (parseResult.Faces.Count > 0)
+            if (parseResult.Faces.Count == 0)
             {
-                operationResultLabel.Text = parseResult.Faces[0].EmotionData.GetEmotion().ToString();
+                MessageBox.Show("No faces found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                operationResultLabel.Text = "< . . . >";
-            }
-
-            faceCountTextLabel.Text = parseResult.Faces.Count.ToString();
 
             if (parseResult.Errors.Count > 0)
             {
-                errorTextLabel.Text = parseResult.Errors[0].Message;
-            }
-            else
-            {
-                errorTextLabel.Text = "< . . . >";
+                foreach (var error in parseResult.Errors)
+                {
+                    MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -111,71 +117,95 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
-            cam.Start();
+            cameraHandle.Start();
+
             camStartButton.Enabled = false;
+
+            submitWebCamButton.Enabled = true;
             camStopButton.Enabled = true;
         }
 
         private void CameraStopButton_Click(object sender, EventArgs e)
         {
-            cam.Stop();
+            cameraHandle.Stop();
+
             camStopButton.Enabled = false;
+            submitWebCamButton.Enabled = false;
+
             camStartButton.Enabled = true;
         }
 
         private async void SubmitWebCamButton_Click(object sender, EventArgs e)
         {
-            submitWebCamButton.Enabled = false;
+            DisableButtons();
+
             Image image = null;
-            string response;
-            if (cam.cameraIsRoling)
+
+            if (cameraHandle.cameraRunning)
             {
                 image = webcamPictureBox.Image;
-                image = handle.imageProcess(image);
+                image = imageHandle.imageProcess(image);
 
+                APIParseResult parseResult = await apiManager.GetAPIRequester().RequestParseResultAsync(image);
 
-                response = await faceAPIRequester.RequestImageDataAsync(image);
                 image.Dispose();
-            }
-            else
-            {
-                 response = " ";
-            }
-           
 
-            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
-            UpdateParsedData(parseResult);
-            submitWebCamButton.Enabled = true;
+                UpdateParsedData(parseResult);
+                submitWebCamButton.Enabled = true;
+            }
+
+            EnableButtons();
         }
 
         private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)
         {
-            string response = await faceAPIRequester.RequestImageDataAsync(imageUploadPictureBox.Image);
+            DisableButtons();
 
-            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
+            APIParseResult parseResult = await apiManager.GetAPIRequester()
+                .RequestParseResultAsync(imageUploadPictureBox.Image);
+
             UpdateParsedData(parseResult);
+
+            EnableButtons();
         }
 
-        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DisableButtons()
         {
-            ExitApplication();
+            submitButton.Enabled = false;
+            submitWebCamButton.Enabled = false;
+            submitUploadedImageButton.Enabled = false;
+        }
+
+        private void EnableButtons()
+        {
+            submitButton.Enabled = true;
+
+            if (cameraHandle.cameraRunning)
+            {
+                submitWebCamButton.Enabled = true;
+            }
+
+            if (imageUploadPictureBox.Image != null)
+            {
+                submitUploadedImageButton.Enabled = true;
+            }
         }
 
         private void ConfigureAPIKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Enabled = false;
 
-            Form apiForm = new APISettingsForm(FaceAPIConfig.LoadConfig());
-            apiForm.Show();
+            Form apiKeyForm = apiManager.GetSettingsForm();
+            apiKeyForm.Show();
 
-            apiForm.FormClosed +=
+            apiKeyForm.FormClosed +=
                 (o, ev) =>
                 {
                     Enabled = true;
-                    faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
                 };
         }
 
+        //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(-1);
