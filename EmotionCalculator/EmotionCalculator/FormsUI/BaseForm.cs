@@ -148,5 +148,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
 
         }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

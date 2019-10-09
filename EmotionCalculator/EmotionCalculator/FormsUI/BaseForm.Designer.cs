@@ -53,11 +53,11 @@
             // 
             // urlButton
             // 
-            this.urlButton.Location = new System.Drawing.Point(548, 235);
+            this.urlButton.Location = new System.Drawing.Point(13, 29);
             this.urlButton.Name = "urlButton";
-            this.urlButton.Size = new System.Drawing.Size(163, 55);
+            this.urlButton.Size = new System.Drawing.Size(151, 21);
             this.urlButton.TabIndex = 6;
-            this.urlButton.Text = "URL";
+            this.urlButton.Text = "Upload by URL";
             this.urlButton.UseVisualStyleBackColor = true;
             this.urlButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
@@ -67,23 +67,23 @@
             // 
             // imageButton
             // 
-            this.imageButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.imageButton.Location = new System.Drawing.Point(548, 318);
+            this.imageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.imageButton.Location = new System.Drawing.Point(170, 29);
             this.imageButton.Name = "imageButton";
-            this.imageButton.Size = new System.Drawing.Size(163, 55);
+            this.imageButton.Size = new System.Drawing.Size(167, 21);
             this.imageButton.TabIndex = 12;
-            this.imageButton.Text = "File IMG";
+            this.imageButton.Text = "Upload from file";
             this.imageButton.UseVisualStyleBackColor = true;
             this.imageButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
             // cameraButton
             // 
-            this.cameraButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.cameraButton.Location = new System.Drawing.Point(548, 408);
+            this.cameraButton.Font = new System.Drawing.Font("Lucida Bright", 8.25F);
+            this.cameraButton.Location = new System.Drawing.Point(343, 29);
             this.cameraButton.Name = "cameraButton";
-            this.cameraButton.Size = new System.Drawing.Size(163, 60);
+            this.cameraButton.Size = new System.Drawing.Size(171, 21);
             this.cameraButton.TabIndex = 13;
-            this.cameraButton.Text = "Webcam";
+            this.cameraButton.Text = "Upload from webcam";
             this.cameraButton.UseVisualStyleBackColor = true;
             this.cameraButton.Click += new System.EventHandler(this.CameraStartButton_Click);
             // 
@@ -102,9 +102,10 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(723, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(526, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -117,7 +118,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -158,9 +159,9 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(139, 51);
+            this.dateTimePicker.Location = new System.Drawing.Point(139, 56);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(376, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(375, 20);
             this.dateTimePicker.TabIndex = 19;
             // 
             // calendarBackground
@@ -168,7 +169,7 @@
             this.calendarBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.calendarBackground.Image = ((System.Drawing.Image)(resources.GetObject("calendarBackground.Image")));
             this.calendarBackground.InitialImage = null;
-            this.calendarBackground.Location = new System.Drawing.Point(12, 77);
+            this.calendarBackground.Location = new System.Drawing.Point(12, 82);
             this.calendarBackground.Name = "calendarBackground";
             this.calendarBackground.Size = new System.Drawing.Size(503, 391);
             this.calendarBackground.TabIndex = 20;
@@ -177,7 +178,7 @@
             // leftButton
             // 
             this.leftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.leftButton.Location = new System.Drawing.Point(13, 51);
+            this.leftButton.Location = new System.Drawing.Point(13, 56);
             this.leftButton.Name = "leftButton";
             this.leftButton.Size = new System.Drawing.Size(57, 20);
             this.leftButton.TabIndex = 21;
@@ -188,7 +189,7 @@
             // rightButton
             // 
             this.rightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.rightButton.Location = new System.Drawing.Point(76, 51);
+            this.rightButton.Location = new System.Drawing.Point(76, 56);
             this.rightButton.Name = "rightButton";
             this.rightButton.Size = new System.Drawing.Size(57, 20);
             this.rightButton.TabIndex = 22;
@@ -200,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 507);
+            this.ClientSize = new System.Drawing.Size(526, 482);
             this.Controls.Add(this.rightButton);
             this.Controls.Add(this.leftButton);
             this.Controls.Add(this.calendarBackground);
