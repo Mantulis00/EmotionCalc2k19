@@ -89,14 +89,16 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private  void SubmitButton_Click(object sender, EventArgs e)
         {
-             Form url =  new UrlForm(this);
-              url.Show();
+            showButtons();
+            Form url =  new UrlForm(this);
+            url.Show();
         }
 
 
 
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
+            showButtons();
             Form img = new ImagefileForm(this);
             img.Show();
 
@@ -104,6 +106,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
+            showButtons();
             Form cam = new CameraForm(this);
             cam.Show();
         }
@@ -134,6 +137,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
+        public void showButtons(bool url = false, bool img = false, bool cam = false)
+        {
+            urlButton.Enabled = url;
+            imageButton.Enabled = img;
+            cameraButton.Enabled = cam;
+        }
 
     }
 }

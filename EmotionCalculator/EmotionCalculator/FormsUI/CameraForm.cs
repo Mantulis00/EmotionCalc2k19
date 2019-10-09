@@ -34,7 +34,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void CameraForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-                cameraHandle.Stop();
+            cameraHandle.Stop();
+            baseF.showButtons(true, true, true);
         }
 
 

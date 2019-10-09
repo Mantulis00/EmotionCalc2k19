@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
-            this.submitButton = new System.Windows.Forms.Button();
+            this.urlButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.buttonUpload = new System.Windows.Forms.Button();
-            this.camStartButton = new System.Windows.Forms.Button();
+            this.imageButton = new System.Windows.Forms.Button();
+            this.cameraButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,41 +51,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
             this.SuspendLayout();
             // 
-            // submitButton
+            // urlButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(548, 235);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(163, 55);
-            this.submitButton.TabIndex = 6;
-            this.submitButton.Text = "URL";
-            this.submitButton.UseVisualStyleBackColor = true;
-            this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
+            this.urlButton.Location = new System.Drawing.Point(548, 235);
+            this.urlButton.Name = "urlButton";
+            this.urlButton.Size = new System.Drawing.Size(163, 55);
+            this.urlButton.TabIndex = 6;
+            this.urlButton.Text = "URL";
+            this.urlButton.UseVisualStyleBackColor = true;
+            this.urlButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // buttonUpload
+            // imageButton
             // 
-            this.buttonUpload.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.buttonUpload.Location = new System.Drawing.Point(548, 318);
-            this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.Size = new System.Drawing.Size(163, 55);
-            this.buttonUpload.TabIndex = 12;
-            this.buttonUpload.Text = "File IMG";
-            this.buttonUpload.UseVisualStyleBackColor = true;
-            this.buttonUpload.Click += new System.EventHandler(this.OpenFileButton_Click);
+            this.imageButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
+            this.imageButton.Location = new System.Drawing.Point(548, 318);
+            this.imageButton.Name = "imageButton";
+            this.imageButton.Size = new System.Drawing.Size(163, 55);
+            this.imageButton.TabIndex = 12;
+            this.imageButton.Text = "File IMG";
+            this.imageButton.UseVisualStyleBackColor = true;
+            this.imageButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
-            // camStartButton
+            // cameraButton
             // 
-            this.camStartButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.camStartButton.Location = new System.Drawing.Point(548, 408);
-            this.camStartButton.Name = "camStartButton";
-            this.camStartButton.Size = new System.Drawing.Size(163, 60);
-            this.camStartButton.TabIndex = 13;
-            this.camStartButton.Text = "Webcam";
-            this.camStartButton.UseVisualStyleBackColor = true;
-            this.camStartButton.Click += new System.EventHandler(this.CameraStartButton_Click);
+            this.cameraButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
+            this.cameraButton.Location = new System.Drawing.Point(548, 408);
+            this.cameraButton.Name = "cameraButton";
+            this.cameraButton.Size = new System.Drawing.Size(163, 60);
+            this.cameraButton.TabIndex = 13;
+            this.cameraButton.Text = "Webcam";
+            this.cameraButton.UseVisualStyleBackColor = true;
+            this.cameraButton.Click += new System.EventHandler(this.CameraStartButton_Click);
             // 
             // imageList1
             // 
@@ -105,7 +105,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(723, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
-
             // 
             // fileToolStripMenuItem
             // 
@@ -129,7 +128,6 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
-
             // 
             // configureAPIKeyToolStripMenuItem
             // 
@@ -175,7 +173,6 @@
             this.calendarBackground.Size = new System.Drawing.Size(503, 391);
             this.calendarBackground.TabIndex = 20;
             this.calendarBackground.TabStop = false;
-
             // 
             // leftButton
             // 
@@ -208,9 +205,9 @@
             this.Controls.Add(this.leftButton);
             this.Controls.Add(this.calendarBackground);
             this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.camStartButton);
-            this.Controls.Add(this.buttonUpload);
-            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.cameraButton);
+            this.Controls.Add(this.imageButton);
+            this.Controls.Add(this.urlButton);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -218,7 +215,6 @@
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
-
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).EndInit();
@@ -228,10 +224,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button urlButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button buttonUpload;
-        private System.Windows.Forms.Button camStartButton;
+        private System.Windows.Forms.Button imageButton;
+        private System.Windows.Forms.Button cameraButton;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

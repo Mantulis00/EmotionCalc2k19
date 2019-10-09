@@ -72,5 +72,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
 
         }
+
+        private void ImagefileForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            baseF.showButtons(true, true, true);
+        }
     }
 }
