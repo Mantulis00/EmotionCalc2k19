@@ -2,9 +2,7 @@
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API;
-using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,10 +10,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
+        internal MonthManager MonthManager { get; set; }
 
-        internal MonthManager monthManager { get; set; }
-
-        internal IAPIManager apiManager { get; set; }
+        internal IAPIManager APIManager { get; set; }
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -23,33 +20,32 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             InitializeComponent();
 
             //API
-            this.apiManager = apiManager;
+            APIManager = apiManager;
 
             //UI <-> API
-            setupMonth();
-
+            SetupMonth();
         }
 
-        private void setupMonth()
+        private void SetupMonth()
         {
-            monthManager = new MonthManager(
+            MonthManager = new MonthManager(
                new MonthEmotionsIO(),
                new CalendarUpdater(calendarBackground), dateTimePicker.Value);
 
             dateTimePicker.ValueChanged +=
                 (o, e) =>
                 {
-                    monthManager.ChangeTime(dateTimePicker.Value);
+                    MonthManager.ChangeTime(dateTimePicker.Value);
                 };
         }
 
-        internal  void UpdateParsedData(APIParseResult parseResult)
+        internal void UpdateParsedData(APIParseResult parseResult)
         {
             DisplayErrors(parseResult);
 
             if (parseResult.Faces.Count > 0)
             {
-                monthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
+                MonthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
             }
         }
 
@@ -82,44 +78,38 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
-            monthManager.Save();
+            MonthManager.Save();
 
             Application.Exit();
         }
 
-        private  void SubmitButton_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e)
         {
-            showButtons();
-            Form url =  new UrlForm(this);
-            url.Show();
+            OpenSecondaryWindow(new UrlForm(this));
         }
-
-
 
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
-            showButtons();
-            Form img = new ImagefileForm(this);
-            img.Show();
-
+            OpenSecondaryWindow(new ImagefileForm(this));
         }
 
         private void CameraStartButton_Click(object sender, EventArgs e)
         {
-            showButtons();
-            Form cam = new CameraForm(this);
-            cam.Show();
+            OpenSecondaryWindow(new CameraForm(this));
         }
-
 
         private void ConfigureAPIKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenSecondaryWindow(APIManager.GetSettingsForm());
+        }
+
+        private void OpenSecondaryWindow(Form secondaryWindow)
+        {
             Enabled = false;
 
-            Form apiKeyForm = apiManager.GetSettingsForm();
-            apiKeyForm.Show();
+            secondaryWindow.Show();
 
-            apiKeyForm.FormClosed +=
+            secondaryWindow.FormClosed +=
                 (o, ev) =>
                 {
                     Enabled = true;
@@ -135,23 +125,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
-        }
-
-        public void showButtons(bool url = false, bool img = false, bool cam = false)
-        {
-            urlButton.Enabled = url;
-            imageButton.Enabled = img;
-            cameraButton.Enabled = cam;
-        }
-
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

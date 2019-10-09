@@ -1,14 +1,7 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic;
-using EmotionCalculator.EmotionCalculator.Tools.API;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -35,7 +28,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void CameraForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             cameraHandle.Stop();
-            baseF.showButtons(true, true, true);
         }
 
 
@@ -67,15 +59,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             Image image = null;
 
 
-                image = CameraBox.Image;
-                image = imageHandle.imageProcess(image);
+            image = CameraBox.Image;
+            image = imageHandle.imageProcess(image);
 
-                APIParseResult parseResult = await baseF.apiManager.GetAPIRequester().RequestParseResultAsync(image);
+            APIParseResult parseResult = await baseF.APIManager.GetAPIRequester().RequestParseResultAsync(image);
 
-                image.Dispose();
+            image.Dispose();
 
-                baseF.UpdateParsedData(parseResult);
-            
+            baseF.UpdateParsedData(parseResult);
+
 
             showButtons(true, true, true);
         }

@@ -1,14 +1,6 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic;
-using EmotionCalculator.EmotionCalculator.Tools.API;
-using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -40,7 +32,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
             imageBox.Image = byteArrayToImage(await Tools.Web.ImageDownloader.GetByteArrayFromUrlAsync(url));
 
-            APIParseResult parseResult = await baseF.apiManager.GetAPIRequester().RequestParseResultAsync(url);
+            APIParseResult parseResult = await baseF.APIManager.GetAPIRequester().RequestParseResultAsync(url);
             baseF.UpdateParsedData(parseResult);
 
             SubmitButton.Enabled = true;
@@ -54,12 +46,5 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 return img;
             }
         }
-
-
-        private void UrlForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            baseF.showButtons(true, true, true);
-        }
-
     }
 }

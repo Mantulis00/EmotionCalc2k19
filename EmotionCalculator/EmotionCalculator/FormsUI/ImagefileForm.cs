@@ -1,14 +1,6 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic;
-using EmotionCalculator.EmotionCalculator.Tools.API;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -55,18 +47,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             showButtons(false, false);
 
-            APIParseResult parseResult = await baseF.apiManager.GetAPIRequester()
+            APIParseResult parseResult = await baseF.APIManager.GetAPIRequester()
                 .RequestParseResultAsync(uploadImageBox.Image);
 
             baseF.UpdateParsedData(parseResult);
 
             showButtons(true, true);
-        }
-
-
-        private void ImagefileForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            baseF.showButtons(true, true, true);
         }
     }
 }
