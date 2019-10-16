@@ -8,27 +8,29 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
         internal ThemePack SelectedTheme { get; set; }
 
-        internal SettingStatus GetSettingStatus(SettingType settingType)
+        internal SettingStatus this[SettingType settingType]
         {
-            if (settings.ContainsKey(settingType))
+            get
             {
-                return settings[settingType];
+                if (settings.ContainsKey(settingType))
+                {
+                    return settings[settingType];
+                }
+                else
+                {
+                    return SettingStatus.NotSet;
+                }
             }
-            else
+            set
             {
-                return SettingStatus.NotSet;
-            }
-        }
-
-        internal void SetSettingStatus(SettingType settingType, SettingStatus settingStatus)
-        {
-            if (settings.ContainsKey(settingType))
-            {
-                settings[settingType] = settingStatus;
-            }
-            else
-            {
-                settings.Add(settingType, settingStatus);
+                if (settings.ContainsKey(settingType))
+                {
+                    settings[settingType] = value;
+                }
+                else
+                {
+                    settings.Add(settingType, value);
+                }
             }
         }
     }
