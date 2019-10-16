@@ -11,7 +11,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
         private static readonly int cellSize = 40;
 
-        internal static IEnumerable<PictureBox> GenerateCells(PictureBox pictureBox)
+        internal static IEnumerable<PictureBox> GenerateCells(PictureBox pictureBox, Color defaultCellColor)
         {
             Size backgroundSize = pictureBox.Size;
 
@@ -29,7 +29,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                             verticalGap + i * (cellSize + verticalGap));
 
                     cell.Size = new Size(cellSize, cellSize);
-                    cell.BackColor = CalendarUpdater.defaultCellColor;
+                    cell.BackColor = defaultCellColor;
 
                     pictureBox.Controls.Add(cell);
                     cell.BringToFront();

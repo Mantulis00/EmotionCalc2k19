@@ -1,6 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
+using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
 using System.Linq;
@@ -10,12 +11,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        internal MonthManager MonthManager { get; set; }
+        internal MonthManager MonthManager { get; private set; }
 
-        internal IAPIManager APIManager { get; set; }
+        internal IAPIManager APIManager { get; private set; }
+
+        internal SettingsManager SettingsManager { get; private set; }
 
         internal BaseForm(IAPIManager apiManager)
         {
+            //Settings
+            SettingsManager = DesktopPack.GetSettings();
+
             //UI
             InitializeComponent();
 
@@ -30,7 +36,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             MonthManager = new MonthManager(
                new MonthEmotionsIO(),
-               new CalendarUpdater(calendarBackground),
+               new CalendarUpdater(calendarBackground, SettingsManager),
                dateTimePicker.Value);
 
             dateTimePicker.ValueChanged +=
@@ -83,6 +89,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             Application.Exit();
         }
 
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new SettingsForm(this));
+        }
+
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             OpenSecondaryWindow(new UrlForm(this));
@@ -113,6 +124,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 (o, ev) =>
                 {
                     Enabled = true;
+                    MonthManager.Refresh();
                 };
         }
 

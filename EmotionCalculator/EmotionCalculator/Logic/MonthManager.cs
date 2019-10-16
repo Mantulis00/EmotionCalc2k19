@@ -52,5 +52,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             if (monthEmotions != null)
                 monthLogger.SaveMonth(monthEmotions);
         }
+
+        internal void Refresh()
+        {
+            monthUpdatable.Update(monthEmotions, selectedTime);
+        }
     }
 }

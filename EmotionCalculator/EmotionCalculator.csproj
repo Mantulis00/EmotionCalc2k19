@@ -105,6 +105,12 @@
       <DependentUpon>ImagefileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmotionCalculator\FormsUI\UrlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,7 +122,12 @@
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\ISettingsManager.cs" />
     <Compile Include="EmotionCalculator\Logic\MonthManager.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingStatus.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingType.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\ThemePack.cs" />
     <Compile Include="EmotionCalculator\Tools\API\IAPIManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIConfig.cs" />
@@ -159,6 +170,9 @@
     <EmbeddedResource Include="EmotionCalculator\FormsUI\ImagefileForm.resx">
       <DependentUpon>ImagefileForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\UrlForm.resx">
       <DependentUpon>UrlForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +180,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundMountains.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundHalloween1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundHalloween.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
