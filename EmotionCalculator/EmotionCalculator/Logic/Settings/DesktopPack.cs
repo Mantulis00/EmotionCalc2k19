@@ -37,9 +37,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
         internal static readonly ThemePack HalloweenPack =
             new ThemePack("Halloween",
             Properties.Resources.backgroundHalloween,
-            Color.FromArgb(120, 50, 50, 140),
-            Color.FromArgb(60, 50, 50, 140),
-            Color.FromArgb(200, 10, 20, 180),
-            Color.FromArgb(255, 255, 255, 255));
+            Color.FromArgb(160, 210, 220, 255),
+            Color.FromArgb(60, 210, 220, 255),
+            Color.FromArgb(255, 220, 230, 255),
+            Color.FromArgb(255, 0, 0, 0));
     }
 }
