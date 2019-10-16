@@ -10,9 +10,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        internal MonthManager MonthManager { get; set; }
+        internal MonthManager MonthManager { get; private set; }
 
-        internal IAPIManager APIManager { get; set; }
+        internal IAPIManager APIManager { get; private set; }
+
+        internal ISettingsManager SettingsManager { get; private set; }
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -81,6 +83,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MonthManager.Save();
 
             Application.Exit();
+        }
+
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new SettingsForm(this));
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
