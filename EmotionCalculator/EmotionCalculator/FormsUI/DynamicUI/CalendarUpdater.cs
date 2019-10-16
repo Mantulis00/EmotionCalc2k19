@@ -66,6 +66,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 var number = numbers[cellNumber + i];
 
                 number.Text = (i + 1).ToString();
+                number.ForeColor = selectedTheme.TextColor;
                 number.Visible = true;
 
                 var emotionLabel = emotionLabels[cellNumber + i];
@@ -79,6 +80,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                     emotionLabel.Text = monthEmotions[i + 1].ToString();
                 }
 
+                emotionLabel.ForeColor = selectedTheme.TextColor;
                 emotionLabel.Visible = true;
             }
         }

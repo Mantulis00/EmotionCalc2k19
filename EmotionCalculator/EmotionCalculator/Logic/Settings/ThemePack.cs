@@ -11,9 +11,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
         internal Color PrimaryColor { get; private set; }
         internal Color SecondaryColor { get; private set; }
         internal Color FocusColor { get; private set; }
+        internal Color TextColor { get; private set; }
 
         internal ThemePack(string name, Image image,
-            Color primaryColor, Color secondaryColor, Color focusColor)
+            Color primaryColor, Color secondaryColor, Color focusColor, Color textColor)
         {
             Name = name;
             Image = image;
@@ -21,6 +22,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             PrimaryColor = primaryColor;
             SecondaryColor = secondaryColor;
             FocusColor = focusColor;
+            TextColor = textColor;
         }
 
         public override string ToString()

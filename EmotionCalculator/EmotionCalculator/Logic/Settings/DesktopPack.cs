@@ -21,16 +21,25 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
         {
             get
             {
-                yield return new ThemePack("Default", Properties.Resources.backgroundMountains,
-                    Color.FromArgb(180, 255, 255, 255),
-                    Color.FromArgb(60, 255, 255, 255),
-                    Color.FromArgb(220, 255, 110, 110));
-
-                yield return new ThemePack("Halloween", Properties.Resources.backgroundHalloween,
-                    Color.FromArgb(180, 255, 200, 200),
-                    Color.FromArgb(60, 255, 230, 230),
-                    Color.FromArgb(220, 255, 255, 255));
+                yield return DefaultPack;
+                yield return HalloweenPack;
             }
         }
+
+        internal static readonly ThemePack DefaultPack =
+            new ThemePack("Default",
+            Properties.Resources.backgroundMountains,
+            Color.FromArgb(180, 255, 255, 255),
+            Color.FromArgb(60, 255, 255, 255),
+            Color.FromArgb(220, 255, 110, 110),
+            Color.FromArgb(255, 0, 0, 0));
+
+        internal static readonly ThemePack HalloweenPack =
+            new ThemePack("Halloween",
+            Properties.Resources.backgroundHalloween,
+            Color.FromArgb(200, 70, 50, 140),
+            Color.FromArgb(60, 70, 50, 140),
+            Color.FromArgb(220, 30, 20, 180),
+            Color.FromArgb(255, 255, 255, 255));
     }
 }

@@ -185,6 +185,9 @@
     <None Include="Resources\backgroundMountains.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\backgroundHalloween1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\backgroundHalloween.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
