@@ -1,6 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
+using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
 using System.Linq;
@@ -14,10 +15,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         internal IAPIManager APIManager { get; private set; }
 
-        internal ISettingsManager SettingsManager { get; private set; }
+        internal SettingsManager SettingsManager { get; private set; }
 
         internal BaseForm(IAPIManager apiManager)
         {
+            //Settings
+            SettingsManager = DesktopPack.GetSettings();
+
             //UI
             InitializeComponent();
 
@@ -32,7 +36,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             MonthManager = new MonthManager(
                new MonthEmotionsIO(),
-               new CalendarUpdater(calendarBackground),
+               new CalendarUpdater(calendarBackground, SettingsManager),
                dateTimePicker.Value);
 
             dateTimePicker.ValueChanged +=

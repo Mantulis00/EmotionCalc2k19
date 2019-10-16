@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -13,11 +15,34 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             this.baseForm = baseForm;
 
             InitializeComponent();
+            InitializeComboBoxes();
 
-            tabControl.DrawItem += new DrawItemEventHandler(tabControl_DrawItem);
+            tabControl.DrawItem += new DrawItemEventHandler(DrawTabs);
         }
 
-        private void tabControl_DrawItem(Object sender, DrawItemEventArgs e)
+        private void InitializeComboBoxes()
+        {
+            themeComboBox.Items.AddRange(DesktopPack.DesktopPacks.ToArray());
+
+            themeComboBox.SelectedItem = baseForm.SettingsManager.SelectedTheme;
+        }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            baseForm.SettingsManager.SelectedTheme = (ThemePack)themeComboBox.SelectedItem;
+        }
+
+        private void DrawTabs(Object sender, DrawItemEventArgs e)
         {
             int index = e.Index;
 
@@ -33,16 +58,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             stringFlags.Alignment = StringAlignment.Center;
             stringFlags.LineAlignment = StringAlignment.Center;
             g.DrawString(tabPage.Text, tabFont, textBrush, tabBounds, stringFlags);
-        }
-
-        private void OkButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -30,16 +30,17 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.emojisEnabledCheckBox = new System.Windows.Forms.CheckBox();
+            this.emojisEnabledLabel = new System.Windows.Forms.Label();
+            this.themeComboBox = new System.Windows.Forms.ComboBox();
+            this.selectedThemeLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.okButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.selectedThemeLabel = new System.Windows.Forms.Label();
-            this.themeComboBox = new System.Windows.Forms.ComboBox();
-            this.emotionDisplayStyleLabel = new System.Windows.Forms.Label();
-            this.emotionDisplayComboBox = new System.Windows.Forms.ComboBox();
+            this.resetButton = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -64,8 +65,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.emotionDisplayComboBox);
-            this.tabPage1.Controls.Add(this.emotionDisplayStyleLabel);
+            this.tabPage1.Controls.Add(this.emojisEnabledCheckBox);
+            this.tabPage1.Controls.Add(this.emojisEnabledLabel);
             this.tabPage1.Controls.Add(this.themeComboBox);
             this.tabPage1.Controls.Add(this.selectedThemeLabel);
             this.tabPage1.Location = new System.Drawing.Point(104, 4);
@@ -74,6 +75,42 @@
             this.tabPage1.Size = new System.Drawing.Size(409, 197);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Visual";
+            // 
+            // emojisEnabledCheckBox
+            // 
+            this.emojisEnabledCheckBox.AutoSize = true;
+            this.emojisEnabledCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.emojisEnabledCheckBox.Location = new System.Drawing.Point(118, 54);
+            this.emojisEnabledCheckBox.Name = "emojisEnabledCheckBox";
+            this.emojisEnabledCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.emojisEnabledCheckBox.TabIndex = 3;
+            this.emojisEnabledCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // emojisEnabledLabel
+            // 
+            this.emojisEnabledLabel.AutoSize = true;
+            this.emojisEnabledLabel.Location = new System.Drawing.Point(6, 54);
+            this.emojisEnabledLabel.Name = "emojisEnabledLabel";
+            this.emojisEnabledLabel.Size = new System.Drawing.Size(81, 13);
+            this.emojisEnabledLabel.TabIndex = 2;
+            this.emojisEnabledLabel.Text = "Emojis enabled:";
+            // 
+            // themeComboBox
+            // 
+            this.themeComboBox.FormattingEnabled = true;
+            this.themeComboBox.Location = new System.Drawing.Point(118, 18);
+            this.themeComboBox.Name = "themeComboBox";
+            this.themeComboBox.Size = new System.Drawing.Size(141, 21);
+            this.themeComboBox.TabIndex = 1;
+            // 
+            // selectedThemeLabel
+            // 
+            this.selectedThemeLabel.AutoSize = true;
+            this.selectedThemeLabel.Location = new System.Drawing.Point(6, 21);
+            this.selectedThemeLabel.Name = "selectedThemeLabel";
+            this.selectedThemeLabel.Size = new System.Drawing.Size(84, 13);
+            this.selectedThemeLabel.TabIndex = 0;
+            this.selectedThemeLabel.Text = "Selected theme:";
             // 
             // tabPage2
             // 
@@ -84,35 +121,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Blank";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // okButton
-            // 
-            this.okButton.Location = new System.Drawing.Point(425, 210);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 36);
-            this.okButton.TabIndex = 8;
-            this.okButton.Text = "Ok";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.OkButton_Click);
-            // 
-            // submitButton
-            // 
-            this.submitButton.Location = new System.Drawing.Point(344, 210);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 36);
-            this.submitButton.TabIndex = 9;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(12, 210);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 36);
-            this.cancelButton.TabIndex = 10;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // tabPage3
             // 
@@ -132,45 +140,51 @@
             this.tabPage4.Text = "Blank";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // selectedThemeLabel
+            // okButton
             // 
-            this.selectedThemeLabel.AutoSize = true;
-            this.selectedThemeLabel.Location = new System.Drawing.Point(6, 21);
-            this.selectedThemeLabel.Name = "selectedThemeLabel";
-            this.selectedThemeLabel.Size = new System.Drawing.Size(84, 13);
-            this.selectedThemeLabel.TabIndex = 0;
-            this.selectedThemeLabel.Text = "Selected theme:";
+            this.okButton.Location = new System.Drawing.Point(425, 210);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(75, 36);
+            this.okButton.TabIndex = 8;
+            this.okButton.Text = "Ok";
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // themeComboBox
+            // submitButton
             // 
-            this.themeComboBox.FormattingEnabled = true;
-            this.themeComboBox.Location = new System.Drawing.Point(118, 18);
-            this.themeComboBox.Name = "themeComboBox";
-            this.themeComboBox.Size = new System.Drawing.Size(141, 21);
-            this.themeComboBox.TabIndex = 1;
+            this.submitButton.Location = new System.Drawing.Point(344, 210);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 36);
+            this.submitButton.TabIndex = 9;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // emotionDisplayStyleLabel
+            // cancelButton
             // 
-            this.emotionDisplayStyleLabel.AutoSize = true;
-            this.emotionDisplayStyleLabel.Location = new System.Drawing.Point(6, 54);
-            this.emotionDisplayStyleLabel.Name = "emotionDisplayStyleLabel";
-            this.emotionDisplayStyleLabel.Size = new System.Drawing.Size(107, 13);
-            this.emotionDisplayStyleLabel.TabIndex = 2;
-            this.emotionDisplayStyleLabel.Text = "Emotion display style:";
+            this.cancelButton.Location = new System.Drawing.Point(12, 210);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 36);
+            this.cancelButton.TabIndex = 10;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // emotionDisplayComboBox
+            // resetButton
             // 
-            this.emotionDisplayComboBox.FormattingEnabled = true;
-            this.emotionDisplayComboBox.Location = new System.Drawing.Point(118, 51);
-            this.emotionDisplayComboBox.Name = "emotionDisplayComboBox";
-            this.emotionDisplayComboBox.Size = new System.Drawing.Size(141, 21);
-            this.emotionDisplayComboBox.TabIndex = 3;
+            this.resetButton.Location = new System.Drawing.Point(263, 210);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 36);
+            this.resetButton.TabIndex = 11;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 258);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.okButton);
@@ -193,9 +207,10 @@
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.ComboBox emotionDisplayComboBox;
-        private System.Windows.Forms.Label emotionDisplayStyleLabel;
+        private System.Windows.Forms.Label emojisEnabledLabel;
         private System.Windows.Forms.ComboBox themeComboBox;
         private System.Windows.Forms.Label selectedThemeLabel;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.CheckBox emojisEnabledCheckBox;
     }
 }

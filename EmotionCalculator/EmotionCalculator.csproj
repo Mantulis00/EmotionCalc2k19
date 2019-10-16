@@ -122,8 +122,12 @@
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\ISettingsManager.cs" />
     <Compile Include="EmotionCalculator\Logic\MonthManager.cs" />
-    <Compile Include="EmotionCalculator\Logic\SettingsManager.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingStatus.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingType.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\ThemePack.cs" />
     <Compile Include="EmotionCalculator\Tools\API\IAPIManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIConfig.cs" />
@@ -176,6 +180,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundMountains.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundHalloween.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

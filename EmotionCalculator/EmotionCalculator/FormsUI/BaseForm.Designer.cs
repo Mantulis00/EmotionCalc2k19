@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.urlButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageButton = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureAPIKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +47,6 @@
             this.calendarBackground = new System.Windows.Forms.PictureBox();
             this.leftButton = new System.Windows.Forms.Button();
             this.rightButton = new System.Windows.Forms.Button();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
             this.SuspendLayout();
@@ -134,9 +133,16 @@
             // configureAPIKeyToolStripMenuItem
             // 
             this.configureAPIKeyToolStripMenuItem.Name = "configureAPIKeyToolStripMenuItem";
-            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.configureAPIKeyToolStripMenuItem.Text = "Configure API key";
             this.configureAPIKeyToolStripMenuItem.Click += new System.EventHandler(this.ConfigureAPIKeyToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -168,7 +174,6 @@
             // calendarBackground
             // 
             this.calendarBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.calendarBackground.Image = ((System.Drawing.Image)(resources.GetObject("calendarBackground.Image")));
             this.calendarBackground.InitialImage = null;
             this.calendarBackground.Location = new System.Drawing.Point(12, 82);
             this.calendarBackground.Name = "calendarBackground";
@@ -197,13 +202,6 @@
             this.rightButton.Text = ">>";
             this.rightButton.UseVisualStyleBackColor = true;
             this.rightButton.Click += new System.EventHandler(this.RightButton_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // BaseForm
             // 

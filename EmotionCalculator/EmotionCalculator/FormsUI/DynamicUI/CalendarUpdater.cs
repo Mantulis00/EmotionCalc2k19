@@ -1,4 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Data;
+using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
         private IReadOnlyList<Label> numbers;
         private IReadOnlyList<Label> emotionLabels;
 
-        internal CalendarUpdater(PictureBox backgroundBox)
+        private PictureBox backgroundBox;
+        private SettingsManager settingsManager;
+
+        internal CalendarUpdater(PictureBox backgroundBox, SettingsManager settingsManager)
         {
+            this.backgroundBox = backgroundBox;
+            this.settingsManager = settingsManager;
+
             cells = CalendarGenerator.GenerateCells(backgroundBox).ToList();
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
@@ -27,6 +34,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
         public void Update(MonthEmotions monthEmotions, DateTime newDateTime)
         {
+            backgroundBox.Image = settingsManager.SelectedTheme.Image;
+
             DayOfWeek dayOfWeek = new DateTime(newDateTime.Year, newDateTime.Month, 1).DayOfWeek;
 
             ResetColors();
