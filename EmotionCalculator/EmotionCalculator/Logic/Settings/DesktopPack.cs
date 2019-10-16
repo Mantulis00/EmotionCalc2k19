@@ -11,7 +11,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
             manager.SelectedTheme = DesktopPacks.ToList()[0];
 
-            manager.SetSettingStatus(SettingType.Emoji, SettingStatus.Disabled);
+            manager[SettingType.Emoji] = SettingStatus.Disabled;
 
             return manager;
         }
