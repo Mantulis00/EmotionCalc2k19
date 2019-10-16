@@ -15,21 +15,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             this.baseForm = baseForm;
 
             InitializeComponent();
-            InitializeComboBoxes();
+            InitializeSettings();
 
             tabControl.DrawItem += new DrawItemEventHandler(DrawTabs);
         }
 
-        private void InitializeComboBoxes()
+        private void InitializeSettings()
         {
             themeComboBox.Items.AddRange(DesktopPack.DesktopPacks.ToArray());
 
-            themeComboBox.SelectedItem = baseForm.SettingsManager.SelectedTheme;
-        }
-
-        private void OkButton_Click(object sender, EventArgs e)
-        {
-            Close();
+            themeComboBox.SelectedIndex = themeComboBox
+                .FindStringExact(baseForm.SettingsManager.SelectedTheme.ToString());
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -37,9 +33,16 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             Close();
         }
 
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            themeComboBox.SelectedIndex = themeComboBox
+                .FindStringExact(DesktopPack.DesktopPacks.ToList().First().ToString());
+        }
+
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             baseForm.SettingsManager.SelectedTheme = (ThemePack)themeComboBox.SelectedItem;
+            Close();
         }
 
         private void DrawTabs(Object sender, DrawItemEventArgs e)

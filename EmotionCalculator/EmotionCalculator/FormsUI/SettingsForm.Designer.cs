@@ -37,7 +37,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.okButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -140,21 +139,11 @@
             this.tabPage4.Text = "Blank";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // okButton
-            // 
-            this.okButton.Location = new System.Drawing.Point(425, 210);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 36);
-            this.okButton.TabIndex = 8;
-            this.okButton.Text = "Ok";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.OkButton_Click);
-            // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(344, 210);
+            this.submitButton.Location = new System.Drawing.Point(425, 220);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 36);
+            this.submitButton.Size = new System.Drawing.Size(75, 26);
             this.submitButton.TabIndex = 9;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -162,9 +151,9 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(12, 210);
+            this.cancelButton.Location = new System.Drawing.Point(12, 220);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 36);
+            this.cancelButton.Size = new System.Drawing.Size(75, 26);
             this.cancelButton.TabIndex = 10;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -172,12 +161,13 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(263, 210);
+            this.resetButton.Location = new System.Drawing.Point(93, 220);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(75, 36);
+            this.resetButton.Size = new System.Drawing.Size(134, 26);
             this.resetButton.TabIndex = 11;
-            this.resetButton.Text = "Reset";
+            this.resetButton.Text = "Reset to Default";
             this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // SettingsForm
             // 
@@ -187,7 +177,6 @@
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
-            this.Controls.Add(this.okButton);
             this.Controls.Add(this.tabControl);
             this.Name = "SettingsForm";
             this.Text = "Settings";
@@ -203,7 +192,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TabControl tabControl;

@@ -124,6 +124,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 (o, ev) =>
                 {
                     Enabled = true;
+                    MonthManager.Refresh();
                 };
         }
 
