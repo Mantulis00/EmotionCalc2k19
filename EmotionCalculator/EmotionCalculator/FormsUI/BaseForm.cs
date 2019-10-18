@@ -4,6 +4,7 @@ using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -92,6 +93,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenSecondaryWindow(new SettingsForm(this));
+
+
+            ///
+
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -118,15 +123,48 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             Enabled = false;
 
+            rearange(true);
+
             secondaryWindow.Show();
 
             secondaryWindow.FormClosed +=
                 (o, ev) =>
                 {
+                    rearange(false);
+
                     Enabled = true;
                     MonthManager.Refresh();
                 };
         }
+
+        private void rearange(bool opening)
+        {
+            if (opening)
+            {
+                leftButton.Hide();
+                rightButton.Hide();
+                dateTimePicker.Hide();
+               
+                calendarBackground.Location= new Point(calendarBackground.Location.X, 
+                    calendarBackground.Location.Y - rightButton.Height);
+
+                calendarBackground.Height += rightButton.Height;
+            }
+            else
+            {
+                leftButton.Show();
+                rightButton.Show();
+                dateTimePicker.Show();
+                calendarBackground.Location = new Point(
+                    calendarBackground.Location.X, 
+                    calendarBackground.Location.Y + rightButton.Height);
+
+                calendarBackground.Height -= rightButton.Height;
+            }
+
+
+        }
+
 
         //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
@@ -137,6 +175,16 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
+        }
+
+        private void DateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CalendarBackground_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

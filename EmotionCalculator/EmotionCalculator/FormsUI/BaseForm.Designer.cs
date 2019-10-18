@@ -117,7 +117,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -170,6 +170,7 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(375, 20);
             this.dateTimePicker.TabIndex = 19;
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.DateTimePicker_ValueChanged);
             // 
             // calendarBackground
             // 
@@ -178,8 +179,10 @@
             this.calendarBackground.Location = new System.Drawing.Point(12, 82);
             this.calendarBackground.Name = "calendarBackground";
             this.calendarBackground.Size = new System.Drawing.Size(503, 391);
+            this.calendarBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.calendarBackground.TabIndex = 20;
             this.calendarBackground.TabStop = false;
+            this.calendarBackground.Click += new System.EventHandler(this.CalendarBackground_Click);
             // 
             // leftButton
             // 
