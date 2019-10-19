@@ -190,6 +190,12 @@
   <ItemGroup>
     <None Include="Resources\backgroundHalloween.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joyCoins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joyGem.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
