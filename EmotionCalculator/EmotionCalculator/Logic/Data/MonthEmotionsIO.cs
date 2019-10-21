@@ -32,8 +32,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
             using (FileStream fs = new FileStream(directory, FileMode.Create))
             {
-
-                
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(fs, monthEmotions);
             }

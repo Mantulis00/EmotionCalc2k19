@@ -47,12 +47,12 @@
             this.leftButton = new System.Windows.Forms.Button();
             this.rightButton = new System.Windows.Forms.Button();
             this.gemBackgroundPanel = new System.Windows.Forms.Panel();
+            this.gemsImagePanel = new System.Windows.Forms.Panel();
+            this.gemAmountLabel = new System.Windows.Forms.Label();
             this.calendarBackground = new System.Windows.Forms.PictureBox();
             this.coinsImagePanel = new System.Windows.Forms.Panel();
             this.coinBackgroundPanel = new System.Windows.Forms.Panel();
-            this.gemsImagePanel = new System.Windows.Forms.Panel();
             this.coinAmountLabel = new System.Windows.Forms.Label();
-            this.gemAmountLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gemBackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
@@ -204,11 +204,33 @@
             // gemBackgroundPanel
             // 
             this.gemBackgroundPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gemBackgroundPanel.Controls.Add(this.gemsImagePanel);
             this.gemBackgroundPanel.Controls.Add(this.gemAmountLabel);
             this.gemBackgroundPanel.Location = new System.Drawing.Point(364, 27);
             this.gemBackgroundPanel.Name = "gemBackgroundPanel";
             this.gemBackgroundPanel.Size = new System.Drawing.Size(150, 55);
             this.gemBackgroundPanel.TabIndex = 23;
+            // 
+            // gemsImagePanel
+            // 
+            this.gemsImagePanel.BackColor = System.Drawing.Color.Transparent;
+            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem;
+            this.gemsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gemsImagePanel.Location = new System.Drawing.Point(2, 2);
+            this.gemsImagePanel.Name = "gemsImagePanel";
+            this.gemsImagePanel.Size = new System.Drawing.Size(51, 51);
+            this.gemsImagePanel.TabIndex = 1;
+            // 
+            // gemAmountLabel
+            // 
+            this.gemAmountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gemAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.gemAmountLabel.Location = new System.Drawing.Point(59, 2);
+            this.gemAmountLabel.Name = "gemAmountLabel";
+            this.gemAmountLabel.Size = new System.Drawing.Size(88, 53);
+            this.gemAmountLabel.TabIndex = 1;
+            this.gemAmountLabel.Text = "100";
+            this.gemAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // calendarBackground
             // 
@@ -225,7 +247,7 @@
             this.coinsImagePanel.BackColor = System.Drawing.Color.Transparent;
             this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins;
             this.coinsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.coinsImagePanel.Location = new System.Drawing.Point(210, 29);
+            this.coinsImagePanel.Location = new System.Drawing.Point(3, 2);
             this.coinsImagePanel.Name = "coinsImagePanel";
             this.coinsImagePanel.Size = new System.Drawing.Size(51, 51);
             this.coinsImagePanel.TabIndex = 0;
@@ -234,25 +256,16 @@
             // 
             this.coinBackgroundPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.coinBackgroundPanel.Controls.Add(this.coinAmountLabel);
+            this.coinBackgroundPanel.Controls.Add(this.coinsImagePanel);
             this.coinBackgroundPanel.Location = new System.Drawing.Point(208, 27);
             this.coinBackgroundPanel.Name = "coinBackgroundPanel";
             this.coinBackgroundPanel.Size = new System.Drawing.Size(150, 55);
             this.coinBackgroundPanel.TabIndex = 24;
             // 
-            // gemsImagePanel
-            // 
-            this.gemsImagePanel.BackColor = System.Drawing.Color.Transparent;
-            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem;
-            this.gemsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gemsImagePanel.Location = new System.Drawing.Point(366, 29);
-            this.gemsImagePanel.Name = "gemsImagePanel";
-            this.gemsImagePanel.Size = new System.Drawing.Size(51, 51);
-            this.gemsImagePanel.TabIndex = 1;
-            // 
             // coinAmountLabel
             // 
             this.coinAmountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.coinAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.coinAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.coinAmountLabel.Location = new System.Drawing.Point(59, 1);
             this.coinAmountLabel.Name = "coinAmountLabel";
             this.coinAmountLabel.Size = new System.Drawing.Size(88, 53);
@@ -260,24 +273,11 @@
             this.coinAmountLabel.Text = "10000";
             this.coinAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gemAmountLabel
-            // 
-            this.gemAmountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gemAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.gemAmountLabel.Location = new System.Drawing.Point(59, 2);
-            this.gemAmountLabel.Name = "gemAmountLabel";
-            this.gemAmountLabel.Size = new System.Drawing.Size(88, 53);
-            this.gemAmountLabel.TabIndex = 1;
-            this.gemAmountLabel.Text = "100";
-            this.gemAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 518);
-            this.Controls.Add(this.gemsImagePanel);
-            this.Controls.Add(this.coinsImagePanel);
             this.Controls.Add(this.imageButton);
             this.Controls.Add(this.coinBackgroundPanel);
             this.Controls.Add(this.gemBackgroundPanel);

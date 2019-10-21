@@ -77,16 +77,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmotionCalculator\FormsUI\CameraForm.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\CameraForm.Designer.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.Designer.cs">
+      <DependentUpon>DailyLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.Designer.cs">
       <DependentUpon>CameraForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\FaceAPISettingsForm.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\FaceAPISettingsForm.Designer.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.Designer.cs">
       <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\BaseForm.cs">
@@ -98,36 +104,43 @@
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarGenerator.cs" />
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarUpdater.cs" />
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IMonthUpdatable.cs" />
-    <Compile Include="EmotionCalculator\FormsUI\ImagefileForm.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\ImagefileForm.Designer.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.Designer.cs">
       <DependentUpon>ImagefileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
-    <Compile Include="EmotionCalculator\FormsUI\SettingsForm.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\SettingsForm.Designer.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\UrlForm.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\UrlForm.Designer.cs">
+    <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.Designer.cs">
       <DependentUpon>UrlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmotionCalculator\Logic\Currency\CurrencyType.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\DailyLoginData.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />
-    <Compile Include="EmotionCalculator\Logic\Settings\ISettingsManager.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\ISettingsLogger.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingsManager.cs" />
     <Compile Include="EmotionCalculator\Logic\MonthManager.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingsLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\SettingStatus.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\SettingType.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\ThemePack.cs" />
+    <Compile Include="EmotionCalculator\Logic\User\IUserLoader.cs" />
+    <Compile Include="EmotionCalculator\Logic\User\UserData.cs" />
+    <Compile Include="EmotionCalculator\Logic\User\UserManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\IAPIManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIConfig.cs" />
@@ -158,22 +171,25 @@
     <Folder Include="Tools\API\Face\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\CameraForm.resx">
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.resx">
+      <DependentUpon>DailyLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\CameraForm.resx">
       <DependentUpon>CameraForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\FaceAPISettingsForm.resx">
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.resx">
       <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\ImagefileForm.resx">
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.resx">
       <DependentUpon>ImagefileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\SettingsForm.resx">
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\UrlForm.resx">
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\UrlForm.resx">
       <DependentUpon>UrlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

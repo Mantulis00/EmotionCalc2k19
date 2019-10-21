@@ -26,6 +26,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             themeComboBox.SelectedIndex = themeComboBox
                 .FindStringExact(baseForm.SettingsManager.SelectedTheme.ToString());
+
+            SettingsManager settingsManager = baseForm.SettingsManager;
+
+            if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
+            {
+                emojisEnabledCheckBox.Checked = true;
+            }
+            else if (settingsManager[SettingType.Emoji] == SettingStatus.Disabled)
+            {
+                emojisEnabledCheckBox.Checked = false;
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -37,11 +48,20 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             themeComboBox.SelectedIndex = themeComboBox
                 .FindStringExact(DesktopPack.DesktopPacks.ToList().First().ToString());
+
+            emojisEnabledCheckBox.Checked = false;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            baseForm.SettingsManager.SelectedTheme = (ThemePack)themeComboBox.SelectedItem;
+            SettingsManager settingsManager = baseForm.SettingsManager;
+
+            settingsManager.SelectedTheme = (ThemePack)themeComboBox.SelectedItem;
+
+            settingsManager[SettingType.Emoji] = emojisEnabledCheckBox.Checked
+                ? SettingStatus.Enabled : SettingStatus.Disabled;
+
+            settingsManager.Save();
             Close();
         }
 

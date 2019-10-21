@@ -30,6 +30,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             //UI <-> API
             SetupMonth();
+
+            //OpenSecondaryWindow(new DailyLoginForm());
         }
 
         private void SetupMonth()
