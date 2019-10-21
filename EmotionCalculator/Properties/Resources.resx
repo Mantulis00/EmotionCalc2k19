@@ -124,6 +124,9 @@
   <data name="backgroundMountains" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundMountains.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="checkmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="joyCoins" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\joyCoins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

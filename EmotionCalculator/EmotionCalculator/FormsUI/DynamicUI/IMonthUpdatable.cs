@@ -5,6 +5,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 {
     interface IMonthUpdatable
     {
-        void Update(MonthEmotions newMonthEmotions, DateTime newTime);
+        void Update(MonthEmotions monthEmotions, DateTime newDateTime);
     }
 }

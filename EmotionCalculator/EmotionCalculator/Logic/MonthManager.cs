@@ -1,5 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
+using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
+using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 
@@ -13,12 +15,21 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         private MonthEmotions monthEmotions;
         private DateTime selectedTime;
 
-        internal MonthManager(IMonthLogger monthLogger, IMonthUpdatable monthUpdatable, DateTime startingDate)
+        private IUserUpdatable userUpdatable;
+        private IUserLoader userLoader;
+        internal UserData UserData { get; private set; }
+
+        internal MonthManager(IMonthLogger monthLogger, IMonthUpdatable monthUpdatable,
+            DateTime startingDate, IUserLoader userLoader, IUserUpdatable userUpdatable)
         {
             this.monthLogger = monthLogger;
             this.monthUpdatable = monthUpdatable;
 
             monthEmotions = monthLogger.LoadMonth(startingDate.Year, (Month)startingDate.Month);
+
+            this.userLoader = userLoader;
+            this.userUpdatable = userUpdatable;
+            UserData = userLoader.Load();
 
             ChangeTime(startingDate);
         }
@@ -42,8 +53,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         {
             if (monthEmotions != null)
             {
-                monthEmotions.SetEmotion(selectedTime.Day, emotion);
-                monthUpdatable.Update(monthEmotions, selectedTime);
+                if (monthEmotions[selectedTime.Day] == Emotion.NotSet)
+                {
+                    monthEmotions.SetEmotion(selectedTime.Day, emotion);
+                    monthUpdatable.Update(monthEmotions, selectedTime);
+                    UserData.JoyCoins += EmotionValue.GetEmotionValueInCoins(emotion);
+                    userUpdatable.Update(UserData);
+                }
             }
         }
 
@@ -51,11 +67,15 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         {
             if (monthEmotions != null)
                 monthLogger.SaveMonth(monthEmotions);
+
+            if (UserData != null)
+                userLoader.Save(UserData);
         }
 
         internal void Refresh()
         {
             monthUpdatable.Update(monthEmotions, selectedTime);
+            userUpdatable.Update(UserData);
         }
     }
 }

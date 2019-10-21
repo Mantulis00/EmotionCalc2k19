@@ -83,6 +83,9 @@
     <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.Designer.cs">
       <DependentUpon>DailyLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CurrencyUpdater.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IMonthUpdatable.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IUserUpdatable.cs" />
     <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,7 +106,6 @@
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarGenerator.cs" />
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarUpdater.cs" />
-    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IMonthUpdatable.cs" />
     <Compile Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,10 +127,12 @@
     </Compile>
     <Compile Include="EmotionCalculator\Logic\Currency\CurrencyType.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\DailyLoginData.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\EmotionValue.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
+    <Compile Include="EmotionCalculator\Logic\Data\UserLoader.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\ISettingsLogger.cs" />
@@ -211,6 +215,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\joyGem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

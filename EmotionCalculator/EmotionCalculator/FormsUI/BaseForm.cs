@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
+﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
+using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
@@ -31,7 +32,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             //UI <-> API
             SetupMonth();
 
-            //OpenSecondaryWindow(new DailyLoginForm());
+            //Daily login
+            if (MonthManager.UserData.LastLogOn != DateTime.Today)
+                OpenSecondaryWindow(new DailyLoginForm(this));
         }
 
         private void SetupMonth()
@@ -39,13 +42,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MonthManager = new MonthManager(
                new MonthEmotionsIO(),
                new CalendarUpdater(calendarBackground, SettingsManager),
-               dateTimePicker.Value);
+               dateTimePicker.Value,
+               new UserLoader(),
+               new CurrencyUpdater(coinAmountLabel, gemAmountLabel));
 
             dateTimePicker.ValueChanged +=
                 (o, e) =>
                 {
                     MonthManager.ChangeTime(dateTimePicker.Value);
                 };
+
+            MonthManager.Refresh();
         }
 
         internal void UpdateParsedData(APIParseResult parseResult)
