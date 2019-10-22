@@ -170,7 +170,6 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(375, 20);
             this.dateTimePicker.TabIndex = 19;
-            this.dateTimePicker.ValueChanged += new System.EventHandler(this.DateTimePicker_ValueChanged);
             // 
             // calendarBackground
             // 
@@ -182,7 +181,6 @@
             this.calendarBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.calendarBackground.TabIndex = 20;
             this.calendarBackground.TabStop = false;
-            this.calendarBackground.Click += new System.EventHandler(this.CalendarBackground_Click);
             // 
             // leftButton
             // 
@@ -225,7 +223,6 @@
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
-            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).EndInit();

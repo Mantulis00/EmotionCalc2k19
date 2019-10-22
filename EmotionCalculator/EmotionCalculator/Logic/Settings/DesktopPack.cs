@@ -38,8 +38,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             new ThemePack("Halloween",
             Properties.Resources.backgroundHalloween,
             Color.FromArgb(160, 255, 100, 100),
-            Color.FromArgb(60, 255, 100, 100),
-            Color.FromArgb(255, 220, 230, 255),
+            Color.FromArgb(100, 200, 150, 150),
+            Color.FromArgb(255, 255, 55, 55),
             Color.FromArgb(255, 0, 0, 0));
     }
 }

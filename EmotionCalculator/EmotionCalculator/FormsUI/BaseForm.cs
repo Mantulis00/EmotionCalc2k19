@@ -123,21 +123,21 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             Enabled = false;
 
-            rearange(true);
+            Rearrange(true);
 
             secondaryWindow.Show();
 
             secondaryWindow.FormClosed +=
                 (o, ev) =>
                 {
-                    rearange(false);
+                    Rearrange(false);
 
                     Enabled = true;
                     MonthManager.Refresh();
                 };
         }
 
-        private void rearange(bool opening)
+        private void Rearrange(bool opening)
         {
             if (opening)
             {
@@ -177,19 +177,5 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
-        private void DateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CalendarBackground_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
