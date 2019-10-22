@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using static EmotionCalculator.EmotionCalculator.Logic.MonthManager;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 {
@@ -14,9 +13,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private int dailyStreak;
 
-        private ClaimReward claimReward;
+        private Action claimReward;
 
-        internal DailyLoginForm(int dailyStreak, ClaimReward claimReward)
+        internal DailyLoginForm(int dailyStreak, Action claimReward)
         {
             this.dailyStreak = dailyStreak;
             this.claimReward = claimReward;

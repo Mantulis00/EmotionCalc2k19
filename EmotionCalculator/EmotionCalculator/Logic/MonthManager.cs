@@ -35,9 +35,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             ChangeTime(startingDate);
         }
 
-        internal delegate void LaunchLoginPopup(int dailyStreak, ClaimReward claimReward);
-
-        internal delegate void ClaimReward();
+        internal delegate void LaunchLoginPopup(int dailyStreak, Action claimReward);
 
         internal void RaiseLoginEvent(LaunchLoginPopup launchLoginPopup)
         {
