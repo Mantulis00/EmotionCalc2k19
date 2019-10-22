@@ -1,5 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.User;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -24,96 +25,68 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
             var nodes = doc.Descendants();
 
-            var node = nodes.FirstOrDefault(sNode => sNode.Name == CoinValueName);
-            if (node != null)
+            try
             {
-                userData.JoyCoins = int.Parse(node.Value);
+                userData.JoyCoins = int.Parse(GetValueFromNode(nodes, CoinValueName));
+                userData.JoyGems = int.Parse(GetValueFromNode(nodes, GemValueName));
+                userData.DailyLoginStreak = int.Parse(GetValueFromNode(nodes, LoginStreakLengthName));
+
+                int lastDay = int.Parse(GetValueFromNode(nodes, LastLogOnDayName));
+                int lastMonth = int.Parse(GetValueFromNode(nodes, LastLogOnMonthName));
+                int lastYear = int.Parse(GetValueFromNode(nodes, LastLogOnYearName));
+
+                userData.LastLogOn = new DateTime(lastYear, lastMonth, lastDay);
             }
-
-            node = nodes.FirstOrDefault(sNode => sNode.Name == GemValueName);
-            if (node != null)
+            catch (FormatException fe)
             {
-                userData.JoyGems = int.Parse(node.Value);
-            }
-
-            node = nodes.FirstOrDefault(sNode => sNode.Name == LoginStreakLengthName);
-            if (node != null)
-            {
-                userData.DailyLoginStreak = int.Parse(node.Value);
-            }
-
-            var dayNode = nodes.FirstOrDefault(sNode => sNode.Name == LastLogOnDayName);
-            var monthNode = nodes.FirstOrDefault(sNode => sNode.Name == LastLogOnMonthName);
-            var yearNode = nodes.FirstOrDefault(sNode => sNode.Name == LastLogOnYearName);
-
-            if (dayNode != null && monthNode != null && yearNode != null)
-            {
-                userData.LastLogOn = new DateTime(
-                    int.Parse(yearNode.Value),
-                    int.Parse(monthNode.Value),
-                    int.Parse(dayNode.Value));
+                Console.WriteLine(fe.StackTrace);
             }
 
             return userData;
+        }
+
+        private string GetValueFromNode(IEnumerable<XElement> nodes, string nodeName)
+        {
+            var node = nodes.FirstOrDefault(sNode => sNode.Name == nodeName);
+
+            if (node != null)
+            {
+                return node.Value;
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
 
         public void Save(UserData userData)
         {
             var doc = GetXmlDocument();
 
-            var nodes = doc.Descendants();
-
-            var node = nodes.FirstOrDefault(sNode => sNode.Name == CoinValueName);
-            if (node == null)
-            {
-                node = new XElement(CoinValueName);
-                doc.Root.Add(node);
-            }
-            node.Value = userData.JoyCoins.ToString();
-
-            node = nodes.FirstOrDefault(sNode => sNode.Name == GemValueName);
-            if (node == null)
-            {
-                node = new XElement(GemValueName);
-                doc.Root.Add(node);
-            }
-            node.Value = userData.JoyGems.ToString();
-
-            node = nodes.FirstOrDefault(sNode => sNode.Name == LoginStreakLengthName);
-            if (node == null)
-            {
-                node = new XElement(LoginStreakLengthName);
-                doc.Root.Add(node);
-            }
-            node.Value = userData.DailyLoginStreak.ToString();
-
-            node = nodes.FirstOrDefault(sNode => sNode.Name == LastLogOnDayName);
-            if (node == null)
-            {
-                node = new XElement(LastLogOnDayName);
-                doc.Root.Add(node);
-            }
-            node.Value = userData.LastLogOn.Day.ToString();
-
-            node = nodes.FirstOrDefault(sNode => sNode.Name == LastLogOnMonthName);
-            if (node == null)
-            {
-                node = new XElement(LastLogOnMonthName);
-                doc.Root.Add(node);
-            }
-            node.Value = userData.LastLogOn.Month.ToString();
-
-            node = nodes.FirstOrDefault(sNode => sNode.Name == LastLogOnYearName);
-            if (node == null)
-            {
-                node = new XElement(LastLogOnYearName);
-                doc.Root.Add(node);
-            }
-            node.Value = userData.LastLogOn.Year.ToString();
-
+            SaveValueToNode(doc, CoinValueName, userData.JoyCoins.ToString());
+            SaveValueToNode(doc, GemValueName, userData.JoyGems.ToString());
+            SaveValueToNode(doc, LoginStreakLengthName, userData.DailyLoginStreak.ToString());
+            SaveValueToNode(doc, LastLogOnDayName, userData.LastLogOn.Day.ToString());
+            SaveValueToNode(doc, LastLogOnMonthName, userData.LastLogOn.Month.ToString());
+            SaveValueToNode(doc, LastLogOnYearName, userData.LastLogOn.Year.ToString());
 
             doc.Save(FileName);
         }
+
+        private void SaveValueToNode(XDocument document, string nodeName, string value)
+        {
+            var nodes = document.Descendants();
+            var node = nodes.FirstOrDefault(sNode => sNode.Name == nodeName);
+
+            if (node == null)
+            {
+                node = new XElement(nodeName);
+                document.Root.Add(node);
+            }
+
+            node.Value = value;
+        }
+
         private XDocument GetXmlDocument()
         {
             if (File.Exists(FileName))
