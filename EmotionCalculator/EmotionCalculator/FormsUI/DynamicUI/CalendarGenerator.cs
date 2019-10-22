@@ -46,7 +46,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
                 emoji.BackColor = Color.Transparent;
                // emoji.Image = ;
-                emoji.Location  = new Point(cellSize/4, cellSize/4 );
+                emoji.Location  = new Point(cellSize/4, cellSize/3 );
                 emoji.Size = new Size(cellSize/2, cellSize/2);
                 emoji.SizeMode = PictureBoxSizeMode.StretchImage;
 

@@ -79,12 +79,83 @@ namespace EmotionCalculator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
-        internal static System.Drawing.Bitmap EmojiHappiness
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("EmojiHappiness", resourceCulture);
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiAnger {
+            get {
+                object obj = ResourceManager.GetObject("emojiAnger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiContempt {
+            get {
+                object obj = ResourceManager.GetObject("emojiContempt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiDisguist {
+            get {
+                object obj = ResourceManager.GetObject("emojiDisguist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiFear {
+            get {
+                object obj = ResourceManager.GetObject("emojiFear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiHappiness {
+            get {
+                object obj = ResourceManager.GetObject("emojiHappiness", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiNeutral {
+            get {
+                object obj = ResourceManager.GetObject("emojiNeutral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiSadness {
+            get {
+                object obj = ResourceManager.GetObject("emojiSadness", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emojiSurprise {
+            get {
+                object obj = ResourceManager.GetObject("emojiSurprise", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

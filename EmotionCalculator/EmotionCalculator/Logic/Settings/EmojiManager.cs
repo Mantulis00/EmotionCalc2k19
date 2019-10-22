@@ -1,4 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,17 +16,18 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
         private Dictionary<Emotion, Image> emojis;
         public  EmojiManager()
         {
+
             emojis = new Dictionary<Emotion, Image>(
                new Dictionary<Emotion, Image>()
                {
-                   [Emotion.Anger] = Properties.Resources.backgroundHalloween,
-                   [Emotion.Contempt] = Properties.Resources.backgroundHalloween,
-                   [Emotion.Disgust] = Properties.Resources.backgroundHalloween,
-                   [Emotion.Fear] = Properties.Resources.backgroundHalloween,
-                   [Emotion.Happiness] = Properties.Resources.EmojiHappiness,
-                   [Emotion.Neutral] = Properties.Resources.backgroundHalloween,
-                   [Emotion.Sadness] = Properties.Resources.backgroundHalloween,
-                   [Emotion.Surprise] = Properties.Resources.backgroundHalloween,
+                   [Emotion.Anger] = Properties.Resources.emojiAnger,
+                   [Emotion.Contempt] = Properties.Resources.emojiContempt,
+                   [Emotion.Disgust] = Properties.Resources.emojiDisguist,
+                   [Emotion.Fear] = Properties.Resources.emojiFear,
+                   [Emotion.Happiness] = Properties.Resources.emojiHappiness,
+                   [Emotion.Neutral] = Properties.Resources.emojiNeutral,
+                   [Emotion.Sadness] = Properties.Resources.emojiSadness,
+                   [Emotion.Surprise] = Properties.Resources.emojiSurprise,
                });
         }
 
