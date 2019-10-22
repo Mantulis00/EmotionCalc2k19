@@ -124,4 +124,28 @@
   <data name="backgroundMountains" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundMountains.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="emojiAnger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiAnger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emojiContempt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiContempt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emojiDisguist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiDisguist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emojiFear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiFear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emojiHappiness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiHappiness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emojiNeutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiNeutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emojiSadness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiSadness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emojiSurprise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emojiSurprise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

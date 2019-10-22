@@ -42,6 +42,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             baseForm.SettingsManager.SelectedTheme = (ThemePack)themeComboBox.SelectedItem;
+            if (emojisEnabledCheckBox.Checked)
+                baseForm.SettingsManager[SettingType.Emoji] = SettingStatus.Enabled;
+            else
+                baseForm.SettingsManager[SettingType.Emoji] = SettingStatus.Disabled;
+
             Close();
         }
 
@@ -61,6 +66,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             stringFlags.Alignment = StringAlignment.Center;
             stringFlags.LineAlignment = StringAlignment.Center;
             g.DrawString(tabPage.Text, tabFont, textBrush, tabBounds, stringFlags);
+        }
+
+        private void EmojisEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

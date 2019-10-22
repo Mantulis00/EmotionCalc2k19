@@ -122,6 +122,7 @@
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\EmojiManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\ISettingsManager.cs" />
     <Compile Include="EmotionCalculator\Logic\MonthManager.cs" />
@@ -189,6 +190,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backgroundHalloween.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiHappiness.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmojiHappy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiHappiness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiFear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiNeutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiAnger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiSurprise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiSadness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiDisguist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiContempt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

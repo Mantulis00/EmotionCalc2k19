@@ -11,8 +11,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
     class CalendarUpdater : IMonthUpdatable
     {
         private IReadOnlyList<PictureBox> cells;
+        private IReadOnlyList<PictureBox> emojis;
         private IReadOnlyList<Label> numbers;
         private IReadOnlyList<Label> emotionLabels;
+        private EmojiManager emojiManager;
 
         private PictureBox backgroundBox;
         private SettingsManager settingsManager;
@@ -22,9 +24,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             this.backgroundBox = backgroundBox;
             this.settingsManager = settingsManager;
 
+            emojiManager = new EmojiManager();
+
             cells = CalendarGenerator.GenerateCells(backgroundBox, settingsManager.SelectedTheme.SecondaryColor).ToList();
+
+           
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
+
+            emojis = CalendarGenerator.GenerateEmojis(cells, backgroundBox).ToList();
         }
 
         public void Update(MonthEmotions monthEmotions, DateTime newDateTime)
@@ -67,23 +75,62 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
                 number.Text = (i + 1).ToString();
                 number.ForeColor = selectedTheme.TextColor;
+
+
                 number.Visible = true;
 
+                setEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
+            }
+
+           
+
+        }
+
+
+        private void setEmotions(DateTime newDateTime, MonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
+        {
                 var emotionLabel = emotionLabels[cellNumber + i];
+                var emoji = emojis[cellNumber + i];
 
                 if (monthEmotions[i + 1] == Emotion.NotSet)
                 {
+                    if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
+                    {
+                         //emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
+                    }
+                    else
+                    {
+                    // emoji.BackColor = System.Drawing.Color.Red;
+                    // emoji.Image = backgroundBox.Image;
+                    emoji.SendToBack();
                     emotionLabel.Text = string.Empty;
+                    }
+              
                 }
                 else
                 {
-                    emotionLabel.Text = monthEmotions[i + 1].ToString();
+                    if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
+                    {
+                         emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
+                         emoji.BringToFront();
+                         emoji.Visible = true;
+                     }
+                    else
+                    {
+                        emoji.SendToBack();
+                        emotionLabel.Text = monthEmotions[i + 1].ToString();
+                    }
+
                 }
 
                 emotionLabel.ForeColor = selectedTheme.TextColor;
                 emotionLabel.Visible = true;
-            }
+
+
+
+            
         }
+
 
         private void ResetColors()
         {
