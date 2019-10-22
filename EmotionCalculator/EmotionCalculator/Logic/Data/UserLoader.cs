@@ -22,42 +22,42 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
             var doc = GetXmlDocument();
             var nodes = doc.Descendants();
 
-            int joyCoins = 0;
-            int joyGems = 0;
-            int dailyStreak = 0;
-            DateTime lastLogin = DateTime.Today;
+            int joyCoins = GetValueFromNode(nodes, CoinValueName);
+            int joyGems = GetValueFromNode(nodes, GemValueName);
+            int dailyStreak = GetValueFromNode(nodes, LoginStreakLengthName);
 
-            try
-            {
-                joyCoins = int.Parse(GetValueFromNode(nodes, CoinValueName));
-                joyGems = int.Parse(GetValueFromNode(nodes, GemValueName));
-                dailyStreak = int.Parse(GetValueFromNode(nodes, LoginStreakLengthName));
+            int lastDay = GetValueFromNode(nodes, LastLogOnDayName);
+            int lastMonth = GetValueFromNode(nodes, LastLogOnMonthName);
+            int lastYear = GetValueFromNode(nodes, LastLogOnYearName);
 
-                int lastDay = int.Parse(GetValueFromNode(nodes, LastLogOnDayName));
-                int lastMonth = int.Parse(GetValueFromNode(nodes, LastLogOnMonthName));
-                int lastYear = int.Parse(GetValueFromNode(nodes, LastLogOnYearName));
+            DateTime lastLogin;
 
-                lastLogin = new DateTime(lastYear, lastMonth, lastDay);
-            }
-            catch (FormatException fe)
-            {
-
-            }
+            if (!DateTime.TryParse($"{lastYear}-{lastMonth}-{lastDay}", out lastLogin))
+                lastLogin = DateTime.Today;
 
             return new UserData(joyCoins, joyGems, dailyStreak, lastLogin);
         }
 
-        private string GetValueFromNode(IEnumerable<XElement> nodes, string nodeName)
+        private int GetValueFromNode(IEnumerable<XElement> nodes, string nodeName)
         {
             var node = nodes.FirstOrDefault(sNode => sNode.Name == nodeName);
 
             if (node != null)
             {
-                return node.Value;
+                int value;
+
+                if (int.TryParse(node.Value, out value))
+                {
+                    return value;
+                }
+                else
+                {
+                    return 0;
+                }
             }
             else
             {
-                return string.Empty;
+                return 0;
             }
         }
 
