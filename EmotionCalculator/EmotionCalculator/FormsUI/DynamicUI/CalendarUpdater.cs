@@ -96,14 +96,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 {
                     if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                     {
-                         //emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
-                    }
+                         emoji.SendToBack();
+                }
                     else
                     {
-                    // emoji.BackColor = System.Drawing.Color.Red;
-                    // emoji.Image = backgroundBox.Image;
-                    emoji.SendToBack();
-                    emotionLabel.Text = string.Empty;
+                         emoji.SendToBack();
+                         emotionLabel.Text = string.Empty;
                     }
               
                 }

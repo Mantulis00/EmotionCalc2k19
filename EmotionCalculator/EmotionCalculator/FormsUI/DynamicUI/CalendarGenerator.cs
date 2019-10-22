@@ -51,7 +51,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 emoji.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 cell.Controls.Add(emoji);
-                cell.BringToFront();
+                cell.SendToBack();
                 
 
                  yield return emoji;
