@@ -1,73 +1,64 @@
-﻿using System;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
+using System;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
     class UserData
     {
-        private int joyCoins;
-        public int JoyCoins
+        internal int JoyCoins { get; private set; }
+        internal int JoyGems { get; private set; }
+        internal int DailyStreak { get; private set; }
+
+        private DateTime _lastLogin;
+        internal DateTime LastLogin
         {
             get
             {
-                return joyCoins;
+                return new DateTime(_lastLogin.Year, _lastLogin.Month, _lastLogin.Day);
             }
-            set
+            private set
             {
-                if (value <= 0)
-                    joyCoins = 0;
-                else
-                    joyCoins = value;
+                _lastLogin = value;
             }
         }
 
-        private int joyGems;
-        public int JoyGems
+        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin)
         {
-            get
-            {
-                return joyGems;
-            }
-            set
-            {
-                if (value <= 0)
-                    joyGems = 0;
-                else
-                    joyGems = value;
-            }
-        }
-
-        private int dailyLoginStreak;
-        public int DailyLoginStreak
-        {
-            get
-            {
-                return dailyLoginStreak;
-            }
-            set
-            {
-                if (value <= 0)
-                    dailyLoginStreak = 0;
-                else
-                    dailyLoginStreak = value;
-            }
-        }
-
-        public DateTime LastLogOn { get; set; }
-
-        public void Login()
-        {
-            if (LastLogOn != DateTime.Today.AddDays(-1))
-            {
-                dailyLoginStreak = 0;
-            }
-
-            LastLogOn = DateTime.Today;
+            JoyCoins = joyCoins;
+            JoyGems = joyGems;
+            DailyStreak = dailyStreak;
+            LastLogin = new DateTime(lastLogin.Year, lastLogin.Month, lastLogin.Day);
         }
 
         public void ClaimDaily()
         {
-            dailyLoginStreak++;
-            dailyLoginStreak %= 7;
+            if (LastLogin != DateTime.Today.AddDays(-1))
+            {
+                DailyStreak = 0;
+            }
+
+            LastLogin = DateTime.Today;
+
+            var dailyReward = DailyLoginData.GetDailyReward(DailyStreak + 1);
+            AddCurrency(dailyReward.Item1, dailyReward.Item2);
+
+            DailyStreak++;
+            DailyStreak %= 7;
+        }
+
+        public void AddCurrency(CurrencyType currencyType, int amount)
+        {
+            switch (currencyType)
+            {
+                case CurrencyType.JoyCoin:
+                    JoyCoins += amount;
+                    JoyCoins = Math.Max(JoyCoins, 0);
+                    break;
+                case CurrencyType.JoyGem:
+                    JoyGems += amount;
+                    JoyGems = Math.Max(JoyGems, 0);
+                    break;
+            }
         }
     }
 }

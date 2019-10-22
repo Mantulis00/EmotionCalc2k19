@@ -144,7 +144,6 @@
     <Compile Include="EmotionCalculator\Logic\Settings\ThemePack.cs" />
     <Compile Include="EmotionCalculator\Logic\User\IUserLoader.cs" />
     <Compile Include="EmotionCalculator\Logic\User\UserData.cs" />
-    <Compile Include="EmotionCalculator\Logic\User\UserManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\IAPIManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIConfig.cs" />

@@ -20,29 +20,31 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
         public UserData Load()
         {
             var doc = GetXmlDocument();
-
-            UserData userData = new UserData();
-
             var nodes = doc.Descendants();
+
+            int joyCoins = 0;
+            int joyGems = 0;
+            int dailyStreak = 0;
+            DateTime lastLogin = DateTime.Today;
 
             try
             {
-                userData.JoyCoins = int.Parse(GetValueFromNode(nodes, CoinValueName));
-                userData.JoyGems = int.Parse(GetValueFromNode(nodes, GemValueName));
-                userData.DailyLoginStreak = int.Parse(GetValueFromNode(nodes, LoginStreakLengthName));
+                joyCoins = int.Parse(GetValueFromNode(nodes, CoinValueName));
+                joyGems = int.Parse(GetValueFromNode(nodes, GemValueName));
+                dailyStreak = int.Parse(GetValueFromNode(nodes, LoginStreakLengthName));
 
                 int lastDay = int.Parse(GetValueFromNode(nodes, LastLogOnDayName));
                 int lastMonth = int.Parse(GetValueFromNode(nodes, LastLogOnMonthName));
                 int lastYear = int.Parse(GetValueFromNode(nodes, LastLogOnYearName));
 
-                userData.LastLogOn = new DateTime(lastYear, lastMonth, lastDay);
+                lastLogin = new DateTime(lastYear, lastMonth, lastDay);
             }
             catch (FormatException fe)
             {
-                Console.WriteLine(fe.StackTrace);
+
             }
 
-            return userData;
+            return new UserData(joyCoins, joyGems, dailyStreak, lastLogin);
         }
 
         private string GetValueFromNode(IEnumerable<XElement> nodes, string nodeName)
@@ -65,10 +67,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
             SaveValueToNode(doc, CoinValueName, userData.JoyCoins.ToString());
             SaveValueToNode(doc, GemValueName, userData.JoyGems.ToString());
-            SaveValueToNode(doc, LoginStreakLengthName, userData.DailyLoginStreak.ToString());
-            SaveValueToNode(doc, LastLogOnDayName, userData.LastLogOn.Day.ToString());
-            SaveValueToNode(doc, LastLogOnMonthName, userData.LastLogOn.Month.ToString());
-            SaveValueToNode(doc, LastLogOnYearName, userData.LastLogOn.Year.ToString());
+            SaveValueToNode(doc, LoginStreakLengthName, userData.DailyStreak.ToString());
+            SaveValueToNode(doc, LastLogOnDayName, userData.LastLogin.Day.ToString());
+            SaveValueToNode(doc, LastLogOnMonthName, userData.LastLogin.Month.ToString());
+            SaveValueToNode(doc, LastLogOnYearName, userData.LastLogin.Year.ToString());
 
             doc.Save(FileName);
         }

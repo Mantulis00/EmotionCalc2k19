@@ -33,8 +33,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             SetupMonth();
 
             //Daily login
-            if (MonthManager.UserData.LastLogOn != DateTime.Today)
-                OpenSecondaryWindow(new DailyLoginForm(this));
+            MonthManager.RaiseLoginEvent(
+                (dailyStreak, claimReward) =>
+                {
+                    OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
+                });
         }
 
         private void SetupMonth()

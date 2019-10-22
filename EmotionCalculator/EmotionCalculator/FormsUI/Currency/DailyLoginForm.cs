@@ -1,24 +1,25 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
-using EmotionCalculator.EmotionCalculator.Logic.User;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using static EmotionCalculator.EmotionCalculator.Logic.MonthManager;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 {
     public partial class DailyLoginForm : Form
     {
-        private BaseForm baseForm;
-
         private List<Panel> panels;
         private List<Label> labels;
-        private List<Tuple<CurrencyType, int>> dailyValues;
 
-        public DailyLoginForm(BaseForm baseForm)
+        private int dailyStreak;
+
+        private ClaimReward claimReward;
+
+        internal DailyLoginForm(int dailyStreak, ClaimReward claimReward)
         {
-            this.baseForm = baseForm;
-            baseForm.MonthManager.UserData.Login();
+            this.dailyStreak = dailyStreak;
+            this.claimReward = claimReward;
 
             InitializeComponent();
             InitializePanels();
@@ -38,14 +39,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 label5, label6, label7,
             };
 
-            dailyValues = new List<Tuple<CurrencyType, int>>();
-
             for (int i = 1; i <= 7; i++)
             {
                 var dailyValue = DailyLoginData.GetDailyReward(i);
-                dailyValues.Add(dailyValue);
 
-                if (i > baseForm.MonthManager.UserData.DailyLoginStreak)
+                if (i > dailyStreak)
                 {
                     if (dailyValue.Item1 == CurrencyType.JoyCoin)
                         panels[i - 1].BackgroundImage = Properties.Resources.joyCoins;
@@ -62,30 +60,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 }
             }
 
-            labels[baseForm.MonthManager.UserData.DailyLoginStreak].ForeColor = Color.Gold;
+            labels[dailyStreak].ForeColor = Color.Gold;
+        }
+
+        private void DailyLoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            claimReward.Invoke();
         }
 
         private void ClaimButton_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void DailyLoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            UserData userData = baseForm.MonthManager.UserData;
-
-            var reward = dailyValues[userData.DailyLoginStreak];
-
-            if (reward.Item1 == CurrencyType.JoyCoin)
-            {
-                userData.JoyCoins += reward.Item2;
-            }
-            else if (reward.Item1 == CurrencyType.JoyGem)
-            {
-                userData.JoyGems += reward.Item2;
-            }
-
-            userData.ClaimDaily();
         }
     }
 }

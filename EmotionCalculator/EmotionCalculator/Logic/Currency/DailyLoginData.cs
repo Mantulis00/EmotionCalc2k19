@@ -4,9 +4,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 {
     static class DailyLoginData
     {
-        public static Tuple<CurrencyType, int> GetDailyReward(int dayOfTheWeek)
+        public static Tuple<CurrencyType, int> GetDailyReward(int dayInARow)
         {
-            switch (dayOfTheWeek)
+            switch (dayInARow)
             {
                 case 1:
                     return Tuple.Create(CurrencyType.JoyCoin, 10);
