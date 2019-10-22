@@ -23,6 +23,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             InitializeComponent();
             InitializePanels();
+
+            TopMost = true;
         }
 
         private void InitializePanels()
