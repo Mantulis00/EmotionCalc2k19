@@ -84,6 +84,7 @@
             this.emojisEnabledCheckBox.Size = new System.Drawing.Size(15, 14);
             this.emojisEnabledCheckBox.TabIndex = 3;
             this.emojisEnabledCheckBox.UseVisualStyleBackColor = true;
+            this.emojisEnabledCheckBox.CheckedChanged += new System.EventHandler(this.EmojisEnabledCheckBox_CheckedChanged);
             // 
             // emojisEnabledLabel
             // 

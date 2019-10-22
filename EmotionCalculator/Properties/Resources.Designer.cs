@@ -79,5 +79,14 @@ namespace EmotionCalculator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap EmojiHappiness
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("EmojiHappiness", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

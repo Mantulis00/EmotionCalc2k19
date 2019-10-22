@@ -38,6 +38,27 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             }
         }
 
+        internal static IEnumerable<PictureBox> GenerateEmojis(IEnumerable<PictureBox> cells, PictureBox pictureBox)
+        {
+            foreach (var cell in cells)
+            {
+                PictureBox emoji = new PictureBox();
+
+                emoji.BackColor = Color.Transparent;
+               // emoji.Image = ;
+                emoji.Location  = new Point(cellSize/4, cellSize/4 );
+                emoji.Size = new Size(cellSize/2, cellSize/2);
+                emoji.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                cell.Controls.Add(emoji);
+                cell.BringToFront();
+                
+
+                 yield return emoji;
+            }
+        }
+
+
         internal static IEnumerable<Label> GenerateNumberLabels(IEnumerable<PictureBox> cells)
         {
             foreach (var cell in cells)

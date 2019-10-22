@@ -122,6 +122,7 @@
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\EmojiManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\ISettingsManager.cs" />
     <Compile Include="EmotionCalculator\Logic\MonthManager.cs" />
@@ -189,6 +190,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backgroundHalloween.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmojiHappiness.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

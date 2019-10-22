@@ -186,5 +186,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
 
         }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
