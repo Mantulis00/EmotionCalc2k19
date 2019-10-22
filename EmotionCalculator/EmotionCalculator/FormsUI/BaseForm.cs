@@ -105,10 +105,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenSecondaryWindow(new SettingsForm(this));
-
-
-            ///
-
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -156,8 +152,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 leftButton.Hide();
                 rightButton.Hide();
                 dateTimePicker.Hide();
-               
-                calendarBackground.Location= new Point(calendarBackground.Location.X, 
+
+                calendarBackground.Location = new Point(calendarBackground.Location.X,
                     calendarBackground.Location.Y - rightButton.Height);
 
                 calendarBackground.Height += rightButton.Height;
@@ -168,7 +164,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 rightButton.Show();
                 dateTimePicker.Show();
                 calendarBackground.Location = new Point(
-                    calendarBackground.Location.X, 
+                    calendarBackground.Location.X,
                     calendarBackground.Location.Y + rightButton.Height);
 
                 calendarBackground.Height -= rightButton.Height;

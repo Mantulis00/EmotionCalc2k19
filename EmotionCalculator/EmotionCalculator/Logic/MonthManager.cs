@@ -41,7 +41,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         {
             bool claimed = false;
 
-            if (userData.LastLogin != DateTime.Today)
+            if (userData.LastLogin != DateTime.Today
+                || userData.DailyStreak == 0)
             {
                 launchLoginPopup.Invoke(
                     userData.DailyStreak,
