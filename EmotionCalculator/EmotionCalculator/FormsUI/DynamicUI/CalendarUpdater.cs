@@ -96,11 +96,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 {
                     if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                     {
-                         emoji.SendToBack();
-                }
+                         emoji.Visible = false;
+                     }
                     else
                     {
-                         emoji.SendToBack();
+                         emoji.Visible = false;
                          emotionLabel.Text = string.Empty;
                     }
               
@@ -115,7 +115,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                      }
                     else
                     {
-                        emoji.SendToBack();
+                        emoji.Visible = false;
                         emotionLabel.Text = monthEmotions[i + 1].ToString();
                     }
 
@@ -148,6 +148,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 emotionLabel.Text = string.Empty;
                 emotionLabel.Visible = false;
             }
+
+            foreach (var emoji in emojis)
+            {
+                emoji.Visible = false;
+            }
+
+
         }
     }
 }
