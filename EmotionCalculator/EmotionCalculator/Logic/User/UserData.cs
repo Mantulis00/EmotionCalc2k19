@@ -30,15 +30,18 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             LastLogin = new DateTime(lastLogin.Year, lastLogin.Month, lastLogin.Day);
         }
 
-        public void ClaimDaily()
+        public void Login()
         {
-            if (LastLogin != DateTime.Today.AddDays(-1))
+            if (LastLogin < DateTime.Today.AddDays(-1))
             {
                 DailyStreak = 0;
             }
 
             LastLogin = DateTime.Today;
+        }
 
+        public void ClaimDaily()
+        {
             var dailyReward = DailyLoginData.GetDailyReward(DailyStreak + 1);
             AddCurrency(dailyReward.Item1, dailyReward.Item2);
 

@@ -39,11 +39,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic
 
         internal void RaiseLoginEvent(LaunchLoginPopup launchLoginPopup)
         {
-            bool claimed = false;
-
             if (userData.LastLogin != DateTime.Today
                 || userData.DailyStreak == 0)
             {
+                userData.Login();
+
+                bool claimed = false;
+
                 launchLoginPopup.Invoke(
                     userData.DailyStreak,
                     () =>
