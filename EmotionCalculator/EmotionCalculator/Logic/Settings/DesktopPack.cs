@@ -47,7 +47,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
              Properties.Resources.backgroundBrexit,
             Color.FromArgb(160, 255, 255, 50),
             Color.FromArgb(100, 200, 200, 50),
-            Color.FromArgb(255, 255, 55, 120),
+            Color.FromArgb(255, 255, 255, 200),
             Color.FromArgb(255, 0, 0, 0));
             
 
