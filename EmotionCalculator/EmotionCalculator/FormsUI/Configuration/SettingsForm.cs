@@ -47,14 +47,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             if (settingsManager[SettingType.Debug] == SettingStatus.Enabled)
             {
                 DebugcheckBox.Checked = true;
-                ShowDebug(true, baseForm);
             }
             else
             {
-                ShowDebug(false, baseForm);
+                
                 DebugcheckBox.Checked = false;
             }
-
+            BaseFormManagerUI.ShowDebug(baseForm);
         }
 
 
@@ -95,32 +94,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             if (DebugcheckBox.Checked)
             {
                 settingsManager[SettingType.Debug] = SettingStatus.Enabled;
-                ShowDebug(true, baseForm);
             }
             else
             {
-                ShowDebug(false, baseForm);
                 settingsManager[SettingType.Debug] = SettingStatus.Disabled;
             }
+            BaseFormManagerUI.ShowDebug(baseForm);
 
         }
 
-        public static void ShowDebug(bool show, BaseForm baseForm)
-        {
-            if (show)
-            {
-                baseForm.leftButton.Show();
-                baseForm.rightButton.Show();
-                baseForm.dateTimePicker.Show();  
-            }
-            else
-            {
-                baseForm.leftButton.Hide();
-                baseForm.rightButton.Hide();
-                baseForm.dateTimePicker.Hide();
-            }
-
-        }
 
 
         private void DrawTabs(Object sender, DrawItemEventArgs e)

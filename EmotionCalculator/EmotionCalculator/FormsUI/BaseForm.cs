@@ -18,6 +18,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         internal IAPIManager APIManager { get; private set; }
 
         internal SettingsManager SettingsManager { get; private set; }
+        public object SettingStatus { get; internal set; }
+
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -44,14 +46,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void StartupUI()
         {
-            if (SettingsManager[SettingType.Debug] == SettingStatus.Enabled)
-            {
-                SettingsForm.ShowDebug(true, this);
-            }
-            else
-            {
-                SettingsForm.ShowDebug(false, this);
-            }
+                BaseFormManagerUI.ShowDebug(this);
         }
 
 
