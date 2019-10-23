@@ -26,6 +26,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             //UI
             InitializeComponent();
+            checkForMode();
 
             //API
             APIManager = apiManager;
@@ -126,6 +127,25 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             OpenSecondaryWindow(APIManager.GetSettingsForm());
         }
+        private void DebugModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            checkForMode();
+        }
+
+        private void checkForMode()
+        {
+            if (debugModeToolStripMenuItem.Text == "Normal Mode")
+            {
+                debugModeToolStripMenuItem.Text = "Debug Mode";
+                Rearrange(true);
+            }
+            else
+            {
+                debugModeToolStripMenuItem.Text = "Normal Mode";
+                Rearrange(false);
+            }
+        }
+
 
         private void OpenSecondaryWindow(Form secondaryWindow)
         {
@@ -185,5 +205,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
+      
     }
 }

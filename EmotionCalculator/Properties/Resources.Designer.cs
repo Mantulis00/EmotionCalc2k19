@@ -63,6 +63,16 @@ namespace EmotionCalculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroundBrexit {
+            get {
+                object obj = ResourceManager.GetObject("backgroundBrexit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backgroundHalloween {
             get {
                 object obj = ResourceManager.GetObject("backgroundHalloween", resourceCulture);
@@ -76,6 +86,16 @@ namespace EmotionCalculator.Properties {
         internal static System.Drawing.Bitmap backgroundMountains {
             get {
                 object obj = ResourceManager.GetObject("backgroundMountains", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkmark {
+            get {
+                object obj = ResourceManager.GetObject("checkmark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,16 +176,6 @@ namespace EmotionCalculator.Properties {
         internal static System.Drawing.Bitmap emojiSurprise {
             get {
                 object obj = ResourceManager.GetObject("emojiSurprise", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap checkmark {
-            get {
-                object obj = ResourceManager.GetObject("checkmark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

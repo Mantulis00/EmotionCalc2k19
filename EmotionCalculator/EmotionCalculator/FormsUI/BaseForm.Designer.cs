@@ -53,6 +53,7 @@
             this.coinsImagePanel = new System.Windows.Forms.Panel();
             this.coinBackgroundPanel = new System.Windows.Forms.Panel();
             this.coinAmountLabel = new System.Windows.Forms.Label();
+            this.debugModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gemBackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
@@ -133,7 +134,8 @@
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configureAPIKeyToolStripMenuItem,
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.debugModeToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -141,14 +143,14 @@
             // configureAPIKeyToolStripMenuItem
             // 
             this.configureAPIKeyToolStripMenuItem.Name = "configureAPIKeyToolStripMenuItem";
-            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configureAPIKeyToolStripMenuItem.Text = "Configure API key";
             this.configureAPIKeyToolStripMenuItem.Click += new System.EventHandler(this.ConfigureAPIKeyToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
@@ -178,17 +180,6 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(375, 20);
             this.dateTimePicker.TabIndex = 19;
-            // 
-            // calendarBackground
-            // 
-            this.calendarBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.calendarBackground.InitialImage = null;
-            this.calendarBackground.Location = new System.Drawing.Point(12, 82);
-            this.calendarBackground.Name = "calendarBackground";
-            this.calendarBackground.Size = new System.Drawing.Size(503, 391);
-            this.calendarBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.calendarBackground.TabIndex = 20;
-            this.calendarBackground.TabStop = false;
             // 
             // leftButton
             // 
@@ -250,6 +241,7 @@
             this.calendarBackground.Location = new System.Drawing.Point(12, 114);
             this.calendarBackground.Name = "calendarBackground";
             this.calendarBackground.Size = new System.Drawing.Size(503, 391);
+            this.calendarBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.calendarBackground.TabIndex = 20;
             this.calendarBackground.TabStop = false;
             // 
@@ -283,6 +275,13 @@
             this.coinAmountLabel.TabIndex = 0;
             this.coinAmountLabel.Text = "10000";
             this.coinAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // debugModeToolStripMenuItem
+            // 
+            this.debugModeToolStripMenuItem.Name = "debugModeToolStripMenuItem";
+            this.debugModeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.debugModeToolStripMenuItem.Text = "Normal Mode";
+            this.debugModeToolStripMenuItem.Click += new System.EventHandler(this.DebugModeToolStripMenuItem_Click);
             // 
             // BaseForm
             // 
@@ -340,5 +339,6 @@
         private System.Windows.Forms.Panel gemsImagePanel;
         private System.Windows.Forms.Label gemAmountLabel;
         private System.Windows.Forms.Label coinAmountLabel;
+        private System.Windows.Forms.ToolStripMenuItem debugModeToolStripMenuItem;
     }
 }
