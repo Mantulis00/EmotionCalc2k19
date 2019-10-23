@@ -190,7 +190,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             SoundPlayer player = new SoundPlayer();
             var rand = new Random();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Songs\\" + rand.Next(1,13).ToString() + ".wav";
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory+"\\Resources\\" + rand.Next(1,13).ToString() + ".wav";
             player.Play();
         }
     }
