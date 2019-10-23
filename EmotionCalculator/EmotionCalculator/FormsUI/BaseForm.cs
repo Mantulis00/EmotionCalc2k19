@@ -18,6 +18,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         internal IAPIManager APIManager { get; private set; }
 
         internal SettingsManager SettingsManager { get; private set; }
+        public object SettingStatus { get; internal set; }
+
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -26,6 +28,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             //UI
             InitializeComponent();
+            StartupUI();
 
             //API
             APIManager = apiManager;
@@ -40,6 +43,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
                 });
         }
+
+        private void StartupUI()
+        {
+                BaseFormManagerUI.ShowDebug(this);
+        }
+
 
         private void SetupMonth()
         {
@@ -127,51 +136,24 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             OpenSecondaryWindow(APIManager.GetSettingsForm());
         }
 
+
+
         private void OpenSecondaryWindow(Form secondaryWindow)
         {
             Enabled = false;
 
-            Rearrange(true);
 
             secondaryWindow.Show();
 
             secondaryWindow.FormClosed +=
                 (o, ev) =>
                 {
-                    Rearrange(false);
 
                     Enabled = true;
                     MonthManager.Refresh();
                 };
         }
 
-        private void Rearrange(bool opening)
-        {
-            if (opening)
-            {
-                leftButton.Hide();
-                rightButton.Hide();
-                dateTimePicker.Hide();
-
-                calendarBackground.Location = new Point(calendarBackground.Location.X,
-                    calendarBackground.Location.Y - rightButton.Height);
-
-                calendarBackground.Height += rightButton.Height;
-            }
-            else
-            {
-                leftButton.Show();
-                rightButton.Show();
-                dateTimePicker.Show();
-                calendarBackground.Location = new Point(
-                    calendarBackground.Location.X,
-                    calendarBackground.Location.Y + rightButton.Height);
-
-                calendarBackground.Height -= rightButton.Height;
-            }
-
-
-        }
 
 
         //Calendar navigation
@@ -185,5 +167,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
+        private void CalendarBackground_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

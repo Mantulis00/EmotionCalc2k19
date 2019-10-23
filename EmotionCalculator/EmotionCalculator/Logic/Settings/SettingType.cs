@@ -3,5 +3,6 @@
     enum SettingType
     {
         Emoji,
+        Debug,
     }
 }

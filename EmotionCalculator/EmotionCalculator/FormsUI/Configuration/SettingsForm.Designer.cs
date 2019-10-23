@@ -40,8 +40,10 @@
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
+            this.DebugcheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -84,7 +86,6 @@
             this.emojisEnabledCheckBox.Size = new System.Drawing.Size(15, 14);
             this.emojisEnabledCheckBox.TabIndex = 3;
             this.emojisEnabledCheckBox.UseVisualStyleBackColor = true;
-            this.emojisEnabledCheckBox.CheckedChanged += new System.EventHandler(this.EmojisEnabledCheckBox_CheckedChanged);
             // 
             // emojisEnabledLabel
             // 
@@ -114,12 +115,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.DebugcheckBox);
             this.tabPage2.Location = new System.Drawing.Point(104, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(409, 197);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Blank";
+            this.tabPage2.Text = "Admin Tools";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
@@ -170,6 +172,16 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
+            // DebugcheckBox
+            // 
+            this.DebugcheckBox.AutoSize = true;
+            this.DebugcheckBox.Location = new System.Drawing.Point(6, 6);
+            this.DebugcheckBox.Name = "DebugcheckBox";
+            this.DebugcheckBox.Size = new System.Drawing.Size(88, 17);
+            this.DebugcheckBox.TabIndex = 0;
+            this.DebugcheckBox.Text = "Debug Mode";
+            this.DebugcheckBox.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +197,8 @@
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,5 +216,6 @@
         private System.Windows.Forms.Label selectedThemeLabel;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.CheckBox emojisEnabledCheckBox;
+        private System.Windows.Forms.CheckBox DebugcheckBox;
     }
 }
