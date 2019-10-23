@@ -44,9 +44,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void StartupUI()
         {
-            leftButton.Hide();
-            rightButton.Hide();
-            dateTimePicker.Hide();
+            if (SettingsManager[SettingType.Debug] == SettingStatus.Enabled)
+            {
+                SettingsForm.ShowDebug(true, this);
+            }
+            else
+            {
+                SettingsForm.ShowDebug(false, this);
+            }
         }
 
 

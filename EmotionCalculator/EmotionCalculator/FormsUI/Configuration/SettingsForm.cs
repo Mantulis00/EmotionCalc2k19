@@ -32,19 +32,28 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             SettingsManager settingsManager = baseForm.SettingsManager;
 
             checkCheckBoxes(settingsManager);
+
+            settingsManager.Save();
         }
 
-        private void checkCheckBoxes(SettingsManager settingsManager)
+        private  void checkCheckBoxes(SettingsManager settingsManager)
         {
             if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                 emojisEnabledCheckBox.Checked = true;
             else if (settingsManager[SettingType.Emoji] == SettingStatus.Disabled)
                 emojisEnabledCheckBox.Checked = false;
 
+
             if (settingsManager[SettingType.Debug] == SettingStatus.Enabled)
+            {
                 DebugcheckBox.Checked = true;
+                ShowDebug(true, baseForm);
+            }
             else
+            {
+                ShowDebug(false, baseForm);
                 DebugcheckBox.Checked = false;
+            }
 
         }
 
@@ -84,28 +93,31 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void AdminToolsSubmitions(SettingsManager settingsManager)
         {
             if (DebugcheckBox.Checked)
+            {
                 settingsManager[SettingType.Debug] = SettingStatus.Enabled;
+                ShowDebug(true, baseForm);
+            }
             else
+            {
+                ShowDebug(false, baseForm);
                 settingsManager[SettingType.Debug] = SettingStatus.Disabled;
-
-            if (settingsManager[SettingType.Debug] == SettingStatus.Enabled) Rearrange(false);
-            else Rearrange(true);
+            }
 
         }
 
-        private void Rearrange(bool opening)
+        public static void ShowDebug(bool show, BaseForm baseForm)
         {
-            if (opening)
+            if (show)
+            {
+                baseForm.leftButton.Show();
+                baseForm.rightButton.Show();
+                baseForm.dateTimePicker.Show();  
+            }
+            else
             {
                 baseForm.leftButton.Hide();
                 baseForm.rightButton.Hide();
                 baseForm.dateTimePicker.Hide();
-            }
-            else
-            {
-                baseForm.leftButton.Show();
-                baseForm.rightButton.Show();
-                baseForm.dateTimePicker.Show();
             }
 
         }
