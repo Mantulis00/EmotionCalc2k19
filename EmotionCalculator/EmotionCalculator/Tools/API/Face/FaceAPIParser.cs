@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Tools.Errors;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.EmotionCalculator.Tools.Errors;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
     static class FaceAPIParser
     {
-        internal static FaceAPIParseResult ParseJSON(string jsonString)
+        internal static APIParseResult ParseJSON(string jsonString)
         {
             //JsonTextReader reference:
             //https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_JsonTextReader.htm
@@ -33,7 +34,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
                 }
             }
 
-            return new FaceAPIParseResult(faces, errors);
+            return new APIParseResult(faces, errors);
         }
 
         private static void ParseFaceAPIObject(this JObject jObject, List<FaceData> faces, List<ErrorLog> errors)

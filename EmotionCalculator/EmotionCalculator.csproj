@@ -77,12 +77,27 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmotionCalculator\ConsoleUI\Program.cs" />
-    <Compile Include="EmotionCalculator\FormsUI\APISettingsForm.cs">
+    <Compile Include="EmotionCalculator\FormsUI\BaseFormManagerUI.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\APISettingsForm.Designer.cs">
-      <DependentUpon>APISettingsForm.cs</DependentUpon>
+    <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.Designer.cs">
+      <DependentUpon>DailyLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CurrencyUpdater.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IMonthUpdatable.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IUserUpdatable.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.Designer.cs">
+      <DependentUpon>CameraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.Designer.cs">
+      <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\BaseForm.cs">
       <SubType>Form</SubType>
@@ -92,25 +107,59 @@
     </Compile>
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarGenerator.cs" />
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarUpdater.cs" />
-    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IMonthUpdatable.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.Designer.cs">
+      <DependentUpon>ImagefileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.Designer.cs">
+      <DependentUpon>UrlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\Logic\Currency\CurrencyType.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\DailyLoginData.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\EmotionValue.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
+    <Compile Include="EmotionCalculator\Logic\Data\UserLoader.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\EmojiManager.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\ISettingsLogger.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingsManager.cs" />
     <Compile Include="EmotionCalculator\Logic\MonthManager.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\EmotionData.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingsLogger.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingStatus.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\SettingType.cs" />
+    <Compile Include="EmotionCalculator\Logic\Settings\ThemePack.cs" />
+    <Compile Include="EmotionCalculator\Logic\User\IUserLoader.cs" />
+    <Compile Include="EmotionCalculator\Logic\User\UserData.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\IAPIManager.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Containers\EmotionData.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIConfig.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIManager.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParser.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIKey.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\CameraHandle.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHandle.cs" />
+    <Compile Include="EmotionCalculator\Tools\Web\ImageConverter.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\Emotion.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIParseResult.cs" />
-    <Compile Include="EmotionCalculator\Tools\API\Face\FaceData.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Containers\Emotion.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\APIParseResult.cs" />
+    <Compile Include="EmotionCalculator\Tools\API\Containers\FaceData.cs" />
     <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -118,22 +167,129 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="EmotionCalculator\Tools\API\IAPIRequester.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EmotionCalculator\obj\Release\" />
+    <Folder Include="EmotionCalculator\Tools\Managers\" />
     <Folder Include="Logic\" />
+    <Folder Include="Tools\API\Face\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\APISettingsForm.resx">
-      <DependentUpon>APISettingsForm.cs</DependentUpon>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.resx">
+      <DependentUpon>DailyLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\CameraForm.resx">
+      <DependentUpon>CameraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.resx">
+      <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.resx">
+      <DependentUpon>ImagefileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\UrlForm.resx">
+      <DependentUpon>UrlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundMountains.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundHalloween1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundHalloween.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joyCoins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joyGem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiHappiness.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmojiHappy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiHappiness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiFear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiNeutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiAnger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiSurprise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiSadness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiDisguist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emojiContempt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\britreeee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\10.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\11.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\12.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\4.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\5.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\6.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\7.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\8.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\9.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

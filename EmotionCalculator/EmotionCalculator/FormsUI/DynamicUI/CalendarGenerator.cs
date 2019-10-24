@@ -11,7 +11,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
         private static readonly int cellSize = 40;
 
-        internal static IEnumerable<PictureBox> GenerateCells(PictureBox pictureBox)
+        internal static IEnumerable<PictureBox> GenerateCells(PictureBox pictureBox, Color defaultCellColor)
         {
             Size backgroundSize = pictureBox.Size;
 
@@ -29,7 +29,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                             verticalGap + i * (cellSize + verticalGap));
 
                     cell.Size = new Size(cellSize, cellSize);
-                    cell.BackColor = CalendarUpdater.defaultCellColor;
+                    cell.BackColor = defaultCellColor;
 
                     pictureBox.Controls.Add(cell);
                     cell.BringToFront();
@@ -37,6 +37,27 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 }
             }
         }
+
+        internal static IEnumerable<PictureBox> GenerateEmojis(IEnumerable<PictureBox> cells, PictureBox pictureBox)
+        {
+            foreach (var cell in cells)
+            {
+                PictureBox emoji = new PictureBox();
+
+                emoji.BackColor = Color.Transparent;
+               // emoji.Image = ;
+                emoji.Location  = new Point(cellSize/4, cellSize/3 );
+                emoji.Size = new Size(cellSize/2, cellSize/2);
+                emoji.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                cell.Controls.Add(emoji);
+                cell.SendToBack();
+                
+
+                 yield return emoji;
+            }
+        }
+
 
         internal static IEnumerable<Label> GenerateNumberLabels(IEnumerable<PictureBox> cells)
         {

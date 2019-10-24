@@ -1,36 +1,33 @@
-﻿using System.Drawing;
+﻿using EmotionCalculator.EmotionCalculator.Tools.Web;
+using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
-    class FaceAPIRequester
+    class FaceAPIRequester : IAPIRequester
     {
-        internal FaceAPIKey apiKey { get; private set; }
+        internal FaceAPIKey apiKey { get; set; }
 
         internal FaceAPIRequester(FaceAPIKey faceAPIKey)
         {
             apiKey = faceAPIKey;
         }
 
-        public async Task<string> RequestImageDataAsync(string imageURL)
+        public async Task<APIParseResult> RequestParseResultAsync(string imageURL)
         {
             byte[] image = (await Web.ImageDownloader.GetByteArrayFromUrlAsync(imageURL));
-            return await RequestImageDataAsync(image);
+            return await RequestParseResultAsync(image);
         }
 
-        public async Task<string> RequestImageDataAsync(Image imageIn)
+        public async Task<APIParseResult> RequestParseResultAsync(Image imageIn)
         {
-            using (var imgOut = new System.IO.MemoryStream())
-            {
-                imageIn.Save(imgOut, imageIn.RawFormat);
-                return await RequestImageDataAsync(imgOut.ToArray());
-            }
-
+            return await RequestParseResultAsync(
+                ImageTools.ImageToByteArray(imageIn));
         }
 
-        public async Task<string> RequestImageDataAsync(byte[] imageByteArray)
+        public async Task<APIParseResult> RequestParseResultAsync(byte[] imageByteArray)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -48,10 +45,12 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 
                     HttpResponseMessage response = await client.PostAsync(requestURL, content);
 
+                    //JSON file
                     string responseString = await response.Content.ReadAsStringAsync();
 
-                    //JSON file
-                    return responseString;
+                    APIParseResult parseResult = FaceAPIParser.ParseJSON(responseString);
+
+                    return parseResult;
                 }
             }
         }

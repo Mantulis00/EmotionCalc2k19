@@ -29,204 +29,76 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
-            this.imageUrlLabel = new System.Windows.Forms.Label();
-            this.imageUrlTextBox = new System.Windows.Forms.TextBox();
-            this.submitButton = new System.Windows.Forms.Button();
-            this.resultLabel = new System.Windows.Forms.Label();
-            this.operationResultLabel = new System.Windows.Forms.Label();
-            this.errorTextLabel = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.webcamPictureBox = new System.Windows.Forms.PictureBox();
+            this.urlButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.buttonUpload = new System.Windows.Forms.Button();
-            this.faceCountTextLabel = new System.Windows.Forms.Label();
-            this.faceCountLabel = new System.Windows.Forms.Label();
-            this.camStartButton = new System.Windows.Forms.Button();
-            this.camStopButton = new System.Windows.Forms.Button();
-            this.imageUploadPictureBox = new System.Windows.Forms.PictureBox();
-            this.submitWebCamButton = new System.Windows.Forms.Button();
-            this.submitUploadedImageButton = new System.Windows.Forms.Button();
+            this.imageButton = new System.Windows.Forms.Button();
+            this.cameraButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureAPIKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.calendarBackground = new System.Windows.Forms.PictureBox();
             this.leftButton = new System.Windows.Forms.Button();
             this.rightButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).BeginInit();
+            this.gemBackgroundPanel = new System.Windows.Forms.Panel();
+            this.gemsImagePanel = new System.Windows.Forms.Panel();
+            this.gemAmountLabel = new System.Windows.Forms.Label();
+            this.calendarBackground = new System.Windows.Forms.PictureBox();
+            this.coinsImagePanel = new System.Windows.Forms.Panel();
+            this.coinBackgroundPanel = new System.Windows.Forms.Panel();
+            this.coinAmountLabel = new System.Windows.Forms.Label();
+            this.useCoinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.musicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.gemBackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
+            this.coinBackgroundPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // imageUrlLabel
+            // urlButton
             // 
-            this.imageUrlLabel.AutoSize = true;
-            this.imageUrlLabel.Location = new System.Drawing.Point(9, 36);
-            this.imageUrlLabel.Name = "imageUrlLabel";
-            this.imageUrlLabel.Size = new System.Drawing.Size(61, 13);
-            this.imageUrlLabel.TabIndex = 5;
-            this.imageUrlLabel.Text = "Image URL";
-            // 
-            // imageUrlTextBox
-            // 
-            this.imageUrlTextBox.Location = new System.Drawing.Point(76, 33);
-            this.imageUrlTextBox.Name = "imageUrlTextBox";
-            this.imageUrlTextBox.Size = new System.Drawing.Size(291, 20);
-            this.imageUrlTextBox.TabIndex = 4;
-            // 
-            // submitButton
-            // 
-            this.submitButton.Location = new System.Drawing.Point(373, 31);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(95, 23);
-            this.submitButton.TabIndex = 6;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
-            this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
-            // 
-            // resultLabel
-            // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(38, 68);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(40, 13);
-            this.resultLabel.TabIndex = 7;
-            this.resultLabel.Text = "Result:";
-            // 
-            // operationResultLabel
-            // 
-            this.operationResultLabel.AutoSize = true;
-            this.operationResultLabel.Location = new System.Drawing.Point(84, 68);
-            this.operationResultLabel.Name = "operationResultLabel";
-            this.operationResultLabel.Size = new System.Drawing.Size(40, 13);
-            this.operationResultLabel.TabIndex = 8;
-            this.operationResultLabel.Text = "< . . . >";
-            // 
-            // errorTextLabel
-            // 
-            this.errorTextLabel.AutoSize = true;
-            this.errorTextLabel.Location = new System.Drawing.Point(84, 92);
-            this.errorTextLabel.Name = "errorTextLabel";
-            this.errorTextLabel.Size = new System.Drawing.Size(40, 13);
-            this.errorTextLabel.TabIndex = 10;
-            this.errorTextLabel.Text = "< . . . >";
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(46, 92);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(32, 13);
-            this.errorLabel.TabIndex = 9;
-            this.errorLabel.Text = "Error:";
-            // 
-            // webcamPictureBox
-            // 
-            this.webcamPictureBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.webcamPictureBox.Location = new System.Drawing.Point(474, 269);
-            this.webcamPictureBox.Name = "webcamPictureBox";
-            this.webcamPictureBox.Size = new System.Drawing.Size(241, 159);
-            this.webcamPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.webcamPictureBox.TabIndex = 11;
-            this.webcamPictureBox.TabStop = false;
+            this.urlButton.Location = new System.Drawing.Point(17, 33);
+            this.urlButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.urlButton.Name = "urlButton";
+            this.urlButton.Size = new System.Drawing.Size(76, 68);
+            this.urlButton.TabIndex = 6;
+            this.urlButton.Text = "Upload from URL";
+            this.urlButton.UseVisualStyleBackColor = true;
+            this.urlButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // buttonUpload
+            // imageButton
             // 
-            this.buttonUpload.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.buttonUpload.Location = new System.Drawing.Point(474, 202);
-            this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.Size = new System.Drawing.Size(112, 61);
-            this.buttonUpload.TabIndex = 12;
-            this.buttonUpload.Text = "Add Image";
-            this.buttonUpload.UseVisualStyleBackColor = true;
-            this.buttonUpload.Click += new System.EventHandler(this.OpenFileButton_Click);
+            this.imageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.imageButton.Location = new System.Drawing.Point(101, 33);
+            this.imageButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imageButton.Name = "imageButton";
+            this.imageButton.Size = new System.Drawing.Size(76, 68);
+            this.imageButton.TabIndex = 12;
+            this.imageButton.Text = "Upload from file";
+            this.imageButton.UseVisualStyleBackColor = true;
+            this.imageButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
-            // faceCountTextLabel
+            // cameraButton
             // 
-            this.faceCountTextLabel.AutoSize = true;
-            this.faceCountTextLabel.Location = new System.Drawing.Point(84, 116);
-            this.faceCountTextLabel.Name = "faceCountTextLabel";
-            this.faceCountTextLabel.Size = new System.Drawing.Size(40, 13);
-            this.faceCountTextLabel.TabIndex = 12;
-            this.faceCountTextLabel.Text = "< . . . >";
-            // 
-            // faceCountLabel
-            // 
-            this.faceCountLabel.AutoSize = true;
-            this.faceCountLabel.Location = new System.Drawing.Point(10, 116);
-            this.faceCountLabel.Name = "faceCountLabel";
-            this.faceCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.faceCountLabel.Size = new System.Drawing.Size(69, 13);
-            this.faceCountLabel.TabIndex = 11;
-            this.faceCountLabel.Text = "Faces found:";
-            // 
-            // camStartButton
-            // 
-            this.camStartButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.camStartButton.Location = new System.Drawing.Point(474, 434);
-            this.camStartButton.Name = "camStartButton";
-            this.camStartButton.Size = new System.Drawing.Size(71, 61);
-            this.camStartButton.TabIndex = 13;
-            this.camStartButton.Text = "Start WebCam";
-            this.camStartButton.UseVisualStyleBackColor = true;
-            this.camStartButton.Click += new System.EventHandler(this.CameraStartButton_Click);
-            // 
-            // camStopButton
-            // 
-            this.camStopButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.camStopButton.Location = new System.Drawing.Point(551, 434);
-            this.camStopButton.Name = "camStopButton";
-            this.camStopButton.Size = new System.Drawing.Size(79, 61);
-            this.camStopButton.TabIndex = 14;
-            this.camStopButton.Text = "Stop WebCam";
-            this.camStopButton.UseVisualStyleBackColor = true;
-            this.camStopButton.Click += new System.EventHandler(this.CameraStopButton_Click);
-            this.camStopButton.Enabled = false;
-            // 
-            // imageUploadPictureBox
-            // 
-            this.imageUploadPictureBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.imageUploadPictureBox.Location = new System.Drawing.Point(474, 31);
-            this.imageUploadPictureBox.Name = "imageUploadPictureBox";
-            this.imageUploadPictureBox.Size = new System.Drawing.Size(241, 165);
-            this.imageUploadPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageUploadPictureBox.TabIndex = 15;
-            this.imageUploadPictureBox.TabStop = false;
-            // 
-            // submitWebCamButton
-            // 
-            this.submitWebCamButton.Font = new System.Drawing.Font("Lucida Bright", 9F);
-            this.submitWebCamButton.Location = new System.Drawing.Point(636, 434);
-            this.submitWebCamButton.Name = "submitWebCamButton";
-            this.submitWebCamButton.Size = new System.Drawing.Size(75, 61);
-            this.submitWebCamButton.TabIndex = 16;
-            this.submitWebCamButton.Text = "Submit";
-            this.submitWebCamButton.UseVisualStyleBackColor = true;
-            this.submitWebCamButton.Click += new System.EventHandler(this.SubmitWebCamButton_Click);
-            // 
-            // submitUploadedImageButton
-            // 
-            this.submitUploadedImageButton.Font = new System.Drawing.Font("Lucida Bright", 10F);
-            this.submitUploadedImageButton.Location = new System.Drawing.Point(592, 202);
-            this.submitUploadedImageButton.Name = "submitUploadedImageButton";
-            this.submitUploadedImageButton.Size = new System.Drawing.Size(123, 61);
-            this.submitUploadedImageButton.TabIndex = 17;
-            this.submitUploadedImageButton.Text = "Submit";
-            this.submitUploadedImageButton.UseVisualStyleBackColor = true;
-            this.submitUploadedImageButton.Click += new System.EventHandler(this.SubmitUploadedImageButton_Click);
-            this.submitUploadedImageButton.Enabled = false;
+            this.cameraButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cameraButton.Location = new System.Drawing.Point(185, 33);
+            this.cameraButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cameraButton.Name = "cameraButton";
+            this.cameraButton.Size = new System.Drawing.Size(76, 68);
+            this.cameraButton.TabIndex = 13;
+            this.cameraButton.Text = "Upload from webcam";
+            this.cameraButton.UseVisualStyleBackColor = true;
+            this.cameraButton.Click += new System.EventHandler(this.CameraStartButton_Click);
             // 
             // imageList1
             // 
@@ -236,14 +108,16 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.useCoinToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(723, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(701, 28);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -252,35 +126,43 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configureAPIKeyToolStripMenuItem});
+            this.configureAPIKeyToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // configureAPIKeyToolStripMenuItem
             // 
             this.configureAPIKeyToolStripMenuItem.Name = "configureAPIKeyToolStripMenuItem";
-            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.configureAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.configureAPIKeyToolStripMenuItem.Text = "Configure API key";
             this.configureAPIKeyToolStripMenuItem.Click += new System.EventHandler(this.ConfigureAPIKeyToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // helpToolStripMenuItem
@@ -288,39 +170,30 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(139, 150);
+            this.dateTimePicker.Location = new System.Drawing.Point(185, 108);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(329, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(499, 22);
             this.dateTimePicker.TabIndex = 19;
-            // 
-            // calendarBackground
-            // 
-            this.calendarBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.calendarBackground.Image = ((System.Drawing.Image)(resources.GetObject("calendarBackground.Image")));
-            this.calendarBackground.InitialImage = null;
-            this.calendarBackground.Location = new System.Drawing.Point(12, 176);
-            this.calendarBackground.Name = "calendarBackground";
-            this.calendarBackground.Size = new System.Drawing.Size(456, 319);
-            this.calendarBackground.TabIndex = 20;
-            this.calendarBackground.TabStop = false;
             // 
             // leftButton
             // 
             this.leftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.leftButton.Location = new System.Drawing.Point(13, 150);
+            this.leftButton.Location = new System.Drawing.Point(17, 108);
+            this.leftButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.leftButton.Name = "leftButton";
-            this.leftButton.Size = new System.Drawing.Size(57, 20);
+            this.leftButton.Size = new System.Drawing.Size(76, 25);
             this.leftButton.TabIndex = 21;
             this.leftButton.Text = "<<";
             this.leftButton.UseVisualStyleBackColor = true;
@@ -329,74 +202,148 @@
             // rightButton
             // 
             this.rightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.rightButton.Location = new System.Drawing.Point(76, 150);
+            this.rightButton.Location = new System.Drawing.Point(101, 108);
+            this.rightButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rightButton.Name = "rightButton";
-            this.rightButton.Size = new System.Drawing.Size(57, 20);
+            this.rightButton.Size = new System.Drawing.Size(76, 25);
             this.rightButton.TabIndex = 22;
             this.rightButton.Text = ">>";
             this.rightButton.UseVisualStyleBackColor = true;
             this.rightButton.Click += new System.EventHandler(this.RightButton_Click);
             // 
+            // gemBackgroundPanel
+            // 
+            this.gemBackgroundPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gemBackgroundPanel.Controls.Add(this.gemsImagePanel);
+            this.gemBackgroundPanel.Controls.Add(this.gemAmountLabel);
+            this.gemBackgroundPanel.Location = new System.Drawing.Point(485, 33);
+            this.gemBackgroundPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gemBackgroundPanel.Name = "gemBackgroundPanel";
+            this.gemBackgroundPanel.Size = new System.Drawing.Size(200, 68);
+            this.gemBackgroundPanel.TabIndex = 23;
+            // 
+            // gemsImagePanel
+            // 
+            this.gemsImagePanel.BackColor = System.Drawing.Color.Transparent;
+            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem;
+            this.gemsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gemsImagePanel.Location = new System.Drawing.Point(3, 2);
+            this.gemsImagePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gemsImagePanel.Name = "gemsImagePanel";
+            this.gemsImagePanel.Size = new System.Drawing.Size(68, 63);
+            this.gemsImagePanel.TabIndex = 1;
+            // 
+            // gemAmountLabel
+            // 
+            this.gemAmountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gemAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.gemAmountLabel.Location = new System.Drawing.Point(79, 2);
+            this.gemAmountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.gemAmountLabel.Name = "gemAmountLabel";
+            this.gemAmountLabel.Size = new System.Drawing.Size(117, 65);
+            this.gemAmountLabel.TabIndex = 1;
+            this.gemAmountLabel.Text = "100";
+            this.gemAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // calendarBackground
+            // 
+            this.calendarBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.calendarBackground.InitialImage = null;
+            this.calendarBackground.Location = new System.Drawing.Point(16, 140);
+            this.calendarBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.calendarBackground.Name = "calendarBackground";
+            this.calendarBackground.Size = new System.Drawing.Size(671, 481);
+            this.calendarBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.calendarBackground.TabIndex = 20;
+            this.calendarBackground.TabStop = false;
+            this.calendarBackground.Click += new System.EventHandler(this.CalendarBackground_Click);
+            // 
+            // coinsImagePanel
+            // 
+            this.coinsImagePanel.BackColor = System.Drawing.Color.Transparent;
+            this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins;
+            this.coinsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.coinsImagePanel.Location = new System.Drawing.Point(4, 2);
+            this.coinsImagePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.coinsImagePanel.Name = "coinsImagePanel";
+            this.coinsImagePanel.Size = new System.Drawing.Size(68, 63);
+            this.coinsImagePanel.TabIndex = 0;
+            // 
+            // coinBackgroundPanel
+            // 
+            this.coinBackgroundPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.coinBackgroundPanel.Controls.Add(this.coinAmountLabel);
+            this.coinBackgroundPanel.Controls.Add(this.coinsImagePanel);
+            this.coinBackgroundPanel.Location = new System.Drawing.Point(277, 33);
+            this.coinBackgroundPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.coinBackgroundPanel.Name = "coinBackgroundPanel";
+            this.coinBackgroundPanel.Size = new System.Drawing.Size(200, 68);
+            this.coinBackgroundPanel.TabIndex = 24;
+            // 
+            // coinAmountLabel
+            // 
+            this.coinAmountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.coinAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.coinAmountLabel.Location = new System.Drawing.Point(79, 1);
+            this.coinAmountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.coinAmountLabel.Name = "coinAmountLabel";
+            this.coinAmountLabel.Size = new System.Drawing.Size(117, 65);
+            this.coinAmountLabel.TabIndex = 0;
+            this.coinAmountLabel.Text = "10000";
+            this.coinAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // useCoinToolStripMenuItem
+            // 
+            this.useCoinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.musicToolStripMenuItem});
+            this.useCoinToolStripMenuItem.Name = "useCoinToolStripMenuItem";
+            this.useCoinToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.useCoinToolStripMenuItem.Text = "Use Coin";
+            // 
+            // musicToolStripMenuItem
+            // 
+            this.musicToolStripMenuItem.Name = "musicToolStripMenuItem";
+            this.musicToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.musicToolStripMenuItem.Text = "Music";
+            this.musicToolStripMenuItem.Click += new System.EventHandler(this.MusicToolStripMenuItem_Click);
+            // 
             // BaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 507);
+            this.ClientSize = new System.Drawing.Size(701, 638);
+            this.Controls.Add(this.imageButton);
+            this.Controls.Add(this.coinBackgroundPanel);
+            this.Controls.Add(this.gemBackgroundPanel);
             this.Controls.Add(this.rightButton);
             this.Controls.Add(this.leftButton);
             this.Controls.Add(this.calendarBackground);
             this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.submitUploadedImageButton);
-            this.Controls.Add(this.submitWebCamButton);
-            this.Controls.Add(this.imageUploadPictureBox);
-            this.Controls.Add(this.camStopButton);
-            this.Controls.Add(this.camStartButton);
-            this.Controls.Add(this.buttonUpload);
-            this.Controls.Add(this.webcamPictureBox);
-            this.Controls.Add(this.faceCountTextLabel);
-            this.Controls.Add(this.faceCountLabel);
-            this.Controls.Add(this.errorTextLabel);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.operationResultLabel);
-            this.Controls.Add(this.resultLabel);
-            this.Controls.Add(this.submitButton);
-            this.Controls.Add(this.imageUrlLabel);
-            this.Controls.Add(this.imageUrlTextBox);
+            this.Controls.Add(this.cameraButton);
+            this.Controls.Add(this.urlButton);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.webcamPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageUploadPictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.gemBackgroundPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).EndInit();
+            this.coinBackgroundPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label imageUrlLabel;
-        private System.Windows.Forms.TextBox imageUrlTextBox;
-        private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Label resultLabel;
-        private System.Windows.Forms.Label operationResultLabel;
-        private System.Windows.Forms.Label errorTextLabel;
-        private System.Windows.Forms.Label errorLabel;
-        private System.Windows.Forms.PictureBox webcamPictureBox;
+        private System.Windows.Forms.Button urlButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button buttonUpload;
-        private System.Windows.Forms.Label faceCountTextLabel;
-        private System.Windows.Forms.Label faceCountLabel;
-        private System.Windows.Forms.Button camStartButton;
-        private System.Windows.Forms.Button camStopButton;
-        private System.Windows.Forms.PictureBox imageUploadPictureBox;
-        private System.Windows.Forms.Button submitWebCamButton;
-        private System.Windows.Forms.Button submitUploadedImageButton;
+        private System.Windows.Forms.Button imageButton;
+        private System.Windows.Forms.Button cameraButton;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -407,8 +354,17 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.PictureBox calendarBackground;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Button leftButton;
-        private System.Windows.Forms.Button rightButton;
+        internal System.Windows.Forms.DateTimePicker dateTimePicker;
+        internal System.Windows.Forms.Button leftButton;
+        internal System.Windows.Forms.Button rightButton;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.Panel gemBackgroundPanel;
+        private System.Windows.Forms.Panel coinsImagePanel;
+        private System.Windows.Forms.Panel coinBackgroundPanel;
+        private System.Windows.Forms.Panel gemsImagePanel;
+        private System.Windows.Forms.Label gemAmountLabel;
+        private System.Windows.Forms.Label coinAmountLabel;
+        private System.Windows.Forms.ToolStripMenuItem useCoinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem musicToolStripMenuItem;
     }
 }

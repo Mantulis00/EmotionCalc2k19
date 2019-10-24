@@ -9,6 +9,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
         public MonthEmotions LoadMonth(int year, Month month)
         {
+
             if (MonthSavedExists(year, month))
             {
                 string directory = GetFullDirectory(year, month);

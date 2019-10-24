@@ -1,39 +1,98 @@
-﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
+﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
+using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
-using EmotionCalculator.EmotionCalculator.Tools.API.Face;
-using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
+using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Media;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        private CameraHandle cam;
-        private ImageHandle handle;
-        private FaceAPIRequester faceAPIRequester;
-        //private CalendarUpdater calendarUpdater;
+        internal MonthManager MonthManager { get; private set; }
 
-        private MonthManager monthManager;
+        internal IAPIManager APIManager { get; private set; }
 
-        internal BaseForm()
+        internal SettingsManager SettingsManager { get; private set; }
+        public object SettingStatus { get; internal set; }
+
+
+        internal BaseForm(IAPIManager apiManager)
         {
-            InitializeComponent();
-            cam = new CameraHandle(webcamPictureBox);
-            handle = new ImageHandle();
-            faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
+            //Settings
+            SettingsManager = DesktopPack.GetSettings();
 
-            monthManager = new MonthManager(new MonthEmotionsIO(),
-                new CalendarUpdater(calendarBackground), dateTimePicker.Value);
+            //UI
+            InitializeComponent();
+            StartupUI();
+
+            //API
+            APIManager = apiManager;
+
+            //UI <-> API
+            SetupMonth();
+
+            //Daily login
+            MonthManager.RaiseLoginEvent(
+                (dailyStreak, claimReward) =>
+                {
+                    OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
+                });
+        }
+
+        private void StartupUI()
+        {
+                BaseFormManagerUI.ShowDebug(this);
+        }
+
+
+        private void SetupMonth()
+        {
+            MonthManager = new MonthManager(
+               new MonthEmotionsIO(),
+               new CalendarUpdater(calendarBackground, SettingsManager),
+               dateTimePicker.Value,
+               new UserLoader(),
+               new CurrencyUpdater(coinAmountLabel, gemAmountLabel));
 
             dateTimePicker.ValueChanged +=
                 (o, e) =>
                 {
-                    monthManager.ChangeTime(dateTimePicker.Value);
+                    MonthManager.ChangeTime(dateTimePicker.Value);
                 };
+
+            MonthManager.Refresh();
+        }
+
+        internal void UpdateParsedData(APIParseResult parseResult)
+        {
+            DisplayErrors(parseResult);
+
+            if (parseResult.Faces.Count > 0)
+            {
+                MonthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
+            }
+        }
+
+        internal static void DisplayErrors(APIParseResult parseResult)
+        {
+            if (parseResult.Faces.Count == 0)
+            {
+                MessageBox.Show("No faces found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (parseResult.Errors.Count > 0)
+            {
+                foreach (var error in parseResult.Errors)
+                {
+                    MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -41,141 +100,64 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             ExitApplication();
         }
 
-        private void ExitApplication()
-        {
-            monthManager.Save();
-            cam.Stop();
-            Application.Exit();
-        }
-
-        private async void SubmitButton_Click(object sender, EventArgs e)
-        {
-            string url = imageUrlTextBox.Text;
-            if (!Tools.Web.ImageDownloader.CheckIfValidURL(url))
-            {
-                MessageBox.Show("Invalid URL");
-                return;    
-            }
-            string response = await faceAPIRequester.RequestImageDataAsync(url);
-
-            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
-            UpdateParsedData(parseResult);
-        }
-
-        private void UpdateParsedData(FaceAPIParseResult parseResult)
-        {
-            UpdateParsedDataUI(parseResult);
-
-            if (parseResult.Faces.Count > 0)
-            {
-                monthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
-            }
-
-            //if (parseResult.Faces.Count > 0)
-            //    calendarUpdater.SubmitChange(dateTimePicker.Value.Day,
-            //        parseResult.Faces.First().EmotionData.GetEmotion());
-        }
-
-        private void UpdateParsedDataUI(FaceAPIParseResult parseResult)
-        {
-            if (parseResult.Faces.Count > 0)
-            {
-                operationResultLabel.Text = parseResult.Faces[0].EmotionData.GetEmotion().ToString();
-            }
-            else
-            {
-                operationResultLabel.Text = "< . . . >";
-            }
-
-            faceCountTextLabel.Text = parseResult.Faces.Count.ToString();
-
-            if (parseResult.Errors.Count > 0)
-            {
-                errorTextLabel.Text = parseResult.Errors[0].Message;
-            }
-            else
-            {
-                errorTextLabel.Text = "< . . . >";
-            }
-        }
-
-        private void OpenFileButton_Click(object sender, EventArgs e)
-        {
-            ImageHandle handle = new ImageHandle();
-            handle.GetPicture(imageUploadPictureBox);
-            if (imageUploadPictureBox.Image != null)
-            {
-                submitUploadedImageButton.Enabled = true;
-            }
-        }
-
-        private void CameraStartButton_Click(object sender, EventArgs e)
-        {
-            cam.Start();
-            camStartButton.Enabled = false;
-            camStopButton.Enabled = true;
-        }
-
-        private void CameraStopButton_Click(object sender, EventArgs e)
-        {
-            cam.Stop();
-            camStopButton.Enabled = false;
-            camStartButton.Enabled = true;
-        }
-
-        private async void SubmitWebCamButton_Click(object sender, EventArgs e)
-        {
-            submitWebCamButton.Enabled = false;
-            Image image = null;
-            string response;
-            if (cam.cameraIsRoling)
-            {
-                image = webcamPictureBox.Image;
-                image = handle.imageProcess(image);
-
-
-                response = await faceAPIRequester.RequestImageDataAsync(image);
-                image.Dispose();
-            }
-            else
-            {
-                 response = " ";
-            }
-           
-
-            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
-            UpdateParsedData(parseResult);
-            submitWebCamButton.Enabled = true;
-        }
-
-        private async void SubmitUploadedImageButton_Click(object sender, EventArgs e)
-        {
-            string response = await faceAPIRequester.RequestImageDataAsync(imageUploadPictureBox.Image);
-
-            FaceAPIParseResult parseResult = FaceAPIParser.ParseJSON(response);
-            UpdateParsedData(parseResult);
-        }
-
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExitApplication();
         }
 
+        private void ExitApplication()
+        {
+            MonthManager.Save();
+
+            Application.Exit();
+        }
+
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new SettingsForm(this));
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new UrlForm(this));
+        }
+
+        private void OpenFileButton_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new ImagefileForm(this));
+        }
+
+        private void CameraStartButton_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new CameraForm(this));
+        }
+
         private void ConfigureAPIKeyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(APIManager.GetSettingsForm());
+        }
+
+
+
+        private void OpenSecondaryWindow(Form secondaryWindow)
         {
             Enabled = false;
 
-            Form apiForm = new APISettingsForm(FaceAPIConfig.LoadConfig());
-            apiForm.Show();
 
-            apiForm.FormClosed +=
+            secondaryWindow.Show();
+
+            secondaryWindow.FormClosed +=
                 (o, ev) =>
                 {
+
                     Enabled = true;
-                    faceAPIRequester = new FaceAPIRequester(FaceAPIConfig.LoadConfig());
+                    MonthManager.Refresh();
                 };
         }
 
+
+
+        //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(-1);
@@ -184,6 +166,19 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
+        }
+
+        private void CalendarBackground_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer();
+            var rand = new Random();
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
+            player.Play();
         }
     }
 }
