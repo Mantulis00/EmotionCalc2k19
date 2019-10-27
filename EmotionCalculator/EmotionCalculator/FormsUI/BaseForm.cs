@@ -66,6 +66,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     MonthManager.ChangeTime(dateTimePicker.Value);
                 };
 
+
             MonthManager.Refresh();
         }
 
@@ -152,6 +153,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
                     Enabled = true;
                     MonthManager.Refresh();
+                    BaseFormManagerUI.ShowDebug(this);
                 };
         }
 
