@@ -9,22 +9,32 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Media;
+using EmotionCalculator.MiniGames.SpaceInvaders;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
+
+
         internal MonthManager MonthManager { get; private set; }
 
         internal IAPIManager APIManager { get; private set; }
 
         internal SettingsManager SettingsManager { get; private set; }
-        public object SettingStatus { get; internal set; }
+        public object SettingStatus { get; internal set; } // not used ?
+
+
+        // kodas123
+        internal SpaceInvadersMain invadersManager;
 
 
         internal BaseForm(IAPIManager apiManager)
         {
+
+
             //Settings
+            this.KeyPreview = true;
             SettingsManager = DesktopPack.GetSettings();
 
             //UI
@@ -43,6 +53,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 {
                     OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
                 });
+
+            //kodas123
+
         }
 
         private void StartupUI()
@@ -95,6 +108,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 }
             }
         }
+
+
 
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -170,10 +185,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
-        private void CalendarBackground_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -181,6 +192,18 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             var rand = new Random();
             player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
             player.Play();
+        }
+
+
+        private void InvadersLauch()
+        {
+            invadersManager = new SpaceInvadersMain(calendarBackground);
+        }
+
+        //kodas123
+        private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InvadersLauch();
         }
     }
 }

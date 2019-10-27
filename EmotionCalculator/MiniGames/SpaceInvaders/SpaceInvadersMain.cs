@@ -13,69 +13,57 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
     {
         private PictureBox GrapX;
         private PictureBox Player;
-        private List<PictureBox> Invaders;
+        private InvadersManager invaderManager;
+
+        private List<SInvaders> Invaders;
 
         public int fps { private get; set; }
 
 
-        private int InvadersLenght, InvadersHeight, InvadersSpacer;
-        private int InvadersStartX, InvadersStartY;
-        SpaceInvadersMain()
+
+        internal SpaceInvadersMain(PictureBox grapX)
         {
-            //
-            GrapX = new PictureBox(); 
-            Player = new PictureBox();
+            GrapX = grapX;
+            
 
-            SetupPlayer();
+            invaderManager = new InvadersManager(grapX);
 
-            // Options
-            InvadersLenght = 5;
-            InvadersHeight = 3;
-            InvadersSpacer = 40;
+            SetupBackGround(grapX);
+            SetupPlayer(grapX);
 
-            InvadersStartX = 50;
-            InvadersStartY = 50;
+            // Invaders
+            
 
+            //fps
+            fps = 24;
         }
 
-        private void SetupBackGround(BaseForm baseForm)
+        private void SetupBackGround(PictureBox grapX)
         {
-            GrapX.Image = baseForm.BackgroundImage;
-            GrapX.Size = baseForm.BackgroundImage.Size;
+            GrapX = new PictureBox();
+            GrapX.Image = grapX.Image;
+            GrapX.Size = new Size(grapX.Size.Width, grapX.Size.Height);
             GrapX.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
 
-        private void SetupPlayer()
+        public void SetupPlayer(PictureBox grapX)
         {
+            Player = new PictureBox();
             Player.Size = new System.Drawing.Size(40, 40);
-            Player.Location = new System.Drawing.Point(GrapX.Size.Width / 2, GrapX.Height);
+            Player.Location = new System.Drawing.Point(grapX.Width / 2, 8 * grapX.Height / 10);
 
-            GrapX.Controls.Add(Player);
+            Player.SizeMode = grapX.SizeMode;
+            Player.Image = grapX.Image;
+
+            Player.BringToFront();
+            Player.Visible = true;
+
+            grapX.Controls.Add(Player);
+            //GrapX.Controls.Add(Player);
         }
 
-        private void GenerateInvaders()
-        {
-           for (int y = InvadersStartY; y < InvadersHeight; y+=InvadersSpacer)
-            {
-                for (int x = InvadersStartX; x < InvadersLenght; x+=InvadersSpacer)
-                {
-                    AddInvader(x, y);
-                }
-            }
-        }
-
-        private void AddInvader(int locationX, int locationY)
-        {
-            PictureBox Invader = new PictureBox();
-            Invader.Size = new Size(Player.Size.Width, Player.Size.Height);
-            Invader.Location = new System.Drawing.Point(locationX, locationY);
-        }
-
-        private void RemoveInvader(int InvaderN)
-        {
-            Invaders.RemoveAt(InvaderN);
-        }
+        
 
 
 

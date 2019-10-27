@@ -32,7 +32,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
 
-            emojis = CalendarGenerator.GenerateEmojis(cells, backgroundBox).ToList();
+            emojis = CalendarGenerator.GenerateEmojis(cells).ToList();
         }
 
         public void Update(MonthEmotions monthEmotions, DateTime newDateTime)
