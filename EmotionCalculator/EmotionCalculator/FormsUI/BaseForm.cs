@@ -203,7 +203,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         //kodas123
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            InvadersLauch();
+            if (e.KeyChar == 'e')
+                InvadersLauch();
+            else
+                invadersManager.playerIManager.ReadInput(e.KeyChar);
         }
     }
 }

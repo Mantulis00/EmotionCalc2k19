@@ -14,6 +14,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         private PictureBox GrapX;
         private PictureBox Player;
         private InvadersManager invaderManager;
+        internal PlayerInputs playerIManager {get;}
+
 
         private List<SInvaders> Invaders;
 
@@ -28,11 +30,13 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             invaderManager = new InvadersManager(grapX);
 
-            SetupBackGround(grapX);
-            SetupPlayer(grapX);
 
+            SetupBackGround(grapX);
+
+            SetupPlayer(grapX);
+            playerIManager = new PlayerInputs(Player);
             // Invaders
-            
+
 
             //fps
             fps = 24;
@@ -60,6 +64,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             Player.Visible = true;
 
             grapX.Controls.Add(Player);
+
             //GrapX.Controls.Add(Player);
         }
 
