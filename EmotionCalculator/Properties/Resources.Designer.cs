@@ -83,6 +83,16 @@ namespace EmotionCalculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroundMc {
+            get {
+                object obj = ResourceManager.GetObject("backgroundMc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backgroundMountains {
             get {
                 object obj = ResourceManager.GetObject("backgroundMountains", resourceCulture);

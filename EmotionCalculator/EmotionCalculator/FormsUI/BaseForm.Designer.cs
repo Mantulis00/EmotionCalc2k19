@@ -353,7 +353,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.PictureBox calendarBackground;
+        internal System.Windows.Forms.PictureBox calendarBackground;
         internal System.Windows.Forms.DateTimePicker dateTimePicker;
         internal System.Windows.Forms.Button leftButton;
         internal System.Windows.Forms.Button rightButton;
