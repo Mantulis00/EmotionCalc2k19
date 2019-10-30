@@ -7,8 +7,8 @@ using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
 using System.Linq;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -170,11 +170,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
-        }
-
-        private void CalendarBackground_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
