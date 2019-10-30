@@ -6,7 +6,6 @@ using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -47,18 +46,22 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void StartupUI()
         {
-                BaseFormManagerUI.ShowDebug(this);
+            BaseFormManagerUI.ShowDebug(this);
         }
 
 
         private void SetupMonth()
         {
             MonthManager = new MonthManager(
-               new MonthEmotionsIO(),
-               new CalendarUpdater(calendarBackground, SettingsManager),
-               dateTimePicker.Value,
-               new UserLoader(),
-               new CurrencyUpdater(coinAmountLabel, gemAmountLabel));
+                new MonthEmotionsIO(),
+                new CalendarUpdater(calendarBackground, SettingsManager),
+                dateTimePicker.Value,
+                new UserLoader(),
+                new CurrencyUpdater(
+                    coinAmountLabel, gemAmountLabel, angryEmotionCount,
+                    contemptEmotionCount, disgustEmotionCount,
+                    fearEmotionCount, happyEmotionCount, neutralEmotionCount,
+                    sadEmotionCount, surpriseEmotionCount));
 
             dateTimePicker.ValueChanged +=
                 (o, e) =>
