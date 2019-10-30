@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -11,10 +12,14 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 {
     class SpaceInvadersMain
     {
+
         private PictureBox GrapX;
         private PictureBox Player;
         private InvadersManager invaderManager;
         internal PlayerInputs playerIManager {get;}
+
+        //public Thread MainClock { get; }
+        System.Windows.Forms.Timer MainClock;
 
 
         private List<SInvaders> Invaders;
@@ -37,10 +42,40 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             playerIManager = new PlayerInputs(Player);
             // Invaders
 
+            SetupTimer();
 
-            //fps
-            fps = 24;
         }
+
+        void SetupTimer()
+        {
+            MainClock = new System.Windows.Forms.Timer();
+            MainClock.Interval = 50;
+            MainClock.Tick += StartClock;
+        }
+        public void StartTimer()
+        {
+            MainClock.Start();
+        }
+
+
+        long  Timer, NanoConstant;
+
+        public void StartClock(object sender, EventArgs e)
+        {
+           // Thread.Sleep(1000);
+            Console.WriteLine( "w");
+            
+           // Timer = DateTime.Now.Ticks;
+             invaderManager.UpdateInvaders();
+            /*
+            if (DateTime.Now.Ticks - Timer < NanoConstant / 24)
+            {
+                Thread.Sleep((int)(NanoConstant / 24) - (int)(DateTime.Now.Ticks - Timer));
+            }*/
+
+        }
+
+
 
         private void SetupBackGround(PictureBox grapX)
         {
@@ -51,7 +86,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         }
 
 
-        public void SetupPlayer(PictureBox grapX)
+        private void SetupPlayer(PictureBox grapX)
         {
             Player = new PictureBox();
             Player.Size = new System.Drawing.Size(40, 40);
@@ -68,7 +103,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             //GrapX.Controls.Add(Player);
         }
 
-        
+       
+
+
+
 
 
 

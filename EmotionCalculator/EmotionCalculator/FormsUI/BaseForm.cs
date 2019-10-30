@@ -10,12 +10,13 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Media;
 using EmotionCalculator.MiniGames.SpaceInvaders;
+using System.Threading;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-
+        Thread thread2 = null;
 
         internal MonthManager MonthManager { get; private set; }
 
@@ -201,12 +202,43 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         }
 
         //kodas123
+
+            private void SetText()
+        {
+            Console.WriteLine("pov");
+        }
+
+
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // invadersManager = new SpaceInvadersMain(calendarBackground, Thread.CurrentThread);
+            // ThreadStart str = new ThreadStart(invadersManager.StartClock);
             if (e.KeyChar == 'e')
+            {
                 InvadersLauch();
+
+                thread2 = new Thread(
+                    () =>
+                    {
+                    this.BeginInvoke((Action)delegate ()
+                     {
+                       invadersManager.StartTimer();
+                   
+                     });
+                    }
+                );
+                thread2.Start();
+            }
+            
+           
             else
                 invadersManager.playerIManager.ReadInput(e.KeyChar);
+                
+        }
+
+        private void BeginInvoke()
+        {
+            throw new NotImplementedException();
         }
     }
 }

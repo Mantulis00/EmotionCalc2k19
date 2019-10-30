@@ -13,9 +13,16 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         private int InvadersLenght, InvadersHeight, InvadersSpacer;
         private int InvadersStartX, InvadersStartY, InvaderSize;
 
-        private List<SInvaders> Invaders { get; }
+        private int InvadersSpeed, InvaderHeightReductor;
+        private bool ReduceHeight;
+
+        private List<SInvaders> Invaders;
+
+        PictureBox grapX;
         internal InvadersManager(PictureBox grapX)
         {
+            this.grapX = grapX;
+
             Invaders = new List<SInvaders>();
             
             
@@ -25,13 +32,48 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             InvadersStartX = 10;
             InvadersStartY = 10;
+            InvadersSpeed = 10;
+            ReduceHeight = false;
 
             InvadersLenght = InvadersStartX + 5 * InvadersSpacer;
             InvadersHeight = InvadersStartY + 3 * InvadersSpacer;
 
+            
+
             GenerateInvaders(grapX);
 
         }
+
+        internal void UpdateInvaders()
+        {
+            CheckInvaders();
+            foreach(var invader in Invaders)
+            {
+                invader.InvaderInfo.Location = new Point(
+                    invader.InvaderInfo.Location.X + InvadersSpeed, 
+                    invader.InvaderInfo.Location.Y + InvaderHeightReductor);
+            }
+
+            InvaderHeightReductor = 0;
+        }
+
+        private void CheckInvaders()
+        {
+            foreach (var invader in Invaders)
+            {
+                if (invader.InvaderInfo.Location.X + InvadersSpeed + InvaderSize > grapX.Size.Width ||
+                   invader.InvaderInfo.Location.X + InvadersSpeed < 0)
+                {
+                    InvaderHeightReductor = Math.Abs(InvadersSpeed);
+                    InvadersSpeed *= -1;
+                    break;
+                }
+            }
+        }
+
+
+
+
 
         private void GenerateInvaders(PictureBox grapX)
         {
