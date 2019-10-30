@@ -12,9 +12,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
     class PlayerInputs
     {
         private PictureBox Player;
+        private InvadersManager invadersManager;
 
-        internal PlayerInputs(PictureBox Player)
+        internal PlayerInputs(PictureBox Player, InvadersManager invadersManager)
         {
+            this.invadersManager = invadersManager;
             this.Player = Player;
         }
 
@@ -27,6 +29,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             else if (e == 'd')
             {
                 MoveRight();
+            }
+            else if (e == 'b')
+            {
+                Shoot();
             }
         }
 
@@ -56,6 +62,12 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         {
             if (CheckBorders((Player.Size.Width / 4) * (-1)))
                 Player.Location = new Point(Player.Location.X - Player.Size.Width/4, Player.Location.Y);
+        }
+
+        private void Shoot()
+        {
+            if (!invadersManager.MissleLive)
+            invadersManager.GenerateMissle(Player.Location);
         }
 
 

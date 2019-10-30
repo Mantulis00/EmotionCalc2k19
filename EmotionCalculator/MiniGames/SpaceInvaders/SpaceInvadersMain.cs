@@ -18,7 +18,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         private InvadersManager invaderManager;
         internal PlayerInputs playerIManager {get;}
 
-        //public Thread MainClock { get; }
         System.Windows.Forms.Timer MainClock;
 
 
@@ -31,17 +30,13 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         internal SpaceInvadersMain(PictureBox grapX)
         {
             GrapX = grapX;
-            
-
             invaderManager = new InvadersManager(grapX);
 
-
             SetupBackGround(grapX);
-
             SetupPlayer(grapX);
-            playerIManager = new PlayerInputs(Player);
-            // Invaders
 
+
+            playerIManager = new PlayerInputs(Player, invaderManager);
             SetupTimer();
 
         }
@@ -62,17 +57,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         public void StartClock(object sender, EventArgs e)
         {
-           // Thread.Sleep(1000);
-            Console.WriteLine( "w");
-            
-           // Timer = DateTime.Now.Ticks;
              invaderManager.UpdateInvaders();
-            /*
-            if (DateTime.Now.Ticks - Timer < NanoConstant / 24)
-            {
-                Thread.Sleep((int)(NanoConstant / 24) - (int)(DateTime.Now.Ticks - Timer));
-            }*/
-
         }
 
 
