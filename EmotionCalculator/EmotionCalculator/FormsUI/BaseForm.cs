@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Media;
 using EmotionCalculator.MiniGames.SpaceInvaders;
+using EmotionCalculator.MiniGames.Snake;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -27,6 +28,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         // kodas123
         internal SpaceInvadersMain invadersManager;
+
+        internal SnakeMain snakeMain;
+        internal bool snakeRunning = false;
 
 
         internal BaseForm(IAPIManager apiManager)
@@ -200,13 +204,35 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             invadersManager = new SpaceInvadersMain(calendarBackground);
         }
 
+        private void SnakeLaunch()
+        {
+            snakeMain = new SnakeMain(calendarBackground);
+        }
+
         //kodas123
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 'e')
+            if (snakeRunning && e.KeyChar != 'q')
+            {
+                snakeMain.snakeManager.ReadInput(e.KeyChar);
+            }
+            else if (e.KeyChar == 'e')
+            {
                 InvadersLauch();
+            }
+            else if (e.KeyChar == 's')
+            {
+                SnakeLaunch();
+                snakeRunning = true;
+            }
+            else if (e.KeyChar == 'q')
+            {
+                snakeRunning = false;
+                snakeMain.snakeManager.ReadInput(e.KeyChar);
+            }
             else
                 invadersManager.playerIManager.ReadInput(e.KeyChar);
+
         }
     }
 }

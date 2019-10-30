@@ -161,6 +161,10 @@
     <Compile Include="EmotionCalculator\Tools\API\APIParseResult.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\FaceData.cs" />
     <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
+    <Compile Include="MiniGames\Snake\AppleManager.cs" />
+    <Compile Include="MiniGames\Snake\SnakeDirection.cs" />
+    <Compile Include="MiniGames\Snake\SnakeManager.cs" />
+    <Compile Include="MiniGames\Snake\SnakeMain.cs" />
     <Compile Include="MiniGames\SpaceInvaders\InvadersManager.cs" />
     <Compile Include="MiniGames\SpaceInvaders\PlayerInputs.cs" />
     <Compile Include="MiniGames\SpaceInvaders\SpaceInvadersMain.cs" />
