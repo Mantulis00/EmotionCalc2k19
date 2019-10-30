@@ -1,10 +1,8 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
-using System;
 using System.Collections.Generic;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
-    [Serializable]
     class MonthEmotions
     {
         private Dictionary<int, Emotion> emotions = new Dictionary<int, Emotion>();
