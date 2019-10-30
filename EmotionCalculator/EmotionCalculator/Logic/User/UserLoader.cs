@@ -1,11 +1,11 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace EmotionCalculator.EmotionCalculator.Logic.Data
+namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
     class UserLoader : IUserLoader
     {
@@ -16,6 +16,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
         private static readonly string LastLogOnDayName = "llday";
         private static readonly string LastLogOnMonthName = "llmonth";
         private static readonly string LastLogOnYearName = "llyear";
+        private static readonly string EmotionCountPrefix = "EmC";
 
         public UserData Load()
         {
@@ -35,7 +36,14 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
             if (!DateTime.TryParse($"{lastYear}-{lastMonth}-{lastDay}", out lastLogin))
                 lastLogin = DateTime.Today;
 
-            return new UserData(joyCoins, joyGems, dailyStreak, lastLogin);
+            var pairs = new List<KeyValuePair<Emotion, int>>();
+
+            foreach (Emotion emotion in Enum.GetValues(typeof(Emotion)))
+            {
+                pairs.Add(new KeyValuePair<Emotion, int>(emotion, GetValueFromNode(nodes, EmotionCountPrefix + "_" + emotion.ToString())));
+            }
+
+            return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs);
         }
 
         private int GetValueFromNode(IEnumerable<XElement> nodes, string nodeName)
@@ -71,6 +79,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
             SaveValueToNode(doc, LastLogOnDayName, userData.LastLogin.Day.ToString());
             SaveValueToNode(doc, LastLogOnMonthName, userData.LastLogin.Month.ToString());
             SaveValueToNode(doc, LastLogOnYearName, userData.LastLogin.Year.ToString());
+
+            userData.EmotionCount.ToList().ForEach(pair => SaveValueToNode(doc, EmotionCountPrefix + "_" + pair.Key.ToString(), pair.Value.ToString()));
 
             doc.Save(FileName);
         }

@@ -1,5 +1,9 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
+using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
@@ -22,12 +26,25 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             }
         }
 
-        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin)
+        private Dictionary<Emotion, int> emotionCount;
+        internal ReadOnlyDictionary<Emotion, int> EmotionCount
+        {
+            get
+            {
+                return new ReadOnlyDictionary<Emotion, int>(emotionCount);
+            }
+        }
+
+        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin, IEnumerable<KeyValuePair<Emotion, int>> emotionPairs)
         {
             JoyCoins = joyCoins;
             JoyGems = joyGems;
             DailyStreak = dailyStreak;
             LastLogin = new DateTime(lastLogin.Year, lastLogin.Month, lastLogin.Day);
+
+            emotionCount = new Dictionary<Emotion, int>();
+
+            emotionPairs.ToList().ForEach(pair => emotionCount.Add(pair.Key, pair.Value));
         }
 
         public void Login()
@@ -62,6 +79,20 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
                     JoyGems = Math.Max(JoyGems, 0);
                     break;
             }
+        }
+
+        public void AddCurrency(Emotion emotionType, int amount)
+        {
+            if (emotionCount.ContainsKey(emotionType))
+            {
+                emotionCount[emotionType] += amount;
+            }
+            else
+            {
+                emotionCount.Add(emotionType, amount);
+            }
+
+            emotionCount[emotionType] = Math.Max(0, emotionCount[emotionType]);
         }
     }
 }

@@ -133,7 +133,7 @@
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
-    <Compile Include="EmotionCalculator\Logic\Data\UserLoader.cs" />
+    <Compile Include="EmotionCalculator\Logic\User\UserLoader.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\EmojiManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\DesktopPack.cs" />

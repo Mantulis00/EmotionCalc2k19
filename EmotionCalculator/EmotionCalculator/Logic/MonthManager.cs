@@ -83,6 +83,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
                     monthEmotions.SetEmotion(selectedTime.Day, emotion);
                     monthUpdatable.Update(monthEmotions, selectedTime);
                     userData.AddCurrency(CurrencyType.JoyCoin, EmotionValue.GetEmotionValueInCoins(emotion));
+                    userData.AddCurrency(emotion, 1);
                     userUpdatable.Update(userData);
                 }
             }
