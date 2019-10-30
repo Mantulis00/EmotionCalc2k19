@@ -8,6 +8,7 @@ using EmotionCalculator.EmotionCalculator.Tools.API;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Media;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -174,6 +175,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void CalendarBackground_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer();
+            var rand = new Random();
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
+            player.Play();
         }
     }
 }
