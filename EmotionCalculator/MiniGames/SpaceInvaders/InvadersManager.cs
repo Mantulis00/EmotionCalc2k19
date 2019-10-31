@@ -18,6 +18,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
        public bool MissleLive {  get; private set; }
 
+        private bool Colider;
+
         private List<SInvaders> Invaders;
 
         private PictureBox missle = null;
@@ -43,6 +45,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             InvadersLenght = InvadersStartX + 5 * InvadersSpacer;
             InvadersHeight = InvadersStartY + 3 * InvadersSpacer;
 
+            Colider = false;
             
 
             GenerateInvaders(grapX);
@@ -66,9 +69,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         internal void UpdateInvaders()
         {
             UpdateMissle();
-
-
             CheckInvaders();
+            ColiderCheck(missle);
+
+        
             foreach(var invader in Invaders)
             {
                 invader.InvaderInfo.Location = new Point(
@@ -78,6 +82,36 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             InvaderHeightReductor = 0;
         }
+
+        private void ColiderCheck(PictureBox missle)
+        {
+            if (missle != null)
+            {
+                foreach (var invader in Invaders.ToList())
+                {
+                    if (missle.Location.X - invader.InvaderInfo.Size.Width / 2 < invader.InvaderInfo.Location.X
+                        && missle.Location.X + invader.InvaderInfo.Size.Width / 2 > invader.InvaderInfo.Location.X
+                        )
+                    {
+                        if (missle.Location.Y - invader.InvaderInfo.Size.Height / 2 < invader.InvaderInfo.Location.Y
+                        && missle.Location.Y + invader.InvaderInfo.Size.Height / 2 > invader.InvaderInfo.Location.Y
+                        )
+                        {
+                            missle = null;
+                            invader.InvaderInfo.Visible = false;
+                            Invaders.Remove(invader);
+                            
+                            break;
+                           
+                        }
+                            
+                    }
+                }
+            }
+        }
+
+
+
 
         private void UpdateMissle()
         {

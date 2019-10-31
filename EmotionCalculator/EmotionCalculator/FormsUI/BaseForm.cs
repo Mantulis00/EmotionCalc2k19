@@ -211,8 +211,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // invadersManager = new SpaceInvadersMain(calendarBackground, Thread.CurrentThread);
-            // ThreadStart str = new ThreadStart(invadersManager.StartClock);
             if (e.KeyChar == 'e')
             {
                 InvadersLauch();
