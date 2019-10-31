@@ -1,6 +1,8 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency
@@ -15,7 +17,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
         internal int DailyStreak { get { return userData.DailyStreak; } }
         internal DateTime LastLogin { get { return userData.LastLogin; } }
         internal ReadOnlyDictionary<Emotion, int> EmotionCount { get { return userData.EmotionCount; } }
+
         internal event EventHandler CurrencyChanged { add { userData.CurrencyChanged += value; } remove { userData.CurrencyChanged -= value; } }
+
+        internal IEnumerable<InexhaustibleItem> InexhaustibleItems { get { return AvailablePurchases.GetInexhaustibleItems(); } }
+        internal IEnumerable<PurchasableItem> PurchasableItems { get { return AvailablePurchases.GetUnlockableItems(); } }
 
         internal CurrencyManager(UserData userData)
         {
