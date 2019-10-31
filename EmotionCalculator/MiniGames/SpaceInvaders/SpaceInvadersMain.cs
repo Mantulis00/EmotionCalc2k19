@@ -53,7 +53,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         }
 
 
-        long  Timer, NanoConstant;
 
         public void StartClock(object sender, EventArgs e)
         {

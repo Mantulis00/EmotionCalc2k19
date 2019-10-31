@@ -70,7 +70,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         {
             UpdateMissle();
             CheckInvaders();
-            ColiderCheck(missle);
+            missle = ColiderCheck(missle);
 
         
             foreach(var invader in Invaders)
@@ -83,21 +83,23 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             InvaderHeightReductor = 0;
         }
 
-        private void ColiderCheck(PictureBox missle)
+        private PictureBox ColiderCheck(PictureBox missle)
         {
             if (missle != null)
             {
                 foreach (var invader in Invaders.ToList())
                 {
-                    if (missle.Location.X - invader.InvaderInfo.Size.Width / 2 < invader.InvaderInfo.Location.X
-                        && missle.Location.X + invader.InvaderInfo.Size.Width / 2 > invader.InvaderInfo.Location.X
+                    if (missle.Location.X - invader.InvaderInfo.Size.Width  < invader.InvaderInfo.Location.X
+                        && missle.Location.X + invader.InvaderInfo.Size.Width  > invader.InvaderInfo.Location.X
                         )
                     {
-                        if (missle.Location.Y - invader.InvaderInfo.Size.Height / 2 < invader.InvaderInfo.Location.Y
-                        && missle.Location.Y + invader.InvaderInfo.Size.Height / 2 > invader.InvaderInfo.Location.Y
+                        if (missle.Location.Y - invader.InvaderInfo.Size.Height  < invader.InvaderInfo.Location.Y
+                        && missle.Location.Y + invader.InvaderInfo.Size.Height  > invader.InvaderInfo.Location.Y
                         )
                         {
+                            missle.Dispose();
                             missle = null;
+                            MissleLive = false;
                             invader.InvaderInfo.Visible = false;
                             Invaders.Remove(invader);
                             
@@ -108,6 +110,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                     }
                 }
             }
+            return missle;
         }
 
 
