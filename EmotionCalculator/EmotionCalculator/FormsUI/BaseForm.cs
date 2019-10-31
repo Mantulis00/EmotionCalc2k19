@@ -5,10 +5,12 @@ using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
+using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
+using CurrencyManager = EmotionCalculator.EmotionCalculator.Logic.Currency.CurrencyManager;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -19,8 +21,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         internal IAPIManager APIManager { get; private set; }
 
         internal SettingsManager SettingsManager { get; private set; }
-        public object SettingStatus { get; internal set; }
-
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -57,12 +57,24 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 new MonthEmotionsIO(),
                 new CalendarUpdater(calendarBackground, SettingsManager),
                 dateTimePicker.Value,
-                new UserLoader(),
-                new CurrencyUpdater(
-                    coinAmountLabel, gemAmountLabel, angryEmotionCount,
-                    contemptEmotionCount, disgustEmotionCount,
-                    fearEmotionCount, happyEmotionCount, neutralEmotionCount,
-                    sadEmotionCount, surpriseEmotionCount));
+                new UserLoader());
+
+            MonthManager.CurrencyManager.CurrencyChanged +=
+                (o, e) =>
+                {
+                    CurrencyManager manager = MonthManager.CurrencyManager;
+
+                    coinAmountLabel.Text = manager.JoyCoins.ToString();
+                    gemAmountLabel.Text = manager.JoyGems.ToString();
+                    angryEmotionCount.Text = manager.EmotionCount[Emotion.Anger].ToString();
+                    contemptEmotionCount.Text = manager.EmotionCount[Emotion.Contempt].ToString();
+                    disgustEmotionCount.Text = manager.EmotionCount[Emotion.Disgust].ToString();
+                    fearEmotionCount.Text = manager.EmotionCount[Emotion.Fear].ToString();
+                    happyEmotionCount.Text = manager.EmotionCount[Emotion.Happiness].ToString();
+                    neutralEmotionCount.Text = manager.EmotionCount[Emotion.Neutral].ToString();
+                    sadEmotionCount.Text = manager.EmotionCount[Emotion.Sadness].ToString();
+                    surpriseEmotionCount.Text = manager.EmotionCount[Emotion.Surprise].ToString();
+                };
 
             dateTimePicker.ValueChanged +=
                 (o, e) =>
@@ -141,6 +153,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             OpenSecondaryWindow(APIManager.GetSettingsForm());
         }
 
+        private void ShopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new ShopForm(MonthManager));
+        }
 
 
         private void OpenSecondaryWindow(Form secondaryWindow)
@@ -159,7 +175,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 };
         }
 
-
+        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer();
+            var rand = new Random();
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
+            player.Play();
+        }
 
         //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
@@ -170,14 +192,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
-        }
-
-        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SoundPlayer player = new SoundPlayer();
-            var rand = new Random();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
-            player.Play();
         }
     }
 }

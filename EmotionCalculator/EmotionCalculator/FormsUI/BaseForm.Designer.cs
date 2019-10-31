@@ -79,6 +79,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.fearEmotionCount = new System.Windows.Forms.Label();
+            this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gemBackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
@@ -212,7 +213,8 @@
             // useCoinToolStripMenuItem
             // 
             this.useCoinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.musicToolStripMenuItem});
+            this.musicToolStripMenuItem,
+            this.shopToolStripMenuItem});
             this.useCoinToolStripMenuItem.Name = "useCoinToolStripMenuItem";
             this.useCoinToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.useCoinToolStripMenuItem.Text = "Use Coin";
@@ -220,7 +222,7 @@
             // musicToolStripMenuItem
             // 
             this.musicToolStripMenuItem.Name = "musicToolStripMenuItem";
-            this.musicToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.musicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.musicToolStripMenuItem.Text = "Music";
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.MusicToolStripMenuItem_Click);
             // 
@@ -606,6 +608,13 @@
             this.fearEmotionCount.Text = "30";
             this.fearEmotionCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // shopToolStripMenuItem
+            // 
+            this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
+            this.shopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shopToolStripMenuItem.Text = "Shop";
+            this.shopToolStripMenuItem.Click += new System.EventHandler(this.ShopToolStripMenuItem_Click);
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,5 +713,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label fearEmotionCount;
+        private System.Windows.Forms.ToolStripMenuItem shopToolStripMenuItem;
     }
 }

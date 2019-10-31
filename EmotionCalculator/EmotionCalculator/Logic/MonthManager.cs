@@ -15,13 +15,14 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         private MonthEmotions monthEmotions;
         private DateTime selectedTime;
 
-        private IUserUpdatable userUpdatable;
         private IUserLoader userLoader;
 
         private UserData userData;
 
+        internal CurrencyManager CurrencyManager { get; set; }
+
         public MonthManager(IMonthLogger monthLogger, IMonthUpdatable monthUpdatable,
-            DateTime startingDate, IUserLoader userLoader, IUserUpdatable userUpdatable)
+            DateTime startingDate, IUserLoader userLoader)
         {
             this.monthLogger = monthLogger;
             this.monthUpdatable = monthUpdatable;
@@ -29,8 +30,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             monthEmotions = monthLogger.LoadMonth(startingDate.Year, (Month)startingDate.Month);
 
             this.userLoader = userLoader;
-            this.userUpdatable = userUpdatable;
             userData = userLoader.Load();
+
+            CurrencyManager = new CurrencyManager(userData);
 
             ChangeTime(startingDate);
         }
@@ -84,7 +86,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic
                     monthUpdatable.Update(monthEmotions, selectedTime);
                     userData.AddCurrency(CurrencyType.JoyCoin, EmotionValue.GetEmotionValueInCoins(emotion));
                     userData.AddCurrency(emotion, 1);
-                    userUpdatable.Update(userData);
                 }
             }
         }
@@ -101,7 +102,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         internal void Refresh()
         {
             monthUpdatable.Update(monthEmotions, selectedTime);
-            userUpdatable.Update(userData);
+            userData.Update();
         }
     }
 }

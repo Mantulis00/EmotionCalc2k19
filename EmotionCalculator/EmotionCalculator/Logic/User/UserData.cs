@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
+    //Visible for inner logic
     class UserData
     {
         internal int JoyCoins { get; private set; }
@@ -45,6 +46,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             emotionCount = new Dictionary<Emotion, int>();
 
             emotionPairs.ToList().ForEach(pair => emotionCount.Add(pair.Key, pair.Value));
+
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public void Login()
@@ -79,6 +82,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
                     JoyGems = Math.Max(JoyGems, 0);
                     break;
             }
+
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public void AddCurrency(Emotion emotionType, int amount)
@@ -93,6 +98,15 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             }
 
             emotionCount[emotionType] = Math.Max(0, emotionCount[emotionType]);
+
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
         }
+
+        public void Update()
+        {
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        public event EventHandler CurrencyChanged;
     }
 }

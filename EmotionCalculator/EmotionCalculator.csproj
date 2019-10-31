@@ -84,7 +84,12 @@
     <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.Designer.cs">
       <DependentUpon>DailyLoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CurrencyUpdater.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Currency\ShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Currency\ShopForm.Designer.cs">
+      <DependentUpon>ShopForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IMonthUpdatable.cs" />
     <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IUserUpdatable.cs" />
     <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.cs">
@@ -126,9 +131,14 @@
     <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.Designer.cs">
       <DependentUpon>UrlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmotionCalculator\Logic\Currency\CurrencyManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\CurrencyType.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\DailyLoginData.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\EmotionValue.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\InexhaustibleItem.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchasableItem.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseStatus.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\UnlockableItem.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
@@ -178,6 +188,9 @@
   <ItemGroup>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.resx">
       <DependentUpon>DailyLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\ShopForm.resx">
+      <DependentUpon>ShopForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\CameraForm.resx">
       <DependentUpon>CameraForm.cs</DependentUpon>
