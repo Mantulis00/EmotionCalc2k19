@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -43,7 +44,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
                 pairs.Add(new KeyValuePair<Emotion, int>(emotion, GetValueFromNode(nodes, EmotionCountPrefix + "_" + emotion.ToString())));
             }
 
-            return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs);
+            return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs, new OwnedItems());
         }
 
         private int GetValueFromNode(IEnumerable<XElement> nodes, string nodeName)

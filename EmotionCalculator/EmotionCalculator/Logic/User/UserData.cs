@@ -1,4 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
@@ -36,7 +38,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             }
         }
 
-        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin, IEnumerable<KeyValuePair<Emotion, int>> emotionPairs)
+        internal OwnedItems OwnedItems { get; }
+
+        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin,
+            IEnumerable<KeyValuePair<Emotion, int>> emotionPairs, OwnedItems ownedItems)
         {
             JoyCoins = joyCoins;
             JoyGems = joyGems;
@@ -47,7 +52,19 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
             emotionPairs.ToList().ForEach(pair => emotionCount.Add(pair.Key, pair.Value));
 
+            OwnedItems = ownedItems;
+
             CurrencyChanged?.Invoke(this, EventArgs.Empty);
+
+            GetFreeItems();
+        }
+
+        private void GetFreeItems()
+        {
+            if (!OwnedItems.Packs.Contains(DesktopPack.DefaultPack))
+            {
+                OwnedItems.Packs.Add(DesktopPack.DefaultPack);
+            }
         }
 
         public void Login()

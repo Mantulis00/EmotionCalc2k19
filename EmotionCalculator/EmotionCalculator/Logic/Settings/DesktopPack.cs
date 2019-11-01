@@ -26,31 +26,28 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             }
         }
 
-        private static readonly ThemePack DefaultPack =
-            new ThemePack("Default",
+        internal static readonly ThemePack DefaultPack =
+            new ThemePack("Default", "It's ok",
             Properties.Resources.backgroundMountains,
             Color.FromArgb(180, 255, 255, 255),
             Color.FromArgb(60, 255, 255, 255),
             Color.FromArgb(220, 255, 110, 110),
             Color.FromArgb(255, 0, 0, 0));
 
-        private static readonly ThemePack HalloweenPack =
-            new ThemePack("Halloween",
+        internal static readonly ThemePack HalloweenPack =
+            new ThemePack("Halloween", "Spooky",
             Properties.Resources.backgroundHalloween,
             Color.FromArgb(160, 255, 100, 100),
             Color.FromArgb(100, 200, 150, 150),
             Color.FromArgb(255, 255, 55, 55),
             Color.FromArgb(255, 0, 0, 0));
 
-        private static readonly ThemePack BrexitPack =
-        new ThemePack("Brexit",
+        internal static readonly ThemePack BrexitPack =
+        new ThemePack("Brexit", "Breee",
              Properties.Resources.backgroundBrexit,
             Color.FromArgb(160, 255, 255, 50),
             Color.FromArgb(100, 200, 200, 50),
             Color.FromArgb(255, 255, 255, 200),
             Color.FromArgb(255, 0, 0, 0));
-            
-
-
     }
 }

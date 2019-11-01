@@ -59,10 +59,11 @@
             this.gemsImagePanel = new System.Windows.Forms.Panel();
             this.gemAmountLabel = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.purchaseButton = new System.Windows.Forms.Button();
             this.informationLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
+            this.errorText = new System.Windows.Forms.Label();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -419,21 +420,27 @@
             // 
             // listBox
             // 
+            this.listBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listBox.Font = new System.Drawing.Font("Kozuka Gothic Pro R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox.FormattingEnabled = true;
+            this.listBox.ItemHeight = 22;
             this.listBox.Location = new System.Drawing.Point(12, 82);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(314, 303);
+            this.listBox.ScrollAlwaysVisible = true;
+            this.listBox.Size = new System.Drawing.Size(314, 288);
             this.listBox.TabIndex = 45;
             // 
-            // button1
+            // purchaseButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.button1.Location = new System.Drawing.Point(332, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 69);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "Purchase";
-            this.button1.UseVisualStyleBackColor = true;
+            this.purchaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.purchaseButton.Location = new System.Drawing.Point(332, 206);
+            this.purchaseButton.Name = "purchaseButton";
+            this.purchaseButton.Size = new System.Drawing.Size(228, 69);
+            this.purchaseButton.TabIndex = 46;
+            this.purchaseButton.Text = "Purchase";
+            this.purchaseButton.UseVisualStyleBackColor = true;
+            this.purchaseButton.Click += new System.EventHandler(this.Purchase_Click);
             // 
             // informationLabel
             // 
@@ -444,7 +451,7 @@
             this.informationLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.informationLabel.Location = new System.Drawing.Point(332, 82);
             this.informationLabel.Name = "informationLabel";
-            this.informationLabel.Size = new System.Drawing.Size(228, 63);
+            this.informationLabel.Size = new System.Drawing.Size(228, 121);
             this.informationLabel.TabIndex = 47;
             this.informationLabel.Text = "Buy something!";
             this.informationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -452,7 +459,7 @@
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.exitButton.Location = new System.Drawing.Point(453, 339);
+            this.exitButton.Location = new System.Drawing.Point(454, 325);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(106, 45);
             this.exitButton.TabIndex = 48;
@@ -463,22 +470,37 @@
             // refreshButton
             // 
             this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.refreshButton.Location = new System.Drawing.Point(332, 339);
+            this.refreshButton.Location = new System.Drawing.Point(332, 325);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(115, 45);
             this.refreshButton.TabIndex = 49;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
+            // errorText
+            // 
+            this.errorText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.errorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.errorText.ForeColor = System.Drawing.Color.Red;
+            this.errorText.Location = new System.Drawing.Point(332, 278);
+            this.errorText.Name = "errorText";
+            this.errorText.Size = new System.Drawing.Size(228, 44);
+            this.errorText.TabIndex = 50;
+            this.errorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 398);
+            this.ClientSize = new System.Drawing.Size(572, 380);
+            this.Controls.Add(this.errorText);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.informationLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.purchaseButton);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel3);
@@ -537,10 +559,11 @@
         private System.Windows.Forms.Panel gemBackgroundPanel;
         private System.Windows.Forms.Panel gemsImagePanel;
         private System.Windows.Forms.Label gemAmountLabel;
-        private System.Windows.Forms.ListBox listBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button purchaseButton;
         private System.Windows.Forms.Label informationLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.Label errorText;
     }
 }

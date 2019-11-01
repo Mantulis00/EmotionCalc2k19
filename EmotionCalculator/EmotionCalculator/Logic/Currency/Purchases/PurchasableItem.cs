@@ -11,10 +11,15 @@
         {
             Name = name;
             Description = description;
-            CurrencyType = CurrencyType;
+            CurrencyType = currencyType;
             Price = price;
         }
 
         internal abstract void Purchase();
+
+        public override string ToString()
+        {
+            return $"{Name} - {Price} {(CurrencyType == CurrencyType.JoyCoin ? "Joy Coins" : "Joy Gems")}";
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using CurrencyManager = EmotionCalculator.EmotionCalculator.Logic.Currency.CurrencyManager;
 
@@ -19,6 +21,20 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
             InitializeListeners();
 
             monthManager.Refresh();
+
+            RefreshStore();
+        }
+
+        private void RefreshStore()
+        {
+            monthManager.CurrencyManager.UnlockableItems.Cast<PurchasableItem>().ToList()
+                .Concat(monthManager.CurrencyManager.InexhaustibleItems.Cast<PurchasableItem>())
+                .ToList().ForEach(
+                item =>
+                {
+                    if (!listBox.Items.Contains(item))
+                        listBox.Items.Add(item);
+                });
         }
 
         private void InitializeListeners()
@@ -44,6 +60,16 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Purchase_Click(object sender, EventArgs e)
+        {
+            RefreshStore();
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            RefreshStore();
         }
     }
 }

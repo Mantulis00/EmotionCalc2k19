@@ -14,7 +14,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         public SettingsForm(BaseForm baseForm)
         {
             this.baseForm = baseForm;
-          //  this.mode = "Normal";
+            //  this.mode = "Normal";
 
             InitializeComponent();
             InitializeSettings();
@@ -24,7 +24,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void InitializeSettings()
         {
-            themeComboBox.Items.AddRange(DesktopPack.DesktopPacks.ToArray());
+            themeComboBox.Items.AddRange(baseForm.MonthManager.CurrencyManager.OwnedItems.Packs.ToArray());
 
             themeComboBox.SelectedIndex = themeComboBox
                 .FindStringExact(baseForm.SettingsManager.SelectedTheme.ToString());
@@ -36,7 +36,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             settingsManager.Save();
         }
 
-        private  void checkCheckBoxes(SettingsManager settingsManager)
+        private void checkCheckBoxes(SettingsManager settingsManager)
         {
             if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                 emojisEnabledCheckBox.Checked = true;
@@ -50,7 +50,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
             else
             {
-                
+
                 DebugcheckBox.Checked = false;
             }
             BaseFormManagerUI.ShowDebug(baseForm);
@@ -65,7 +65,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void ResetButton_Click(object sender, EventArgs e)
         {
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(DesktopPack.DesktopPacks.ToList().First().ToString());
+                .FindStringExact(baseForm.MonthManager.CurrencyManager.OwnedItems.Packs.First().ToString());
 
             emojisEnabledCheckBox.Checked = false;
         }
@@ -110,7 +110,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             int index = e.Index;
 
             Graphics g = e.Graphics;
-            Brush textBrush = new SolidBrush(Color.Black) ;
+            Brush textBrush = new SolidBrush(Color.Black);
 
             TabPage tabPage = tabControl.TabPages[index];
             Rectangle tabBounds = tabControl.GetTabRect(index);

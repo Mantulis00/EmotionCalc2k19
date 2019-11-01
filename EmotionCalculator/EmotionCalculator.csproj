@@ -138,6 +138,7 @@
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\AvailablePurchases.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\InexhaustibleItem.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchasableItem.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseStatus.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\UnlockableItem.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
