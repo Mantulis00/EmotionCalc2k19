@@ -1,6 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
+using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
@@ -21,8 +22,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic
 
         internal CurrencyManager CurrencyManager { get; set; }
 
+        internal SettingsManager SettingsManager { get; set; }
+
         public MonthManager(IMonthLogger monthLogger, IMonthUpdatable monthUpdatable,
-            DateTime startingDate, IUserLoader userLoader)
+            DateTime startingDate, IUserLoader userLoader, SettingsManager settingsManager)
         {
             this.monthLogger = monthLogger;
             this.monthUpdatable = monthUpdatable;
@@ -33,6 +36,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             userData = userLoader.Load();
 
             CurrencyManager = new CurrencyManager(userData);
+            SettingsManager = settingsManager;
+
+            settingsManager.ValidateSelections(userData);
 
             ChangeTime(startingDate);
         }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
@@ -25,6 +27,16 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
             SelectedTheme = settingsLogger.LoadTheme();
             settings = settingsLogger.LoadSettings();
+        }
+
+        public void ValidateSelections(UserData userData)
+        {
+            if (!userData.OwnedItems.Packs.Contains(SelectedTheme))
+            {
+                SelectedTheme = userData.OwnedItems.Packs.First();
+            }
+
+            Save();
         }
 
         internal SettingStatus this[SettingType settingType]

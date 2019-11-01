@@ -28,7 +28,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
             cells = CalendarGenerator.GenerateCells(backgroundBox, settingsManager.SelectedTheme.SecondaryColor).ToList();
 
-           
+
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
 
@@ -82,51 +82,51 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 setEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
             }
 
-           
+
 
         }
 
 
         private void setEmotions(DateTime newDateTime, MonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
         {
-                var emotionLabel = emotionLabels[cellNumber + i];
-                var emoji = emojis[cellNumber + i];
+            var emotionLabel = emotionLabels[cellNumber + i];
+            var emoji = emojis[cellNumber + i];
 
-                if (monthEmotions[i + 1] == Emotion.NotSet)
+            if (monthEmotions[i + 1] == Emotion.NotSet)
+            {
+                if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                 {
-                    if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
-                    {
-                         emoji.Visible = false;
-                     }
-                    else
-                    {
-                         emoji.Visible = false;
-                         emotionLabel.Text = string.Empty;
-                    }
-              
+                    emoji.Visible = false;
                 }
                 else
                 {
-                    if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
-                    {
-                         emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
-                         emoji.BringToFront();
-                         emoji.Visible = true;
-                     }
-                    else
-                    {
-                        emoji.Visible = false;
-                        emotionLabel.Text = monthEmotions[i + 1].ToString();
-                    }
-
+                    emoji.Visible = false;
+                    emotionLabel.Text = string.Empty;
                 }
 
-                emotionLabel.ForeColor = selectedTheme.TextColor;
-                emotionLabel.Visible = true;
+            }
+            else
+            {
+                if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
+                {
+                    emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
+                    emoji.BringToFront();
+                    emoji.Visible = true;
+                }
+                else
+                {
+                    emoji.Visible = false;
+                    emotionLabel.Text = monthEmotions[i + 1].ToString();
+                }
+
+            }
+
+            emotionLabel.ForeColor = selectedTheme.TextColor;
+            emotionLabel.Visible = true;
 
 
 
-            
+
         }
 
 

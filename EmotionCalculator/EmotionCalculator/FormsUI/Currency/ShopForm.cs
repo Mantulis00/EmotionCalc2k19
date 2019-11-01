@@ -64,7 +64,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private void Purchase_Click(object sender, EventArgs e)
         {
-            RefreshStore();
+            var item = listBox.SelectedItem;
+
+            if (item != null)
+            {
+
+            }
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)

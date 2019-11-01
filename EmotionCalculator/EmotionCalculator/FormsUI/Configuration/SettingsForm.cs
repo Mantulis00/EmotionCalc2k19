@@ -9,12 +9,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     public partial class SettingsForm : Form
     {
         private BaseForm baseForm;
-        //private string mode;
+        private SettingsManager settingsManager;
 
         public SettingsForm(BaseForm baseForm)
         {
             this.baseForm = baseForm;
-            //  this.mode = "Normal";
+            settingsManager = baseForm.MonthManager.SettingsManager;
 
             InitializeComponent();
             InitializeSettings();
@@ -27,9 +27,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             themeComboBox.Items.AddRange(baseForm.MonthManager.CurrencyManager.OwnedItems.Packs.ToArray());
 
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(baseForm.SettingsManager.SelectedTheme.ToString());
-
-            SettingsManager settingsManager = baseForm.SettingsManager;
+                .FindStringExact(baseForm.MonthManager.SettingsManager.SelectedTheme.ToString());
 
             checkCheckBoxes(settingsManager);
 
@@ -53,7 +51,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
                 DebugcheckBox.Checked = false;
             }
-            BaseFormManagerUI.ShowDebug(baseForm);
         }
 
 
@@ -72,8 +69,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            SettingsManager settingsManager = baseForm.SettingsManager;
-
             SettingTabSubmitions(settingsManager);
             AdminToolsSubmitions(settingsManager);
 
@@ -99,10 +94,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             {
                 settingsManager[SettingType.Debug] = SettingStatus.Disabled;
             }
-            BaseFormManagerUI.ShowDebug(baseForm);
-
         }
-
 
 
         private void DrawTabs(Object sender, DrawItemEventArgs e)

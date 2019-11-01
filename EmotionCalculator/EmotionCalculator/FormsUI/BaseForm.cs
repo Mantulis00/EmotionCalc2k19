@@ -20,22 +20,19 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         internal IAPIManager APIManager { get; private set; }
 
-        internal SettingsManager SettingsManager { get; private set; }
-
         internal BaseForm(IAPIManager apiManager)
         {
-            //Settings
-            SettingsManager = DesktopPack.GetSettings();
-
             //UI
             InitializeComponent();
-            StartupUI();
 
             //API
             APIManager = apiManager;
 
             //UI <-> API
             SetupMonth();
+
+            //Update UI
+            RefreshUI();
 
             //Daily login
             MonthManager.RaiseLoginEvent(
@@ -45,19 +42,22 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 });
         }
 
-        private void StartupUI()
+        private void RefreshUI()
         {
-            BaseFormManagerUI.ShowDebug(this);
+            ShowDebug();
         }
 
 
         private void SetupMonth()
         {
+            SettingsManager settingsManager = DesktopPack.GetSettings();
+
             MonthManager = new MonthManager(
                 new MonthEmotionsIO(),
-                new CalendarUpdater(calendarBackground, SettingsManager),
+                new CalendarUpdater(calendarBackground, settingsManager),
                 dateTimePicker.Value,
-                new UserLoader());
+                new UserLoader(),
+                settingsManager);
 
             MonthManager.CurrencyManager.CurrencyChanged +=
                 (o, e) =>
@@ -169,9 +169,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             secondaryWindow.FormClosed +=
                 (o, ev) =>
                 {
-
                     Enabled = true;
                     MonthManager.Refresh();
+                    RefreshUI();
                 };
         }
 

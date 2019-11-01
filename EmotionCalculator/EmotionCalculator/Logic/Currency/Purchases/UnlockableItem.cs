@@ -26,7 +26,11 @@
         internal override void Purchase()
         {
             if (PurchaseStatus == PurchaseStatus.Available)
+            {
                 PurchaseStatus = PurchaseStatus.Purchased;
+
+
+            }
         }
     }
 }
