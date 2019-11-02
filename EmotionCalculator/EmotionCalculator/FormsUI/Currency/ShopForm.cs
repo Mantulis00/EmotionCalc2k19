@@ -22,19 +22,56 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             monthManager.Refresh();
 
-            RefreshStore();
+            FillStore();
+        }
+
+        private void FillStore()
+        {
+            listBox.Items.Clear();
+
+            monthManager.CurrencyManager.PurchasableItems.ToList().ForEach
+                (item =>
+                    {
+                        if (!listBox.Items.Contains(item))
+                            listBox.Items.Add(item);
+                    });
         }
 
         private void RefreshStore()
         {
-            monthManager.CurrencyManager.UnlockableItems.Cast<PurchasableItem>().ToList()
-                .Concat(monthManager.CurrencyManager.InexhaustibleItems.Cast<PurchasableItem>())
-                .ToList().ForEach(
-                item =>
+            var stillPurchasable = monthManager.CurrencyManager.PurchasableItems;
+
+            for (int i = 0; i < listBox.Items.Count; i++)
+            {
+                var item = listBox.Items[i];
+
+                if (!stillPurchasable.Any(_item => item.ToString() == _item.ToString()))
                 {
-                    if (!listBox.Items.Contains(item))
-                        listBox.Items.Add(item);
-                });
+                    listBox.Items.Remove(item);
+                    i--;
+                }
+            }
+
+            monthManager.CurrencyManager.PurchasableItems.ToList().ForEach
+                (item =>
+                    {
+                        bool displayed = false;
+
+                        foreach (var shopItem in listBox.Items)
+                        {
+                            if (shopItem.ToString() == item.ToString())
+                            {
+                                displayed = true;
+                                break;
+                            }
+                        }
+
+                        if (!displayed)
+                        {
+                            listBox.Items.Add(item);
+                        }
+                    });
+
         }
 
         private void InitializeListeners()
@@ -68,13 +105,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             if (item != null)
             {
-
+                monthManager.CurrencyManager.Purchase((PurchasableItem)item);
             }
+
+            RefreshStore();
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            RefreshStore();
+            FillStore();
         }
     }
 }

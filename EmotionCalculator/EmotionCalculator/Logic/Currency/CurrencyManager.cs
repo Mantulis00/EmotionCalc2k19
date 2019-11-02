@@ -5,6 +5,7 @@ using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 {
@@ -13,25 +14,41 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
     class CurrencyManager
     {
         private UserData userData;
-        private PersonalStore availablePurchases;
+        private PersonalStore personalStore;
 
         internal int JoyCoins { get { return userData.JoyCoins; } }
         internal int JoyGems { get { return userData.JoyGems; } }
         internal int DailyStreak { get { return userData.DailyStreak; } }
         internal DateTime LastLogin { get { return userData.LastLogin; } }
         internal ReadOnlyDictionary<Emotion, int> EmotionCount { get { return userData.EmotionCount; } }
-        internal OwnedItems OwnedItems { get { return userData.OwnedItems; } }
+        internal IReadOnlyList<ThemePack> OwnedPacks { get { return userData.OwnedItems.Packs.AsReadOnly(); } }
 
         internal event EventHandler CurrencyChanged
-        { add { userData.CurrencyChanged += value; } remove { userData.CurrencyChanged -= value; } }
+        {
+            add { userData.CurrencyChanged += value; }
+            remove { userData.CurrencyChanged -= value; }
+        }
 
-        internal IEnumerable<InexhaustibleItem> InexhaustibleItems { get { return availablePurchases.GetInexhaustibleItems(); } }
-        internal IEnumerable<UnlockableItem<ThemePack>> UnlockableItems { get { return availablePurchases.GetThemePacks(); } }
+        internal IEnumerable<PurchasableItem> InexhaustibleItems { get { return personalStore.GetInexhaustibleItems(); } }
+        internal IEnumerable<PurchasableItem> UnlockableThemes { get { return personalStore.GetThemePacks(); } }
+
+        internal IEnumerable<PurchasableItem> PurchasableItems
+        {
+            get
+            {
+                return InexhaustibleItems.Concat(UnlockableThemes);
+            }
+        }
 
         internal CurrencyManager(UserData userData)
         {
             this.userData = userData;
-            availablePurchases = new PersonalStore(userData);
+            personalStore = new PersonalStore(userData);
+        }
+
+        internal void Purchase(PurchasableItem item)
+        {
+            item.TryPurchase(userData);
         }
     }
 }

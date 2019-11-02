@@ -14,14 +14,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             this.userData = userData;
         }
 
-        internal IEnumerable<InexhaustibleItem> GetInexhaustibleItems()
+        internal IEnumerable<PurchasableItem> GetInexhaustibleItems()
         {
-            yield return new InexhaustibleItem("Simple lootbox", "Contains basic stuff", CurrencyType.JoyGem, 1, 0, true);
-            yield return new InexhaustibleItem("Advanced lootbox", "Contains great loot", CurrencyType.JoyGem, 5, 0, true);
-            yield return new InexhaustibleItem("Snake game key", "Can play snake once", CurrencyType.JoyCoin, 10, 0, true);
+            yield return new PurchasableItem("Simple lootbox", "Contains basic stuff", CurrencyType.JoyGem, 1, () => { }, repurchasable: true);
+            yield return new PurchasableItem("Advanced lootbox", "Contains great loot", CurrencyType.JoyGem, 5, () => { }, repurchasable: true);
         }
 
-        internal IEnumerable<UnlockableItem<ThemePack>> GetThemePacks()
+        internal IEnumerable<PurchasableItem> GetThemePacks()
         {
             var ownedPacks = userData.OwnedItems.Packs;
 
@@ -32,8 +31,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                 var amount = storePack.Item3;
 
                 if (!ownedPacks.Contains(pack))
-                    yield return new UnlockableItem<ThemePack>(pack.Name, pack.Description,
-                        type, amount, PurchaseStatus.Purchased, pack);
+                    yield return new PurchasableItem(pack.Name, pack.Description,
+                        type, amount, () => { userData.OwnedItems.Packs.Add(pack); });
             }
         }
 

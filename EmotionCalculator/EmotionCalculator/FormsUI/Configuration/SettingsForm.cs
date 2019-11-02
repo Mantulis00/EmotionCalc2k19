@@ -24,7 +24,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void InitializeSettings()
         {
-            themeComboBox.Items.AddRange(baseForm.MonthManager.CurrencyManager.OwnedItems.Packs.ToArray());
+            themeComboBox.Items.AddRange(baseForm.MonthManager.CurrencyManager.OwnedPacks.ToArray());
 
             themeComboBox.SelectedIndex = themeComboBox
                 .FindStringExact(baseForm.MonthManager.SettingsManager.SelectedTheme.ToString());
@@ -62,7 +62,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void ResetButton_Click(object sender, EventArgs e)
         {
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(baseForm.MonthManager.CurrencyManager.OwnedItems.Packs.First().ToString());
+                .FindStringExact(baseForm.MonthManager.CurrencyManager.OwnedPacks.First().ToString());
 
             emojisEnabledCheckBox.Checked = false;
         }
