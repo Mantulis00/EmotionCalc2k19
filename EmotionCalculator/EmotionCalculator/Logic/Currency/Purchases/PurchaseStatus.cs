@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
-    enum PurchaseStatus
+    enum OperationStatus
     {
         Unavailable,
         Successful,

@@ -451,6 +451,7 @@
             this.openLootBoxButton.TabIndex = 51;
             this.openLootBoxButton.Text = "Open";
             this.openLootBoxButton.UseVisualStyleBackColor = true;
+            this.openLootBoxButton.Click += new System.EventHandler(this.OpenLootBoxButton_Click);
             // 
             // openPremiumLootBoxButton
             // 
@@ -461,6 +462,7 @@
             this.openPremiumLootBoxButton.TabIndex = 52;
             this.openPremiumLootBoxButton.Text = "Open";
             this.openPremiumLootBoxButton.UseVisualStyleBackColor = true;
+            this.openPremiumLootBoxButton.Click += new System.EventHandler(this.OpenPremiumLootBoxButton_Click);
             // 
             // panel22
             // 

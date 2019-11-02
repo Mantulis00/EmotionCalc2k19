@@ -126,15 +126,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
             {
                 switch (monthManager.CurrencyManager.Purchase((PurchasableItem)item))
                 {
-                    case PurchaseStatus.Successful:
+                    case OperationStatus.Successful:
                         errorText.ForeColor = Color.Green;
                         errorText.Text = "Purchase succesful!";
                         break;
-                    case PurchaseStatus.Unsucessful:
+                    case OperationStatus.Unsucessful:
                         errorText.ForeColor = Color.Red;
                         errorText.Text = "Purchase unsuccesful.";
                         break;
-                    case PurchaseStatus.Unavailable:
+                    case OperationStatus.Unavailable:
                         errorText.ForeColor = Color.Red;
                         errorText.Text = "The item is unavailable.";
                         break;
@@ -147,6 +147,16 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             FillStore();
+        }
+
+        private void OpenLootBoxButton_Click(object sender, EventArgs e)
+        {
+            monthManager.CurrencyManager.Consume(ConsumableType.LootBox);
+        }
+
+        private void OpenPremiumLootBoxButton_Click(object sender, EventArgs e)
+        {
+            monthManager.CurrencyManager.Consume(ConsumableType.PremiumLootBox);
         }
     }
 }

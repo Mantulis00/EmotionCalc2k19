@@ -54,9 +54,34 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
             personalStore = new PersonalStore(userData);
         }
 
-        internal PurchaseStatus Purchase(PurchasableItem item)
+        internal OperationStatus Purchase(PurchasableItem item)
         {
             return item.TryPurchase(userData);
+        }
+
+        internal OperationStatus Consume(ConsumableType consumableType)
+        {
+            switch (consumableType)
+            {
+                case ConsumableType.LootBox:
+                    if (userData.OwnedItems.LootBoxAmount > 0)
+                    {
+                        userData.OwnedItems.AddConsumables(ConsumableType.LootBox, -1);
+                        //consume lootbox
+                        return OperationStatus.Successful;
+                    }
+                    break;
+                case ConsumableType.PremiumLootBox:
+                    if (userData.OwnedItems.PremiumLootBoxAmount > 0)
+                    {
+                        userData.OwnedItems.AddConsumables(ConsumableType.PremiumLootBox, -1);
+                        //consume premium lootbox
+                        return OperationStatus.Successful;
+                    }
+                    break;
+            }
+
+            return OperationStatus.Unavailable;
         }
     }
 }

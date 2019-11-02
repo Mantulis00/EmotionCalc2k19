@@ -24,7 +24,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             IsAvailable = isAvailable;
         }
 
-        internal PurchaseStatus TryPurchase(UserData userData)
+        internal OperationStatus TryPurchase(UserData userData)
         {
             if (IsAvailable())
             {
@@ -32,20 +32,20 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                 {
                     userData.AddCurrency(CurrencyType.JoyCoin, -Price);
                     CompletePurchase();
-                    return PurchaseStatus.Successful;
+                    return OperationStatus.Successful;
                 }
                 else if (CurrencyType == CurrencyType.JoyGem && userData.JoyGems >= Price)
                 {
                     userData.AddCurrency(CurrencyType.JoyGem, -Price);
                     CompletePurchase();
-                    return PurchaseStatus.Successful;
+                    return OperationStatus.Successful;
                 }
 
-                return PurchaseStatus.Unsucessful;
+                return OperationStatus.Unsucessful;
             }
             else
             {
-                return PurchaseStatus.Unavailable;
+                return OperationStatus.Unavailable;
             }
         }
 
