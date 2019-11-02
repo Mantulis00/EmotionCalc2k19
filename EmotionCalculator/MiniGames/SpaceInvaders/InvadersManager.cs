@@ -25,11 +25,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         private PictureBox missle = null;
 
         PictureBox grapX;
-        internal InvadersManager(PictureBox grapX)
+        internal InvadersManager(PictureBox grapX, List<PictureBox> InvadersBones)
         {
             this.grapX = grapX;
 
-            Invaders = new List<SInvaders>();
+            Invaders = GenerateInvaders(InvadersBones);
             
             
             InvaderSize = 20;
@@ -48,7 +48,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             Colider = false;
             
 
-            GenerateInvaders(grapX);
+          //  GenerateInvaders(grapX);
 
         }
 
@@ -155,7 +155,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
 
 
-
+        /*
         private void GenerateInvaders(PictureBox grapX)
         {
             for (int y = InvadersStartY; y < InvadersHeight; y += InvadersSpacer)
@@ -165,10 +165,27 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                     AddInvader(x, y, grapX);
                 }
             }
+        }*/
+
+
+        private List<SInvaders> GenerateInvaders(List<PictureBox> invaders)
+        {
+            List<SInvaders> InvadersAI = new List<SInvaders>();
+            
+            foreach(var i in invaders)
+            {
+                SInvaders invader = new SInvaders();
+                invader.alive = true;
+                invader.InvaderInfo = i;
+                InvadersAI.Add(invader);
+            }
+
+            return InvadersAI;
         }
 
 
 
+        /*
         private void AddInvader(int locationX, int locationY, PictureBox grapX)
         {
             SInvaders Invader = new SInvaders();
@@ -184,7 +201,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             // if invader alive
 
             Invaders.Add(Invader);
-        }
+        }*/
 
         internal void RemoveInvader(int InvaderN)
         {

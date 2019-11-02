@@ -18,7 +18,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         private InvadersManager invaderManager;
         internal PlayerInputs playerIManager {get;}
 
-        System.Windows.Forms.Timer MainClock;
+        private List<PictureBox> CalendarElements;
+        private AnimationManager animationManager;
+
+        System.Windows.Forms.Timer MainClock, AnimationClock;
 
 
         private List<SInvaders> Invaders;
@@ -30,23 +33,50 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         internal SpaceInvadersMain(PictureBox grapX)
         {
             GrapX = grapX;
-            invaderManager = new InvadersManager(grapX);
+            
 
             SetupBackGround(grapX);
             SetupPlayer(grapX);
-
-
-            playerIManager = new PlayerInputs(Player, invaderManager);
             SetupTimer();
+
+           
+
+            animationManager = new AnimationManager(grapX, AnimationClock);
+            invaderManager = new InvadersManager(grapX, animationManager.AnimationElements);
+            playerIManager = new PlayerInputs(Player, invaderManager);
+
+
+
 
         }
 
-        void SetupTimer()
+       private void SetupTimer()
         {
             MainClock = new System.Windows.Forms.Timer();
             MainClock.Interval = 50;
             MainClock.Tick += StartClock;
+
+            AnimationClock = new System.Windows.Forms.Timer();
+            AnimationClock.Interval = 1;
+            AnimationClock.Tick += StartAnimationOnClock;
+
         }
+
+        public void StartAnimation()
+        {
+            AnimationClock.Start();
+        }
+
+        public void StopAnimation()
+        {
+            AnimationClock.Stop();
+        }
+
+        private void StartAnimationOnClock(object sender, EventArgs e)
+        {
+            animationManager.StartAnimation();
+        }
+
         public void StartTimer()
         {
             MainClock.Start();
@@ -54,7 +84,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
 
 
-        public void StartClock(object sender, EventArgs e)
+        private void StartClock(object sender, EventArgs e)
         {
              invaderManager.UpdateInvaders();
         }

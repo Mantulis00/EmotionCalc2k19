@@ -211,9 +211,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             if (e.KeyChar == 'e')
             {
-                InvadersLauch();
+                //InvadersLauch();
 
                 thread2 = new Thread(
                     () =>
@@ -221,8 +222,25 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     this.BeginInvoke((Action)delegate ()
                      {
                        invadersManager.StartTimer();
-                   
                      });
+                    }
+                );
+                thread2.Start();
+
+                
+            }
+
+            if (e.KeyChar == 'u')
+            {
+                InvadersLauch();
+
+                thread2 = new Thread(
+                    () =>
+                    {
+                        this.BeginInvoke((Action)delegate ()
+                        {
+                            invadersManager.StartAnimation();
+                        });
                     }
                 );
                 thread2.Start();
