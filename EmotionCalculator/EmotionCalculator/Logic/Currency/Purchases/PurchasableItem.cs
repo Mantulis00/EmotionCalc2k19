@@ -10,7 +10,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         internal CurrencyType CurrencyType { get; }
         internal int Price { get; }
 
-        private Func<bool> IsAvailable;
+        internal Func<bool> IsAvailable { get; private set; }
         private Action PurchaseHandler;
 
         public PurchasableItem(string name, string description, CurrencyType currencyType, int price,
@@ -24,7 +24,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             IsAvailable = isAvailable;
         }
 
-        internal void TryPurchase(UserData userData)
+        internal PurchaseStatus TryPurchase(UserData userData)
         {
             if (IsAvailable())
             {
@@ -32,12 +32,20 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                 {
                     userData.AddCurrency(CurrencyType.JoyCoin, -Price);
                     CompletePurchase();
+                    return PurchaseStatus.Successful;
                 }
                 else if (CurrencyType == CurrencyType.JoyGem && userData.JoyGems >= Price)
                 {
                     userData.AddCurrency(CurrencyType.JoyGem, -Price);
                     CompletePurchase();
+                    return PurchaseStatus.Successful;
                 }
+
+                return PurchaseStatus.Unsucessful;
+            }
+            else
+            {
+                return PurchaseStatus.Unavailable;
             }
         }
 
@@ -49,6 +57,23 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         public override string ToString()
         {
             return $"{Name} - {Price} {(CurrencyType == CurrencyType.JoyCoin ? "Joy Coins" : "Joy Gems")}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || !GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                var purchasableItem = (PurchasableItem)obj;
+
+                return Name == purchasableItem.Name
+                    && Description == purchasableItem.Description
+                    && CurrencyType == purchasableItem.CurrencyType
+                    && Price == purchasableItem.Price;
+            }
         }
     }
 }

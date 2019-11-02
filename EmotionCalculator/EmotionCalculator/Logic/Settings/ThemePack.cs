@@ -32,5 +32,25 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
         {
             return Name;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || !GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                var themePack = (ThemePack)obj;
+
+                return Image == themePack.Image
+                    && Name == themePack.Name
+                    && Description == themePack.Description
+                    && PrimaryColor == themePack.PrimaryColor
+                    && SecondaryColor == themePack.SecondaryColor
+                    && FocusColor == themePack.FocusColor
+                    && TextColor == themePack.TextColor;
+            }
+        }
     }
 }

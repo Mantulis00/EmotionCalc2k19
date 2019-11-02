@@ -2,6 +2,7 @@
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using CurrencyManager = EmotionCalculator.EmotionCalculator.Logic.Currency.CurrencyManager;
@@ -10,18 +11,23 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 {
     public partial class ShopForm : Form
     {
+        private static readonly string BaseInformationMessage = "Buy something!";
+
         private MonthManager monthManager;
 
         internal ShopForm(MonthManager monthManager)
         {
             this.monthManager = monthManager;
 
+            //UI
             InitializeComponent();
+            informationLabel.Text = BaseInformationMessage;
 
+            //Currency
             InitializeListeners();
 
+            //Items
             monthManager.Refresh();
-
             FillStore();
         }
 
@@ -43,35 +49,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             for (int i = 0; i < listBox.Items.Count; i++)
             {
-                var item = listBox.Items[i];
+                var item = (PurchasableItem)listBox.Items[i];
 
-                if (!stillPurchasable.Any(_item => item.ToString() == _item.ToString()))
+                if (!stillPurchasable.Contains(item))
                 {
                     listBox.Items.Remove(item);
                     i--;
                 }
             }
-
-            monthManager.CurrencyManager.PurchasableItems.ToList().ForEach
-                (item =>
-                    {
-                        bool displayed = false;
-
-                        foreach (var shopItem in listBox.Items)
-                        {
-                            if (shopItem.ToString() == item.ToString())
-                            {
-                                displayed = true;
-                                break;
-                            }
-                        }
-
-                        if (!displayed)
-                        {
-                            listBox.Items.Add(item);
-                        }
-                    });
-
         }
 
         private void InitializeListeners()
@@ -92,6 +77,40 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                     surpriseEmotionCount.Text = manager.EmotionCount[Emotion.Surprise].ToString();
                     neutralEmotionCount.Text = manager.EmotionCount[Emotion.Neutral].ToString();
                 };
+
+            monthManager.CurrencyManager.ConsumablesChanged +=
+                (o, e) =>
+                {
+                    CurrencyManager manager = monthManager.CurrencyManager;
+
+                    lootBoxAmount.Text = manager.LootboxAmount.ToString();
+                    premiumLootBoxAmount.Text = manager.PremiumLootboxAmount.ToString();
+                };
+
+            listBox.SelectedValueChanged +=
+                (o, e) =>
+                {
+                    if (listBox.SelectedItem != null)
+                    {
+                        informationLabel.Text = ((PurchasableItem)listBox.SelectedItem).Description;
+
+                        if (((PurchasableItem)listBox.SelectedItem).IsAvailable.Invoke())
+                        {
+                            purchaseButton.Enabled = true;
+                            errorText.Text = string.Empty;
+                        }
+                        else
+                        {
+                            purchaseButton.Enabled = false;
+                            errorText.ForeColor = Color.Red;
+                            errorText.Text = "The item is unavailable.";
+                        }
+                    }
+                    else
+                    {
+                        informationLabel.Text = BaseInformationMessage;
+                    }
+                };
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -105,7 +124,21 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             if (item != null)
             {
-                monthManager.CurrencyManager.Purchase((PurchasableItem)item);
+                switch (monthManager.CurrencyManager.Purchase((PurchasableItem)item))
+                {
+                    case PurchaseStatus.Successful:
+                        errorText.ForeColor = Color.Green;
+                        errorText.Text = "Purchase succesful!";
+                        break;
+                    case PurchaseStatus.Unsucessful:
+                        errorText.ForeColor = Color.Red;
+                        errorText.Text = "Purchase unsuccesful.";
+                        break;
+                    case PurchaseStatus.Unavailable:
+                        errorText.ForeColor = Color.Red;
+                        errorText.Text = "The item is unavailable.";
+                        break;
+                }
             }
 
             RefreshStore();

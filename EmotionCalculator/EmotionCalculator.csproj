@@ -136,6 +136,7 @@
     <Compile Include="EmotionCalculator\Logic\Currency\DailyLoginData.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\EmotionValue.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\AvailablePurchases.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\ConsumableType.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchasableItem.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseStatus.cs" />
@@ -303,6 +304,8 @@
     <Content Include="Resources\9.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\premiumLootbox.png" />
+    <None Include="Resources\lootbox.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

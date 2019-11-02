@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
@@ -23,6 +24,23 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
                 yield return DefaultPack;
                 yield return HalloweenPack;
                 yield return BrexitPack;
+            }
+        }
+
+        internal static IEnumerable<ThemePack> GetPackByName(string[] name)
+        {
+            return DesktopPacks.Where(pack => name.Contains(pack.Name));
+        }
+
+        internal static Func<bool> GetAvailabilityCondition(ThemePack themePack)
+        {
+            if (themePack.Name == BrexitPack.Name)
+            {
+                return () => false;
+            }
+            else
+            {
+                return () => true;
             }
         }
 

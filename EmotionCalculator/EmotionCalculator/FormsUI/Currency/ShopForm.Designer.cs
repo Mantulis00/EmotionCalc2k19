@@ -28,35 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopForm));
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.surpriseEmotionCount = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.disgustEmotionCount = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.neutralEmotionCount = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.sadEmotionCount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.angryEmotionCount = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.fearEmotionCount = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.contemptEmotionCount = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.happyEmotionCount = new System.Windows.Forms.Label();
             this.coinBackgroundPanel = new System.Windows.Forms.Panel();
             this.coinAmountLabel = new System.Windows.Forms.Label();
-            this.coinsImagePanel = new System.Windows.Forms.Panel();
             this.gemBackgroundPanel = new System.Windows.Forms.Panel();
-            this.gemsImagePanel = new System.Windows.Forms.Panel();
             this.gemAmountLabel = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
             this.purchaseButton = new System.Windows.Forms.Button();
@@ -64,6 +55,24 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.errorText = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.premiumLootBoxAmount = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.lootBoxAmount = new System.Windows.Forms.Label();
+            this.openLootBoxButton = new System.Windows.Forms.Button();
+            this.openPremiumLootBoxButton = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.coinsImagePanel = new System.Windows.Forms.Panel();
+            this.gemsImagePanel = new System.Windows.Forms.Panel();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -74,6 +83,8 @@
             this.panel7.SuspendLayout();
             this.coinBackgroundPanel.SuspendLayout();
             this.gemBackgroundPanel.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel9
@@ -86,17 +97,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(53, 30);
             this.panel9.TabIndex = 44;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSurprise;
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Location = new System.Drawing.Point(4, 4);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(22, 22);
-            this.panel10.TabIndex = 0;
             // 
             // surpriseEmotionCount
             // 
@@ -122,17 +122,6 @@
             this.panel3.Size = new System.Drawing.Size(53, 30);
             this.panel3.TabIndex = 40;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiDisguist;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(4, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(22, 22);
-            this.panel4.TabIndex = 0;
-            // 
             // disgustEmotionCount
             // 
             this.disgustEmotionCount.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -156,17 +145,6 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(53, 30);
             this.panel11.TabIndex = 42;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Transparent;
-            this.panel12.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiNeutral;
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel12.Location = new System.Drawing.Point(4, 4);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(22, 22);
-            this.panel12.TabIndex = 0;
             // 
             // neutralEmotionCount
             // 
@@ -192,17 +170,6 @@
             this.panel13.Size = new System.Drawing.Size(53, 30);
             this.panel13.TabIndex = 43;
             // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSadness;
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel14.Location = new System.Drawing.Point(4, 4);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(22, 22);
-            this.panel14.TabIndex = 0;
-            // 
             // sadEmotionCount
             // 
             this.sadEmotionCount.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -226,17 +193,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(53, 30);
             this.panel1.TabIndex = 38;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiAnger;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(22, 22);
-            this.panel2.TabIndex = 0;
             // 
             // angryEmotionCount
             // 
@@ -262,17 +218,6 @@
             this.panel15.Size = new System.Drawing.Size(53, 30);
             this.panel15.TabIndex = 41;
             // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Transparent;
-            this.panel16.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiFear;
-            this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel16.Location = new System.Drawing.Point(4, 4);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(22, 22);
-            this.panel16.TabIndex = 0;
-            // 
             // fearEmotionCount
             // 
             this.fearEmotionCount.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -297,17 +242,6 @@
             this.panel5.Size = new System.Drawing.Size(53, 30);
             this.panel5.TabIndex = 39;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiContempt;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(4, 4);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(22, 22);
-            this.panel6.TabIndex = 0;
-            // 
             // contemptEmotionCount
             // 
             this.contemptEmotionCount.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -331,17 +265,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(53, 30);
             this.panel7.TabIndex = 37;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiHappiness;
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel8.Location = new System.Drawing.Point(4, 4);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(22, 22);
-            this.panel8.TabIndex = 0;
             // 
             // happyEmotionCount
             // 
@@ -377,16 +300,6 @@
             this.coinAmountLabel.Text = "10000";
             this.coinAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // coinsImagePanel
-            // 
-            this.coinsImagePanel.BackColor = System.Drawing.Color.Transparent;
-            this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins;
-            this.coinsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.coinsImagePanel.Location = new System.Drawing.Point(3, 2);
-            this.coinsImagePanel.Name = "coinsImagePanel";
-            this.coinsImagePanel.Size = new System.Drawing.Size(60, 60);
-            this.coinsImagePanel.TabIndex = 0;
-            // 
             // gemBackgroundPanel
             // 
             this.gemBackgroundPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -396,16 +309,6 @@
             this.gemBackgroundPanel.Name = "gemBackgroundPanel";
             this.gemBackgroundPanel.Size = new System.Drawing.Size(152, 64);
             this.gemBackgroundPanel.TabIndex = 35;
-            // 
-            // gemsImagePanel
-            // 
-            this.gemsImagePanel.BackColor = System.Drawing.Color.Transparent;
-            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem;
-            this.gemsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gemsImagePanel.Location = new System.Drawing.Point(2, 2);
-            this.gemsImagePanel.Name = "gemsImagePanel";
-            this.gemsImagePanel.Size = new System.Drawing.Size(60, 60);
-            this.gemsImagePanel.TabIndex = 1;
             // 
             // gemAmountLabel
             // 
@@ -449,9 +352,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.informationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.informationLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.informationLabel.Location = new System.Drawing.Point(332, 82);
+            this.informationLabel.Location = new System.Drawing.Point(332, 116);
             this.informationLabel.Name = "informationLabel";
-            this.informationLabel.Size = new System.Drawing.Size(228, 121);
+            this.informationLabel.Size = new System.Drawing.Size(228, 87);
             this.informationLabel.TabIndex = 47;
             this.informationLabel.Text = "Buy something!";
             this.informationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -491,14 +394,216 @@
             this.errorText.TabIndex = 50;
             this.errorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel21.Controls.Add(this.panel22);
+            this.panel21.Controls.Add(this.premiumLootBoxAmount);
+            this.panel21.Location = new System.Drawing.Point(449, 82);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(53, 30);
+            this.panel21.TabIndex = 47;
+            // 
+            // premiumLootBoxAmount
+            // 
+            this.premiumLootBoxAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.premiumLootBoxAmount.BackColor = System.Drawing.Color.Transparent;
+            this.premiumLootBoxAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.premiumLootBoxAmount.Location = new System.Drawing.Point(29, 2);
+            this.premiumLootBoxAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.premiumLootBoxAmount.Name = "premiumLootBoxAmount";
+            this.premiumLootBoxAmount.Size = new System.Drawing.Size(22, 26);
+            this.premiumLootBoxAmount.TabIndex = 0;
+            this.premiumLootBoxAmount.Text = "30";
+            this.premiumLootBoxAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Controls.Add(this.lootBoxAmount);
+            this.panel23.Location = new System.Drawing.Point(335, 82);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(53, 30);
+            this.panel23.TabIndex = 45;
+            // 
+            // lootBoxAmount
+            // 
+            this.lootBoxAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lootBoxAmount.BackColor = System.Drawing.Color.Transparent;
+            this.lootBoxAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lootBoxAmount.Location = new System.Drawing.Point(29, 2);
+            this.lootBoxAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lootBoxAmount.Name = "lootBoxAmount";
+            this.lootBoxAmount.Size = new System.Drawing.Size(22, 26);
+            this.lootBoxAmount.TabIndex = 0;
+            this.lootBoxAmount.Text = "30";
+            this.lootBoxAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // openLootBoxButton
+            // 
+            this.openLootBoxButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.openLootBoxButton.Location = new System.Drawing.Point(393, 81);
+            this.openLootBoxButton.Name = "openLootBoxButton";
+            this.openLootBoxButton.Size = new System.Drawing.Size(52, 32);
+            this.openLootBoxButton.TabIndex = 51;
+            this.openLootBoxButton.Text = "Open";
+            this.openLootBoxButton.UseVisualStyleBackColor = true;
+            // 
+            // openPremiumLootBoxButton
+            // 
+            this.openPremiumLootBoxButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.openPremiumLootBoxButton.Location = new System.Drawing.Point(507, 82);
+            this.openPremiumLootBoxButton.Name = "openPremiumLootBoxButton";
+            this.openPremiumLootBoxButton.Size = new System.Drawing.Size(53, 31);
+            this.openPremiumLootBoxButton.TabIndex = 52;
+            this.openPremiumLootBoxButton.Text = "Open";
+            this.openPremiumLootBoxButton.UseVisualStyleBackColor = true;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.Transparent;
+            this.panel22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel22.BackgroundImage")));
+            this.panel22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel22.Location = new System.Drawing.Point(0, 0);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(30, 30);
+            this.panel22.TabIndex = 0;
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.Transparent;
+            this.panel24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel24.BackgroundImage")));
+            this.panel24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel24.Location = new System.Drawing.Point(0, 0);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(30, 30);
+            this.panel24.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSurprise;
+            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel10.Location = new System.Drawing.Point(4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(22, 22);
+            this.panel10.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiDisguist;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Location = new System.Drawing.Point(4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(22, 22);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Transparent;
+            this.panel12.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiNeutral;
+            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel12.Location = new System.Drawing.Point(4, 4);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(22, 22);
+            this.panel12.TabIndex = 0;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Transparent;
+            this.panel14.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSadness;
+            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel14.Location = new System.Drawing.Point(4, 4);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(22, 22);
+            this.panel14.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiAnger;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(22, 22);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Transparent;
+            this.panel16.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiFear;
+            this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel16.Location = new System.Drawing.Point(4, 4);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(22, 22);
+            this.panel16.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiContempt;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Location = new System.Drawing.Point(4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(22, 22);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiHappiness;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel8.Location = new System.Drawing.Point(4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(22, 22);
+            this.panel8.TabIndex = 0;
+            // 
+            // coinsImagePanel
+            // 
+            this.coinsImagePanel.BackColor = System.Drawing.Color.Transparent;
+            this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins;
+            this.coinsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.coinsImagePanel.Location = new System.Drawing.Point(3, 2);
+            this.coinsImagePanel.Name = "coinsImagePanel";
+            this.coinsImagePanel.Size = new System.Drawing.Size(60, 60);
+            this.coinsImagePanel.TabIndex = 0;
+            // 
+            // gemsImagePanel
+            // 
+            this.gemsImagePanel.BackColor = System.Drawing.Color.Transparent;
+            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem;
+            this.gemsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gemsImagePanel.Location = new System.Drawing.Point(2, 2);
+            this.gemsImagePanel.Name = "gemsImagePanel";
+            this.gemsImagePanel.Size = new System.Drawing.Size(60, 60);
+            this.gemsImagePanel.TabIndex = 1;
+            // 
             // ShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 380);
+            this.Controls.Add(this.openPremiumLootBoxButton);
+            this.Controls.Add(this.openLootBoxButton);
             this.Controls.Add(this.errorText);
             this.Controls.Add(this.refreshButton);
+            this.Controls.Add(this.panel21);
             this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.panel23);
             this.Controls.Add(this.informationLabel);
             this.Controls.Add(this.purchaseButton);
             this.Controls.Add(this.listBox);
@@ -524,6 +629,8 @@
             this.panel7.ResumeLayout(false);
             this.coinBackgroundPanel.ResumeLayout(false);
             this.gemBackgroundPanel.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -565,5 +672,13 @@
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Label errorText;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label premiumLootBoxAmount;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Label lootBoxAmount;
+        private System.Windows.Forms.Button openLootBoxButton;
+        private System.Windows.Forms.Button openPremiumLootBoxButton;
     }
 }

@@ -1,9 +1,8 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
-    enum PurchaseStatus
+    enum ConsumableType
     {
-        Unavailable,
-        Successful,
-        Unsucessful
+        LootBox,
+        PremiumLootBox
     }
 }

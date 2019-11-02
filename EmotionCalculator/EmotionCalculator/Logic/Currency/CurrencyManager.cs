@@ -22,11 +22,19 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
         internal DateTime LastLogin { get { return userData.LastLogin; } }
         internal ReadOnlyDictionary<Emotion, int> EmotionCount { get { return userData.EmotionCount; } }
         internal IReadOnlyList<ThemePack> OwnedPacks { get { return userData.OwnedItems.Packs.AsReadOnly(); } }
+        internal int LootboxAmount { get { return userData.OwnedItems.LootBoxAmount; } }
+        internal int PremiumLootboxAmount { get { return userData.OwnedItems.PremiumLootBoxAmount; } }
 
         internal event EventHandler CurrencyChanged
         {
             add { userData.CurrencyChanged += value; }
             remove { userData.CurrencyChanged -= value; }
+        }
+
+        internal event EventHandler ConsumablesChanged
+        {
+            add { userData.OwnedItems.ConsumablesChanged += value; }
+            remove { userData.OwnedItems.ConsumablesChanged -= value; }
         }
 
         internal IEnumerable<PurchasableItem> InexhaustibleItems { get { return personalStore.GetInexhaustibleItems(); } }
@@ -46,9 +54,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
             personalStore = new PersonalStore(userData);
         }
 
-        internal void Purchase(PurchasableItem item)
+        internal PurchaseStatus Purchase(PurchasableItem item)
         {
-            item.TryPurchase(userData);
+            return item.TryPurchase(userData);
         }
     }
 }
