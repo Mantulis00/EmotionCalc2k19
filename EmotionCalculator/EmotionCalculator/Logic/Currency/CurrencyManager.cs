@@ -67,7 +67,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
                     if (userData.OwnedItems.LootBoxAmount > 0)
                     {
                         userData.OwnedItems.AddConsumables(ConsumableType.LootBox, -1);
-                        //consume lootbox
+
+
+
                         return OperationStatus.Successful;
                     }
                     break;
@@ -75,7 +77,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
                     if (userData.OwnedItems.PremiumLootBoxAmount > 0)
                     {
                         userData.OwnedItems.AddConsumables(ConsumableType.PremiumLootBox, -1);
-                        //consume premium lootbox
+
+
+
                         return OperationStatus.Successful;
                     }
                     break;
