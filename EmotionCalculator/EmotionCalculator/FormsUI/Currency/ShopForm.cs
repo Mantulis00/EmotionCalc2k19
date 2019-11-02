@@ -97,13 +97,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                         if (((PurchasableItem)listBox.SelectedItem).IsAvailable.Invoke())
                         {
                             purchaseButton.Enabled = true;
-                            errorText.Text = string.Empty;
+                            ChangeText(string.Empty, false);
                         }
                         else
                         {
                             purchaseButton.Enabled = false;
-                            errorText.ForeColor = Color.Red;
-                            errorText.Text = "The item is unavailable.";
+                            ChangeText("The item is unavailable.", false);
                         }
                     }
                     else
@@ -127,16 +126,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 switch (monthManager.CurrencyManager.Purchase((PurchasableItem)item))
                 {
                     case OperationStatus.Successful:
-                        errorText.ForeColor = Color.Green;
-                        errorText.Text = "Purchase succesful!";
+                        ChangeText("Purchase succesful!", true);
                         break;
-                    case OperationStatus.Unsucessful:
-                        errorText.ForeColor = Color.Red;
-                        errorText.Text = "Purchase unsuccesful.";
+                    case OperationStatus.Unsuccessful:
+                        ChangeText("Purchase unsuccesful.", false);
                         break;
                     case OperationStatus.Unavailable:
-                        errorText.ForeColor = Color.Red;
-                        errorText.Text = "The item is unavailable.";
+                        ChangeText("The item is unavailable.", false);
                         break;
                 }
             }
@@ -151,12 +147,62 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private void OpenLootBoxButton_Click(object sender, EventArgs e)
         {
-            monthManager.CurrencyManager.Consume(ConsumableType.LootBox);
+            RequestLootBox(false);
+            ClearSelection();
         }
 
         private void OpenPremiumLootBoxButton_Click(object sender, EventArgs e)
         {
-            monthManager.CurrencyManager.Consume(ConsumableType.PremiumLootBox);
+            RequestLootBox(true);
+            ClearSelection();
+        }
+
+        private void ClearSelection()
+        {
+            listBox.ClearSelected();
+            purchaseButton.Enabled = true;
+        }
+
+        private void RequestLootBox(bool premium)
+        {
+            string rewardString;
+            OperationStatus operationStatus;
+
+            if (premium)
+            {
+                operationStatus = monthManager.CurrencyManager
+                    .Consume(ConsumableType.PremiumLootBox, out rewardString);
+            }
+            else
+            {
+                operationStatus = monthManager.CurrencyManager
+                    .Consume(ConsumableType.LootBox, out rewardString);
+            }
+
+            switch (operationStatus)
+            {
+                case OperationStatus.Unavailable:
+                    ChangeText("Operation unavailable", false);
+                    break;
+                case OperationStatus.Successful:
+                    informationLabel.Text = rewardString;
+                    ChangeText(string.Empty, true);
+                    RefreshStore();
+                    break;
+                case OperationStatus.Unsuccessful:
+                    ChangeText("Operation unsuccessful", false);
+                    break;
+            }
+        }
+
+        private void ChangeText(string errorMessage, bool successful)
+        {
+            errorText.Text = errorMessage;
+
+            if (successful)
+                errorText.ForeColor = Color.Green;
+            else
+                errorText.ForeColor = Color.Red;
         }
     }
 }

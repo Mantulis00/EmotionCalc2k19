@@ -41,7 +41,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                     return OperationStatus.Successful;
                 }
 
-                return OperationStatus.Unsucessful;
+                return OperationStatus.Unsuccessful;
             }
             else
             {

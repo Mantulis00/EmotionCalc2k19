@@ -4,6 +4,6 @@
     {
         Unavailable,
         Successful,
-        Unsucessful
+        Unsuccessful
     }
 }

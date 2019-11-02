@@ -1,4 +1,7 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +9,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
 {
     class LootManager
     {
+        private static Random Random = new Random();
+
         private static Dictionary<LootType, int> LootBoxPowers = new Dictionary<LootType, int>
         {
             { LootType.Coins, 70},
@@ -24,14 +29,90 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
             { LootType.Emotion, 10},
         };
 
-        public static void OpenLootBox(UserData userData)
+        public static void OpenLootBox(bool premium, UserData userData, out string rewardString)
         {
-            LootType lootType = GetLootType(userData, LootBoxPowers);
+            LootType lootType = GetLootType(userData, premium ? PremiumLootBoxPowers : LootBoxPowers);
+
+            switch (lootType)
+            {
+                default:
+                case LootType.Coins:
+                    AddCoins(userData, premium ? GetRandomValue(100, 300) : GetRandomValue(20, 100), out rewardString);
+                    break;
+                case LootType.Gems:
+                    AddGems(userData, premium ? GetRandomValue(1, 3) : 1 + GetRandomBonus(0.3, 1), out rewardString);
+                    break;
+                case LootType.Emotion:
+                    AddRandomEmotion(userData, premium ? GetRandomValue(7, 13) : GetRandomValue(1, 5), out rewardString);
+                    break;
+                case LootType.ThemePack:
+                    AddRandomUnownedThemePack(userData, out rewardString);
+                    break;
+            }
         }
 
-        public static void OpenPremiumLootBox(UserData userData)
+        private static void AddCoins(UserData userData, int amount, out string rewardString)
         {
-            LootType lootType = GetLootType(userData, PremiumLootBoxPowers);
+            userData.AddCurrency(CurrencyType.JoyCoin, amount);
+            rewardString = $"{amount} Joy Coin{(amount > 1 ? "s" : string.Empty)}";
+        }
+
+        private static void AddGems(UserData userData, int amount, out string rewardString)
+        {
+            userData.AddCurrency(CurrencyType.JoyGem, amount);
+            rewardString = $"{amount} Joy Gem{(amount > 1 ? "s" : string.Empty)}";
+        }
+
+        private static int GetRandomValue(int baseAmount, int randomBonus)
+        {
+            return baseAmount + (int)(randomBonus * Random.NextDouble());
+        }
+
+        private static int GetRandomBonus(double probability, int bonus)
+        {
+            if (Random.NextDouble() <= probability)
+                return bonus;
+            else
+                return 0;
+        }
+
+        private static void AddRandomUnownedThemePack(UserData userData, out string rewardString)
+        {
+            var unownedPacks = DesktopPack.DesktopPacks.Where(
+                pack => !userData.OwnedItems.Packs.Contains(pack));
+
+            if (unownedPacks.Count() != 0)
+            {
+                var pack = unownedPacks.ElementAt(Random.Next(0, unownedPacks.Count() - 1));
+                userData.OwnedItems.Packs.Add(pack);
+
+                rewardString = $"{pack.Name} Theme Pack.";
+            }
+            else
+            {
+                rewardString = string.Empty;
+            }
+        }
+
+        private static void AddRandomEmotion(UserData userData, int amount, out string rewardString)
+        {
+            List<Emotion> emotions = new List<Emotion>()
+            {
+                Emotion.Anger,
+                Emotion.Contempt,
+                Emotion.Disgust,
+                Emotion.Fear,
+                Emotion.Happiness,
+                Emotion.Sadness,
+                Emotion.Surprise,
+                Emotion.Neutral,
+            };
+
+            var emotion = emotions[Random.Next(emotions.Count)];
+
+            userData.AddCurrency(emotion, amount);
+
+            rewardString = $"{amount} of emotion '{emotion.ToString()}'";
         }
 
         private static LootType GetLootType(UserData userData, Dictionary<LootType, int> lootPowers)
@@ -40,12 +121,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
 
             int totalPower = 0;
             lootPowers.ToList().ForEach(pair => totalPower += pair.Value);
+            totalPower = (int)(totalPower * Random.NextDouble());
 
             foreach (var pair in lootPowers)
             {
                 totalPower -= pair.Value;
 
-                if (totalPower == 0)
+                if (totalPower <= 0)
                 {
                     return pair.Key;
                 }
@@ -56,21 +138,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
 
         private static void RemoveUnavailableValues(UserData userData, Dictionary<LootType, int> lootPowers)
         {
-            if (lootPowers.ContainsKey(LootType.Clothing))
-            {
-                lootPowers.Remove(LootType.Clothing);
-            }
-
-            if (lootPowers.ContainsKey(LootType.Skin))
-            {
-                lootPowers.Remove(LootType.Skin);
-            }
-
-            if (lootPowers.ContainsKey(LootType.Visual))
-            {
-                lootPowers.Remove(LootType.Visual);
-            }
-
             if (lootPowers.ContainsKey(LootType.Song))
             {
                 lootPowers.Remove(LootType.Song);
@@ -78,14 +145,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
 
             if (lootPowers.ContainsKey(LootType.ThemePack))
             {
+                if (DesktopPack.DesktopPacks.Count() == userData.OwnedItems.Packs.Count)
+                    lootPowers.Remove(LootType.ThemePack);
 
-
-                lootPowers.Remove(LootType.Song);
-            }
-
-            if (lootPowers.ContainsKey(LootType.Song))
-            {
-                lootPowers.Remove(LootType.Song);
             }
         }
     }

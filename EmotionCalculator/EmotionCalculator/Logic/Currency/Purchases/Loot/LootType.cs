@@ -7,8 +7,5 @@
         Emotion,
         ThemePack,
         Song,
-        Clothing,
-        Skin,
-        Visual,
     }
 }

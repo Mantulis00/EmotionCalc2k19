@@ -1,4 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
@@ -59,7 +60,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
             return item.TryPurchase(userData);
         }
 
-        internal OperationStatus Consume(ConsumableType consumableType)
+        internal OperationStatus Consume(ConsumableType consumableType, out string rewardString)
         {
             switch (consumableType)
             {
@@ -68,7 +69,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
                     {
                         userData.OwnedItems.AddConsumables(ConsumableType.LootBox, -1);
 
-
+                        LootManager.OpenLootBox(false, userData, out rewardString);
 
                         return OperationStatus.Successful;
                     }
@@ -78,13 +79,14 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
                     {
                         userData.OwnedItems.AddConsumables(ConsumableType.PremiumLootBox, -1);
 
-
+                        LootManager.OpenLootBox(true, userData, out rewardString);
 
                         return OperationStatus.Successful;
                     }
                     break;
             }
 
+            rewardString = string.Empty;
             return OperationStatus.Unavailable;
         }
     }
