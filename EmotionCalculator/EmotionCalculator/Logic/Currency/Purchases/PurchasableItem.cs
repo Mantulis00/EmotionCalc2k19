@@ -10,26 +10,23 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         internal CurrencyType CurrencyType { get; }
         internal int Price { get; }
 
-        internal bool Available { get; private set; }
-
+        private Func<bool> IsAvailable;
         private Action PurchaseHandler;
-        private bool repurchasable;
 
         public PurchasableItem(string name, string description, CurrencyType currencyType, int price,
-            Action purchaseHandler, bool available = true, bool repurchasable = false)
+            Action purchaseHandler, Func<bool> isAvailable)
         {
             Name = name;
             Description = description;
             CurrencyType = currencyType;
             Price = price;
             PurchaseHandler = purchaseHandler;
-            Available = available;
-            this.repurchasable = repurchasable;
+            IsAvailable = isAvailable;
         }
 
         internal void TryPurchase(UserData userData)
         {
-            if (Available)
+            if (IsAvailable())
             {
                 if (CurrencyType == CurrencyType.JoyCoin && userData.JoyCoins >= Price)
                 {
@@ -47,11 +44,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         protected void CompletePurchase()
         {
             PurchaseHandler.Invoke();
-
-            if (!repurchasable)
-            {
-                Available = false;
-            }
         }
 
         public override string ToString()

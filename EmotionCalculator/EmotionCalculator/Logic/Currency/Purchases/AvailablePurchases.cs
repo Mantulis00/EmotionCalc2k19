@@ -16,8 +16,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         internal IEnumerable<PurchasableItem> GetInexhaustibleItems()
         {
-            yield return new PurchasableItem("Simple lootbox", "Contains basic stuff", CurrencyType.JoyGem, 1, () => { }, repurchasable: true);
-            yield return new PurchasableItem("Advanced lootbox", "Contains great loot", CurrencyType.JoyGem, 5, () => { }, repurchasable: true);
+            yield return new PurchasableItem("Simple lootbox", "Contains basic stuff", CurrencyType.JoyGem, 1, () => { }, () => true);
+            yield return new PurchasableItem("Advanced lootbox", "Contains great loot", CurrencyType.JoyGem, 5, () => { }, () => true);
         }
 
         internal IEnumerable<PurchasableItem> GetThemePacks()
@@ -31,8 +31,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                 var amount = storePack.Item3;
 
                 if (!ownedPacks.Contains(pack))
-                    yield return new PurchasableItem(pack.Name, pack.Description,
-                        type, amount, () => { userData.OwnedItems.Packs.Add(pack); });
+                    yield return new PurchasableItem(
+                        pack.Name, pack.Description, type, amount,
+                        () => userData.OwnedItems.Packs.Add(pack),
+                        () => !userData.OwnedItems.Packs.Contains(pack));
             }
         }
 
