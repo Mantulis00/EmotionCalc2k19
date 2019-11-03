@@ -100,7 +100,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         {
             if (Invaders.Count == 0)
             {
-                MainClock.Stop();
+              
                 main.GameOver();
               
             }
@@ -192,6 +192,15 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             invader.InvaderInfo.Dispose();
             Invaders.Remove(invader);
             invader.InvaderInfo = null;
+        }
+
+        internal void DisposeInvaders()
+        {
+            foreach (var i in Invaders.ToList())
+            {
+                i.InvaderInfo.Dispose();
+                Invaders.Remove(i);
+            }
         }
 
 

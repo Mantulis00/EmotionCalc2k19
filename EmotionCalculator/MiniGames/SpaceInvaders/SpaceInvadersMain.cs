@@ -20,6 +20,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private AnimationManager animationManager;
 
+        // two different clocks, one for animations other for game
         System.Windows.Forms.Timer MainClock, AnimationClock;
 
         BaseForm baseForm;
@@ -40,9 +41,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             SetupTimer();
 
 
-            
+            //InvadersAIs are created and their locations are set in animationManager
             animationManager = new AnimationManager(grapX, AnimationClock);
+            //InvadersManager refreshes invaders locations, checks if missle hits them, overall handles invaders and missles
             invaderManager = new InvadersManager(grapX, animationManager.AnimationElements, MainClock);
+            //playerManager manages player, reads its inputs
             playerIManager = new PlayerInputs(Player, invaderManager);
         }
 
@@ -115,6 +118,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
        public void GameOver()
         {
+            MainClock.Stop();
+
             Player.Dispose();
             Player = null;
 
