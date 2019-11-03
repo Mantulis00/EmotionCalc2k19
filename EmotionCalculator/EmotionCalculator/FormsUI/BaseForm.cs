@@ -124,6 +124,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
+            SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
+         
             MonthManager.Save();
 
             Application.Exit();
@@ -198,7 +200,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void InvadersLauch()
         {
-            invadersManager = new SpaceInvadersMain(calendarBackground);
+            invadersManager = new SpaceInvadersMain(calendarBackground, this);
         }
 
         //kodas123
@@ -211,24 +213,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-            if (e.KeyChar == 'e')
-            {
-                InvadersLauch();
-
-                thread2 = new Thread(
-                    () =>
-                    {
-                    this.BeginInvoke((Action)delegate ()
-                     {
-                       invadersManager.StartTimer();
-                     });
-                    }
-                );
-                thread2.Start();
-
-                
-            }
 
             if (e.KeyChar == 'u')
             {

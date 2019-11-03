@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmotionCalculator.EmotionCalculator.FormsUI;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -18,15 +19,17 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
        public bool MissleLive {  get; private set; }
 
+        private System.Windows.Forms.Timer MainClock;
 
         private List<SInvaders> Invaders;
 
         private PictureBox missle = null;
 
         PictureBox grapX;
-        internal InvadersManager(PictureBox grapX, List<PictureBox> InvadersBones)
+        internal InvadersManager(PictureBox grapX, List<PictureBox> InvadersBones, System.Windows.Forms.Timer MainClock)
         {
             this.grapX = grapX;
+            this.MainClock = MainClock;
 
             Invaders = GenerateInvaders(InvadersBones);
             
@@ -55,21 +58,53 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
 
 
-        internal void UpdateInvaders()
+        internal void UpdateInvaders(SpaceInvadersMain main)
         {
             UpdateMissle();
             CheckInvaders();
+            CheckGameOver(main);
             missle = ColiderCheck(missle);
 
         
             foreach(var invader in Invaders)
             {
-                invader.InvaderInfo.Location = new Point(
-                    invader.InvaderInfo.Location.X + InvadersSpeed, 
-                    invader.InvaderInfo.Location.Y + InvaderHeightReductor);
+                invader.InvaderInfo.Left += InvadersSpeed;
+                if (InvaderHeightReductor != 0)
+                {
+                    invader.InvaderInfo.Top += InvaderHeightReductor;
+                }
+
             }
 
             InvaderHeightReductor = 0;
+        }
+
+        private void CheckInvaders()
+        {
+            foreach (var invader in Invaders)
+            {
+                if (invader.InvaderInfo.Location.X + InvadersSpeed + InvaderSize > grapX.Size.Width ||
+                   invader.InvaderInfo.Location.X + InvadersSpeed < 0)
+                {
+                    InvaderHeightReductor = Math.Abs(InvadersSpeed);
+                    InvadersSpeed *= -1;
+                    break;
+                }
+            }
+
+            
+
+        }
+
+        private void CheckGameOver(SpaceInvadersMain main)
+        {
+            if (Invaders.Count == 0)
+            {
+                MainClock.Stop();
+                main.GameOver();
+              
+            }
+
         }
 
         private PictureBox ColiderCheck(PictureBox missle)
@@ -89,9 +124,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                             missle.Dispose();
                             missle = null;
                             MissleLive = false;
-                            invader.InvaderInfo.Visible = false;
-                            Invaders.Remove(invader);
-                            
+
+                            RemoveInvader(invader);
+
+
                             break;
                            
                         }
@@ -127,19 +163,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         }
 
 
-        private void CheckInvaders()
-        {
-            foreach (var invader in Invaders)
-            {
-                if (invader.InvaderInfo.Location.X + InvadersSpeed + InvaderSize > grapX.Size.Width ||
-                   invader.InvaderInfo.Location.X + InvadersSpeed < 0)
-                {
-                    InvaderHeightReductor = Math.Abs(InvadersSpeed);
-                    InvadersSpeed *= -1;
-                    break;
-                }
-            }
-        }
+       
 
 
         private List<SInvaders> GenerateInvaders(List<PictureBox> invaders)
@@ -160,9 +184,14 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
 
 
-        internal void RemoveInvader(int InvaderN)
+        internal void RemoveInvader(SInvaders invader)
         {
-            Invaders.RemoveAt(InvaderN);
+            if (InvadersSpeed > 0) InvadersSpeed++;
+            else if (InvadersSpeed < 0) InvadersSpeed--;
+
+            invader.InvaderInfo.Dispose();
+            Invaders.Remove(invader);
+            invader.InvaderInfo = null;
         }
 
 

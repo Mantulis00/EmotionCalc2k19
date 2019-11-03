@@ -22,6 +22,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         System.Windows.Forms.Timer MainClock, AnimationClock;
 
+        BaseForm baseForm;
 
         private List<SInvaders> Invaders;
 
@@ -29,10 +30,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
 
 
-        internal SpaceInvadersMain(PictureBox grapX)
+        internal SpaceInvadersMain(PictureBox grapX, BaseForm baseForm)
         {
-           // GrapX = grapX;
-            
+            // GrapX = grapX;
+            this.baseForm = baseForm;
 
            // SetupBackGround(grapX);
             SetupPlayer(grapX);
@@ -41,12 +42,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             
             animationManager = new AnimationManager(grapX, AnimationClock);
-            invaderManager = new InvadersManager(grapX, animationManager.AnimationElements);
+            invaderManager = new InvadersManager(grapX, animationManager.AnimationElements, MainClock);
             playerIManager = new PlayerInputs(Player, invaderManager);
-
-
-
-
         }
 
        private void SetupTimer()
@@ -85,9 +82,19 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private void StartClock(object sender, EventArgs e)
         {
-             invaderManager.UpdateInvaders();
+             invaderManager.UpdateInvaders(this);
         }
 
+/*
+
+        private void SetupBackGround(PictureBox grapX)
+        {
+            GrapX = new PictureBox();
+            GrapX.Image = grapX.Image;
+            GrapX.Size = new Size(grapX.Size.Width, grapX.Size.Height);
+            GrapX.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+        */
 
         private void SetupPlayer(PictureBox grapX)
         {
@@ -103,9 +110,17 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             grapX.Controls.Add(Player);
 
+
         }
 
-       
+       public void GameOver()
+        {
+            Player.Dispose();
+            Player = null;
+
+            baseForm.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
+            baseForm.MonthManager.Refresh();
+        }
 
 
 
