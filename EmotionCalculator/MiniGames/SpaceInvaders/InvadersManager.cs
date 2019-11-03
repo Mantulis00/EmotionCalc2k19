@@ -47,7 +47,9 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             missle = new PictureBox();
             missle.Size = new Size(InvaderSize, InvaderSize);
             missle.Location = new Point(location.X+InvaderSize/2, location.Y);
-            missle.BackColor = Color.Red;
+            missle.Image = Properties.Resources.emojiFire;
+            missle.SizeMode = PictureBoxSizeMode.StretchImage;
+            missle.BackColor = Color.Transparent;
             missle.Visible = true;
             missle.BringToFront();
 

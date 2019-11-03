@@ -234,7 +234,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
             
            
-            else
+            else if (thread2 != null)
                 invadersManager.playerIManager.ReadInput(e.KeyChar);
                 
         }

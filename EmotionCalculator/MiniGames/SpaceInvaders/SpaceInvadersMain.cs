@@ -106,7 +106,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             Player.Location = new System.Drawing.Point(grapX.Width / 2, 8 * grapX.Height / 10);
 
             Player.SizeMode = grapX.SizeMode;
-            Player.Image = grapX.Image;
+            Player.Image = Properties.Resources.emojiCringe;
+            Player.BackColor = Color.Transparent;
 
             Player.BringToFront();
             Player.Visible = true;
