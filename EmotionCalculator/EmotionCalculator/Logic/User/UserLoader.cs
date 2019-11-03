@@ -1,5 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
-using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
+using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using EmotionCalculator.EmotionCalculator.Tools.IO;
 using System;
@@ -20,8 +21,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         private static readonly string LastLogOnDayName = "llday";
         private static readonly string LastLogOnMonthName = "llmonth";
         private static readonly string LastLogOnYearName = "llyear";
-        private static readonly string EmotionCountPrefix = "EmC";
-        private static readonly string OwnedPackName = "OwnedTPs";
+        private static readonly string EmotionCountPrefix = "EmC_";
+        private static readonly string OwnedThemePackName = "OwnedTPs";
+        private static readonly string OwnedSongPackName = "OwnedSPs";
         private static readonly string LootBoxAmountName = "LBAmount";
         private static readonly string PremiumLootBoxAmountName = "PLBAmount";
 
@@ -47,7 +49,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
             foreach (Emotion emotion in Enum.GetValues(typeof(Emotion)))
             {
-                pairs.Add(new KeyValuePair<Emotion, int>(emotion, nodes.GetNumberFromNode(EmotionCountPrefix + "_" + emotion.ToString())));
+                pairs.Add(new KeyValuePair<Emotion, int>(emotion, nodes.GetNumberFromNode(EmotionCountPrefix + emotion.ToString())));
             }
 
             return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
@@ -60,8 +62,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
             OwnedItems ownedItems = new OwnedItems(lootBoxAmount, premiumLootBoxAmount);
 
-            var ownedPacks = nodes.GetValueFromNode(OwnedPackName);
-            ownedItems.Packs.AddRange(DesktopPack.GetPackByName(ownedPacks.Split(',')));
+            var ownedThemePacks = nodes.GetValueFromNode(OwnedThemePackName);
+            ownedItems.ThemePacks.AddRange(DesktopPack.GetPackByName(ownedThemePacks.Split(',')));
+
+            var ownedSongPacks = nodes.GetValueFromNode(OwnedSongPackName);
+            ownedItems.SongPacks.AddRange(RadioPack.GetPackByName(ownedSongPacks.Split(',')));
 
             return ownedItems;
         }
@@ -78,7 +83,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             doc.SaveValueToNode(LastLogOnYearName, userData.LastLogin.Year.ToString());
 
             userData.EmotionCount.ToList().ForEach(pair =>
-                doc.SaveValueToNode(EmotionCountPrefix + "_" + pair.Key.ToString(), pair.Value.ToString()));
+                doc.SaveValueToNode(EmotionCountPrefix + pair.Key.ToString(), pair.Value.ToString()));
 
             SaveItems(doc, userData.OwnedItems);
 
@@ -89,11 +94,14 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         {
             StringBuilder stringBuilder = new StringBuilder();
             List<string> strings = new List<string>();
-            ownedItems.Packs.ForEach(pack => strings.Add(pack.Name));
 
-            string joinedString = string.Join(",", strings);
+            ownedItems.ThemePacks.ForEach(pack => strings.Add(pack.Name));
+            document.SaveValueToNode(OwnedThemePackName, string.Join(",", strings));
 
-            document.SaveValueToNode(OwnedPackName, joinedString);
+            strings.Clear();
+            ownedItems.SongPacks.ForEach(pack => strings.Add(pack.Name));
+            document.SaveValueToNode(OwnedSongPackName, string.Join(",", strings));
+
             document.SaveValueToNode(LootBoxAmountName, ownedItems.LootBoxAmount.ToString());
             document.SaveValueToNode(PremiumLootBoxAmountName, ownedItems.PremiumLootBoxAmount.ToString());
         }

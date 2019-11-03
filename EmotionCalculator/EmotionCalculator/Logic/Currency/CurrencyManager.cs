@@ -1,6 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot;
-using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
+using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
@@ -22,7 +23,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
         internal int DailyStreak { get { return userData.DailyStreak; } }
         internal DateTime LastLogin { get { return userData.LastLogin; } }
         internal ReadOnlyDictionary<Emotion, int> EmotionCount { get { return userData.EmotionCount; } }
-        internal IReadOnlyList<ThemePack> OwnedPacks { get { return userData.OwnedItems.Packs.AsReadOnly(); } }
+        internal IReadOnlyList<ThemePack> OwnedThemePacks { get { return userData.OwnedItems.ThemePacks.AsReadOnly(); } }
+        internal IReadOnlyList<SongPack> OwnedSongPacks { get { return userData.OwnedItems.SongPacks.AsReadOnly(); } }
         internal int LootboxAmount { get { return userData.OwnedItems.LootBoxAmount; } }
         internal int PremiumLootboxAmount { get { return userData.OwnedItems.PremiumLootBoxAmount; } }
 
@@ -40,12 +42,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 
         internal IEnumerable<PurchasableItem> InexhaustibleItems { get { return personalStore.GetInexhaustibleItems(); } }
         internal IEnumerable<PurchasableItem> UnlockableThemes { get { return personalStore.GetThemePacks(); } }
-
+        internal IEnumerable<PurchasableItem> UnlockableSongs { get { return personalStore.GetSongPacks(); } }
         internal IEnumerable<PurchasableItem> PurchasableItems
         {
             get
             {
-                return InexhaustibleItems.Concat(UnlockableThemes);
+                return InexhaustibleItems.Concat(UnlockableThemes).Concat(UnlockableSongs);
             }
         }
 

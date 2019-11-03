@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
+using System.Collections.Generic;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {

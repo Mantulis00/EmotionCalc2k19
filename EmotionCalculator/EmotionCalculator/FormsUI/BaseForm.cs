@@ -4,6 +4,7 @@ using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
@@ -159,6 +160,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             OpenSecondaryWindow(new ShopForm(MonthManager));
         }
 
+        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MonthManager.CurrencyManager.OwnedSongPacks.Count > 0)
+                OpenSecondaryWindow(new Coin_Use.MusicForm(MonthManager));
+            else
+                MessageBox.Show("No songs found", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
 
         private void OpenSecondaryWindow(Form secondaryWindow)
         {
@@ -174,11 +183,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     MonthManager.Refresh();
                     RefreshUI();
                 };
-        }
-
-        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenSecondaryWindow(new Coin_Use.MusicForm());
         }
 
         private void LightsOffToolStripMenuItem_Click(object sender, EventArgs e)

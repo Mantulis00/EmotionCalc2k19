@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace EmotionCalculator.EmotionCalculator.Logic.Settings
+namespace EmotionCalculator.EmotionCalculator.Logic.Settings.Themes
 {
     class ThemePack
     {

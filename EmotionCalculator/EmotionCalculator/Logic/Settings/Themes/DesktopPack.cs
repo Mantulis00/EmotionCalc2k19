@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace EmotionCalculator.EmotionCalculator.Logic.Settings
+namespace EmotionCalculator.EmotionCalculator.Logic.Settings.Themes
 {
-    class DesktopPack
+    static class DesktopPack
     {
         internal static SettingsManager GetSettings()
         {

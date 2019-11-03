@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Settings;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
+using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using System;
 using System.Collections.Generic;
 
@@ -6,14 +7,16 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
     class OwnedItems
     {
-        internal List<ThemePack> Packs { get; }
+        internal List<ThemePack> ThemePacks { get; }
+        internal List<SongPack> SongPacks { get; }
 
         internal int LootBoxAmount { get; private set; }
         internal int PremiumLootBoxAmount { get; private set; }
 
         internal OwnedItems(int lootBoxAmount, int premiumLootBoxAmount)
         {
-            Packs = new List<ThemePack>();
+            ThemePacks = new List<ThemePack>();
+            SongPacks = new List<SongPack>();
 
             LootBoxAmount = lootBoxAmount;
             PremiumLootBoxAmount = premiumLootBoxAmount;

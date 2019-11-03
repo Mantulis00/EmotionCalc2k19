@@ -10,7 +10,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             switch (currencyType)
             {
                 case CurrencyType.JoyCoin:
-                    if (userData.JoyCoins + amount >= 0)
+                    if (userData.JoyCoins - amount >= 0)
                     {
                         userData.AddCurrency(CurrencyType.JoyCoin, -amount);
                         return OperationStatus.Successful;
@@ -20,7 +20,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                         return OperationStatus.Unsuccessful;
                     }
                 case CurrencyType.JoyGem:
-                    if (userData.JoyGems + amount >= 0)
+                    if (userData.JoyGems - amount >= 0)
                     {
                         userData.AddCurrency(CurrencyType.JoyGem, -amount);
                         return OperationStatus.Successful;
@@ -40,7 +40,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             {
                 case ConsumableType.LootBox:
                     {
-                        if (ownedItems.LootBoxAmount + amount >= 0)
+                        if (ownedItems.LootBoxAmount - amount >= 0)
                         {
                             ownedItems.AddConsumables(ConsumableType.LootBox, -amount);
                             return OperationStatus.Successful;
@@ -52,7 +52,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                     }
                 case ConsumableType.PremiumLootBox:
                     {
-                        if (ownedItems.PremiumLootBoxAmount + amount >= 0)
+                        if (ownedItems.PremiumLootBoxAmount - amount >= 0)
                         {
                             ownedItems.AddConsumables(ConsumableType.PremiumLootBox, -amount);
                             return OperationStatus.Successful;

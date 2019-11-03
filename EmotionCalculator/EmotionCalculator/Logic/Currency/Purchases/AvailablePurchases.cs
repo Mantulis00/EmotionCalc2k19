@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Settings;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
+using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         internal IEnumerable<PurchasableItem> GetThemePacks()
         {
-            var ownedPacks = userData.OwnedItems.Packs;
+            var ownedPacks = userData.OwnedItems.ThemePacks;
 
-            foreach (Tuple<ThemePack, CurrencyType, int> storePack in GetPackPrices())
+            foreach (Tuple<ThemePack, CurrencyType, int> storePack in GetThemePackPrices())
             {
                 var pack = storePack.Item1;
                 var type = storePack.Item2;
@@ -35,19 +36,45 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                 if (!ownedPacks.Contains(pack))
                     yield return new PurchasableItem(
                         pack.Name, pack.Description, type, amount,
-                        () => userData.OwnedItems.Packs.Add(pack),
-                        () => !userData.OwnedItems.Packs.Contains(pack)
+                        () => ownedPacks.Add(pack),
+                        () => !ownedPacks.Contains(pack)
                             && DesktopPack.GetAvailabilityCondition(pack).Invoke());
             }
         }
 
-        private IEnumerable<Tuple<ThemePack, CurrencyType, int>> GetPackPrices()
+        private IEnumerable<Tuple<ThemePack, CurrencyType, int>> GetThemePackPrices()
         {
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.DefaultPack, CurrencyType.JoyCoin, 0);
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.HalloweenPack, CurrencyType.JoyCoin, 150);
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.BrexitPack, CurrencyType.JoyCoin, 150);
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.YinYangPack, CurrencyType.JoyCoin, 250);
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.UniversityPack, CurrencyType.JoyCoin, 250);
+        }
+
+        internal IEnumerable<PurchasableItem> GetSongPacks()
+        {
+            var ownedPacks = userData.OwnedItems.SongPacks;
+
+            foreach (Tuple<SongPack, CurrencyType, int> storePack in GetSongPackPrices())
+            {
+                var pack = storePack.Item1;
+                var type = storePack.Item2;
+                var amount = storePack.Item3;
+
+                if (!ownedPacks.Contains(pack))
+                    yield return new PurchasableItem(
+                        pack.Name, pack.Description, type, amount,
+                        () => ownedPacks.Add(pack),
+                        () => !ownedPacks.Contains(pack));
+            }
+        }
+
+        private IEnumerable<Tuple<SongPack, CurrencyType, int>> GetSongPackPrices()
+        {
+            foreach (var pack in RadioPack.SongPacks)
+            {
+                yield return new Tuple<SongPack, CurrencyType, int>(pack, CurrencyType.JoyCoin, 150);
+            }
         }
     }
 }
