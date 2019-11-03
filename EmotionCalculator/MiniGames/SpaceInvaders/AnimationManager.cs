@@ -11,14 +11,15 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 {
      class AnimationManager
     {
-        int AnimationSteps = 100;
         internal List<PictureBox> AnimationElements { get; }
         List<Point> Distances;
         List<Point> presetLocations;
 
+
         System.Windows.Forms.Timer Clock;
         public  AnimationManager(PictureBox grapX, System.Windows.Forms.Timer Clock)
         {
+
              presetLocations = new List<Point>();
 
             int InvadersStartX = 10;
@@ -27,73 +28,70 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             int InvaderSize = 20;
             int InvadersSpacer = 2 * InvaderSize;
 
-            int AnimationSteps = 100;
-
             presetLocations = SetupPresetLocations( InvadersStartX, InvadersStartY, InvadersSpacer);
             AnimationElements = SetAnimationElements(grapX);
             Distances = SetDistances(presetLocations, AnimationElements);
 
-            //  StartAnimation(AnimationSteps, Distances, AnimationElements);
-            this.Clock = Clock;
 
+            this.Clock = Clock;
         }
 
         
-        public  void StartAnimation()
+        public  void StartAnimation(SpaceInvadersMain mainer)
         {
             int counter = 0;
                 for (int y = 0; y < AnimationElements.Count; y++)
                 {
                 
 
-                 if (presetLocations[y].X != 0 &&
+                    if (presetLocations[y].X != 0 &&
                     presetLocations[y].X + 4 > AnimationElements[y].Location.X &&
                     presetLocations[y].X - 4 < AnimationElements[y].Location.X)
-                {
+                    {
                     
                     presetLocations[y] = new Point(0, presetLocations[y].Y);
-                }
+                     }
 
-                else if (presetLocations[y].X > AnimationElements[y].Location.X && presetLocations[y].X != 0)
-                {
-                    AnimationElements[y].Left += 2;
-                }
+                     else if (presetLocations[y].X > AnimationElements[y].Location.X && presetLocations[y].X != 0)
+                    {
+                         AnimationElements[y].Left += 2;
+                    }
 
-                else if (presetLocations[y].X  < AnimationElements[y].Location.X && presetLocations[y].X != 0)
-                {
-                    AnimationElements[y].Left -= 2;
-                }
+                     else if (presetLocations[y].X  < AnimationElements[y].Location.X && presetLocations[y].X != 0)
+                     {
+                          AnimationElements[y].Left -= 2;
+                     }
                 
 
-                 if (presetLocations[y].Y != 0 &&
-                   presetLocations[y].Y + 4 > AnimationElements[y].Location.Y &&
-                   presetLocations[y].Y - 4 < AnimationElements[y].Location.Y)
-                {
-                    presetLocations[y] = new Point(presetLocations[y].X, 0);
-                }
+                     if (presetLocations[y].Y != 0 &&
+                     presetLocations[y].Y + 4 > AnimationElements[y].Location.Y &&
+                     presetLocations[y].Y - 4 < AnimationElements[y].Location.Y)
+                    {
+                         presetLocations[y] = new Point(presetLocations[y].X, 0);
+                     }
 
-                else if (presetLocations[y].Y > AnimationElements[y].Location.Y && presetLocations[y].Y != 0)
-                {
-                    AnimationElements[y].Top += 2;
-                }
+                     else if (presetLocations[y].Y > AnimationElements[y].Location.Y && presetLocations[y].Y != 0)
+                    {
+                         AnimationElements[y].Top += 2;
+                    }
 
-                else if (presetLocations[y].Y < AnimationElements[y].Location.Y && presetLocations[y].Y != 0)
-                {
-                    AnimationElements[y].Top -= 2;
-                }
+                     else if (presetLocations[y].Y < AnimationElements[y].Location.Y && presetLocations[y].Y != 0)
+                    {
+                         AnimationElements[y].Top -= 2;
+                    }
 
-                if (presetLocations[y].X == 0 && presetLocations[y].Y == 0)
-                {
-                    counter++;
-                }
-                else
-                    counter = 0;
+                     if (presetLocations[y].X == 0 && presetLocations[y].Y == 0)
+                    {
+                         counter++;
+                    }
+                     else
+                         counter = 0;
 
-                 if (counter + 1 == AnimationElements.Count)
-                {
-
-                    Clock.Stop();   
-                }
+                    if (counter + 1 == AnimationElements.Count)
+                     {
+                         Clock.Stop();
+                         mainer.StartTimer();
+                     }
 
             }
             

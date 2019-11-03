@@ -214,7 +214,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             
             if (e.KeyChar == 'e')
             {
-                //InvadersLauch();
+                InvadersLauch();
 
                 thread2 = new Thread(
                     () =>
@@ -232,7 +232,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             if (e.KeyChar == 'u')
             {
+                SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
+                MonthManager.Refresh();
                 InvadersLauch();
+
 
                 thread2 = new Thread(
                     () =>

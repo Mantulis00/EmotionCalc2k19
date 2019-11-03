@@ -10,15 +10,14 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 {
      class InvadersManager
     {
-        private int InvadersLenght, InvadersHeight, InvadersSpacer;
-        private int InvadersStartX, InvadersStartY, InvaderSize;
+
+        private int  InvaderSize;
 
         private int InvadersSpeed, InvaderHeightReductor;
         private int MissleSpeed;
 
        public bool MissleLive {  get; private set; }
 
-        private bool Colider;
 
         private List<SInvaders> Invaders;
 
@@ -31,24 +30,12 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             Invaders = GenerateInvaders(InvadersBones);
             
-            
+            InvadersSpeed = 5;
             InvaderSize = 20;
-            InvadersSpacer = 2 * InvaderSize;
-
-
-            InvadersStartX = 10;
-            InvadersStartY = 10;
-            InvadersSpeed = 10;
-            MissleSpeed = 20;
+            MissleSpeed = 15;
             MissleLive = false;
 
-            InvadersLenght = InvadersStartX + 5 * InvadersSpacer;
-            InvadersHeight = InvadersStartY + 3 * InvadersSpacer;
-
-            Colider = false;
             
-
-          //  GenerateInvaders(grapX);
 
         }
 
@@ -57,9 +44,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             missle = new PictureBox();
             missle.Size = new Size(InvaderSize, InvaderSize);
             missle.Location = location;
-            missle.BackColor = Color.Blue;
+            missle.BackColor = Color.Red;
             missle.Visible = true;
             missle.BringToFront();
+
+            
 
             grapX.Controls.Add(missle);
         }
@@ -118,7 +107,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private void UpdateMissle()
         {
-
             if (missle != null)
             {
                 MissleLive = true;
@@ -132,6 +120,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             if (missle.Location.Y < -1*MissleSpeed)
             {
                 MissleLive = false;
+                missle.Dispose();
                 missle = null;
             }
                
@@ -153,21 +142,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         }
 
 
-
-
-        /*
-        private void GenerateInvaders(PictureBox grapX)
-        {
-            for (int y = InvadersStartY; y < InvadersHeight; y += InvadersSpacer)
-            {
-                for (int x = InvadersStartX; x < InvadersLenght; x += InvadersSpacer)
-                {
-                    AddInvader(x, y, grapX);
-                }
-            }
-        }*/
-
-
         private List<SInvaders> GenerateInvaders(List<PictureBox> invaders)
         {
             List<SInvaders> InvadersAI = new List<SInvaders>();
@@ -185,23 +159,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
 
 
-        /*
-        private void AddInvader(int locationX, int locationY, PictureBox grapX)
-        {
-            SInvaders Invader = new SInvaders();
-            Invader.InvaderInfo = new PictureBox();
-            Invader.InvaderInfo.Size = new Size(InvaderSize, InvaderSize);
-            Invader.InvaderInfo.Location = new System.Drawing.Point(locationX, locationY);
-            Invader.InvaderInfo.BackColor = Color.Red;
-            Invader.InvaderInfo.Visible = true;
-            Invader.InvaderInfo.BringToFront();
-            Invader.alive = true;
-            grapX.Controls.Add(Invader.InvaderInfo);
-
-            // if invader alive
-
-            Invaders.Add(Invader);
-        }*/
 
         internal void RemoveInvader(int InvaderN)
         {

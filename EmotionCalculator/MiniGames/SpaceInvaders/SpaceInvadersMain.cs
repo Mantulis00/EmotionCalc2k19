@@ -13,12 +13,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
     class SpaceInvadersMain
     {
 
-        private PictureBox GrapX;
+        //private PictureBox GrapX;
         private PictureBox Player;
         private InvadersManager invaderManager;
-        internal PlayerInputs playerIManager {get;}
+        internal PlayerInputs playerIManager { get; set; }
 
-        private List<PictureBox> CalendarElements;
         private AnimationManager animationManager;
 
         System.Windows.Forms.Timer MainClock, AnimationClock;
@@ -32,15 +31,15 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         internal SpaceInvadersMain(PictureBox grapX)
         {
-            GrapX = grapX;
+           // GrapX = grapX;
             
 
-            SetupBackGround(grapX);
+           // SetupBackGround(grapX);
             SetupPlayer(grapX);
             SetupTimer();
 
-           
 
+            
             animationManager = new AnimationManager(grapX, AnimationClock);
             invaderManager = new InvadersManager(grapX, animationManager.AnimationElements);
             playerIManager = new PlayerInputs(Player, invaderManager);
@@ -53,11 +52,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
        private void SetupTimer()
         {
             MainClock = new System.Windows.Forms.Timer();
-            MainClock.Interval = 50;
+            MainClock.Interval = 35;
             MainClock.Tick += StartClock;
 
             AnimationClock = new System.Windows.Forms.Timer();
-            AnimationClock.Interval = 1;
+            AnimationClock.Interval = 10;
             AnimationClock.Tick += StartAnimationOnClock;
 
         }
@@ -74,29 +73,19 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private void StartAnimationOnClock(object sender, EventArgs e)
         {
-            animationManager.StartAnimation();
+            animationManager.StartAnimation(this);
         }
 
         public void StartTimer()
         {
+            
+
             MainClock.Start();
         }
-
-
 
         private void StartClock(object sender, EventArgs e)
         {
              invaderManager.UpdateInvaders();
-        }
-
-
-
-        private void SetupBackGround(PictureBox grapX)
-        {
-            GrapX = new PictureBox();
-            GrapX.Image = grapX.Image;
-            GrapX.Size = new Size(grapX.Size.Width, grapX.Size.Height);
-            GrapX.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
 
@@ -114,7 +103,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             grapX.Controls.Add(Player);
 
-            //GrapX.Controls.Add(Player);
         }
 
        
