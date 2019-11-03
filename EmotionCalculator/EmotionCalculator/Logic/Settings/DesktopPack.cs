@@ -24,6 +24,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
                 yield return DefaultPack;
                 yield return HalloweenPack;
                 yield return BrexitPack;
+                yield return YinYangPack;
+                yield return UniversityPack;
             }
         }
 
@@ -62,10 +64,26 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
         internal static readonly ThemePack BrexitPack =
         new ThemePack("Brexit", "Breee",
-             Properties.Resources.backgroundBrexit,
+            Properties.Resources.backgroundBrexit,
             Color.FromArgb(160, 255, 255, 50),
             Color.FromArgb(100, 200, 200, 50),
             Color.FromArgb(255, 255, 255, 200),
             Color.FromArgb(255, 0, 0, 0));
+
+        internal static readonly ThemePack YinYangPack =
+        new ThemePack("Yin Yang", "Harmony",
+            Properties.Resources.yinYang,
+            Color.FromArgb(220, 255, 255, 255),
+            Color.FromArgb(0, 0, 0, 0),
+            Color.FromArgb(220, 100, 0, 0),
+            Color.FromArgb(255, 0, 0, 0));
+
+        internal static readonly ThemePack UniversityPack =
+        new ThemePack("VU", "Universitas Vilnensis",
+            Properties.Resources.vu,
+            Color.FromArgb(200, 255, 255, 255),
+            Color.FromArgb(0, 0, 0, 0),
+            Color.FromArgb(150, 122, 0, 63),
+            Color.FromArgb(255, 122, 0, 63));
     }
 }

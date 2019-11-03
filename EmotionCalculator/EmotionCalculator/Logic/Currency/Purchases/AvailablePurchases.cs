@@ -46,6 +46,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.DefaultPack, CurrencyType.JoyCoin, 0);
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.HalloweenPack, CurrencyType.JoyCoin, 150);
             yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.BrexitPack, CurrencyType.JoyCoin, 150);
+            yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.YinYangPack, CurrencyType.JoyCoin, 250);
+            yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.UniversityPack, CurrencyType.JoyCoin, 250);
         }
     }
 }
