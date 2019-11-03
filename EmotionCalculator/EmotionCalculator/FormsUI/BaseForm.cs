@@ -16,7 +16,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        Thread thread2 = null;
+        internal Thread thread2  {get; set;}
 
         internal MonthManager MonthManager { get; private set; }
 
@@ -214,7 +214,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (e.KeyChar == 'u')
+            if (e.KeyChar == 'u'  &&  thread2 == null )
             {
                 SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
                 MonthManager.Refresh();
