@@ -10,7 +10,6 @@ using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Media;
 using System.Windows.Forms;
 using CurrencyManager = EmotionCalculator.EmotionCalculator.Logic.Currency.CurrencyManager;
 
@@ -179,10 +178,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SoundPlayer player = new SoundPlayer();
-            var rand = new Random();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
-            player.Play();
+            OpenSecondaryWindow(new Coin_Use.MusicForm());
         }
 
         private void LightsOffToolStripMenuItem_Click(object sender, EventArgs e)
