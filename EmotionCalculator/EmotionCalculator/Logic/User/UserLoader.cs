@@ -1,12 +1,13 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.EmotionCalculator.Tools.IO;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
+using static EmotionCalculator.EmotionCalculator.Tools.IO.XMLTools;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
@@ -26,16 +27,16 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
         public UserData Load()
         {
-            var doc = GetXmlDocument();
+            var doc = GetXmlDocument(FileName);
             var nodes = doc.Descendants();
 
-            int joyCoins = GetNumberFromNode(nodes, CoinValueName);
-            int joyGems = GetNumberFromNode(nodes, GemValueName);
-            int dailyStreak = GetNumberFromNode(nodes, LoginStreakLengthName);
+            int joyCoins = nodes.GetNumberFromNode(CoinValueName);
+            int joyGems = nodes.GetNumberFromNode(GemValueName);
+            int dailyStreak = nodes.GetNumberFromNode(LoginStreakLengthName);
 
-            int lastDay = GetNumberFromNode(nodes, LastLogOnDayName);
-            int lastMonth = GetNumberFromNode(nodes, LastLogOnMonthName);
-            int lastYear = GetNumberFromNode(nodes, LastLogOnYearName);
+            int lastDay = nodes.GetNumberFromNode(LastLogOnDayName);
+            int lastMonth = nodes.GetNumberFromNode(LastLogOnMonthName);
+            int lastYear = nodes.GetNumberFromNode(LastLogOnYearName);
 
             DateTime lastLogin;
 
@@ -46,49 +47,20 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
             foreach (Emotion emotion in Enum.GetValues(typeof(Emotion)))
             {
-                pairs.Add(new KeyValuePair<Emotion, int>(emotion, GetNumberFromNode(nodes, EmotionCountPrefix + "_" + emotion.ToString())));
+                pairs.Add(new KeyValuePair<Emotion, int>(emotion, nodes.GetNumberFromNode(EmotionCountPrefix + "_" + emotion.ToString())));
             }
 
             return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
         }
 
-        private string GetValueFromNode(IEnumerable<XElement> nodes, string nodeName)
-        {
-            var node = nodes.FirstOrDefault(sNode => sNode.Name == nodeName);
-
-            if (node != null)
-            {
-                return node.Value;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        private int GetNumberFromNode(IEnumerable<XElement> nodes, string nodeName)
-        {
-            var value = GetValueFromNode(nodes, nodeName);
-            int integer;
-
-            if (int.TryParse(value, out integer))
-            {
-                return integer;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
         private OwnedItems LoadItems(IEnumerable<XElement> nodes)
         {
-            int lootBoxAmount = GetNumberFromNode(nodes, LootBoxAmountName);
-            int premiumLootBoxAmount = GetNumberFromNode(nodes, PremiumLootBoxAmountName);
+            int lootBoxAmount = nodes.GetNumberFromNode(LootBoxAmountName);
+            int premiumLootBoxAmount = nodes.GetNumberFromNode(PremiumLootBoxAmountName);
 
             OwnedItems ownedItems = new OwnedItems(lootBoxAmount, premiumLootBoxAmount);
 
-            var ownedPacks = GetValueFromNode(nodes, OwnedPackName);
+            var ownedPacks = nodes.GetValueFromNode(OwnedPackName);
             ownedItems.Packs.AddRange(DesktopPack.GetPackByName(ownedPacks.Split(',')));
 
             return ownedItems;
@@ -96,34 +68,21 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
         public void Save(UserData userData)
         {
-            var doc = GetXmlDocument();
+            var doc = GetXmlDocument(FileName);
 
-            SaveValueToNode(doc, CoinValueName, userData.JoyCoins.ToString());
-            SaveValueToNode(doc, GemValueName, userData.JoyGems.ToString());
-            SaveValueToNode(doc, LoginStreakLengthName, userData.DailyStreak.ToString());
-            SaveValueToNode(doc, LastLogOnDayName, userData.LastLogin.Day.ToString());
-            SaveValueToNode(doc, LastLogOnMonthName, userData.LastLogin.Month.ToString());
-            SaveValueToNode(doc, LastLogOnYearName, userData.LastLogin.Year.ToString());
+            doc.SaveValueToNode(CoinValueName, userData.JoyCoins.ToString());
+            doc.SaveValueToNode(GemValueName, userData.JoyGems.ToString());
+            doc.SaveValueToNode(LoginStreakLengthName, userData.DailyStreak.ToString());
+            doc.SaveValueToNode(LastLogOnDayName, userData.LastLogin.Day.ToString());
+            doc.SaveValueToNode(LastLogOnMonthName, userData.LastLogin.Month.ToString());
+            doc.SaveValueToNode(LastLogOnYearName, userData.LastLogin.Year.ToString());
 
-            userData.EmotionCount.ToList().ForEach(pair => SaveValueToNode(doc, EmotionCountPrefix + "_" + pair.Key.ToString(), pair.Value.ToString()));
+            userData.EmotionCount.ToList().ForEach(pair =>
+                doc.SaveValueToNode(EmotionCountPrefix + "_" + pair.Key.ToString(), pair.Value.ToString()));
 
             SaveItems(doc, userData.OwnedItems);
 
             doc.Save(FileName);
-        }
-
-        private void SaveValueToNode(XDocument document, string nodeName, string value)
-        {
-            var nodes = document.Descendants();
-            var node = nodes.FirstOrDefault(sNode => sNode.Name == nodeName);
-
-            if (node == null)
-            {
-                node = new XElement(nodeName);
-                document.Root.Add(node);
-            }
-
-            node.Value = value;
         }
 
         private void SaveItems(XDocument document, OwnedItems ownedItems)
@@ -134,24 +93,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
             string joinedString = string.Join(",", strings);
 
-            SaveValueToNode(document, OwnedPackName, joinedString);
-            SaveValueToNode(document, LootBoxAmountName, ownedItems.LootBoxAmount.ToString());
-            SaveValueToNode(document, PremiumLootBoxAmountName, ownedItems.PremiumLootBoxAmount.ToString());
-        }
-
-        private XDocument GetXmlDocument()
-        {
-            if (File.Exists(FileName))
-            {
-                return XDocument.Load(FileName);
-            }
-            else
-            {
-                XDocument xmlDocument = new XDocument();
-                XElement root = new XElement("root");
-                xmlDocument.Add(root);
-                return xmlDocument;
-            }
+            document.SaveValueToNode(OwnedPackName, joinedString);
+            document.SaveValueToNode(LootBoxAmountName, ownedItems.LootBoxAmount.ToString());
+            document.SaveValueToNode(PremiumLootBoxAmountName, ownedItems.PremiumLootBoxAmount.ToString());
         }
     }
 }

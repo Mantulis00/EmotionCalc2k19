@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using static EmotionCalculator.EmotionCalculator.Tools.IO.XMLTools;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
@@ -14,7 +14,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
         public Dictionary<SettingType, SettingStatus> LoadSettings()
         {
             var settings = new Dictionary<SettingType, SettingStatus>();
-            var nodes = GetXmlDocument().Descendants();
+            var nodes = GetXmlDocument(FileName).Descendants();
 
             foreach (var settingType in Enum.GetNames(typeof(SettingType)))
             {
@@ -32,7 +32,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
         public ThemePack LoadTheme()
         {
-            var themeNode = GetXmlDocument().Descendants().FirstOrDefault(node => node.Name == SelectedThemeNodeName);
+            var themeNode = GetXmlDocument(FileName).Descendants().FirstOrDefault(node => node.Name == SelectedThemeNodeName);
 
             if (themeNode != null)
             {
@@ -49,7 +49,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
         public void SaveSettings(Dictionary<SettingType, SettingStatus> settings)
         {
-            XDocument xmlDocument = GetXmlDocument();
+            XDocument xmlDocument = GetXmlDocument(FileName);
             var nodes = xmlDocument.Descendants();
 
             foreach (var setting in settings.Keys)
@@ -70,7 +70,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
         public void SaveTheme(ThemePack themePack)
         {
-            XDocument xmlDocument = GetXmlDocument();
+            XDocument xmlDocument = GetXmlDocument(FileName);
 
             var themeNode = xmlDocument.Descendants().FirstOrDefault(node => node.Name == SelectedThemeNodeName);
 
@@ -83,21 +83,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             themeNode.Value = themePack.Name;
 
             xmlDocument.Save(FileName);
-        }
-
-        private XDocument GetXmlDocument()
-        {
-            if (File.Exists(FileName))
-            {
-                return XDocument.Load(FileName);
-            }
-            else
-            {
-                XDocument xmlDocument = new XDocument();
-                XElement root = new XElement("root");
-                xmlDocument.Add(root);
-                return xmlDocument;
-            }
         }
     }
 }

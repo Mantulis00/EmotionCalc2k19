@@ -172,6 +172,7 @@
     <Compile Include="EmotionCalculator\Tools\API\Face\FaceAPIRequester.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\CameraHandle.cs" />
     <Compile Include="EmotionCalculator\Tools\FileHandler\ImageHandle.cs" />
+    <Compile Include="EmotionCalculator\Tools\IO\XMLTools.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageConverter.cs" />
     <Compile Include="EmotionCalculator\Tools\Web\ImageDownloader.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\Emotion.cs" />
@@ -189,7 +190,6 @@
   <ItemGroup>
     <Folder Include="EmotionCalculator\obj\Release\" />
     <Folder Include="EmotionCalculator\Tools\Managers\" />
-    <Folder Include="Logic\" />
     <Folder Include="Tools\API\Face\" />
   </ItemGroup>
   <ItemGroup>
