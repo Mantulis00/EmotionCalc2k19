@@ -1,12 +1,14 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
 using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
@@ -181,6 +183,28 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             var rand = new Random();
             player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
             player.Play();
+        }
+
+        private void LightsOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MonthManager.CurrencyManager.Purchase(CustomPurchase.LightsOff) == OperationStatus.Successful)
+            {
+                lightsOnToolStripMenuItem.Enabled = true;
+                lightsOffToolStripMenuItem.Enabled = false;
+
+                BackColor = Color.Black;
+            }
+        }
+
+        private void LightsOnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MonthManager.CurrencyManager.Purchase(CustomPurchase.LightsOn) == OperationStatus.Successful)
+            {
+                lightsOffToolStripMenuItem.Enabled = true;
+                lightsOnToolStripMenuItem.Enabled = false;
+
+                BackColor = SystemColors.Control;
+            }
         }
 
         //Calendar navigation

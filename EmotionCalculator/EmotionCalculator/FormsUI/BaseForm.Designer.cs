@@ -45,6 +45,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useCoinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.musicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.leftButton = new System.Windows.Forms.Button();
             this.rightButton = new System.Windows.Forms.Button();
@@ -79,7 +80,8 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.fearEmotionCount = new System.Windows.Forms.Label();
-            this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightsOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightsOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gemBackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
@@ -214,7 +216,9 @@
             // 
             this.useCoinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.musicToolStripMenuItem,
-            this.shopToolStripMenuItem});
+            this.shopToolStripMenuItem,
+            this.lightsOffToolStripMenuItem,
+            this.lightsOnToolStripMenuItem});
             this.useCoinToolStripMenuItem.Name = "useCoinToolStripMenuItem";
             this.useCoinToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.useCoinToolStripMenuItem.Text = "Use Coin";
@@ -225,6 +229,13 @@
             this.musicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.musicToolStripMenuItem.Text = "Music";
             this.musicToolStripMenuItem.Click += new System.EventHandler(this.MusicToolStripMenuItem_Click);
+            // 
+            // shopToolStripMenuItem
+            // 
+            this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
+            this.shopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shopToolStripMenuItem.Text = "Shop";
+            this.shopToolStripMenuItem.Click += new System.EventHandler(this.ShopToolStripMenuItem_Click);
             // 
             // dateTimePicker
             // 
@@ -608,12 +619,20 @@
             this.fearEmotionCount.Text = "30";
             this.fearEmotionCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // shopToolStripMenuItem
+            // lightsOnToolStripMenuItem
             // 
-            this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
-            this.shopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shopToolStripMenuItem.Text = "Shop";
-            this.shopToolStripMenuItem.Click += new System.EventHandler(this.ShopToolStripMenuItem_Click);
+            this.lightsOnToolStripMenuItem.Enabled = false;
+            this.lightsOnToolStripMenuItem.Name = "lightsOnToolStripMenuItem";
+            this.lightsOnToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.lightsOnToolStripMenuItem.Text = "Lights On - 1 Joy Coin";
+            this.lightsOnToolStripMenuItem.Click += new System.EventHandler(this.LightsOnToolStripMenuItem_Click);
+            // 
+            // lightsOffToolStripMenuItem
+            // 
+            this.lightsOffToolStripMenuItem.Name = "lightsOffToolStripMenuItem";
+            this.lightsOffToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.lightsOffToolStripMenuItem.Text = "Lights Off - 1 Joy Coin";
+            this.lightsOffToolStripMenuItem.Click += new System.EventHandler(this.LightsOffToolStripMenuItem_Click);
             // 
             // BaseForm
             // 
@@ -714,5 +733,7 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label fearEmotionCount;
         private System.Windows.Forms.ToolStripMenuItem shopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightsOffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightsOnToolStripMenuItem;
     }
 }

@@ -60,34 +60,27 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
             return item.TryPurchase(userData);
         }
 
+        internal OperationStatus Purchase(CustomPurchase customPurchase)
+        {
+            var price = customPurchase.GetCustomPurchasePrice();
+
+            return userData.Transact(price.Item1, price.Item2);
+        }
+
         internal OperationStatus Consume(ConsumableType consumableType, out string rewardString)
         {
-            switch (consumableType)
+            OperationStatus status = userData.OwnedItems.Transact(consumableType, 1);
+
+            if (status == OperationStatus.Successful)
             {
-                case ConsumableType.LootBox:
-                    if (userData.OwnedItems.LootBoxAmount > 0)
-                    {
-                        userData.OwnedItems.AddConsumables(ConsumableType.LootBox, -1);
-
-                        LootManager.OpenLootBox(false, userData, out rewardString);
-
-                        return OperationStatus.Successful;
-                    }
-                    break;
-                case ConsumableType.PremiumLootBox:
-                    if (userData.OwnedItems.PremiumLootBoxAmount > 0)
-                    {
-                        userData.OwnedItems.AddConsumables(ConsumableType.PremiumLootBox, -1);
-
-                        LootManager.OpenLootBox(true, userData, out rewardString);
-
-                        return OperationStatus.Successful;
-                    }
-                    break;
+                LootManager.OpenLootBox(consumableType, userData, out rewardString);
+            }
+            else
+            {
+                rewardString = string.Empty;
             }
 
-            rewardString = string.Empty;
-            return OperationStatus.Unavailable;
+            return status;
         }
     }
 }

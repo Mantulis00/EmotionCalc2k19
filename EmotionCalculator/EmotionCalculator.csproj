@@ -139,11 +139,13 @@
     <Compile Include="EmotionCalculator\Logic\Currency\EmotionValue.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\AvailablePurchases.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\ConsumableType.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\CustomPurchase.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\Loot\LootManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\Loot\LootType.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchasableItem.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseStatus.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\TransactionManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />

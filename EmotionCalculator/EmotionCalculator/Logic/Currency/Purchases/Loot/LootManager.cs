@@ -29,8 +29,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
             { LootType.Emotion, 10},
         };
 
-        public static void OpenLootBox(bool premium, UserData userData, out string rewardString)
+        public static void OpenLootBox(ConsumableType consumableType, UserData userData, out string rewardString)
         {
+            bool premium = consumableType == ConsumableType.PremiumLootBox;
+
             LootType lootType = GetLootType(userData, premium ? PremiumLootBoxPowers : LootBoxPowers);
 
             switch (lootType)
