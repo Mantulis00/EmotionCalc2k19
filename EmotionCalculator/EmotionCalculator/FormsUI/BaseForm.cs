@@ -12,7 +12,6 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using CurrencyManager = EmotionCalculator.EmotionCalculator.Logic.Currency.CurrencyManager;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -61,21 +60,21 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 new UserLoader(),
                 settingsManager);
 
-            MonthManager.CurrencyManager.CurrencyChanged +=
+            MonthManager.ReadOnlyUserData.CurrencyChanged +=
                 (o, e) =>
                 {
-                    CurrencyManager manager = MonthManager.CurrencyManager;
+                    ReadOnlyUserData readOnly = MonthManager.ReadOnlyUserData;
 
-                    coinAmountLabel.Text = manager.JoyCoins.ToString();
-                    gemAmountLabel.Text = manager.JoyGems.ToString();
-                    angryEmotionCount.Text = manager.EmotionCount[Emotion.Anger].ToString();
-                    contemptEmotionCount.Text = manager.EmotionCount[Emotion.Contempt].ToString();
-                    disgustEmotionCount.Text = manager.EmotionCount[Emotion.Disgust].ToString();
-                    fearEmotionCount.Text = manager.EmotionCount[Emotion.Fear].ToString();
-                    happyEmotionCount.Text = manager.EmotionCount[Emotion.Happiness].ToString();
-                    neutralEmotionCount.Text = manager.EmotionCount[Emotion.Neutral].ToString();
-                    sadEmotionCount.Text = manager.EmotionCount[Emotion.Sadness].ToString();
-                    surpriseEmotionCount.Text = manager.EmotionCount[Emotion.Surprise].ToString();
+                    coinAmountLabel.Text = readOnly.JoyCoins.ToString();
+                    gemAmountLabel.Text = readOnly.JoyGems.ToString();
+                    angryEmotionCount.Text = readOnly.EmotionCount[Emotion.Anger].ToString();
+                    contemptEmotionCount.Text = readOnly.EmotionCount[Emotion.Contempt].ToString();
+                    disgustEmotionCount.Text = readOnly.EmotionCount[Emotion.Disgust].ToString();
+                    fearEmotionCount.Text = readOnly.EmotionCount[Emotion.Fear].ToString();
+                    happyEmotionCount.Text = readOnly.EmotionCount[Emotion.Happiness].ToString();
+                    neutralEmotionCount.Text = readOnly.EmotionCount[Emotion.Neutral].ToString();
+                    sadEmotionCount.Text = readOnly.EmotionCount[Emotion.Sadness].ToString();
+                    surpriseEmotionCount.Text = readOnly.EmotionCount[Emotion.Surprise].ToString();
                 };
 
             dateTimePicker.ValueChanged +=
@@ -162,7 +161,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MonthManager.CurrencyManager.OwnedSongPacks.Count > 0)
+            if (MonthManager.ReadOnlyUserData.OwnedSongPacks.Count > 0)
                 OpenSecondaryWindow(new Coin_Use.MusicForm(MonthManager));
             else
                 MessageBox.Show("No songs found", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);

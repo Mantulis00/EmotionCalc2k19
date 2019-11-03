@@ -7,8 +7,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
 {
     public partial class MusicForm : Form
     {
-        private SoundPlayer player;
-        private MonthManager monthManager;
+        private readonly SoundPlayer player;
+        private readonly MonthManager monthManager;
         private int index;
 
         internal MusicForm(MonthManager monthManager)
@@ -21,6 +21,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
             FormClosing += (o, e) =>
             {
                 player?.Stop();
+                player?.Dispose();
             };
         }
 
@@ -29,7 +30,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
             player?.Stop();
             index += change;
 
-            var songs = monthManager.CurrencyManager.OwnedSongPacks;
+            var songs = monthManager.ReadOnlyUserData.OwnedSongPacks;
 
             if (index == -1)
                 index = songs.Count - 1;
@@ -43,7 +44,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
 
         private void PlayButtonMusic_Click(object sender, EventArgs e)
         {
-            var song = monthManager.CurrencyManager.OwnedSongPacks[index];
+            var song = monthManager.ReadOnlyUserData.OwnedSongPacks[index];
 
             song.Song.Position = 0;
             player.Stream = null;

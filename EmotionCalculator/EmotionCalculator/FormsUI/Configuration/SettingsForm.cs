@@ -9,8 +9,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class SettingsForm : Form
     {
-        private BaseForm baseForm;
-        private SettingsManager settingsManager;
+        private readonly BaseForm baseForm;
+        private readonly SettingsManager settingsManager;
 
         public SettingsForm(BaseForm baseForm)
         {
@@ -25,17 +25,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void InitializeSettings()
         {
-            themeComboBox.Items.AddRange(baseForm.MonthManager.CurrencyManager.OwnedThemePacks.ToArray());
+            themeComboBox.Items.AddRange(baseForm.MonthManager.ReadOnlyUserData.OwnedThemePacks.ToArray());
 
             themeComboBox.SelectedIndex = themeComboBox
                 .FindStringExact(baseForm.MonthManager.SettingsManager.SelectedTheme.ToString());
 
-            checkCheckBoxes(settingsManager);
+            CheckCheckBoxes(settingsManager);
 
             settingsManager.Save();
         }
 
-        private void checkCheckBoxes(SettingsManager settingsManager)
+        private void CheckCheckBoxes(SettingsManager settingsManager)
         {
             if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                 emojisEnabledCheckBox.Checked = true;
@@ -63,7 +63,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void ResetButton_Click(object sender, EventArgs e)
         {
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(baseForm.MonthManager.CurrencyManager.OwnedThemePacks.First().ToString());
+                .FindStringExact(baseForm.MonthManager.ReadOnlyUserData.OwnedThemePacks.First().ToString());
 
             emojisEnabledCheckBox.Checked = false;
         }
@@ -110,9 +110,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             Font tabFont = new Font("Microsoft Sans Serif", 11f);
 
-            StringFormat stringFlags = new StringFormat();
-            stringFlags.Alignment = StringAlignment.Center;
-            stringFlags.LineAlignment = StringAlignment.Center;
+            StringFormat stringFlags = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
             g.DrawString(tabPage.Text, tabFont, textBrush, tabBounds, stringFlags);
         }
 

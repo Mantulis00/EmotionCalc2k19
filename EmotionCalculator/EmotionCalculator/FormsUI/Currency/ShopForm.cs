@@ -1,11 +1,11 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using CurrencyManager = EmotionCalculator.EmotionCalculator.Logic.Currency.CurrencyManager;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 {
@@ -13,7 +13,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
     {
         private static readonly string BaseInformationMessage = "Buy something!";
 
-        private MonthManager monthManager;
+        private readonly MonthManager monthManager;
 
         internal ShopForm(MonthManager monthManager)
         {
@@ -61,30 +61,30 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private void InitializeListeners()
         {
-            monthManager.CurrencyManager.CurrencyChanged +=
+            monthManager.ReadOnlyUserData.CurrencyChanged +=
                 (o, e) =>
                 {
-                    CurrencyManager manager = monthManager.CurrencyManager;
+                    ReadOnlyUserData readOnly = monthManager.ReadOnlyUserData;
 
-                    coinAmountLabel.Text = manager.JoyCoins.ToString();
-                    gemAmountLabel.Text = manager.JoyGems.ToString();
-                    angryEmotionCount.Text = manager.EmotionCount[Emotion.Anger].ToString();
-                    contemptEmotionCount.Text = manager.EmotionCount[Emotion.Contempt].ToString();
-                    disgustEmotionCount.Text = manager.EmotionCount[Emotion.Disgust].ToString();
-                    fearEmotionCount.Text = manager.EmotionCount[Emotion.Fear].ToString();
-                    happyEmotionCount.Text = manager.EmotionCount[Emotion.Happiness].ToString();
-                    sadEmotionCount.Text = manager.EmotionCount[Emotion.Sadness].ToString();
-                    surpriseEmotionCount.Text = manager.EmotionCount[Emotion.Surprise].ToString();
-                    neutralEmotionCount.Text = manager.EmotionCount[Emotion.Neutral].ToString();
+                    coinAmountLabel.Text = readOnly.JoyCoins.ToString();
+                    gemAmountLabel.Text = readOnly.JoyGems.ToString();
+                    angryEmotionCount.Text = readOnly.EmotionCount[Emotion.Anger].ToString();
+                    contemptEmotionCount.Text = readOnly.EmotionCount[Emotion.Contempt].ToString();
+                    disgustEmotionCount.Text = readOnly.EmotionCount[Emotion.Disgust].ToString();
+                    fearEmotionCount.Text = readOnly.EmotionCount[Emotion.Fear].ToString();
+                    happyEmotionCount.Text = readOnly.EmotionCount[Emotion.Happiness].ToString();
+                    sadEmotionCount.Text = readOnly.EmotionCount[Emotion.Sadness].ToString();
+                    surpriseEmotionCount.Text = readOnly.EmotionCount[Emotion.Surprise].ToString();
+                    neutralEmotionCount.Text = readOnly.EmotionCount[Emotion.Neutral].ToString();
                 };
 
-            monthManager.CurrencyManager.ConsumablesChanged +=
+            monthManager.ReadOnlyUserData.ConsumablesChanged +=
                 (o, e) =>
                 {
-                    CurrencyManager manager = monthManager.CurrencyManager;
+                    ReadOnlyUserData readOnly = monthManager.ReadOnlyUserData;
 
-                    lootBoxAmount.Text = manager.LootboxAmount.ToString();
-                    premiumLootBoxAmount.Text = manager.PremiumLootboxAmount.ToString();
+                    lootBoxAmount.Text = readOnly.LootboxAmount.ToString();
+                    premiumLootBoxAmount.Text = readOnly.PremiumLootboxAmount.ToString();
                 };
 
             listBox.SelectedValueChanged +=
@@ -97,12 +97,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                         if (((PurchasableItem)listBox.SelectedItem).IsAvailable.Invoke())
                         {
                             purchaseButton.Enabled = true;
-                            ChangeText(string.Empty, false);
+                            ChangeErrorText(string.Empty, false);
                         }
                         else
                         {
                             purchaseButton.Enabled = false;
-                            ChangeText("The item is unavailable.", false);
+                            ChangeErrorText("The item is unavailable.", false);
                         }
                     }
                     else
@@ -126,13 +126,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 switch (monthManager.CurrencyManager.Purchase((PurchasableItem)item))
                 {
                     case OperationStatus.Successful:
-                        ChangeText("Purchase succesful!", true);
+                        ChangeErrorText("Purchase succesful!", true);
                         break;
                     case OperationStatus.Unsuccessful:
-                        ChangeText("Purchase unsuccesful.", false);
+                        ChangeErrorText("Purchase unsuccesful.", false);
                         break;
                     case OperationStatus.Unavailable:
-                        ChangeText("The item is unavailable.", false);
+                        ChangeErrorText("The item is unavailable.", false);
                         break;
                 }
             }
@@ -147,13 +147,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private void OpenLootBoxButton_Click(object sender, EventArgs e)
         {
-            RequestLootBox(false);
+            RequestLootBox(premium: false);
             ClearSelection();
         }
 
         private void OpenPremiumLootBoxButton_Click(object sender, EventArgs e)
         {
-            RequestLootBox(true);
+            RequestLootBox(premium: true);
             ClearSelection();
         }
 
@@ -182,20 +182,22 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
             switch (operationStatus)
             {
                 case OperationStatus.Unavailable:
-                    ChangeText("Operation unavailable", false);
+                    informationLabel.Text = string.Empty;
+                    ChangeErrorText("Operation unavailable", false);
                     break;
                 case OperationStatus.Successful:
                     informationLabel.Text = rewardString;
-                    ChangeText(string.Empty, true);
+                    ChangeErrorText(string.Empty, true);
                     RefreshStore();
                     break;
                 case OperationStatus.Unsuccessful:
-                    ChangeText("Operation unsuccessful", false);
+                    informationLabel.Text = string.Empty;
+                    ChangeErrorText("Operation unsuccessful", false);
                     break;
             }
         }
 
-        private void ChangeText(string errorMessage, bool successful)
+        private void ChangeErrorText(string errorMessage, bool successful)
         {
             errorText.Text = errorMessage;
 

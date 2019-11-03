@@ -10,19 +10,21 @@ namespace EmotionCalculator.EmotionCalculator.Logic
 {
     class MonthManager
     {
-        private IMonthLogger monthLogger;
-        private IMonthUpdatable monthUpdatable;
+        private readonly IMonthLogger monthLogger;
+        private readonly IMonthUpdatable monthUpdatable;
 
         private MonthEmotions monthEmotions;
         private DateTime selectedTime;
 
-        private IUserLoader userLoader;
+        private readonly IUserLoader userLoader;
 
-        private UserData userData;
+        private readonly UserData userData;
 
-        internal CurrencyManager CurrencyManager { get; set; }
+        internal CurrencyManager CurrencyManager { get; private set; }
 
-        internal SettingsManager SettingsManager { get; set; }
+        internal ReadOnlyUserData ReadOnlyUserData { get; private set; }
+
+        internal SettingsManager SettingsManager { get; private set; }
 
         public MonthManager(IMonthLogger monthLogger, IMonthUpdatable monthUpdatable,
             DateTime startingDate, IUserLoader userLoader, SettingsManager settingsManager)
@@ -34,6 +36,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
 
             this.userLoader = userLoader;
             userData = userLoader.Load();
+            ReadOnlyUserData = new ReadOnlyUserData(userData);
 
             CurrencyManager = new CurrencyManager(userData);
             SettingsManager = settingsManager;

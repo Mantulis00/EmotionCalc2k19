@@ -156,6 +156,7 @@
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Songs\RadioPack.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Songs\SongPack.cs" />
+    <Compile Include="EmotionCalculator\Logic\User\ReadOnlyUserData.cs" />
     <Compile Include="EmotionCalculator\Logic\User\UserLoader.cs" />
     <Compile Include="EmotionCalculator\Logic\EmotionJudge.cs" />
     <Compile Include="EmotionCalculator\Logic\Settings\EmojiManager.cs" />

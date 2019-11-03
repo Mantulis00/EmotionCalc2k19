@@ -8,7 +8,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
     class PersonalStore
     {
-        private UserData userData;
+        private readonly UserData userData;
 
         internal PersonalStore(UserData userData)
         {
@@ -19,7 +19,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         {
             yield return new PurchasableItem("Simple lootbox", "Contains basic stuff", CurrencyType.JoyGem, 1,
                 () => userData.OwnedItems.AddConsumables(ConsumableType.LootBox, 1), () => true);
-            yield return new PurchasableItem("Advanced lootbox", "Contains great loot", CurrencyType.JoyGem, 5,
+            yield return new PurchasableItem("Premium lootbox", "Contains great loot", CurrencyType.JoyGem, 3,
                 () => userData.OwnedItems.AddConsumables(ConsumableType.PremiumLootBox, 1), () => true);
         }
 

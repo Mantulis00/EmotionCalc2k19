@@ -1,12 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot;
-using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Logic.User;
-using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency
@@ -15,30 +10,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
     //UserData wrapper
     class CurrencyManager
     {
-        private UserData userData;
-        private PersonalStore personalStore;
-
-        internal int JoyCoins { get { return userData.JoyCoins; } }
-        internal int JoyGems { get { return userData.JoyGems; } }
-        internal int DailyStreak { get { return userData.DailyStreak; } }
-        internal DateTime LastLogin { get { return userData.LastLogin; } }
-        internal ReadOnlyDictionary<Emotion, int> EmotionCount { get { return userData.EmotionCount; } }
-        internal IReadOnlyList<ThemePack> OwnedThemePacks { get { return userData.OwnedItems.ThemePacks.AsReadOnly(); } }
-        internal IReadOnlyList<SongPack> OwnedSongPacks { get { return userData.OwnedItems.SongPacks.AsReadOnly(); } }
-        internal int LootboxAmount { get { return userData.OwnedItems.LootBoxAmount; } }
-        internal int PremiumLootboxAmount { get { return userData.OwnedItems.PremiumLootBoxAmount; } }
-
-        internal event EventHandler CurrencyChanged
-        {
-            add { userData.CurrencyChanged += value; }
-            remove { userData.CurrencyChanged -= value; }
-        }
-
-        internal event EventHandler ConsumablesChanged
-        {
-            add { userData.OwnedItems.ConsumablesChanged += value; }
-            remove { userData.OwnedItems.ConsumablesChanged -= value; }
-        }
+        private readonly UserData userData;
+        private readonly PersonalStore personalStore;
 
         internal IEnumerable<PurchasableItem> InexhaustibleItems { get { return personalStore.GetInexhaustibleItems(); } }
         internal IEnumerable<PurchasableItem> UnlockableThemes { get { return personalStore.GetThemePacks(); } }
