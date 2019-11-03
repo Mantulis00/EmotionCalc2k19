@@ -52,6 +52,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             Color.FromArgb(180, 255, 255, 255),
             Color.FromArgb(60, 255, 255, 255),
             Color.FromArgb(220, 255, 110, 110),
+            Color.FromArgb(255, 0, 0, 0),
             Color.FromArgb(255, 0, 0, 0));
 
         internal static readonly ThemePack HalloweenPack =
@@ -60,14 +61,16 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             Color.FromArgb(160, 255, 100, 100),
             Color.FromArgb(100, 200, 150, 150),
             Color.FromArgb(255, 255, 55, 55),
+            Color.FromArgb(255, 255, 255, 255),
             Color.FromArgb(255, 0, 0, 0));
 
         internal static readonly ThemePack BrexitPack =
         new ThemePack("Brexit", "Breee",
             Properties.Resources.backgroundBrexit,
-            Color.FromArgb(160, 255, 255, 50),
-            Color.FromArgb(100, 200, 200, 50),
-            Color.FromArgb(255, 255, 255, 200),
+            Color.FromArgb(220, 255, 255, 255),
+            Color.FromArgb(60, 255, 255, 255),
+            Color.FromArgb(255, 100, 40, 255),
+            Color.FromArgb(255, 255, 255, 255),
             Color.FromArgb(255, 0, 0, 0));
 
         internal static readonly ThemePack YinYangPack =
@@ -75,7 +78,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             Properties.Resources.yinYang,
             Color.FromArgb(220, 255, 255, 255),
             Color.FromArgb(0, 0, 0, 0),
-            Color.FromArgb(220, 100, 0, 0),
+            Color.FromArgb(220, 100, 50, 50),
+            Color.FromArgb(255, 190, 190, 190),
             Color.FromArgb(255, 0, 0, 0));
 
         internal static readonly ThemePack UniversityPack =
@@ -83,7 +87,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             Properties.Resources.vu,
             Color.FromArgb(200, 255, 255, 255),
             Color.FromArgb(0, 0, 0, 0),
-            Color.FromArgb(150, 122, 0, 63),
+            Color.FromArgb(255, 122, 0, 63),
+            Color.FromArgb(255, 255, 255, 255),
             Color.FromArgb(255, 122, 0, 63));
     }
 }

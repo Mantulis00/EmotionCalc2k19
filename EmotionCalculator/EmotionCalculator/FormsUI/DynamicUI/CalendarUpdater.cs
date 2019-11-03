@@ -61,33 +61,29 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             for (int i = 0; i < DateTime.DaysInMonth(newDateTime.Year, newDateTime.Month); i++)
             {
                 var cell = cells[cellNumber + i];
+                var number = numbers[cellNumber + i];
 
                 if (i + 1 == newDateTime.Day)
                 {
                     cell.BackColor = selectedTheme.FocusColor;
+                    number.ForeColor = selectedTheme.FocusTextColor;
+
                 }
                 else
                 {
                     cell.BackColor = selectedTheme.PrimaryColor;
+                    number.ForeColor = selectedTheme.PrimaryTextColor;
                 }
 
-                var number = numbers[cellNumber + i];
-
                 number.Text = (i + 1).ToString();
-                number.ForeColor = selectedTheme.TextColor;
-
-
                 number.Visible = true;
 
-                setEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
+                SetEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
             }
-
-
-
         }
 
 
-        private void setEmotions(DateTime newDateTime, MonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
+        private void SetEmotions(DateTime newDateTime, MonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
         {
             var emotionLabel = emotionLabels[cellNumber + i];
             var emoji = emojis[cellNumber + i];
@@ -121,12 +117,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
             }
 
-            emotionLabel.ForeColor = selectedTheme.TextColor;
+            emotionLabel.ForeColor = selectedTheme.PrimaryTextColor;
             emotionLabel.Visible = true;
-
-
-
-
         }
 
 
