@@ -23,6 +23,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
                 yield return DefaultPack;
                 yield return HalloweenPack;
                 yield return BrexitPack;
+                yield return mcPack;
             }
         }
 
@@ -49,7 +50,15 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             Color.FromArgb(100, 200, 200, 50),
             Color.FromArgb(255, 255, 255, 200),
             Color.FromArgb(255, 0, 0, 0));
-            
+
+
+        private static readonly ThemePack mcPack =
+        new ThemePack("MineCraft",
+             Properties.Resources.backgroundMc,
+            Color.FromArgb(160, 150, 75, 0),
+            Color.FromArgb(100, 50, 255, 75),
+            Color.FromArgb(255, 255, 250, 250),
+            Color.FromArgb(255, 0, 0, 0));
 
 
     }

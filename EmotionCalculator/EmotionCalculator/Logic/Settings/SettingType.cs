@@ -4,5 +4,6 @@
     {
         Emoji,
         Debug,
+        Game,
     }
 }
