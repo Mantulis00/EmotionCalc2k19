@@ -83,16 +83,6 @@ namespace EmotionCalculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgroundMc {
-            get {
-                object obj = ResourceManager.GetObject("backgroundMc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap backgroundMountains {
             get {
                 object obj = ResourceManager.GetObject("backgroundMountains", resourceCulture);
@@ -133,16 +123,6 @@ namespace EmotionCalculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap emojiCringe {
-            get {
-                object obj = ResourceManager.GetObject("emojiCringe", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap emojiDisguist {
             get {
                 object obj = ResourceManager.GetObject("emojiDisguist", resourceCulture);
@@ -156,16 +136,6 @@ namespace EmotionCalculator.Properties {
         internal static System.Drawing.Bitmap emojiFear {
             get {
                 object obj = ResourceManager.GetObject("emojiFear", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap emojiFire {
-            get {
-                object obj = ResourceManager.GetObject("emojiFire", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

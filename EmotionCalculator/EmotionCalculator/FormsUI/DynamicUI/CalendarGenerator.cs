@@ -38,7 +38,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             }
         }
 
-        internal static IEnumerable<PictureBox> GenerateEmojis(IEnumerable<PictureBox> cells)
+        internal static IEnumerable<PictureBox> GenerateEmojis(IEnumerable<PictureBox> cells, PictureBox pictureBox)
         {
             foreach (var cell in cells)
             {

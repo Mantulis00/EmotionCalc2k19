@@ -8,34 +8,22 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Media;
-using EmotionCalculator.MiniGames.SpaceInvaders;
-using System.Threading;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        internal Thread AuxThread  {get; set;}
-
         internal MonthManager MonthManager { get; private set; }
 
         internal IAPIManager APIManager { get; private set; }
 
         internal SettingsManager SettingsManager { get; private set; }
-        public object SettingStatus { get; internal set; } // not used ?
-
-
-        // kodas123
-        internal SpaceInvadersMain invadersManager;
+        public object SettingStatus { get; internal set; }
 
 
         internal BaseForm(IAPIManager apiManager)
         {
-
-
             //Settings
-            this.KeyPreview = true;
             SettingsManager = DesktopPack.GetSettings();
 
             //UI
@@ -54,9 +42,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 {
                     OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
                 });
-
-            //kodas123
-
         }
 
         private void StartupUI()
@@ -79,7 +64,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 {
                     MonthManager.ChangeTime(dateTimePicker.Value);
                 };
-
 
             MonthManager.Refresh();
         }
@@ -110,8 +94,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
         }
 
-
-
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ExitApplication();
@@ -124,8 +106,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
-            SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
-         
             MonthManager.Save();
 
             Application.Exit();
@@ -171,7 +151,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
                     Enabled = true;
                     MonthManager.Refresh();
-                    BaseFormManagerUI.ShowDebug(this);
                 };
         }
 
@@ -188,66 +167,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
+        private void CalendarBackground_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SoundPlayer player = new SoundPlayer();
-            var rand = new Random();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
-            player.Play();
-        }
-
-
-        private void InvadersLauch()
-        {
-            invadersManager = new SpaceInvadersMain(calendarBackground, this);
-        }
-
-        //kodas123
-
-            private void SetText()
-        {
-            Console.WriteLine("pov");
-        }
-
-
-        private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if (AuxThread == null)
-            {
-                StartGame(e.KeyChar);
-            }
-
-            else if (AuxThread != null)
-            {
-                invadersManager.playerIManager.ReadInput(e.KeyChar);
-            }
-                
-        }
-
-        private void StartGame(char input)
-        {
-            if (input == 'u') // u for emoji invaders
-            {
-                SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
-                MonthManager.Refresh();
-                InvadersLauch();
-
-
-                AuxThread = new Thread(
-                    () =>
-                    {
-                        this.BeginInvoke((Action)delegate ()
-                        {
-                            invadersManager.StartAnimation();
-                        });
-                    }
-                );
-                AuxThread.Start();
-            }
-
-
+            OpenSecondaryWindow(new Coin_Use.MusicForm());
         }
     }
 }
