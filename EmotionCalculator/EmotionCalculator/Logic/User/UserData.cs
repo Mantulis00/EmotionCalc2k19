@@ -127,5 +127,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             CurrencyChanged?.Invoke(this, EventArgs.Empty);
             OwnedItems.Refresh();
         }
+
+        internal ReadOnlyUserData AsReadOnly()
+        {
+            return new ReadOnlyUserData(this);
+        }
     }
 }

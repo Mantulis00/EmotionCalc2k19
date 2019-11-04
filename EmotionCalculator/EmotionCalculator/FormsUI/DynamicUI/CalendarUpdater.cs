@@ -36,7 +36,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             emojis = CalendarGenerator.GenerateEmojis(cells, backgroundBox).ToList();
         }
 
-        public void Update(MonthEmotions monthEmotions, DateTime newDateTime)
+        public void Update(ReadOnlyMonthEmotions monthEmotions, DateTime newDateTime)
         {
             ThemePack selectedTheme = settingsManager.SelectedTheme;
 
@@ -84,7 +84,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
         }
 
 
-        private void SetEmotions(DateTime newDateTime, MonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
+        private void SetEmotions(DateTime newDateTime, ReadOnlyMonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
         {
             var emotionLabel = emotionLabels[cellNumber + i];
             var emoji = emojis[cellNumber + i];

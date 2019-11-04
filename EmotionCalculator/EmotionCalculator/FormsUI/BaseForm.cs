@@ -1,6 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
 using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
@@ -30,6 +31,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             //UI <-> API
             SetupMonth();
+            SetupListeners();
+            MainManager.Refresh();
 
             //Update UI
             RefreshUI();
@@ -63,6 +66,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     calendarUpdater.Update(e.MonthEmotions, e.SelectedTime);
                 };
 
+            dateTimePicker.ValueChanged +=
+                (o, e) =>
+                {
+                    MainManager.MonthManager.ChangeTime(dateTimePicker.Value);
+                };
+        }
+
+        private void SetupListeners()
+        {
             MainManager.ReadOnlyUserData.CurrencyChanged +=
                 (o, e) =>
                 {
@@ -79,14 +91,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     sadEmotionCount.Text = readOnly.EmotionCount[Emotion.Sadness].ToString();
                     surpriseEmotionCount.Text = readOnly.EmotionCount[Emotion.Surprise].ToString();
                 };
-
-            dateTimePicker.ValueChanged +=
-                (o, e) =>
-                {
-                    MainManager.MonthManager.ChangeTime(dateTimePicker.Value);
-                };
-
-            MainManager.Refresh();
         }
 
         internal void UpdateParsedData(APIParseResult parseResult)
@@ -207,6 +211,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
                 BackColor = SystemColors.Control;
             }
+        }
+
+        private void GetCoins10JoyCoinsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainManager.CurrencyManager.TemporaryCurrencyEntryPoint(CurrencyType.JoyCoin, 10);
         }
 
         //Calendar navigation

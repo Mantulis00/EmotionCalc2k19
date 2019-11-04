@@ -150,10 +150,12 @@
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseStatus.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\ReadOnlyOwnedItems.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\TransactionManager.cs" />
+    <Compile Include="EmotionCalculator\Logic\Data\EmotionArgs.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\IMonthLogger.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Month.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\MonthEmotionsIO.cs" />
+    <Compile Include="EmotionCalculator\Logic\Data\ReadOnlyMonthEmotions.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Songs\RadioPack.cs" />
     <Compile Include="EmotionCalculator\Logic\Data\Songs\SongPack.cs" />
     <Compile Include="EmotionCalculator\Logic\Events\EventManager.cs" />

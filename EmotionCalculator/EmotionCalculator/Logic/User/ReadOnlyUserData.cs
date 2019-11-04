@@ -26,7 +26,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         internal ReadOnlyUserData(UserData userData)
         {
             this.userData = userData;
-            OwnedItems = new ReadOnlyOwnedItems(userData.OwnedItems);
+            OwnedItems = userData.OwnedItems.AsReadOnly();
         }
     }
 }

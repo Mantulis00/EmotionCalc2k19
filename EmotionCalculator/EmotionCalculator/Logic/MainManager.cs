@@ -25,7 +25,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             //Private fields
             this.userLoader = userLoader;
             userData = userLoader.Load();
-            ReadOnlyUserData = new ReadOnlyUserData(userData);
+            ReadOnlyUserData = userData.AsReadOnly();
 
             //Currency
             CurrencyManager = new CurrencyManager(userData);

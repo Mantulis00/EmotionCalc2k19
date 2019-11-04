@@ -38,7 +38,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             }
 
             selectedTime = newDateTime;
-            StatusChanged?.Invoke(this, new EmotionArgs(monthEmotions, newDateTime));
+            StatusChanged?.Invoke(this, new EmotionArgs(monthEmotions.AsReadOnly(), newDateTime));
         }
 
         internal void SetEmotion(Emotion emotion)
@@ -48,7 +48,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
                 if (monthEmotions[selectedTime.Day] == Emotion.NotSet)
                 {
                     monthEmotions.SetEmotion(selectedTime.Day, emotion);
-                    StatusChanged?.Invoke(this, new EmotionArgs(monthEmotions, selectedTime));
+                    StatusChanged?.Invoke(this, new EmotionArgs(monthEmotions.AsReadOnly(), selectedTime));
                     userData.AddCurrency(CurrencyType.JoyCoin, EmotionValue.GetEmotionValueInCoins(emotion));
                     userData.AddCurrency(emotion, 1);
                 }
@@ -56,18 +56,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         }
 
         internal event EventHandler<EmotionArgs> StatusChanged;
-
-        internal class EmotionArgs : EventArgs
-        {
-            internal MonthEmotions MonthEmotions { get; }
-            internal DateTime SelectedTime { get; }
-
-            internal EmotionArgs(MonthEmotions monthEmotions, DateTime selectedTime)
-            {
-                MonthEmotions = monthEmotions;
-                SelectedTime = selectedTime;
-            }
-        }
 
         internal void Save()
         {
@@ -78,7 +66,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic
 
         internal void Refresh()
         {
-            StatusChanged?.Invoke(this, new EmotionArgs(monthEmotions, selectedTime));
+            if (monthEmotions != null)
+                StatusChanged?.Invoke(this, new EmotionArgs(monthEmotions.AsReadOnly(), selectedTime));
         }
     }
 }

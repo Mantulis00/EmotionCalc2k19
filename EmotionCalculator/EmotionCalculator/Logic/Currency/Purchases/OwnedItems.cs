@@ -45,5 +45,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         {
             ConsumablesChanged?.Invoke(this, EventArgs.Empty);
         }
+
+        internal ReadOnlyOwnedItems AsReadOnly()
+        {
+            return new ReadOnlyOwnedItems(this);
+        }
     }
 }

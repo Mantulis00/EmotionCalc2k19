@@ -55,5 +55,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 
             return status;
         }
+
+        internal void TemporaryCurrencyEntryPoint(CurrencyType currencyType, int amount)
+        {
+            userData.AddCurrency(currencyType, amount);
+        }
     }
 }

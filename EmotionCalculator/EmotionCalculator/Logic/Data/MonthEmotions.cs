@@ -34,5 +34,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
             emotions.Add(dayOfTheMonth, emotion);
         }
+
+        internal ReadOnlyMonthEmotions AsReadOnly()
+        {
+            return new ReadOnlyMonthEmotions(this);
+        }
     }
 }
