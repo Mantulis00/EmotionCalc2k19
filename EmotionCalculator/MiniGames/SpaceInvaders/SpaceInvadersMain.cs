@@ -14,7 +14,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
     {
 
         //private PictureBox GrapX;
-        private PictureBox Player;
+        internal PictureBox Player { get; set; }
         private InvadersManager invaderManager;
         internal PlayerInputs playerIManager { get; set; }
 
@@ -88,16 +88,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
              invaderManager.UpdateInvaders(this);
         }
 
-/*
-
-        private void SetupBackGround(PictureBox grapX)
-        {
-            GrapX = new PictureBox();
-            GrapX.Image = grapX.Image;
-            GrapX.Size = new Size(grapX.Size.Width, grapX.Size.Height);
-            GrapX.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-        */
 
         private void SetupPlayer(PictureBox grapX)
         {
@@ -117,7 +107,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         }
 
-       public void GameOver()
+       public void GameOver(int score)
         {
             MainClock.Stop();
             baseForm.thread2 = null;
@@ -128,7 +118,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             baseForm.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
             baseForm.MonthManager.Refresh();
         }
-
 
 
 

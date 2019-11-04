@@ -6,33 +6,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace EmotionCalculator.MiniGames.SpaceInvaders
 {
 
     class PlayerInputs
     {
-        private PictureBox Player;
+        internal PictureBox Player;
         private InvadersManager invadersManager;
+
+         private Dictionary<char, Controls> controls;
 
         internal PlayerInputs(PictureBox Player, InvadersManager invadersManager)
         {
             this.invadersManager = invadersManager;
             this.Player = Player;
+
+            controls = new Dictionary<char, Controls>();
+            controls.Add('a', Controls.LEFT);
+            controls.Add('d', Controls.RIGHT);
+            controls.Add('s', Controls.SHOOT);
         }
 
         internal void ReadInput(char e)
         {
-            if (e == 'a')
+            if (controls.ContainsKey(e) && invadersManager.MainClock.Enabled)
             {
-                MoveLeft();
-            }
-            else if (e == 'd')
-            {
-                MoveRight();
-            }
-            else if (e == 'b')
-            {
-                Shoot();
+                switch (controls[e])
+                {
+                    case Controls.LEFT:
+                        {
+                            MoveLeft();
+                            break;
+                        }
+
+                    case Controls.RIGHT:
+                        {
+                            MoveRight();
+                            break;
+                        }
+
+                    case Controls.SHOOT:
+                        {
+                            Shoot();
+                            break;
+                        }
+
+                    default:
+                        break;
+                }
             }
         }
 

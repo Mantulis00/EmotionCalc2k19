@@ -16,10 +16,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private int InvadersSpeed, InvaderHeightReductor;
         private int MissleSpeed;
-
+        private int score;
        public bool MissleLive {  get; private set; }
 
-        private System.Windows.Forms.Timer MainClock;
+        internal System.Windows.Forms.Timer MainClock { get; }
 
         private List<SInvaders> Invaders;
 
@@ -38,7 +38,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             MissleSpeed = 15;
             MissleLive = false;
 
-            
+           
+
+
+
 
         }
 
@@ -98,13 +101,21 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         }
 
+
         private void CheckGameOver(SpaceInvadersMain main)
         {
             if (Invaders.Count == 0)
             {
               
-                main.GameOver();
+                main.GameOver(score);
               
+            }
+            else if (Invaders[Invaders.Count-1].InvaderInfo.Location.Y >= main.Player.Location.Y )
+            {
+                DisposeInvaders();
+
+
+                main.GameOver(0);
             }
 
         }
@@ -194,6 +205,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             invader.InvaderInfo.Dispose();
             Invaders.Remove(invader);
             invader.InvaderInfo = null;
+
+            score++;
         }
 
         internal void DisposeInvaders()

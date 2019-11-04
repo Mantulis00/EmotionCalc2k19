@@ -45,11 +45,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                 
 
                     if (presetLocations[y].X != 0 &&
-                    presetLocations[y].X + 4 > AnimationElements[y].Location.X &&
-                    presetLocations[y].X - 4 < AnimationElements[y].Location.X)
+                        presetLocations[y].X + 4 > AnimationElements[y].Location.X &&
+                        presetLocations[y].X - 4 < AnimationElements[y].Location.X)
                     {
                     
-                    presetLocations[y] = new Point(0, presetLocations[y].Y);
+                        presetLocations[y] = new Point(0, presetLocations[y].Y);
                      }
 
                      else if (presetLocations[y].X > AnimationElements[y].Location.X && presetLocations[y].X != 0)
@@ -64,8 +64,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                 
 
                      if (presetLocations[y].Y != 0 &&
-                     presetLocations[y].Y + 4 > AnimationElements[y].Location.Y &&
-                     presetLocations[y].Y - 4 < AnimationElements[y].Location.Y)
+                        presetLocations[y].Y + 4 > AnimationElements[y].Location.Y &&
+                        presetLocations[y].Y - 4 < AnimationElements[y].Location.Y)
                     {
                          presetLocations[y] = new Point(presetLocations[y].X, 0);
                      }
@@ -138,8 +138,6 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                     if (grapX.Controls[x].Controls[y] is PictureBox)
                     {
                         Element.Image = ((PictureBox)grapX.Controls[x].Controls[y]).Image;
-
-                        
                     }
                 }
                 Element.SizeMode = PictureBoxSizeMode.StretchImage;
