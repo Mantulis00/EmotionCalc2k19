@@ -16,7 +16,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        internal Thread thread2  {get; set;}
+        internal Thread AuxThread  {get; set;}
 
         internal MonthManager MonthManager { get; private set; }
 
@@ -214,14 +214,28 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (e.KeyChar == 'u'  &&  thread2 == null )
+            if (AuxThread == null)
+            {
+                StartGame(e.KeyChar);
+            }
+
+            else if (AuxThread != null)
+            {
+                invadersManager.playerIManager.ReadInput(e.KeyChar);
+            }
+                
+        }
+
+        private void StartGame(char input)
+        {
+            if (input == 'u') // u for emoji invaders
             {
                 SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
                 MonthManager.Refresh();
                 InvadersLauch();
 
 
-                thread2 = new Thread(
+                AuxThread = new Thread(
                     () =>
                     {
                         this.BeginInvoke((Action)delegate ()
@@ -230,18 +244,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                         });
                     }
                 );
-                thread2.Start();
+                AuxThread.Start();
             }
-            
-           
-            else if (thread2 != null)
-                invadersManager.playerIManager.ReadInput(e.KeyChar);
-                
-        }
 
-        private void BeginInvoke()
-        {
-            throw new NotImplementedException();
+
         }
     }
 }
