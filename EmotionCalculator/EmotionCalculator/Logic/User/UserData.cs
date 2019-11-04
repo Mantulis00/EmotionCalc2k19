@@ -119,10 +119,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             CurrencyChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        public void Update()
+        public void Refresh()
         {
             CurrencyChanged?.Invoke(this, EventArgs.Empty);
-            OwnedItems.Update();
+            OwnedItems.Refresh();
         }
 
         public event EventHandler CurrencyChanged;

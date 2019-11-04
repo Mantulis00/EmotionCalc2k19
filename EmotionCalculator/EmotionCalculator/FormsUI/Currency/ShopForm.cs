@@ -13,9 +13,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
     {
         private static readonly string BaseInformationMessage = "Buy something!";
 
-        private readonly MonthManager monthManager;
+        private readonly MainManager monthManager;
 
-        internal ShopForm(MonthManager monthManager)
+        internal ShopForm(MainManager monthManager)
         {
             this.monthManager = monthManager;
 

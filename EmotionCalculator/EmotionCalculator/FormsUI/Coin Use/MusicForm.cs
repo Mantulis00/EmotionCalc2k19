@@ -8,10 +8,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
     public partial class MusicForm : Form
     {
         private readonly SoundPlayer player;
-        private readonly MonthManager monthManager;
+        private readonly MainManager monthManager;
         private int index;
 
-        internal MusicForm(MonthManager monthManager)
+        internal MusicForm(MainManager monthManager)
         {
             this.monthManager = monthManager;
             player = new SoundPlayer();

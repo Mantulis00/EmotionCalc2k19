@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 {
-    class CalendarUpdater : IMonthUpdatable
+    class CalendarUpdater
     {
         private IReadOnlyList<PictureBox> cells;
         private IReadOnlyList<PictureBox> emojis;
@@ -146,8 +146,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             {
                 emoji.Visible = false;
             }
-
-
         }
     }
 }

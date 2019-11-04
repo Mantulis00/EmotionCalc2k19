@@ -4,7 +4,6 @@ using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
@@ -17,7 +16,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        internal MonthManager MonthManager { get; private set; }
+        internal MainManager MainManager { get; private set; }
 
         internal IAPIManager APIManager { get; private set; }
 
@@ -36,7 +35,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             RefreshUI();
 
             //Daily login
-            MonthManager.RaiseLoginEvent(
+            MainManager.RaiseLoginEvent(
                 (dailyStreak, claimReward) =>
                 {
                     OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
@@ -51,19 +50,23 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void SetupMonth()
         {
-            SettingsManager settingsManager = DesktopPack.GetSettings();
-
-            MonthManager = new MonthManager(
+            MainManager = new MainManager(
                 new MonthEmotionsIO(),
-                new CalendarUpdater(calendarBackground, settingsManager),
-                dateTimePicker.Value,
                 new UserLoader(),
-                settingsManager);
+                new SettingsLogger());
 
-            MonthManager.ReadOnlyUserData.CurrencyChanged +=
+            CalendarUpdater calendarUpdater = new CalendarUpdater(calendarBackground, MainManager.SettingsManager);
+
+            MainManager.MonthManager.StatusChanged +=
                 (o, e) =>
                 {
-                    ReadOnlyUserData readOnly = MonthManager.ReadOnlyUserData;
+                    calendarUpdater.Update(e.MonthEmotions, e.SelectedTime);
+                };
+
+            MainManager.ReadOnlyUserData.CurrencyChanged +=
+                (o, e) =>
+                {
+                    ReadOnlyUserData readOnly = MainManager.ReadOnlyUserData;
 
                     coinAmountLabel.Text = readOnly.JoyCoins.ToString();
                     gemAmountLabel.Text = readOnly.JoyGems.ToString();
@@ -80,10 +83,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.ValueChanged +=
                 (o, e) =>
                 {
-                    MonthManager.ChangeTime(dateTimePicker.Value);
+                    MainManager.MonthManager.ChangeTime(dateTimePicker.Value);
                 };
 
-            MonthManager.Refresh();
+            MainManager.Refresh();
         }
 
         internal void UpdateParsedData(APIParseResult parseResult)
@@ -92,7 +95,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             if (parseResult.Faces.Count > 0)
             {
-                MonthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
+                MainManager.MonthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
             }
         }
 
@@ -124,7 +127,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
-            MonthManager.Save();
+            MainManager.Save();
 
             Application.Exit();
         }
@@ -156,13 +159,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenSecondaryWindow(new ShopForm(MonthManager));
+            OpenSecondaryWindow(new ShopForm(MainManager));
         }
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MonthManager.ReadOnlyUserData.OwnedItems.ThemePacks.Count > 0)
-                OpenSecondaryWindow(new Coin_Use.MusicForm(MonthManager));
+            if (MainManager.ReadOnlyUserData.OwnedItems.ThemePacks.Count > 0)
+                OpenSecondaryWindow(new Coin_Use.MusicForm(MainManager));
             else
                 MessageBox.Show("No songs found", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -179,14 +182,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 (o, ev) =>
                 {
                     Enabled = true;
-                    MonthManager.Refresh();
+                    MainManager.Refresh();
                     RefreshUI();
                 };
         }
 
         private void LightsOffToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MonthManager.CurrencyManager.Purchase(CustomPurchase.LightsOff) == OperationStatus.Successful)
+            if (MainManager.CurrencyManager.Purchase(CustomPurchase.LightsOff) == OperationStatus.Successful)
             {
                 lightsOnToolStripMenuItem.Enabled = true;
                 lightsOffToolStripMenuItem.Enabled = false;
@@ -197,7 +200,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void LightsOnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MonthManager.CurrencyManager.Purchase(CustomPurchase.LightsOn) == OperationStatus.Successful)
+            if (MainManager.CurrencyManager.Purchase(CustomPurchase.LightsOn) == OperationStatus.Successful)
             {
                 lightsOffToolStripMenuItem.Enabled = true;
                 lightsOnToolStripMenuItem.Enabled = false;

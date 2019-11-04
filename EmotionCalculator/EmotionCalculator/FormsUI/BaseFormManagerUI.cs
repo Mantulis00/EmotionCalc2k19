@@ -6,7 +6,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     {
         public void ShowDebug()
         {
-            if (MonthManager.SettingsManager[SettingType.Debug] == SettingStatus.Enabled)
+            if (MainManager.SettingsManager[SettingType.Debug] == SettingStatus.Enabled)
             {
                 leftButton.Show();
                 rightButton.Show();

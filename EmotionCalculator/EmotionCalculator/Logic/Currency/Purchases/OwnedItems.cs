@@ -41,7 +41,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             ConsumablesChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        internal void Update()
+        internal void Refresh()
         {
             ConsumablesChanged?.Invoke(this, EventArgs.Empty);
         }

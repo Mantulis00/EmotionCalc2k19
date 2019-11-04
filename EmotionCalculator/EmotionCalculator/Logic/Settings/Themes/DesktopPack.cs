@@ -7,16 +7,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings.Themes
 {
     static class DesktopPack
     {
-        internal static SettingsManager GetSettings()
-        {
-            SettingsManager manager = new SettingsManager(new SettingsLogger());
-
-            if (manager.SelectedTheme == null)
-                manager.SelectedTheme = DesktopPacks.ToList()[0];
-
-            return manager;
-        }
-
         internal static IEnumerable<ThemePack> DesktopPacks
         {
             get

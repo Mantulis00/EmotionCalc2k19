@@ -15,7 +15,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         public SettingsForm(BaseForm baseForm)
         {
             this.baseForm = baseForm;
-            settingsManager = baseForm.MonthManager.SettingsManager;
+            settingsManager = baseForm.MainManager.SettingsManager;
 
             InitializeComponent();
             InitializeSettings();
@@ -25,10 +25,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void InitializeSettings()
         {
-            themeComboBox.Items.AddRange(baseForm.MonthManager.ReadOnlyUserData.OwnedItems.ThemePacks.ToArray());
+            themeComboBox.Items.AddRange(baseForm.MainManager.ReadOnlyUserData.OwnedItems.ThemePacks.ToArray());
 
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(baseForm.MonthManager.SettingsManager.SelectedTheme.ToString());
+                .FindStringExact(baseForm.MainManager.SettingsManager.SelectedTheme.ToString());
 
             CheckCheckBoxes(settingsManager);
 
@@ -63,7 +63,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void ResetButton_Click(object sender, EventArgs e)
         {
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(baseForm.MonthManager.ReadOnlyUserData.OwnedItems.ThemePacks.First().ToString());
+                .FindStringExact(baseForm.MainManager.ReadOnlyUserData.OwnedItems.ThemePacks.First().ToString());
 
             emojisEnabledCheckBox.Checked = false;
         }
