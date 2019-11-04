@@ -35,7 +35,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             RefreshUI();
 
             //Daily login
-            MainManager.RaiseLoginEvent(
+            MainManager.EventManager.RaiseLoginEvent(
                 (dailyStreak, claimReward) =>
                 {
                     OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));

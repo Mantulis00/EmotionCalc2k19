@@ -13,6 +13,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         internal int LootBoxAmount { get; private set; }
         internal int PremiumLootBoxAmount { get; private set; }
 
+        internal event EventHandler ConsumablesChanged;
+
         internal OwnedItems(int lootBoxAmount, int premiumLootBoxAmount)
         {
             ThemePacks = new List<ThemePack>();
@@ -21,8 +23,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             LootBoxAmount = lootBoxAmount;
             PremiumLootBoxAmount = premiumLootBoxAmount;
         }
-
-        internal event EventHandler ConsumablesChanged;
 
         internal void AddConsumables(ConsumableType consumableType, int amount)
         {

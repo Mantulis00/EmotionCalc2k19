@@ -1,9 +1,9 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
+using EmotionCalculator.EmotionCalculator.Logic.Events;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Logic.User;
-using System;
 using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic
@@ -14,12 +14,10 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         private readonly UserData userData;
 
         internal CurrencyManager CurrencyManager { get; }
-
         internal ReadOnlyUserData ReadOnlyUserData { get; }
-
         internal SettingsManager SettingsManager { get; }
-
         internal MonthManager MonthManager { get; }
+        internal EventManager EventManager { get; }
 
         public MainManager(IMonthLogger monthLogger, IUserLoader userLoader,
             ISettingsLogger settingsLogger)
@@ -40,30 +38,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic
 
             //Month management
             MonthManager = new MonthManager(userData, monthLogger);
-        }
 
-        internal delegate void LaunchLoginPopup(int dailyStreak, Action claimReward);
-
-        internal void RaiseLoginEvent(LaunchLoginPopup launchLoginPopup)
-        {
-            if (userData.LastLogin != DateTime.Today
-                || userData.DailyStreak == 0)
-            {
-                userData.Login();
-
-                bool claimed = false;
-
-                launchLoginPopup.Invoke(
-                    userData.DailyStreak,
-                    () =>
-                    {
-                        if (!claimed)
-                        {
-                            userData.ClaimDaily();
-                            claimed = true;
-                        }
-                    });
-            }
+            //Event management
+            EventManager = new EventManager(userData);
         }
 
         internal void Save()

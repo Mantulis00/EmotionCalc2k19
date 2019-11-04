@@ -17,6 +17,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         internal int DailyStreak { get; private set; }
 
         private DateTime _lastLogin;
+
         internal DateTime LastLogin
         {
             get
@@ -39,6 +40,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         }
 
         internal OwnedItems OwnedItems { get; }
+
+        public event EventHandler CurrencyChanged;
 
         internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin,
             IEnumerable<KeyValuePair<Emotion, int>> emotionPairs, OwnedItems ownedItems)
@@ -124,7 +127,5 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             CurrencyChanged?.Invoke(this, EventArgs.Empty);
             OwnedItems.Refresh();
         }
-
-        public event EventHandler CurrencyChanged;
     }
 }
