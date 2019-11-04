@@ -161,7 +161,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MonthManager.ReadOnlyUserData.OwnedSongPacks.Count > 0)
+            if (MonthManager.ReadOnlyUserData.OwnedItems.ThemePacks.Count > 0)
                 OpenSecondaryWindow(new Coin_Use.MusicForm(MonthManager));
             else
                 MessageBox.Show("No songs found", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -30,7 +30,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
             player?.Stop();
             index += change;
 
-            var songs = monthManager.ReadOnlyUserData.OwnedSongPacks;
+            var songs = monthManager.ReadOnlyUserData.OwnedItems.SongPacks;
 
             if (index == -1)
                 index = songs.Count - 1;
@@ -44,7 +44,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
 
         private void PlayButtonMusic_Click(object sender, EventArgs e)
         {
-            var song = monthManager.ReadOnlyUserData.OwnedSongPacks[index];
+            var song = monthManager.ReadOnlyUserData.OwnedItems.SongPacks[index];
 
             song.Song.Position = 0;
             player.Stream = null;

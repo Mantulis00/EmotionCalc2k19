@@ -78,13 +78,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                     neutralEmotionCount.Text = readOnly.EmotionCount[Emotion.Neutral].ToString();
                 };
 
-            monthManager.ReadOnlyUserData.ConsumablesChanged +=
+            monthManager.ReadOnlyUserData.OwnedItems.ConsumablesChanged +=
                 (o, e) =>
                 {
                     ReadOnlyUserData readOnly = monthManager.ReadOnlyUserData;
 
-                    lootBoxAmount.Text = readOnly.LootboxAmount.ToString();
-                    premiumLootBoxAmount.Text = readOnly.PremiumLootboxAmount.ToString();
+                    lootBoxAmount.Text = readOnly.OwnedItems.LootBoxAmount.ToString();
+                    premiumLootBoxAmount.Text = readOnly.OwnedItems.PremiumLootBoxAmount.ToString();
                 };
 
             listBox.SelectedValueChanged +=

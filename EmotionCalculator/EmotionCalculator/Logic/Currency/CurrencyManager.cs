@@ -6,8 +6,6 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 {
-    //Visible for UI classes
-    //UserData wrapper
     class CurrencyManager
     {
         private readonly UserData userData;
