@@ -32,7 +32,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
 
-            emojis = CalendarGenerator.GenerateEmojis(cells).ToList();
+            emojis = CalendarGenerator.GenerateEmojis(cells, backgroundBox).ToList();
         }
 
         public void Update(MonthEmotions monthEmotions, DateTime newDateTime)
@@ -79,18 +79,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
                 number.Visible = true;
 
-                SetEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
-                
+                setEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
             }
 
-            SetCellVisibility(cells);
+           
 
         }
 
 
-        private void SetEmotions(DateTime newDateTime, MonthEmotions monthEmotions, 
-            ThemePack selectedTheme, int cellNumber, 
-            Label number, int i)
+        private void setEmotions(DateTime newDateTime, MonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
         {
                 var emotionLabel = emotionLabels[cellNumber + i];
                 var emoji = emojis[cellNumber + i];
@@ -126,25 +123,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
                 emotionLabel.ForeColor = selectedTheme.TextColor;
                 emotionLabel.Visible = true;
+
+
+
             
         }
-
-        private void SetCellVisibility(IReadOnlyList<PictureBox> cells)
-        {
-            foreach (PictureBox cell in cells)
-            {
-                if (settingsManager[SettingType.Game] == SettingStatus.Enabled)
-                {
-                    cell.Hide();
-                }
-                else
-                {
-                    cell.Show();
-                }
-            }
-        }
-
-
 
 
         private void ResetColors()

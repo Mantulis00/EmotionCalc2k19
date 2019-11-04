@@ -27,11 +27,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         }
 
-        public static void HideAll(BaseForm baseForm)
-        {
-
-        }
-
 
     }
 }

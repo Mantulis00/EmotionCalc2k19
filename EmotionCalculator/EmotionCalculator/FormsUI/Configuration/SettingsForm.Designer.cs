@@ -35,13 +35,12 @@
             this.themeComboBox = new System.Windows.Forms.ComboBox();
             this.selectedThemeLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.DebugcheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.GameModeBox = new System.Windows.Forms.CheckBox();
+            this.DebugcheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -116,7 +115,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.GameModeBox);
             this.tabPage2.Controls.Add(this.DebugcheckBox);
             this.tabPage2.Location = new System.Drawing.Point(104, 4);
             this.tabPage2.Name = "tabPage2";
@@ -125,16 +123,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Admin Tools";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // DebugcheckBox
-            // 
-            this.DebugcheckBox.AutoSize = true;
-            this.DebugcheckBox.Location = new System.Drawing.Point(6, 6);
-            this.DebugcheckBox.Name = "DebugcheckBox";
-            this.DebugcheckBox.Size = new System.Drawing.Size(88, 17);
-            this.DebugcheckBox.TabIndex = 0;
-            this.DebugcheckBox.Text = "Debug Mode";
-            this.DebugcheckBox.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -184,15 +172,15 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
-            // GameModeBox
+            // DebugcheckBox
             // 
-            this.GameModeBox.AutoSize = true;
-            this.GameModeBox.Location = new System.Drawing.Point(6, 30);
-            this.GameModeBox.Name = "GameModeBox";
-            this.GameModeBox.Size = new System.Drawing.Size(84, 17);
-            this.GameModeBox.TabIndex = 1;
-            this.GameModeBox.Text = "Game Mode";
-            this.GameModeBox.UseVisualStyleBackColor = true;
+            this.DebugcheckBox.AutoSize = true;
+            this.DebugcheckBox.Location = new System.Drawing.Point(6, 6);
+            this.DebugcheckBox.Name = "DebugcheckBox";
+            this.DebugcheckBox.Size = new System.Drawing.Size(88, 17);
+            this.DebugcheckBox.TabIndex = 0;
+            this.DebugcheckBox.Text = "Debug Mode";
+            this.DebugcheckBox.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
@@ -229,6 +217,5 @@
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.CheckBox emojisEnabledCheckBox;
         private System.Windows.Forms.CheckBox DebugcheckBox;
-        private System.Windows.Forms.CheckBox GameModeBox;
     }
 }
