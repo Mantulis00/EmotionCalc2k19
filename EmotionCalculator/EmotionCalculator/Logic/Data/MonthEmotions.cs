@@ -5,7 +5,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
     class MonthEmotions
     {
-        private Dictionary<int, Emotion> emotions = new Dictionary<int, Emotion>();
+        private readonly Dictionary<int, Emotion> emotions = new Dictionary<int, Emotion>();
 
         internal Emotion this[int dayOfTheMonth]
         {

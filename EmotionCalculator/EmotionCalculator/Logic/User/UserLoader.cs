@@ -40,9 +40,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             int lastMonth = nodes.GetNumberFromNode(LastLogOnMonthName);
             int lastYear = nodes.GetNumberFromNode(LastLogOnYearName);
 
-            DateTime lastLogin;
-
-            if (!DateTime.TryParse($"{lastYear}-{lastMonth}-{lastDay}", out lastLogin))
+            if (!DateTime.TryParse($"{lastYear}-{lastMonth}-{lastDay}", out DateTime lastLogin))
                 lastLogin = DateTime.Today;
 
             var pairs = new List<KeyValuePair<Emotion, int>>();

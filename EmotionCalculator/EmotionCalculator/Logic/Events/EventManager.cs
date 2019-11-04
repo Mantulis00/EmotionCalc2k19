@@ -5,7 +5,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Events
 {
     class EventManager
     {
-        private UserData userData;
+        private readonly UserData userData;
 
         internal EventManager(UserData userData)
         {

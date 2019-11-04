@@ -6,7 +6,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data.Songs
 {
     static class RadioPack
     {
-        private static List<SongPack> minecraftSongs = new List<SongPack>()
+        private static readonly List<SongPack> minecraftSongs = new List<SongPack>()
         {
             new SongPack("Minecraft Song 01", "Beautiful", MCBG01, _01MCSong),
             new SongPack("Minecraft Song 02", "Beautiful", MCBG02, _02MCSong),

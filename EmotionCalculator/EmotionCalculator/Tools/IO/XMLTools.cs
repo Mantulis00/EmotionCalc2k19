@@ -24,9 +24,8 @@ namespace EmotionCalculator.EmotionCalculator.Tools.IO
         public static int GetNumberFromNode(this IEnumerable<XElement> nodes, string nodeName)
         {
             var value = nodes.GetValueFromNode(nodeName);
-            int integer;
 
-            if (int.TryParse(value, out integer))
+            if (int.TryParse(value, out int integer))
             {
                 return integer;
             }

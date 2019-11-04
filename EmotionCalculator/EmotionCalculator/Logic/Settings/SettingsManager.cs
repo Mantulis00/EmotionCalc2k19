@@ -7,7 +7,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
     class SettingsManager
     {
-        private Dictionary<SettingType, SettingStatus> settings;
+        private readonly Dictionary<SettingType, SettingStatus> settings;
 
         private ThemePack _selectedTheme;
         internal ThemePack SelectedTheme
@@ -20,7 +20,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             }
         }
 
-        private ISettingsLogger settingsLogger;
+        private readonly ISettingsLogger settingsLogger;
 
         internal SettingsManager(ISettingsLogger settingsLogger)
         {

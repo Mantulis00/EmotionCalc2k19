@@ -8,12 +8,14 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 {
     class ImageHandle
     {
-        private OpenFileDialog file;
+        private readonly OpenFileDialog file;
 
         public ImageHandle()
         {
-            file = new OpenFileDialog();
-            file.Filter = "JPG(*.JPG)|*.jpg";
+            file = new OpenFileDialog
+            {
+                Filter = "JPG(*.JPG)|*.jpg"
+            };
         }
 
         public PictureBox GetPicture(PictureBox box)

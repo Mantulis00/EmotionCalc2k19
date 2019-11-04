@@ -140,7 +140,7 @@
     <Compile Include="EmotionCalculator\Logic\Currency\CurrencyType.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\DailyLoginData.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\EmotionValue.cs" />
-    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\AvailablePurchases.cs" />
+    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PersonalStore.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\ConsumableType.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\CustomPurchase.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\Loot\LootManager.cs" />

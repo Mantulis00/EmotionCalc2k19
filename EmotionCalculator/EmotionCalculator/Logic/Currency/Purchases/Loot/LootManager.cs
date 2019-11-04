@@ -9,9 +9,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
 {
     class LootManager
     {
-        private static Random Random = new Random();
+        private static readonly Random Random = new Random();
 
-        private static Dictionary<LootType, int> LootBoxPowers = new Dictionary<LootType, int>
+        private static readonly Dictionary<LootType, int> LootBoxPowers = new Dictionary<LootType, int>
         {
             { LootType.Coins, 70},
             { LootType.Gems, 4},
@@ -20,7 +20,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
             { LootType.Emotion, 20},
         };
 
-        private static Dictionary<LootType, int> PremiumLootBoxPowers = new Dictionary<LootType, int>
+        private static readonly Dictionary<LootType, int> PremiumLootBoxPowers = new Dictionary<LootType, int>
         {
             { LootType.Coins, 30},
             { LootType.Gems, 5},

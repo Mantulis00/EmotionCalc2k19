@@ -30,7 +30,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             }
         }
 
-        private Dictionary<Emotion, int> emotionCount;
+        private readonly Dictionary<Emotion, int> emotionCount;
         internal ReadOnlyDictionary<Emotion, int> EmotionCount
         {
             get

@@ -4,7 +4,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
     class ReadOnlyMonthEmotions
     {
-        private MonthEmotions monthEmotions;
+        private readonly MonthEmotions monthEmotions;
 
         internal ReadOnlyMonthEmotions(MonthEmotions monthEmotions)
         {

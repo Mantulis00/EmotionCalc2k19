@@ -20,9 +20,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
             for (int i = 1; i <= DateTime.DaysInMonth(year, (int)month); i++)
             {
                 var emotionString = nodes.GetValueFromNode($"D{i.ToString()}");
-                Emotion emotion;
 
-                if (!Enum.TryParse(emotionString, out emotion))
+                if (!Enum.TryParse(emotionString, out Emotion emotion))
                 {
                     emotion = Emotion.NotSet;
                 }

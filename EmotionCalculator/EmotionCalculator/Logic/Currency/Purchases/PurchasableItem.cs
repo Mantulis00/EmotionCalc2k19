@@ -11,7 +11,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         internal int Price { get; }
 
         internal Func<bool> IsAvailable { get; private set; }
-        private Action PurchaseHandler;
+        private readonly Action PurchaseHandler;
 
         public PurchasableItem(string name, string description, CurrencyType currencyType, int price,
             Action purchaseHandler, Func<bool> isAvailable)
@@ -28,20 +28,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         {
             if (IsAvailable())
             {
-                if (CurrencyType == CurrencyType.JoyCoin && userData.JoyCoins >= Price)
-                {
-                    userData.AddCurrency(CurrencyType.JoyCoin, -Price);
-                    CompletePurchase();
-                    return OperationStatus.Successful;
-                }
-                else if (CurrencyType == CurrencyType.JoyGem && userData.JoyGems >= Price)
-                {
-                    userData.AddCurrency(CurrencyType.JoyGem, -Price);
-                    CompletePurchase();
-                    return OperationStatus.Successful;
-                }
+                var status = userData.Transact(CurrencyType, Price);
 
-                return OperationStatus.Unsuccessful;
+                if (status == OperationStatus.Successful)
+                    CompletePurchase();
+
+                return status;
             }
             else
             {
