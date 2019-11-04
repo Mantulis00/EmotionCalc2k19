@@ -1,6 +1,8 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop;
 using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Drawing;
@@ -35,7 +37,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
         {
             listBox.Items.Clear();
 
-            monthManager.CurrencyManager.PurchasableItems.ToList().ForEach
+            monthManager.CurrencyManager.PersonalStore.GetPersonalPurchases()
+                .Where(p => p.Available).ToList().ForEach
                 (item =>
                     {
                         if (!listBox.Items.Contains(item))
@@ -45,17 +48,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private void RefreshStore()
         {
-            var stillPurchasable = monthManager.CurrencyManager.PurchasableItems;
-
             for (int i = 0; i < listBox.Items.Count; i++)
             {
-                var item = (PurchasableItem)listBox.Items[i];
+                var item = (PersonalPurchase)listBox.Items[i];
 
-                if (!stillPurchasable.Contains(item))
-                {
+                if (!item.Available)
                     listBox.Items.Remove(item);
-                    i--;
-                }
             }
         }
 
@@ -83,8 +81,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 {
                     ReadOnlyUserData readOnly = monthManager.ReadOnlyUserData;
 
-                    lootBoxAmount.Text = readOnly.OwnedItems.LootBoxAmount.ToString();
-                    premiumLootBoxAmount.Text = readOnly.OwnedItems.PremiumLootBoxAmount.ToString();
+                    var item = ConsumableManager.GetItemByType(ConsumableType.BasicLootBox);
+                    if (readOnly.OwnedItems.ItemCollection.ContainsKey(item))
+                        lootBoxAmount.Text = readOnly.OwnedItems.ItemCollection[item].ToString();
+
+                    item = ConsumableManager.GetItemByType(ConsumableType.PremiumLootBox);
+                    if (readOnly.OwnedItems.ItemCollection.ContainsKey(item))
+                        premiumLootBoxAmount.Text = readOnly.OwnedItems.ItemCollection[item].ToString();
                 };
 
             listBox.SelectedValueChanged +=
@@ -92,9 +95,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 {
                     if (listBox.SelectedItem != null)
                     {
-                        informationLabel.Text = ((PurchasableItem)listBox.SelectedItem).Description;
+                        var selectedItem = (PersonalPurchase)listBox.SelectedItem;
 
-                        if (((PurchasableItem)listBox.SelectedItem).IsAvailable.Invoke())
+                        informationLabel.Text = selectedItem.Item.Description;
+
+                        if (selectedItem.ItemPrice.Available)
                         {
                             purchaseButton.Enabled = true;
                             ChangeErrorText(string.Empty, false);
@@ -123,7 +128,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             if (item != null)
             {
-                switch (monthManager.CurrencyManager.Purchase((PurchasableItem)item))
+                switch (((PersonalPurchase)item).Purchase())
                 {
                     case OperationStatus.Successful:
                         ChangeErrorText("Purchase succesful!", true);
@@ -176,7 +181,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
             else
             {
                 operationStatus = monthManager.CurrencyManager
-                    .Consume(ConsumableType.LootBox, out rewardString);
+                    .Consume(ConsumableType.BasicLootBox, out rewardString);
             }
 
             switch (operationStatus)

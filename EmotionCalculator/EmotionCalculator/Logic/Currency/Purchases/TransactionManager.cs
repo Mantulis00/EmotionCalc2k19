@@ -1,4 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
@@ -36,35 +37,18 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         public static OperationStatus Transact(this OwnedItems ownedItems, ConsumableType consumableType, int amount)
         {
-            switch (consumableType)
-            {
-                case ConsumableType.LootBox:
-                    {
-                        if (ownedItems.LootBoxAmount - amount >= 0)
-                        {
-                            ownedItems.AddConsumables(ConsumableType.LootBox, -amount);
-                            return OperationStatus.Successful;
-                        }
-                        else
-                        {
-                            return OperationStatus.Unsuccessful;
-                        }
-                    }
-                case ConsumableType.PremiumLootBox:
-                    {
-                        if (ownedItems.PremiumLootBoxAmount - amount >= 0)
-                        {
-                            ownedItems.AddConsumables(ConsumableType.PremiumLootBox, -amount);
-                            return OperationStatus.Successful;
-                        }
-                        else
-                        {
-                            return OperationStatus.Unsuccessful;
-                        }
-                    }
-            }
+            var item = ConsumableManager.GetItemByType(consumableType);
 
-            return OperationStatus.Unavailable;
+            if (ownedItems.ItemCollection.ContainsKey(item)
+                && ownedItems.ItemCollection[item] - amount >= 0)
+            {
+                ownedItems.AddItems(item, -amount);
+                return OperationStatus.Successful;
+            }
+            else
+            {
+                return OperationStatus.Unsuccessful;
+            }
         }
 
         public static Tuple<CurrencyType, int> GetCustomPurchasePrice(this CustomPurchase customPurchase)

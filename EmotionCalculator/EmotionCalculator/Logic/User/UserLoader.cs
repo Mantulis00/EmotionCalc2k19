@@ -1,12 +1,11 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
-using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using EmotionCalculator.EmotionCalculator.Tools.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 using static EmotionCalculator.EmotionCalculator.Tools.IO.XMLTools;
 
@@ -22,10 +21,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         private static readonly string LastLogOnMonthName = "llmonth";
         private static readonly string LastLogOnYearName = "llyear";
         private static readonly string EmotionCountPrefix = "EmC_";
-        private static readonly string OwnedThemePackName = "OwnedTPs";
-        private static readonly string OwnedSongPackName = "OwnedSPs";
-        private static readonly string LootBoxAmountName = "LBAmount";
-        private static readonly string PremiumLootBoxAmountName = "PLBAmount";
+
+        private static string GetItemName(ItemType itemType)
+        {
+            return "Owned_" + itemType + "s";
+        }
 
         public UserData Load()
         {
@@ -55,18 +55,49 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
         private OwnedItems LoadItems(IEnumerable<XElement> nodes)
         {
-            int lootBoxAmount = nodes.GetNumberFromNode(LootBoxAmountName);
-            int premiumLootBoxAmount = nodes.GetNumberFromNode(PremiumLootBoxAmountName);
+            OwnedItems ownedItems = new OwnedItems();
 
-            OwnedItems ownedItems = new OwnedItems(lootBoxAmount, premiumLootBoxAmount);
+            foreach (ItemType itemType in Enum.GetValues(typeof(ItemType)))
+            {
+                var allValues = nodes.GetValueFromNode(GetItemName(itemType));
 
-            var ownedThemePacks = nodes.GetValueFromNode(OwnedThemePackName);
-            ownedItems.ThemePacks.AddRange(DesktopPack.GetPackByName(ownedThemePacks.Split(',')));
+                var splitStrings = allValues.Split(',');
 
-            var ownedSongPacks = nodes.GetValueFromNode(OwnedSongPackName);
-            ownedItems.SongPacks.AddRange(RadioPack.GetPackByName(ownedSongPacks.Split(',')));
+                foreach (var splitString in splitStrings)
+                {
+                    var twoStrings = splitString.Split(':');
+
+                    string name = twoStrings.ElementAtOrDefault(0);
+                    int.TryParse(twoStrings.ElementAtOrDefault(1), out int amount);
+
+                    Item item = GetItemByNameAndType(itemType, name);
+
+                    ownedItems.AddItems(item, amount);
+                }
+            }
 
             return ownedItems;
+        }
+
+        private Item GetItemByNameAndType(ItemType itemType, string name)
+        {
+            switch (itemType)
+            {
+                case ItemType.ThemePack:
+                    return ThemePackManager.GetItemByPack(ThemePackManager.GetPackByName(name));
+                case ItemType.SongPack:
+                    return SongPackManager.GetItemByPack(SongPackManager.GetPackByName(name));
+                case ItemType.Hat:
+                    break;
+                case ItemType.Item:
+                    break;
+                case ItemType.Skin:
+                    break;
+                case ItemType.LootBox:
+                    return ConsumableManager.GetItemByName(name);
+            }
+
+            return null;
         }
 
         public void Save(UserData userData)
@@ -90,18 +121,20 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
         private void SaveItems(XDocument document, OwnedItems ownedItems)
         {
-            StringBuilder stringBuilder = new StringBuilder();
             List<string> strings = new List<string>();
 
-            ownedItems.ThemePacks.ForEach(pack => strings.Add(pack.Name));
-            document.SaveValueToNode(OwnedThemePackName, string.Join(",", strings));
+            foreach (ItemType itemType in Enum.GetValues(typeof(ItemType)))
+            {
+                var pairs = ownedItems.ItemCollection.Where(pair => pair.Key.ItemType == itemType);
 
-            strings.Clear();
-            ownedItems.SongPacks.ForEach(pack => strings.Add(pack.Name));
-            document.SaveValueToNode(OwnedSongPackName, string.Join(",", strings));
+                foreach (var pair in pairs)
+                {
+                    strings.Add(string.Join(":", pair.Key.Name.ToString(), pair.Value.ToString()));
+                }
 
-            document.SaveValueToNode(LootBoxAmountName, ownedItems.LootBoxAmount.ToString());
-            document.SaveValueToNode(PremiumLootBoxAmountName, ownedItems.PremiumLootBoxAmount.ToString());
+                document.SaveValueToNode(GetItemName(itemType), string.Join(",", strings));
+                strings.Clear();
+            }
         }
     }
 }

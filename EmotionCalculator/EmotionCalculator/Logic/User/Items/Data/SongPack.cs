@@ -1,9 +1,9 @@
 ﻿using System.Drawing;
 using System.IO;
 
-namespace EmotionCalculator.EmotionCalculator.Logic.Data.Songs
+namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 {
-    class SongPack
+    class SongPack : IItemable
     {
         internal string Name { get; private set; }
         internal string Description { get; private set; }
@@ -22,6 +22,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data.Songs
         {
             return Name;
         }
+
+        public Item ToItem()
+        {
+            return new Item(Name, Description, ItemType.SongPack);
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null || !obj.GetType().Equals(GetType()))

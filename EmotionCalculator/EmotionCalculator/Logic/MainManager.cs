@@ -2,8 +2,8 @@
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Events;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
 using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic
@@ -33,7 +33,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             //Settings
             SettingsManager = new SettingsManager(settingsLogger);
             if (SettingsManager.SelectedTheme == null)
-                SettingsManager.SelectedTheme = DesktopPack.DesktopPacks.ToList()[0];
+                SettingsManager.SelectedTheme = ThemePackManager.ThemePacks.ToList()[0];
             SettingsManager.ValidateSelections(userData);
 
             //Month management

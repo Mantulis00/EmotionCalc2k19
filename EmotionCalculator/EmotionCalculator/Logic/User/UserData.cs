@@ -1,6 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
@@ -64,9 +64,18 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
         private void GetFreeItems()
         {
-            if (!OwnedItems.ThemePacks.Contains(DesktopPack.DefaultPack))
+            var freeThemeItem = ThemePackManager.GetItemByPack(ThemePackManager.ThemePacks.First());
+
+            if (!OwnedItems.Own(freeThemeItem))
             {
-                OwnedItems.ThemePacks.Add(DesktopPack.DefaultPack);
+                OwnedItems.AddItem(freeThemeItem);
+            }
+
+            var freeSongItem = SongPackManager.GetItemByPack(SongPackManager.SongPacks.First());
+
+            if (!OwnedItems.Own(freeSongItem))
+            {
+                OwnedItems.AddItem(freeSongItem);
             }
         }
 

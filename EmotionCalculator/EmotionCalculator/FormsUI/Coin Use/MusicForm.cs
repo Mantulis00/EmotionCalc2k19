@@ -1,5 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic;
 using System;
+using System.Linq;
 using System.Media;
 using System.Windows.Forms;
 
@@ -33,10 +34,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
             var songs = monthManager.ReadOnlyUserData.OwnedItems.SongPacks;
 
             if (index == -1)
-                index = songs.Count - 1;
-            index %= songs.Count;
+                index = songs.Count() - 1;
+            index %= songs.Count();
 
-            var song = songs[index];
+            var song = songs.ElementAt(index);
 
             musiclabel.Text = song.Name;
             BackgroundImage = song.Image;
@@ -44,7 +45,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
 
         private void PlayButtonMusic_Click(object sender, EventArgs e)
         {
-            var song = monthManager.ReadOnlyUserData.OwnedItems.SongPacks[index];
+            var song = monthManager.ReadOnlyUserData.OwnedItems.SongPacks.ElementAt(index);
 
             song.Song.Position = 0;
             player.Stream = null;

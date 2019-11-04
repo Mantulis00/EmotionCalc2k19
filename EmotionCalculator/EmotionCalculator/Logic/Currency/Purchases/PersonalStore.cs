@@ -1,8 +1,9 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop;
 using EmotionCalculator.EmotionCalculator.Logic.User;
-using System;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
@@ -15,66 +16,30 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             this.userData = userData;
         }
 
-        internal IEnumerable<PurchasableItem> GetInexhaustibleItems()
+        private IEnumerable<(Item, ItemPrice)> GetThemePacks()
         {
-            yield return new PurchasableItem("Simple lootbox", "Contains basic stuff", CurrencyType.JoyGem, 1,
-                () => userData.OwnedItems.AddConsumables(ConsumableType.LootBox, 1), () => true);
-            yield return new PurchasableItem("Premium lootbox", "Contains great loot", CurrencyType.JoyGem, 3,
-                () => userData.OwnedItems.AddConsumables(ConsumableType.PremiumLootBox, 1), () => true);
+            return ThemePackManager.PricedThemePacks.Select(pack => (pack.Item1.ToItem(), pack.Item2));
         }
 
-        internal IEnumerable<PurchasableItem> GetThemePacks()
+        private IEnumerable<(Item, ItemPrice)> GetSongPacks()
         {
-            var ownedPacks = userData.OwnedItems.ThemePacks;
-
-            foreach (Tuple<ThemePack, CurrencyType, int> storePack in GetThemePackPrices())
-            {
-                var pack = storePack.Item1;
-                var type = storePack.Item2;
-                var amount = storePack.Item3;
-
-                if (!ownedPacks.Contains(pack))
-                    yield return new PurchasableItem(
-                        pack.Name, pack.Description, type, amount,
-                        () => ownedPacks.Add(pack),
-                        () => !ownedPacks.Contains(pack)
-                            && DesktopPack.GetAvailabilityCondition(pack).Invoke());
-            }
+            return SongPackManager.PricedSongPacks.Select(pack => (pack.Item1.ToItem(), pack.Item2));
         }
 
-        private IEnumerable<Tuple<ThemePack, CurrencyType, int>> GetThemePackPrices()
+        private IEnumerable<(Item, ItemPrice)> GetConsumables()
         {
-            yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.DefaultPack, CurrencyType.JoyCoin, 0);
-            yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.HalloweenPack, CurrencyType.JoyCoin, 150);
-            yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.BrexitPack, CurrencyType.JoyCoin, 150);
-            yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.YinYangPack, CurrencyType.JoyCoin, 250);
-            yield return new Tuple<ThemePack, CurrencyType, int>(DesktopPack.UniversityPack, CurrencyType.JoyCoin, 250);
+            return ConsumableManager.GetInexhaustibleItems();
         }
 
-        internal IEnumerable<PurchasableItem> GetSongPacks()
+        internal IEnumerable<PersonalPurchase> GetAllPurchases()
         {
-            var ownedPacks = userData.OwnedItems.SongPacks;
-
-            foreach (Tuple<SongPack, CurrencyType, int> storePack in GetSongPackPrices())
-            {
-                var pack = storePack.Item1;
-                var type = storePack.Item2;
-                var amount = storePack.Item3;
-
-                if (!ownedPacks.Contains(pack))
-                    yield return new PurchasableItem(
-                        pack.Name, pack.Description, type, amount,
-                        () => ownedPacks.Add(pack),
-                        () => !ownedPacks.Contains(pack));
-            }
+            return GetThemePacks().Concat(GetConsumables()).Concat(GetSongPacks())
+                .Select(tuple => new PersonalPurchase(userData, tuple.Item1, tuple.Item2));
         }
 
-        private IEnumerable<Tuple<SongPack, CurrencyType, int>> GetSongPackPrices()
+        internal IEnumerable<PersonalPurchase> GetPersonalPurchases()
         {
-            foreach (var pack in RadioPack.SongPacks)
-            {
-                yield return new Tuple<SongPack, CurrencyType, int>(pack, CurrencyType.JoyCoin, 150);
-            }
+            return GetAllPurchases().Where(pp => pp.ItemPrice.Available);
         }
     }
 }

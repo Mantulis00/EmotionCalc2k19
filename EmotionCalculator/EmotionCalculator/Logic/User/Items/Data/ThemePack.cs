@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 
-namespace EmotionCalculator.EmotionCalculator.Logic.Settings.Themes
+namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 {
-    class ThemePack
+    class ThemePack : IItemable
     {
         internal Image Image { get; private set; }
 
@@ -54,6 +54,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings.Themes
                     && FocusTextColor == themePack.FocusTextColor
                     && PrimaryTextColor == themePack.PrimaryTextColor;
             }
+        }
+
+        public Item ToItem()
+        {
+            return new Item(Name, Description, ItemType.ThemePack);
         }
     }
 }

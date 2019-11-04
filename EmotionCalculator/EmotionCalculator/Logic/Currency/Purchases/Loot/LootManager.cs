@@ -1,5 +1,6 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
-using EmotionCalculator.EmotionCalculator.Logic.User;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
@@ -80,13 +81,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
 
         private static void AddRandomUnownedThemePack(UserData userData, out string rewardString)
         {
-            var unownedPacks = DesktopPack.DesktopPacks.Where(
-                pack => !userData.OwnedItems.ThemePacks.Contains(pack));
+            var unownedPacks = ThemePackManager.ThemePacks
+                .Where(pack => !userData.OwnedItems.Own(pack.ToItem()));
 
             if (unownedPacks.Count() != 0)
             {
                 var pack = unownedPacks.ElementAt(Random.Next(0, unownedPacks.Count() - 1));
-                userData.OwnedItems.ThemePacks.Add(pack);
+                userData.OwnedItems.AddItem(ThemePackManager.GetItemByPack(pack));
 
                 rewardString = $"{pack.Name} Theme Pack.";
             }
@@ -147,9 +148,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
 
             if (lootPowers.ContainsKey(LootType.ThemePack))
             {
-                if (DesktopPack.DesktopPacks.Count() == userData.OwnedItems.ThemePacks.Count)
+                if (ThemePackManager.ThemePacks.Count() == userData.OwnedItems.ItemCollection
+                    .Count(pair => pair.Key.ItemType == ItemType.ThemePack && pair.Value > 0))
                     lootPowers.Remove(LootType.ThemePack);
-
             }
         }
     }

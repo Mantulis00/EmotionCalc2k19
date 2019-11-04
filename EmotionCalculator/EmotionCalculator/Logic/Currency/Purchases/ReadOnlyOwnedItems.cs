@@ -1,22 +1,31 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
     class ReadOnlyOwnedItems
     {
         private readonly OwnedItems ownedItems;
-        internal int LootBoxAmount { get { return ownedItems.LootBoxAmount; } }
-        internal int PremiumLootBoxAmount { get { return ownedItems.PremiumLootBoxAmount; } }
-        internal IReadOnlyList<ThemePack> ThemePacks { get { return ownedItems.ThemePacks.AsReadOnly(); } }
-        internal IReadOnlyList<SongPack> SongPacks { get { return ownedItems.SongPacks.AsReadOnly(); } }
+
+        internal ReadOnlyDictionary<Item, int> ItemCollection { get => ownedItems.ItemCollection; }
+
+        internal IEnumerable<ThemePack> ThemePacks
+        {
+            get => ownedItems.ThemePacks;
+        }
+
+        internal IEnumerable<SongPack> SongPacks
+        {
+            get => ownedItems.SongPacks;
+        }
 
         internal event EventHandler ConsumablesChanged
         {
-            add { ownedItems.ConsumablesChanged += value; }
-            remove { ownedItems.ConsumablesChanged -= value; }
+            add { ownedItems.ItemsChanged += value; }
+            remove { ownedItems.ItemsChanged -= value; }
         }
 
         public ReadOnlyOwnedItems(OwnedItems ownedItems)

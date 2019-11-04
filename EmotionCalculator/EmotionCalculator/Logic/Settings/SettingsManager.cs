@@ -1,5 +1,6 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
-using EmotionCalculator.EmotionCalculator.Logic.User;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -32,9 +33,15 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
         public void ValidateSelections(UserData userData)
         {
-            if (!userData.OwnedItems.ThemePacks.Contains(SelectedTheme))
+            var item = ThemePackManager.GetItemByPack(SelectedTheme);
+
+            if (!userData.OwnedItems.Own(item))
             {
-                SelectedTheme = userData.OwnedItems.ThemePacks.First();
+                var newSelectedThemeItem = userData.OwnedItems.ItemCollection
+                    .FirstOrDefault(colItem => colItem.Key.ItemType == ItemType.ThemePack
+                    && userData.OwnedItems.Own(colItem.Key)).Key;
+
+                SelectedTheme = ThemePackManager.GetPackByItem(newSelectedThemeItem);
             }
 
             Save();

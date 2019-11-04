@@ -1,4 +1,4 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +37,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
             if (themeNode != null)
             {
-                var pack = DesktopPack.DesktopPacks.FirstOrDefault(sPack => sPack.Name == themeNode.Value);
+                var pack = ThemePackManager.ThemePacks.FirstOrDefault(sPack => sPack.Name == themeNode.Value);
 
                 if (pack != null)
                 {
@@ -45,7 +45,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
                 }
             }
 
-            return DesktopPack.DesktopPacks.First();
+            return ThemePackManager.ThemePacks.First();
         }
 
         public void SaveSettings(Dictionary<SettingType, SettingStatus> settings)

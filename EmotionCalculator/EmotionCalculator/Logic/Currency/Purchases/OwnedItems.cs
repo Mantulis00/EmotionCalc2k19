@@ -1,49 +1,73 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Data.Songs;
-using EmotionCalculator.EmotionCalculator.Logic.Settings.Themes;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
     class OwnedItems
     {
-        internal List<ThemePack> ThemePacks { get; }
-        internal List<SongPack> SongPacks { get; }
+        private readonly Dictionary<Item, int> itemCollection;
+        internal ReadOnlyDictionary<Item, int> ItemCollection { get => new ReadOnlyDictionary<Item, int>(itemCollection); }
 
-        internal int LootBoxAmount { get; private set; }
-        internal int PremiumLootBoxAmount { get; private set; }
+        internal event EventHandler ItemsChanged;
 
-        internal event EventHandler ConsumablesChanged;
-
-        internal OwnedItems(int lootBoxAmount, int premiumLootBoxAmount)
+        internal IEnumerable<ThemePack> ThemePacks
         {
-            ThemePacks = new List<ThemePack>();
-            SongPacks = new List<SongPack>();
-
-            LootBoxAmount = lootBoxAmount;
-            PremiumLootBoxAmount = premiumLootBoxAmount;
+            get =>
+                ThemePackManager.ThemePacks.Where(tuple => Own(tuple.ToItem()));
         }
 
-        internal void AddConsumables(ConsumableType consumableType, int amount)
+        internal IEnumerable<SongPack> SongPacks
         {
-            switch (consumableType)
+            get =>
+                SongPackManager.SongPacks.Where(tuple => Own(tuple.ToItem()));
+        }
+
+        internal OwnedItems()
+        {
+            itemCollection = new Dictionary<Item, int>();
+        }
+
+        internal void AddItem(Item item)
+        {
+            AddItems(item, 1);
+        }
+
+        internal void AddItems(Item item, int amount)
+        {
+            if (item == null)
+                return;
+
+            if (itemCollection.ContainsKey(item))
             {
-                case ConsumableType.LootBox:
-                    LootBoxAmount += amount;
-                    LootBoxAmount = Math.Max(0, LootBoxAmount);
-                    break;
-                case ConsumableType.PremiumLootBox:
-                    PremiumLootBoxAmount += amount;
-                    PremiumLootBoxAmount = Math.Max(0, PremiumLootBoxAmount);
-                    break;
+                itemCollection[item] += amount;
+            }
+            else
+            {
+                itemCollection.Add(item, amount);
             }
 
-            ConsumablesChanged?.Invoke(this, EventArgs.Empty);
+            itemCollection[item] = Math.Max(itemCollection[item], 0);
+
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        internal bool Own(Item item)
+        {
+            return itemCollection.ContainsKey(item) && itemCollection[item] > 0;
+        }
+
+        internal int OwnsNumberOfType(ItemType itemType)
+        {
+            return ItemCollection.Count(pair => pair.Key.ItemType == itemType && pair.Value > 0);
         }
 
         internal void Refresh()
         {
-            ConsumablesChanged?.Invoke(this, EventArgs.Empty);
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         internal ReadOnlyOwnedItems AsReadOnly()
