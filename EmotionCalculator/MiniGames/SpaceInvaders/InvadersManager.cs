@@ -110,7 +110,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                 main.GameOver(score);
               
             }
-            else if (Invaders[Invaders.Count-1].InvaderInfo.Location.Y >= main.Player.Location.Y )
+            else if (Invaders[Invaders.Count-1].InvaderInfo.Location.Y >= main.Player.Location.Y - InvaderSize )
             {
                 DisposeInvaders();
 
