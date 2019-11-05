@@ -200,21 +200,27 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         internal void RemoveInvader(SInvaders invader)
         {
-            if (InvadersSpeed > 0)
-            {
-                if(Invaders.Count <=5) InvadersSpeed+=2;
-                else InvadersSpeed ++;
-            }
-           
-            else if (InvadersSpeed < 0)
-            {
-                if (Invaders.Count <= 5) InvadersSpeed -= 2;
-                else InvadersSpeed--;
-            }
+            
 
             invader.InvaderInfo.Dispose();
             Invaders.Remove(invader);
             invader.InvaderInfo = null;
+
+
+            if (InvadersSpeed > 0)
+            {
+                if (Invaders.Count <= 5) InvadersSpeed += 2;
+                else if (Invaders.Count <= 2) InvadersSpeed += 10;
+                else InvadersSpeed++;
+            }
+
+            else if (InvadersSpeed < 0)
+            {
+                if (Invaders.Count <= 5) InvadersSpeed -= 2;
+                else if (Invaders.Count <= 2) InvadersSpeed -= 10;
+                else InvadersSpeed--;
+            }
+
 
             score++;
         }
