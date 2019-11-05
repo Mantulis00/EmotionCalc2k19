@@ -77,7 +77,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmotionCalculator\FormsUI\BaseFormManagerUI.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\BaseFormManagerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.Designer.cs">
+      <DependentUpon>MusicForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +219,9 @@
     <Folder Include="Tools\API\Face\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.resx">
+      <DependentUpon>MusicForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.resx">
       <DependentUpon>DailyLoginForm.cs</DependentUpon>
     </EmbeddedResource>

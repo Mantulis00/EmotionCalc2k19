@@ -8,12 +8,12 @@ using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.MiniGames.SpaceInvaders;
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
-using EmotionCalculator.MiniGames.SpaceInvaders;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
@@ -140,8 +140,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
+            MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
             MainManager.Save();
-            SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
             Application.Exit();
         }
 
@@ -197,7 +197,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     Enabled = true;
                     MainManager.Refresh();
                     RefreshUI();
-                    BaseFormManagerUI.ShowDebug(this);
+                    ShowDebug();
                 };
         }
 
@@ -226,15 +226,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void GetCoins10JoyCoinsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainManager.CurrencyManager.TemporaryCurrencyEntryPoint(CurrencyType.JoyCoin, 10);
-        }
-
-
-        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SoundPlayer player = new SoundPlayer();
-            var rand = new Random();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
-            player.Play();
         }
 
 
@@ -273,23 +264,24 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             if (input == 'u') // u for emoji invaders
             {
-                SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
-                MonthManager.Refresh();
-                InvadersLauch();
+                if (MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
+                {
+                    MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
+                    MainManager.MonthManager.Refresh();
+                    InvadersLauch();
 
-                AuxThread = new Thread(
-                    () =>
-                    {
-                        this.BeginInvoke((Action)delegate ()
+                    AuxThread = new Thread(
+                        () =>
                         {
-                            invadersManager.StartAnimation();
-                        });
-                    }
-                );
-                AuxThread.Start();
+                            this.BeginInvoke((Action)delegate ()
+                            {
+                                invadersManager.StartAnimation();
+                            });
+                        }
+                    );
+                    AuxThread.Start();
+                }
             }
-
-
         }
     }
 }
