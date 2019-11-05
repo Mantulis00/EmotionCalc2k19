@@ -19,5 +19,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 dateTimePicker.Hide();
             }
         }
+
+        public static void HideAll(BaseForm baseForm)
+        {
+
+        }
+
+
     }
 }

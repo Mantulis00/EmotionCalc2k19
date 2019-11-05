@@ -33,7 +33,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
 
-            emojis = CalendarGenerator.GenerateEmojis(cells, backgroundBox).ToList();
+            emojis = CalendarGenerator.GenerateEmojis(cells).ToList();
         }
 
         public void Update(ReadOnlyMonthEmotions monthEmotions, DateTime newDateTime)
@@ -81,6 +81,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
                 SetEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
             }
+
+            SetCellVisibility(cells);
+
         }
 
 
@@ -121,6 +124,23 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             emotionLabel.ForeColor = selectedTheme.PrimaryTextColor;
             emotionLabel.Visible = true;
         }
+
+        private void SetCellVisibility(IReadOnlyList<PictureBox> cells)
+        {
+            foreach (PictureBox cell in cells)
+            {
+                if (settingsManager[SettingType.Game] == SettingStatus.Enabled)
+                {
+                    cell.Hide();
+                }
+                else
+                {
+                    cell.Show();
+                }
+            }
+        }
+
+
 
 
         private void ResetColors()

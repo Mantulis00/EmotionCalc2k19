@@ -12,17 +12,26 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using EmotionCalculator.MiniGames.SpaceInvaders;
+using System.Threading;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
         internal MainManager MainManager { get; private set; }
-
+        internal Thread AuxThread { get; set; }
         internal IAPIManager APIManager { get; private set; }
+
+
+
+        internal SpaceInvadersMain invadersManager;
+
 
         internal BaseForm(IAPIManager apiManager)
         {
+            this.KeyPreview = true;
+
             //UI
             InitializeComponent();
 
@@ -132,7 +141,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void ExitApplication()
         {
             MainManager.Save();
-
+            SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
             Application.Exit();
         }
 
@@ -188,6 +197,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     Enabled = true;
                     MainManager.Refresh();
                     RefreshUI();
+                    BaseFormManagerUI.ShowDebug(this);
                 };
         }
 
@@ -218,6 +228,21 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MainManager.CurrencyManager.TemporaryCurrencyEntryPoint(CurrencyType.JoyCoin, 10);
         }
 
+
+        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer();
+            var rand = new Random();
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
+            player.Play();
+        }
+
+
+        private void InvadersLauch()
+        {
+            invadersManager = new SpaceInvadersMain(calendarBackground, this);
+        }
+
         //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
         {
@@ -227,6 +252,44 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
+        }
+
+        private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (AuxThread == null)
+            {
+                StartGame(e.KeyChar);
+            }
+
+            else if (AuxThread != null)
+            {
+                invadersManager.playerIManager.ReadInput(e.KeyChar);
+            }
+
+        }
+
+        private void StartGame(char input)
+        {
+            if (input == 'u') // u for emoji invaders
+            {
+                SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
+                MonthManager.Refresh();
+                InvadersLauch();
+
+                AuxThread = new Thread(
+                    () =>
+                    {
+                        this.BeginInvoke((Action)delegate ()
+                        {
+                            invadersManager.StartAnimation();
+                        });
+                    }
+                );
+                AuxThread.Start();
+            }
+
+
         }
     }
 }

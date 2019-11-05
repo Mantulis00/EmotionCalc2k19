@@ -52,6 +52,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
                 DebugcheckBox.Checked = false;
             }
+
+            if (settingsManager[SettingType.Game] == SettingStatus.Enabled)
+            {
+                GameModeBox.Checked = true;
+            }
+            else
+            {
+                GameModeBox.Checked = false;
+            }
+
+
         }
 
 
@@ -95,6 +106,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             {
                 settingsManager[SettingType.Debug] = SettingStatus.Disabled;
             }
+
+            if (GameModeBox.Checked)
+            {
+                settingsManager[SettingType.Game] = SettingStatus.Enabled;
+            }
+            else
+            {
+                settingsManager[SettingType.Game] = SettingStatus.Disabled;
+            }
+
+
         }
 
 
@@ -117,6 +139,5 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             };
             g.DrawString(tabPage.Text, tabFont, textBrush, tabBounds, stringFlags);
         }
-
     }
 }

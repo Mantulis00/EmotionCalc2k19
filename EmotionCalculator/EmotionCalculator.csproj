@@ -78,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmotionCalculator\FormsUI\BaseFormManagerUI.cs" />
-    <Compile Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.Designer.cs">
-      <DependentUpon>MusicForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +192,11 @@
     <Compile Include="EmotionCalculator\Tools\API\APIParseResult.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\FaceData.cs" />
     <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\AnimationManager.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\Controls.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\InvadersManager.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\PlayerInputs.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\SpaceInvadersMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -212,9 +211,6 @@
     <Folder Include="Tools\API\Face\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.resx">
-      <DependentUpon>MusicForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.resx">
       <DependentUpon>DailyLoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +368,10 @@
     <None Include="Resources\yinYang.png" />
     <None Include="Resources\premiumLootbox.png" />
     <None Include="Resources\lootbox.png" />
+    <None Include="Resources\emojiCringe.png" />
+    <None Include="Resources\emojiFire.png" />
+    <None Include="Resources\backgroundMc.png" />
+    <None Include="Resources\backgroundMc.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

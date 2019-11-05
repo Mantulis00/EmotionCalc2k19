@@ -647,6 +647,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(526, 518);
             this.ClientSize = new System.Drawing.Size(528, 551);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel3);
@@ -672,6 +673,7 @@
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BaseForm_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gemBackgroundPanel.ResumeLayout(false);
@@ -704,7 +706,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.PictureBox calendarBackground;
+        internal System.Windows.Forms.PictureBox calendarBackground;
         internal System.Windows.Forms.DateTimePicker dateTimePicker;
         internal System.Windows.Forms.Button leftButton;
         internal System.Windows.Forms.Button rightButton;
