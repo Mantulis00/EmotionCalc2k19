@@ -1,87 +1,105 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
 using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
 using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Logic.Currency;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
+using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.MiniGames.SpaceInvaders;
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
-using System.Media;
-using EmotionCalculator.MiniGames.SpaceInvaders;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class BaseForm : Form
     {
-        internal Thread AuxThread  {get; set;}
-
-        internal MonthManager MonthManager { get; private set; }
-
+        internal MainManager MainManager { get; private set; }
+        internal Thread AuxThread { get; set; }
         internal IAPIManager APIManager { get; private set; }
 
-        internal SettingsManager SettingsManager { get; private set; }
-        public object SettingStatus { get; internal set; } // not used ?
 
 
-        // kodas123
         internal SpaceInvadersMain invadersManager;
 
 
         internal BaseForm(IAPIManager apiManager)
         {
-
-
-            //Settings
             this.KeyPreview = true;
-            SettingsManager = DesktopPack.GetSettings();
 
             //UI
             InitializeComponent();
-            StartupUI();
 
             //API
             APIManager = apiManager;
 
             //UI <-> API
             SetupMonth();
+            SetupListeners();
+            MainManager.Refresh();
+
+            //Update UI
+            RefreshUI();
 
             //Daily login
-            MonthManager.RaiseLoginEvent(
+            MainManager.EventManager.RaiseLoginEvent(
                 (dailyStreak, claimReward) =>
                 {
                     OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
                 });
-
-            //kodas123
-
         }
 
-        private void StartupUI()
+        private void RefreshUI()
         {
-                BaseFormManagerUI.ShowDebug(this);
+            ShowDebug();
         }
 
 
         private void SetupMonth()
         {
-            MonthManager = new MonthManager(
-               new MonthEmotionsIO(),
-               new CalendarUpdater(calendarBackground, SettingsManager),
-               dateTimePicker.Value,
-               new UserLoader(),
-               new CurrencyUpdater(coinAmountLabel, gemAmountLabel));
+            MainManager = new MainManager(
+                new MonthEmotionsIO(),
+                new UserLoader(),
+                new SettingsLogger());
+
+            CalendarUpdater calendarUpdater = new CalendarUpdater(calendarBackground, MainManager.SettingsManager);
+
+            MainManager.MonthManager.StatusChanged +=
+                (o, e) =>
+                {
+                    calendarUpdater.Update(e.MonthEmotions, e.SelectedTime);
+                };
 
             dateTimePicker.ValueChanged +=
                 (o, e) =>
                 {
-                    MonthManager.ChangeTime(dateTimePicker.Value);
+                    MainManager.MonthManager.ChangeTime(dateTimePicker.Value);
                 };
+        }
 
+        private void SetupListeners()
+        {
+            MainManager.ReadOnlyUserData.CurrencyChanged +=
+                (o, e) =>
+                {
+                    ReadOnlyUserData readOnly = MainManager.ReadOnlyUserData;
 
-            MonthManager.Refresh();
+                    coinAmountLabel.Text = readOnly.JoyCoins.ToString();
+                    gemAmountLabel.Text = readOnly.JoyGems.ToString();
+                    angryEmotionCount.Text = readOnly.EmotionCount[Emotion.Anger].ToString();
+                    contemptEmotionCount.Text = readOnly.EmotionCount[Emotion.Contempt].ToString();
+                    disgustEmotionCount.Text = readOnly.EmotionCount[Emotion.Disgust].ToString();
+                    fearEmotionCount.Text = readOnly.EmotionCount[Emotion.Fear].ToString();
+                    happyEmotionCount.Text = readOnly.EmotionCount[Emotion.Happiness].ToString();
+                    neutralEmotionCount.Text = readOnly.EmotionCount[Emotion.Neutral].ToString();
+                    sadEmotionCount.Text = readOnly.EmotionCount[Emotion.Sadness].ToString();
+                    surpriseEmotionCount.Text = readOnly.EmotionCount[Emotion.Surprise].ToString();
+                };
         }
 
         internal void UpdateParsedData(APIParseResult parseResult)
@@ -90,7 +108,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             if (parseResult.Faces.Count > 0)
             {
-                MonthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
+                MainManager.MonthManager.SetEmotion(parseResult.Faces.First().EmotionData.GetEmotion());
             }
         }
 
@@ -110,8 +128,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
         }
 
-
-
         private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ExitApplication();
@@ -124,10 +140,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ExitApplication()
         {
-            SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
-         
-            MonthManager.Save();
-
+            MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
+            MainManager.Save();
             Application.Exit();
         }
 
@@ -156,6 +170,18 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             OpenSecondaryWindow(APIManager.GetSettingsForm());
         }
 
+        private void ShopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenSecondaryWindow(new ShopForm(MainManager));
+        }
+
+        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MainManager.ReadOnlyUserData.OwnedItems.ThemePacks.Count() > 0)
+                OpenSecondaryWindow(new Coin_Use.MusicForm(MainManager));
+            else
+                MessageBox.Show("No songs found", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
 
         private void OpenSecondaryWindow(Form secondaryWindow)
@@ -168,14 +194,45 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             secondaryWindow.FormClosed +=
                 (o, ev) =>
                 {
-
                     Enabled = true;
-                    MonthManager.Refresh();
-                    BaseFormManagerUI.ShowDebug(this);
+                    MainManager.Refresh();
+                    RefreshUI();
+                    ShowDebug();
                 };
         }
 
+        private void LightsOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MainManager.CurrencyManager.Purchase(CustomPurchase.LightsOff) == OperationStatus.Successful)
+            {
+                lightsOnToolStripMenuItem.Enabled = true;
+                lightsOffToolStripMenuItem.Enabled = false;
 
+                BackColor = Color.Black;
+            }
+        }
+
+        private void LightsOnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MainManager.CurrencyManager.Purchase(CustomPurchase.LightsOn) == OperationStatus.Successful)
+            {
+                lightsOffToolStripMenuItem.Enabled = true;
+                lightsOnToolStripMenuItem.Enabled = false;
+
+                BackColor = SystemColors.Control;
+            }
+        }
+
+        private void GetCoins10JoyCoinsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainManager.CurrencyManager.TemporaryCurrencyEntryPoint(CurrencyType.JoyCoin, 10);
+        }
+
+
+        private void InvadersLauch()
+        {
+            invadersManager = new SpaceInvadersMain(calendarBackground, this);
+        }
 
         //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
@@ -187,29 +244,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
-
-
-        private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SoundPlayer player = new SoundPlayer();
-            var rand = new Random();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + rand.Next(1, 13).ToString() + ".wav";
-            player.Play();
-        }
-
-
-        private void InvadersLauch()
-        {
-            invadersManager = new SpaceInvadersMain(calendarBackground, this);
-        }
-
-        //kodas123
-
-            private void SetText()
-        {
-            Console.WriteLine("pov");
-        }
-
 
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -223,31 +257,31 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             {
                 invadersManager.playerIManager.ReadInput(e.KeyChar);
             }
-                
+
         }
 
         private void StartGame(char input)
         {
             if (input == 'u') // u for emoji invaders
             {
-                SettingsManager[SettingType.Game] = Logic.Settings.SettingStatus.Enabled;
-                MonthManager.Refresh();
-                InvadersLauch();
+                if (MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
+                {
+                    MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
+                    MainManager.MonthManager.Refresh();
+                    InvadersLauch();
 
-
-                AuxThread = new Thread(
-                    () =>
-                    {
-                        this.BeginInvoke((Action)delegate ()
+                    AuxThread = new Thread(
+                        () =>
                         {
-                            invadersManager.StartAnimation();
-                        });
-                    }
-                );
-                AuxThread.Start();
+                            this.BeginInvoke((Action)delegate ()
+                            {
+                                invadersManager.StartAnimation();
+                            });
+                        }
+                    );
+                    AuxThread.Start();
+                }
             }
-
-
         }
     }
 }

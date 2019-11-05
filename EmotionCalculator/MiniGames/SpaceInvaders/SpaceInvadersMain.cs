@@ -2,10 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.MiniGames.SpaceInvaders
@@ -36,7 +32,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             // GrapX = grapX;
             this.baseForm = baseForm;
 
-           // SetupBackGround(grapX);
+            // SetupBackGround(grapX);
             SetupPlayer(grapX);
             SetupTimer();
 
@@ -49,7 +45,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             playerIManager = new PlayerInputs(Player, invaderManager);
         }
 
-       private void SetupTimer()
+        private void SetupTimer()
         {
             MainClock = new System.Windows.Forms.Timer();
             MainClock.Interval = 35;
@@ -78,14 +74,14 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         public void StartTimer()
         {
-            
+
 
             MainClock.Start();
         }
 
         private void StartClock(object sender, EventArgs e)
         {
-             invaderManager.UpdateInvaders(this);
+            invaderManager.UpdateInvaders(this);
         }
 
 
@@ -107,7 +103,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         }
 
-       public void GameOver(int score)
+        public void GameOver(int score)
         {
             MainClock.Stop();
             baseForm.AuxThread = null;
@@ -115,13 +111,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             Player.Dispose();
             Player = null;
 
-            baseForm.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
-            baseForm.MonthManager.Refresh();
+            baseForm.MainManager.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
+            baseForm.MainManager.MonthManager.Refresh();
         }
-
-
-
-
-
     }
 }

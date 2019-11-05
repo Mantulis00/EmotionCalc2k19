@@ -20,7 +20,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.Web
                 return false;
             }
             HttpWebResponse response = null;
-            WebRequest request = null;
+            WebRequest request;
             try
             {
                 request = WebRequest.Create(imageURL);

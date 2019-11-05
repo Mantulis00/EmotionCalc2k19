@@ -1,13 +1,11 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
-using System;
 using System.Collections.Generic;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
-    [Serializable]
     class MonthEmotions
     {
-        private Dictionary<int, Emotion> emotions = new Dictionary<int, Emotion>();
+        private readonly Dictionary<int, Emotion> emotions = new Dictionary<int, Emotion>();
 
         internal Emotion this[int dayOfTheMonth]
         {
@@ -35,6 +33,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
                 emotions.Remove(dayOfTheMonth);
 
             emotions.Add(dayOfTheMonth, emotion);
+        }
+
+        internal ReadOnlyMonthEmotions AsReadOnly()
+        {
+            return new ReadOnlyMonthEmotions(this);
         }
     }
 }

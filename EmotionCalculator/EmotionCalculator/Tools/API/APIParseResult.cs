@@ -5,8 +5,8 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API
 {
     internal class APIParseResult
     {
-        private List<FaceData> faces = new List<FaceData>();
-        private List<ErrorLog> errors = new List<ErrorLog>();
+        private readonly List<FaceData> faces = new List<FaceData>();
+        private readonly List<ErrorLog> errors = new List<ErrorLog>();
 
         internal IReadOnlyList<FaceData> Faces { get { return faces.AsReadOnly(); } }
         internal IReadOnlyList<ErrorLog> Errors { get { return errors.AsReadOnly(); } }

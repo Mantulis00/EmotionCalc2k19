@@ -1,30 +1,23 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
-    static class BaseFormManagerUI
+    partial class BaseForm
     {
-
-        public static void ShowDebug(BaseForm baseForm)
+        public void ShowDebug()
         {
-            if (baseForm.SettingsManager[SettingType.Debug] == SettingStatus.Enabled)
+            if (MainManager.SettingsManager[SettingType.Debug] == SettingStatus.Enabled)
             {
-                baseForm.leftButton.Show();
-                baseForm.rightButton.Show();
-                baseForm.dateTimePicker.Show();
+                leftButton.Show();
+                rightButton.Show();
+                dateTimePicker.Show();
             }
             else
             {
-                baseForm.leftButton.Hide();
-                baseForm.rightButton.Hide();
-                baseForm.dateTimePicker.Hide();
+                leftButton.Hide();
+                rightButton.Hide();
+                dateTimePicker.Hide();
             }
-
         }
 
         public static void HideAll(BaseForm baseForm)

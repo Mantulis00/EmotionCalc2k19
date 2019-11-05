@@ -1,5 +1,8 @@
-﻿using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using System;
+using System.IO;
+using System.Xml.Linq;
+using static EmotionCalculator.EmotionCalculator.Tools.IO.XMLTools;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
@@ -9,45 +12,44 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
 
         public MonthEmotions LoadMonth(int year, Month month)
         {
+            XDocument doc = GetXmlDocument(GetFullDirectory(year, month));
+            var nodes = doc.Descendants();
 
-            if (MonthSavedExists(year, month))
+            var monthEmotions = new MonthEmotions(year, month);
+
+            for (int i = 1; i <= DateTime.DaysInMonth(year, (int)month); i++)
             {
-                string directory = GetFullDirectory(year, month);
+                var emotionString = nodes.GetValueFromNode($"D{i.ToString()}");
 
-                using (FileStream fs = new FileStream(directory, FileMode.Open))
+                if (!Enum.TryParse(emotionString, out Emotion emotion))
                 {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    return (MonthEmotions)bf.Deserialize(fs);
+                    emotion = Emotion.NotSet;
                 }
+
+                monthEmotions.SetEmotion(i, emotion);
             }
-            else
-            {
-                return new MonthEmotions(year, month);
-            }
+
+            return monthEmotions;
         }
 
         public void SaveMonth(MonthEmotions monthEmotions)
         {
-            string directory = GetFullDirectory(monthEmotions.Year, monthEmotions.Month);
+            XDocument doc = GetXmlDocument(GetFullDirectory(monthEmotions.Year, monthEmotions.Month));
 
-            using (FileStream fs = new FileStream(directory, FileMode.Create))
+            for (int i = 1; i <= DateTime.DaysInMonth(monthEmotions.Year, (int)monthEmotions.Month); i++)
             {
-                BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(fs, monthEmotions);
+                doc.SaveValueToNode($"D{i.ToString()}", monthEmotions[i].ToString());
             }
-        }
 
-        private static bool MonthSavedExists(int year, Month month)
-        {
-            if (!Directory.Exists(folderName))
-                Directory.CreateDirectory(folderName);
-
-            return File.Exists(GetFullDirectory(year, month));
+            doc.Save(GetFullDirectory(monthEmotions.Year, monthEmotions.Month));
         }
 
         private static string GetFullDirectory(int year, Month month)
         {
-            return folderName + "\\" + month.ToString() + "_" + year + ".txt";
+            if (!Directory.Exists(folderName))
+                Directory.CreateDirectory(folderName);
+
+            return Path.Combine(folderName, month.ToString() + "_" + year + ".xml");
         }
     }
 }

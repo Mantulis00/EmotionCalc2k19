@@ -1,6 +1,5 @@
 ﻿using AForge.Video;
 using AForge.Video.DirectShow;
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,11 +7,11 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 {
     class CameraHandle
     {
-        private VideoCaptureDevice camera;
-        private FilterInfoCollection cameraHW;
-        private PictureBox pic;
+        private readonly VideoCaptureDevice camera;
+        private readonly FilterInfoCollection cameraHW;
+        private readonly PictureBox pic;
 
-        public bool cameraRunning { get; set; }
+        public bool CameraRunning { get; set; }
 
         public CameraHandle(PictureBox pic)
         {
@@ -22,15 +21,15 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
 
             this.pic = pic;
-            cameraRunning = false;
+            CameraRunning = false;
         }
 
         public void Start()
         {
-            if (!cameraRunning)
+            if (!CameraRunning)
             {
                 camera.Start();
-                cameraRunning = true;
+                CameraRunning = true;
             }
             else
             {
@@ -47,10 +46,10 @@ namespace EmotionCalculator.EmotionCalculator.Tools.FileHandler
 
         public void Stop()
         {
-            if (cameraRunning)
+            if (CameraRunning)
             {
                 camera.Stop();
-                cameraRunning = false;
+                CameraRunning = false;
 
                 pic.Image = null;
             }

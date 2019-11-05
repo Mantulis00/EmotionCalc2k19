@@ -1,4 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -8,13 +9,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class SettingsForm : Form
     {
-        private BaseForm baseForm;
-        //private string mode;
+        private readonly BaseForm baseForm;
+        private readonly SettingsManager settingsManager;
 
         public SettingsForm(BaseForm baseForm)
         {
             this.baseForm = baseForm;
-          //  this.mode = "Normal";
+            settingsManager = baseForm.MainManager.SettingsManager;
 
             InitializeComponent();
             InitializeSettings();
@@ -24,19 +25,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void InitializeSettings()
         {
-            themeComboBox.Items.AddRange(DesktopPack.DesktopPacks.ToArray());
+            themeComboBox.Items.AddRange(baseForm.MainManager.ReadOnlyUserData.OwnedItems.ThemePacks.ToArray());
 
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(baseForm.SettingsManager.SelectedTheme.ToString());
+                .FindStringExact(baseForm.MainManager.SettingsManager.SelectedTheme.ToString());
 
-            SettingsManager settingsManager = baseForm.SettingsManager;
-
-            checkCheckBoxes(settingsManager);
+            CheckCheckBoxes(settingsManager);
 
             settingsManager.Save();
         }
 
-        private  void checkCheckBoxes(SettingsManager settingsManager)
+        private void CheckCheckBoxes(SettingsManager settingsManager)
         {
             if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                 emojisEnabledCheckBox.Checked = true;
@@ -50,7 +49,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             }
             else
             {
-                
+
                 DebugcheckBox.Checked = false;
             }
 
@@ -75,15 +74,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void ResetButton_Click(object sender, EventArgs e)
         {
             themeComboBox.SelectedIndex = themeComboBox
-                .FindStringExact(DesktopPack.DesktopPacks.ToList().First().ToString());
+                .FindStringExact(baseForm.MainManager.ReadOnlyUserData.OwnedItems.ThemePacks.First().ToString());
 
             emojisEnabledCheckBox.Checked = false;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            SettingsManager settingsManager = baseForm.SettingsManager;
-
             SettingTabSubmitions(settingsManager);
             AdminToolsSubmitions(settingsManager);
 
@@ -123,22 +120,23 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         }
 
 
-
         private void DrawTabs(Object sender, DrawItemEventArgs e)
         {
             int index = e.Index;
 
             Graphics g = e.Graphics;
-            Brush textBrush = new SolidBrush(Color.Black) ;
+            Brush textBrush = new SolidBrush(Color.Black);
 
             TabPage tabPage = tabControl.TabPages[index];
             Rectangle tabBounds = tabControl.GetTabRect(index);
 
             Font tabFont = new Font("Microsoft Sans Serif", 11f);
 
-            StringFormat stringFlags = new StringFormat();
-            stringFlags.Alignment = StringAlignment.Center;
-            stringFlags.LineAlignment = StringAlignment.Center;
+            StringFormat stringFlags = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
             g.DrawString(tabPage.Text, tabFont, textBrush, tabBounds, stringFlags);
         }
     }
