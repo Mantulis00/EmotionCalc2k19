@@ -147,7 +147,6 @@
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\CustomPurchase.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\Loot\LootManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\Loot\LootType.cs" />
-    <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchasableItem.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\OwnedItems.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\PurchaseStatus.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\Purchases\ReadOnlyOwnedItems.cs" />

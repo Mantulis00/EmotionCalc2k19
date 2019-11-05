@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using System;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
 {
@@ -6,11 +8,18 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
     {
         internal CurrencyType CurrencyType { get; }
         internal int Price { get; }
-        internal bool Available { get => isAvailable.Invoke(); }
         internal LootDropType LootDropType { get; }
         internal PriceType PriceType { get; }
 
         private Func<bool> isAvailable;
+
+        internal bool IsAvailable(UserData userData, Item item)
+        {
+            return isAvailable.Invoke()
+            && (PriceType == PriceType.Unlockable
+                ? (!userData.OwnedItems.Owns(item))
+                : (PriceType == PriceType.Collectible ? true : false));
+        }
 
         internal static ItemPrice Unavailable
         {

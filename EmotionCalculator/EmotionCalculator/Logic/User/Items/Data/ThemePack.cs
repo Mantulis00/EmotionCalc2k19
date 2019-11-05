@@ -58,7 +58,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 
         public Item ToItem()
         {
-            return new Item(Name, Description, ItemType.ThemePack);
+            return new Item(Name, Description, ItemType.Theme);
         }
     }
 }

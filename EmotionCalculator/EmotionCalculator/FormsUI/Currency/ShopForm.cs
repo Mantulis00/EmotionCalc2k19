@@ -99,7 +99,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
                         informationLabel.Text = selectedItem.Item.Description;
 
-                        if (selectedItem.ItemPrice.Available)
+                        if (selectedItem.Available)
                         {
                             purchaseButton.Enabled = true;
                             ChangeErrorText(string.Empty, false);

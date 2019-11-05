@@ -17,13 +17,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         internal IEnumerable<ThemePack> ThemePacks
         {
             get =>
-                ThemePackManager.ThemePacks.Where(tuple => Own(tuple.ToItem()));
+                ThemePackManager.ThemePacks.Where(tuple => Owns(tuple.ToItem()));
         }
 
         internal IEnumerable<SongPack> SongPacks
         {
             get =>
-                SongPackManager.SongPacks.Where(tuple => Own(tuple.ToItem()));
+                SongPackManager.SongPacks.Where(tuple => Owns(tuple.ToItem()));
         }
 
         internal OwnedItems()
@@ -55,7 +55,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        internal bool Own(Item item)
+        internal bool Owns(Item item)
         {
             return itemCollection.ContainsKey(item) && itemCollection[item] > 0;
         }

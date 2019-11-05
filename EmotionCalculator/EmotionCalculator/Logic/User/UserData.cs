@@ -66,14 +66,14 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         {
             var freeThemeItem = ThemePackManager.GetItemByPack(ThemePackManager.ThemePacks.First());
 
-            if (!OwnedItems.Own(freeThemeItem))
+            if (!OwnedItems.Owns(freeThemeItem))
             {
                 OwnedItems.AddItem(freeThemeItem);
             }
 
             var freeSongItem = SongPackManager.GetItemByPack(SongPackManager.SongPacks.First());
 
-            if (!OwnedItems.Own(freeSongItem))
+            if (!OwnedItems.Owns(freeSongItem))
             {
                 OwnedItems.AddItem(freeSongItem);
             }

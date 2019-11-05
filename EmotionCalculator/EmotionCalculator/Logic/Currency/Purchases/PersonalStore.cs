@@ -39,7 +39,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         internal IEnumerable<PersonalPurchase> GetPersonalPurchases()
         {
-            return GetAllPurchases().Where(pp => pp.ItemPrice.Available);
+            return GetAllPurchases().Where(pp => pp.Available);
         }
     }
 }

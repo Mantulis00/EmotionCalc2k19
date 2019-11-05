@@ -1,5 +1,4 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.User;
-using EmotionCalculator.EmotionCalculator.Logic.User.Items;
 using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,13 +34,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
         {
             var item = ThemePackManager.GetItemByPack(SelectedTheme);
 
-            if (!userData.OwnedItems.Own(item))
+            if (!userData.OwnedItems.Owns(item))
             {
-                var newSelectedThemeItem = userData.OwnedItems.ItemCollection
-                    .FirstOrDefault(colItem => colItem.Key.ItemType == ItemType.ThemePack
-                    && userData.OwnedItems.Own(colItem.Key)).Key;
-
-                SelectedTheme = ThemePackManager.GetPackByItem(newSelectedThemeItem);
+                SelectedTheme = userData.OwnedItems.ThemePacks.First();
             }
 
             Save();

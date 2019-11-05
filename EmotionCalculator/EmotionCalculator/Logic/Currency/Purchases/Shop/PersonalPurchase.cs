@@ -11,13 +11,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
         internal bool Available
         {
             get
-            {
-                return ItemPrice.Available
-                    && (ItemPrice.PriceType == PriceType.Unlockable
-                    ? (!userData.OwnedItems.ItemCollection.ContainsKey(Item)
-                    || userData.OwnedItems.ItemCollection[Item] == 0)
-                    : (ItemPrice.PriceType == PriceType.Collectible ? true : false));
-            }
+                => ItemPrice.IsAvailable(userData, Item);
         }
         internal PersonalPurchase(UserData userData, Item item, ItemPrice itemPrice)
         {

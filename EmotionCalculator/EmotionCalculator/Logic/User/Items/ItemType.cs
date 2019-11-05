@@ -2,8 +2,8 @@
 {
     enum ItemType
     {
-        ThemePack,
-        SongPack,
+        Theme,
+        Song,
         Hat,
         Item,
         Skin,

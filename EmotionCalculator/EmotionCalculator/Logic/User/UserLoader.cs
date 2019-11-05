@@ -83,9 +83,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         {
             switch (itemType)
             {
-                case ItemType.ThemePack:
+                case ItemType.Theme:
                     return ThemePackManager.GetItemByPack(ThemePackManager.GetPackByName(name));
-                case ItemType.SongPack:
+                case ItemType.Song:
                     return SongPackManager.GetItemByPack(SongPackManager.GetPackByName(name));
                 case ItemType.Hat:
                     break;

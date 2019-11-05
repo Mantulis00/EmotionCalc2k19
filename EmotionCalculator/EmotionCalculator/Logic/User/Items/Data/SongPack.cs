@@ -25,7 +25,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 
         public Item ToItem()
         {
-            return new Item(Name, Description, ItemType.SongPack);
+            return new Item(Name, Description, ItemType.Song);
         }
 
         public override bool Equals(object obj)

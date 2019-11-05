@@ -82,7 +82,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
         private static void AddRandomUnownedThemePack(UserData userData, out string rewardString)
         {
             var unownedPacks = ThemePackManager.ThemePacks
-                .Where(pack => !userData.OwnedItems.Own(pack.ToItem()));
+                .Where(pack => !userData.OwnedItems.Owns(pack.ToItem()));
 
             if (unownedPacks.Count() != 0)
             {
@@ -149,7 +149,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
             if (lootPowers.ContainsKey(LootType.ThemePack))
             {
                 if (ThemePackManager.ThemePacks.Count() == userData.OwnedItems.ItemCollection
-                    .Count(pair => pair.Key.ItemType == ItemType.ThemePack && pair.Value > 0))
+                    .Count(pair => pair.Key.ItemType == ItemType.Theme && pair.Value > 0))
                     lootPowers.Remove(LootType.ThemePack);
             }
         }
