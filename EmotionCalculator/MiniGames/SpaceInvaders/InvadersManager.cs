@@ -32,8 +32,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             this.MainClock = MainClock;
 
             Invaders = GenerateInvaders(InvadersBones);
-            
-            InvadersSpeed = 5;
+
+            InvadersSpeed = (42 - Invaders.Count ) / 4;
             InvaderSize = 20;
             MissleSpeed = 15;
             MissleLive = false;
@@ -70,7 +70,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             CheckGameOver(main);
             missle = ColiderCheck(missle);
 
-        
+
+
             foreach(var invader in Invaders)
             {
                 invader.InvaderInfo.Left += InvadersSpeed;
@@ -199,8 +200,17 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         internal void RemoveInvader(SInvaders invader)
         {
-            if (InvadersSpeed > 0) InvadersSpeed++;
-            else if (InvadersSpeed < 0) InvadersSpeed--;
+            if (InvadersSpeed > 0)
+            {
+                if(Invaders.Count <=5) InvadersSpeed+=2;
+                else InvadersSpeed ++;
+            }
+           
+            else if (InvadersSpeed < 0)
+            {
+                if (Invaders.Count <= 5) InvadersSpeed -= 2;
+                else InvadersSpeed--;
+            }
 
             invader.InvaderInfo.Dispose();
             Invaders.Remove(invader);
