@@ -110,10 +110,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                             ChangeErrorText("The item is unavailable.", false);
                         }
                     }
-                    else
-                    {
-                        informationLabel.Text = BaseInformationMessage;
-                    }
                 };
         }
 
