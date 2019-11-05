@@ -39,8 +39,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
         {
             var item = ConsumableManager.GetItemByType(consumableType);
 
-            if (ownedItems.ItemCollection.ContainsKey(item)
-                && ownedItems.ItemCollection[item] - amount >= 0)
+            if (ownedItems[item] - amount >= 0)
             {
                 ownedItems.AddItems(item, -amount);
                 return OperationStatus.Successful;

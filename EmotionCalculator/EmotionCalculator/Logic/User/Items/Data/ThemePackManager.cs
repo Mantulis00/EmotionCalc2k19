@@ -1,6 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -56,6 +55,16 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
                 Color.FromArgb(255, 255, 255, 255),
                 Color.FromArgb(255, 122, 0, 63)),
             new ItemPrice(CurrencyType.JoyCoin, 250, PriceType.Unlockable)),
+
+            (new ThemePack("Minecraft", "Insane fan art!",
+                Properties.Resources.backgroundMc,
+                Color.FromArgb(180, 255, 255, 255),
+                Color.FromArgb(60, 255, 255, 255),
+                Color.FromArgb(220, 50, 255, 50),
+                Color.FromArgb(255, 255, 255, 255),
+                Color.FromArgb(255, 0, 0, 0)),
+            new ItemPrice(CurrencyType.JoyCoin, 500, PriceType.Unlockable,
+                lootDropType: LootDropType.Never)),
         };
 
         internal static IEnumerable<ThemePack> ThemePacks
@@ -87,18 +96,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
         internal static ThemePack GetPackByName(string name)
         {
             return ThemePacks.FirstOrDefault(pack => pack.Name == name);
-        }
-
-        internal static Func<bool> GetAvailabilityCondition(ThemePack themePack)
-        {
-            if (themePack.Name == "Brexit")
-            {
-                return () => false;
-            }
-            else
-            {
-                return () => true;
-            }
         }
     }
 }

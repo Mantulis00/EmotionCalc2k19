@@ -125,11 +125,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
             foreach (ItemType itemType in Enum.GetValues(typeof(ItemType)))
             {
-                var pairs = ownedItems.ItemCollection.Where(pair => pair.Key.ItemType == itemType);
+                var pairs = ownedItems.Items.Where(pair => pair.Item.ItemType == itemType);
 
                 foreach (var pair in pairs)
                 {
-                    strings.Add(string.Join(":", pair.Key.Name.ToString(), pair.Value.ToString()));
+                    strings.Add(string.Join(":", pair.Item.Name.ToString(), pair.Count.ToString()));
                 }
 
                 document.SaveValueToNode(GetItemName(itemType), string.Join(",", strings));

@@ -2,7 +2,6 @@
 using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
@@ -10,7 +9,15 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
     {
         private readonly OwnedItems ownedItems;
 
-        internal ReadOnlyDictionary<Item, int> ItemCollection { get => ownedItems.ItemCollection; }
+        internal IEnumerable<(Item Item, int Count)> Items
+        {
+            get => ownedItems.Items;
+        }
+
+        internal int this[Item item]
+        {
+            get => ownedItems[item];
+        }
 
         internal IEnumerable<ThemePack> ThemePacks
         {

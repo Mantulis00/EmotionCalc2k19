@@ -2,7 +2,6 @@
 using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
@@ -10,7 +9,29 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
     class OwnedItems
     {
         private readonly Dictionary<Item, int> itemCollection;
-        internal ReadOnlyDictionary<Item, int> ItemCollection { get => new ReadOnlyDictionary<Item, int>(itemCollection); }
+
+        internal int this[Item item]
+        {
+            get
+            {
+                if (itemCollection.ContainsKey(item))
+                {
+                    return itemCollection[item];
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
+        internal IEnumerable<(Item Item, int Count)> Items
+        {
+            get
+            {
+                return itemCollection.Select(item => (item.Key, item.Value));
+            }
+        }
 
         internal event EventHandler ItemsChanged;
 
@@ -62,7 +83,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         internal int OwnsNumberOfType(ItemType itemType)
         {
-            return ItemCollection.Count(pair => pair.Key.ItemType == itemType && pair.Value > 0);
+            return Items.Count(item => item.Item.ItemType == itemType && item.Count > 0);
         }
 
         internal void Refresh()

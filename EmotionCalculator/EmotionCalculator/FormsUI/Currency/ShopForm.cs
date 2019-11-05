@@ -81,13 +81,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 {
                     ReadOnlyUserData readOnly = monthManager.ReadOnlyUserData;
 
-                    var item = ConsumableManager.GetItemByType(ConsumableType.BasicLootBox);
-                    if (readOnly.OwnedItems.ItemCollection.ContainsKey(item))
-                        lootBoxAmount.Text = readOnly.OwnedItems.ItemCollection[item].ToString();
+                    var cons = ConsumableManager.GetItemByType(ConsumableType.BasicLootBox);
 
-                    item = ConsumableManager.GetItemByType(ConsumableType.PremiumLootBox);
-                    if (readOnly.OwnedItems.ItemCollection.ContainsKey(item))
-                        premiumLootBoxAmount.Text = readOnly.OwnedItems.ItemCollection[item].ToString();
+                    lootBoxAmount.Text = readOnly.OwnedItems[cons].ToString();
+
+                    cons = ConsumableManager.GetItemByType(ConsumableType.PremiumLootBox);
+
+                    premiumLootBoxAmount.Text = readOnly.OwnedItems[cons].ToString();
                 };
 
             listBox.SelectedValueChanged +=

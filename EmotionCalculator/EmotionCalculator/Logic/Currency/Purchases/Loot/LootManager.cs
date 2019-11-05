@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop;
+using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Logic.User.Items;
 using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
@@ -30,11 +31,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
             { LootType.Emotion, 10},
         };
 
-        public static void OpenLootBox(ConsumableType consumableType, UserData userData, out string rewardString)
+        public static void OpenLootBox(ConsumableType consumableType, UserData userData,
+            PersonalStore personalStore, out string rewardString)
         {
             bool premium = consumableType == ConsumableType.PremiumLootBox;
 
-            LootType lootType = GetLootType(userData, premium ? PremiumLootBoxPowers : LootBoxPowers);
+            LootType lootType = GetLootType(personalStore, premium ? PremiumLootBoxPowers : LootBoxPowers);
 
             switch (lootType)
             {
@@ -49,7 +51,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
                     AddRandomEmotion(userData, premium ? GetRandomValue(7, 13) : GetRandomValue(1, 5), out rewardString);
                     break;
                 case LootType.ThemePack:
-                    AddRandomUnownedThemePack(userData, out rewardString);
+                    AddRandomUnownedThemePack(userData, personalStore, out rewardString);
                     break;
             }
         }
@@ -79,17 +81,20 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
                 return 0;
         }
 
-        private static void AddRandomUnownedThemePack(UserData userData, out string rewardString)
+        private static void AddRandomUnownedThemePack(UserData userData, PersonalStore personalStore, out string rewardString)
         {
-            var unownedPacks = ThemePackManager.ThemePacks
-                .Where(pack => !userData.OwnedItems.Owns(pack.ToItem()));
+            var unownedPacks = personalStore.GetPersonalPurchases()
+                .Where(purchase => purchase.Item.ItemType == ItemType.Theme
+                    && (purchase.ItemPrice.LootDropType == LootDropType.Always
+                    || (purchase.ItemPrice.LootDropType == LootDropType.WhenAvailable && purchase.Available)))
+                .Select(purchase => purchase.Item);
 
             if (unownedPacks.Count() != 0)
             {
-                var pack = unownedPacks.ElementAt(Random.Next(0, unownedPacks.Count() - 1));
-                userData.OwnedItems.AddItem(ThemePackManager.GetItemByPack(pack));
+                var selectedPack = unownedPacks.ElementAt(Random.Next(0, unownedPacks.Count() - 1));
+                userData.OwnedItems.AddItem(selectedPack);
 
-                rewardString = $"{pack.Name} Theme Pack.";
+                rewardString = $"{selectedPack.Name} Theme Pack.";
             }
             else
             {
@@ -118,9 +123,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
             rewardString = $"{amount} of emotion '{emotion.ToString()}'";
         }
 
-        private static LootType GetLootType(UserData userData, Dictionary<LootType, int> lootPowers)
+        private static LootType GetLootType(PersonalStore personalStore, Dictionary<LootType, int> lootPowers)
         {
-            RemoveUnavailableValues(userData, lootPowers);
+            RemoveUnavailableValues(personalStore, lootPowers);
 
             int totalPower = 0;
             lootPowers.ToList().ForEach(pair => totalPower += pair.Value);
@@ -139,19 +144,19 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Loot
             return LootType.Coins;
         }
 
-        private static void RemoveUnavailableValues(UserData userData, Dictionary<LootType, int> lootPowers)
+        private static void RemoveUnavailableValues(PersonalStore personalStore, Dictionary<LootType, int> lootPowers)
         {
-            if (lootPowers.ContainsKey(LootType.Song))
-            {
-                lootPowers.Remove(LootType.Song);
-            }
+            var droppableItems = personalStore.GetPersonalPurchases().Where(purchase => purchase.ItemPrice.LootDropType == LootDropType.Always
+                || purchase.ItemPrice.LootDropType == LootDropType.WhenAvailable && purchase.Available);
 
-            if (lootPowers.ContainsKey(LootType.ThemePack))
-            {
-                if (ThemePackManager.ThemePacks.Count() == userData.OwnedItems.ItemCollection
-                    .Count(pair => pair.Key.ItemType == ItemType.Theme && pair.Value > 0))
-                    lootPowers.Remove(LootType.ThemePack);
-            }
+            var filteredItems = droppableItems.Where(item => new ItemType[] { ItemType.Theme, ItemType.Song }.Contains(item.Item.ItemType))
+                .Select(item => item.Item);
+
+            if (!filteredItems.Any(item => item.ItemType == ItemType.Theme))
+                lootPowers.Remove(LootType.ThemePack);
+
+            if (!filteredItems.Any(item => item.ItemType == ItemType.Song))
+                lootPowers.Remove(LootType.Song);
         }
     }
 }

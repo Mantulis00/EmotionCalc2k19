@@ -29,7 +29,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 
             if (status == OperationStatus.Successful)
             {
-                LootManager.OpenLootBox(consumableType, userData, out rewardString);
+                LootManager.OpenLootBox(consumableType, userData, PersonalStore, out rewardString);
             }
             else
             {
