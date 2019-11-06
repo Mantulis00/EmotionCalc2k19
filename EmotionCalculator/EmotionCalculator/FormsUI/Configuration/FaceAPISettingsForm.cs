@@ -40,7 +40,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             {
                 FaceAPIKey updatedKey = new FaceAPIKey(subscriptionKeyTextBox.Text, apiEndpointTextBox.Text);
 
-                faceAPIRequester.apiKey = updatedKey;
+                faceAPIRequester.APIKey = updatedKey;
                 FaceAPIConfig.SaveConfig(updatedKey);
 
                  Close();

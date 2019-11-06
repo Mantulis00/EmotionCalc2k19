@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmotionCalculator.EmotionCalculator.FormsUI;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,62 +11,211 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 {
      class InvadersManager
     {
-        private int InvadersLenght, InvadersHeight, InvadersSpacer;
-        private int InvadersStartX, InvadersStartY, InvaderSize;
 
-        private List<SInvaders> Invaders { get; }
-        internal InvadersManager(PictureBox grapX)
+        private int  InvaderSize;
+
+        private int InvadersSpeed, InvaderHeightReductor;
+        private int MissleSpeed;
+        private int score;
+       public bool MissleLive {  get; private set; }
+
+        internal System.Windows.Forms.Timer MainClock { get; }
+
+        private List<SInvaders> Invaders;
+
+        private PictureBox missle = null;
+
+        PictureBox grapX;
+        internal InvadersManager(PictureBox grapX, List<PictureBox> InvadersBones, System.Windows.Forms.Timer MainClock)
         {
-            Invaders = new List<SInvaders>();
+            this.grapX = grapX;
+            this.MainClock = MainClock;
+
+            Invaders = GenerateInvaders(InvadersBones);
             
-            
+            InvadersSpeed = 5;
             InvaderSize = 20;
-            InvadersSpacer = 2 * InvaderSize;
+            MissleSpeed = 15;
+            MissleLive = false;
+
+           
 
 
-            InvadersStartX = 10;
-            InvadersStartY = 10;
 
-            InvadersLenght = InvadersStartX + 5 * InvadersSpacer;
-            InvadersHeight = InvadersStartY + 3 * InvadersSpacer;
-
-            GenerateInvaders(grapX);
 
         }
 
-        private void GenerateInvaders(PictureBox grapX)
+        internal void GenerateMissle(Point location)
         {
-            for (int y = InvadersStartY; y < InvadersHeight; y += InvadersSpacer)
+            missle = new PictureBox();
+            missle.Size = new Size(InvaderSize, InvaderSize);
+            missle.Location = new Point(location.X+InvaderSize/2, location.Y);
+            missle.Image = Properties.Resources.emojiFire;
+            missle.SizeMode = PictureBoxSizeMode.StretchImage;
+            missle.BackColor = Color.Transparent;
+            missle.Visible = true;
+            missle.BringToFront();
+
+            
+
+            grapX.Controls.Add(missle);
+        }
+
+
+
+        internal void UpdateInvaders(SpaceInvadersMain main)
+        {
+            UpdateMissle();
+            CheckInvaders();
+            CheckGameOver(main);
+            missle = ColiderCheck(missle);
+
+        
+            foreach(var invader in Invaders)
             {
-                for (int x = InvadersStartX; x < InvadersLenght; x += InvadersSpacer)
+                invader.InvaderInfo.Left += InvadersSpeed;
+                if (InvaderHeightReductor != 0)
                 {
-                    AddInvader(x, y, grapX);
+                    invader.InvaderInfo.Top += InvaderHeightReductor;
                 }
+
+            }
+
+            InvaderHeightReductor = 0;
+        }
+
+        private void CheckInvaders()
+        {
+            foreach (var invader in Invaders)
+            {
+                if (invader.InvaderInfo.Location.X + InvadersSpeed + InvaderSize > grapX.Size.Width ||
+                   invader.InvaderInfo.Location.X + InvadersSpeed < 0)
+                {
+                    InvaderHeightReductor = Math.Abs(InvadersSpeed);
+                    InvadersSpeed *= -1;
+                    break;
+                }
+            }
+
+            
+
+        }
+
+
+        private void CheckGameOver(SpaceInvadersMain main)
+        {
+            if (Invaders.Count == 0)
+            {
+              
+                main.GameOver(score);
+              
+            }
+            else if (Invaders[Invaders.Count-1].InvaderInfo.Location.Y >= main.Player.Location.Y - InvaderSize )
+            {
+                DisposeInvaders();
+
+
+                main.GameOver(0);
+            }
+
+        }
+
+        private PictureBox ColiderCheck(PictureBox missle)
+        {
+            if (missle != null)
+            {
+                foreach (var invader in Invaders.ToList())
+                {
+                    if (missle.Location.X - invader.InvaderInfo.Size.Width  < invader.InvaderInfo.Location.X
+                        && missle.Location.X + invader.InvaderInfo.Size.Width  > invader.InvaderInfo.Location.X
+                        )
+                    {
+                        if (missle.Location.Y - invader.InvaderInfo.Size.Height  < invader.InvaderInfo.Location.Y
+                        && missle.Location.Y + invader.InvaderInfo.Size.Height  > invader.InvaderInfo.Location.Y
+                        )
+                        {
+                            missle.Dispose();
+                            missle = null;
+                            MissleLive = false;
+
+                            RemoveInvader(invader);
+
+
+                            break;
+                           
+                        }
+                            
+                    }
+                }
+            }
+            return missle;
+        }
+
+
+
+
+        private void UpdateMissle()
+        {
+            if (missle != null)
+            {
+                MissleLive = true;
+                missle.Location = new Point(missle.Location.X, missle.Location.Y - MissleSpeed);
+                CheckMissle();
             }
         }
 
-
-
-        private void AddInvader(int locationX, int locationY, PictureBox grapX)
+        private void CheckMissle()
         {
-            SInvaders Invader = new SInvaders();
-            Invader.InvaderInfo = new PictureBox();
-            Invader.InvaderInfo.Size = new Size(InvaderSize, InvaderSize);
-            Invader.InvaderInfo.Location = new System.Drawing.Point(locationX, locationY);
-            Invader.InvaderInfo.BackColor = Color.Red;
-            Invader.InvaderInfo.Visible = true;
-            Invader.InvaderInfo.BringToFront();
-            Invader.alive = true;
-            grapX.Controls.Add(Invader.InvaderInfo);
-
-            // if invader alive
-
-            Invaders.Add(Invader);
+            if (missle.Location.Y < -1*MissleSpeed)
+            {
+                MissleLive = false;
+                missle.Dispose();
+                missle = null;
+            }
+               
         }
 
-        internal void RemoveInvader(int InvaderN)
+
+       
+
+
+        private List<SInvaders> GenerateInvaders(List<PictureBox> invaders)
         {
-            Invaders.RemoveAt(InvaderN);
+            List<SInvaders> InvadersAI = new List<SInvaders>();
+            
+            foreach(var i in invaders)
+            {
+                SInvaders invader = new SInvaders();
+                invader.alive = true;
+                invader.InvaderInfo = i;
+                InvadersAI.Add(invader);
+            }
+
+            return InvadersAI;
+        }
+
+
+
+
+        internal void RemoveInvader(SInvaders invader)
+        {
+            if (InvadersSpeed > 0) InvadersSpeed++;
+            else if (InvadersSpeed < 0) InvadersSpeed--;
+
+            invader.InvaderInfo.Dispose();
+            Invaders.Remove(invader);
+            invader.InvaderInfo = null;
+
+            score++;
+        }
+
+        internal void DisposeInvaders()
+        {
+            foreach (var i in Invaders.ToList())
+            {
+                i.InvaderInfo.Dispose();
+                Invaders.Remove(i);
+            }
         }
 
 

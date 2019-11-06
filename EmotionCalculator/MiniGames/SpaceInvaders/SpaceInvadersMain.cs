@@ -2,20 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.MiniGames.SpaceInvaders
 {
     class SpaceInvadersMain
     {
-        private PictureBox GrapX;
-        private PictureBox Player;
-        private InvadersManager invaderManager;
-        internal PlayerInputs playerIManager {get;}
 
+        //private PictureBox GrapX;
+        internal PictureBox Player { get; set; }
+        private InvadersManager invaderManager;
+        internal PlayerInputs playerIManager { get; set; }
+
+        private AnimationManager animationManager;
+
+        // two different clocks, one for animations other for game
+        System.Windows.Forms.Timer MainClock, AnimationClock;
+
+        BaseForm baseForm;
 
         private List<SInvaders> Invaders;
 
@@ -23,54 +27,92 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
 
 
-        internal SpaceInvadersMain(PictureBox grapX)
+        internal SpaceInvadersMain(PictureBox grapX, BaseForm baseForm)
         {
-            GrapX = grapX;
-            
+            // GrapX = grapX;
+            this.baseForm = baseForm;
 
-            invaderManager = new InvadersManager(grapX);
-
-
-            SetupBackGround(grapX);
-
+            // SetupBackGround(grapX);
             SetupPlayer(grapX);
-            playerIManager = new PlayerInputs(Player);
-            // Invaders
+            SetupTimer();
 
 
-            //fps
-            fps = 24;
+            //InvadersAIs are created and their locations are set in animationManager
+            animationManager = new AnimationManager(grapX, AnimationClock);
+            //InvadersManager refreshes invaders locations, checks if missle hits them, overall handles invaders and missles
+            invaderManager = new InvadersManager(grapX, animationManager.AnimationElements, MainClock);
+            //playerManager manages player, reads its inputs
+            playerIManager = new PlayerInputs(Player, invaderManager);
         }
 
-        private void SetupBackGround(PictureBox grapX)
+        private void SetupTimer()
         {
-            GrapX = new PictureBox();
-            GrapX.Image = grapX.Image;
-            GrapX.Size = new Size(grapX.Size.Width, grapX.Size.Height);
-            GrapX.SizeMode = PictureBoxSizeMode.StretchImage;
+            MainClock = new System.Windows.Forms.Timer();
+            MainClock.Interval = 35;
+            MainClock.Tick += StartClock;
+
+            AnimationClock = new System.Windows.Forms.Timer();
+            AnimationClock.Interval = 10;
+            AnimationClock.Tick += StartAnimationOnClock;
+
+        }
+
+        public void StartAnimation()
+        {
+            AnimationClock.Start();
+        }
+
+        public void StopAnimation()
+        {
+            AnimationClock.Stop();
+        }
+
+        private void StartAnimationOnClock(object sender, EventArgs e)
+        {
+            animationManager.StartAnimation(this);
+        }
+
+        public void StartTimer()
+        {
+
+
+            MainClock.Start();
+        }
+
+        private void StartClock(object sender, EventArgs e)
+        {
+            invaderManager.UpdateInvaders(this);
         }
 
 
-        public void SetupPlayer(PictureBox grapX)
+        private void SetupPlayer(PictureBox grapX)
         {
             Player = new PictureBox();
             Player.Size = new System.Drawing.Size(40, 40);
             Player.Location = new System.Drawing.Point(grapX.Width / 2, 8 * grapX.Height / 10);
 
             Player.SizeMode = grapX.SizeMode;
-            Player.Image = grapX.Image;
+            Player.Image = Properties.Resources.emojiCringe;
+            Player.BackColor = Color.Transparent;
 
             Player.BringToFront();
             Player.Visible = true;
 
             grapX.Controls.Add(Player);
 
-            //GrapX.Controls.Add(Player);
+
         }
 
-        
+        public void GameOver(int score)
+        {
+            MainClock.Stop();
+            baseForm.AuxThread = null;
 
+            Player.Dispose();
+            Player = null;
 
-
+            baseForm.MainManager.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
+            baseForm.MainManager.MonthManager.Refresh();
+        }
     }
 }

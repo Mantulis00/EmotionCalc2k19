@@ -1,5 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 {
-    class CalendarUpdater : IMonthUpdatable
+    class CalendarUpdater
     {
         private IReadOnlyList<PictureBox> cells;
         private IReadOnlyList<PictureBox> emojis;
@@ -28,14 +29,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 
             cells = CalendarGenerator.GenerateCells(backgroundBox, settingsManager.SelectedTheme.SecondaryColor).ToList();
 
-           
+
             numbers = CalendarGenerator.GenerateNumberLabels(cells).ToList();
             emotionLabels = CalendarGenerator.GenerateEmotionLabels(cells).ToList();
 
             emojis = CalendarGenerator.GenerateEmojis(cells).ToList();
         }
 
-        public void Update(MonthEmotions monthEmotions, DateTime newDateTime)
+        public void Update(ReadOnlyMonthEmotions monthEmotions, DateTime newDateTime)
         {
             ThemePack selectedTheme = settingsManager.SelectedTheme;
 
@@ -61,26 +62,24 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             for (int i = 0; i < DateTime.DaysInMonth(newDateTime.Year, newDateTime.Month); i++)
             {
                 var cell = cells[cellNumber + i];
+                var number = numbers[cellNumber + i];
 
                 if (i + 1 == newDateTime.Day)
                 {
                     cell.BackColor = selectedTheme.FocusColor;
+                    number.ForeColor = selectedTheme.FocusTextColor;
+
                 }
                 else
                 {
                     cell.BackColor = selectedTheme.PrimaryColor;
+                    number.ForeColor = selectedTheme.PrimaryTextColor;
                 }
 
-                var number = numbers[cellNumber + i];
-
                 number.Text = (i + 1).ToString();
-                number.ForeColor = selectedTheme.TextColor;
-
-
                 number.Visible = true;
 
                 SetEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
-                
             }
 
             SetCellVisibility(cells);
@@ -88,45 +87,42 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
         }
 
 
-        private void SetEmotions(DateTime newDateTime, MonthEmotions monthEmotions, 
-            ThemePack selectedTheme, int cellNumber, 
-            Label number, int i)
+        private void SetEmotions(DateTime newDateTime, ReadOnlyMonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
         {
-                var emotionLabel = emotionLabels[cellNumber + i];
-                var emoji = emojis[cellNumber + i];
+            var emotionLabel = emotionLabels[cellNumber + i];
+            var emoji = emojis[cellNumber + i];
 
-                if (monthEmotions[i + 1] == Emotion.NotSet)
+            if (monthEmotions[i + 1] == Emotion.NotSet)
+            {
+                if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                 {
-                    if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
-                    {
-                         emoji.Visible = false;
-                     }
-                    else
-                    {
-                         emoji.Visible = false;
-                         emotionLabel.Text = string.Empty;
-                    }
-              
+                    emoji.Visible = false;
                 }
                 else
                 {
-                    if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
-                    {
-                         emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
-                         emoji.BringToFront();
-                         emoji.Visible = true;
-                     }
-                    else
-                    {
-                        emoji.Visible = false;
-                        emotionLabel.Text = monthEmotions[i + 1].ToString();
-                    }
-
+                    emoji.Visible = false;
+                    emotionLabel.Text = string.Empty;
                 }
 
-                emotionLabel.ForeColor = selectedTheme.TextColor;
-                emotionLabel.Visible = true;
-            
+            }
+            else
+            {
+                if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
+                {
+                    emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
+                    emoji.BringToFront();
+                    emoji.Visible = true;
+                }
+                else
+                {
+                    emoji.Visible = false;
+                    emotionLabel.Text = monthEmotions[i + 1].ToString();
+                }
+
+            }
+
+            emotionLabel.ForeColor = selectedTheme.PrimaryTextColor;
+            emotionLabel.Visible = true;
         }
 
         private void SetCellVisibility(IReadOnlyList<PictureBox> cells)
@@ -170,8 +166,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             {
                 emoji.Visible = false;
             }
-
-
         }
     }
 }

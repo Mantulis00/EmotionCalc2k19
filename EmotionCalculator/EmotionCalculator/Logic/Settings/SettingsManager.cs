@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
     class SettingsManager
     {
-        private Dictionary<SettingType, SettingStatus> settings;
+        private readonly Dictionary<SettingType, SettingStatus> settings;
 
         private ThemePack _selectedTheme;
         internal ThemePack SelectedTheme
@@ -17,7 +20,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             }
         }
 
-        private ISettingsLogger settingsLogger;
+        private readonly ISettingsLogger settingsLogger;
 
         internal SettingsManager(ISettingsLogger settingsLogger)
         {
@@ -25,6 +28,18 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 
             SelectedTheme = settingsLogger.LoadTheme();
             settings = settingsLogger.LoadSettings();
+        }
+
+        public void ValidateSelections(UserData userData)
+        {
+            var item = ThemePackManager.GetItemByPack(SelectedTheme);
+
+            if (!userData.OwnedItems.Owns(item))
+            {
+                SelectedTheme = userData.OwnedItems.ThemePacks.First();
+            }
+
+            Save();
         }
 
         internal SettingStatus this[SettingType settingType]

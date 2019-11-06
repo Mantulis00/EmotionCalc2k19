@@ -5,7 +5,7 @@ namespace EmotionCalculator.EmotionCalculator.Tools.API.Face
 {
     class FaceAPIManager : IAPIManager
     {
-        private FaceAPIRequester faceAPIRequester;
+        private readonly FaceAPIRequester faceAPIRequester;
 
         internal FaceAPIManager()
         {

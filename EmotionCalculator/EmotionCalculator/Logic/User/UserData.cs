@@ -1,8 +1,15 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
+using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
+    //Visible for inner logic
     class UserData
     {
         internal int JoyCoins { get; private set; }
@@ -10,6 +17,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         internal int DailyStreak { get; private set; }
 
         private DateTime _lastLogin;
+
         internal DateTime LastLogin
         {
             get
@@ -22,12 +30,53 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             }
         }
 
-        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin)
+        private readonly Dictionary<Emotion, int> emotionCount;
+        internal ReadOnlyDictionary<Emotion, int> EmotionCount
+        {
+            get
+            {
+                return new ReadOnlyDictionary<Emotion, int>(emotionCount);
+            }
+        }
+
+        internal OwnedItems OwnedItems { get; }
+
+        public event EventHandler CurrencyChanged;
+
+        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin,
+            IEnumerable<KeyValuePair<Emotion, int>> emotionPairs, OwnedItems ownedItems)
         {
             JoyCoins = joyCoins;
             JoyGems = joyGems;
             DailyStreak = dailyStreak;
             LastLogin = new DateTime(lastLogin.Year, lastLogin.Month, lastLogin.Day);
+
+            emotionCount = new Dictionary<Emotion, int>();
+
+            emotionPairs.ToList().ForEach(pair => emotionCount.Add(pair.Key, pair.Value));
+
+            OwnedItems = ownedItems;
+
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
+
+            GetFreeItems();
+        }
+
+        private void GetFreeItems()
+        {
+            var freeThemeItem = ThemePackManager.GetItemByPack(ThemePackManager.ThemePacks.First());
+
+            if (!OwnedItems.Owns(freeThemeItem))
+            {
+                OwnedItems.AddItem(freeThemeItem);
+            }
+
+            var freeSongItem = SongPackManager.GetItemByPack(SongPackManager.SongPacks.First());
+
+            if (!OwnedItems.Owns(freeSongItem))
+            {
+                OwnedItems.AddItem(freeSongItem);
+            }
         }
 
         public void Login()
@@ -62,6 +111,35 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
                     JoyGems = Math.Max(JoyGems, 0);
                     break;
             }
+
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void AddCurrency(Emotion emotionType, int amount)
+        {
+            if (emotionCount.ContainsKey(emotionType))
+            {
+                emotionCount[emotionType] += amount;
+            }
+            else
+            {
+                emotionCount.Add(emotionType, amount);
+            }
+
+            emotionCount[emotionType] = Math.Max(0, emotionCount[emotionType]);
+
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void Refresh()
+        {
+            CurrencyChanged?.Invoke(this, EventArgs.Empty);
+            OwnedItems.Refresh();
+        }
+
+        internal ReadOnlyUserData AsReadOnly()
+        {
+            return new ReadOnlyUserData(this);
         }
     }
 }
