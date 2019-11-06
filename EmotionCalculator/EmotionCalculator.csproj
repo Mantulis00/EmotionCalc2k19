@@ -200,6 +200,10 @@
     <Compile Include="EmotionCalculator\Tools\API\APIParseResult.cs" />
     <Compile Include="EmotionCalculator\Tools\API\Containers\FaceData.cs" />
     <Compile Include="EmotionCalculator\Tools\Errors\ErrorLog.cs" />
+    <Compile Include="MiniGames\Snake\AppleManager.cs" />
+    <Compile Include="MiniGames\Snake\SnakeDirection.cs" />
+    <Compile Include="MiniGames\Snake\SnakeMain.cs" />
+    <Compile Include="MiniGames\Snake\SnakeManager.cs" />
     <Compile Include="MiniGames\SpaceInvaders\AnimationManager.cs" />
     <Compile Include="MiniGames\SpaceInvaders\Controls.cs" />
     <Compile Include="MiniGames\SpaceInvaders\InvadersManager.cs" />
@@ -303,6 +307,8 @@
     <None Include="Resources\britreeee.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\snake_1f40d.png" />
+    <None Include="Properties\Snake.bmp" />
     <Content Include="Resources\1.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -339,6 +345,9 @@
     <Content Include="Resources\9.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\Icon1.ico" />
+    <None Include="Resources\Image1.png" />
     <Content Include="Resources\MineCraftPhotos\1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -375,6 +384,7 @@
     <Content Include="Resources\MineCraftPhotos\9.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Snake.bmp" />
     <None Include="Resources\vu.png" />
     <None Include="Resources\yinYang.png" />
     <None Include="Resources\premiumLootbox.png" />

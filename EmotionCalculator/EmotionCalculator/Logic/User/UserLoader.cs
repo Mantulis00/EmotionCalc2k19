@@ -51,6 +51,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             }
 
             return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
+            //debug
+            //return new UserData(1000000, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
+
         }
 
         private OwnedItems LoadItems(IEnumerable<XElement> nodes)
