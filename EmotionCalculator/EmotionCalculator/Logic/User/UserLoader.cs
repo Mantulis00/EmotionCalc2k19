@@ -50,9 +50,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
                 pairs.Add(new KeyValuePair<Emotion, int>(emotion, nodes.GetNumberFromNode(EmotionCountPrefix + emotion.ToString())));
             }
 
-            //return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
+            return new UserData(joyCoins, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
             //debug
-            return new UserData(1000000, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
+            //return new UserData(1000000, joyGems, dailyStreak, lastLogin, pairs, LoadItems(nodes));
 
         }
 
