@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using EmotionCalculator.EmotionCalculator.FormsUI;
 
 namespace EmotionCalculator.MiniGames.Snake
 {
@@ -14,48 +15,23 @@ namespace EmotionCalculator.MiniGames.Snake
         internal PictureBox Canvas;
         internal SnakeManager snakeManager;
         internal Timer timer = new Timer();
-        private Image calendarBackgroundCopy;
         internal AppleManager appleManager;
+        internal BaseForm baseForm;
+        private int fps = 24;
 
-        public SnakeMain(PictureBox canvas)
+        public SnakeMain(PictureBox canvas, BaseForm baseForm)
         {
-            timer.Interval = 1000/24;
+            this.baseForm = baseForm;
+            timer.Interval = 1000/fps;
             timer.Tick += new EventHandler(GameTick);
             this.Canvas = canvas;
-            calendarBackgroundCopy = canvas.Image;
-            SetupBackGround(canvas);
-            SetupSnake(canvas);
+            snakeManager = new SnakeManager(this);
             appleManager = new AppleManager(this, snakeManager);
-        }
-        private void SetupBackGround(PictureBox canvas)
-        {
-            this.Canvas.BackColor = Color.Black;
-            this.Canvas.Image = null;
-            //this.Canvas.Size = new Size(canvas.Size.Width, canvas.Size.Height);
-            //this.Canvas.SizeMode = PictureBoxSizeMode.StretchImage;
-            //Canvas.BringToFront();
+            GameStart();
         }
 
-        public void SetupSnake(PictureBox canvas)
-        {
-            snake = new PictureBox();
-            snake.Size = new System.Drawing.Size(10, 10);
-            snake.Location = new System.Drawing.Point(canvas.Width / 2, canvas.Height / 2);
 
-            snake.SizeMode = canvas.SizeMode;
-            //snake.Image = canvas.Image;
-            snake.BackColor = System.Drawing.Color.Red;
-
-            snake.BringToFront();
-            snake.Visible = true;
-
-            canvas.Controls.Add(snake);
-            snakeManager = new SnakeManager(snake, this);
-            gameStart();
-            //GrapX.Controls.Add(snake);
-        }
-
-        private void gameStart()
+        private void GameStart()
         {
             timer.Start();
             appleManager.SpawnApple();
@@ -63,14 +39,25 @@ namespace EmotionCalculator.MiniGames.Snake
 
         private void GameTick(object sender, EventArgs e)
         {
+            if (appleManager.apple.Bounds.IntersectsWith(snakeManager.snake.Bounds))
+            {
+                if (!appleManager.SpawnApple())
+                {
+                    Stop();
+                    return;
+                }
+                snakeManager.movementSpeed += 1;
+                snakeManager.SpawnBlock();
+            }
             snakeManager.Go();
         }
 
         public void Stop()
         {
+            baseForm.snakeRunning = false;
             timer.Stop();
-            snake.Hide();
-            Canvas.Image = calendarBackgroundCopy;
+            appleManager.Stop();
+            snakeManager.Stop();
         }
     }
 }

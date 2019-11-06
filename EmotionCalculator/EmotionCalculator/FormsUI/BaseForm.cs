@@ -9,6 +9,7 @@ using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using EmotionCalculator.MiniGames.SpaceInvaders;
+using EmotionCalculator.MiniGames.Snake;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -26,9 +27,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
 
         internal SpaceInvadersMain invadersManager;
-
         internal SnakeMain snakeMain;
+
+        //internal SnakeMain snakeMain;
         internal bool snakeRunning = false;
+        internal bool invadersRunning = false;
 
 
         internal BaseForm(IAPIManager apiManager)
@@ -237,6 +240,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             invadersManager = new SpaceInvadersMain(calendarBackground, this);
         }
 
+        private void SnakeLaunch()
+        {
+            snakeMain = new SnakeMain(calendarBackground, this);
+        }
+
         //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
         {
@@ -251,11 +259,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (AuxThread == null)
+            if (snakeRunning)
+            {
+                snakeMain.snakeManager.ReadInput(e.KeyChar);
+            }
+            else if (AuxThread == null)
             {
                 StartGame(e.KeyChar);
             }
-
             else if (AuxThread != null)
             {
                 invadersManager.playerIManager.ReadInput(e.KeyChar);
@@ -265,24 +276,43 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void StartGame(char input)
         {
-            if (input == 'u') // u for emoji invaders
+            if (input == 'u' || input == 's') // u for emoji invaders, s for emoji snake
             {
                 if (MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
                 {
                     MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
                     MainManager.MonthManager.Refresh();
-                    InvadersLauch();
-
-                    AuxThread = new Thread(
-                        () =>
-                        {
-                            this.BeginInvoke((Action)delegate ()
+                    if (input == 'u')
+                    {
+                        invadersRunning = true;
+                        InvadersLauch();
+                        AuxThread = new Thread(
+                            () =>
                             {
-                                invadersManager.StartAnimation();
-                            });
-                        }
-                    );
-                    AuxThread.Start();
+                                this.BeginInvoke((Action)delegate ()
+                                {
+                                    invadersManager.StartAnimation();
+                                });
+                            }
+                        );
+                        AuxThread.Start();
+                    }
+                    else if (input == 's')
+                    {
+                        snakeRunning = true;
+                        SnakeLaunch();
+                        /*AuxThread = new Thread(
+                            () =>
+                            {
+                                this.BeginInvoke((Action)delegate ()
+                                {
+                                    invadersManager.StartAnimation();
+                                });
+                            }
+                        );
+                        AuxThread.Start();*/
+                    }
+
                 }
             }
         }
