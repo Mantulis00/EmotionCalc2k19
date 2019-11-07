@@ -48,11 +48,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         private void SetupTimer()
         {
             MainClock = new System.Windows.Forms.Timer();
-            MainClock.Interval = 35;
+            MainClock.Interval = 50;
             MainClock.Tick += StartClock;
 
             AnimationClock = new System.Windows.Forms.Timer();
-            AnimationClock.Interval = 10;
+            AnimationClock.Interval = 30;
             AnimationClock.Tick += StartAnimationOnClock;
 
         }

@@ -14,7 +14,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private int  InvaderSize;
 
-        private int InvadersSpeed, InvaderHeightReductor;
+        private int InvaderHeightReductor;
+        private double InvadersSpeed;
         private int MissleSpeed;
         private int score;
        public bool MissleLive {  get; private set; }
@@ -33,7 +34,8 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             Invaders = GenerateInvaders(InvadersBones);
 
-            InvadersSpeed = (42 - Invaders.Count ) / 4;
+            InvadersSpeed = (36 - Invaders.Count ) / 8;
+            if (InvadersSpeed < 1) InvadersSpeed = 1;
             InvaderSize = 20;
             MissleSpeed = 15;
             MissleLive = false;
@@ -74,7 +76,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             foreach(var invader in Invaders)
             {
-                invader.InvaderInfo.Left += InvadersSpeed;
+                invader.InvaderInfo.Left += (int)InvadersSpeed;
                 if (InvaderHeightReductor != 0)
                 {
                     invader.InvaderInfo.Top += InvaderHeightReductor;
@@ -92,7 +94,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                 if (invader.InvaderInfo.Location.X + InvadersSpeed + InvaderSize > grapX.Size.Width ||
                    invader.InvaderInfo.Location.X + InvadersSpeed < 0)
                 {
-                    InvaderHeightReductor = Math.Abs(InvadersSpeed);
+                    InvaderHeightReductor = Math.Abs((int)InvadersSpeed);
                     InvadersSpeed *= -1;
                     break;
                 }
@@ -167,7 +169,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private void CheckMissle()
         {
-            if (missle.Location.Y < -1*MissleSpeed)
+            if (missle.Location.Y < -missle.Size.Height)
             {
                 MissleLive = false;
                 missle.Dispose();
@@ -209,16 +211,16 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
             if (InvadersSpeed > 0)
             {
-                if (Invaders.Count <= 5) InvadersSpeed += 2;
-                else if (Invaders.Count <= 2) InvadersSpeed += 10;
-                else InvadersSpeed++;
+                if (Invaders.Count <= 5) InvadersSpeed += 1;
+                else if (Invaders.Count <= 2) InvadersSpeed += 4;
+                else InvadersSpeed+=0.4;
             }
 
             else if (InvadersSpeed < 0)
             {
-                if (Invaders.Count <= 5) InvadersSpeed -= 2;
-                else if (Invaders.Count <= 2) InvadersSpeed -= 10;
-                else InvadersSpeed--;
+                if (Invaders.Count <= 5) InvadersSpeed -= 1;
+                else if (Invaders.Count <= 2) InvadersSpeed -= 4;
+                else InvadersSpeed-=0.4;
             }
 
 

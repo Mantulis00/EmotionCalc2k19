@@ -48,6 +48,7 @@
             this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightsOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightsOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getCoins10JoyCoinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.leftButton = new System.Windows.Forms.Button();
             this.rightButton = new System.Windows.Forms.Button();
@@ -82,7 +83,6 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.fearEmotionCount = new System.Windows.Forms.Label();
-            this.getCoins10JoyCoinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gemBackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBackground)).BeginInit();
@@ -166,7 +166,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -253,6 +253,13 @@
             this.lightsOnToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.lightsOnToolStripMenuItem.Text = "Lights On - 1 Joy Coin";
             this.lightsOnToolStripMenuItem.Click += new System.EventHandler(this.LightsOnToolStripMenuItem_Click);
+            // 
+            // getCoins10JoyCoinsToolStripMenuItem
+            // 
+            this.getCoins10JoyCoinsToolStripMenuItem.Name = "getCoins10JoyCoinsToolStripMenuItem";
+            this.getCoins10JoyCoinsToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.getCoins10JoyCoinsToolStripMenuItem.Text = "Get Coins - 10 Joy Coins";
+            this.getCoins10JoyCoinsToolStripMenuItem.Click += new System.EventHandler(this.GetCoins10JoyCoinsToolStripMenuItem_Click);
             // 
             // dateTimePicker
             // 
@@ -636,18 +643,10 @@
             this.fearEmotionCount.Text = "30";
             this.fearEmotionCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // getCoins10JoyCoinsToolStripMenuItem
-            // 
-            this.getCoins10JoyCoinsToolStripMenuItem.Name = "getCoins10JoyCoinsToolStripMenuItem";
-            this.getCoins10JoyCoinsToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.getCoins10JoyCoinsToolStripMenuItem.Text = "Get Coins - 10 Joy Coins";
-            this.getCoins10JoyCoinsToolStripMenuItem.Click += new System.EventHandler(this.GetCoins10JoyCoinsToolStripMenuItem_Click);
-            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 518);
             this.ClientSize = new System.Drawing.Size(528, 551);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel3);
