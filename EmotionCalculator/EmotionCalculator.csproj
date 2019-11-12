@@ -141,6 +141,7 @@
     <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.Designer.cs">
       <DependentUpon>UrlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Threadings\GameManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\CurrencyManager.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\CurrencyType.cs" />
     <Compile Include="EmotionCalculator\Logic\Currency\DailyLoginData.cs" />
