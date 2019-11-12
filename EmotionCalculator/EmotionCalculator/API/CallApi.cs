@@ -8,5 +8,16 @@ namespace EmotionCalculator.EmotionCalculator.API
 {
     class CallApi
     {
+        public CallApi()
+        {
+            FirstAPI.Init();
+        }
+
+        public async Task LoadShop()
+        {
+            string text = await ShopApiProcessor.LoadShopInfo();
+            Console.WriteLine(text);
+        }
+
     }
 }

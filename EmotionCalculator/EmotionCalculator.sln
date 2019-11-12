@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionCalculator", "EmotionCalculator.csproj", "{81B9596F-3279-4322-A602-A5EA1515B77C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "..\service\service.csproj", "{372702DA-CBC9-48AD-AC6D-9F0F1B2CBD25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "service", "..\service\service.csproj", "{372702DA-CBC9-48AD-AC6D-9F0F1B2CBD25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F251F30-0811-4192-8BE7-6A66E8E65279}"
+	ProjectSection(SolutionItems) = preProject
+		.a11yrc = .a11yrc
+		.filenesting.json = .filenesting.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -282,6 +282,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                     AuxThread.Start();
                 }
             }
+
+            else if (input == 'e')
+            {
+               // service
+                API.CallApi ob = new API.CallApi();
+                ob.LoadShop();
+            }
+
         }
     }
 }

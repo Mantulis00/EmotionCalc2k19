@@ -7,19 +7,24 @@ using System.Threading.Tasks;
 
 namespace EmotionCalculator.EmotionCalculator.API
 {
-    class ShopApiProcessor
+    public static class ShopApiProcessor
     {
-        public async Task LoadShopInfo()
+        public static async Task<string> LoadShopInfo()
         {
             string url = "";
 
-            url = "";// 2b added
+            url = "https://localhost:44372/api/values";// 2b added
 
             using (HttpResponseMessage response = await FirstAPI.ApiClient.GetAsync(url))
             {
                 if (response.IsSuccessStatusCode)
                 {
-
+                    string shop = await response.Content.ReadAsStringAsync();
+                    return shop;
+                }
+                else
+                {
+                    throw new Exception("gg");
                 }
 
             }

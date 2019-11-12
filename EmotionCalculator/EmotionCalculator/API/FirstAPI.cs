@@ -13,7 +13,7 @@ namespace EmotionCalculator.EmotionCalculator.API
     {
         public static HttpClient ApiClient { get; set; }
 
-        public static void init()
+        public static void Init()
         {
             ApiClient = new HttpClient();
             ApiClient.DefaultRequestHeaders.Accept.Clear();

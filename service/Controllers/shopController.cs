@@ -10,12 +10,19 @@ namespace service.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        [HttpGet]
+        public string GetShopInfo()
+        {
+            return "First: 1, Second 2";
+        }
+
+        /*
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
-        }
+        }*/
 
         // GET api/values/5
         [HttpGet("{id}")]
