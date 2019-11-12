@@ -12,7 +12,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
      class InvadersManager
     {
 
-        private int  InvaderSize;
+        private int  InvaderSize, MissileSize;
 
         private int InvaderHeightReductor;
         private double InvadersSpeed;
@@ -37,6 +37,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             InvadersSpeed = (36 - Invaders.Count ) / 8;
             if (InvadersSpeed < 1) InvadersSpeed = 1;
             InvaderSize = 20;
+            MissileSize = 15;
             MissleSpeed = 15;
             MissleLive = false;
 
@@ -50,7 +51,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         internal void GenerateMissle(Point location)
         {
             missle = new PictureBox();
-            missle.Size = new Size(InvaderSize, InvaderSize);
+            missle.Size = new Size(MissileSize, MissileSize);
             missle.Location = new Point(location.X+InvaderSize/2, location.Y);
             missle.Image = Properties.Resources.emojiFire;
             missle.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -129,12 +130,12 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             {
                 foreach (var invader in Invaders.ToList())
                 {
-                    if (missle.Location.X - invader.InvaderInfo.Size.Width  < invader.InvaderInfo.Location.X
-                        && missle.Location.X + invader.InvaderInfo.Size.Width  > invader.InvaderInfo.Location.X
+                    if (missle.Location.X - missle.Size.Width < invader.InvaderInfo.Location.X
+                        && missle.Location.X + missle.Size.Width  > invader.InvaderInfo.Location.X
                         )
                     {
-                        if (missle.Location.Y - invader.InvaderInfo.Size.Height  < invader.InvaderInfo.Location.Y
-                        && missle.Location.Y + invader.InvaderInfo.Size.Height  > invader.InvaderInfo.Location.Y
+                        if (missle.Location.Y - missle.Size.Height < invader.InvaderInfo.Location.Y
+                        && missle.Location.Y + missle.Size.Height > invader.InvaderInfo.Location.Y
                         )
                         {
                             missle.Dispose();
