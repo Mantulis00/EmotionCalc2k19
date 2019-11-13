@@ -106,7 +106,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         public void GameOver(int score)
         {
             MainClock.Stop();
-            baseForm.gameManager.AuxThread = null;
+            baseForm.gameManager.Value.AuxThread = null;
 
             Player.Dispose();
             Player = null;

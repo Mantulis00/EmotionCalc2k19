@@ -22,14 +22,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         internal IAPIManager APIManager { get; private set; }
 
-        internal GameManager gameManager;
+        internal Lazy<GameManager> gameManager;
 
 
 
 
         internal BaseForm(IAPIManager apiManager)
         {
-            gameManager = new GameManager(this);
+            
 
 
             this.KeyPreview = true;
@@ -242,9 +242,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
+
+
+
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            gameManager.CheckInGameInput(e.KeyChar);
+            if (e.KeyChar == 'u')
+              gameManager = new Lazy<GameManager>(() => new GameManager(this));
+
+            gameManager.Value.CheckInGameInput(e.KeyChar);
             
 
         }
