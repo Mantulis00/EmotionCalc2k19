@@ -10,10 +10,35 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+internal delegate string GameStatus();
+
+
 namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 {
     class GameManager
     {
+      
+        public GameStatus gameStatus;
+
+        public string InEmojiInvaders()
+        {
+            string status = "";
+
+            AuxThread = null;
+            baseF.MainManager.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
+            baseF.MainManager.MonthManager.Refresh();
+
+            return status;
+        }
+
+        public string NotInGame()
+        {
+            string status = "";
+
+            return status;
+        }
+
 
         internal Thread AuxThread { get; set; }
 
@@ -26,6 +51,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
         public GameManager(BaseForm baseF)
         {
+           GameStatus gameStatus = delegate ()
+           {
+               string status = "Game manager created | no game starded";
+               return status;
+           };
+
             this.baseF = baseF;
         }
 
@@ -35,10 +66,19 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
             {
                 if (e == '1')
                 {
-                    CheckGame(e);
+                    StartInvaders();
+                    gameStatus = new GameStatus(InEmojiInvaders);
                 }
                
             }
+
+            if (e == 'e')
+            {
+                // service
+                API.CallApi ob = new API.CallApi();
+                ob.LoadShop();
+            }
+
 
             else if (AuxThread != null )
             {
@@ -55,7 +95,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
             invadersManager = new SpaceInvadersMain(baseF.calendarBackground, baseF);
         }
 
-        private void CheckGame(char input)
+        private void StartInvaders()
         {
             
                 if (baseF.MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
@@ -78,14 +118,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
                 
             }
 
-             if (input == 'e')
-            {
-                // service
-                API.CallApi ob = new API.CallApi();
-                ob.LoadShop();
-            }
+            
 
         }
+
+
 
 
 

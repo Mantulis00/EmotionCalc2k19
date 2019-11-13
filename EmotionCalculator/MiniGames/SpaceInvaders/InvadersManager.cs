@@ -50,6 +50,12 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         internal void GenerateMissle(Point location)
         {
+            if (missle != null)
+            {
+                missle.Dispose();
+                missle = null;
+            }
+
             missle = new PictureBox();
             missle.Size = new Size(MissileSize, MissileSize);
             missle.Location = new Point(location.X+InvaderSize/2, location.Y);
