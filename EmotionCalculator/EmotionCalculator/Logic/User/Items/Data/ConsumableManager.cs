@@ -7,8 +7,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 {
     class ConsumableManager
     {
-        private static readonly List<(Item, ItemPrice, ConsumableType)> _consumables = new List<(Item, ItemPrice, ConsumableType)>
-        {
+       // private int pric;
+
+        private  static List<(Item, ItemPrice, ConsumableType)> _consumables = new List<(Item, ItemPrice, ConsumableType)>
+       {
+
             (new Item("Basic LootBox", "Contains basic stuff", ItemType.LootBox),
             new ItemPrice(CurrencyType.JoyGem, 1, PriceType.Collectible),
             ConsumableType.BasicLootBox),
@@ -17,6 +20,25 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
             new ItemPrice(CurrencyType.JoyGem, 3, PriceType.Collectible),
             ConsumableType.PremiumLootBox),
         };
+
+            /*
+        public ConsumableManager()
+        {
+            List<(Item, ItemPrice, ConsumableType)> _consumables = new List<(Item, ItemPrice, ConsumableType)>
+            {
+
+                   (new Item("Basic LootBox", "Contains basic stuff", ItemType.LootBox),
+                   new ItemPrice(CurrencyType.JoyGem, pric, PriceType.Collectible),
+                  ConsumableType.BasicLootBox),
+
+                  (new Item("Premium LootBox", "Contains premium loot", ItemType.LootBox),
+                 new ItemPrice(CurrencyType.JoyGem, 3, PriceType.Collectible),
+                 ConsumableType.PremiumLootBox),
+            };
+        }*/
+
+
+
 
         internal static IEnumerable<(Item, ItemPrice)> GetInexhaustibleItems()
         {
@@ -28,7 +50,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
             return _consumables.Where(c => c.Item3 == consumableType).Select(c => c.Item1).FirstOrDefault();
         }
 
-        internal static Item GetItemByName(string name)
+        internal static  Item GetItemByName(string name)
         {
             return _consumables.Where(trio => trio.Item1.Name == name).Select(trio => trio.Item1).FirstOrDefault();
         }

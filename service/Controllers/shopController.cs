@@ -13,7 +13,7 @@ namespace service.Controllers
         [HttpGet]
         public string GetShopInfo()
         {
-            return "First: 1, Second 2";
+            return "10";
         }
 
         /*

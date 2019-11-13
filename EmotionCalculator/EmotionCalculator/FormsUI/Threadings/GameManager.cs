@@ -23,11 +23,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
         public string InEmojiInvaders()
         {
-            string status = "";
+            string status = "Emoji invaders | GameOver";
 
             AuxThread = null;
             baseF.MainManager.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
             baseF.MainManager.MonthManager.Refresh();
+
+
+            gameName = "";
 
             return status;
         }
@@ -74,9 +77,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
             if (e == 'e')
             {
-                // service
-                API.CallApi ob = new API.CallApi();
-                ob.LoadShop();
+              //  GetApiResponse();
             }
 
 
@@ -89,6 +90,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
                 
             }
         }
+
+     
+
+
 
         private void InvadersLauch()
         {

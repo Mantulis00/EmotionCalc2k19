@@ -24,7 +24,7 @@ namespace EmotionCalculator.EmotionCalculator.API
                 }
                 else
                 {
-                    throw new Exception("gg");
+                    throw new Exception("No response from API :( ");
                 }
 
             }

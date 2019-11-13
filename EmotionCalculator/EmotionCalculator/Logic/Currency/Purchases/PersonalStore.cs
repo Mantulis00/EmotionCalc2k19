@@ -28,6 +28,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         private IEnumerable<(Item, ItemPrice)> GetConsumables()
         {
+
             return ConsumableManager.GetInexhaustibleItems();
         }
 

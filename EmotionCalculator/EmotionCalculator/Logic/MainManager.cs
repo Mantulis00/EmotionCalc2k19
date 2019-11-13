@@ -21,8 +21,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         internal SettingsManager SettingsManager { get; }
         internal MonthManager MonthManager { get; }
         internal EventManager EventManager { get; }
-
         internal Lazy<GameManager> GameManager { get; }
+
         public MainManager(IMonthLogger monthLogger, IUserLoader userLoader,
             ISettingsLogger settingsLogger, Lazy<GameManager> GameManager)
         {

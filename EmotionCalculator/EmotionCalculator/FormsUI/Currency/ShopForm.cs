@@ -17,9 +17,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private readonly MainManager monthManager;
 
+
+
         internal ShopForm(MainManager monthManager)
         {
             this.monthManager = monthManager;
+
+            //Set consumables prices
+
 
             //UI
             InitializeComponent();
