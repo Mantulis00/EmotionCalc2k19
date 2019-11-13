@@ -22,7 +22,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         internal IAPIManager APIManager { get; private set; }
 
-        internal Lazy<GameManager> gameManager;
+       // internal Lazy<GameManager> gameManager;
 
 
 
@@ -67,7 +67,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MainManager = new MainManager(
                 new MonthEmotionsIO(),
                 new UserLoader(),
-                new SettingsLogger());
+                new SettingsLogger(),
+                new Lazy<GameManager>(() => new GameManager(this)));
 
             CalendarUpdater calendarUpdater = new CalendarUpdater(calendarBackground, MainManager.SettingsManager);
 
@@ -247,12 +248,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 'u')
-              gameManager = new Lazy<GameManager>(() => new GameManager(this));
-
-            gameManager.Value.CheckInGameInput(e.KeyChar);
-            
-
+                MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
         }
 
        
