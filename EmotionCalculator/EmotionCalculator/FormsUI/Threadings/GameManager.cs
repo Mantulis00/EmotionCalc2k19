@@ -4,12 +4,14 @@ using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.MiniGames.SpaceInvaders;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Xml;
+using System.Xml.Linq;
 
 internal delegate string GameStatus();
 
@@ -77,7 +79,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
             if (e == 'e')
             {
-              //  GetApiResponse();
+               // GetApiResponse();
             }
 
 
@@ -91,7 +93,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
             }
         }
 
-     
+
 
 
 
