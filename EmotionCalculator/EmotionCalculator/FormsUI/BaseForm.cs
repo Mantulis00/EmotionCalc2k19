@@ -22,16 +22,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         internal IAPIManager APIManager { get; private set; }
 
-       // internal Lazy<GameManager> gameManager;
 
 
-
+        internal SpaceInvadersMain invadersManager;
 
         internal BaseForm(IAPIManager apiManager)
         {
-            
-
-
             this.KeyPreview = true;
 
             //UI
@@ -175,7 +171,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenSecondaryWindow(new ShopForm(MainManager));
+            OpenSecondaryWindow(new ShopForm(MainManager, (item) => item.Available));
         }
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)

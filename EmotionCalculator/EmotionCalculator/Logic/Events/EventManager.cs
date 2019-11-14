@@ -23,7 +23,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Events
 
                 bool claimed = false;
 
-                launchLoginPopup.Invoke(
+                launchLoginPopup?.Invoke(
                     userData.DailyStreak,
                     () =>
                     {

@@ -2,6 +2,7 @@
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
 using System.Drawing;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -66,11 +67,20 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 Image image = cameraBox.Image;
                 image = ImageHandle.ProcessImage(image);
 
-                APIParseResult parseResult = await baseForm.APIManager.GetAPIRequester().RequestParseResultAsync(image);
+                try
+                {
+                    APIParseResult parseResult = await baseForm.APIManager
+                        .GetAPIRequester().RequestParseResultAsync(image);
+
+                    baseForm.UpdateParsedData(parseResult);
+                }
+                catch (HttpRequestException)
+                {
+                    MessageBox.Show("Couldn't connect to the API.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 image.Dispose();
-
-                baseForm.UpdateParsedData(parseResult);
             }
 
             Close();

@@ -1,6 +1,7 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
 using System;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -42,10 +43,18 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             EnableButtons(false, false, false);
 
-            APIParseResult parseResult = await baseForm.APIManager.GetAPIRequester()
-                .RequestParseResultAsync(uploadImageBox.Image);
+            try
+            {
+                APIParseResult parseResult = await baseForm.APIManager.GetAPIRequester()
+                    .RequestParseResultAsync(uploadImageBox.Image);
 
-            baseForm.UpdateParsedData(parseResult);
+                baseForm.UpdateParsedData(parseResult);
+            }
+            catch (HttpRequestException)
+            {
+                MessageBox.Show("Couldn't connect to the API.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             Close();
         }
