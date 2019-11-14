@@ -15,6 +15,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         private MonthEmotions monthEmotions;
         private DateTime selectedTime;
 
+        internal event EventHandler<EmotionArgs> StatusChanged;
+
         internal MonthManager(UserData userData, IMonthLogger monthLogger)
         {
             this.userData = userData;
@@ -54,8 +56,6 @@ namespace EmotionCalculator.EmotionCalculator.Logic
                 }
             }
         }
-
-        internal event EventHandler<EmotionArgs> StatusChanged;
 
         internal void Save()
         {

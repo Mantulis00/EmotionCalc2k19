@@ -8,11 +8,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
         private readonly UserData userData;
         internal Item Item { get; }
         internal ItemPrice ItemPrice { get; }
-        internal bool Available
+        public bool Available
         {
             get
                 => ItemPrice.IsAvailable(userData, Item);
         }
+
         internal PersonalPurchase(UserData userData, Item item, ItemPrice itemPrice)
         {
             this.userData = userData;

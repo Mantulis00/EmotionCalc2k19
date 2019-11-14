@@ -17,9 +17,14 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private readonly MainManager monthManager;
 
-        internal ShopForm(MainManager monthManager)
+        internal delegate bool CanBeShown<T>(T item);
+
+        private CanBeShown<PersonalPurchase> canBeShown;
+
+        internal ShopForm(MainManager monthManager, CanBeShown<PersonalPurchase> canBeShown)
         {
             this.monthManager = monthManager;
+            this.canBeShown = canBeShown;
 
             //UI
             InitializeComponent();
@@ -30,10 +35,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             //Items
             monthManager.Refresh();
-            FillStore();
+            RefillStore();
         }
 
-        private void FillStore()
+        private void RefillStore()
         {
             listBox.Items.Clear();
 
@@ -52,8 +57,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
             {
                 var item = (PersonalPurchase)listBox.Items[i];
 
-                if (!item.Available)
+                if (!canBeShown(item))
+                {
                     listBox.Items.Remove(item);
+                    i--;
+                }
             }
         }
 
@@ -99,7 +107,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
                         informationLabel.Text = selectedItem.Item.Description;
 
-                        if (selectedItem.Available)
+                        if (canBeShown(selectedItem))
                         {
                             purchaseButton.Enabled = true;
                             ChangeErrorText(string.Empty, false);
@@ -143,7 +151,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            FillStore();
+            RefillStore();
         }
 
         private void OpenLootBoxButton_Click(object sender, EventArgs e)

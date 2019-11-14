@@ -23,10 +23,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         internal Thread AuxThread { get; set; }
         internal IAPIManager APIManager { get; private set; }
 
-
-
         internal SpaceInvadersMain invadersManager;
-
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -172,7 +169,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenSecondaryWindow(new ShopForm(MainManager));
+            OpenSecondaryWindow(new ShopForm(MainManager, (item) => item.Available));
         }
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)

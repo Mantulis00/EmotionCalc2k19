@@ -9,7 +9,6 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
-    //Visible for inner logic
     class UserData
     {
         internal int JoyCoins { get; private set; }
