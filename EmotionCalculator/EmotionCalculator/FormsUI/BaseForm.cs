@@ -1,5 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
 using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
+using EmotionCalculator.EmotionCalculator.FormsUI.Threadings;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
@@ -62,7 +63,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MainManager = new MainManager(
                 new MonthEmotionsIO(),
                 new UserLoader(),
-                new SettingsLogger());
+                new SettingsLogger(),
+                new Lazy<Threadings.GameManager>(() => new GameManager(this)));
 
             CalendarUpdater calendarUpdater = new CalendarUpdater(calendarBackground, MainManager.SettingsManager);
 
@@ -77,6 +79,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 {
                     MainManager.MonthManager.ChangeTime(dateTimePicker.Value);
                 };
+        }
+
+        private Lazy<T> Lazy<T>(object p)
+        {
+            throw new NotImplementedException();
         }
 
         private void SetupListeners()
@@ -245,45 +252,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (AuxThread == null)
-            {
-                StartGame(e.KeyChar);
-            }
-
-            else if (AuxThread != null)
-            {
-                invadersManager.playerIManager.ReadInput(e.KeyChar);
-            }
+            MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
 
         }
 
-        private void StartGame(char input)
-        {
-            if (input == 'u') // u for emoji invaders
-            {
-                if (MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
-                {
-                    MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
-                    MainManager.MonthManager.Refresh();
-                    InvadersLauch();
-
-                    AuxThread = new Thread(
-                        () =>
-                        {
-                            this.BeginInvoke((Action)delegate ()
-                            {
-                                invadersManager.StartAnimation();
-                            });
-                        }
-                    );
-                    AuxThread.Start();
-                }
-            }
-        }
-
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

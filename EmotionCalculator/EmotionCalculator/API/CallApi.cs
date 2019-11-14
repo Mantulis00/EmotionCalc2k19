@@ -15,7 +15,7 @@ namespace EmotionCalculator.EmotionCalculator.API
         public CallApi()
         {
             FirstAPI.Init();
-            LoadShopPrices();
+           // LoadShopPrices();
         }
 
         public  async Task<string> LoadShop()
@@ -27,7 +27,7 @@ namespace EmotionCalculator.EmotionCalculator.API
 
         }
 
-        private async void LoadShopPrices()
+        public async void LoadShopPrices()
         {
             API.CallApi ob = new API.CallApi();
             string text = await ob.LoadShop();
@@ -59,7 +59,7 @@ namespace EmotionCalculator.EmotionCalculator.API
                 else if (x.Name == "Premium")
                     PremiumLootBoxPrice = Int32.Parse(x.InnerText);
             }
-
+            Console.WriteLine( BasicLootBoxPrice);
 
         }
 

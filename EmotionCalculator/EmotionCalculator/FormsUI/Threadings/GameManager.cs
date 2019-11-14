@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic;
+﻿using EmotionCalculator.EmotionCalculator.API;
+using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.MiniGames.SpaceInvaders;
@@ -80,6 +81,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
             }
 
 
+            // KodasTest1
+            if (e == 'u')
+            {
+                CallApi api = new CallApi();
+                api.LoadShopPrices();
+            }
+            //
 
             else if (AuxThread != null )
             {

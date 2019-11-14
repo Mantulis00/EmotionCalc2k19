@@ -672,7 +672,6 @@
             this.Name = "BaseForm";
             this.Text = "EmotionDemo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
-            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BaseForm_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
