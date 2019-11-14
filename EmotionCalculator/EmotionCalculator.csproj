@@ -77,8 +77,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmotionCalculator\API\CallApi.cs" />
-    <Compile Include="EmotionCalculator\API\FirstAPI.cs" />
+    <Compile Include="EmotionCalculator\API\ShopApi.cs" />
+    <Compile Include="EmotionCalculator\API\ShopApiClient.cs" />
     <Compile Include="EmotionCalculator\API\ShopApiProcessor.cs" />
     <Compile Include="EmotionCalculator\FormsUI\BaseFormManagerUI.cs">
       <SubType>Form</SubType>

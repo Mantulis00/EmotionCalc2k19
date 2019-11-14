@@ -5,30 +5,31 @@ using System.Xml;
 
 namespace EmotionCalculator.EmotionCalculator.API
 {
-    class CallApi
+    class ShopApi
     {
         public int BasicLootBoxPrice { get; private set; }
         public int PremiumLootBoxPrice { get; private set; }
 
-        public CallApi()
+        public ShopApi()
         {
-            FirstAPI.Init();
-            //LoadShopPrices();
+            ShopApiClient.Init();
         }
 
         public async Task<string> LoadShop()
         {
             string info = await ShopApiProcessor.LoadShopInfo();
-            // Console.WriteLine("u" + info); // codeAPi
 
             return info;
 
         }
 
-        private async void LoadShopPrices()
+        public async void LoadShopPrices()
         {
-            API.CallApi ob = new API.CallApi();
+            API.ShopApi ob = new API.ShopApi();
             string text = await ob.LoadShop();
+
+            if (text == "")
+                return;
 
             XmlDocument xml = new XmlDocument();
 
@@ -50,6 +51,8 @@ namespace EmotionCalculator.EmotionCalculator.API
             XmlNodeList nodes = xml.SelectNodes("/LootBoxes");
 
 
+           
+
             foreach (XmlNode x in nodes[0].ChildNodes)
             {
                 if (x.Name == "Basic")
@@ -57,7 +60,6 @@ namespace EmotionCalculator.EmotionCalculator.API
                 else if (x.Name == "Premium")
                     PremiumLootBoxPrice = Int32.Parse(x.InnerText);
             }
-
 
         }
 

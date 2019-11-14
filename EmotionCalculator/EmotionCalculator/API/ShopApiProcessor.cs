@@ -10,19 +10,28 @@ namespace EmotionCalculator.EmotionCalculator.API
         {
             string url = "";
 
-            url = "http://localhost:59589/api/values";// 2b added
+            url = "https://localhost:44372/api/values";// 2b added
 
-            using (HttpResponseMessage response = await FirstAPI.ApiClient.GetAsync(url))
+
+            try
             {
-                if (response.IsSuccessStatusCode)
+                using (HttpResponseMessage response = await ShopApiClient.ApiClient.GetAsync(url))
                 {
-                    string shop = await response.Content.ReadAsStringAsync();
-                    return shop;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string shop = await response.Content.ReadAsStringAsync();
+                        return shop;
+                    }
+                    else
+                    {
+                        throw new Exception("No response from API :(");
+                    }
                 }
-                else
-                {
-                    throw new Exception("No response from API :(");
-                }
+            }
+            catch
+            {
+                Console.WriteLine( "API Is Not Up");
+                return "";
             }
         }
     }

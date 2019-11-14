@@ -1,4 +1,5 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic;
+﻿using EmotionCalculator.EmotionCalculator.API;
+using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.MiniGames.SpaceInvaders;
@@ -78,7 +79,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
                 }
                
             }
-
 
 
             else if (AuxThread != null )

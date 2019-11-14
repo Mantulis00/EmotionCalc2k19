@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace EmotionCalculator.EmotionCalculator.API
 {
 
-    public static class FirstAPI
+    public static class ShopApiClient
     {
         public static HttpClient ApiClient { get; set; }
 

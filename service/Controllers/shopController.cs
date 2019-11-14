@@ -24,10 +24,7 @@ namespace service.Controllers
                 new XElement("Premium", 4));
 
 
-
-
             return xml.ToString();
-           // return $"<BasicLootBox>{prices.BasicLootBox}<BasicLootBox>\n<PremiumLootBox>{prices.PremiumLootBox}</PremiumLootBox>";
         }
 
         /*
