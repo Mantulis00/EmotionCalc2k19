@@ -15,15 +15,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
     {
         private static readonly string BaseInformationMessage = "Buy something!";
 
-        private readonly MainManager monthManager;
+        private readonly MainManager mainManager;
 
         internal delegate bool CanBeShown<T>(T item);
 
         private CanBeShown<PersonalPurchase> canBeShown;
 
-        internal ShopForm(MainManager monthManager, CanBeShown<PersonalPurchase> canBeShown)
+        internal ShopForm(MainManager mainManager, CanBeShown<PersonalPurchase> canBeShown)
         {
-            this.monthManager = monthManager;
+            this.mainManager = mainManager;
             this.canBeShown = canBeShown;
 
             //Set consumables prices
@@ -37,7 +37,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
             InitializeListeners();
 
             //Items
-            monthManager.Refresh();
+            mainManager.Refresh();
             RefillStore();
         }
 
@@ -45,7 +45,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
         {
             listBox.Items.Clear();
 
-            monthManager.CurrencyManager.PersonalStore.GetPersonalPurchases()
+            mainManager.CurrencyManager.PersonalStore.GetPersonalPurchases()
                 .Where(p => p.Available).ToList().ForEach
                 (item =>
                     {
@@ -70,10 +70,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
         private void InitializeListeners()
         {
-            monthManager.ReadOnlyUserData.CurrencyChanged +=
+            mainManager.ReadOnlyUserData.CurrencyChanged +=
                 (o, e) =>
                 {
-                    ReadOnlyUserData readOnly = monthManager.ReadOnlyUserData;
+                    ReadOnlyUserData readOnly = mainManager.ReadOnlyUserData;
 
                     coinAmountLabel.Text = readOnly.JoyCoins.ToString();
                     gemAmountLabel.Text = readOnly.JoyGems.ToString();
@@ -87,16 +87,16 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                     neutralEmotionCount.Text = readOnly.EmotionCount[Emotion.Neutral].ToString();
                 };
 
-            monthManager.ReadOnlyUserData.OwnedItems.ConsumablesChanged +=
+            mainManager.ReadOnlyUserData.OwnedItems.ConsumablesChanged +=
                 (o, e) =>
                 {
-                    ReadOnlyUserData readOnly = monthManager.ReadOnlyUserData;
+                    ReadOnlyUserData readOnly = mainManager.ReadOnlyUserData;
 
-                    var cons = ConsumableManager.GetItemByType(ConsumableType.BasicLootBox);
+                    var cons = mainManager.CurrencyManager.PersonalStore.GetItemByType(ConsumableType.BasicLootBox);
 
                     lootBoxAmount.Text = readOnly.OwnedItems[cons].ToString();
 
-                    cons = ConsumableManager.GetItemByType(ConsumableType.PremiumLootBox);
+                    cons = mainManager.CurrencyManager.PersonalStore.GetItemByType(ConsumableType.PremiumLootBox);
 
                     premiumLootBoxAmount.Text = readOnly.OwnedItems[cons].ToString();
                 };
@@ -182,12 +182,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
 
             if (premium)
             {
-                operationStatus = monthManager.CurrencyManager
+                operationStatus = mainManager.CurrencyManager
                     .Consume(ConsumableType.PremiumLootBox, out rewardString);
             }
             else
             {
-                operationStatus = monthManager.CurrencyManager
+                operationStatus = mainManager.CurrencyManager
                     .Consume(ConsumableType.BasicLootBox, out rewardString);
             }
 

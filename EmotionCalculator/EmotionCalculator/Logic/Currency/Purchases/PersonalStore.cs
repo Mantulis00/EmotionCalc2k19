@@ -9,10 +9,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
     class PersonalStore
     {
+        private readonly ConsumableManager consumableManager;
         private readonly UserData userData;
 
         internal PersonalStore(UserData userData)
         {
+            //load ints
+            this.consumableManager = new ConsumableManager(1, 3);
             this.userData = userData;
         }
 
@@ -28,8 +31,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         private IEnumerable<(Item, ItemPrice)> GetConsumables()
         {
+            return consumableManager.GetInexhaustibleItems();
+        }
 
-            return ConsumableManager.GetInexhaustibleItems();
+        internal Item GetItemByType(ConsumableType consumableType)
+        {
+            return consumableManager.GetItemByType(consumableType);
         }
 
         internal IEnumerable<PersonalPurchase> GetAllPurchases()

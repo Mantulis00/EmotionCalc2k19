@@ -35,9 +35,9 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             return OperationStatus.Unavailable;
         }
 
-        public static OperationStatus Transact(this OwnedItems ownedItems, ConsumableType consumableType, int amount)
+        public static OperationStatus Transact(this OwnedItems ownedItems, PersonalStore personalStore, ConsumableType consumableType, int amount)
         {
-            var item = ConsumableManager.GetItemByType(consumableType);
+            var item = personalStore.GetItemByType(consumableType);
 
             if (ownedItems[item] - amount >= 0)
             {

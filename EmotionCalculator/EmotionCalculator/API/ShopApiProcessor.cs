@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EmotionCalculator.EmotionCalculator.API
@@ -13,7 +10,7 @@ namespace EmotionCalculator.EmotionCalculator.API
         {
             string url = "";
 
-            url = "https://localhost:44372/api/values";// 2b added
+            url = "http://localhost:59589/api/values";// 2b added
 
             using (HttpResponseMessage response = await FirstAPI.ApiClient.GetAsync(url))
             {
@@ -24,15 +21,9 @@ namespace EmotionCalculator.EmotionCalculator.API
                 }
                 else
                 {
-                    throw new Exception("No response from API :( ");
+                    throw new Exception("No response from API :(");
                 }
-
             }
-
         }
-
-
-
     }
-
 }

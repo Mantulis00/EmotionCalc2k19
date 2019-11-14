@@ -25,7 +25,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 
         internal OperationStatus Consume(ConsumableType consumableType, out string rewardString)
         {
-            OperationStatus status = userData.OwnedItems.Transact(consumableType, 1);
+            OperationStatus status = userData.OwnedItems.Transact(PersonalStore, consumableType, 1);
 
             if (status == OperationStatus.Successful)
             {

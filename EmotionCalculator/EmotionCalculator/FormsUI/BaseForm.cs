@@ -53,7 +53,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             ShowDebug();
         }
 
-
         private void SetupMonth()
         {
             MainManager = new MainManager(
@@ -223,6 +222,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MainManager.CurrencyManager.TemporaryCurrencyEntryPoint(CurrencyType.JoyCoin, 10);
         }
 
+        private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
+        }
 
         //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
@@ -234,15 +237,5 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
-
-
-
-
-        private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-                MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
-        }
-
-       
     }
 }

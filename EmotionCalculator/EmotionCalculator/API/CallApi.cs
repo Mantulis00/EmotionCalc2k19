@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -9,19 +7,19 @@ namespace EmotionCalculator.EmotionCalculator.API
 {
     class CallApi
     {
-        public int BasicLootBoxPrice { get; private set;}
+        public int BasicLootBoxPrice { get; private set; }
         public int PremiumLootBoxPrice { get; private set; }
 
         public CallApi()
         {
             FirstAPI.Init();
-            LoadShopPrices();
+            //LoadShopPrices();
         }
 
-        public  async Task<string> LoadShop()
+        public async Task<string> LoadShop()
         {
             string info = await ShopApiProcessor.LoadShopInfo();
-           // Console.WriteLine("u" + info); // codeAPi
+            // Console.WriteLine("u" + info); // codeAPi
 
             return info;
 
