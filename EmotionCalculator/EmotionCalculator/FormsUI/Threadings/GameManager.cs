@@ -27,6 +27,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
         {
             string status = "Emoji invaders | GameOver";
 
+            AuxThread.Join();
             AuxThread = null;
             baseF.MainManager.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
             baseF.MainManager.MonthManager.Refresh();
@@ -71,16 +72,13 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
             {
                 if (e == '1')
                 {
+                    gameName = "invaders";
                     StartInvaders();
                     gameStatus = new GameStatus(InEmojiInvaders);
                 }
                
             }
 
-            if (e == 'e')
-            {
-               // GetApiResponse();
-            }
 
 
             else if (AuxThread != null )
@@ -120,7 +118,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
                             });
                         }
                     );
-                    gameName = "invaders";
+
                     AuxThread.Start();
                 
             }

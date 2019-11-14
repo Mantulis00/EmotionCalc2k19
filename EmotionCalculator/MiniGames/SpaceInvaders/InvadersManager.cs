@@ -174,14 +174,18 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             }
         }
 
-        private void CheckMissle()
+        internal void CheckMissle(bool forceDelete = false)
         {
-            if (missle.Location.Y < -missle.Size.Height)
+            if (missle != null)
             {
-                MissleLive = false;
-                missle.Dispose();
-                missle = null;
+                if (missle.Location.Y < -missle.Size.Height || forceDelete)
+                {
+                    MissleLive = false;
+                    missle.Dispose();
+                    missle = null;
+                }
             }
+
                
         }
 

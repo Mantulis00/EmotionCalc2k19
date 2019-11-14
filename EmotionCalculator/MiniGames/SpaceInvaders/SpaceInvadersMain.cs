@@ -107,7 +107,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         {
             MainClock.Stop();
             baseForm.MainManager.GameManager.Value.gameStatus();
-
+            invaderManager.CheckMissle(true);
             Player.Dispose();
             Player = null;
         }
