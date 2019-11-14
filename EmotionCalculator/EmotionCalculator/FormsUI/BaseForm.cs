@@ -22,10 +22,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         internal IAPIManager APIManager { get; private set; }
 
-
-
-        internal SpaceInvadersMain invadersManager;
-
         internal BaseForm(IAPIManager apiManager)
         {
             this.KeyPreview = true;
