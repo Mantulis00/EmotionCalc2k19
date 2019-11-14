@@ -1,6 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
 using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
-using EmotionCalculator.EmotionCalculator.FormsUI.Threadings;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
@@ -9,9 +8,11 @@ using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.MiniGames.SpaceInvaders;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -19,8 +20,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     public partial class BaseForm : Form
     {
         internal MainManager MainManager { get; private set; }
-
+        internal Thread AuxThread { get; set; }
         internal IAPIManager APIManager { get; private set; }
+
+        internal SpaceInvadersMain invadersManager;
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -59,8 +62,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MainManager = new MainManager(
                 new MonthEmotionsIO(),
                 new UserLoader(),
-                new SettingsLogger(),
-                new Lazy<GameManager>(() => new GameManager(this)));
+                new SettingsLogger());
 
             CalendarUpdater calendarUpdater = new CalendarUpdater(calendarBackground, MainManager.SettingsManager);
 
@@ -224,6 +226,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         }
 
 
+        private void InvadersLauch()
+        {
+            invadersManager = new SpaceInvadersMain(calendarBackground, this);
+        }
+
         //Calendar navigation
         private void LeftButton_Click(object sender, EventArgs e)
         {
@@ -235,14 +242,48 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
 
-
-
-
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-                MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
+
+            if (AuxThread == null)
+            {
+                StartGame(e.KeyChar);
+            }
+
+            else if (AuxThread != null)
+            {
+                invadersManager.playerIManager.ReadInput(e.KeyChar);
+            }
+
         }
 
-       
+        private void StartGame(char input)
+        {
+            if (input == 'u') // u for emoji invaders
+            {
+                if (MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
+                {
+                    MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
+                    MainManager.MonthManager.Refresh();
+                    InvadersLauch();
+
+                    AuxThread = new Thread(
+                        () =>
+                        {
+                            this.BeginInvoke((Action)delegate ()
+                            {
+                                invadersManager.StartAnimation();
+                            });
+                        }
+                    );
+                    AuxThread.Start();
+                }
+            }
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
