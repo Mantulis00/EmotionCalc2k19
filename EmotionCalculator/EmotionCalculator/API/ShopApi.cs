@@ -26,7 +26,9 @@ namespace EmotionCalculator.EmotionCalculator.API
         public async void LoadShopPrices()
         {
             API.ShopApi ob = new API.ShopApi();
-            string text = await ob.LoadShop();
+            //  string text = await ob.LoadShop();
+            string text = await ShopApiProcessor.LoadShopInfo();
+
 
             if (text == "")
                 return;
