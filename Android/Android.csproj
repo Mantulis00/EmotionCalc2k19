@@ -101,6 +101,12 @@
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmotionCalculator\EmotionCalculator.csproj">
+      <Project>{81b9596f-3279-4322-a602-a5ea1515b77c}</Project>
+      <Name>EmotionCalculator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.
