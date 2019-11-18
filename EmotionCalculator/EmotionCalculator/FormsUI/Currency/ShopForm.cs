@@ -26,9 +26,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
             this.mainManager = mainManager;
             this.canBeShown = canBeShown;
 
-            //Set consumables prices
-            mainManager.CurrencyManager.PersonalStore.SetShopPrices();
-
             //UI
             InitializeComponent();
             informationLabel.Text = BaseInformationMessage;

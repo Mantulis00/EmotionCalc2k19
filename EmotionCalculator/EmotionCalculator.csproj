@@ -388,9 +388,6 @@
     <None Include="Resources\backgroundMc.png" />
     <None Include="Resources\backgroundMc.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />

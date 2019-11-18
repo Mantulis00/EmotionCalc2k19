@@ -30,8 +30,7 @@ namespace EmotionCalculator.EmotionCalculator.API
             }
             catch
             {
-                Console.WriteLine( "API Is Not Up");
-                return "";
+                return string.Empty;
             }
         }
     }

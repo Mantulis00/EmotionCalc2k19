@@ -1,18 +1,8 @@
-﻿using EmotionCalculator.EmotionCalculator.API;
-using EmotionCalculator.EmotionCalculator.Logic;
-using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
+﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.MiniGames.SpaceInvaders;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
 
 internal delegate string GameStatus();
 
@@ -21,7 +11,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 {
     class GameManager
     {
-      
+
         public GameStatus gameStatus;
 
         public string InEmojiInvaders()
@@ -58,11 +48,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
         public GameManager(BaseForm baseF)
         {
-           GameStatus gameStatus = delegate ()
-           {
-               string status = "Game manager created | no game starded";
-               return status;
-           };
+            GameStatus gameStatus = delegate ()
+            {
+                string status = "Game manager created | no game starded";
+                return status;
+            };
 
             this.baseF = baseF;
         }
@@ -77,17 +67,17 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
                     StartInvaders();
                     gameStatus = new GameStatus(InEmojiInvaders);
                 }
-               
+
             }
 
 
-            else if (AuxThread != null )
+            else if (AuxThread != null)
             {
                 if (gameName == "invaders")
                 {
                     invadersManager.playerIManager.ReadInput(e);
                 }
-                
+
             }
         }
 
@@ -102,28 +92,28 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
         private void StartInvaders()
         {
-            
-                if (baseF.MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
-                {
-                    baseF.MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
-                    baseF.MainManager.MonthManager.Refresh();
-                    InvadersLauch();
 
-                    AuxThread = new Thread(
-                        () =>
+            if (baseF.MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
+            {
+                baseF.MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
+                baseF.MainManager.MonthManager.Refresh();
+                InvadersLauch();
+
+                AuxThread = new Thread(
+                    () =>
+                    {
+                        baseF.BeginInvoke((Action)delegate ()
                         {
-                            baseF.BeginInvoke((Action)delegate ()
-                            {
-                                invadersManager.StartAnimation();
-                            });
-                        }
-                    );
+                            invadersManager.StartAnimation();
+                        });
+                    }
+                );
 
-                    AuxThread.Start();
-                
+                AuxThread.Start();
+
             }
 
-            
+
 
         }
 

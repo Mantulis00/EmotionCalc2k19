@@ -9,30 +9,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
     class PersonalStore
     {
-        private  ConsumableManager consumableManager;
         private readonly UserData userData;
-        private API.ShopApi api;
 
         internal PersonalStore(UserData userData)
         {
-            //load ints
-
-            api = new API.ShopApi();
-            api.LoadShopPrices();
-
-           
-
-            this.consumableManager = new ConsumableManager(1, 3);
-            
             this.userData = userData;
         }
-
-        internal void SetShopPrices()
-        {
-            this.consumableManager = new ConsumableManager(api.BasicLootBoxPrice, api.PremiumLootBoxPrice);
-        }
-
-
 
         private IEnumerable<(Item, ItemPrice)> GetThemePacks()
         {
@@ -46,12 +28,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 
         private IEnumerable<(Item, ItemPrice)> GetConsumables()
         {
-            return consumableManager.GetInexhaustibleItems();
+            return ConsumableManager.GetInexhaustibleItems();
         }
 
         internal Item GetItemByType(ConsumableType consumableType)
         {
-            return consumableManager.GetItemByType(consumableType);
+            return ConsumableManager.GetItemByType(consumableType);
         }
 
         internal IEnumerable<PersonalPurchase> GetAllPurchases()
