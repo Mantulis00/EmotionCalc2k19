@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
-    enum Month
+    public enum Month
     {
         January = 1,
         February,

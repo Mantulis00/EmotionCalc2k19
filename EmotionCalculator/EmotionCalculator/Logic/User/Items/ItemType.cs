@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.User.Items
 {
-    enum ItemType
+    public enum ItemType
     {
         Theme,
         Song,

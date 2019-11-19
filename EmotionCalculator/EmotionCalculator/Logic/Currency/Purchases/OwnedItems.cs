@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
-    class OwnedItems
+    internal class OwnedItems
     {
         private readonly Dictionary<Item, int> itemCollection;
 

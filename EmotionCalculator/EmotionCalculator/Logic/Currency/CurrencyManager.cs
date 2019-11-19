@@ -5,10 +5,10 @@ using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 {
-    class CurrencyManager
+    public class CurrencyManager
     {
         private readonly UserData userData;
-        internal PersonalStore PersonalStore { get; }
+        public PersonalStore PersonalStore { get; }
 
         internal CurrencyManager(UserData userData)
         {
@@ -16,14 +16,14 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
             PersonalStore = new PersonalStore(userData);
         }
 
-        internal OperationStatus Purchase(CustomPurchase customPurchase)
+        public OperationStatus Purchase(CustomPurchase customPurchase)
         {
             var price = customPurchase.GetCustomPurchasePrice();
 
             return userData.Transact(price.Item1, price.Item2);
         }
 
-        internal OperationStatus Consume(ConsumableType consumableType, out string rewardString)
+        public OperationStatus Consume(ConsumableType consumableType, out string rewardString)
         {
             OperationStatus status = userData.OwnedItems.Transact(PersonalStore, consumableType, 1);
 
@@ -39,7 +39,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency
             return status;
         }
 
-        internal void TemporaryCurrencyEntryPoint(CurrencyType currencyType, int amount)
+        public void TemporaryCurrencyEntryPoint(CurrencyType currencyType, int amount)
         {
             userData.AddCurrency(currencyType, amount);
         }

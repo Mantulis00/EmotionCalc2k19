@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.Currency
 {
-    enum CurrencyType
+    public enum CurrencyType
     {
         JoyCoin,
         JoyGem

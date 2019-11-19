@@ -5,37 +5,37 @@ using System.Collections.Generic;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
-    class ReadOnlyOwnedItems
+    public class ReadOnlyOwnedItems
     {
         private readonly OwnedItems ownedItems;
 
-        internal IEnumerable<(Item Item, int Count)> Items
+        public IEnumerable<(Item Item, int Count)> Items
         {
             get => ownedItems.Items;
         }
 
-        internal int this[Item item]
+        public int this[Item item]
         {
             get => ownedItems[item];
         }
 
-        internal IEnumerable<ThemePack> ThemePacks
+        public IEnumerable<ThemePack> ThemePacks
         {
             get => ownedItems.ThemePacks;
         }
 
-        internal IEnumerable<SongPack> SongPacks
+        public IEnumerable<SongPack> SongPacks
         {
             get => ownedItems.SongPacks;
         }
 
-        internal event EventHandler ConsumablesChanged
+        public event EventHandler ConsumablesChanged
         {
             add { ownedItems.ItemsChanged += value; }
             remove { ownedItems.ItemsChanged -= value; }
         }
 
-        public ReadOnlyOwnedItems(OwnedItems ownedItems)
+        internal ReadOnlyOwnedItems(OwnedItems ownedItems)
         {
             this.ownedItems = ownedItems;
         }

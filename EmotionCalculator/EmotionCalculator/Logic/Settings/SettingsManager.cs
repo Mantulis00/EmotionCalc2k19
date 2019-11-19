@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
-    class SettingsManager
+    public class SettingsManager
     {
         private readonly Dictionary<SettingType, SettingStatus> settings;
 
         private ThemePack _selectedTheme;
-        internal ThemePack SelectedTheme
+        public ThemePack SelectedTheme
         {
             get { return _selectedTheme; }
             set
@@ -42,7 +42,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             Save();
         }
 
-        internal SettingStatus this[SettingType settingType]
+        public SettingStatus this[SettingType settingType]
         {
             get
             {
@@ -68,7 +68,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Settings
             }
         }
 
-        internal void Save()
+        public void Save()
         {
             settingsLogger.SaveSettings(settings);
 

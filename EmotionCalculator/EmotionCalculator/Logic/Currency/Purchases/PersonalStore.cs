@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
-    class PersonalStore
+    public class PersonalStore
     {
         private readonly UserData userData;
 
@@ -31,18 +31,18 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             return ConsumableManager.GetInexhaustibleItems();
         }
 
-        internal Item GetItemByType(ConsumableType consumableType)
+        public Item GetItemByType(ConsumableType consumableType)
         {
             return ConsumableManager.GetItemByType(consumableType);
         }
 
-        internal IEnumerable<PersonalPurchase> GetAllPurchases()
+        public IEnumerable<PersonalPurchase> GetAllPurchases()
         {
             return GetThemePacks().Concat(GetConsumables()).Concat(GetSongPacks())
                 .Select(tuple => new PersonalPurchase(userData, tuple.Item1, tuple.Item2));
         }
 
-        internal IEnumerable<PersonalPurchase> GetPersonalPurchases()
+        public IEnumerable<PersonalPurchase> GetPersonalPurchases()
         {
             return GetAllPurchases().Where(pp => pp.Available);
         }

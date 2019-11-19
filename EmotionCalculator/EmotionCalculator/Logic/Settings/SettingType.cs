@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
-    enum SettingType
+    public enum SettingType
     {
         Emoji,
         Debug,

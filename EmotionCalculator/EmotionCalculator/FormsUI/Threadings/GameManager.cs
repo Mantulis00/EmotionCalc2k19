@@ -4,15 +4,16 @@ using EmotionCalculator.MiniGames.SpaceInvaders;
 using System;
 using System.Threading;
 
-internal delegate string GameStatus();
-
-
 namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 {
-    class GameManager
+    public class GameManager
     {
-
+        public delegate string GameStatus();
         public GameStatus gameStatus;
+        internal Thread AuxThread { get; set; }
+        internal SpaceInvadersMain invadersManager;
+        internal BaseForm baseF;
+        private string gameName;
 
         public string InEmojiInvaders()
         {
@@ -35,16 +36,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
             return status;
         }
-
-
-        internal Thread AuxThread { get; set; }
-
-        internal SpaceInvadersMain invadersManager;
-
-        internal BaseForm baseF;
-
-        private string gameName;
-
 
         public GameManager(BaseForm baseF)
         {
@@ -69,8 +60,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
                 }
 
             }
-
-
             else if (AuxThread != null)
             {
                 if (gameName == "invaders")
@@ -80,10 +69,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
 
             }
         }
-
-
-
-
 
         private void InvadersLauch()
         {
@@ -110,16 +95,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
                 );
 
                 AuxThread.Start();
-
             }
-
-
-
         }
-
-
-
-
-
     }
 }

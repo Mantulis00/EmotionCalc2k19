@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Tools.API.Containers
 {
-    enum Emotion
+    public enum Emotion
     {
         NotSet,
         Emotionless,

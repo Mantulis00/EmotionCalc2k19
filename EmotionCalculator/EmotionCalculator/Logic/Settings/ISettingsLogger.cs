@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
-    interface ISettingsLogger
+    public interface ISettingsLogger
     {
         ThemePack LoadTheme();
         void SaveTheme(ThemePack themePack);

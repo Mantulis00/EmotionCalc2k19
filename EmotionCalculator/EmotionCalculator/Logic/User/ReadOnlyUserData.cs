@@ -6,18 +6,18 @@ using System.Collections.ObjectModel;
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
     //UserData wrapper
-    class ReadOnlyUserData
+    public class ReadOnlyUserData
     {
         private readonly UserData userData;
 
-        internal int JoyCoins { get { return userData.JoyCoins; } }
-        internal int JoyGems { get { return userData.JoyGems; } }
-        internal int DailyStreak { get { return userData.DailyStreak; } }
-        internal DateTime LastLogin { get { return userData.LastLogin; } }
-        internal ReadOnlyDictionary<Emotion, int> EmotionCount { get { return userData.EmotionCount; } }
-        internal ReadOnlyOwnedItems OwnedItems { get; private set; }
+        public int JoyCoins { get { return userData.JoyCoins; } }
+        public int JoyGems { get { return userData.JoyGems; } }
+        public int DailyStreak { get { return userData.DailyStreak; } }
+        public DateTime LastLogin { get { return userData.LastLogin; } }
+        public ReadOnlyDictionary<Emotion, int> EmotionCount { get { return userData.EmotionCount; } }
+        public ReadOnlyOwnedItems OwnedItems { get; private set; }
 
-        internal event EventHandler CurrencyChanged
+        public event EventHandler CurrencyChanged
         {
             add { userData.CurrencyChanged += value; }
             remove { userData.CurrencyChanged -= value; }

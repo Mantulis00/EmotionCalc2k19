@@ -6,7 +6,7 @@ using System;
 
 namespace EmotionCalculator.EmotionCalculator.Logic
 {
-    class MonthManager
+    public class MonthManager
     {
         private readonly UserData userData;
 

@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.Settings
 {
-    internal enum SettingStatus
+    public enum SettingStatus
     {
         NotSet,
         Enabled,

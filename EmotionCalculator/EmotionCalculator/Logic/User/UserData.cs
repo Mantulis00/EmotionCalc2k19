@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
-    class UserData
+    public class UserData
     {
         internal int JoyCoins { get; private set; }
         internal int JoyGems { get; private set; }

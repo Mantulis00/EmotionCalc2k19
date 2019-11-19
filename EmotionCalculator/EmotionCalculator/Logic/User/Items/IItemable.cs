@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.User.Items
 {
-    interface IItemable
+    public interface IItemable
     {
         Item ToItem();
     }

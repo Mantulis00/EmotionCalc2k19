@@ -1,10 +1,10 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.User.Items
 {
-    class Item
+    public class Item
     {
-        internal string Name { get; }
-        internal string Description { get; }
-        internal ItemType ItemType { get; }
+        public string Name { get; }
+        public string Description { get; }
+        public ItemType ItemType { get; }
 
         internal Item(string name, string description, ItemType itemType)
         {

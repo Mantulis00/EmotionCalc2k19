@@ -3,11 +3,11 @@ using EmotionCalculator.EmotionCalculator.Logic.User.Items;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
 {
-    class PersonalPurchase
+    public class PersonalPurchase
     {
         private readonly UserData userData;
-        internal Item Item { get; }
-        internal ItemPrice ItemPrice { get; }
+        public Item Item { get; }
+        public ItemPrice ItemPrice { get; }
         public bool Available
         {
             get
@@ -21,7 +21,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
             ItemPrice = itemPrice;
         }
 
-        internal OperationStatus Purchase()
+        public OperationStatus Purchase()
         {
             if (Available)
             {

@@ -3,12 +3,12 @@ using System.IO;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 {
-    class SongPack : IItemable
+    public class SongPack : IItemable
     {
-        internal string Name { get; private set; }
-        internal string Description { get; private set; }
-        internal Image Image { get; private set; }
-        internal UnmanagedMemoryStream Song { get; private set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public Image Image { get; private set; }
+        public UnmanagedMemoryStream Song { get; private set; }
 
         internal SongPack(string name, string description, Image image, UnmanagedMemoryStream song)
         {

@@ -2,18 +2,18 @@
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 {
-    class ThemePack : IItemable
+    public class ThemePack : IItemable
     {
-        internal Image Image { get; private set; }
+        public Image Image { get; private set; }
 
-        internal string Name { get; private set; }
-        internal string Description { get; private set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
 
-        internal Color PrimaryColor { get; private set; }
-        internal Color SecondaryColor { get; private set; }
-        internal Color FocusColor { get; private set; }
-        internal Color FocusTextColor { get; private set; }
-        internal Color PrimaryTextColor { get; private set; }
+        public Color PrimaryColor { get; private set; }
+        public Color SecondaryColor { get; private set; }
+        public Color FocusColor { get; private set; }
+        public Color FocusTextColor { get; private set; }
+        public Color PrimaryTextColor { get; private set; }
 
         internal ThemePack(string name, string description, Image image,
             Color primaryColor, Color secondaryColor, Color focusColor, Color focusTextColor, Color primaryTextColor)

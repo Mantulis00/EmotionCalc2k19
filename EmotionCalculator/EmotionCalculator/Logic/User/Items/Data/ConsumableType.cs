@@ -1,6 +1,6 @@
 ﻿namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 {
-    enum ConsumableType
+    public enum ConsumableType
     {
         BasicLootBox,
         PremiumLootBox

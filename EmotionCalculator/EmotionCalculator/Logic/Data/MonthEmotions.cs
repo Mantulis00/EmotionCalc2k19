@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Data
 {
-    class MonthEmotions
+    public class MonthEmotions
     {
         private readonly Dictionary<int, Emotion> emotions = new Dictionary<int, Emotion>();
 

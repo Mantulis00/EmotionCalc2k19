@@ -4,7 +4,7 @@ using System;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
 {
-    class ItemPrice
+    public class ItemPrice
     {
         internal CurrencyType CurrencyType { get; }
         internal int Price { get; }

@@ -1,5 +1,4 @@
-﻿using EmotionCalculator.EmotionCalculator.FormsUI;
-using EmotionCalculator.EmotionCalculator.FormsUI.Threadings;
+﻿using EmotionCalculator.EmotionCalculator.FormsUI.Threadings;
 using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Data;
 using EmotionCalculator.EmotionCalculator.Logic.Events;
@@ -11,17 +10,17 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic
 {
-    class MainManager
+    public class MainManager
     {
         private readonly IUserLoader userLoader;
         private readonly UserData userData;
 
-        internal CurrencyManager CurrencyManager { get; }
-        internal ReadOnlyUserData ReadOnlyUserData { get; }
-        internal SettingsManager SettingsManager { get; }
-        internal MonthManager MonthManager { get; }
-        internal EventManager EventManager { get; }
-        internal Lazy<GameManager> GameManager { get; }
+        public CurrencyManager CurrencyManager { get; }
+        public ReadOnlyUserData ReadOnlyUserData { get; }
+        public SettingsManager SettingsManager { get; }
+        public MonthManager MonthManager { get; }
+        public EventManager EventManager { get; }
+        public Lazy<GameManager> GameManager { get; }
 
         public MainManager(IMonthLogger monthLogger, IUserLoader userLoader,
             ISettingsLogger settingsLogger, Lazy<GameManager> GameManager)
@@ -50,7 +49,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             this.GameManager = GameManager;
         }
 
-        internal void Save()
+        public void Save()
         {
             MonthManager.Save();
 
@@ -58,7 +57,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
                 userLoader.Save(userData);
         }
 
-        internal void Refresh()
+        public void Refresh()
         {
             MonthManager.Refresh();
             userData.Refresh();

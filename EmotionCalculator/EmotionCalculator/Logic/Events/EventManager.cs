@@ -3,7 +3,7 @@ using System;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Events
 {
-    class EventManager
+    public class EventManager
     {
         private readonly UserData userData;
 
