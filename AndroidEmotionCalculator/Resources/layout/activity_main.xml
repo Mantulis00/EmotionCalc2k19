@@ -1,0 +1,47 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout1">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView1" />
+    <LinearLayout
+        android:layout_alignParentBottom = "true"
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:text="Shop"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight = 0.25
+            android:id="@+id/button1"/>
+        <Button
+            android:text="Calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight = 0.25
+            android:id="@+id/button2"/>
+        <Button
+            android:text="Games"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight = 0.25
+            android:id="@+id/button3"/>
+        <Button
+            android:text="Music"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight = 0.25
+            android:id="@+id/button4"/>
+    </LinearLayout>
+</RelativeLayout>
