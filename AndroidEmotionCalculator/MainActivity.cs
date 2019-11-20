@@ -1,13 +1,12 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.App;
 using Android.Widget;
 
 namespace AndroidEmotionCalculator
 {
     [Activity(Label = "@string/app_name", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
