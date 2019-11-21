@@ -1,47 +1,41 @@
-
-<RelativeLayout
+<?xml version = "1.0" encoding = "utf-8"?>
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="25px"
-    android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/relativeLayout1">
-    <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
+    android:id="@+id/tableLayout1">
+    <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/imageView1" />
+        android:layout_weight="10"
+        android:id="@+id/pager" />
     <LinearLayout
-        android:layout_alignParentBottom = "true"
         android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
+        android:layout_weight="1"
+        android:id="@+id/buttonBar">
         <Button
             android:text="Shop"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight = "0.25"
-            android:id="@+id/button1"/>
+            android:layout_weight="0.25"
+            android:id="@+id/shopButton" />
         <Button
             android:text="Calendar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight = "0.25"
-            android:id="@+id/button2"/>
+            android:layout_weight="0.25"
+            android:id="@+id/calendarButton" />
         <Button
             android:text="Games"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight = "0.25"
-            android:id="@+id/button3"/>
+            android:layout_weight="0.25"
+            android:id="@+id/gamesButton" />
         <Button
             android:text="Music"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight = "0.25"
-            android:id="@+id/button4"/>
+            android:layout_weight="0.25"
+            android:id="@+id/musicButton" />
     </LinearLayout>
-</RelativeLayout>
+</TableLayout >
