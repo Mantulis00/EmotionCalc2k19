@@ -18,7 +18,7 @@ namespace AndroidEmotionCalculator.Fragments.Settings
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            SetContentView(Resource.Layout.settings);
             // Create your application here
         }
     }

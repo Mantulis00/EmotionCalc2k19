@@ -9,9 +9,6 @@ namespace AndroidEmotionCalculator.Fragments.Items
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-
-           
-
             return inflater.Inflate(Resource.Layout.calendar, container, false);
         }
     }
