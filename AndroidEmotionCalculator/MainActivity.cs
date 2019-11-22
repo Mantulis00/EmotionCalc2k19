@@ -53,6 +53,8 @@ namespace AndroidEmotionCalculator
                 (o, e) =>
                 {
                     viewPager.SetCurrentItem(2, true);
+
+                    //viewPager.
                 };
 
             Button musicButton = FindViewById<Button>(Resource.Id.musicButton);
@@ -61,6 +63,12 @@ namespace AndroidEmotionCalculator
                 {
                     viewPager.SetCurrentItem(3, true);
                 };
+
         }
-    }
+
+}
+
+      
+
+    
 }
