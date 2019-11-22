@@ -2,7 +2,7 @@
 using Android.Support.V4.App;
 using Android.Views;
 
-namespace AndroidEmotionCalculator.Fragments
+namespace AndroidEmotionCalculator.Fragments.Items
 {
     class GamesFragment : Fragment
     {

@@ -1,27 +1,17 @@
 ﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Widget;
 using AndroidEmotionCalculator.Fragments;
-using Fragment = Android.Support.V4.App.Fragment;
-using FragmentManager = Android.Support.V4.App.FragmentManager;
+using static AndroidEmotionCalculator.Fragments.MainFragmentManager;
 
 namespace AndroidEmotionCalculator
 {
     [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : FragmentActivity
     {
-        ViewPager viewPager;
-        static JavaList<Fragment> fragments = new JavaList<Fragment>()
-        {
-            new ShopFragment(),
-            new CalendarFragment(),
-            new GamesFragment(),
-            new MusicFragment(),
-        };
-
+        private ViewPager viewPager;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,6 +22,14 @@ namespace AndroidEmotionCalculator
 
             SetupPager();
             SetupButtons();
+        }
+
+        private void SetupPager()
+        {
+            viewPager = FindViewById<ViewPager>(Resource.Id.pager);
+            viewPager.Adapter = new ScreenAdapter(SupportFragmentManager, FragmentList);
+
+            viewPager.SetCurrentItem(1, true);
         }
 
         private void SetupButtons()
@@ -63,26 +61,6 @@ namespace AndroidEmotionCalculator
                 {
                     viewPager.SetCurrentItem(3, true);
                 };
-        }
-
-        private void SetupPager()
-        {
-            FragmentManager fragmentManager = SupportFragmentManager;
-            ScreenAdapter screenAdapter = new ScreenAdapter(
-                fragmentManager,
-                fragments);
-
-            viewPager = FindViewById<ViewPager>(Resource.Id.pager);
-            viewPager.Adapter = screenAdapter;
-
-            viewPager.SetCurrentItem(1, true);
-        }
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
