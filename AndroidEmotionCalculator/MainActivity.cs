@@ -28,7 +28,6 @@ namespace AndroidEmotionCalculator
         {
             viewPager = FindViewById<ViewPager>(Resource.Id.pager);
             viewPager.Adapter = new ScreenAdapter(SupportFragmentManager, FragmentList);
-
             viewPager.SetCurrentItem(1, true);
         }
 

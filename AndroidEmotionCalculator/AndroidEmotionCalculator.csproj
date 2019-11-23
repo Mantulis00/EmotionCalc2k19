@@ -66,6 +66,7 @@
     <Compile Include="Fragments\MainFragmentManager.cs" />
     <Compile Include="Fragments\ScreenAdapter.cs" />
     <Compile Include="Fragments\Items\ShopFragment.cs" />
+    <Compile Include="Fragments\Settings\InventoryActivity.cs" />
     <Compile Include="Fragments\Settings\SettingsActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -148,6 +149,9 @@
     <AndroidResource Include="Resources\layout\Inventory.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Adapters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

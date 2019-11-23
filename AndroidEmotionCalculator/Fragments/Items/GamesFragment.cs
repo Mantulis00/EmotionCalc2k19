@@ -16,9 +16,7 @@ namespace AndroidEmotionCalculator.Fragments.Items
 
              SetupButtons(view);
 
-            // pass view
 
-           // return inflater.Inflate(Resource.Layout.games, container, false);
              return view;
         }
 
@@ -39,7 +37,6 @@ namespace AndroidEmotionCalculator.Fragments.Items
            };
            view.FindViewById<Button>(Resource.Id.btnSettings).Click += (o, e) =>
            {
-
                StartNewActivity();
            };
 

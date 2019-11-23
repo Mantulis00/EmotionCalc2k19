@@ -15,11 +15,30 @@ namespace AndroidEmotionCalculator.Fragments.Settings
     [Activity(Label = "SettingsActivity")]
     public class SettingsActivity : Activity
     {
+
+        List<String> names;
+        ListView ListInventory;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.settings);
+            SetContentView(Resource.Layout.Inventory);
+
             // Create your application here
+
+
+
+            names = new List<String>()
+            {
+                "Mantas", "Tomas", "Julius"
+            };
+
+            ListInventory = (ListView) FindViewById(Resource.Id.listInventory) ;
+
+            ArrayAdapter<string> adaptor = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, names);
+
+            ListInventory.Adapter = adaptor;
+
         }
     }
 }
