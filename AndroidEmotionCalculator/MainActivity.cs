@@ -26,7 +26,7 @@ namespace AndroidEmotionCalculator
 
         private void SetupPager()
         {
-            viewPager = FindViewById<ViewPager>(Resource.Id.pager);
+            viewPager = FindViewById<ViewPager>(Resource.Id.pagerMain);
             viewPager.Adapter = new ScreenAdapter(SupportFragmentManager, FragmentList);
 
             viewPager.SetCurrentItem(1, true);
@@ -34,28 +34,28 @@ namespace AndroidEmotionCalculator
 
         private void SetupButtons()
         {
-            Button shopButton = FindViewById<Button>(Resource.Id.shopButton);
+            Button shopButton = FindViewById<Button>(Resource.Id.buttonShopPager);
             shopButton.Click +=
                 (o, e) =>
                 {
                     viewPager.SetCurrentItem(0, true);
                 };
 
-            Button calendarButton = FindViewById<Button>(Resource.Id.calendarButton);
+            Button calendarButton = FindViewById<Button>(Resource.Id.buttonCalendarPager);
             calendarButton.Click +=
                 (o, e) =>
                 {
                     viewPager.SetCurrentItem(1, true);
                 };
 
-            Button gamesButton = FindViewById<Button>(Resource.Id.gamesButton);
+            Button gamesButton = FindViewById<Button>(Resource.Id.buttonGamesPager);
             gamesButton.Click +=
                 (o, e) =>
                 {
                     viewPager.SetCurrentItem(2, true);
                 };
 
-            Button musicButton = FindViewById<Button>(Resource.Id.musicButton);
+            Button musicButton = FindViewById<Button>(Resource.Id.buttonMusicPager);
             musicButton.Click +=
                 (o, e) =>
                 {

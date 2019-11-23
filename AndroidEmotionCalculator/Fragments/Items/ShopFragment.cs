@@ -1,8 +1,8 @@
-﻿using Android.Graphics;
-using Android.OS;
+﻿using Android.OS;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using AndroidEmotionCalculator.Tools;
 using AppResources = EmotionCalculator.Properties.Resources;
 
 namespace AndroidEmotionCalculator.Fragments.Items
@@ -13,11 +13,11 @@ namespace AndroidEmotionCalculator.Fragments.Items
         {
             View view = inflater.Inflate(Resource.Layout.shop, container, false);
 
-            var image = view.FindViewById<ImageView>(Resource.Id.joyCoins);
+            var coinsImage = view.FindViewById<ImageView>(Resource.Id.imageViewShopJoyCoins);
+            coinsImage.SetImageBitmap(AppResources.joyCoins.ToBitmap());
 
-            var array = AppResources.joyCoins;
-
-            image.SetImageBitmap(BitmapFactory.DecodeByteArray(array, 0, array.Length));
+            var gemsImage = view.FindViewById<ImageView>(Resource.Id.imageViewShopJoyGems);
+            gemsImage.SetImageBitmap(AppResources.joyGem.ToBitmap());
 
             return view;
         }
