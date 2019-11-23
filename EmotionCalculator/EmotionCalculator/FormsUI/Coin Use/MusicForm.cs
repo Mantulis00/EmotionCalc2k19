@@ -1,4 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
 using System;
 using System.Linq;
 using System.Media;
@@ -40,7 +41,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Coin_Use
             var song = songs.ElementAt(index);
 
             musiclabel.Text = song.Name;
-            BackgroundImage = song.Image;
+            BackgroundImage = song.Image.ToImage();
         }
 
         private void PlayButtonMusic_Click(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.FileHandler;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
 using System;
 using System.Drawing;
 using System.Net.Http;
@@ -70,7 +71,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 try
                 {
                     APIParseResult parseResult = await baseForm.APIManager
-                        .GetAPIRequester().RequestParseResultAsync(image);
+                        .GetAPIRequester().RequestParseResultAsync(image.ToBytes());
 
                     baseForm.UpdateParsedData(parseResult);
                 }

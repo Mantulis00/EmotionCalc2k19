@@ -2,6 +2,7 @@
 using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +12,18 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
 {
     class CalendarUpdater
     {
-        private IReadOnlyList<PictureBox> cells;
-        private IReadOnlyList<PictureBox> emojis;
-        private IReadOnlyList<Label> numbers;
-        private IReadOnlyList<Label> emotionLabels;
-        private EmojiManager emojiManager;
+        private readonly IReadOnlyList<PictureBox> cells;
+        private readonly IReadOnlyList<PictureBox> emojis;
+        private readonly IReadOnlyList<Label> numbers;
+        private readonly IReadOnlyList<Label> emotionLabels;
 
-        private PictureBox backgroundBox;
-        private SettingsManager settingsManager;
+        private readonly PictureBox backgroundBox;
+        private readonly SettingsManager settingsManager;
 
         internal CalendarUpdater(PictureBox backgroundBox, SettingsManager settingsManager)
         {
             this.backgroundBox = backgroundBox;
             this.settingsManager = settingsManager;
-
-            emojiManager = new EmojiManager();
 
             cells = CalendarGenerator.GenerateCells(backgroundBox, settingsManager.SelectedTheme.SecondaryColor).ToList();
 
@@ -40,7 +38,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
         {
             ThemePack selectedTheme = settingsManager.SelectedTheme;
 
-            backgroundBox.Image = selectedTheme.Image;
+            backgroundBox.Image = selectedTheme.Image.ToImage();
 
             DayOfWeek dayOfWeek = new DateTime(newDateTime.Year, newDateTime.Month, 1).DayOfWeek;
 
@@ -79,7 +77,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
                 number.Text = (i + 1).ToString();
                 number.Visible = true;
 
-                SetEmotions(newDateTime, monthEmotions, selectedTheme, cellNumber, number, i);
+                SetEmotions(monthEmotions, selectedTheme, cellNumber, i);
             }
 
             SetCellVisibility(cells);
@@ -87,7 +85,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
         }
 
 
-        private void SetEmotions(DateTime newDateTime, ReadOnlyMonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, Label number, int i)
+        private void SetEmotions(ReadOnlyMonthEmotions monthEmotions, ThemePack selectedTheme, int cellNumber, int i)
         {
             var emotionLabel = emotionLabels[cellNumber + i];
             var emoji = emojis[cellNumber + i];
@@ -109,7 +107,11 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI
             {
                 if (settingsManager[SettingType.Emoji] == SettingStatus.Enabled)
                 {
-                    emojiManager.GetEmoji(emoji, monthEmotions[i + 1]);
+                    if (EmojiManager.TryGetEmojiImage(monthEmotions[i + 1], out byte[] image))
+                    {
+                        emoji.Image = image.ToImage();
+                    }
+
                     emoji.BringToFront();
                     emoji.Visible = true;
                 }

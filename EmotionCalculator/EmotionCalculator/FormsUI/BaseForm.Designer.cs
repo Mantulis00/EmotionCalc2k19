@@ -1,4 +1,6 @@
-﻿namespace EmotionCalculator.EmotionCalculator.FormsUI
+﻿using EmotionCalculator.EmotionCalculator.Tools.Web;
+
+namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     partial class BaseForm
     {
@@ -303,7 +305,7 @@
             // gemsImagePanel
             // 
             this.gemsImagePanel.BackColor = System.Drawing.Color.Transparent;
-            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem;
+            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem.ToImage();
             this.gemsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gemsImagePanel.Location = new System.Drawing.Point(2, 2);
             this.gemsImagePanel.Name = "gemsImagePanel";
@@ -335,7 +337,7 @@
             // coinsImagePanel
             // 
             this.coinsImagePanel.BackColor = System.Drawing.Color.Transparent;
-            this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins;
+            this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins.ToImage();
             this.coinsImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.coinsImagePanel.Location = new System.Drawing.Point(3, 2);
             this.coinsImagePanel.Name = "coinsImagePanel";
@@ -377,7 +379,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiHappiness;
+            this.panel8.BackgroundImage = global::EmotionCalculator.Properties.Resources.EmojiHappiness1.ToImage();
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel8.Location = new System.Drawing.Point(4, 4);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
@@ -412,7 +414,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiAnger;
+            this.panel2.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiAnger.ToImage();
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(4, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -447,7 +449,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiDisguist;
+            this.panel4.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiDisguist.ToImage();
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Location = new System.Drawing.Point(4, 4);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
@@ -482,7 +484,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiContempt;
+            this.panel6.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiContempt.ToImage();
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel6.Location = new System.Drawing.Point(4, 4);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
@@ -517,7 +519,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSurprise;
+            this.panel10.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSurprise.ToImage();
             this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel10.Location = new System.Drawing.Point(4, 4);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
@@ -552,7 +554,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.Transparent;
-            this.panel12.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiNeutral;
+            this.panel12.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiNeutral.ToImage();
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel12.Location = new System.Drawing.Point(4, 4);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
@@ -587,7 +589,7 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSadness;
+            this.panel14.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSadness.ToImage();
             this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel14.Location = new System.Drawing.Point(4, 4);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
@@ -622,7 +624,7 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Transparent;
-            this.panel16.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiFear;
+            this.panel16.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiFear.ToImage();
             this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel16.Location = new System.Drawing.Point(4, 4);
             this.panel16.Margin = new System.Windows.Forms.Padding(2);

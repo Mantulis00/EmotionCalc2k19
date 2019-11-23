@@ -7,7 +7,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 {
     public partial class FaceAPISettingsForm : Form
     {
-        private FaceAPIRequester faceAPIRequester;
+        private readonly FaceAPIRequester faceAPIRequester;
 
         internal FaceAPISettingsForm(FaceAPIRequester faceAPIRequester)
         {

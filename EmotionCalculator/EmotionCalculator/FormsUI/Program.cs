@@ -17,24 +17,24 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             Application.SetCompatibleTextRenderingDefault(false);
 
             IAPIManager apiManager = new FaceAPIManager();
-            Form baseWindow = new BaseForm(apiManager);
-            baseWindow.Show();
+            BaseForm baseForm = new BaseForm(apiManager);
+            baseForm.Show();
 
             if (!FaceAPIConfig.ConfigExists())
             {
-                baseWindow.Enabled = false;
+                baseForm.Enabled = false;
 
-                Form settingsWindow = apiManager.GetSettingsForm();
+                Form settingsWindow = new SettingsForm(baseForm);
                 settingsWindow.BringToFront();
                 settingsWindow.Show();
 
                 settingsWindow.FormClosed += (o, ev) =>
                 {
-                    baseWindow.Enabled = true;
+                    baseForm.Enabled = true;
                 };
             }
 
-            Application.Run(baseWindow);
+            Application.Run(baseForm);
         }
     }
 }

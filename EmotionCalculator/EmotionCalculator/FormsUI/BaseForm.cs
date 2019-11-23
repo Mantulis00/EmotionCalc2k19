@@ -1,6 +1,5 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI.Currency;
 using EmotionCalculator.EmotionCalculator.FormsUI.DynamicUI;
-using EmotionCalculator.EmotionCalculator.FormsUI.Threadings;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.EmotionCalculator.Logic.Currency;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
@@ -58,8 +57,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MainManager = new MainManager(
                 new MonthEmotionsIO(),
                 new UserLoader(),
-                new SettingsLogger(),
-                new Lazy<GameManager>(() => new GameManager(this)));
+                new SettingsLogger());
 
             CalendarUpdater calendarUpdater = new CalendarUpdater(calendarBackground, MainManager.SettingsManager);
 
@@ -161,7 +159,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ConfigureAPIKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenSecondaryWindow(APIManager.GetSettingsForm());
+            OpenSecondaryWindow(new SettingsForm(this));
         }
 
         private void ShopToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,7 +222,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
+            //MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
         }
 
         //Calendar navigation

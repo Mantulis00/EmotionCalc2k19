@@ -1,15 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
-    <TextView
-        android:text="SHOP"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    android:id="@+id/relativeLayout">
+    <TableLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/tableLatyout">
+        <TableRow
+            android:layout_weight = "0.15"
+            android:layout_width="match_parent"
+            android:id="@+id/currencyLayout">
+            <android.support.v4.widget.Space
+                android:layout_weight = "0.2"
+                android:id="@+id/space" />
+            <ImageView
+                android:src = "#000000"
+                android:layout_weight = "0.2"
+                android:layout_height="match_parent"
+                android:id="@+id/joyCoins" />
+            <ImageView
+                android:src = "#000000"
+                android:layout_weight = "0.2"
+                android:layout_height="match_parent"
+                android:id="@+id/joyGems" />
+        </TableRow>
+        <TableRow
+            android:layout_weight = "0.1"
+            android:layout_width="match_parent"
+            android:id="@+id/shopTabsLayout">
+            <ImageView
+                android:src = "#000000"
+                android:layout_weight = "0.2"
+                android:layout_height="match_parent"
+                android:id="@+id/themesTab" />
+            <ImageView
+                android:src = "#000000"
+                android:layout_weight = "0.2"
+                android:layout_height="match_parent"
+                android:id="@+id/songsTab" />
+            <ImageView
+                android:src = "#000000"
+                android:layout_weight = "0.2"
+                android:layout_height="match_parent"
+                android:id="@+id/lootBoxTab" />
+            <ImageView
+                android:src = "#000000"
+                android:layout_weight = "0.2"
+                android:layout_height="match_parent"
+                android:id="@+id/vanityTab" />
+        </TableRow>
+        <TableRow
+            android:layout_weight = "1"
+            android:layout_width="match_parent"
+            android:id="@+id/shopRow">
+            <ImageView
+                android:src="#101070"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:id="@+id/shopTemporary" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout >

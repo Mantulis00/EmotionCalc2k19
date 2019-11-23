@@ -64,7 +64,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Threadings
             {
                 if (gameName == "invaders")
                 {
-                    invadersManager.playerIManager.ReadInput(e);
+                    invadersManager.PlayerIManager.ReadInput(e);
                 }
 
             }

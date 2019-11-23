@@ -1,0 +1,203 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{81B9596F-3279-4322-A602-A5EA1515B77C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>WindowsEmotionCalculator</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>EmotionCalculator.EmotionCalculator.FormsUI.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\EmotionCalculator\v16\.suo" />
+    <None Include=".vs\EmotionCalculator\v16\Server\sqlite3\db.lock" />
+    <None Include=".vs\EmotionCalculator\v16\Server\sqlite3\storage.ide" />
+    <None Include="app.config" />
+    <None Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.assets.cache" />
+    <None Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.csproj.CoreCompileInputs.cache" />
+    <None Include="EmotionCalculator\obj\Debug\netcoreapp2.1\EmotionCalculator.csprojAssemblyReference.cache" />
+    <None Include="EmotionCalculator\obj\EmotionCalculator.csproj.nuget.cache" />
+    <None Include="EmotionCalculator\obj\EmotionCalculator.csproj.nuget.dgspec.json" />
+    <None Include="EmotionCalculator\obj\EmotionCalculator.csproj.nuget.g.props" />
+    <None Include="EmotionCalculator\obj\EmotionCalculator.csproj.nuget.g.targets" />
+    <None Include="EmotionCalculator\obj\project.assets.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CameraHandle.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\BaseFormManagerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.Designer.cs">
+      <DependentUpon>MusicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.Designer.cs">
+      <DependentUpon>DailyLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Currency\ShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Currency\ShopForm.Designer.cs">
+      <DependentUpon>ShopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\IUserUpdatable.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\CameraForm.Designer.cs">
+      <DependentUpon>CameraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.Designer.cs">
+      <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarGenerator.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\DynamicUI\CalendarUpdater.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.Designer.cs">
+      <DependentUpon>ImagefileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Program.cs" />
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Recording\UrlForm.Designer.cs">
+      <DependentUpon>UrlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmotionCalculator\FormsUI\Threadings\GameManager.cs" />
+    <Compile Include="ImageConverter.cs" />
+    <Compile Include="ImageHandle.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\AnimationManager.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\Controls.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\InvadersManager.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\PlayerInputs.cs" />
+    <Compile Include="MiniGames\SpaceInvaders\SpaceInvadersMain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmotionCalculator\obj\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Coin Use\MusicForm.resx">
+      <DependentUpon>MusicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\DailyLoginForm.resx">
+      <DependentUpon>DailyLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Currency\ShopForm.resx">
+      <DependentUpon>ShopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\CameraForm.resx">
+      <DependentUpon>CameraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Configuration\FaceAPISettingsForm.resx">
+      <DependentUpon>FaceAPISettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\ImagefileForm.resx">
+      <DependentUpon>ImagefileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Configuration\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmotionCalculator\FormsUI\Recording\UrlForm.resx">
+      <DependentUpon>UrlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Resources\EmotionCalculatorMain.csproj">
+      <Project>{68bbd11b-fac0-46bd-bd72-c04ec9342c66}</Project>
+      <Name>EmotionCalculatorMain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
