@@ -8,6 +8,7 @@ using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             //UI
             InitializeComponent();
+            InitializePictures();
 
             //API
             APIManager = apiManager;
@@ -45,6 +47,20 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 {
                     OpenSecondaryWindow(new DailyLoginForm(dailyStreak, claimReward));
                 });
+        }
+
+        private void InitializePictures()
+        {
+            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem.ToImage();
+            this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins.ToImage();
+            this.panel8.BackgroundImage = global::EmotionCalculator.Properties.Resources.EmojiHappiness1.ToImage();
+            this.panel2.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiAnger.ToImage();
+            this.panel4.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiDisguist.ToImage();
+            this.panel6.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiContempt.ToImage();
+            this.panel10.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSurprise.ToImage();
+            this.panel12.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiNeutral.ToImage();
+            this.panel14.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSadness.ToImage();
+            this.panel16.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiFear.ToImage();
         }
 
         private void RefreshUI()

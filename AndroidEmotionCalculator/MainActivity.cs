@@ -4,6 +4,8 @@ using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Widget;
 using AndroidEmotionCalculator.Fragments;
+using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.Tools.IO.Android;
 using static AndroidEmotionCalculator.Fragments.MainFragmentManager;
 
 namespace AndroidEmotionCalculator
@@ -12,9 +14,12 @@ namespace AndroidEmotionCalculator
     public class MainActivity : FragmentActivity
     {
         private ViewPager viewPager;
+        private MainManager mainManager;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            SetupEmotionCalculator();
+
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
@@ -24,10 +29,18 @@ namespace AndroidEmotionCalculator
             SetupButtons();
         }
 
+        private void SetupEmotionCalculator()
+        {
+            mainManager = new MainManager(
+                new AndroidMonthLogger(),
+                new AndroidUserLoader(),
+                new AndroidSettingsLogger());
+        }
+
         private void SetupPager()
         {
             viewPager = FindViewById<ViewPager>(Resource.Id.pagerMain);
-            viewPager.Adapter = new ScreenAdapter(SupportFragmentManager, FragmentList);
+            viewPager.Adapter = new ScreenAdapter(SupportFragmentManager, GetFragmentList(mainManager));
 
             viewPager.SetCurrentItem(1, true);
         }
