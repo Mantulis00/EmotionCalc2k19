@@ -12,7 +12,6 @@
         android:id="@+id/tableLayoutShop">
         <TableRow
             android:layout_weight = "0.15"
-            android:layout_width="0dp"
             android:weightSum="0.6"
             android:id="@+id/tableRowCurrencies">
             <android.support.v4.widget.Space
@@ -22,6 +21,7 @@
 
             <ImageView
                 android:src = "#000000"
+                android:scaleType="fitCenter"
                 android:layout_weight = "0.1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -38,6 +38,7 @@
 
             <ImageView
                 android:src = "#000000"
+                android:scaleType="fitCenter"
                 android:layout_weight = "0.1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -54,28 +55,40 @@
         </TableRow>
         <TableRow
             android:layout_weight = "0.1"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:id="@+id/tableRowShopTabs">
-            <ImageView
+            <ImageButton
                 android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
                 android:layout_weight = "0.2"
-                android:layout_height="match_parent"
-                android:id="@+id/imageViewShopTabThemes" />
-            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabThemes" />
+            <ImageButton
                 android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
                 android:layout_weight = "0.2"
-                android:layout_height="match_parent"
-                android:id="@+id/imageViewShopTabSongs" />
-            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabSongs" />
+            <ImageButton
                 android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
                 android:layout_weight = "0.2"
-                android:layout_height="match_parent"
-                android:id="@+id/imageViewShopTabLootBoxes" />
-            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabLootBoxes" />
+            <ImageButton
                 android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
                 android:layout_weight = "0.2"
-                android:layout_height="match_parent"
-                android:id="@+id/imageViewShopTabVanity" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabVanity" />
         </TableRow>
         <TableRow
             android:layout_weight = "1"

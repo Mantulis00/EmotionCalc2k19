@@ -211,8 +211,17 @@
   <data name="MCBG12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="note" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\note.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="premiumLootbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\premiumLootbox.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="themePackIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\themePackIcon.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tophat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tophat.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="vu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vu.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

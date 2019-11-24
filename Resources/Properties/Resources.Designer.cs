@@ -481,9 +481,39 @@ namespace EmotionCalculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] note {
+            get {
+                object obj = ResourceManager.GetObject("note", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] premiumLootbox {
             get {
                 object obj = ResourceManager.GetObject("premiumLootbox", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] themePackIcon {
+            get {
+                object obj = ResourceManager.GetObject("themePackIcon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] tophat {
+            get {
+                object obj = ResourceManager.GetObject("tophat", resourceCulture);
                 return ((byte[])(obj));
             }
         }
