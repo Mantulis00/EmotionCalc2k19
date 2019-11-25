@@ -6,8 +6,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop
 {
     public class ItemPrice
     {
-        internal CurrencyType CurrencyType { get; }
-        internal int Price { get; }
+        public CurrencyType CurrencyType { get; }
+        public int Price { get; }
         internal LootDropType LootDropType { get; }
         internal PriceType PriceType { get; }
 

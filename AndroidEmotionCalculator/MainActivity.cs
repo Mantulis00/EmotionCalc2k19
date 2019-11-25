@@ -3,10 +3,10 @@ using Android.OS;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Widget;
-using AndroidEmotionCalculator.Fragments;
+using AndroidEmotionCalculator.Elements.Adapters;
 using EmotionCalculator.EmotionCalculator.Logic;
 using EmotionCalculator.Tools.IO.Android;
-using static AndroidEmotionCalculator.Fragments.MainFragmentManager;
+using static AndroidEmotionCalculator.Elements.MainFragmentManager;
 
 namespace AndroidEmotionCalculator
 {

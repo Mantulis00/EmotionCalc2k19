@@ -1,7 +1,7 @@
 ﻿using Android.Runtime;
 using Android.Support.V4.App;
 
-namespace AndroidEmotionCalculator.Fragments
+namespace AndroidEmotionCalculator.Elements.Adapters
 {
     class ScreenAdapter : FragmentPagerAdapter
     {

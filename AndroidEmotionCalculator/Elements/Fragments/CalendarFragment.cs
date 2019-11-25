@@ -3,7 +3,7 @@ using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 
-namespace AndroidEmotionCalculator.Fragments.Items
+namespace AndroidEmotionCalculator.Elements.Fragments
 {
     class CalendarFragment : Fragment
     {

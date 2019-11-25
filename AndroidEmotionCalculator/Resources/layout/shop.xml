@@ -95,11 +95,10 @@
             android:layout_weight = "1"
             android:layout_width="match_parent"
             android:id="@+id/tableRowShopTemporary">
-            <ImageView
-                android:src="#101070"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:id="@+id/imageViewShopTemporary" />
+            <ListView
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:id="@+id/listViewShop" />
         </TableRow>
     </TableLayout>
 </RelativeLayout >

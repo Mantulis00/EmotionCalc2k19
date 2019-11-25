@@ -2,16 +2,20 @@
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using AndroidEmotionCalculator.Elements.Adapters;
 using AndroidEmotionCalculator.Tools;
 using EmotionCalculator.EmotionCalculator.Logic;
+using EmotionCalculator.EmotionCalculator.Logic.User.Items;
+using System.Linq;
 using AppResources = EmotionCalculator.Properties.Resources;
 
-namespace AndroidEmotionCalculator.Fragments.Items
+namespace AndroidEmotionCalculator.Elements.Fragments
 {
     class ShopFragment : Fragment
     {
         View view;
         readonly MainManager mainManager;
+        ListView listView;
 
         public ShopFragment(MainManager mainManager) : base()
         {
@@ -24,6 +28,9 @@ namespace AndroidEmotionCalculator.Fragments.Items
 
             SetImages();
             SetText();
+            SetButtons();
+            SetListView();
+            FillThemePacks();
 
             return view;
         }
@@ -59,6 +66,68 @@ namespace AndroidEmotionCalculator.Fragments.Items
 
             var gemText = view.FindViewById<TextView>(Resource.Id.textViewShopJoyGems);
             gemText.Text = mainManager.ReadOnlyUserData.JoyGems.ToString();
+        }
+
+        private void SetListView()
+        {
+            listView = view.FindViewById<ListView>(Resource.Id.listViewShop);
+        }
+
+        private void SetButtons()
+        {
+            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabThemes).Click +=
+                (o, e) =>
+                {
+                    FillThemePacks();
+                };
+
+            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabThemes).Click +=
+                (o, e) =>
+                {
+                    FillSongPacks();
+                };
+
+            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabThemes).Click +=
+                (o, e) =>
+                {
+                    FillLootBoxes();
+                };
+
+            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabThemes).Click +=
+                (o, e) =>
+                {
+                    FillOther();
+                };
+        }
+
+        private void FillThemePacks()
+        {
+            FillTable(ItemType.Theme);
+        }
+
+        private void FillSongPacks()
+        {
+            FillTable(ItemType.Theme);
+        }
+
+        private void FillLootBoxes()
+        {
+            FillTable(ItemType.Theme);
+        }
+
+        private void FillOther()
+        {
+            FillTable(ItemType.Skin);
+        }
+
+        private void FillTable(ItemType itemType)
+        {
+            var adapter = new ShopListViewAdapter(Activity,
+                mainManager.CurrencyManager.PersonalStore.GetPersonalPurchases()
+                .Where(purchase => purchase.Available && purchase.Item.ItemType == itemType)
+                .ToList());
+
+            listView.Adapter = adapter;
         }
     }
 }

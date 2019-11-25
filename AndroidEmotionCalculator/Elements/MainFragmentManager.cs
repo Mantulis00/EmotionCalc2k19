@@ -1,9 +1,9 @@
 ﻿using Android.Runtime;
 using Android.Support.V4.App;
-using AndroidEmotionCalculator.Fragments.Items;
+using AndroidEmotionCalculator.Elements.Fragments;
 using EmotionCalculator.EmotionCalculator.Logic;
 
-namespace AndroidEmotionCalculator.Fragments
+namespace AndroidEmotionCalculator.Elements
 {
     static class MainFragmentManager
     {
