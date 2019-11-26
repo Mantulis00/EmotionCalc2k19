@@ -45,7 +45,7 @@ namespace AndroidEmotionCalculator.Fragments.Items
 
           void StartNewActivity()
            {
-               Intent intent = new Intent(this.Activity, typeof(Settings.SettingsActivity));
+               Intent intent = new Intent(this.Activity, typeof(Settings.InventoryActivity));
                StartActivity(intent);
           }
 
