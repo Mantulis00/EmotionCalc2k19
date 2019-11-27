@@ -148,6 +148,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Elements\Settings\" />
     <Folder Include="IO\" />
   </ItemGroup>
   <ItemGroup>
