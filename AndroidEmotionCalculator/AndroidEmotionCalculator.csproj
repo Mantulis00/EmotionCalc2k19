@@ -68,6 +68,11 @@
     <Compile Include="Elements\MainFragmentManager.cs" />
     <Compile Include="Elements\Adapters\ScreenAdapter.cs" />
     <Compile Include="Elements\Fragments\ShopFragment.cs" />
+    <Compile Include="Elements\Settings\InventoryActivity.cs" />
+    <Compile Include="Elements\Settings\InventoryAdaptor.cs" />
+    <Compile Include="Elements\Settings\InventoryItemActivity.cs" />
+    <Compile Include="Elements\Settings\InventoryModel.cs" />
+    <Compile Include="Elements\Settings\SettingsActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -148,7 +153,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Elements\Settings\" />
     <Folder Include="IO\" />
   </ItemGroup>
   <ItemGroup>
