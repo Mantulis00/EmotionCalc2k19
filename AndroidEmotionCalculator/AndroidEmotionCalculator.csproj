@@ -63,7 +63,7 @@
     <Compile Include="Elements\Fragments\Items\CalendarFragment.cs" />
     <Compile Include="Elements\Fragments\Items\GamesFragment.cs" />
     <Compile Include="Elements\Fragments\Items\MusicFragment.cs" />
-    <Compile Include="Elements\Fragments\MainFragmentManager.cs" />
+    <Compile Include="Elements\MainFragmentManager.cs" />
     <Compile Include="Elements\Fragments\ScreenAdapter.cs" />
     <Compile Include="Elements\Fragments\Items\ShopFragment.cs" />
     <Compile Include="Elements\Fragments\Settings\InventoryActivity.cs" />
