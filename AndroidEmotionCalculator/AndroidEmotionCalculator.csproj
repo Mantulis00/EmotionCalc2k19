@@ -60,17 +60,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fragments\Items\CalendarFragment.cs" />
-    <Compile Include="Fragments\Items\GamesFragment.cs" />
-    <Compile Include="Fragments\Items\MusicFragment.cs" />
-    <Compile Include="Fragments\MainFragmentManager.cs" />
-    <Compile Include="Fragments\ScreenAdapter.cs" />
-    <Compile Include="Fragments\Items\ShopFragment.cs" />
-    <Compile Include="Fragments\Settings\InventoryActivity.cs" />
-    <Compile Include="Fragments\Settings\InventoryAdaptor.cs" />
-    <Compile Include="Fragments\Settings\InventoryItemActivity.cs" />
-    <Compile Include="Fragments\Settings\InventoryModel.cs" />
-    <Compile Include="Fragments\Settings\SettingsActivity.cs" />
+    <Compile Include="Elements\Fragments\Items\CalendarFragment.cs" />
+    <Compile Include="Elements\Fragments\Items\GamesFragment.cs" />
+    <Compile Include="Elements\Fragments\Items\MusicFragment.cs" />
+    <Compile Include="Elements\Fragments\MainFragmentManager.cs" />
+    <Compile Include="Elements\Fragments\ScreenAdapter.cs" />
+    <Compile Include="Elements\Fragments\Items\ShopFragment.cs" />
+    <Compile Include="Elements\Fragments\Settings\InventoryActivity.cs" />
+    <Compile Include="Elements\Fragments\Settings\InventoryAdaptor.cs" />
+    <Compile Include="Elements\Fragments\Settings\InventoryItemActivity.cs" />
+    <Compile Include="Elements\Fragments\Settings\InventoryModel.cs" />
+    <Compile Include="Elements\Fragments\Settings\SettingsActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
