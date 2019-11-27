@@ -17,8 +17,8 @@ namespace AndroidEmotionCalculator.Fragments.Settings
 
     class InventoryModel
     {
-        string Name { get; set; }
-        ImageView image { get; set; }
-        string count { get; set; }
+        public string Name { get; set; }
+        public ImageView Image { get; set; }
+        public string Count { get; set; }
     }
 }

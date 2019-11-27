@@ -37,17 +37,27 @@ namespace AndroidEmotionCalculator.Fragments.Items
            };
            view.FindViewById<Button>(Resource.Id.btnSettings).Click += (o, e) =>
            {
-               StartNewActivity();
+               StartActivitySettings();
+           };
+           view.FindViewById<Button>(Resource.Id.buttonInventory).Click += (o, e) =>
+           {
+               StartActivityInventory();
            };
 
-          }
+        }
+        void StartActivitySettings()
+        {
+            Intent intent = new Intent(this.Activity, typeof(Settings.SettingsActivity));
+            StartActivity(intent);
+        }
 
+        void StartActivityInventory()
+        {
+           Intent intent = new Intent(this.Activity, typeof(Settings.InventoryActivity));
+           StartActivity(intent);
+        }
 
-          void StartNewActivity()
-           {
-               Intent intent = new Intent(this.Activity, typeof(Settings.InventoryActivity));
-               StartActivity(intent);
-          }
+        
 
 
     }
