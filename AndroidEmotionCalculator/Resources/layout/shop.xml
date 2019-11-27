@@ -1,0 +1,104 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayoutShop">
+    <TableLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tableLayoutShop">
+        <TableRow
+            android:layout_weight = "0.15"
+            android:weightSum="0.6"
+            android:id="@+id/tableRowCurrencies">
+            <android.support.v4.widget.Space
+                android:layout_weight = "0.2"
+                android:layout_width="0dp"
+                android:id="@+id/spaceTableRowCurrencies" />
+
+            <ImageView
+                android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:layout_weight = "0.1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageViewShopJoyCoins"/>
+            <TextView
+                android:autoSizeTextType = "uniform"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:text="54000"
+                android:gravity="center"
+                android:maxLines = "1"
+                android:id="@+id/textViewShopJoyCoins"/>
+
+            <ImageView
+                android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:layout_weight = "0.1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageViewShopJoyGems"/>
+            <TextView
+                android:autoSizeTextType = "uniform"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:text="100"
+                android:gravity="center"
+                android:maxLines = "1"
+                android:id="@+id/textViewShopJoyGems"/>
+        </TableRow>
+        <TableRow
+            android:layout_weight = "0.1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowShopTabs">
+            <ImageButton
+                android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight = "0.2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabThemes" />
+            <ImageButton
+                android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight = "0.2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabSongs" />
+            <ImageButton
+                android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight = "0.2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabLootBoxes" />
+            <ImageButton
+                android:src = "#000000"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight = "0.2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShopTabVanity" />
+        </TableRow>
+        <TableRow
+            android:layout_weight="0.75"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowEmpty">
+            <ListView
+                android:id="@+id/listViewShop"
+                android:layout_width = "wrap_content"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout >

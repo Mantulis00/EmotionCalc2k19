@@ -1,4 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
+using EmotionCalculator.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,9 +13,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
         private List<Panel> panels;
         private List<Label> labels;
 
-        private int dailyStreak;
-
-        private Action claimReward;
+        private readonly int dailyStreak;
+        private readonly Action claimReward;
 
         internal DailyLoginForm(int dailyStreak, Action claimReward)
         {
@@ -47,15 +48,15 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI.Currency
                 if (i > dailyStreak)
                 {
                     if (dailyValue.Item1 == CurrencyType.JoyCoin)
-                        panels[i - 1].BackgroundImage = Properties.Resources.joyCoins;
+                        panels[i - 1].BackgroundImage = Resources.joyCoins.ToImage();
                     else if (dailyValue.Item1 == CurrencyType.JoyGem)
-                        panels[i - 1].BackgroundImage = Properties.Resources.joyGem;
+                        panels[i - 1].BackgroundImage = Resources.joyGem.ToImage();
 
                     labels[i - 1].Text = dailyValue.Item2.ToString();
                 }
                 else
                 {
-                    panels[i - 1].BackgroundImage = Properties.Resources.checkmark;
+                    panels[i - 1].BackgroundImage = Resources.checkmark.ToImage();
 
                     labels[i - 1].Text = string.Empty;
                 }

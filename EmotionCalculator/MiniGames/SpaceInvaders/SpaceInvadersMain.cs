@@ -1,6 +1,6 @@
 ﻿using EmotionCalculator.EmotionCalculator.FormsUI;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,23 +8,16 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 {
     class SpaceInvadersMain
     {
-
         //private PictureBox GrapX;
         internal PictureBox Player { get; set; }
-        private InvadersManager invaderManager;
-        internal PlayerInputs playerIManager { get; set; }
+        private readonly InvadersManager invaderManager;
+        internal PlayerInputs PlayerIManager { get; set; }
 
-        private AnimationManager animationManager;
+        private readonly AnimationManager animationManager;
 
         // two different clocks, one for animations other for game
         System.Windows.Forms.Timer MainClock, AnimationClock;
-
-        BaseForm baseForm;
-
-        private List<SInvaders> Invaders;
-
-        public int fps { private get; set; }
-
+        readonly BaseForm baseForm;
 
 
         internal SpaceInvadersMain(PictureBox grapX, BaseForm baseForm)
@@ -42,17 +35,21 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
             //InvadersManager refreshes invaders locations, checks if missle hits them, overall handles invaders and missles
             invaderManager = new InvadersManager(grapX, animationManager.AnimationElements, MainClock);
             //playerManager manages player, reads its inputs
-            playerIManager = new PlayerInputs(Player, invaderManager);
+            PlayerIManager = new PlayerInputs(Player, invaderManager);
         }
 
         private void SetupTimer()
         {
-            MainClock = new System.Windows.Forms.Timer();
-            MainClock.Interval = 35;
+            MainClock = new Timer
+            {
+                Interval = 50
+            };
             MainClock.Tick += StartClock;
 
-            AnimationClock = new System.Windows.Forms.Timer();
-            AnimationClock.Interval = 10;
+            AnimationClock = new Timer
+            {
+                Interval = 30
+            };
             AnimationClock.Tick += StartAnimationOnClock;
 
         }
@@ -87,13 +84,15 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
 
         private void SetupPlayer(PictureBox grapX)
         {
-            Player = new PictureBox();
-            Player.Size = new System.Drawing.Size(40, 40);
-            Player.Location = new System.Drawing.Point(grapX.Width / 2, 8 * grapX.Height / 10);
+            Player = new PictureBox
+            {
+                Size = new Size(40, 40),
+                Location = new Point(grapX.Width / 2, 8 * grapX.Height / 10),
 
-            Player.SizeMode = grapX.SizeMode;
-            Player.Image = Properties.Resources.emojiCringe;
-            Player.BackColor = Color.Transparent;
+                SizeMode = grapX.SizeMode,
+                Image = Properties.Resources.emojiCringe.ToImage(),
+                BackColor = Color.Transparent
+            };
 
             Player.BringToFront();
             Player.Visible = true;
@@ -106,13 +105,10 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
         public void GameOver(int score)
         {
             MainClock.Stop();
-            baseForm.AuxThread = null;
-
+            //baseForm.MainManager.GameManager.Value.gameStatus();
+            invaderManager.CheckMissle(true);
             Player.Dispose();
             Player = null;
-
-            baseForm.MainManager.SettingsManager[EmotionCalculator.Logic.Settings.SettingType.Game] = EmotionCalculator.Logic.Settings.SettingStatus.Disabled;
-            baseForm.MainManager.MonthManager.Refresh();
         }
     }
 }

@@ -8,11 +8,10 @@ using EmotionCalculator.EmotionCalculator.Logic.Settings;
 using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
-using EmotionCalculator.MiniGames.SpaceInvaders;
+using EmotionCalculator.EmotionCalculator.Tools.Web;
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace EmotionCalculator.EmotionCalculator.FormsUI
@@ -20,13 +19,8 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
     public partial class BaseForm : Form
     {
         internal MainManager MainManager { get; private set; }
-        internal Thread AuxThread { get; set; }
+
         internal IAPIManager APIManager { get; private set; }
-
-
-
-        internal SpaceInvadersMain invadersManager;
-
 
         internal BaseForm(IAPIManager apiManager)
         {
@@ -34,6 +28,7 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
             //UI
             InitializeComponent();
+            InitializePictures();
 
             //API
             APIManager = apiManager;
@@ -54,11 +49,24 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
                 });
         }
 
+        private void InitializePictures()
+        {
+            this.gemsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyGem.ToImage();
+            this.coinsImagePanel.BackgroundImage = global::EmotionCalculator.Properties.Resources.joyCoins.ToImage();
+            this.panel8.BackgroundImage = global::EmotionCalculator.Properties.Resources.EmojiHappiness1.ToImage();
+            this.panel2.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiAnger.ToImage();
+            this.panel4.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiDisguist.ToImage();
+            this.panel6.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiContempt.ToImage();
+            this.panel10.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSurprise.ToImage();
+            this.panel12.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiNeutral.ToImage();
+            this.panel14.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiSadness.ToImage();
+            this.panel16.BackgroundImage = global::EmotionCalculator.Properties.Resources.emojiFear.ToImage();
+        }
+
         private void RefreshUI()
         {
             ShowDebug();
         }
-
 
         private void SetupMonth()
         {
@@ -167,12 +175,12 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
 
         private void ConfigureAPIKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenSecondaryWindow(APIManager.GetSettingsForm());
+            OpenSecondaryWindow(new SettingsForm(this));
         }
 
         private void ShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenSecondaryWindow(new ShopForm(MainManager));
+            OpenSecondaryWindow(new ShopForm(MainManager, (item) => item.Available));
         }
 
         private void MusicToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,10 +236,9 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             MainManager.CurrencyManager.TemporaryCurrencyEntryPoint(CurrencyType.JoyCoin, 10);
         }
 
-
-        private void InvadersLauch()
+        private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            invadersManager = new SpaceInvadersMain(calendarBackground, this);
+            //MainManager.GameManager.Value.CheckInGameInput(e.KeyChar);
         }
 
         //Calendar navigation
@@ -243,45 +250,6 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         private void RightButton_Click(object sender, EventArgs e)
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
-        }
-
-        private void BaseForm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if (AuxThread == null)
-            {
-                StartGame(e.KeyChar);
-            }
-
-            else if (AuxThread != null)
-            {
-                invadersManager.playerIManager.ReadInput(e.KeyChar);
-            }
-
-        }
-
-        private void StartGame(char input)
-        {
-            if (input == 'u') // u for emoji invaders
-            {
-                if (MainManager.CurrencyManager.Purchase(CustomPurchase.GameRun) == OperationStatus.Successful)
-                {
-                    MainManager.SettingsManager[SettingType.Game] = SettingStatus.Enabled;
-                    MainManager.MonthManager.Refresh();
-                    InvadersLauch();
-
-                    AuxThread = new Thread(
-                        () =>
-                        {
-                            this.BeginInvoke((Action)delegate ()
-                            {
-                                invadersManager.StartAnimation();
-                            });
-                        }
-                    );
-                    AuxThread.Start();
-                }
-            }
         }
     }
 }

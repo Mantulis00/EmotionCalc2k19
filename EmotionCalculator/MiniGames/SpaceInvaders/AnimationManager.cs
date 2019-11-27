@@ -45,11 +45,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                 
 
                     if (presetLocations[y].X != 0 &&
-                        presetLocations[y].X + 4 > AnimationElements[y].Location.X &&
-                        presetLocations[y].X - 4 < AnimationElements[y].Location.X)
+                        presetLocations[y].X + 2 >= AnimationElements[y].Location.X &&
+                        presetLocations[y].X - 2 <= AnimationElements[y].Location.X)
                     {
-                    
-                        presetLocations[y] = new Point(0, presetLocations[y].Y);
+                         AnimationElements[y].Left = presetLocations[y].X;
+                         presetLocations[y] = new Point(0, presetLocations[y].Y);
                      }
 
                      else if (presetLocations[y].X > AnimationElements[y].Location.X && presetLocations[y].X != 0)
@@ -64,10 +64,11 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                 
 
                      if (presetLocations[y].Y != 0 &&
-                        presetLocations[y].Y + 4 > AnimationElements[y].Location.Y &&
-                        presetLocations[y].Y - 4 < AnimationElements[y].Location.Y)
+                        presetLocations[y].Y + 2 >= AnimationElements[y].Location.Y &&
+                        presetLocations[y].Y - 2 <= AnimationElements[y].Location.Y)
                     {
-                         presetLocations[y] = new Point(presetLocations[y].X, 0);
+                        AnimationElements[y].Top = presetLocations[y].Y;
+                        presetLocations[y] = new Point(presetLocations[y].X, 0);
                      }
 
                      else if (presetLocations[y].Y > AnimationElements[y].Location.Y && presetLocations[y].Y != 0)
@@ -87,7 +88,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                      else
                          counter = 0;
 
-                    if (counter + 1 == AnimationElements.Count)
+                    if (counter  == AnimationElements.Count)
                      {
                          Clock.Stop();
                          mainer.StartTimer();

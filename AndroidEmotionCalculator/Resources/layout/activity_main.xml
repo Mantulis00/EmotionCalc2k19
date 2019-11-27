@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tableLayoutMain">
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_weight="10"
+        android:id="@+id/pagerMain" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/buttonBarMain">
+        <Button
+            android:text="Shop"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:id="@+id/buttonShopPager" />
+        <Button
+            android:text="Calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:id="@+id/buttonCalendarPager" />
+        <Button
+            android:text="Games"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:id="@+id/buttonGamesPager" />
+        <Button
+            android:text="Music"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:id="@+id/buttonMusicPager" />
+    </LinearLayout>
+</TableLayout >

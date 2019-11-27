@@ -52,6 +52,7 @@ namespace EmotionCalculator.MiniGames.SpaceInvaders
                             break;
                         }
 
+
                     default:
                         break;
                 }
