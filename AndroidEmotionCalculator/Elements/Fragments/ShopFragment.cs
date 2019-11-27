@@ -16,6 +16,7 @@ namespace AndroidEmotionCalculator.Elements.Fragments
         View view;
         readonly MainManager mainManager;
         ListView listView;
+        ShopListViewAdapter adapter;
 
         public ShopFragment(MainManager mainManager) : base()
         {
@@ -71,6 +72,9 @@ namespace AndroidEmotionCalculator.Elements.Fragments
         private void SetListView()
         {
             listView = view.FindViewById<ListView>(Resource.Id.listViewShop);
+
+            adapter = new ShopListViewAdapter(Activity);
+            listView.Adapter = adapter;
         }
 
         private void SetButtons()
@@ -81,19 +85,19 @@ namespace AndroidEmotionCalculator.Elements.Fragments
                     FillThemePacks();
                 };
 
-            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabThemes).Click +=
+            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabSongs).Click +=
                 (o, e) =>
                 {
                     FillSongPacks();
                 };
 
-            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabThemes).Click +=
+            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabLootBoxes).Click +=
                 (o, e) =>
                 {
                     FillLootBoxes();
                 };
 
-            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabThemes).Click +=
+            view.FindViewById<ImageButton>(Resource.Id.buttonShopTabVanity).Click +=
                 (o, e) =>
                 {
                     FillOther();
@@ -107,12 +111,12 @@ namespace AndroidEmotionCalculator.Elements.Fragments
 
         private void FillSongPacks()
         {
-            FillTable(ItemType.Theme);
+            FillTable(ItemType.Song);
         }
 
         private void FillLootBoxes()
         {
-            FillTable(ItemType.Theme);
+            FillTable(ItemType.LootBox);
         }
 
         private void FillOther()
@@ -122,12 +126,11 @@ namespace AndroidEmotionCalculator.Elements.Fragments
 
         private void FillTable(ItemType itemType)
         {
-            var adapter = new ShopListViewAdapter(Activity,
-                mainManager.CurrencyManager.PersonalStore.GetPersonalPurchases()
-                .Where(purchase => purchase.Available && purchase.Item.ItemType == itemType)
-                .ToList());
+            adapter.Purchases.Clear();
+            adapter.Purchases.AddRange(mainManager.CurrencyManager.PersonalStore.GetPersonalPurchases()
+                .Where(purchase => purchase.Available && purchase.Item.ItemType == itemType));
 
-            listView.Adapter = adapter;
+            adapter.NotifyDataSetChanged();
         }
     }
 }

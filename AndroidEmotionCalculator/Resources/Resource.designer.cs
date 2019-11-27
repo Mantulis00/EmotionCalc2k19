@@ -3785,10 +3785,10 @@ namespace AndroidEmotionCalculator
 			public const int tableRowCurrencies = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int tableRowShopTabs = 2131230905;
+			public const int tableRowEmpty = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int tableRowShopTemporary = 2131230906;
+			public const int tableRowShopTabs = 2131230906;
 			
 			// aapt resource value: 0x7F0800B5
 			public const int tabMode = 2131230901;

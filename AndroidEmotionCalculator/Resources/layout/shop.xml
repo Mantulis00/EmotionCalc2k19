@@ -92,13 +92,13 @@
                 android:id="@+id/buttonShopTabVanity" />
         </TableRow>
         <TableRow
-            android:layout_weight = "1"
-            android:layout_width="match_parent"
-            android:id="@+id/tableRowShopTemporary">
+            android:layout_weight="0.75"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowEmpty">
             <ListView
-                android:layout_width = "match_parent"
-                android:layout_height = "match_parent"
-                android:id="@+id/listViewShop" />
+                android:id="@+id/listViewShop"
+                android:layout_width = "wrap_content"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout >

@@ -9,18 +9,18 @@ namespace AndroidEmotionCalculator.Elements.Adapters
 {
     class ShopListViewAdapter : BaseAdapter<PersonalPurchase>
     {
-        private readonly List<PersonalPurchase> purchases;
+        public List<PersonalPurchase> Purchases { get; private set; }
         private readonly Context context;
 
-        public ShopListViewAdapter(Context context, List<PersonalPurchase> purchases)
+        public ShopListViewAdapter(Context context)
         {
             this.context = context;
-            this.purchases = purchases;
+            Purchases = new List<PersonalPurchase>();
         }
 
-        public override PersonalPurchase this[int position] => purchases[position];
+        public override PersonalPurchase this[int position] => Purchases[position];
 
-        public override int Count => purchases.Count;
+        public override int Count => Purchases.Count;
 
         public override long GetItemId(int position)
         {
@@ -36,7 +36,7 @@ namespace AndroidEmotionCalculator.Elements.Adapters
                 newView = LayoutInflater.From(context).Inflate(Resource.Layout.shop_item, parent, false);
             }
 
-            var purchase = purchases[position];
+            var purchase = Purchases[position];
 
             newView.FindViewById<TextView>(Resource.Id.textViewShopItemItemTitle).Text = purchase.Item.Name;
             newView.FindViewById<TextView>(Resource.Id.textViewShopItemItemDescription).Text = purchase.Item.Description;
