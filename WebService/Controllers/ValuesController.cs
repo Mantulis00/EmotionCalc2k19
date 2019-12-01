@@ -11,6 +11,9 @@ namespace WebService.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            System.Console.WriteLine("hello");
+            System.Console.WriteLine(HttpContext.Request.Host);
+
             return new string[] { "value1", "value2" };
         }
 
