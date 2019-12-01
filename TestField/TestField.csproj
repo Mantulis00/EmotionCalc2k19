@@ -55,11 +55,5 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebService\WebService.csproj">
-      <Project>{fe597b2f-777b-4d0b-8eae-1c80495b5452}</Project>
-      <Name>WebService</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
