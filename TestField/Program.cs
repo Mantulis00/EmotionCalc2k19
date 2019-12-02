@@ -1,19 +1,29 @@
-﻿using System.Net.Http;
+﻿using Newtonsoft.Json;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace TestField
 {
     class Program
     {
-        private static readonly string url = "https://localhost:5001/api/values";
+        private static readonly string url = "https://localhost:5001/values";
 
-        static async System.Threading.Tasks.Task Main(string[] args)
+        static async Task Main()
         {
-            HttpClient client = new HttpClient();
+            string answer;
 
-            using (HttpResponseMessage response = await client.GetAsync(url))
+            using (HttpClient client = new HttpClient())
             {
-                System.Console.WriteLine(await response.Content.ReadAsStringAsync());
+                using (HttpResponseMessage response = await client.GetAsync(url))
+                {
+                    answer = await response.Content.ReadAsStringAsync();
+                }
             }
+
+            var receivedObject = JsonConvert.DeserializeObject<TestModel>(answer);
+
+            System.Console.WriteLine(receivedObject.Age);
+            System.Console.WriteLine(receivedObject.Name);
 
             System.Console.ReadLine();
         }
