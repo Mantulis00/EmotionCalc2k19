@@ -5,18 +5,16 @@ namespace WebService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class CurrencyController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<TestModel> Get()
+        public ActionResult<CurrencyModel> Get()
         {
-            TestModel test = new TestModel()
+            return new CurrencyModel()
             {
-                Age = 7,
-                Name = "Name",
+                JoyCoins = 50,
+                JoyGems = 5
             };
-
-            return test;
         }
     }
 }
