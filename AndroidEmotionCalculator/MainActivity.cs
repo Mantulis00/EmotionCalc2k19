@@ -74,6 +74,14 @@ namespace AndroidEmotionCalculator
                 {
                     viewPager.SetCurrentItem(3, true);
                 };
+            Button moodButton = FindViewById<Button>(Resource.Id.buttonMoodPager);
+            moodButton.Click +=
+                (o, e) =>
+                {
+                    viewPager.SetCurrentItem(4, true);
+                };
+
+
         }
     }
 }

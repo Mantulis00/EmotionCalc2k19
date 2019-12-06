@@ -14,7 +14,9 @@ namespace AndroidEmotionCalculator.Elements
                 new ShopFragment(mainManager),
                 new CalendarFragment(),
                 new GamesFragment(),
-                new MusicFragment(),
+                new MusicFragment(mainManager),
+                new MoodFragment(),
+
             };
         }
     }
