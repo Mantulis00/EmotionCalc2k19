@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
 {
-    static class ThemePackManager
+    public static class ThemePackManager
     {
 
         private static readonly List<(ThemePack ThemePack, ItemPrice ItemPrice)> _themePacks = new List<(ThemePack, ItemPrice)>()
@@ -67,7 +67,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User.Items.Data
                 lootDropType: LootDropType.Never)),
         };
 
-        internal static IEnumerable<ThemePack> ThemePacks
+        public static IEnumerable<ThemePack> ThemePacks
         {
             get
             {

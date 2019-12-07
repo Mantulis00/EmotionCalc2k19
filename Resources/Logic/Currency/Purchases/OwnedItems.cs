@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
 {
-    internal class OwnedItems
+    public class OwnedItems
     {
         private readonly Dictionary<Item, int> itemCollection;
 
@@ -47,7 +47,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
                 SongPackManager.SongPacks.Where(tuple => Owns(tuple.ToItem()));
         }
 
-        internal OwnedItems()
+        public OwnedItems()
         {
             itemCollection = new Dictionary<Item, int>();
         }

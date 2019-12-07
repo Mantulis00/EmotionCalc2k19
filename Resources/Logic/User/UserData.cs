@@ -11,13 +11,13 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 {
     public class UserData
     {
-        internal int JoyCoins { get; private set; }
-        internal int JoyGems { get; private set; }
-        internal int DailyStreak { get; private set; }
+        public int JoyCoins { get; private set; }
+        public int JoyGems { get; private set; }
+        public int DailyStreak { get; private set; }
 
         private DateTime _lastLogin;
 
-        internal DateTime LastLogin
+        public DateTime LastLogin
         {
             get
             {
@@ -30,7 +30,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
         }
 
         private readonly Dictionary<Emotion, int> emotionCount;
-        internal ReadOnlyDictionary<Emotion, int> EmotionCount
+        public ReadOnlyDictionary<Emotion, int> EmotionCount
         {
             get
             {
@@ -38,11 +38,11 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             }
         }
 
-        internal OwnedItems OwnedItems { get; }
+        public OwnedItems OwnedItems { get; }
 
         public event EventHandler CurrencyChanged;
 
-        internal UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin,
+        public UserData(int joyCoins, int joyGems, int dailyStreak, DateTime lastLogin,
             IEnumerable<KeyValuePair<Emotion, int>> emotionPairs, OwnedItems ownedItems)
         {
             JoyCoins = joyCoins;
@@ -52,7 +52,8 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
 
             emotionCount = new Dictionary<Emotion, int>();
 
-            emotionPairs.ToList().ForEach(pair => emotionCount.Add(pair.Key, pair.Value));
+            if (emotionPairs != null)
+                emotionPairs.ToList().ForEach(pair => emotionCount.Add(pair.Key, pair.Value));
 
             OwnedItems = ownedItems;
 

@@ -21,7 +21,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Data
         internal int Year { get; private set; }
         internal Month Month { get; private set; }
 
-        internal MonthEmotions(int year, Month month)
+        public MonthEmotions(int year, Month month)
         {
             Year = year;
             Month = month;

@@ -61,5 +61,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Resources\EmotionCalculatorMain.csproj">
+      <Project>{68bbd11b-fac0-46bd-bd72-c04ec9342c66}</Project>
+      <Name>EmotionCalculatorMain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
