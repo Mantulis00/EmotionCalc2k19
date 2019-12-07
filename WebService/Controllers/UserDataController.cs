@@ -4,6 +4,7 @@ using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace WebService.Controllers
@@ -18,6 +19,34 @@ namespace WebService.Controllers
         [HttpGet]
         public ActionResult<UserData> Get()
         {
+            Console.WriteLine("\n\n\n/////////////////////");
+
+            try
+            {
+                SqlConnection connection = new SqlConnection(
+                    $"Server={"(localdb)\\MSSQLLocalDB"};Database={"EmotionDB"}");
+
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) as number FROM UserData", connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader["number"]);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Big error:");
+                Console.WriteLine(e.Message);
+            }
+
+            Console.WriteLine("/////////////////////\n\n\n");
+
             return data;
         }
 
