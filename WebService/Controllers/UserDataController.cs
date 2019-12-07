@@ -23,19 +23,22 @@ namespace WebService.Controllers
 
             try
             {
-                SqlConnection connection = new SqlConnection(
-                    $"Server={"(localdb)\\MSSQLLocalDB"};Database={"EmotionDB"}");
+                string connectionString = $"Server={"(localdb)\\MSSQLLocalDB"};Database={"EmotionDB"}";
 
-                connection.Open();
-
-                SqlCommand command = new SqlCommand("SELECT COUNT(*) as number FROM UserData", connection);
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
+                using (SqlConnection connection = new SqlConnection(
+                    connectionString))
                 {
-                    while (reader.Read())
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand("SELECT COUNT(*) as number FROM UserData", connection);
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
                     {
-                        Console.WriteLine(reader["number"]);
+                        while (reader.Read())
+                        {
+                            Console.WriteLine(reader["number"]);
+                        }
                     }
                 }
             }
