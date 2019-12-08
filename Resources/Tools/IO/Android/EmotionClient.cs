@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EmotionCalculator.Tools.IO.Android
@@ -31,6 +32,15 @@ namespace EmotionCalculator.Tools.IO.Android
             {
                 string answer = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(answer);
+            }
+        }
+
+        public void Post<T>(string uri, T t)
+        {
+            using (var httpContent = new StringContent(JsonConvert.SerializeObject(t), Encoding.UTF8, "application/json"))
+            using (var httpResponse = client.PostAsync(uri, httpContent).Result)
+            {
+
             }
         }
     }

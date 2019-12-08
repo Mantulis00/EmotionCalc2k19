@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[UserData]
 (
-	[UserId] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[UserId] INT NOT NULL PRIMARY KEY, 
 	[JoyCoins] INT NOT NULL, 
 	[JoyGems] INT NOT NULL, 
 	[DailyStreak] SMALLINT NOT NULL DEFAULT 0, 
