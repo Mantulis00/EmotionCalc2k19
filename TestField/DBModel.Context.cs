@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestField
+namespace EntityFrameworkClasses
 {
     using System;
     using System.Data.Entity;

@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmotionCalculatorMain", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebService", "..\WebService\WebService.csproj", "{FE597B2F-777B-4D0B-8EAE-1C80495B5452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestField", "..\TestField\TestField.csproj", "{A47EB864-0439-4683-9DC6-47DA5EFEB032}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkClasses", "..\TestField\EntityFrameworkClasses.csproj", "{A47EB864-0439-4683-9DC6-47DA5EFEB032}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FE597B2F-777B-4D0B-8EAE-1C80495B5452} = {FE597B2F-777B-4D0B-8EAE-1C80495B5452}
 	EndProjectSection

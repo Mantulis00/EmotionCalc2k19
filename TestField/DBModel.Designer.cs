@@ -19,13 +19,13 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("EmotionDBModel", "FK_ItemId_ToItems1", "Item", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TestField.Item), "OwnedItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TestField.OwnedItem), true)]
-[assembly: EdmRelationshipAttribute("EmotionDBModel", "FK_UserId_ToUsers1", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TestField.User), "OwnedItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TestField.OwnedItem), true)]
-[assembly: EdmRelationshipAttribute("EmotionDBModel", "FK_UserId_ToUsers", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TestField.User), "UserData", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TestField.UserData), true)]
+[assembly: EdmRelationshipAttribute("EmotionDBModel", "FK_ItemId_ToItems1", "Item", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityFrameworkClasses.Item), "OwnedItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityFrameworkClasses.OwnedItem), true)]
+[assembly: EdmRelationshipAttribute("EmotionDBModel", "FK_UserId_ToUsers1", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityFrameworkClasses.User), "OwnedItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityFrameworkClasses.OwnedItem), true)]
+[assembly: EdmRelationshipAttribute("EmotionDBModel", "FK_UserId_ToUsers", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityFrameworkClasses.User), "UserData", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityFrameworkClasses.UserData), true)]
 
 #endregion
 
-namespace TestField
+namespace EntityFrameworkClasses
 {
     #region Contexts
     
