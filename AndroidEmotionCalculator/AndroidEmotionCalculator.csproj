@@ -142,18 +142,18 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Resources\EmotionCalculatorMain.csproj">
-      <Project>{68bbd11b-fac0-46bd-bd72-c04ec9342c66}</Project>
-      <Name>EmotionCalculatorMain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="IO\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\shop_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmotionCalculatorMain\EmotionCalculatorMain.csproj">
+      <Project>{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}</Project>
+      <Name>EmotionCalculatorMain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

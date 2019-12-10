@@ -13,16 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidEmotionCalculator", "..\AndroidEmotionCalculator\AndroidEmotionCalculator.csproj", "{905F9C9F-0AEB-4C73-AC3B-0668D677D018}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmotionCalculatorMain", "..\Resources\EmotionCalculatorMain.csproj", "{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebService", "..\WebService\WebService.csproj", "{FE597B2F-777B-4D0B-8EAE-1C80495B5452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkClasses", "..\TestField\EntityFrameworkClasses.csproj", "{A47EB864-0439-4683-9DC6-47DA5EFEB032}"
-	ProjectSection(ProjectDependencies) = postProject
-		{FE597B2F-777B-4D0B-8EAE-1C80495B5452} = {FE597B2F-777B-4D0B-8EAE-1C80495B5452}
-	EndProjectSection
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataBaseEmotionCalculator", "..\DataBaseEmotionCalculator\DataBaseEmotionCalculator.sqlproj", "{87EF181D-A2B2-465F-AA53-EF8051F65A1E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmotionCalculatorMain", "..\EmotionCalculatorMain\EmotionCalculatorMain.csproj", "{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkClasses", "..\EntityFrameworkClasses\EntityFrameworkClasses.csproj", "{A47EB864-0439-4683-9DC6-47DA5EFEB032}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,14 +47,6 @@ Global
 		{905F9C9F-0AEB-4C73-AC3B-0668D677D018}.Release|x86.ActiveCfg = Release|Any CPU
 		{905F9C9F-0AEB-4C73-AC3B-0668D677D018}.Release|x86.Build.0 = Release|Any CPU
 		{905F9C9F-0AEB-4C73-AC3B-0668D677D018}.Release|x86.Deploy.0 = Release|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Debug|x86.Build.0 = Debug|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Release|x86.ActiveCfg = Release|Any CPU
-		{68BBD11B-FAC0-46BD-BD72-C04EC9342C66}.Release|x86.Build.0 = Release|Any CPU
 		{FE597B2F-777B-4D0B-8EAE-1C80495B5452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE597B2F-777B-4D0B-8EAE-1C80495B5452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE597B2F-777B-4D0B-8EAE-1C80495B5452}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -66,14 +55,6 @@ Global
 		{FE597B2F-777B-4D0B-8EAE-1C80495B5452}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE597B2F-777B-4D0B-8EAE-1C80495B5452}.Release|x86.ActiveCfg = Release|Any CPU
 		{FE597B2F-777B-4D0B-8EAE-1C80495B5452}.Release|x86.Build.0 = Release|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|x86.Build.0 = Debug|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|x86.ActiveCfg = Release|Any CPU
-		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|x86.Build.0 = Release|Any CPU
 		{87EF181D-A2B2-465F-AA53-EF8051F65A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{87EF181D-A2B2-465F-AA53-EF8051F65A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87EF181D-A2B2-465F-AA53-EF8051F65A1E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -86,6 +67,22 @@ Global
 		{87EF181D-A2B2-465F-AA53-EF8051F65A1E}.Release|x86.ActiveCfg = Release|Any CPU
 		{87EF181D-A2B2-465F-AA53-EF8051F65A1E}.Release|x86.Build.0 = Release|Any CPU
 		{87EF181D-A2B2-465F-AA53-EF8051F65A1E}.Release|x86.Deploy.0 = Release|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Debug|x86.Build.0 = Debug|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Release|x86.ActiveCfg = Release|Any CPU
+		{211E0E2B-B0FF-4D8A-B92F-1AE5DD2D0B06}.Release|x86.Build.0 = Release|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Debug|x86.Build.0 = Debug|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|x86.ActiveCfg = Release|Any CPU
+		{A47EB864-0439-4683-9DC6-47DA5EFEB032}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

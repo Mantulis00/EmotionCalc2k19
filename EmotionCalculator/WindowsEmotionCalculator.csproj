@@ -191,8 +191,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Resources\EmotionCalculatorMain.csproj">
-      <Project>{68bbd11b-fac0-46bd-bd72-c04ec9342c66}</Project>
+    <ProjectReference Include="..\EmotionCalculatorMain\EmotionCalculatorMain.csproj">
+      <Project>{211e0e2b-b0ff-4d8a-b92f-1ae5dd2d0b06}</Project>
       <Name>EmotionCalculatorMain</Name>
     </ProjectReference>
   </ItemGroup>
