@@ -33,7 +33,9 @@ namespace AndroidEmotionCalculator.Elements.Fragments
         {
             var music = new MusicPlayer(mainManager);
             var song = mainManager.ReadOnlyUserData.OwnedItems.SongPacks.ElementAt(music.index);
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = song.Name;
+            var musicImage = view.FindViewById<ImageView>(Resource.Id.imageView1);
+            musicImage.SetImageBitmap(song.Image.ToBitmap());
+           view.FindViewById<TextView>(Resource.Id.textView1).Text = song.Name;
             view.FindViewById<Button>(Resource.Id.buttonPlay).Click +=
                 (o, e) =>
                 {
@@ -53,6 +55,8 @@ namespace AndroidEmotionCalculator.Elements.Fragments
                     music.NextMusic();
                     song = mainManager.ReadOnlyUserData.OwnedItems.SongPacks.ElementAt(music.index);
                     view.FindViewById<TextView>(Resource.Id.textView1).Text = song.Name;
+                    musicImage.SetImageBitmap(song.Image.ToBitmap());
+
                 };
 
             view.FindViewById<Button>(Resource.Id.buttonPrevious).Click +=
@@ -61,6 +65,7 @@ namespace AndroidEmotionCalculator.Elements.Fragments
                     music.BackMusic();
                     song = mainManager.ReadOnlyUserData.OwnedItems.SongPacks.ElementAt(music.index);
                     view.FindViewById<TextView>(Resource.Id.textView1).Text  = song.Name;
+                    musicImage.SetImageBitmap(song.Image.ToBitmap());
                 };
         }
     }
