@@ -112,7 +112,6 @@ namespace WebService.DB
                         {
                             if (int.TryParse(row[item.ToString()].ToString(), out int number))
                                 emotions.Add(new KeyValuePair<Emotion, int>(item, number));
-
                         }
 
                         return new UserData(

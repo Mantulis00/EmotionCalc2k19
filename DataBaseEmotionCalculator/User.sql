@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[User]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [apiURL] NVARCHAR(100) NOT NULL, 
+    [apiKey] NVARCHAR(100) NOT NULL
+)

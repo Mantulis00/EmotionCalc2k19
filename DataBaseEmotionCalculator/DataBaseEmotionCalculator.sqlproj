@@ -61,6 +61,7 @@
     <Build Include="UserData.sql" />
     <Build Include="Items.sql" />
     <Build Include="OwnedItems.sql" />
+    <Build Include="User.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DataBaseEmotionCalculator.refactorlog" />

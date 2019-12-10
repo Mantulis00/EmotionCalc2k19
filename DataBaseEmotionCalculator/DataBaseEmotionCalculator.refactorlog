@@ -35,4 +35,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="UserId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="299c875b-f373-431b-b784-9d0f39ebd3f8" ChangeDateTime="12/09/2019 23:24:11">
+    <Property Name="ElementName" Value="[dbo].[User].[apiSite]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="apiURL" />
+  </Operation>
 </Operations>
