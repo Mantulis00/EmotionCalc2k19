@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmotionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemType" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OwnedItems">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="ItemCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserData">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="JoyCoins" Type="int" Nullable="false" />
+          <Property Name="JoyGems" Type="int" Nullable="false" />
+          <Property Name="DailyStreak" Type="smallint" Nullable="false" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="Anger" Type="int" />
+          <Property Name="Contempt" Type="int" />
+          <Property Name="Disgust" Type="int" />
+          <Property Name="Fear" Type="int" />
+          <Property Name="Happiness" Type="int" />
+          <Property Name="Neutral" Type="int" />
+          <Property Name="Sadness" Type="int" />
+          <Property Name="Surprise" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="apiURL" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="apiKey" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ItemId_ToItems1">
+          <End Role="Items" Type="Self.Items" Multiplicity="1" />
+          <End Role="OwnedItems" Type="Self.OwnedItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OwnedItems">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId_ToUsers">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserData" Type="Self.UserData" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserData">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId_ToUsers1">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="OwnedItems" Type="Self.OwnedItems" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OwnedItems">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmotionDBModelStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OwnedItems" EntityType="Self.OwnedItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ItemId_ToItems1" Association="Self.FK_ItemId_ToItems1">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="OwnedItems" EntitySet="OwnedItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId_ToUsers" Association="Self.FK_UserId_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserData" EntitySet="UserData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId_ToUsers1" Association="Self.FK_UserId_ToUsers1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="OwnedItems" EntitySet="OwnedItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmotionDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OwnedItems" Relationship="Self.FK_ItemId_ToItems1" FromRole="Items" ToRole="OwnedItems" />
+        </EntityType>
+        <EntityType Name="OwnedItem">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="ItemCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_ItemId_ToItems1" FromRole="OwnedItems" ToRole="Items" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserId_ToUsers1" FromRole="OwnedItems" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UserData">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="JoyCoins" Type="Int32" Nullable="false" />
+          <Property Name="JoyGems" Type="Int32" Nullable="false" />
+          <Property Name="DailyStreak" Type="Int16" Nullable="false" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="Anger" Type="Int32" />
+          <Property Name="Contempt" Type="Int32" />
+          <Property Name="Disgust" Type="Int32" />
+          <Property Name="Fear" Type="Int32" />
+          <Property Name="Happiness" Type="Int32" />
+          <Property Name="Neutral" Type="Int32" />
+          <Property Name="Sadness" Type="Int32" />
+          <Property Name="Surprise" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserId_ToUsers" FromRole="UserData" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="apiURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="apiKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OwnedItem" Relationship="Self.FK_UserId_ToUsers1" FromRole="Users" ToRole="OwnedItems" />
+          <NavigationProperty Name="UserData" Relationship="Self.FK_UserId_ToUsers" FromRole="Users" ToRole="UserData" />
+        </EntityType>
+        <Association Name="FK_ItemId_ToItems1">
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="OwnedItems" Type="Self.OwnedItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OwnedItems">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId_ToUsers1">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="OwnedItems" Type="Self.OwnedItem" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OwnedItems">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId_ToUsers">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserData" Type="Self.UserData" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserData">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmotionDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="OwnedItems" EntityType="Self.OwnedItem" />
+          <EntitySet Name="UserDatas" EntityType="Self.UserData" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_ItemId_ToItems1" Association="Self.FK_ItemId_ToItems1">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="OwnedItems" EntitySet="OwnedItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId_ToUsers1" Association="Self.FK_UserId_ToUsers1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="OwnedItems" EntitySet="OwnedItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId_ToUsers" Association="Self.FK_UserId_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserData" EntitySet="UserDatas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmotionDBModelStoreContainer" CdmEntityContainer="EmotionDBEntities">
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="EmotionDBModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="EmotionDBModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OwnedItems">
+            <EntityTypeMapping TypeName="EmotionDBModel.OwnedItem">
+              <MappingFragment StoreEntitySet="OwnedItems">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="ItemCount" ColumnName="ItemCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDatas">
+            <EntityTypeMapping TypeName="EmotionDBModel.UserData">
+              <MappingFragment StoreEntitySet="UserData">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="JoyCoins" ColumnName="JoyCoins" />
+                <ScalarProperty Name="JoyGems" ColumnName="JoyGems" />
+                <ScalarProperty Name="DailyStreak" ColumnName="DailyStreak" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="Anger" ColumnName="Anger" />
+                <ScalarProperty Name="Contempt" ColumnName="Contempt" />
+                <ScalarProperty Name="Disgust" ColumnName="Disgust" />
+                <ScalarProperty Name="Fear" ColumnName="Fear" />
+                <ScalarProperty Name="Happiness" ColumnName="Happiness" />
+                <ScalarProperty Name="Neutral" ColumnName="Neutral" />
+                <ScalarProperty Name="Sadness" ColumnName="Sadness" />
+                <ScalarProperty Name="Surprise" ColumnName="Surprise" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EmotionDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="apiURL" ColumnName="apiURL" />
+                <ScalarProperty Name="apiKey" ColumnName="apiKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
