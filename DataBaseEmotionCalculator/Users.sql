@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[User]
+﻿CREATE TABLE [dbo].[Users]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
     [apiURL] NVARCHAR(100) NOT NULL, 

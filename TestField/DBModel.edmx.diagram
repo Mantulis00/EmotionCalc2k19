@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2465a884b486486dbbc45ccfb70d6502" Name="Diagram1">
+        <EntityTypeShape EntityType="EmotionDBModel.C__RefactorLog" Width="1.5" PointX="6.75" PointY="0.875" />
+        <EntityTypeShape EntityType="EmotionDBModel.Item" Width="1.5" PointX="7.375" PointY="2.625" />
+        <EntityTypeShape EntityType="EmotionDBModel.OwnedItem" Width="1.5" PointX="5.25" PointY="2.625" />
+        <EntityTypeShape EntityType="EmotionDBModel.UserData" Width="1.5" PointX="1" PointY="2.625" />
+        <EntityTypeShape EntityType="EmotionDBModel.User" Width="1.5" PointX="3" PointY="2.625" />
+        <AssociationConnector Association="EmotionDBModel.FK_ItemId_ToItems1" />
+        <AssociationConnector Association="EmotionDBModel.FK_UserId_ToUsers1" />
+        <AssociationConnector Association="EmotionDBModel.FK_UserId_ToUsers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
