@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 
-namespace WebService.DB
+namespace EntityFrameworkClasses.DB
 {
     public static class DBTest
     {

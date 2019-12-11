@@ -35,10 +35,28 @@ namespace EmotionCalculator.Tools.IO.Android
             }
         }
 
-        public void Post<T>(string uri, T t)
+        public async Task<T> PutAsync<T, S>(string uri, S s)
+        {
+            using (var httpContent = new StringContent(JsonConvert.SerializeObject(s), Encoding.UTF8, "application/json"))
+            using (var httpResponse = client.PutAsync(uri, httpContent).Result)
+            {
+                string answer = await httpResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(answer);
+            }
+        }
+
+        public void Put<T>(string uri, T t)
         {
             using (var httpContent = new StringContent(JsonConvert.SerializeObject(t), Encoding.UTF8, "application/json"))
-            using (var httpResponse = client.PostAsync(uri, httpContent).Result)
+            using (var httpResponse = client.PutAsync(uri, httpContent).Result)
+            {
+
+            }
+        }
+
+        internal async Task DeleteAsync(string uri)
+        {
+            using (var httpResponse = await client.DeleteAsync(uri))
             {
 
             }

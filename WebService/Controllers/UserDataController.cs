@@ -1,6 +1,6 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.User;
+﻿using EntityFrameworkClasses.DB;
 using Microsoft.AspNetCore.Mvc;
-using WebService.DB;
+using EmotionUserData = EmotionCalculator.EmotionCalculator.Logic.User.UserData;
 
 namespace WebService.Controllers
 {
@@ -9,17 +9,35 @@ namespace WebService.Controllers
     public class UserDataController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<UserData> Get(int id)
+        public ActionResult<EmotionUserData> Get(int id)
         {
-            System.Console.WriteLine("GET:" + id);
             return UserDataTableManager.SelectUserData(id);
         }
 
-        [HttpPost]
-        public void Post(UserData userData, int id)
+        [HttpPut]
+        public void Put(EmotionUserData userData, int id)
         {
-            System.Console.WriteLine("POST:" + id);
-            UserDataTableManager.UpdateUserData(id, userData);
+            try
+            {
+                UserDataTableManager.UpdateUserData(id, userData);
+            }
+            catch
+            {
+                //Update failed (no user?)
+            }
+        }
+
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            try
+            {
+                UserDataTableManager.DeleteUserData(id);
+            }
+            catch
+            {
+                //Update failed (no user?)
+            }
         }
     }
 }

@@ -6,14 +6,14 @@ namespace EmotionCalculator.Tools.IO.Android
     {
         static readonly string uri = "https://localhost:5001/api/UserData";
 
-        public UserData Load()
+        public UserData Load(int id)
         {
-            return EmotionClient.Instance.GetAsync<UserData>($"{uri}?id={1}").Result;
+            return EmotionClient.Instance.GetAsync<UserData>($"{uri}?id={id}").Result;
         }
 
-        public void Save(UserData userData)
+        public void Save(UserData userData, int id)
         {
-            EmotionClient.Instance.Post($"{uri}?id={1}", userData);
+            EmotionClient.Instance.Put($"{uri}?id={id}", userData);
         }
     }
 }

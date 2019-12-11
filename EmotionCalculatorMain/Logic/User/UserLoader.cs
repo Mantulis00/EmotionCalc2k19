@@ -27,7 +27,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             return "Owned_" + itemType + "s";
         }
 
-        public UserData Load()
+        public UserData Load(int id)
         {
             var doc = GetXmlDocument(FileName);
             var nodes = doc.Descendants();
@@ -100,7 +100,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             return null;
         }
 
-        public void Save(UserData userData)
+        public void Save(UserData userData, int id)
         {
             var doc = GetXmlDocument(FileName);
 

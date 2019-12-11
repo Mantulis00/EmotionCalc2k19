@@ -1,4 +1,4 @@
-﻿namespace WebService.DB
+﻿namespace EntityFrameworkClasses.DB
 {
     public class DBManager
     {

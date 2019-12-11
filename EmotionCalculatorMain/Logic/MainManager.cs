@@ -24,7 +24,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
         {
             //Private fields
             this.userLoader = userLoader;
-            userData = userLoader.Load();
+            userData = userLoader.Load(-1);
             ReadOnlyUserData = userData.AsReadOnly();
 
             //Currency
@@ -48,7 +48,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic
             MonthManager.Save();
 
             if (userData != null)
-                userLoader.Save(userData);
+                userLoader.Save(userData, -1);
         }
 
         public void Refresh()

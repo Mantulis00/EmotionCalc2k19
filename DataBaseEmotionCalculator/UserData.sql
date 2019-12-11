@@ -14,5 +14,5 @@
 	[Sadness] INT NULL, 
 	[Surprise] INT NULL, 
 	CONSTRAINT [LastLoginConstraint] CHECK (LastLogin < CURRENT_TIMESTAMP), 
-    CONSTRAINT [FK_UserId_ToUsers] FOREIGN KEY ([UserId]) REFERENCES [Users]([Id]) 
+    CONSTRAINT [FK_UserId_ToUsers] FOREIGN KEY ([UserId]) REFERENCES [Users]([Id])  ON DELETE CASCADE ON UPDATE CASCADE
 )

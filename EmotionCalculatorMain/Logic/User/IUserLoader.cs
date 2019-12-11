@@ -2,7 +2,7 @@
 {
     public interface IUserLoader
     {
-        UserData Load();
-        void Save(UserData userData);
+        UserData Load(int id);
+        void Save(UserData userData, int id);
     }
 }

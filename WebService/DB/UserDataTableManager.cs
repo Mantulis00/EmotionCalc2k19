@@ -1,5 +1,4 @@
 ﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
-using EmotionCalculator.EmotionCalculator.Logic.User;
 using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace WebService.DB
+namespace EntityFrameworkClasses.DB
 {
     public static class UserDataTableManager
     {
@@ -86,7 +85,7 @@ namespace WebService.DB
             return adapter;
         }
 
-        public static UserData SelectUserData(int userId)
+        public static EmotionCalculator.EmotionCalculator.Logic.User.UserData SelectUserData(int userId)
         {
             using (var connection = new SqlConnection(DBManager.GetConnectionString()))
             {
@@ -114,7 +113,7 @@ namespace WebService.DB
                                 emotions.Add(new KeyValuePair<Emotion, int>(item, number));
                         }
 
-                        return new UserData(
+                        return new EmotionCalculator.EmotionCalculator.Logic.User.UserData(
                             int.Parse(row["JoyCoins"].ToString()),
                             int.Parse(row["JoyGems"].ToString()),
                             int.Parse(row["DailyStreak"].ToString()),
@@ -123,7 +122,7 @@ namespace WebService.DB
                     }
                     else
                     {
-                        var userData = new UserData(0, 0, 0, DateTime.Now,
+                        var userData = new EmotionCalculator.EmotionCalculator.Logic.User.UserData(0, 0, 0, DateTime.Now,
                             Enumerable.Empty<KeyValuePair<Emotion, int>>(), new OwnedItems());
 
                         return userData;
@@ -132,7 +131,7 @@ namespace WebService.DB
             }
         }
 
-        public static void InsertUserData(UserData userData)
+        public static void InsertUserData(EmotionCalculator.EmotionCalculator.Logic.User.UserData userData)
         {
             using (var connection = new SqlConnection(DBManager.GetConnectionString()))
             {
@@ -162,7 +161,7 @@ namespace WebService.DB
             }
         }
 
-        public static void UpdateUserData(int userId, UserData userData)
+        public static void UpdateUserData(int userId, EmotionCalculator.EmotionCalculator.Logic.User.UserData userData)
         {
             using (var connection = new SqlConnection(DBManager.GetConnectionString()))
             {
