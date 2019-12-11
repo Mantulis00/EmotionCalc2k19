@@ -43,8 +43,8 @@ namespace AndroidEmotionCalculator.Elements.Fragments
             moodButton = (Button)view.FindViewById(Resource.Id.moodButton);
             photo = (ImageView)view.FindViewById(Resource.Id.imageView1);
             moodText = (TextView)view.FindViewById(Resource.Id.moodText);
-            key = "c7fd067fae5b42f1b2bf2e8f254160f7";//key azure 
-            endpoint = "https://justas.cognitiveservices.azure.com/";// endpoint azure 
+            key = "";//key azure 
+            endpoint = "";// endpoint azure 
             RequestPermissions(Permissons, 0);
             moodButton.Click+=
                 (o, e) =>
