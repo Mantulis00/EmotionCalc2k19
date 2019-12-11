@@ -17,25 +17,31 @@
             android:text="Shop"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.2"
             android:id="@+id/buttonShopPager" />
         <Button
             android:text="Calendar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.2"
             android:id="@+id/buttonCalendarPager" />
         <Button
             android:text="Games"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.2"
             android:id="@+id/buttonGamesPager" />
         <Button
             android:text="Music"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.2"
             android:id="@+id/buttonMusicPager" />
+        <Button
+            android:text="Mood"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+             android:layout_weight="0.2"
+            android:id="@+id/buttonMoodPager" />
     </LinearLayout>
 </TableLayout >

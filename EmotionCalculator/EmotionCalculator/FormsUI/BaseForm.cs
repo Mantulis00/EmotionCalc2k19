@@ -251,5 +251,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
         {
             dateTimePicker.Value = dateTimePicker.Value.AddDays(1);
         }
+
+        private void CalendarBackground_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

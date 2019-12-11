@@ -10,7 +10,10 @@ using static AndroidEmotionCalculator.Elements.MainFragmentManager;
 
 namespace AndroidEmotionCalculator
 {
+
+
     [Activity(Label = "@string/app_name", MainLauncher = true)]
+
     public class MainActivity : FragmentActivity
     {
         private ViewPager viewPager;
@@ -28,7 +31,6 @@ namespace AndroidEmotionCalculator
             SetupPager();
             SetupButtons();
         }
-
         private void SetupEmotionCalculator()
         {
             mainManager = new MainManager(
@@ -74,6 +76,14 @@ namespace AndroidEmotionCalculator
                 {
                     viewPager.SetCurrentItem(3, true);
                 };
+            Button moodButton = FindViewById<Button>(Resource.Id.buttonMoodPager);
+            moodButton.Click +=
+                (o, e) =>
+                {
+                    viewPager.SetCurrentItem(4, true);
+                };
+
+
         }
     }
 }
