@@ -1,4 +1,5 @@
 ﻿using Android.OS;
+using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
@@ -11,6 +12,7 @@ using AppResources = EmotionCalculator.Properties.Resources;
 
 namespace AndroidEmotionCalculator.Elements.Fragments
 {
+    [Preserve(AllMembers = true)]
     class ShopFragment : Fragment
     {
         View view;

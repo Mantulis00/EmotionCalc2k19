@@ -1,14 +1,28 @@
 ﻿using Android.Content;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using EmotionCalculator.EmotionCalculator.Logic;
+using Java.Lang;
+using Newtonsoft.Json;
+
 
 namespace AndroidEmotionCalculator.Fragments.Items
 {
 
+    [Preserve(AllMembers = true)]
     class GamesFragment : Fragment
     {
+        MainManager mainManager;
+        public GamesFragment(MainManager mainManager) : base()
+        {
+
+            this.mainManager = mainManager;
+        }
+
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
 
@@ -47,13 +61,21 @@ namespace AndroidEmotionCalculator.Fragments.Items
         }
         void StartActivitySettings()
         {
+            if (mainManager != null)
+            { 
             Intent intent = new Intent(this.Activity, typeof(Settings.SettingsActivity));
+            intent.PutExtra("MeinManager", JsonConvert.SerializeObject(null));
             StartActivity(intent);
+            }
         }
 
         void StartActivityInventory()
         {
             Intent intent = new Intent(this.Activity, typeof(Settings.InventoryActivity));
+
+            intent.PutExtra("MainManager", JsonConvert.SerializeObject(mainManager));
+            
+
             StartActivity(intent);
         }
 

@@ -12,12 +12,9 @@ using Android.Widget;
 
 namespace AndroidEmotionCalculator.Fragments.Settings
 {
-    [Activity(Label = "SettingsActivity")]
+    [Activity(Label = "SettingsActivity"),  Preserve(AllMembers = true)]
     public class SettingsActivity : Activity
     {
-
-
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

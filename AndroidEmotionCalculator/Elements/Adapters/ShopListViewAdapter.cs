@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using EmotionCalculator.EmotionCalculator.Logic.Currency;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 
 namespace AndroidEmotionCalculator.Elements.Adapters
 {
+    [Preserve(AllMembers = true)]
     class ShopListViewAdapter : BaseAdapter<PersonalPurchase>
     {
         public List<PersonalPurchase> Purchases { get; private set; }

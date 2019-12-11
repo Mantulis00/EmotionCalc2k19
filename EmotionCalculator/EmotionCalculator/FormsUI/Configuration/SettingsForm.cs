@@ -139,5 +139,10 @@ namespace EmotionCalculator.EmotionCalculator.FormsUI
             };
             g.DrawString(tabPage.Text, tabFont, textBrush, tabBounds, stringFlags);
         }
+
+        private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

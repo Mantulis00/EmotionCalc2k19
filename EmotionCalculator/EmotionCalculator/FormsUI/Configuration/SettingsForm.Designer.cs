@@ -35,13 +35,13 @@
             this.themeComboBox = new System.Windows.Forms.ComboBox();
             this.selectedThemeLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.GameModeBox = new System.Windows.Forms.CheckBox();
             this.DebugcheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.GameModeBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -104,6 +104,7 @@
             this.themeComboBox.Name = "themeComboBox";
             this.themeComboBox.Size = new System.Drawing.Size(141, 21);
             this.themeComboBox.TabIndex = 1;
+            this.themeComboBox.SelectedIndexChanged += new System.EventHandler(this.themeComboBox_SelectedIndexChanged);
             // 
             // selectedThemeLabel
             // 
@@ -125,6 +126,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Admin Tools";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // GameModeBox
+            // 
+            this.GameModeBox.AutoSize = true;
+            this.GameModeBox.Location = new System.Drawing.Point(6, 30);
+            this.GameModeBox.Name = "GameModeBox";
+            this.GameModeBox.Size = new System.Drawing.Size(84, 17);
+            this.GameModeBox.TabIndex = 1;
+            this.GameModeBox.Text = "Game Mode";
+            this.GameModeBox.UseVisualStyleBackColor = true;
             // 
             // DebugcheckBox
             // 
@@ -183,16 +194,6 @@
             this.resetButton.Text = "Reset to Default";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
-            // 
-            // GameModeBox
-            // 
-            this.GameModeBox.AutoSize = true;
-            this.GameModeBox.Location = new System.Drawing.Point(6, 30);
-            this.GameModeBox.Name = "GameModeBox";
-            this.GameModeBox.Size = new System.Drawing.Size(84, 17);
-            this.GameModeBox.TabIndex = 1;
-            this.GameModeBox.Text = "Game Mode";
-            this.GameModeBox.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 

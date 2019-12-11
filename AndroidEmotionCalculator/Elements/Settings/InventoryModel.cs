@@ -14,8 +14,8 @@ namespace AndroidEmotionCalculator.Fragments.Settings
 {
 
 
-
-    class InventoryModel
+    [Preserve(AllMembers = true)]
+    class strin
     {
         public string Name { get; set; }
         public ImageView Image { get; set; }

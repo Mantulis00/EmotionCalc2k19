@@ -35,9 +35,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>Full</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
     <MandroidI18n />
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidLinkSkip>System.Core System.Runtime.Serialization</AndroidLinkSkip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -54,13 +59,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Elements\Adapters\InventoryAdapter.cs" />
     <Compile Include="Elements\Adapters\ShopListViewAdapter.cs" />
     <Compile Include="Elements\Fragments\CalendarFragment.cs" />
     <Compile Include="Elements\Fragments\GamesFragment.cs" />
@@ -79,6 +85,7 @@
     <Compile Include="Tools\ImageExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
@@ -115,6 +122,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Core.Utils">
       <Version>28.0.0.3</Version>
     </PackageReference>
@@ -129,6 +142,9 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
       <Version>1.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.3.0.991221</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

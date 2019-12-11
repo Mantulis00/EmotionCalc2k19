@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace AndroidEmotionCalculator.Fragments.Settings
 {
-    [Activity(Label = "InventoryItemActivity")]
+    [Activity(Label = "InventoryItemActivity"),     Preserve(AllMembers = true)]
     public class InventoryItemActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,6 +20,8 @@ namespace AndroidEmotionCalculator.Fragments.Settings
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.inventoryItemSelect);
 
+
+            // FindViewById<TextView>(Resource.Id.textItemName).Text = "se";
 
             Button buttonReturn = (Button)FindViewById<Button>(Resource.Id.buttonInventoryReturn);
             buttonReturn.Click += ButtonReturn_Click;

@@ -208,6 +208,2568 @@ namespace AndroidEmotionCalculator
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::AndroidEmotionCalculator.Resource.Styleable.GradientColorItem;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::AndroidEmotionCalculator.Resource.Styleable.GradientColorItem_android_color;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::AndroidEmotionCalculator.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::AndroidEmotionCalculator.Resource.Animation.abc_fade_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::AndroidEmotionCalculator.Resource.Animation.abc_fade_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::AndroidEmotionCalculator.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_popup_enter = global::AndroidEmotionCalculator.Resource.Animation.abc_popup_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_popup_exit = global::AndroidEmotionCalculator.Resource.Animation.abc_popup_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_shrink_fade_out_from_bottom = global::AndroidEmotionCalculator.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_in_bottom = global::AndroidEmotionCalculator.Resource.Animation.abc_slide_in_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_in_top = global::AndroidEmotionCalculator.Resource.Animation.abc_slide_in_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_bottom = global::AndroidEmotionCalculator.Resource.Animation.abc_slide_out_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_top = global::AndroidEmotionCalculator.Resource.Animation.abc_slide_out_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_tooltip_enter = global::AndroidEmotionCalculator.Resource.Animation.abc_tooltip_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_tooltip_exit = global::AndroidEmotionCalculator.Resource.Animation.abc_tooltip_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_in = global::AndroidEmotionCalculator.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_out = global::AndroidEmotionCalculator.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_in = global::AndroidEmotionCalculator.Resource.Animation.design_snackbar_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_out = global::AndroidEmotionCalculator.Resource.Animation.design_snackbar_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromLeft = global::AndroidEmotionCalculator.Resource.Animation.EnterFromLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromRight = global::AndroidEmotionCalculator.Resource.Animation.EnterFromRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToLeft = global::AndroidEmotionCalculator.Resource.Animation.ExitToLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToRight = global::AndroidEmotionCalculator.Resource.Animation.ExitToRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_appbar_state_list_animator = global::AndroidEmotionCalculator.Resource.Animator.design_appbar_state_list_animator;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_fab_hide_motion_spec = global::AndroidEmotionCalculator.Resource.Animator.design_fab_hide_motion_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_fab_show_motion_spec = global::AndroidEmotionCalculator.Resource.Animator.design_fab_show_motion_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_btn_state_list_anim = global::AndroidEmotionCalculator.Resource.Animator.mtrl_btn_state_list_anim;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::AndroidEmotionCalculator.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_chip_state_list_anim = global::AndroidEmotionCalculator.Resource.Animator.mtrl_chip_state_list_anim;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_fab_hide_motion_spec = global::AndroidEmotionCalculator.Resource.Animator.mtrl_fab_hide_motion_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_fab_show_motion_spec = global::AndroidEmotionCalculator.Resource.Animator.mtrl_fab_show_motion_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::AndroidEmotionCalculator.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec = global::AndroidEmotionCalculator.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarDivider = global::AndroidEmotionCalculator.Resource.Attribute.actionBarDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarItemBackground = global::AndroidEmotionCalculator.Resource.Attribute.actionBarItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarPopupTheme = global::AndroidEmotionCalculator.Resource.Attribute.actionBarPopupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::AndroidEmotionCalculator.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSplitStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionBarSplitStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabBarStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionBarTabBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionBarTabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabTextStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionBarTabTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTheme = global::AndroidEmotionCalculator.Resource.Attribute.actionBarTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarWidgetTheme = global::AndroidEmotionCalculator.Resource.Attribute.actionBarWidgetTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionDropDownStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionDropDownStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionLayout = global::AndroidEmotionCalculator.Resource.Attribute.actionLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionMenuTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.actionMenuTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionMenuTextColor = global::AndroidEmotionCalculator.Resource.Attribute.actionMenuTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeBackground = global::AndroidEmotionCalculator.Resource.Attribute.actionModeBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCloseButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCloseDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModeCloseDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCopyDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModeCopyDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCutDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModeCutDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeFindDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModeFindDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModePasteDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModePasteDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModePopupWindowStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionModePopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeSelectAllDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeShareDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModeShareDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeSplitBackground = global::AndroidEmotionCalculator.Resource.Attribute.actionModeSplitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionModeStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeWebSearchDrawable = global::AndroidEmotionCalculator.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionOverflowButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowMenuStyle = global::AndroidEmotionCalculator.Resource.Attribute.actionOverflowMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionProviderClass = global::AndroidEmotionCalculator.Resource.Attribute.actionProviderClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionViewClass = global::AndroidEmotionCalculator.Resource.Attribute.actionViewClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.activityChooserViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.activityChooserViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogButtonGroupStyle = global::AndroidEmotionCalculator.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogCenterButtons = global::AndroidEmotionCalculator.Resource.Attribute.alertDialogCenterButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogStyle = global::AndroidEmotionCalculator.Resource.Attribute.alertDialogStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogTheme = global::AndroidEmotionCalculator.Resource.Attribute.alertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.allowStacking = global::AndroidEmotionCalculator.Resource.Attribute.allowStacking;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alpha = global::AndroidEmotionCalculator.Resource.Attribute.alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alphabeticModifiers = global::AndroidEmotionCalculator.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowHeadLength = global::AndroidEmotionCalculator.Resource.Attribute.arrowHeadLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowShaftLength = global::AndroidEmotionCalculator.Resource.Attribute.arrowShaftLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoCompleteTextViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeMaxTextSize = global::AndroidEmotionCalculator.Resource.Attribute.autoSizeMaxTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeMinTextSize = global::AndroidEmotionCalculator.Resource.Attribute.autoSizeMinTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizePresetSizes = global::AndroidEmotionCalculator.Resource.Attribute.autoSizePresetSizes;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeStepGranularity = global::AndroidEmotionCalculator.Resource.Attribute.autoSizeStepGranularity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeTextType = global::AndroidEmotionCalculator.Resource.Attribute.autoSizeTextType;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.background = global::AndroidEmotionCalculator.Resource.Attribute.background;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundSplit = global::AndroidEmotionCalculator.Resource.Attribute.backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundStacked = global::AndroidEmotionCalculator.Resource.Attribute.backgroundStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTint = global::AndroidEmotionCalculator.Resource.Attribute.backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTintMode = global::AndroidEmotionCalculator.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.barLength = global::AndroidEmotionCalculator.Resource.Attribute.barLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_autoHide = global::AndroidEmotionCalculator.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_fitToContents = global::AndroidEmotionCalculator.Resource.Attribute.behavior_fitToContents;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_hideable = global::AndroidEmotionCalculator.Resource.Attribute.behavior_hideable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_overlapTop = global::AndroidEmotionCalculator.Resource.Attribute.behavior_overlapTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_peekHeight = global::AndroidEmotionCalculator.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_skipCollapsed = global::AndroidEmotionCalculator.Resource.Attribute.behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderlessButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.borderlessButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderWidth = global::AndroidEmotionCalculator.Resource.Attribute.borderWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomAppBarStyle = global::AndroidEmotionCalculator.Resource.Attribute.bottomAppBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomNavigationStyle = global::AndroidEmotionCalculator.Resource.Attribute.bottomNavigationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomSheetDialogTheme = global::AndroidEmotionCalculator.Resource.Attribute.bottomSheetDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomSheetStyle = global::AndroidEmotionCalculator.Resource.Attribute.bottomSheetStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxBackgroundColor = global::AndroidEmotionCalculator.Resource.Attribute.boxBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxBackgroundMode = global::AndroidEmotionCalculator.Resource.Attribute.boxBackgroundMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxCollapsedPaddingTop = global::AndroidEmotionCalculator.Resource.Attribute.boxCollapsedPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxCornerRadiusBottomEnd = global::AndroidEmotionCalculator.Resource.Attribute.boxCornerRadiusBottomEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxCornerRadiusBottomStart = global::AndroidEmotionCalculator.Resource.Attribute.boxCornerRadiusBottomStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxCornerRadiusTopEnd = global::AndroidEmotionCalculator.Resource.Attribute.boxCornerRadiusTopEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxCornerRadiusTopStart = global::AndroidEmotionCalculator.Resource.Attribute.boxCornerRadiusTopStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxStrokeColor = global::AndroidEmotionCalculator.Resource.Attribute.boxStrokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxStrokeWidth = global::AndroidEmotionCalculator.Resource.Attribute.boxStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.buttonBarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNegativeButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNeutralButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarPositiveButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarStyle = global::AndroidEmotionCalculator.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonGravity = global::AndroidEmotionCalculator.Resource.Attribute.buttonGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonIconDimen = global::AndroidEmotionCalculator.Resource.Attribute.buttonIconDimen;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonPanelSideLayout = global::AndroidEmotionCalculator.Resource.Attribute.buttonPanelSideLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonStyle = global::AndroidEmotionCalculator.Resource.Attribute.buttonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonStyleSmall = global::AndroidEmotionCalculator.Resource.Attribute.buttonStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonTint = global::AndroidEmotionCalculator.Resource.Attribute.buttonTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonTintMode = global::AndroidEmotionCalculator.Resource.Attribute.buttonTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardBackgroundColor = global::AndroidEmotionCalculator.Resource.Attribute.cardBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardCornerRadius = global::AndroidEmotionCalculator.Resource.Attribute.cardCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardElevation = global::AndroidEmotionCalculator.Resource.Attribute.cardElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardMaxElevation = global::AndroidEmotionCalculator.Resource.Attribute.cardMaxElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardPreventCornerOverlap = global::AndroidEmotionCalculator.Resource.Attribute.cardPreventCornerOverlap;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardUseCompatPadding = global::AndroidEmotionCalculator.Resource.Attribute.cardUseCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.cardViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkboxStyle = global::AndroidEmotionCalculator.Resource.Attribute.checkboxStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedChip = global::AndroidEmotionCalculator.Resource.Attribute.checkedChip;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIcon = global::AndroidEmotionCalculator.Resource.Attribute.checkedIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIconEnabled = global::AndroidEmotionCalculator.Resource.Attribute.checkedIconEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIconVisible = global::AndroidEmotionCalculator.Resource.Attribute.checkedIconVisible;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedTextViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipBackgroundColor = global::AndroidEmotionCalculator.Resource.Attribute.chipBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipCornerRadius = global::AndroidEmotionCalculator.Resource.Attribute.chipCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipEndPadding = global::AndroidEmotionCalculator.Resource.Attribute.chipEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipGroupStyle = global::AndroidEmotionCalculator.Resource.Attribute.chipGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipIcon = global::AndroidEmotionCalculator.Resource.Attribute.chipIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipIconEnabled = global::AndroidEmotionCalculator.Resource.Attribute.chipIconEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipIconSize = global::AndroidEmotionCalculator.Resource.Attribute.chipIconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipIconTint = global::AndroidEmotionCalculator.Resource.Attribute.chipIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipIconVisible = global::AndroidEmotionCalculator.Resource.Attribute.chipIconVisible;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipMinHeight = global::AndroidEmotionCalculator.Resource.Attribute.chipMinHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipSpacing = global::AndroidEmotionCalculator.Resource.Attribute.chipSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipSpacingHorizontal = global::AndroidEmotionCalculator.Resource.Attribute.chipSpacingHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipSpacingVertical = global::AndroidEmotionCalculator.Resource.Attribute.chipSpacingVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStandaloneStyle = global::AndroidEmotionCalculator.Resource.Attribute.chipStandaloneStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStartPadding = global::AndroidEmotionCalculator.Resource.Attribute.chipStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStrokeColor = global::AndroidEmotionCalculator.Resource.Attribute.chipStrokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStrokeWidth = global::AndroidEmotionCalculator.Resource.Attribute.chipStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStyle = global::AndroidEmotionCalculator.Resource.Attribute.chipStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIcon = global::AndroidEmotionCalculator.Resource.Attribute.closeIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconEnabled = global::AndroidEmotionCalculator.Resource.Attribute.closeIconEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconEndPadding = global::AndroidEmotionCalculator.Resource.Attribute.closeIconEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconSize = global::AndroidEmotionCalculator.Resource.Attribute.closeIconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconStartPadding = global::AndroidEmotionCalculator.Resource.Attribute.closeIconStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconTint = global::AndroidEmotionCalculator.Resource.Attribute.closeIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconVisible = global::AndroidEmotionCalculator.Resource.Attribute.closeIconVisible;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeItemLayout = global::AndroidEmotionCalculator.Resource.Attribute.closeItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapseContentDescription = global::AndroidEmotionCalculator.Resource.Attribute.collapseContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapsedTitleGravity = global::AndroidEmotionCalculator.Resource.Attribute.collapsedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapsedTitleTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapseIcon = global::AndroidEmotionCalculator.Resource.Attribute.collapseIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.color = global::AndroidEmotionCalculator.Resource.Attribute.color;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorAccent = global::AndroidEmotionCalculator.Resource.Attribute.colorAccent;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorBackgroundFloating = global::AndroidEmotionCalculator.Resource.Attribute.colorBackgroundFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorButtonNormal = global::AndroidEmotionCalculator.Resource.Attribute.colorButtonNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlActivated = global::AndroidEmotionCalculator.Resource.Attribute.colorControlActivated;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlHighlight = global::AndroidEmotionCalculator.Resource.Attribute.colorControlHighlight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlNormal = global::AndroidEmotionCalculator.Resource.Attribute.colorControlNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorError = global::AndroidEmotionCalculator.Resource.Attribute.colorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimary = global::AndroidEmotionCalculator.Resource.Attribute.colorPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimaryDark = global::AndroidEmotionCalculator.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSecondary = global::AndroidEmotionCalculator.Resource.Attribute.colorSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSwitchThumbNormal = global::AndroidEmotionCalculator.Resource.Attribute.colorSwitchThumbNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.commitIcon = global::AndroidEmotionCalculator.Resource.Attribute.commitIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentDescription = global::AndroidEmotionCalculator.Resource.Attribute.contentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetEnd = global::AndroidEmotionCalculator.Resource.Attribute.contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetEndWithActions = global::AndroidEmotionCalculator.Resource.Attribute.contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetLeft = global::AndroidEmotionCalculator.Resource.Attribute.contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetRight = global::AndroidEmotionCalculator.Resource.Attribute.contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetStart = global::AndroidEmotionCalculator.Resource.Attribute.contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetStartWithNavigation = global::AndroidEmotionCalculator.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPadding = global::AndroidEmotionCalculator.Resource.Attribute.contentPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingBottom = global::AndroidEmotionCalculator.Resource.Attribute.contentPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingLeft = global::AndroidEmotionCalculator.Resource.Attribute.contentPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingRight = global::AndroidEmotionCalculator.Resource.Attribute.contentPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingTop = global::AndroidEmotionCalculator.Resource.Attribute.contentPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentScrim = global::AndroidEmotionCalculator.Resource.Attribute.contentScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.controlBackground = global::AndroidEmotionCalculator.Resource.Attribute.controlBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.coordinatorLayoutStyle = global::AndroidEmotionCalculator.Resource.Attribute.coordinatorLayoutStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerRadius = global::AndroidEmotionCalculator.Resource.Attribute.cornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterEnabled = global::AndroidEmotionCalculator.Resource.Attribute.counterEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterMaxLength = global::AndroidEmotionCalculator.Resource.Attribute.counterMaxLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterOverflowTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.customNavigationLayout = global::AndroidEmotionCalculator.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.defaultQueryHint = global::AndroidEmotionCalculator.Resource.Attribute.defaultQueryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogCornerRadius = global::AndroidEmotionCalculator.Resource.Attribute.dialogCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogPreferredPadding = global::AndroidEmotionCalculator.Resource.Attribute.dialogPreferredPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogTheme = global::AndroidEmotionCalculator.Resource.Attribute.dialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.displayOptions = global::AndroidEmotionCalculator.Resource.Attribute.displayOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.divider = global::AndroidEmotionCalculator.Resource.Attribute.divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerHorizontal = global::AndroidEmotionCalculator.Resource.Attribute.dividerHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerPadding = global::AndroidEmotionCalculator.Resource.Attribute.dividerPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerVertical = global::AndroidEmotionCalculator.Resource.Attribute.dividerVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableSize = global::AndroidEmotionCalculator.Resource.Attribute.drawableSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawerArrowStyle = global::AndroidEmotionCalculator.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropdownListPreferredItemHeight = global::AndroidEmotionCalculator.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropDownListViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.dropDownListViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextBackground = global::AndroidEmotionCalculator.Resource.Attribute.editTextBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextColor = global::AndroidEmotionCalculator.Resource.Attribute.editTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextStyle = global::AndroidEmotionCalculator.Resource.Attribute.editTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevation = global::AndroidEmotionCalculator.Resource.Attribute.elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.enforceMaterialTheme = global::AndroidEmotionCalculator.Resource.Attribute.enforceMaterialTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.enforceTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.enforceTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorEnabled = global::AndroidEmotionCalculator.Resource.Attribute.errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandActivityOverflowButtonDrawable = global::AndroidEmotionCalculator.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expanded = global::AndroidEmotionCalculator.Resource.Attribute.expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleGravity = global::AndroidEmotionCalculator.Resource.Attribute.expandedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMargin = global::AndroidEmotionCalculator.Resource.Attribute.expandedTitleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginBottom = global::AndroidEmotionCalculator.Resource.Attribute.expandedTitleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginEnd = global::AndroidEmotionCalculator.Resource.Attribute.expandedTitleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginStart = global::AndroidEmotionCalculator.Resource.Attribute.expandedTitleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginTop = global::AndroidEmotionCalculator.Resource.Attribute.expandedTitleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabAlignmentMode = global::AndroidEmotionCalculator.Resource.Attribute.fabAlignmentMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabCradleMargin = global::AndroidEmotionCalculator.Resource.Attribute.fabCradleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabCradleRoundedCornerRadius = global::AndroidEmotionCalculator.Resource.Attribute.fabCradleRoundedCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabCradleVerticalOffset = global::AndroidEmotionCalculator.Resource.Attribute.fabCradleVerticalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabCustomSize = global::AndroidEmotionCalculator.Resource.Attribute.fabCustomSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabSize = global::AndroidEmotionCalculator.Resource.Attribute.fabSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollEnabled = global::AndroidEmotionCalculator.Resource.Attribute.fastScrollEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::AndroidEmotionCalculator.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::AndroidEmotionCalculator.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollVerticalThumbDrawable = global::AndroidEmotionCalculator.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollVerticalTrackDrawable = global::AndroidEmotionCalculator.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.firstBaselineToTopHeight = global::AndroidEmotionCalculator.Resource.Attribute.firstBaselineToTopHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.floatingActionButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.floatingActionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.font = global::AndroidEmotionCalculator.Resource.Attribute.font;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontFamily = global::AndroidEmotionCalculator.Resource.Attribute.fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderAuthority = global::AndroidEmotionCalculator.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderCerts = global::AndroidEmotionCalculator.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderFetchStrategy = global::AndroidEmotionCalculator.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderFetchTimeout = global::AndroidEmotionCalculator.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderPackage = global::AndroidEmotionCalculator.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderQuery = global::AndroidEmotionCalculator.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontStyle = global::AndroidEmotionCalculator.Resource.Attribute.fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontVariationSettings = global::AndroidEmotionCalculator.Resource.Attribute.fontVariationSettings;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontWeight = global::AndroidEmotionCalculator.Resource.Attribute.fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.foregroundInsidePadding = global::AndroidEmotionCalculator.Resource.Attribute.foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.gapBetweenBars = global::AndroidEmotionCalculator.Resource.Attribute.gapBetweenBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.goIcon = global::AndroidEmotionCalculator.Resource.Attribute.goIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.headerLayout = global::AndroidEmotionCalculator.Resource.Attribute.headerLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.height = global::AndroidEmotionCalculator.Resource.Attribute.height;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.helperText = global::AndroidEmotionCalculator.Resource.Attribute.helperText;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.helperTextEnabled = global::AndroidEmotionCalculator.Resource.Attribute.helperTextEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.helperTextTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.helperTextTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideMotionSpec = global::AndroidEmotionCalculator.Resource.Attribute.hideMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideOnContentScroll = global::AndroidEmotionCalculator.Resource.Attribute.hideOnContentScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideOnScroll = global::AndroidEmotionCalculator.Resource.Attribute.hideOnScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintAnimationEnabled = global::AndroidEmotionCalculator.Resource.Attribute.hintAnimationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintEnabled = global::AndroidEmotionCalculator.Resource.Attribute.hintEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeAsUpIndicator = global::AndroidEmotionCalculator.Resource.Attribute.homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeLayout = global::AndroidEmotionCalculator.Resource.Attribute.homeLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hoveredFocusedTranslationZ = global::AndroidEmotionCalculator.Resource.Attribute.hoveredFocusedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.icon = global::AndroidEmotionCalculator.Resource.Attribute.icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconEndPadding = global::AndroidEmotionCalculator.Resource.Attribute.iconEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconGravity = global::AndroidEmotionCalculator.Resource.Attribute.iconGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconifiedByDefault = global::AndroidEmotionCalculator.Resource.Attribute.iconifiedByDefault;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconPadding = global::AndroidEmotionCalculator.Resource.Attribute.iconPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconSize = global::AndroidEmotionCalculator.Resource.Attribute.iconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconStartPadding = global::AndroidEmotionCalculator.Resource.Attribute.iconStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconTint = global::AndroidEmotionCalculator.Resource.Attribute.iconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconTintMode = global::AndroidEmotionCalculator.Resource.Attribute.iconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.imageButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.imageButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.indeterminateProgressStyle = global::AndroidEmotionCalculator.Resource.Attribute.indeterminateProgressStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.initialActivityCount = global::AndroidEmotionCalculator.Resource.Attribute.initialActivityCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.insetForeground = global::AndroidEmotionCalculator.Resource.Attribute.insetForeground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.isLightTheme = global::AndroidEmotionCalculator.Resource.Attribute.isLightTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemBackground = global::AndroidEmotionCalculator.Resource.Attribute.itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemHorizontalPadding = global::AndroidEmotionCalculator.Resource.Attribute.itemHorizontalPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemHorizontalTranslationEnabled = global::AndroidEmotionCalculator.Resource.Attribute.itemHorizontalTranslationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconPadding = global::AndroidEmotionCalculator.Resource.Attribute.itemIconPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconSize = global::AndroidEmotionCalculator.Resource.Attribute.itemIconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconTint = global::AndroidEmotionCalculator.Resource.Attribute.itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemPadding = global::AndroidEmotionCalculator.Resource.Attribute.itemPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemSpacing = global::AndroidEmotionCalculator.Resource.Attribute.itemSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearanceActive = global::AndroidEmotionCalculator.Resource.Attribute.itemTextAppearanceActive;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearanceInactive = global::AndroidEmotionCalculator.Resource.Attribute.itemTextAppearanceInactive;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextColor = global::AndroidEmotionCalculator.Resource.Attribute.itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.keylines = global::AndroidEmotionCalculator.Resource.Attribute.keylines;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.labelVisibilityMode = global::AndroidEmotionCalculator.Resource.Attribute.labelVisibilityMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lastBaselineToBottomHeight = global::AndroidEmotionCalculator.Resource.Attribute.lastBaselineToBottomHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout = global::AndroidEmotionCalculator.Resource.Attribute.layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layoutManager = global::AndroidEmotionCalculator.Resource.Attribute.layoutManager;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_anchor = global::AndroidEmotionCalculator.Resource.Attribute.layout_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_anchorGravity = global::AndroidEmotionCalculator.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_behavior = global::AndroidEmotionCalculator.Resource.Attribute.layout_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_collapseMode = global::AndroidEmotionCalculator.Resource.Attribute.layout_collapseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_collapseParallaxMultiplier = global::AndroidEmotionCalculator.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_dodgeInsetEdges = global::AndroidEmotionCalculator.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_insetEdge = global::AndroidEmotionCalculator.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_keyline = global::AndroidEmotionCalculator.Resource.Attribute.layout_keyline;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollFlags = global::AndroidEmotionCalculator.Resource.Attribute.layout_scrollFlags;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollInterpolator = global::AndroidEmotionCalculator.Resource.Attribute.layout_scrollInterpolator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.liftOnScroll = global::AndroidEmotionCalculator.Resource.Attribute.liftOnScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lineHeight = global::AndroidEmotionCalculator.Resource.Attribute.lineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lineSpacing = global::AndroidEmotionCalculator.Resource.Attribute.lineSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceBackgroundIndicator = global::AndroidEmotionCalculator.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listDividerAlertDialog = global::AndroidEmotionCalculator.Resource.Attribute.listDividerAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listItemLayout = global::AndroidEmotionCalculator.Resource.Attribute.listItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listLayout = global::AndroidEmotionCalculator.Resource.Attribute.listLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listMenuViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.listMenuViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPopupWindowStyle = global::AndroidEmotionCalculator.Resource.Attribute.listPopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeight = global::AndroidEmotionCalculator.Resource.Attribute.listPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightLarge = global::AndroidEmotionCalculator.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightSmall = global::AndroidEmotionCalculator.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingLeft = global::AndroidEmotionCalculator.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingRight = global::AndroidEmotionCalculator.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logo = global::AndroidEmotionCalculator.Resource.Attribute.logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logoDescription = global::AndroidEmotionCalculator.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.materialButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCardViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.materialCardViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxActionInlineWidth = global::AndroidEmotionCalculator.Resource.Attribute.maxActionInlineWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxButtonHeight = global::AndroidEmotionCalculator.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxImageSize = global::AndroidEmotionCalculator.Resource.Attribute.maxImageSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.measureWithLargestChild = global::AndroidEmotionCalculator.Resource.Attribute.measureWithLargestChild;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.menu = global::AndroidEmotionCalculator.Resource.Attribute.menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.multiChoiceItemLayout = global::AndroidEmotionCalculator.Resource.Attribute.multiChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationContentDescription = global::AndroidEmotionCalculator.Resource.Attribute.navigationContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationIcon = global::AndroidEmotionCalculator.Resource.Attribute.navigationIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationMode = global::AndroidEmotionCalculator.Resource.Attribute.navigationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.navigationViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.numericModifiers = global::AndroidEmotionCalculator.Resource.Attribute.numericModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.overlapAnchor = global::AndroidEmotionCalculator.Resource.Attribute.overlapAnchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingBottomNoButtons = global::AndroidEmotionCalculator.Resource.Attribute.paddingBottomNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingEnd = global::AndroidEmotionCalculator.Resource.Attribute.paddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingStart = global::AndroidEmotionCalculator.Resource.Attribute.paddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingTopNoTitle = global::AndroidEmotionCalculator.Resource.Attribute.paddingTopNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelBackground = global::AndroidEmotionCalculator.Resource.Attribute.panelBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelMenuListTheme = global::AndroidEmotionCalculator.Resource.Attribute.panelMenuListTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelMenuListWidth = global::AndroidEmotionCalculator.Resource.Attribute.panelMenuListWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleContentDescription = global::AndroidEmotionCalculator.Resource.Attribute.passwordToggleContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleDrawable = global::AndroidEmotionCalculator.Resource.Attribute.passwordToggleDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleEnabled = global::AndroidEmotionCalculator.Resource.Attribute.passwordToggleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTint = global::AndroidEmotionCalculator.Resource.Attribute.passwordToggleTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTintMode = global::AndroidEmotionCalculator.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupMenuStyle = global::AndroidEmotionCalculator.Resource.Attribute.popupMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupTheme = global::AndroidEmotionCalculator.Resource.Attribute.popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupWindowStyle = global::AndroidEmotionCalculator.Resource.Attribute.popupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.preserveIconSpacing = global::AndroidEmotionCalculator.Resource.Attribute.preserveIconSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.pressedTranslationZ = global::AndroidEmotionCalculator.Resource.Attribute.pressedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.progressBarPadding = global::AndroidEmotionCalculator.Resource.Attribute.progressBarPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.progressBarStyle = global::AndroidEmotionCalculator.Resource.Attribute.progressBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryBackground = global::AndroidEmotionCalculator.Resource.Attribute.queryBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryHint = global::AndroidEmotionCalculator.Resource.Attribute.queryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.radioButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyle = global::AndroidEmotionCalculator.Resource.Attribute.ratingBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleIndicator = global::AndroidEmotionCalculator.Resource.Attribute.ratingBarStyleIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleSmall = global::AndroidEmotionCalculator.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.reverseLayout = global::AndroidEmotionCalculator.Resource.Attribute.reverseLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.rippleColor = global::AndroidEmotionCalculator.Resource.Attribute.rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimAnimationDuration = global::AndroidEmotionCalculator.Resource.Attribute.scrimAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimBackground = global::AndroidEmotionCalculator.Resource.Attribute.scrimBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimVisibleHeightTrigger = global::AndroidEmotionCalculator.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchHintIcon = global::AndroidEmotionCalculator.Resource.Attribute.searchHintIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchIcon = global::AndroidEmotionCalculator.Resource.Attribute.searchIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchViewStyle = global::AndroidEmotionCalculator.Resource.Attribute.searchViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.seekBarStyle = global::AndroidEmotionCalculator.Resource.Attribute.seekBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackground = global::AndroidEmotionCalculator.Resource.Attribute.selectableItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackgroundBorderless = global::AndroidEmotionCalculator.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showAsAction = global::AndroidEmotionCalculator.Resource.Attribute.showAsAction;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showDividers = global::AndroidEmotionCalculator.Resource.Attribute.showDividers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showMotionSpec = global::AndroidEmotionCalculator.Resource.Attribute.showMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showText = global::AndroidEmotionCalculator.Resource.Attribute.showText;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showTitle = global::AndroidEmotionCalculator.Resource.Attribute.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleChoiceItemLayout = global::AndroidEmotionCalculator.Resource.Attribute.singleChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleLine = global::AndroidEmotionCalculator.Resource.Attribute.singleLine;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleSelection = global::AndroidEmotionCalculator.Resource.Attribute.singleSelection;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.snackbarButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.snackbarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.snackbarStyle = global::AndroidEmotionCalculator.Resource.Attribute.snackbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spanCount = global::AndroidEmotionCalculator.Resource.Attribute.spanCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinBars = global::AndroidEmotionCalculator.Resource.Attribute.spinBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinnerDropDownItemStyle = global::AndroidEmotionCalculator.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinnerStyle = global::AndroidEmotionCalculator.Resource.Attribute.spinnerStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.splitTrack = global::AndroidEmotionCalculator.Resource.Attribute.splitTrack;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.srcCompat = global::AndroidEmotionCalculator.Resource.Attribute.srcCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.stackFromEnd = global::AndroidEmotionCalculator.Resource.Attribute.stackFromEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_above_anchor = global::AndroidEmotionCalculator.Resource.Attribute.state_above_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsed = global::AndroidEmotionCalculator.Resource.Attribute.state_collapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsible = global::AndroidEmotionCalculator.Resource.Attribute.state_collapsible;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_liftable = global::AndroidEmotionCalculator.Resource.Attribute.state_liftable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_lifted = global::AndroidEmotionCalculator.Resource.Attribute.state_lifted;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarBackground = global::AndroidEmotionCalculator.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarScrim = global::AndroidEmotionCalculator.Resource.Attribute.statusBarScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.strokeColor = global::AndroidEmotionCalculator.Resource.Attribute.strokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.strokeWidth = global::AndroidEmotionCalculator.Resource.Attribute.strokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subMenuArrow = global::AndroidEmotionCalculator.Resource.Attribute.subMenuArrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.submitBackground = global::AndroidEmotionCalculator.Resource.Attribute.submitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitle = global::AndroidEmotionCalculator.Resource.Attribute.subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.subtitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextColor = global::AndroidEmotionCalculator.Resource.Attribute.subtitleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextStyle = global::AndroidEmotionCalculator.Resource.Attribute.subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.suggestionRowLayout = global::AndroidEmotionCalculator.Resource.Attribute.suggestionRowLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchMinWidth = global::AndroidEmotionCalculator.Resource.Attribute.switchMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchPadding = global::AndroidEmotionCalculator.Resource.Attribute.switchPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchStyle = global::AndroidEmotionCalculator.Resource.Attribute.switchStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.switchTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabBackground = global::AndroidEmotionCalculator.Resource.Attribute.tabBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabContentStart = global::AndroidEmotionCalculator.Resource.Attribute.tabContentStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabGravity = global::AndroidEmotionCalculator.Resource.Attribute.tabGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIconTint = global::AndroidEmotionCalculator.Resource.Attribute.tabIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIconTintMode = global::AndroidEmotionCalculator.Resource.Attribute.tabIconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicator = global::AndroidEmotionCalculator.Resource.Attribute.tabIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorAnimationDuration = global::AndroidEmotionCalculator.Resource.Attribute.tabIndicatorAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorColor = global::AndroidEmotionCalculator.Resource.Attribute.tabIndicatorColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorFullWidth = global::AndroidEmotionCalculator.Resource.Attribute.tabIndicatorFullWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorGravity = global::AndroidEmotionCalculator.Resource.Attribute.tabIndicatorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorHeight = global::AndroidEmotionCalculator.Resource.Attribute.tabIndicatorHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabInlineLabel = global::AndroidEmotionCalculator.Resource.Attribute.tabInlineLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMaxWidth = global::AndroidEmotionCalculator.Resource.Attribute.tabMaxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMinWidth = global::AndroidEmotionCalculator.Resource.Attribute.tabMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMode = global::AndroidEmotionCalculator.Resource.Attribute.tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPadding = global::AndroidEmotionCalculator.Resource.Attribute.tabPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingBottom = global::AndroidEmotionCalculator.Resource.Attribute.tabPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingEnd = global::AndroidEmotionCalculator.Resource.Attribute.tabPaddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingStart = global::AndroidEmotionCalculator.Resource.Attribute.tabPaddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingTop = global::AndroidEmotionCalculator.Resource.Attribute.tabPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabRippleColor = global::AndroidEmotionCalculator.Resource.Attribute.tabRippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabSelectedTextColor = global::AndroidEmotionCalculator.Resource.Attribute.tabSelectedTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabStyle = global::AndroidEmotionCalculator.Resource.Attribute.tabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.tabTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabTextColor = global::AndroidEmotionCalculator.Resource.Attribute.tabTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabUnboundedRipple = global::AndroidEmotionCalculator.Resource.Attribute.tabUnboundedRipple;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAllCaps = global::AndroidEmotionCalculator.Resource.Attribute.textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceBody1 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceBody1;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceBody2 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceBody2;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceButton = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceCaption = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceCaption;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline1 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceHeadline1;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline2 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceHeadline2;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline3 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceHeadline3;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline4 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceHeadline4;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline5 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceHeadline5;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline6 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceHeadline6;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceLargePopupMenu = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItem = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSecondary = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSmall = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceListItemSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceOverline = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceOverline;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearancePopupMenuHeader = global::AndroidEmotionCalculator.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSearchResultSubtitle = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSearchResultTitle = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSmallPopupMenu = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSubtitle1 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceSubtitle1;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSubtitle2 = global::AndroidEmotionCalculator.Resource.Attribute.textAppearanceSubtitle2;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorAlertDialogListItem = global::AndroidEmotionCalculator.Resource.Attribute.textColorAlertDialogListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorSearchUrl = global::AndroidEmotionCalculator.Resource.Attribute.textColorSearchUrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textEndPadding = global::AndroidEmotionCalculator.Resource.Attribute.textEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textInputStyle = global::AndroidEmotionCalculator.Resource.Attribute.textInputStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textStartPadding = global::AndroidEmotionCalculator.Resource.Attribute.textStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.theme = global::AndroidEmotionCalculator.Resource.Attribute.theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thickness = global::AndroidEmotionCalculator.Resource.Attribute.thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTextPadding = global::AndroidEmotionCalculator.Resource.Attribute.thumbTextPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTint = global::AndroidEmotionCalculator.Resource.Attribute.thumbTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTintMode = global::AndroidEmotionCalculator.Resource.Attribute.thumbTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMark = global::AndroidEmotionCalculator.Resource.Attribute.tickMark;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMarkTint = global::AndroidEmotionCalculator.Resource.Attribute.tickMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMarkTintMode = global::AndroidEmotionCalculator.Resource.Attribute.tickMarkTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tint = global::AndroidEmotionCalculator.Resource.Attribute.tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tintMode = global::AndroidEmotionCalculator.Resource.Attribute.tintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.title = global::AndroidEmotionCalculator.Resource.Attribute.title;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleEnabled = global::AndroidEmotionCalculator.Resource.Attribute.titleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMargin = global::AndroidEmotionCalculator.Resource.Attribute.titleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginBottom = global::AndroidEmotionCalculator.Resource.Attribute.titleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginEnd = global::AndroidEmotionCalculator.Resource.Attribute.titleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMargins = global::AndroidEmotionCalculator.Resource.Attribute.titleMargins;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginStart = global::AndroidEmotionCalculator.Resource.Attribute.titleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginTop = global::AndroidEmotionCalculator.Resource.Attribute.titleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextAppearance = global::AndroidEmotionCalculator.Resource.Attribute.titleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextColor = global::AndroidEmotionCalculator.Resource.Attribute.titleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextStyle = global::AndroidEmotionCalculator.Resource.Attribute.titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarId = global::AndroidEmotionCalculator.Resource.Attribute.toolbarId;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarNavigationButtonStyle = global::AndroidEmotionCalculator.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarStyle = global::AndroidEmotionCalculator.Resource.Attribute.toolbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipForegroundColor = global::AndroidEmotionCalculator.Resource.Attribute.tooltipForegroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipFrameBackground = global::AndroidEmotionCalculator.Resource.Attribute.tooltipFrameBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipText = global::AndroidEmotionCalculator.Resource.Attribute.tooltipText;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.track = global::AndroidEmotionCalculator.Resource.Attribute.track;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.trackTint = global::AndroidEmotionCalculator.Resource.Attribute.trackTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.trackTintMode = global::AndroidEmotionCalculator.Resource.Attribute.trackTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ttcIndex = global::AndroidEmotionCalculator.Resource.Attribute.ttcIndex;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.useCompatPadding = global::AndroidEmotionCalculator.Resource.Attribute.useCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.viewInflaterClass = global::AndroidEmotionCalculator.Resource.Attribute.viewInflaterClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.voiceIcon = global::AndroidEmotionCalculator.Resource.Attribute.voiceIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionBar = global::AndroidEmotionCalculator.Resource.Attribute.windowActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionBarOverlay = global::AndroidEmotionCalculator.Resource.Attribute.windowActionBarOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionModeOverlay = global::AndroidEmotionCalculator.Resource.Attribute.windowActionModeOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedHeightMajor = global::AndroidEmotionCalculator.Resource.Attribute.windowFixedHeightMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedHeightMinor = global::AndroidEmotionCalculator.Resource.Attribute.windowFixedHeightMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedWidthMajor = global::AndroidEmotionCalculator.Resource.Attribute.windowFixedWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedWidthMinor = global::AndroidEmotionCalculator.Resource.Attribute.windowFixedWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMajor = global::AndroidEmotionCalculator.Resource.Attribute.windowMinWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMinor = global::AndroidEmotionCalculator.Resource.Attribute.windowMinWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowNoTitle = global::AndroidEmotionCalculator.Resource.Attribute.windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::AndroidEmotionCalculator.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_allow_stacked_button_bar = global::AndroidEmotionCalculator.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::AndroidEmotionCalculator.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.mtrl_btn_textappearance_all_caps = global::AndroidEmotionCalculator.Resource.Boolean.mtrl_btn_textappearance_all_caps;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_background_cache_hint_selector_material_dark = global::AndroidEmotionCalculator.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_background_cache_hint_selector_material_light = global::AndroidEmotionCalculator.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_borderless_text_material = global::AndroidEmotionCalculator.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_text_material = global::AndroidEmotionCalculator.Resource.Color.abc_btn_colored_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_color_highlight_material = global::AndroidEmotionCalculator.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_dark = global::AndroidEmotionCalculator.Resource.Color.abc_hint_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_light = global::AndroidEmotionCalculator.Resource.Color.abc_hint_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_input_method_navigation_guard = global::AndroidEmotionCalculator.Resource.Color.abc_input_method_navigation_guard;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_disable_only_material_dark = global::AndroidEmotionCalculator.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_disable_only_material_light = global::AndroidEmotionCalculator.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_material_dark = global::AndroidEmotionCalculator.Resource.Color.abc_primary_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_material_light = global::AndroidEmotionCalculator.Resource.Color.abc_primary_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text = global::AndroidEmotionCalculator.Resource.Color.abc_search_url_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_normal = global::AndroidEmotionCalculator.Resource.Color.abc_search_url_text_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_pressed = global::AndroidEmotionCalculator.Resource.Color.abc_search_url_text_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_selected = global::AndroidEmotionCalculator.Resource.Color.abc_search_url_text_selected;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_secondary_text_material_dark = global::AndroidEmotionCalculator.Resource.Color.abc_secondary_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_secondary_text_material_light = global::AndroidEmotionCalculator.Resource.Color.abc_secondary_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_btn_checkable = global::AndroidEmotionCalculator.Resource.Color.abc_tint_btn_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_default = global::AndroidEmotionCalculator.Resource.Color.abc_tint_default;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_edittext = global::AndroidEmotionCalculator.Resource.Color.abc_tint_edittext;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_seek_thumb = global::AndroidEmotionCalculator.Resource.Color.abc_tint_seek_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_spinner = global::AndroidEmotionCalculator.Resource.Color.abc_tint_spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_switch_track = global::AndroidEmotionCalculator.Resource.Color.abc_tint_switch_track;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_dark = global::AndroidEmotionCalculator.Resource.Color.accent_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_light = global::AndroidEmotionCalculator.Resource.Color.accent_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_dark = global::AndroidEmotionCalculator.Resource.Color.background_floating_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_light = global::AndroidEmotionCalculator.Resource.Color.background_floating_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_material_dark = global::AndroidEmotionCalculator.Resource.Color.background_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_material_light = global::AndroidEmotionCalculator.Resource.Color.background_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_disabled_material_dark = global::AndroidEmotionCalculator.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_disabled_material_light = global::AndroidEmotionCalculator.Resource.Color.bright_foreground_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_inverse_material_dark = global::AndroidEmotionCalculator.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_inverse_material_light = global::AndroidEmotionCalculator.Resource.Color.bright_foreground_inverse_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_material_dark = global::AndroidEmotionCalculator.Resource.Color.bright_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_material_light = global::AndroidEmotionCalculator.Resource.Color.bright_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.button_material_dark = global::AndroidEmotionCalculator.Resource.Color.button_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.button_material_light = global::AndroidEmotionCalculator.Resource.Color.button_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_dark_background = global::AndroidEmotionCalculator.Resource.Color.cardview_dark_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_light_background = global::AndroidEmotionCalculator.Resource.Color.cardview_light_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_end_color = global::AndroidEmotionCalculator.Resource.Color.cardview_shadow_end_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_start_color = global::AndroidEmotionCalculator.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_bottom_navigation_shadow_color = global::AndroidEmotionCalculator.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_primary = global::AndroidEmotionCalculator.Resource.Color.design_default_color_primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_primary_dark = global::AndroidEmotionCalculator.Resource.Color.design_default_color_primary_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_error = global::AndroidEmotionCalculator.Resource.Color.design_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_end_color = global::AndroidEmotionCalculator.Resource.Color.design_fab_shadow_end_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_mid_color = global::AndroidEmotionCalculator.Resource.Color.design_fab_shadow_mid_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_start_color = global::AndroidEmotionCalculator.Resource.Color.design_fab_shadow_start_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_end_inner_color = global::AndroidEmotionCalculator.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_end_outer_color = global::AndroidEmotionCalculator.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_inner_color = global::AndroidEmotionCalculator.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_outer_color = global::AndroidEmotionCalculator.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_snackbar_background_color = global::AndroidEmotionCalculator.Resource.Color.design_snackbar_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_tint_password_toggle = global::AndroidEmotionCalculator.Resource.Color.design_tint_password_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_dark = global::AndroidEmotionCalculator.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_light = global::AndroidEmotionCalculator.Resource.Color.dim_foreground_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_material_dark = global::AndroidEmotionCalculator.Resource.Color.dim_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_material_light = global::AndroidEmotionCalculator.Resource.Color.dim_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.error_color_material_dark = global::AndroidEmotionCalculator.Resource.Color.error_color_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.error_color_material_light = global::AndroidEmotionCalculator.Resource.Color.error_color_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.foreground_material_dark = global::AndroidEmotionCalculator.Resource.Color.foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.foreground_material_light = global::AndroidEmotionCalculator.Resource.Color.foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.highlighted_text_material_dark = global::AndroidEmotionCalculator.Resource.Color.highlighted_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.highlighted_text_material_light = global::AndroidEmotionCalculator.Resource.Color.highlighted_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_800 = global::AndroidEmotionCalculator.Resource.Color.material_blue_grey_800;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_900 = global::AndroidEmotionCalculator.Resource.Color.material_blue_grey_900;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_950 = global::AndroidEmotionCalculator.Resource.Color.material_blue_grey_950;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_deep_teal_200 = global::AndroidEmotionCalculator.Resource.Color.material_deep_teal_200;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_deep_teal_500 = global::AndroidEmotionCalculator.Resource.Color.material_deep_teal_500;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_100 = global::AndroidEmotionCalculator.Resource.Color.material_grey_100;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_300 = global::AndroidEmotionCalculator.Resource.Color.material_grey_300;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_50 = global::AndroidEmotionCalculator.Resource.Color.material_grey_50;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_600 = global::AndroidEmotionCalculator.Resource.Color.material_grey_600;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_800 = global::AndroidEmotionCalculator.Resource.Color.material_grey_800;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_850 = global::AndroidEmotionCalculator.Resource.Color.material_grey_850;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_900 = global::AndroidEmotionCalculator.Resource.Color.material_grey_900;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::AndroidEmotionCalculator.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_bottom_nav_item_tint = global::AndroidEmotionCalculator.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_bg_color_disabled = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_bg_color_disabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_bg_color_selector = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_bg_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_ripple_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_stroke_color_selector = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_text_btn_ripple_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_text_btn_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_text_color_disabled = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_text_color_disabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_text_color_selector = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_text_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_transparent_bg_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_background_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_chip_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_close_icon_tint = global::AndroidEmotionCalculator.Resource.Color.mtrl_chip_close_icon_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_ripple_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_chip_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_text_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_chip_text_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_fab_ripple_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_fab_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_scrim_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_scrim_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_tabs_colored_ripple_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_tabs_colored_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_tabs_icon_color_selector = global::AndroidEmotionCalculator.Resource.Color.mtrl_tabs_icon_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_tabs_icon_color_selector_colored = global::AndroidEmotionCalculator.Resource.Color.mtrl_tabs_icon_color_selector_colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_tabs_legacy_text_color_selector = global::AndroidEmotionCalculator.Resource.Color.mtrl_tabs_legacy_text_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_tabs_ripple_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_tabs_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_default_box_stroke_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_textinput_default_box_stroke_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_disabled_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_textinput_disabled_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::AndroidEmotionCalculator.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_text_btn_text_color_selector = global::AndroidEmotionCalculator.Resource.Color.mtrl_text_btn_text_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_action_color_filter = global::AndroidEmotionCalculator.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_icon_bg_color = global::AndroidEmotionCalculator.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_material_background_media_default_color = global::AndroidEmotionCalculator.Resource.Color.notification_material_background_media_default_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_dark_material_dark = global::AndroidEmotionCalculator.Resource.Color.primary_dark_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_dark_material_light = global::AndroidEmotionCalculator.Resource.Color.primary_dark_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_material_dark = global::AndroidEmotionCalculator.Resource.Color.primary_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_material_light = global::AndroidEmotionCalculator.Resource.Color.primary_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_default_material_dark = global::AndroidEmotionCalculator.Resource.Color.primary_text_default_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_default_material_light = global::AndroidEmotionCalculator.Resource.Color.primary_text_default_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_dark = global::AndroidEmotionCalculator.Resource.Color.primary_text_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_light = global::AndroidEmotionCalculator.Resource.Color.primary_text_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_dark = global::AndroidEmotionCalculator.Resource.Color.ripple_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_light = global::AndroidEmotionCalculator.Resource.Color.ripple_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_default_material_dark = global::AndroidEmotionCalculator.Resource.Color.secondary_text_default_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_default_material_light = global::AndroidEmotionCalculator.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_disabled_material_dark = global::AndroidEmotionCalculator.Resource.Color.secondary_text_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_disabled_material_light = global::AndroidEmotionCalculator.Resource.Color.secondary_text_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_disabled_material_dark = global::AndroidEmotionCalculator.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_disabled_material_light = global::AndroidEmotionCalculator.Resource.Color.switch_thumb_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_dark = global::AndroidEmotionCalculator.Resource.Color.switch_thumb_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_light = global::AndroidEmotionCalculator.Resource.Color.switch_thumb_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_dark = global::AndroidEmotionCalculator.Resource.Color.switch_thumb_normal_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_light = global::AndroidEmotionCalculator.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_dark = global::AndroidEmotionCalculator.Resource.Color.tooltip_background_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_light = global::AndroidEmotionCalculator.Resource.Color.tooltip_background_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_height_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_padding_end_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_padding_start_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_elevation_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_stacked_max_height = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_height_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_button_min_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_width_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_button_min_width_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_width_overflow_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_alert_dialog_button_bar_height = global::AndroidEmotionCalculator.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_alert_dialog_button_dimen = global::AndroidEmotionCalculator.Resource.Dimension.abc_alert_dialog_button_dimen;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_inset_horizontal_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_inset_vertical_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_padding_horizontal_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_padding_vertical_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::AndroidEmotionCalculator.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_config_prefDialogWidth = global::AndroidEmotionCalculator.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_corner_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_control_corner_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_inset_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_control_inset_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_padding_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_control_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_corner_radius_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_corner_radius_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_height_major = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_height_minor = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_width_major = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_width_minor = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_min_width_major = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_min_width_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_min_width_minor = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_padding_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_padding_top_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_title_divider_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_disabled_alpha_material_dark = global::AndroidEmotionCalculator.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_disabled_alpha_material_light = global::AndroidEmotionCalculator.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_icon_width = global::AndroidEmotionCalculator.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_text_padding_left = global::AndroidEmotionCalculator.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_text_padding_right = global::AndroidEmotionCalculator.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_bottom_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_top_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_floating_window_z = global::AndroidEmotionCalculator.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_padding_horizontal_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_panel_menu_list_width = global::AndroidEmotionCalculator.Resource.Dimension.abc_panel_menu_list_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_progress_bar_height_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_progress_bar_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_search_view_preferred_height = global::AndroidEmotionCalculator.Resource.Dimension.abc_search_view_preferred_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_search_view_preferred_width = global::AndroidEmotionCalculator.Resource.Dimension.abc_search_view_preferred_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_seekbar_track_background_height_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_seekbar_track_progress_height_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_select_dialog_padding_start_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_switch_padding = global::AndroidEmotionCalculator.Resource.Dimension.abc_switch_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_body_1_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_body_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_body_2_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_body_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_button_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_button_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_caption_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_caption_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_1_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_display_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_2_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_display_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_3_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_display_3_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_4_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_display_4_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_headline_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_headline_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_large_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_large_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_medium_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_medium_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_menu_header_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_menu_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_menu_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_small_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_small_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subhead_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_subhead_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material_toolbar = global::AndroidEmotionCalculator.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_compat_inset_shadow = global::AndroidEmotionCalculator.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_elevation = global::AndroidEmotionCalculator.Resource.Dimension.cardview_default_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_radius = global::AndroidEmotionCalculator.Resource.Dimension.cardview_default_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_inset_horizontal_material = global::AndroidEmotionCalculator.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_inset_vertical_material = global::AndroidEmotionCalculator.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_padding_horizontal_material = global::AndroidEmotionCalculator.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_padding_vertical_material = global::AndroidEmotionCalculator.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_control_corner_material = global::AndroidEmotionCalculator.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_notification_large_icon_max_height = global::AndroidEmotionCalculator.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_notification_large_icon_max_width = global::AndroidEmotionCalculator.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_appbar_elevation = global::AndroidEmotionCalculator.Resource.Dimension.design_appbar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_active_item_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_text_size = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_elevation = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_height = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_icon_size = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_item_max_width = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_item_min_width = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_margin = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_shadow_height = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_text_size = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_modal_elevation = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_peek_height_min = global::AndroidEmotionCalculator.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_border_width = global::AndroidEmotionCalculator.Resource.Dimension.design_fab_border_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_elevation = global::AndroidEmotionCalculator.Resource.Dimension.design_fab_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_image_size = global::AndroidEmotionCalculator.Resource.Dimension.design_fab_image_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_size_mini = global::AndroidEmotionCalculator.Resource.Dimension.design_fab_size_mini;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_size_normal = global::AndroidEmotionCalculator.Resource.Dimension.design_fab_size_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_translation_z_hovered_focused = global::AndroidEmotionCalculator.Resource.Dimension.design_fab_translation_z_hovered_focused;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_translation_z_pressed = global::AndroidEmotionCalculator.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_elevation = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_icon_padding = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_icon_size = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_item_horizontal_padding = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_item_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_item_icon_padding = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_item_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_max_width = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_padding_bottom = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_padding_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_separator_vertical_padding = global::AndroidEmotionCalculator.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_action_inline_max_width = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_background_corner_radius = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_elevation = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_max_width = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_min_width = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_horizontal = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_vertical = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_text_size = global::AndroidEmotionCalculator.Resource.Dimension.design_snackbar_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_max_width = global::AndroidEmotionCalculator.Resource.Dimension.design_tab_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_scrollable_min_width = global::AndroidEmotionCalculator.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_text_size = global::AndroidEmotionCalculator.Resource.Dimension.design_tab_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_text_size_2line = global::AndroidEmotionCalculator.Resource.Dimension.design_tab_text_size_2line;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_textinput_caption_translate_y = global::AndroidEmotionCalculator.Resource.Dimension.design_textinput_caption_translate_y;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.disabled_alpha_material_dark = global::AndroidEmotionCalculator.Resource.Dimension.disabled_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.disabled_alpha_material_light = global::AndroidEmotionCalculator.Resource.Dimension.disabled_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_default_thickness = global::AndroidEmotionCalculator.Resource.Dimension.fastscroll_default_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_margin = global::AndroidEmotionCalculator.Resource.Dimension.fastscroll_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_minimum_range = global::AndroidEmotionCalculator.Resource.Dimension.fastscroll_minimum_range;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_colored = global::AndroidEmotionCalculator.Resource.Dimension.highlight_alpha_material_colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_dark = global::AndroidEmotionCalculator.Resource.Dimension.highlight_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_light = global::AndroidEmotionCalculator.Resource.Dimension.highlight_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_alpha_material_dark = global::AndroidEmotionCalculator.Resource.Dimension.hint_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_alpha_material_light = global::AndroidEmotionCalculator.Resource.Dimension.hint_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_pressed_alpha_material_dark = global::AndroidEmotionCalculator.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_pressed_alpha_material_light = global::AndroidEmotionCalculator.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::AndroidEmotionCalculator.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::AndroidEmotionCalculator.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::AndroidEmotionCalculator.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_height = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_bottomappbar_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_corner_radius = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_dialog_btn_min_width = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_dialog_btn_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_disabled_elevation = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_disabled_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_disabled_z = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_disabled_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_elevation = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_focused_z = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_focused_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_hovered_z = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_hovered_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_icon_btn_padding_left = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_icon_btn_padding_left;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_icon_padding = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_inset = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_inset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_letter_spacing = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_letter_spacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_padding_bottom = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_padding_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_padding_left = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_padding_left;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_padding_right = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_padding_right;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_padding_top = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_pressed_z = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_pressed_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_stroke_size = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_stroke_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_text_btn_icon_padding = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_text_btn_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_text_btn_padding_left = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_text_btn_padding_left;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_text_btn_padding_right;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_text_size = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_z = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_btn_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_elevation = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_card_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_spacing = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_card_spacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_chip_pressed_translation_z = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_chip_pressed_translation_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_chip_text_size = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_chip_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_fab_elevation = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_fab_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_fab_translation_z_pressed = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_elevation = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_navigation_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_item_icon_padding = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_margin = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_snackbar_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_bottom_offset = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_box_bottom_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_padding_end = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_box_padding_end;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_toolbar_default_height = global::AndroidEmotionCalculator.Resource.Dimension.mtrl_toolbar_default_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_icon_size = global::AndroidEmotionCalculator.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_text_size = global::AndroidEmotionCalculator.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_big_circle_margin = global::AndroidEmotionCalculator.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_content_margin_start = global::AndroidEmotionCalculator.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_large_icon_height = global::AndroidEmotionCalculator.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_large_icon_width = global::AndroidEmotionCalculator.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_main_column_padding_top = global::AndroidEmotionCalculator.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_media_narrow_margin = global::AndroidEmotionCalculator.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_right_icon_size = global::AndroidEmotionCalculator.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_right_side_padding_top = global::AndroidEmotionCalculator.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_small_icon_background_padding = global::AndroidEmotionCalculator.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_small_icon_size_as_large = global::AndroidEmotionCalculator.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_subtext_size = global::AndroidEmotionCalculator.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad = global::AndroidEmotionCalculator.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad_large_text = global::AndroidEmotionCalculator.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.subtitle_corner_radius = global::AndroidEmotionCalculator.Resource.Dimension.subtitle_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.subtitle_outline_width = global::AndroidEmotionCalculator.Resource.Dimension.subtitle_outline_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.subtitle_shadow_offset = global::AndroidEmotionCalculator.Resource.Dimension.subtitle_shadow_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.subtitle_shadow_radius = global::AndroidEmotionCalculator.Resource.Dimension.subtitle_shadow_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_corner_radius = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_horizontal_padding = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_margin = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_precise_anchor_threshold = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_vertical_padding = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_y_offset_non_touch = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_y_offset_touch = global::AndroidEmotionCalculator.Resource.Dimension.tooltip_y_offset_touch;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_action_bar_item_background_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_borderless_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_borderless_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_colored_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_colored_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_default_mtrl_shape = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::AndroidEmotionCalculator.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_internal_bg = global::AndroidEmotionCalculator.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_top_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_cab_background_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_control_background_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_control_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_dialog_material_background = global::AndroidEmotionCalculator.Resource.Drawable.abc_dialog_material_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_edit_text_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_edit_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_ab_back_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_ab_back_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_clear_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_clear_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_go_search_api_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_overflow_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_search_api_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_16dp = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_36dp = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_48dp = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_16dp = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_36dp = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_48dp = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_voice_search_api_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_item_background_holo_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_item_background_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_item_background_holo_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_item_background_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_divider_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_divider_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_divider_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_focused_holo = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_focused_holo;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_longpressed_holo = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_longpressed_holo;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_pressed_holo_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_pressed_holo_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_disabled_holo_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_holo_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_holo_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_list_selector_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::AndroidEmotionCalculator.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_popup_background_mtrl_mult = global::AndroidEmotionCalculator.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_indicator_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ratingbar_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_small_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_ratingbar_small_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::AndroidEmotionCalculator.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::AndroidEmotionCalculator.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_thumb_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_tick_mark_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_track_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_seekbar_track_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_spinner_textfield_background_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_switch_thumb_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_switch_thumb_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_switch_track_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_tab_indicator_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_tab_indicator_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::AndroidEmotionCalculator.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_textfield_search_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_cursor_material = global::AndroidEmotionCalculator.Resource.Drawable.abc_text_cursor_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::AndroidEmotionCalculator.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::AndroidEmotionCalculator.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_vector_test = global::AndroidEmotionCalculator.Resource.Drawable.abc_vector_test;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password = global::AndroidEmotionCalculator.Resource.Drawable.avd_hide_password;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password = global::AndroidEmotionCalculator.Resource.Drawable.avd_show_password;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_bottom_navigation_item_background = global::AndroidEmotionCalculator.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_fab_background = global::AndroidEmotionCalculator.Resource.Drawable.design_fab_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility = global::AndroidEmotionCalculator.Resource.Drawable.design_ic_visibility;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility_off = global::AndroidEmotionCalculator.Resource.Drawable.design_ic_visibility_off;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_password_eye = global::AndroidEmotionCalculator.Resource.Drawable.design_password_eye;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_snackbar_background = global::AndroidEmotionCalculator.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_mtrl_chip_checked_black = global::AndroidEmotionCalculator.Resource.Drawable.ic_mtrl_chip_checked_black;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_mtrl_chip_checked_circle = global::AndroidEmotionCalculator.Resource.Drawable.ic_mtrl_chip_checked_circle;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_mtrl_chip_close_circle = global::AndroidEmotionCalculator.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_snackbar_background = global::AndroidEmotionCalculator.Resource.Drawable.mtrl_snackbar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_tabs_default_indicator = global::AndroidEmotionCalculator.Resource.Drawable.mtrl_tabs_default_indicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.navigation_empty_icon = global::AndroidEmotionCalculator.Resource.Drawable.navigation_empty_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_action_background = global::AndroidEmotionCalculator.Resource.Drawable.notification_action_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg = global::AndroidEmotionCalculator.Resource.Drawable.notification_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low = global::AndroidEmotionCalculator.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low_normal = global::AndroidEmotionCalculator.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low_pressed = global::AndroidEmotionCalculator.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_normal = global::AndroidEmotionCalculator.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_normal_pressed = global::AndroidEmotionCalculator.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_icon_background = global::AndroidEmotionCalculator.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_bg = global::AndroidEmotionCalculator.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_low_bg = global::AndroidEmotionCalculator.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_tile_bg = global::AndroidEmotionCalculator.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::AndroidEmotionCalculator.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_dark = global::AndroidEmotionCalculator.Resource.Drawable.tooltip_frame_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_light = global::AndroidEmotionCalculator.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action0 = global::AndroidEmotionCalculator.Resource.Id.action0;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.actions = global::AndroidEmotionCalculator.Resource.Id.actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar = global::AndroidEmotionCalculator.Resource.Id.action_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_activity_content = global::AndroidEmotionCalculator.Resource.Id.action_bar_activity_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_container = global::AndroidEmotionCalculator.Resource.Id.action_bar_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_root = global::AndroidEmotionCalculator.Resource.Id.action_bar_root;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_spinner = global::AndroidEmotionCalculator.Resource.Id.action_bar_spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_subtitle = global::AndroidEmotionCalculator.Resource.Id.action_bar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_title = global::AndroidEmotionCalculator.Resource.Id.action_bar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_container = global::AndroidEmotionCalculator.Resource.Id.action_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_context_bar = global::AndroidEmotionCalculator.Resource.Id.action_context_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_divider = global::AndroidEmotionCalculator.Resource.Id.action_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_image = global::AndroidEmotionCalculator.Resource.Id.action_image;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_menu_divider = global::AndroidEmotionCalculator.Resource.Id.action_menu_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_menu_presenter = global::AndroidEmotionCalculator.Resource.Id.action_menu_presenter;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_bar = global::AndroidEmotionCalculator.Resource.Id.action_mode_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_bar_stub = global::AndroidEmotionCalculator.Resource.Id.action_mode_bar_stub;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_close_button = global::AndroidEmotionCalculator.Resource.Id.action_mode_close_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_text = global::AndroidEmotionCalculator.Resource.Id.action_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.activity_chooser_view_content = global::AndroidEmotionCalculator.Resource.Id.activity_chooser_view_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.add = global::AndroidEmotionCalculator.Resource.Id.add;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.alertTitle = global::AndroidEmotionCalculator.Resource.Id.alertTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.all = global::AndroidEmotionCalculator.Resource.Id.all;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ALT = global::AndroidEmotionCalculator.Resource.Id.ALT;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.always = global::AndroidEmotionCalculator.Resource.Id.always;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.async = global::AndroidEmotionCalculator.Resource.Id.async;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.auto = global::AndroidEmotionCalculator.Resource.Id.auto;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.beginning = global::AndroidEmotionCalculator.Resource.Id.beginning;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.blocking = global::AndroidEmotionCalculator.Resource.Id.blocking;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottom = global::AndroidEmotionCalculator.Resource.Id.bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_navarea = global::AndroidEmotionCalculator.Resource.Id.bottomtab_navarea;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_tabbar = global::AndroidEmotionCalculator.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.buttonPanel = global::AndroidEmotionCalculator.Resource.Id.buttonPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.cancel_action = global::AndroidEmotionCalculator.Resource.Id.cancel_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center = global::AndroidEmotionCalculator.Resource.Id.center;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center_horizontal = global::AndroidEmotionCalculator.Resource.Id.center_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center_vertical = global::AndroidEmotionCalculator.Resource.Id.center_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.checkbox = global::AndroidEmotionCalculator.Resource.Id.checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.chronometer = global::AndroidEmotionCalculator.Resource.Id.chronometer;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_horizontal = global::AndroidEmotionCalculator.Resource.Id.clip_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_vertical = global::AndroidEmotionCalculator.Resource.Id.clip_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.collapseActionView = global::AndroidEmotionCalculator.Resource.Id.collapseActionView;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.container = global::AndroidEmotionCalculator.Resource.Id.container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.content = global::AndroidEmotionCalculator.Resource.Id.content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.contentPanel = global::AndroidEmotionCalculator.Resource.Id.contentPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.coordinator = global::AndroidEmotionCalculator.Resource.Id.coordinator;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.CTRL = global::AndroidEmotionCalculator.Resource.Id.CTRL;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.custom = global::AndroidEmotionCalculator.Resource.Id.custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.customPanel = global::AndroidEmotionCalculator.Resource.Id.customPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.decor_content_parent = global::AndroidEmotionCalculator.Resource.Id.decor_content_parent;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.default_activity_button = global::AndroidEmotionCalculator.Resource.Id.default_activity_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_bottom_sheet = global::AndroidEmotionCalculator.Resource.Id.design_bottom_sheet;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area = global::AndroidEmotionCalculator.Resource.Id.design_menu_item_action_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area_stub = global::AndroidEmotionCalculator.Resource.Id.design_menu_item_action_area_stub;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_text = global::AndroidEmotionCalculator.Resource.Id.design_menu_item_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_navigation_view = global::AndroidEmotionCalculator.Resource.Id.design_navigation_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.disableHome = global::AndroidEmotionCalculator.Resource.Id.disableHome;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.edit_query = global::AndroidEmotionCalculator.Resource.Id.edit_query;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.end = global::AndroidEmotionCalculator.Resource.Id.end;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.end_padder = global::AndroidEmotionCalculator.Resource.Id.end_padder;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.enterAlways = global::AndroidEmotionCalculator.Resource.Id.enterAlways;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.enterAlwaysCollapsed = global::AndroidEmotionCalculator.Resource.Id.enterAlwaysCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.exitUntilCollapsed = global::AndroidEmotionCalculator.Resource.Id.exitUntilCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.expanded_menu = global::AndroidEmotionCalculator.Resource.Id.expanded_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.expand_activities_button = global::AndroidEmotionCalculator.Resource.Id.expand_activities_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill = global::AndroidEmotionCalculator.Resource.Id.fill;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.filled = global::AndroidEmotionCalculator.Resource.Id.filled;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_horizontal = global::AndroidEmotionCalculator.Resource.Id.fill_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_vertical = global::AndroidEmotionCalculator.Resource.Id.fill_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.@fixed = global::AndroidEmotionCalculator.Resource.Id.@fixed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_appbar = global::AndroidEmotionCalculator.Resource.Id.flyoutcontent_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_recycler = global::AndroidEmotionCalculator.Resource.Id.flyoutcontent_recycler;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.forever = global::AndroidEmotionCalculator.Resource.Id.forever;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.FUNCTION = global::AndroidEmotionCalculator.Resource.Id.FUNCTION;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view = global::AndroidEmotionCalculator.Resource.Id.ghost_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.group_divider = global::AndroidEmotionCalculator.Resource.Id.group_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.home = global::AndroidEmotionCalculator.Resource.Id.home;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.homeAsUp = global::AndroidEmotionCalculator.Resource.Id.homeAsUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.icon = global::AndroidEmotionCalculator.Resource.Id.icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.icon_group = global::AndroidEmotionCalculator.Resource.Id.icon_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ifRoom = global::AndroidEmotionCalculator.Resource.Id.ifRoom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.image = global::AndroidEmotionCalculator.Resource.Id.image;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.info = global::AndroidEmotionCalculator.Resource.Id.info;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.italic = global::AndroidEmotionCalculator.Resource.Id.italic;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.item_touch_helper_previous_elevation = global::AndroidEmotionCalculator.Resource.Id.item_touch_helper_previous_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.labeled = global::AndroidEmotionCalculator.Resource.Id.labeled;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.largeLabel = global::AndroidEmotionCalculator.Resource.Id.largeLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.left = global::AndroidEmotionCalculator.Resource.Id.left;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.line1 = global::AndroidEmotionCalculator.Resource.Id.line1;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.line3 = global::AndroidEmotionCalculator.Resource.Id.line3;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.listMode = global::AndroidEmotionCalculator.Resource.Id.listMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.list_item = global::AndroidEmotionCalculator.Resource.Id.list_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_appbar = global::AndroidEmotionCalculator.Resource.Id.main_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_tablayout = global::AndroidEmotionCalculator.Resource.Id.main_tablayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_toolbar = global::AndroidEmotionCalculator.Resource.Id.main_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_viewpager = global::AndroidEmotionCalculator.Resource.Id.main_viewpager;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.masked = global::AndroidEmotionCalculator.Resource.Id.masked;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.media_actions = global::AndroidEmotionCalculator.Resource.Id.media_actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.message = global::AndroidEmotionCalculator.Resource.Id.message;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.META = global::AndroidEmotionCalculator.Resource.Id.META;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.middle = global::AndroidEmotionCalculator.Resource.Id.middle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mini = global::AndroidEmotionCalculator.Resource.Id.mini;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_child_content_container = global::AndroidEmotionCalculator.Resource.Id.mtrl_child_content_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_internal_children_alpha_tag = global::AndroidEmotionCalculator.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.multiply = global::AndroidEmotionCalculator.Resource.Id.multiply;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.navigation_header_container = global::AndroidEmotionCalculator.Resource.Id.navigation_header_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.never = global::AndroidEmotionCalculator.Resource.Id.never;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.none = global::AndroidEmotionCalculator.Resource.Id.none;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.normal = global::AndroidEmotionCalculator.Resource.Id.normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_background = global::AndroidEmotionCalculator.Resource.Id.notification_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column = global::AndroidEmotionCalculator.Resource.Id.notification_main_column;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column_container = global::AndroidEmotionCalculator.Resource.Id.notification_main_column_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.outline = global::AndroidEmotionCalculator.Resource.Id.outline;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parallax = global::AndroidEmotionCalculator.Resource.Id.parallax;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parentPanel = global::AndroidEmotionCalculator.Resource.Id.parentPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parent_matrix = global::AndroidEmotionCalculator.Resource.Id.parent_matrix;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.pin = global::AndroidEmotionCalculator.Resource.Id.pin;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_circular = global::AndroidEmotionCalculator.Resource.Id.progress_circular;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_horizontal = global::AndroidEmotionCalculator.Resource.Id.progress_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.radio = global::AndroidEmotionCalculator.Resource.Id.radio;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right = global::AndroidEmotionCalculator.Resource.Id.right;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right_icon = global::AndroidEmotionCalculator.Resource.Id.right_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right_side = global::AndroidEmotionCalculator.Resource.Id.right_side;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_image_matrix = global::AndroidEmotionCalculator.Resource.Id.save_image_matrix;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_non_transition_alpha = global::AndroidEmotionCalculator.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_scale_type = global::AndroidEmotionCalculator.Resource.Id.save_scale_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.screen = global::AndroidEmotionCalculator.Resource.Id.screen;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scroll = global::AndroidEmotionCalculator.Resource.Id.scroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollable = global::AndroidEmotionCalculator.Resource.Id.scrollable;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollIndicatorDown = global::AndroidEmotionCalculator.Resource.Id.scrollIndicatorDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollIndicatorUp = global::AndroidEmotionCalculator.Resource.Id.scrollIndicatorUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollView = global::AndroidEmotionCalculator.Resource.Id.scrollView;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_badge = global::AndroidEmotionCalculator.Resource.Id.search_badge;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_bar = global::AndroidEmotionCalculator.Resource.Id.search_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_button = global::AndroidEmotionCalculator.Resource.Id.search_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_close_btn = global::AndroidEmotionCalculator.Resource.Id.search_close_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_edit_frame = global::AndroidEmotionCalculator.Resource.Id.search_edit_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_go_btn = global::AndroidEmotionCalculator.Resource.Id.search_go_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_mag_icon = global::AndroidEmotionCalculator.Resource.Id.search_mag_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_plate = global::AndroidEmotionCalculator.Resource.Id.search_plate;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_src_text = global::AndroidEmotionCalculator.Resource.Id.search_src_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_voice_btn = global::AndroidEmotionCalculator.Resource.Id.search_voice_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.selected = global::AndroidEmotionCalculator.Resource.Id.selected;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.select_dialog_listview = global::AndroidEmotionCalculator.Resource.Id.select_dialog_listview;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_appbar = global::AndroidEmotionCalculator.Resource.Id.shellcontent_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_toolbar = global::AndroidEmotionCalculator.Resource.Id.shellcontent_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.SHIFT = global::AndroidEmotionCalculator.Resource.Id.SHIFT;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shortcut = global::AndroidEmotionCalculator.Resource.Id.shortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showCustom = global::AndroidEmotionCalculator.Resource.Id.showCustom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showHome = global::AndroidEmotionCalculator.Resource.Id.showHome;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showTitle = global::AndroidEmotionCalculator.Resource.Id.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.smallLabel = global::AndroidEmotionCalculator.Resource.Id.smallLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_action = global::AndroidEmotionCalculator.Resource.Id.snackbar_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_text = global::AndroidEmotionCalculator.Resource.Id.snackbar_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snap = global::AndroidEmotionCalculator.Resource.Id.snap;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snapMargins = global::AndroidEmotionCalculator.Resource.Id.snapMargins;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.spacer = global::AndroidEmotionCalculator.Resource.Id.spacer;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.split_action_bar = global::AndroidEmotionCalculator.Resource.Id.split_action_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_atop = global::AndroidEmotionCalculator.Resource.Id.src_atop;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_in = global::AndroidEmotionCalculator.Resource.Id.src_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_over = global::AndroidEmotionCalculator.Resource.Id.src_over;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.start = global::AndroidEmotionCalculator.Resource.Id.start;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.status_bar_latest_event_content = global::AndroidEmotionCalculator.Resource.Id.status_bar_latest_event_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.stretch = global::AndroidEmotionCalculator.Resource.Id.stretch;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.submenuarrow = global::AndroidEmotionCalculator.Resource.Id.submenuarrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.submit_area = global::AndroidEmotionCalculator.Resource.Id.submit_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.SYM = global::AndroidEmotionCalculator.Resource.Id.SYM;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tabMode = global::AndroidEmotionCalculator.Resource.Id.tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_transition_group = global::AndroidEmotionCalculator.Resource.Id.tag_transition_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_event_manager = global::AndroidEmotionCalculator.Resource.Id.tag_unhandled_key_event_manager;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_listeners = global::AndroidEmotionCalculator.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text = global::AndroidEmotionCalculator.Resource.Id.text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text2 = global::AndroidEmotionCalculator.Resource.Id.text2;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_counter = global::AndroidEmotionCalculator.Resource.Id.textinput_counter;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_error = global::AndroidEmotionCalculator.Resource.Id.textinput_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_helper_text = global::AndroidEmotionCalculator.Resource.Id.textinput_helper_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoButtons = global::AndroidEmotionCalculator.Resource.Id.textSpacerNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoTitle = global::AndroidEmotionCalculator.Resource.Id.textSpacerNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textStart = global::AndroidEmotionCalculator.Resource.Id.textStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text_input_password_toggle = global::AndroidEmotionCalculator.Resource.Id.text_input_password_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.time = global::AndroidEmotionCalculator.Resource.Id.time;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.title = global::AndroidEmotionCalculator.Resource.Id.title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.titleDividerNoCustom = global::AndroidEmotionCalculator.Resource.Id.titleDividerNoCustom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.title_template = global::AndroidEmotionCalculator.Resource.Id.title_template;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.top = global::AndroidEmotionCalculator.Resource.Id.top;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.topPanel = global::AndroidEmotionCalculator.Resource.Id.topPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.touch_outside = global::AndroidEmotionCalculator.Resource.Id.touch_outside;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_current_scene = global::AndroidEmotionCalculator.Resource.Id.transition_current_scene;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_layout_save = global::AndroidEmotionCalculator.Resource.Id.transition_layout_save;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_position = global::AndroidEmotionCalculator.Resource.Id.transition_position;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_scene_layoutid_cache = global::AndroidEmotionCalculator.Resource.Id.transition_scene_layoutid_cache;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_transform = global::AndroidEmotionCalculator.Resource.Id.transition_transform;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.uniform = global::AndroidEmotionCalculator.Resource.Id.uniform;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.unlabeled = global::AndroidEmotionCalculator.Resource.Id.unlabeled;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.up = global::AndroidEmotionCalculator.Resource.Id.up;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.useLogo = global::AndroidEmotionCalculator.Resource.Id.useLogo;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.view_offset_helper = global::AndroidEmotionCalculator.Resource.Id.view_offset_helper;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.visible = global::AndroidEmotionCalculator.Resource.Id.visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.withText = global::AndroidEmotionCalculator.Resource.Id.withText;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.wrap_content = global::AndroidEmotionCalculator.Resource.Id.wrap_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityDefaultDur = global::AndroidEmotionCalculator.Resource.Integer.abc_config_activityDefaultDur;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityShortDur = global::AndroidEmotionCalculator.Resource.Integer.abc_config_activityShortDur;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.app_bar_elevation_anim_duration = global::AndroidEmotionCalculator.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.bottom_sheet_slide_duration = global::AndroidEmotionCalculator.Resource.Integer.bottom_sheet_slide_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.cancel_button_image_alpha = global::AndroidEmotionCalculator.Resource.Integer.cancel_button_image_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.config_tooltipAnimTime = global::AndroidEmotionCalculator.Resource.Integer.config_tooltipAnimTime;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.design_snackbar_text_max_lines = global::AndroidEmotionCalculator.Resource.Integer.design_snackbar_text_max_lines;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.design_tab_indicator_anim_duration_ms = global::AndroidEmotionCalculator.Resource.Integer.design_tab_indicator_anim_duration_ms;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.hide_password_duration = global::AndroidEmotionCalculator.Resource.Integer.hide_password_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_btn_anim_delay_ms = global::AndroidEmotionCalculator.Resource.Integer.mtrl_btn_anim_delay_ms;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_btn_anim_duration_ms = global::AndroidEmotionCalculator.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_chip_anim_duration = global::AndroidEmotionCalculator.Resource.Integer.mtrl_chip_anim_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::AndroidEmotionCalculator.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.show_password_duration = global::AndroidEmotionCalculator.Resource.Integer.show_password_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.status_bar_notification_info_maxnum = global::AndroidEmotionCalculator.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_fast_out_linear_in = global::AndroidEmotionCalculator.Resource.Interpolator.mtrl_fast_out_linear_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_fast_out_slow_in = global::AndroidEmotionCalculator.Resource.Interpolator.mtrl_fast_out_slow_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_linear = global::AndroidEmotionCalculator.Resource.Interpolator.mtrl_linear;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_linear_out_slow_in = global::AndroidEmotionCalculator.Resource.Interpolator.mtrl_linear_out_slow_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_bar_title_item = global::AndroidEmotionCalculator.Resource.Layout.abc_action_bar_title_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_bar_up_container = global::AndroidEmotionCalculator.Resource.Layout.abc_action_bar_up_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_menu_item_layout = global::AndroidEmotionCalculator.Resource.Layout.abc_action_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_menu_layout = global::AndroidEmotionCalculator.Resource.Layout.abc_action_menu_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_mode_bar = global::AndroidEmotionCalculator.Resource.Layout.abc_action_mode_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_mode_close_item_material = global::AndroidEmotionCalculator.Resource.Layout.abc_action_mode_close_item_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_activity_chooser_view = global::AndroidEmotionCalculator.Resource.Layout.abc_activity_chooser_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_activity_chooser_view_list_item = global::AndroidEmotionCalculator.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_button_bar_material = global::AndroidEmotionCalculator.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_material = global::AndroidEmotionCalculator.Resource.Layout.abc_alert_dialog_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_title_material = global::AndroidEmotionCalculator.Resource.Layout.abc_alert_dialog_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_cascading_menu_item_layout = global::AndroidEmotionCalculator.Resource.Layout.abc_cascading_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_dialog_title_material = global::AndroidEmotionCalculator.Resource.Layout.abc_dialog_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_expanded_menu_layout = global::AndroidEmotionCalculator.Resource.Layout.abc_expanded_menu_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_checkbox = global::AndroidEmotionCalculator.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_icon = global::AndroidEmotionCalculator.Resource.Layout.abc_list_menu_item_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_layout = global::AndroidEmotionCalculator.Resource.Layout.abc_list_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_radio = global::AndroidEmotionCalculator.Resource.Layout.abc_list_menu_item_radio;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_popup_menu_header_item_layout = global::AndroidEmotionCalculator.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_popup_menu_item_layout = global::AndroidEmotionCalculator.Resource.Layout.abc_popup_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_content_include = global::AndroidEmotionCalculator.Resource.Layout.abc_screen_content_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_simple = global::AndroidEmotionCalculator.Resource.Layout.abc_screen_simple;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_simple_overlay_action_mode = global::AndroidEmotionCalculator.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_toolbar = global::AndroidEmotionCalculator.Resource.Layout.abc_screen_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_dropdown_item_icons_2line = global::AndroidEmotionCalculator.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_view = global::AndroidEmotionCalculator.Resource.Layout.abc_search_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_select_dialog_material = global::AndroidEmotionCalculator.Resource.Layout.abc_select_dialog_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_tooltip = global::AndroidEmotionCalculator.Resource.Layout.abc_tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.BottomTabLayout = global::AndroidEmotionCalculator.Resource.Layout.BottomTabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_navigation_item = global::AndroidEmotionCalculator.Resource.Layout.design_bottom_navigation_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_sheet_dialog = global::AndroidEmotionCalculator.Resource.Layout.design_bottom_sheet_dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar = global::AndroidEmotionCalculator.Resource.Layout.design_layout_snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar_include = global::AndroidEmotionCalculator.Resource.Layout.design_layout_snackbar_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_tab_icon = global::AndroidEmotionCalculator.Resource.Layout.design_layout_tab_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_tab_text = global::AndroidEmotionCalculator.Resource.Layout.design_layout_tab_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_menu_item_action_area = global::AndroidEmotionCalculator.Resource.Layout.design_menu_item_action_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item = global::AndroidEmotionCalculator.Resource.Layout.design_navigation_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_header = global::AndroidEmotionCalculator.Resource.Layout.design_navigation_item_header;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_separator = global::AndroidEmotionCalculator.Resource.Layout.design_navigation_item_separator;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_subheader = global::AndroidEmotionCalculator.Resource.Layout.design_navigation_item_subheader;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu = global::AndroidEmotionCalculator.Resource.Layout.design_navigation_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu_item = global::AndroidEmotionCalculator.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_text_input_password_icon = global::AndroidEmotionCalculator.Resource.Layout.design_text_input_password_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.FlyoutContent = global::AndroidEmotionCalculator.Resource.Layout.FlyoutContent;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_layout_snackbar = global::AndroidEmotionCalculator.Resource.Layout.mtrl_layout_snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_layout_snackbar_include = global::AndroidEmotionCalculator.Resource.Layout.mtrl_layout_snackbar_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action = global::AndroidEmotionCalculator.Resource.Layout.notification_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action_tombstone = global::AndroidEmotionCalculator.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_action = global::AndroidEmotionCalculator.Resource.Layout.notification_media_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_cancel_action = global::AndroidEmotionCalculator.Resource.Layout.notification_media_cancel_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media = global::AndroidEmotionCalculator.Resource.Layout.notification_template_big_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_custom = global::AndroidEmotionCalculator.Resource.Layout.notification_template_big_media_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_narrow = global::AndroidEmotionCalculator.Resource.Layout.notification_template_big_media_narrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_narrow_custom = global::AndroidEmotionCalculator.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_custom_big = global::AndroidEmotionCalculator.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_icon_group = global::AndroidEmotionCalculator.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_lines_media = global::AndroidEmotionCalculator.Resource.Layout.notification_template_lines_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_media = global::AndroidEmotionCalculator.Resource.Layout.notification_template_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_media_custom = global::AndroidEmotionCalculator.Resource.Layout.notification_template_media_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_chronometer = global::AndroidEmotionCalculator.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_time = global::AndroidEmotionCalculator.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.RootLayout = global::AndroidEmotionCalculator.Resource.Layout.RootLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_item_material = global::AndroidEmotionCalculator.Resource.Layout.select_dialog_item_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_multichoice_material = global::AndroidEmotionCalculator.Resource.Layout.select_dialog_multichoice_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_singlechoice_material = global::AndroidEmotionCalculator.Resource.Layout.select_dialog_singlechoice_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.ShellContent = global::AndroidEmotionCalculator.Resource.Layout.ShellContent;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::AndroidEmotionCalculator.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_home_description = global::AndroidEmotionCalculator.Resource.String.abc_action_bar_home_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_up_description = global::AndroidEmotionCalculator.Resource.String.abc_action_bar_up_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_menu_overflow_description = global::AndroidEmotionCalculator.Resource.String.abc_action_menu_overflow_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_mode_done = global::AndroidEmotionCalculator.Resource.String.abc_action_mode_done;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_activitychooserview_choose_application = global::AndroidEmotionCalculator.Resource.String.abc_activitychooserview_choose_application;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_activity_chooser_view_see_all = global::AndroidEmotionCalculator.Resource.String.abc_activity_chooser_view_see_all;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_capital_off = global::AndroidEmotionCalculator.Resource.String.abc_capital_off;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_capital_on = global::AndroidEmotionCalculator.Resource.String.abc_capital_on;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_body_1_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_body_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_body_2_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_body_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_button_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_button_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_caption_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_caption_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_1_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_display_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_2_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_display_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_3_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_display_3_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_4_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_display_4_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_headline_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_headline_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_menu_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_menu_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_subhead_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_subhead_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_title_material = global::AndroidEmotionCalculator.Resource.String.abc_font_family_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_alt_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_alt_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_ctrl_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_ctrl_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_delete_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_delete_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_enter_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_enter_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_function_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_function_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_meta_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_meta_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_shift_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_shift_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_space_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_space_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_menu_sym_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_menu_sym_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_prepend_shortcut_label = global::AndroidEmotionCalculator.Resource.String.abc_prepend_shortcut_label;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_clear = global::AndroidEmotionCalculator.Resource.String.abc_searchview_description_clear;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_query = global::AndroidEmotionCalculator.Resource.String.abc_searchview_description_query;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_search = global::AndroidEmotionCalculator.Resource.String.abc_searchview_description_search;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_submit = global::AndroidEmotionCalculator.Resource.String.abc_searchview_description_submit;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_voice = global::AndroidEmotionCalculator.Resource.String.abc_searchview_description_voice;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_search_hint = global::AndroidEmotionCalculator.Resource.String.abc_search_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with = global::AndroidEmotionCalculator.Resource.String.abc_shareactionprovider_share_with;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with_application = global::AndroidEmotionCalculator.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_toolbar_collapse_description = global::AndroidEmotionCalculator.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.appbar_scrolling_view_behavior = global::AndroidEmotionCalculator.Resource.String.appbar_scrolling_view_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.bottom_sheet_behavior = global::AndroidEmotionCalculator.Resource.String.bottom_sheet_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_content_description = global::AndroidEmotionCalculator.Resource.String.character_counter_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_pattern = global::AndroidEmotionCalculator.Resource.String.character_counter_pattern;
+			global::Xamarin.Forms.Platform.Android.Resource.String.fab_transformation_scrim_behavior = global::AndroidEmotionCalculator.Resource.String.fab_transformation_scrim_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.fab_transformation_sheet_behavior = global::AndroidEmotionCalculator.Resource.String.fab_transformation_sheet_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.hide_bottom_view_on_scroll_behavior = global::AndroidEmotionCalculator.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_chip_close_icon_content_description = global::AndroidEmotionCalculator.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.password_toggle_content_description = global::AndroidEmotionCalculator.Resource.String.password_toggle_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye = global::AndroidEmotionCalculator.Resource.String.path_password_eye;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_strike_through = global::AndroidEmotionCalculator.Resource.String.path_password_eye_mask_strike_through;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_visible = global::AndroidEmotionCalculator.Resource.String.path_password_eye_mask_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_strike_through = global::AndroidEmotionCalculator.Resource.String.path_password_strike_through;
+			global::Xamarin.Forms.Platform.Android.Resource.String.search_menu_title = global::AndroidEmotionCalculator.Resource.String.search_menu_title;
+			global::Xamarin.Forms.Platform.Android.Resource.String.status_bar_notification_info_overflow = global::AndroidEmotionCalculator.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat = global::AndroidEmotionCalculator.Resource.Style.AlertDialog_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_DropDownUp = global::AndroidEmotionCalculator.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Tooltip = global::AndroidEmotionCalculator.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_Design_BottomSheetDialog = global::AndroidEmotionCalculator.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::AndroidEmotionCalculator.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_Tooltip = global::AndroidEmotionCalculator.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_CardView = global::AndroidEmotionCalculator.Resource.Style.Base_CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitle_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Button = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Large = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Small = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Title = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::AndroidEmotionCalculator.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents = global::AndroidEmotionCalculator.Resource.Style.Base_V14_Theme_MaterialComponents;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::AndroidEmotionCalculator.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::AndroidEmotionCalculator.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::AndroidEmotionCalculator.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::AndroidEmotionCalculator.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V22_Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V22_Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V23_Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V23_Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::AndroidEmotionCalculator.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V28_Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_V28_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V28_Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_V28_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::AndroidEmotionCalculator.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::AndroidEmotionCalculator.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::AndroidEmotionCalculator.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionMode = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Small = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_EditText = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ImageButton = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SearchView = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_Design_TabLayout = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_Chip = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::AndroidEmotionCalculator.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView = global::AndroidEmotionCalculator.Resource.Style.CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Dark = global::AndroidEmotionCalculator.Resource.Style.CardView_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Light = global::AndroidEmotionCalculator.Resource.Style.CardView_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.collectionViewStyle = global::AndroidEmotionCalculator.Resource.Style.collectionViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Platform_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Platform_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_MaterialComponents = global::AndroidEmotionCalculator.Resource.Style.Platform_MaterialComponents;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_MaterialComponents_Dialog = global::AndroidEmotionCalculator.Resource.Style.Platform_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_MaterialComponents_Light = global::AndroidEmotionCalculator.Resource.Style.Platform_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_MaterialComponents_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Platform_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::AndroidEmotionCalculator.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V21_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Platform_V21_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V21_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V25_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Platform_V25_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V25_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_Widget_AppCompat_Spinner = global::AndroidEmotionCalculator.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::AndroidEmotionCalculator.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::AndroidEmotionCalculator.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::AndroidEmotionCalculator.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body1 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body2 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Button = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Caption = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display1 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display2 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display3 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display4 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Headline = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Large = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Medium = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Menu = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Small = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Subhead = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Title = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Tooltip = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Info = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Media = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Time = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Title = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Counter = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_Counter;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Counter_Overflow = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Error = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_Error;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_HelperText = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_HelperText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Hint = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_Hint;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Snackbar_Message = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Tab = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Body1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Body2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Button = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Caption = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Caption;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Chip = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Headline1 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Headline1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Headline2 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Headline2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Headline3 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Headline3;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Headline4 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Headline4;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Headline5 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Headline5;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Headline6 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Headline6;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Overline = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Overline;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Tab = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_MaterialComponents_Tab;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::AndroidEmotionCalculator.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::AndroidEmotionCalculator.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_CompactMenu = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DayNight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_NoActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design = global::AndroidEmotionCalculator.Resource.Style.Theme_Design;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_BottomSheetDialog = global::AndroidEmotionCalculator.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light = global::AndroidEmotionCalculator.Resource.Style.Theme_Design_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::AndroidEmotionCalculator.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light_NoActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_NoActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_Design_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Bridge = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_CompactMenu = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_NoActionBar = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::AndroidEmotionCalculator.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionMode = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActivityChooserView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ButtonBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Borderless = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Colored = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Small = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_EditText = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ImageButton = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_SearchView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListMenuView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListPopupWindow = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView_DropDown = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView_Menu = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupMenu = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupWindow = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ProgressBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar_Small = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SearchView = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SeekBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::AndroidEmotionCalculator.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Compat_NotificationActionContainer = global::AndroidEmotionCalculator.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Compat_NotificationActionText = global::AndroidEmotionCalculator.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_AppBarLayout = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_BottomNavigationView = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_BottomSheet_Modal = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_CollapsingToolbar = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_FloatingActionButton = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_NavigationView = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_Snackbar = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_Snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TabLayout = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TextInputLayout = global::AndroidEmotionCalculator.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_BottomAppBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_Icon = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_TextButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_CardView = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ChipGroup = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_ChipGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Action = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Chip_Action;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Chip_Choice;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Chip_Entry;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_NavigationView = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Snackbar = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TabLayout = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Toolbar = global::AndroidEmotionCalculator.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Support_CoordinatorLayout = global::AndroidEmotionCalculator.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBarLayout = global::AndroidEmotionCalculator.Resource.Styleable.ActionBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::AndroidEmotionCalculator.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_background = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_backgroundSplit = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_backgroundStacked = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetEnd = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetLeft = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetRight = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetStart = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_customNavigationLayout = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_displayOptions = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_displayOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_divider = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_elevation = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_height = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_hideOnContentScroll = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_homeAsUpIndicator = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_homeLayout = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_homeLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_icon = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_itemPadding = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_itemPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_logo = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_navigationMode = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_navigationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_popupTheme = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_progressBarPadding = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_progressBarStyle = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_subtitle = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_subtitleTextStyle = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_title = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_titleTextStyle = global::AndroidEmotionCalculator.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuItemView = global::AndroidEmotionCalculator.Resource.Styleable.ActionMenuItemView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuItemView_android_minWidth = global::AndroidEmotionCalculator.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuView = global::AndroidEmotionCalculator.Resource.Styleable.ActionMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode = global::AndroidEmotionCalculator.Resource.Styleable.ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_background = global::AndroidEmotionCalculator.Resource.Styleable.ActionMode_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_backgroundSplit = global::AndroidEmotionCalculator.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_closeItemLayout = global::AndroidEmotionCalculator.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_height = global::AndroidEmotionCalculator.Resource.Styleable.ActionMode_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_subtitleTextStyle = global::AndroidEmotionCalculator.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_titleTextStyle = global::AndroidEmotionCalculator.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView = global::AndroidEmotionCalculator.Resource.Styleable.ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::AndroidEmotionCalculator.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView_initialActivityCount = global::AndroidEmotionCalculator.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_android_layout = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_android_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_buttonIconDimen = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_buttonIconDimen;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_listItemLayout = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_listLayout = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_listLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_showTitle = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::AndroidEmotionCalculator.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableCompat = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableItem = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableItem_android_id = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableItem_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableTransition = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableTransition;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::AndroidEmotionCalculator.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayoutStates;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_liftable = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayoutStates_state_liftable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_lifted = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayoutStates_state_lifted;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_background = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_elevation = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_expanded = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_liftOnScroll = global::AndroidEmotionCalculator.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatImageView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_android_src = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatImageView_android_src;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_srcCompat = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_tint = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatImageView_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_tintMode = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatSeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_android_thumb = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMark = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_android_textAppearance = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontFamily = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_lineHeight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_lineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_textAllCaps = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarDivider = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarSize = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTheme = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_checkboxStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorAccent = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlActivated = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlNormal = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorError = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorPrimary = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_controlBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dialogCornerRadius = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_dialogCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dialogTheme = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dividerVertical = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextColor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_searchViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_seekBarStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_spinnerStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_switchStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_toolbarStyle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_viewInflaterClass = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_viewInflaterClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionBar = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowNoTitle = global::AndroidEmotionCalculator.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar = global::AndroidEmotionCalculator.Resource.Styleable.BottomAppBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_backgroundTint = global::AndroidEmotionCalculator.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::AndroidEmotionCalculator.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabCradleMargin = global::AndroidEmotionCalculator.Resource.Styleable.BottomAppBar_fabCradleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::AndroidEmotionCalculator.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::AndroidEmotionCalculator.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_hideOnScroll = global::AndroidEmotionCalculator.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_elevation = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemBackground = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemIconSize = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_itemIconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemIconTint = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextColor = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_menu = global::AndroidEmotionCalculator.Resource.Styleable.BottomNavigationView_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout = global::AndroidEmotionCalculator.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::AndroidEmotionCalculator.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::AndroidEmotionCalculator.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::AndroidEmotionCalculator.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::AndroidEmotionCalculator.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout = global::AndroidEmotionCalculator.Resource.Styleable.ButtonBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout_allowStacking = global::AndroidEmotionCalculator.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView = global::AndroidEmotionCalculator.Resource.Styleable.CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_android_minHeight = global::AndroidEmotionCalculator.Resource.Styleable.CardView_android_minHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_android_minWidth = global::AndroidEmotionCalculator.Resource.Styleable.CardView_android_minWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardBackgroundColor = global::AndroidEmotionCalculator.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardCornerRadius = global::AndroidEmotionCalculator.Resource.Styleable.CardView_cardCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardElevation = global::AndroidEmotionCalculator.Resource.Styleable.CardView_cardElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardMaxElevation = global::AndroidEmotionCalculator.Resource.Styleable.CardView_cardMaxElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardPreventCornerOverlap = global::AndroidEmotionCalculator.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardUseCompatPadding = global::AndroidEmotionCalculator.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPadding = global::AndroidEmotionCalculator.Resource.Styleable.CardView_contentPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingBottom = global::AndroidEmotionCalculator.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingLeft = global::AndroidEmotionCalculator.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingRight = global::AndroidEmotionCalculator.Resource.Styleable.CardView_contentPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingTop = global::AndroidEmotionCalculator.Resource.Styleable.CardView_contentPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip = global::AndroidEmotionCalculator.Resource.Styleable.Chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup = global::AndroidEmotionCalculator.Resource.Styleable.ChipGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup_checkedChip = global::AndroidEmotionCalculator.Resource.Styleable.ChipGroup_checkedChip;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup_chipSpacing = global::AndroidEmotionCalculator.Resource.Styleable.ChipGroup_chipSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::AndroidEmotionCalculator.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup_chipSpacingVertical = global::AndroidEmotionCalculator.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup_singleLine = global::AndroidEmotionCalculator.Resource.Styleable.ChipGroup_singleLine;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup_singleSelection = global::AndroidEmotionCalculator.Resource.Styleable.ChipGroup_singleSelection;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_checkable = global::AndroidEmotionCalculator.Resource.Styleable.Chip_android_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_ellipsize = global::AndroidEmotionCalculator.Resource.Styleable.Chip_android_ellipsize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_maxWidth = global::AndroidEmotionCalculator.Resource.Styleable.Chip_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_text = global::AndroidEmotionCalculator.Resource.Styleable.Chip_android_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_textAppearance = global::AndroidEmotionCalculator.Resource.Styleable.Chip_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_checkedIcon = global::AndroidEmotionCalculator.Resource.Styleable.Chip_checkedIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_checkedIconEnabled = global::AndroidEmotionCalculator.Resource.Styleable.Chip_checkedIconEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_checkedIconVisible = global::AndroidEmotionCalculator.Resource.Styleable.Chip_checkedIconVisible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipBackgroundColor = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipCornerRadius = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipEndPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipIcon = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipIconEnabled = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipIconEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipIconSize = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipIconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipIconTint = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipIconVisible = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipIconVisible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipMinHeight = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipMinHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipStartPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipStrokeColor = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipStrokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipStrokeWidth = global::AndroidEmotionCalculator.Resource.Styleable.Chip_chipStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIcon = global::AndroidEmotionCalculator.Resource.Styleable.Chip_closeIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconEnabled = global::AndroidEmotionCalculator.Resource.Styleable.Chip_closeIconEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconEndPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_closeIconEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconSize = global::AndroidEmotionCalculator.Resource.Styleable.Chip_closeIconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconStartPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_closeIconStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconTint = global::AndroidEmotionCalculator.Resource.Styleable.Chip_closeIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconVisible = global::AndroidEmotionCalculator.Resource.Styleable.Chip_closeIconVisible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_hideMotionSpec = global::AndroidEmotionCalculator.Resource.Styleable.Chip_hideMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_iconEndPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_iconEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_iconStartPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_iconStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_rippleColor = global::AndroidEmotionCalculator.Resource.Styleable.Chip_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_showMotionSpec = global::AndroidEmotionCalculator.Resource.Styleable.Chip_showMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_textEndPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_textEndPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_textStartPadding = global::AndroidEmotionCalculator.Resource.Styleable.Chip_textStartPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_title = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::AndroidEmotionCalculator.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem = global::AndroidEmotionCalculator.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_alpha = global::AndroidEmotionCalculator.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_alpha = global::AndroidEmotionCalculator.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_color = global::AndroidEmotionCalculator.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton = global::AndroidEmotionCalculator.Resource.Styleable.CompoundButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_android_button = global::AndroidEmotionCalculator.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTint = global::AndroidEmotionCalculator.Resource.Styleable.CompoundButton_buttonTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTintMode = global::AndroidEmotionCalculator.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_keylines = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::AndroidEmotionCalculator.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme = global::AndroidEmotionCalculator.Resource.Styleable.DesignTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::AndroidEmotionCalculator.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_bottomSheetStyle = global::AndroidEmotionCalculator.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_barLength = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_color = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_drawableSize = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_spinBars = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_thickness = global::AndroidEmotionCalculator.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTint = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_borderWidth = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_elevation = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_fabCustomSize = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_fabCustomSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_fabSize = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_hideMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_maxImageSize = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_maxImageSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_rippleColor = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_showMotionSpec = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_showMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_useCompatPadding = global::AndroidEmotionCalculator.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FlowLayout = global::AndroidEmotionCalculator.Resource.Styleable.FlowLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FlowLayout_itemSpacing = global::AndroidEmotionCalculator.Resource.Styleable.FlowLayout_itemSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FlowLayout_lineSpacing = global::AndroidEmotionCalculator.Resource.Styleable.FlowLayout_lineSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily = global::AndroidEmotionCalculator.Resource.Styleable.FontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_font = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_fontStyle = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_fontWeight = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_font = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_fontStyle = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_fontWeight = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_ttcIndex = global::AndroidEmotionCalculator.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderAuthority = global::AndroidEmotionCalculator.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderCerts = global::AndroidEmotionCalculator.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::AndroidEmotionCalculator.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::AndroidEmotionCalculator.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderPackage = global::AndroidEmotionCalculator.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderQuery = global::AndroidEmotionCalculator.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout = global::AndroidEmotionCalculator.Resource.Styleable.ForegroundLinearLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::AndroidEmotionCalculator.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::AndroidEmotionCalculator.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::AndroidEmotionCalculator.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColorItem = global::AndroidEmotionCalculator.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColorItem_android_color = global::AndroidEmotionCalculator.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColorItem_android_offset = global::AndroidEmotionCalculator.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_centerColor = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_centerColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_centerX = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_centerX;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_centerY = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_centerY;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_endColor = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_endColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_endX = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_endX;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_endY = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_endY;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_gradientRadius = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_startColor = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_startColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_startX = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_startX;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_startY = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_startY;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_tileMode = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_tileMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor_android_type = global::AndroidEmotionCalculator.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_gravity = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_orientation = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_divider = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_showDividers = global::AndroidEmotionCalculator.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow = global::AndroidEmotionCalculator.Resource.Styleable.ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::AndroidEmotionCalculator.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::AndroidEmotionCalculator.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_insetBottom = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_android_insetBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_insetLeft = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_android_insetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_insetRight = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_android_insetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_insetTop = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_android_insetTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_backgroundTint = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_backgroundTintMode = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_cornerRadius = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_cornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_icon = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconGravity = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_iconGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconPadding = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_iconPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconSize = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_iconSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconTint = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_iconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconTintMode = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_iconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_rippleColor = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_strokeColor = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_strokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_strokeWidth = global::AndroidEmotionCalculator.Resource.Styleable.MaterialButton_strokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView = global::AndroidEmotionCalculator.Resource.Styleable.MaterialCardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_strokeColor = global::AndroidEmotionCalculator.Resource.Styleable.MaterialCardView_strokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_strokeWidth = global::AndroidEmotionCalculator.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_chipStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_chipStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_colorAccent = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_colorAccent;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_colorPrimary = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_colorPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_colorSecondary = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_colorSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_editTextStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_editTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_scrimBackground = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_scrimBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_tabStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_tabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2 = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialComponentsTheme_textInputStyle = global::AndroidEmotionCalculator.Resource.Styleable.MaterialComponentsTheme_textInputStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup = global::AndroidEmotionCalculator.Resource.Styleable.MenuGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_checkableBehavior = global::AndroidEmotionCalculator.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_enabled = global::AndroidEmotionCalculator.Resource.Styleable.MenuGroup_android_enabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_id = global::AndroidEmotionCalculator.Resource.Styleable.MenuGroup_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_menuCategory = global::AndroidEmotionCalculator.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_orderInCategory = global::AndroidEmotionCalculator.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_visible = global::AndroidEmotionCalculator.Resource.Styleable.MenuGroup_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionLayout = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_actionLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionProviderClass = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionViewClass = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_actionViewClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_alphabeticModifiers = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_checkable = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_checked = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_checked;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_enabled = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_enabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_icon = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_id = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_menuCategory = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_numericShortcut = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_onClick = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_onClick;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_orderInCategory = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_title = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_titleCondensed = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_visible = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_contentDescription = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_contentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_iconTint = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_iconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_iconTintMode = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_iconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_numericModifiers = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_numericModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_showAsAction = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_showAsAction;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_tooltipText = global::AndroidEmotionCalculator.Resource.Styleable.MenuItem_tooltipText;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView = global::AndroidEmotionCalculator.Resource.Styleable.MenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_headerBackground = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_android_headerBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_horizontalDivider = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemBackground = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_android_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_verticalDivider = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_windowAnimationStyle = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_preserveIconSpacing = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_subMenuArrow = global::AndroidEmotionCalculator.Resource.Styleable.MenuView_subMenuArrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_background = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_maxWidth = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_elevation = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_headerLayout = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_headerLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemBackground = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemHorizontalPadding = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_itemHorizontalPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemIconPadding = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_itemIconPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemIconTint = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextColor = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_menu = global::AndroidEmotionCalculator.Resource.Styleable.NavigationView_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow = global::AndroidEmotionCalculator.Resource.Styleable.PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindowBackgroundState = global::AndroidEmotionCalculator.Resource.Styleable.PopupWindowBackgroundState;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::AndroidEmotionCalculator.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::AndroidEmotionCalculator.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_android_popupBackground = global::AndroidEmotionCalculator.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_overlapAnchor = global::AndroidEmotionCalculator.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView = global::AndroidEmotionCalculator.Resource.Styleable.RecycleListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::AndroidEmotionCalculator.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::AndroidEmotionCalculator.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_descendantFocusability = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_orientation = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_android_orientation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollEnabled = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_layoutManager = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_layoutManager;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_reverseLayout = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_spanCount = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_spanCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_stackFromEnd = global::AndroidEmotionCalculator.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrimInsetsFrameLayout = global::AndroidEmotionCalculator.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::AndroidEmotionCalculator.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrollingViewBehavior_Layout = global::AndroidEmotionCalculator.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::AndroidEmotionCalculator.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView = global::AndroidEmotionCalculator.Resource.Styleable.SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_focusable = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_android_focusable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_imeOptions = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_android_imeOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_inputType = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_android_inputType;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_maxWidth = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_closeIcon = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_closeIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_commitIcon = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_commitIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_defaultQueryHint = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_goIcon = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_goIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_iconifiedByDefault = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_layout = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_queryBackground = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_queryBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_queryHint = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_queryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_searchHintIcon = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_searchHintIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_searchIcon = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_searchIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_submitBackground = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_submitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_suggestionRowLayout = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_voiceIcon = global::AndroidEmotionCalculator.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Snackbar = global::AndroidEmotionCalculator.Resource.Styleable.Snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout = global::AndroidEmotionCalculator.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_android_maxWidth = global::AndroidEmotionCalculator.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_elevation = global::AndroidEmotionCalculator.Resource.Styleable.SnackbarLayout_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::AndroidEmotionCalculator.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Snackbar_snackbarButtonStyle = global::AndroidEmotionCalculator.Resource.Styleable.Snackbar_snackbarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Snackbar_snackbarStyle = global::AndroidEmotionCalculator.Resource.Styleable.Snackbar_snackbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner = global::AndroidEmotionCalculator.Resource.Styleable.Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_dropDownWidth = global::AndroidEmotionCalculator.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_entries = global::AndroidEmotionCalculator.Resource.Styleable.Spinner_android_entries;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_popupBackground = global::AndroidEmotionCalculator.Resource.Styleable.Spinner_android_popupBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_prompt = global::AndroidEmotionCalculator.Resource.Styleable.Spinner_android_prompt;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_popupTheme = global::AndroidEmotionCalculator.Resource.Styleable.Spinner_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawable = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawableItem = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawableItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawableItem_android_drawable = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawableItem_android_drawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawable_android_constantSize = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawable_android_constantSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawable_android_dither = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawable_android_dither;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawable_android_variablePadding = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawable_android_variablePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.StateListDrawable_android_visible = global::AndroidEmotionCalculator.Resource.Styleable.StateListDrawable_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_textOff = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_textOn = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_thumb = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_showText = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_showText;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_splitTrack = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchMinWidth = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchPadding = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTextPadding = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTint = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTintMode = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_track = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_track;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTint = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_trackTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTintMode = global::AndroidEmotionCalculator.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem = global::AndroidEmotionCalculator.Resource.Styleable.TabItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_icon = global::AndroidEmotionCalculator.Resource.Styleable.TabItem_android_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_layout = global::AndroidEmotionCalculator.Resource.Styleable.TabItem_android_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_text = global::AndroidEmotionCalculator.Resource.Styleable.TabItem_android_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabBackground = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabContentStart = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabContentStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabGravity = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIconTint = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIconTintMode = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicator = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorColor = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorFullWidth = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIndicatorFullWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorGravity = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIndicatorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorHeight = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabInlineLabel = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabInlineLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMaxWidth = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMinWidth = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMode = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPadding = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingBottom = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingEnd = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingStart = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingTop = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabRippleColor = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabRippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabSelectedTextColor = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabTextColor = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabUnboundedRipple = global::AndroidEmotionCalculator.Resource.Styleable.TabLayout_tabUnboundedRipple;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_fontFamily = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowColor = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowDx = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowDy = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowRadius = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColor = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_textColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorHint = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorLink = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textSize = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_textSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textStyle = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_typeface = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_android_typeface;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_fontFamily = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_textAllCaps = global::AndroidEmotionCalculator.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_hint = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_android_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_textColorHint = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxBackgroundMode = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxBackgroundMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxStrokeColor = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterEnabled = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterMaxLength = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorEnabled = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_helperText = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_helperText;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_helperTextEnabled = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_helperTextEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintEnabled = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTint = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::AndroidEmotionCalculator.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ThemeEnforcement = global::AndroidEmotionCalculator.Resource.Styleable.ThemeEnforcement;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::AndroidEmotionCalculator.Resource.Styleable.ThemeEnforcement_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::AndroidEmotionCalculator.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ThemeEnforcement_enforceTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.ThemeEnforcement_enforceTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_android_gravity = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_android_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_android_minHeight = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_android_minHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_buttonGravity = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_buttonGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_collapseContentDescription = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_collapseIcon = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_collapseIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetEnd = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetLeft = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetRight = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetStart = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logo = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logoDescription = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_maxButtonHeight = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationContentDescription = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationIcon = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_navigationIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_popupTheme = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitle = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitleTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitleTextColor = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_title = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMargin = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginBottom = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginEnd = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMargins = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleMargins;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginStart = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginTop = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleTextAppearance = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleTextColor = global::AndroidEmotionCalculator.Resource.Styleable.Toolbar_titleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View = global::AndroidEmotionCalculator.Resource.Styleable.View;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper = global::AndroidEmotionCalculator.Resource.Styleable.ViewBackgroundHelper;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_android_background = global::AndroidEmotionCalculator.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::AndroidEmotionCalculator.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::AndroidEmotionCalculator.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat = global::AndroidEmotionCalculator.Resource.Styleable.ViewStubCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_id = global::AndroidEmotionCalculator.Resource.Styleable.ViewStubCompat_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::AndroidEmotionCalculator.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_layout = global::AndroidEmotionCalculator.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_android_focusable = global::AndroidEmotionCalculator.Resource.Styleable.View_android_focusable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_android_theme = global::AndroidEmotionCalculator.Resource.Styleable.View_android_theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingEnd = global::AndroidEmotionCalculator.Resource.Styleable.View_paddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingStart = global::AndroidEmotionCalculator.Resource.Styleable.View_paddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_theme = global::AndroidEmotionCalculator.Resource.Styleable.View_theme;
 		}
 		
 		public partial class Animation
@@ -260,6 +2822,18 @@ namespace AndroidEmotionCalculator
 			
 			// aapt resource value: 0x7F01000F
 			public const int design_snackbar_out = 2130771983;
+			
+			// aapt resource value: 0x7F010010
+			public const int EnterFromLeft = 2130771984;
+			
+			// aapt resource value: 0x7F010011
+			public const int EnterFromRight = 2130771985;
+			
+			// aapt resource value: 0x7F010012
+			public const int ExitToLeft = 2130771986;
+			
+			// aapt resource value: 0x7F010013
+			public const int ExitToRight = 2130771987;
 			
 			static Animation()
 			{
@@ -3323,613 +5897,673 @@ namespace AndroidEmotionCalculator
 			public const int bottom = 2131230754;
 			
 			// aapt resource value: 0x7F080023
-			public const int browser_actions_header_text = 2131230755;
-			
-			// aapt resource value: 0x7F080026
-			public const int browser_actions_menu_items = 2131230758;
+			public const int bottomtab_navarea = 2131230755;
 			
 			// aapt resource value: 0x7F080024
-			public const int browser_actions_menu_item_icon = 2131230756;
+			public const int bottomtab_tabbar = 2131230756;
 			
 			// aapt resource value: 0x7F080025
-			public const int browser_actions_menu_item_text = 2131230757;
-			
-			// aapt resource value: 0x7F080027
-			public const int browser_actions_menu_view = 2131230759;
+			public const int browser_actions_header_text = 2131230757;
 			
 			// aapt resource value: 0x7F080028
-			public const int btnSubmit = 2131230760;
+			public const int browser_actions_menu_items = 2131230760;
+			
+			// aapt resource value: 0x7F080026
+			public const int browser_actions_menu_item_icon = 2131230758;
+			
+			// aapt resource value: 0x7F080027
+			public const int browser_actions_menu_item_text = 2131230759;
 			
 			// aapt resource value: 0x7F080029
-			public const int buttonBarMain = 2131230761;
+			public const int browser_actions_menu_view = 2131230761;
 			
 			// aapt resource value: 0x7F08002A
-			public const int buttonCalendarPager = 2131230762;
+			public const int btnBreakout = 2131230762;
 			
 			// aapt resource value: 0x7F08002B
-			public const int buttonGamesPager = 2131230763;
+			public const int btnInvaders = 2131230763;
 			
 			// aapt resource value: 0x7F08002C
-			public const int buttonInventoryMainReturn = 2131230764;
+			public const int btnSettings = 2131230764;
 			
 			// aapt resource value: 0x7F08002D
-			public const int buttonInventoryReturn = 2131230765;
+			public const int btnSnake = 2131230765;
 			
 			// aapt resource value: 0x7F08002E
-			public const int buttonItemSelect = 2131230766;
+			public const int btnSubmit = 2131230766;
 			
 			// aapt resource value: 0x7F08002F
-			public const int buttonMusicPager = 2131230767;
+			public const int buttonBarMain = 2131230767;
 			
 			// aapt resource value: 0x7F080030
-			public const int buttonPanel = 2131230768;
+			public const int buttonCalendarPager = 2131230768;
 			
 			// aapt resource value: 0x7F080031
-			public const int buttonShopItemPurchaseButton = 2131230769;
+			public const int buttonGamesPager = 2131230769;
 			
 			// aapt resource value: 0x7F080032
-			public const int buttonShopPager = 2131230770;
+			public const int buttonInventory = 2131230770;
 			
 			// aapt resource value: 0x7F080033
-			public const int buttonShopTabLootBoxes = 2131230771;
+			public const int buttonInventoryMainReturn = 2131230771;
 			
 			// aapt resource value: 0x7F080034
-			public const int buttonShopTabSongs = 2131230772;
+			public const int buttonInventoryReturn = 2131230772;
 			
 			// aapt resource value: 0x7F080035
-			public const int buttonShopTabThemes = 2131230773;
+			public const int buttonItemSelect = 2131230773;
 			
 			// aapt resource value: 0x7F080036
-			public const int buttonShopTabVanity = 2131230774;
+			public const int buttonMusicPager = 2131230774;
 			
 			// aapt resource value: 0x7F080037
-			public const int calendarText = 2131230775;
+			public const int buttonPanel = 2131230775;
 			
 			// aapt resource value: 0x7F080038
-			public const int cancel_action = 2131230776;
+			public const int buttonShopItemPurchaseButton = 2131230776;
 			
 			// aapt resource value: 0x7F080039
-			public const int center = 2131230777;
+			public const int buttonShopPager = 2131230777;
 			
 			// aapt resource value: 0x7F08003A
-			public const int center_horizontal = 2131230778;
+			public const int buttonShopTabLootBoxes = 2131230778;
 			
 			// aapt resource value: 0x7F08003B
-			public const int center_vertical = 2131230779;
-			
-			// aapt resource value: 0x7F08003D
-			public const int checkbox = 2131230781;
+			public const int buttonShopTabSongs = 2131230779;
 			
 			// aapt resource value: 0x7F08003C
-			public const int checkBoxDev = 2131230780;
+			public const int buttonShopTabThemes = 2131230780;
+			
+			// aapt resource value: 0x7F08003D
+			public const int buttonShopTabVanity = 2131230781;
 			
 			// aapt resource value: 0x7F08003E
-			public const int chronometer = 2131230782;
+			public const int calendarText = 2131230782;
 			
 			// aapt resource value: 0x7F08003F
-			public const int clip_horizontal = 2131230783;
+			public const int cancel_action = 2131230783;
 			
 			// aapt resource value: 0x7F080040
-			public const int clip_vertical = 2131230784;
+			public const int center = 2131230784;
 			
 			// aapt resource value: 0x7F080041
-			public const int collapseActionView = 2131230785;
+			public const int center_horizontal = 2131230785;
 			
 			// aapt resource value: 0x7F080042
-			public const int container = 2131230786;
-			
-			// aapt resource value: 0x7F080043
-			public const int content = 2131230787;
+			public const int center_vertical = 2131230786;
 			
 			// aapt resource value: 0x7F080044
-			public const int contentPanel = 2131230788;
+			public const int checkbox = 2131230788;
+			
+			// aapt resource value: 0x7F080043
+			public const int checkBoxDev = 2131230787;
 			
 			// aapt resource value: 0x7F080045
-			public const int coolButton = 2131230789;
+			public const int chronometer = 2131230789;
 			
 			// aapt resource value: 0x7F080046
-			public const int coordinator = 2131230790;
+			public const int clip_horizontal = 2131230790;
+			
+			// aapt resource value: 0x7F080047
+			public const int clip_vertical = 2131230791;
+			
+			// aapt resource value: 0x7F080048
+			public const int collapseActionView = 2131230792;
+			
+			// aapt resource value: 0x7F080049
+			public const int container = 2131230793;
+			
+			// aapt resource value: 0x7F08004A
+			public const int content = 2131230794;
+			
+			// aapt resource value: 0x7F08004B
+			public const int contentPanel = 2131230795;
+			
+			// aapt resource value: 0x7F08004C
+			public const int coolButton = 2131230796;
+			
+			// aapt resource value: 0x7F08004D
+			public const int coordinator = 2131230797;
 			
 			// aapt resource value: 0x7F080001
 			public const int CTRL = 2131230721;
 			
-			// aapt resource value: 0x7F080047
-			public const int custom = 2131230791;
-			
-			// aapt resource value: 0x7F080048
-			public const int customPanel = 2131230792;
-			
-			// aapt resource value: 0x7F080049
-			public const int decor_content_parent = 2131230793;
-			
-			// aapt resource value: 0x7F08004A
-			public const int default_activity_button = 2131230794;
-			
-			// aapt resource value: 0x7F08004B
-			public const int design_bottom_sheet = 2131230795;
-			
-			// aapt resource value: 0x7F08004C
-			public const int design_menu_item_action_area = 2131230796;
-			
-			// aapt resource value: 0x7F08004D
-			public const int design_menu_item_action_area_stub = 2131230797;
-			
 			// aapt resource value: 0x7F08004E
-			public const int design_menu_item_text = 2131230798;
+			public const int custom = 2131230798;
 			
 			// aapt resource value: 0x7F08004F
-			public const int design_navigation_view = 2131230799;
+			public const int customPanel = 2131230799;
 			
 			// aapt resource value: 0x7F080050
-			public const int disableHome = 2131230800;
+			public const int decor_content_parent = 2131230800;
 			
 			// aapt resource value: 0x7F080051
-			public const int edit_query = 2131230801;
+			public const int default_activity_button = 2131230801;
 			
 			// aapt resource value: 0x7F080052
-			public const int end = 2131230802;
+			public const int design_bottom_sheet = 2131230802;
 			
 			// aapt resource value: 0x7F080053
-			public const int end_padder = 2131230803;
+			public const int design_menu_item_action_area = 2131230803;
 			
 			// aapt resource value: 0x7F080054
-			public const int enterAlways = 2131230804;
+			public const int design_menu_item_action_area_stub = 2131230804;
 			
 			// aapt resource value: 0x7F080055
-			public const int enterAlwaysCollapsed = 2131230805;
+			public const int design_menu_item_text = 2131230805;
 			
 			// aapt resource value: 0x7F080056
-			public const int exitUntilCollapsed = 2131230806;
-			
-			// aapt resource value: 0x7F080058
-			public const int expanded_menu = 2131230808;
+			public const int design_navigation_view = 2131230806;
 			
 			// aapt resource value: 0x7F080057
-			public const int expand_activities_button = 2131230807;
+			public const int disableHome = 2131230807;
+			
+			// aapt resource value: 0x7F080058
+			public const int edit_query = 2131230808;
 			
 			// aapt resource value: 0x7F080059
-			public const int fill = 2131230809;
-			
-			// aapt resource value: 0x7F08005C
-			public const int filled = 2131230812;
+			public const int end = 2131230809;
 			
 			// aapt resource value: 0x7F08005A
-			public const int fill_horizontal = 2131230810;
+			public const int end_padder = 2131230810;
 			
 			// aapt resource value: 0x7F08005B
-			public const int fill_vertical = 2131230811;
+			public const int enterAlways = 2131230811;
+			
+			// aapt resource value: 0x7F08005C
+			public const int enterAlwaysCollapsed = 2131230812;
 			
 			// aapt resource value: 0x7F08005D
-			public const int @fixed = 2131230813;
+			public const int exitUntilCollapsed = 2131230813;
+			
+			// aapt resource value: 0x7F08005F
+			public const int expanded_menu = 2131230815;
 			
 			// aapt resource value: 0x7F08005E
-			public const int forever = 2131230814;
+			public const int expand_activities_button = 2131230814;
+			
+			// aapt resource value: 0x7F080060
+			public const int fill = 2131230816;
+			
+			// aapt resource value: 0x7F080063
+			public const int filled = 2131230819;
+			
+			// aapt resource value: 0x7F080061
+			public const int fill_horizontal = 2131230817;
+			
+			// aapt resource value: 0x7F080062
+			public const int fill_vertical = 2131230818;
+			
+			// aapt resource value: 0x7F080064
+			public const int @fixed = 2131230820;
+			
+			// aapt resource value: 0x7F080065
+			public const int flyoutcontent_appbar = 2131230821;
+			
+			// aapt resource value: 0x7F080066
+			public const int flyoutcontent_recycler = 2131230822;
+			
+			// aapt resource value: 0x7F080067
+			public const int forever = 2131230823;
 			
 			// aapt resource value: 0x7F080002
 			public const int FUNCTION = 2131230722;
 			
-			// aapt resource value: 0x7F08005F
-			public const int ghost_view = 2131230815;
-			
-			// aapt resource value: 0x7F080060
-			public const int group_divider = 2131230816;
-			
-			// aapt resource value: 0x7F080061
-			public const int home = 2131230817;
-			
-			// aapt resource value: 0x7F080062
-			public const int homeAsUp = 2131230818;
-			
-			// aapt resource value: 0x7F080063
-			public const int icon = 2131230819;
-			
-			// aapt resource value: 0x7F080064
-			public const int icon_group = 2131230820;
-			
-			// aapt resource value: 0x7F080065
-			public const int ifRoom = 2131230821;
-			
-			// aapt resource value: 0x7F080066
-			public const int image = 2131230822;
-			
-			// aapt resource value: 0x7F080067
-			public const int imageView1 = 2131230823;
-			
 			// aapt resource value: 0x7F080068
-			public const int imageViewShopJoyCoins = 2131230824;
+			public const int ghost_view = 2131230824;
 			
 			// aapt resource value: 0x7F080069
-			public const int imageViewShopJoyGems = 2131230825;
+			public const int group_divider = 2131230825;
 			
 			// aapt resource value: 0x7F08006A
-			public const int info = 2131230826;
+			public const int home = 2131230826;
 			
 			// aapt resource value: 0x7F08006B
-			public const int italic = 2131230827;
+			public const int homeAsUp = 2131230827;
 			
 			// aapt resource value: 0x7F08006C
-			public const int item_touch_helper_previous_elevation = 2131230828;
+			public const int icon = 2131230828;
 			
 			// aapt resource value: 0x7F08006D
-			public const int labeled = 2131230829;
+			public const int icon_group = 2131230829;
 			
 			// aapt resource value: 0x7F08006E
-			public const int largeLabel = 2131230830;
+			public const int ifRoom = 2131230830;
 			
 			// aapt resource value: 0x7F08006F
-			public const int left = 2131230831;
+			public const int image = 2131230831;
 			
 			// aapt resource value: 0x7F080070
-			public const int line1 = 2131230832;
+			public const int imageView1 = 2131230832;
 			
 			// aapt resource value: 0x7F080071
-			public const int line3 = 2131230833;
+			public const int imageViewShopJoyCoins = 2131230833;
 			
 			// aapt resource value: 0x7F080072
-			public const int listInventory = 2131230834;
+			public const int imageViewShopJoyGems = 2131230834;
 			
 			// aapt resource value: 0x7F080073
-			public const int listMode = 2131230835;
+			public const int info = 2131230835;
 			
 			// aapt resource value: 0x7F080074
-			public const int listViewShop = 2131230836;
+			public const int italic = 2131230836;
 			
 			// aapt resource value: 0x7F080075
-			public const int list_item = 2131230837;
+			public const int item_touch_helper_previous_elevation = 2131230837;
 			
 			// aapt resource value: 0x7F080076
-			public const int masked = 2131230838;
+			public const int labeled = 2131230838;
 			
 			// aapt resource value: 0x7F080077
-			public const int media_actions = 2131230839;
+			public const int largeLabel = 2131230839;
 			
 			// aapt resource value: 0x7F080078
-			public const int message = 2131230840;
+			public const int left = 2131230840;
+			
+			// aapt resource value: 0x7F080079
+			public const int line1 = 2131230841;
+			
+			// aapt resource value: 0x7F08007A
+			public const int line3 = 2131230842;
+			
+			// aapt resource value: 0x7F08007B
+			public const int listInventory = 2131230843;
+			
+			// aapt resource value: 0x7F08007C
+			public const int listMode = 2131230844;
+			
+			// aapt resource value: 0x7F08007D
+			public const int listViewShop = 2131230845;
+			
+			// aapt resource value: 0x7F08007E
+			public const int list_item = 2131230846;
+			
+			// aapt resource value: 0x7F08007F
+			public const int main_appbar = 2131230847;
+			
+			// aapt resource value: 0x7F080080
+			public const int main_tablayout = 2131230848;
+			
+			// aapt resource value: 0x7F080081
+			public const int main_toolbar = 2131230849;
+			
+			// aapt resource value: 0x7F080082
+			public const int main_viewpager = 2131230850;
+			
+			// aapt resource value: 0x7F080083
+			public const int masked = 2131230851;
+			
+			// aapt resource value: 0x7F080084
+			public const int media_actions = 2131230852;
+			
+			// aapt resource value: 0x7F080085
+			public const int message = 2131230853;
 			
 			// aapt resource value: 0x7F080003
 			public const int META = 2131230723;
 			
-			// aapt resource value: 0x7F080079
-			public const int middle = 2131230841;
-			
-			// aapt resource value: 0x7F08007A
-			public const int mini = 2131230842;
-			
-			// aapt resource value: 0x7F08007B
-			public const int mtrl_child_content_container = 2131230843;
-			
-			// aapt resource value: 0x7F08007C
-			public const int mtrl_internal_children_alpha_tag = 2131230844;
-			
-			// aapt resource value: 0x7F08007D
-			public const int multiply = 2131230845;
-			
-			// aapt resource value: 0x7F08007E
-			public const int navigation_header_container = 2131230846;
-			
-			// aapt resource value: 0x7F08007F
-			public const int never = 2131230847;
-			
-			// aapt resource value: 0x7F080080
-			public const int none = 2131230848;
-			
-			// aapt resource value: 0x7F080081
-			public const int normal = 2131230849;
-			
-			// aapt resource value: 0x7F080082
-			public const int notification_background = 2131230850;
-			
-			// aapt resource value: 0x7F080083
-			public const int notification_main_column = 2131230851;
-			
-			// aapt resource value: 0x7F080084
-			public const int notification_main_column_container = 2131230852;
-			
-			// aapt resource value: 0x7F080085
-			public const int outline = 2131230853;
-			
 			// aapt resource value: 0x7F080086
-			public const int pagerMain = 2131230854;
+			public const int middle = 2131230854;
 			
 			// aapt resource value: 0x7F080087
-			public const int parallax = 2131230855;
+			public const int mini = 2131230855;
 			
 			// aapt resource value: 0x7F080088
-			public const int parentPanel = 2131230856;
+			public const int mtrl_child_content_container = 2131230856;
 			
 			// aapt resource value: 0x7F080089
-			public const int parent_matrix = 2131230857;
+			public const int mtrl_internal_children_alpha_tag = 2131230857;
 			
 			// aapt resource value: 0x7F08008A
-			public const int pin = 2131230858;
+			public const int multiply = 2131230858;
 			
 			// aapt resource value: 0x7F08008B
-			public const int progress_circular = 2131230859;
+			public const int navigation_header_container = 2131230859;
 			
 			// aapt resource value: 0x7F08008C
-			public const int progress_horizontal = 2131230860;
+			public const int never = 2131230860;
 			
 			// aapt resource value: 0x7F08008D
-			public const int radio = 2131230861;
+			public const int none = 2131230861;
 			
 			// aapt resource value: 0x7F08008E
-			public const int relativeLayout1 = 2131230862;
+			public const int normal = 2131230862;
 			
 			// aapt resource value: 0x7F08008F
-			public const int relativeLayoutShop = 2131230863;
+			public const int notification_background = 2131230863;
 			
 			// aapt resource value: 0x7F080090
-			public const int right = 2131230864;
+			public const int notification_main_column = 2131230864;
 			
 			// aapt resource value: 0x7F080091
-			public const int right_icon = 2131230865;
+			public const int notification_main_column_container = 2131230865;
 			
 			// aapt resource value: 0x7F080092
-			public const int right_side = 2131230866;
+			public const int outline = 2131230866;
 			
 			// aapt resource value: 0x7F080093
-			public const int save_image_matrix = 2131230867;
+			public const int pagerMain = 2131230867;
 			
 			// aapt resource value: 0x7F080094
-			public const int save_non_transition_alpha = 2131230868;
+			public const int parallax = 2131230868;
 			
 			// aapt resource value: 0x7F080095
-			public const int save_scale_type = 2131230869;
+			public const int parentPanel = 2131230869;
 			
 			// aapt resource value: 0x7F080096
-			public const int screen = 2131230870;
+			public const int parent_matrix = 2131230870;
 			
 			// aapt resource value: 0x7F080097
-			public const int scroll = 2131230871;
-			
-			// aapt resource value: 0x7F08009B
-			public const int scrollable = 2131230875;
+			public const int pin = 2131230871;
 			
 			// aapt resource value: 0x7F080098
-			public const int scrollIndicatorDown = 2131230872;
+			public const int progress_circular = 2131230872;
 			
 			// aapt resource value: 0x7F080099
-			public const int scrollIndicatorUp = 2131230873;
+			public const int progress_horizontal = 2131230873;
 			
 			// aapt resource value: 0x7F08009A
-			public const int scrollView = 2131230874;
+			public const int radio = 2131230874;
+			
+			// aapt resource value: 0x7F08009B
+			public const int relativeLayout1 = 2131230875;
 			
 			// aapt resource value: 0x7F08009C
-			public const int search_badge = 2131230876;
+			public const int relativeLayoutShop = 2131230876;
 			
 			// aapt resource value: 0x7F08009D
-			public const int search_bar = 2131230877;
+			public const int right = 2131230877;
 			
 			// aapt resource value: 0x7F08009E
-			public const int search_button = 2131230878;
+			public const int right_icon = 2131230878;
 			
 			// aapt resource value: 0x7F08009F
-			public const int search_close_btn = 2131230879;
+			public const int right_side = 2131230879;
 			
 			// aapt resource value: 0x7F0800A0
-			public const int search_edit_frame = 2131230880;
+			public const int save_image_matrix = 2131230880;
 			
 			// aapt resource value: 0x7F0800A1
-			public const int search_go_btn = 2131230881;
+			public const int save_non_transition_alpha = 2131230881;
 			
 			// aapt resource value: 0x7F0800A2
-			public const int search_mag_icon = 2131230882;
+			public const int save_scale_type = 2131230882;
 			
 			// aapt resource value: 0x7F0800A3
-			public const int search_plate = 2131230883;
+			public const int screen = 2131230883;
 			
 			// aapt resource value: 0x7F0800A4
-			public const int search_src_text = 2131230884;
+			public const int scroll = 2131230884;
+			
+			// aapt resource value: 0x7F0800A8
+			public const int scrollable = 2131230888;
 			
 			// aapt resource value: 0x7F0800A5
-			public const int search_voice_btn = 2131230885;
-			
-			// aapt resource value: 0x7F0800A7
-			public const int selected = 2131230887;
+			public const int scrollIndicatorDown = 2131230885;
 			
 			// aapt resource value: 0x7F0800A6
-			public const int select_dialog_listview = 2131230886;
+			public const int scrollIndicatorUp = 2131230886;
+			
+			// aapt resource value: 0x7F0800A7
+			public const int scrollView = 2131230887;
+			
+			// aapt resource value: 0x7F0800A9
+			public const int search_badge = 2131230889;
+			
+			// aapt resource value: 0x7F0800AA
+			public const int search_bar = 2131230890;
+			
+			// aapt resource value: 0x7F0800AB
+			public const int search_button = 2131230891;
+			
+			// aapt resource value: 0x7F0800AC
+			public const int search_close_btn = 2131230892;
+			
+			// aapt resource value: 0x7F0800AD
+			public const int search_edit_frame = 2131230893;
+			
+			// aapt resource value: 0x7F0800AE
+			public const int search_go_btn = 2131230894;
+			
+			// aapt resource value: 0x7F0800AF
+			public const int search_mag_icon = 2131230895;
+			
+			// aapt resource value: 0x7F0800B0
+			public const int search_plate = 2131230896;
+			
+			// aapt resource value: 0x7F0800B1
+			public const int search_src_text = 2131230897;
+			
+			// aapt resource value: 0x7F0800B2
+			public const int search_voice_btn = 2131230898;
+			
+			// aapt resource value: 0x7F0800B4
+			public const int selected = 2131230900;
+			
+			// aapt resource value: 0x7F0800B3
+			public const int select_dialog_listview = 2131230899;
+			
+			// aapt resource value: 0x7F0800B5
+			public const int shellcontent_appbar = 2131230901;
+			
+			// aapt resource value: 0x7F0800B6
+			public const int shellcontent_toolbar = 2131230902;
 			
 			// aapt resource value: 0x7F080004
 			public const int SHIFT = 2131230724;
 			
-			// aapt resource value: 0x7F0800A8
-			public const int shortcut = 2131230888;
-			
-			// aapt resource value: 0x7F0800A9
-			public const int showCustom = 2131230889;
-			
-			// aapt resource value: 0x7F0800AA
-			public const int showHome = 2131230890;
-			
-			// aapt resource value: 0x7F0800AB
-			public const int showTitle = 2131230891;
-			
-			// aapt resource value: 0x7F0800AC
-			public const int smallLabel = 2131230892;
-			
-			// aapt resource value: 0x7F0800AD
-			public const int snackbar_action = 2131230893;
-			
-			// aapt resource value: 0x7F0800AE
-			public const int snackbar_text = 2131230894;
-			
-			// aapt resource value: 0x7F0800AF
-			public const int snap = 2131230895;
-			
-			// aapt resource value: 0x7F0800B0
-			public const int snapMargins = 2131230896;
-			
-			// aapt resource value: 0x7F0800B2
-			public const int spacer = 2131230898;
-			
-			// aapt resource value: 0x7F0800B1
-			public const int spaceTableRowCurrencies = 2131230897;
-			
-			// aapt resource value: 0x7F0800B3
-			public const int split_action_bar = 2131230899;
-			
-			// aapt resource value: 0x7F0800B4
-			public const int src_atop = 2131230900;
-			
-			// aapt resource value: 0x7F0800B5
-			public const int src_in = 2131230901;
-			
-			// aapt resource value: 0x7F0800B6
-			public const int src_over = 2131230902;
-			
 			// aapt resource value: 0x7F0800B7
-			public const int start = 2131230903;
+			public const int shortcut = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int status_bar_latest_event_content = 2131230904;
+			public const int showCustom = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int stretch = 2131230905;
+			public const int showHome = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int submenuarrow = 2131230906;
+			public const int showTitle = 2131230906;
 			
 			// aapt resource value: 0x7F0800BB
-			public const int submit_area = 2131230907;
+			public const int smallLabel = 2131230907;
+			
+			// aapt resource value: 0x7F0800BC
+			public const int snackbar_action = 2131230908;
+			
+			// aapt resource value: 0x7F0800BD
+			public const int snackbar_text = 2131230909;
+			
+			// aapt resource value: 0x7F0800BE
+			public const int snap = 2131230910;
+			
+			// aapt resource value: 0x7F0800BF
+			public const int snapMargins = 2131230911;
+			
+			// aapt resource value: 0x7F0800C1
+			public const int spacer = 2131230913;
+			
+			// aapt resource value: 0x7F0800C0
+			public const int spaceTableRowCurrencies = 2131230912;
+			
+			// aapt resource value: 0x7F0800C2
+			public const int split_action_bar = 2131230914;
+			
+			// aapt resource value: 0x7F0800C3
+			public const int src_atop = 2131230915;
+			
+			// aapt resource value: 0x7F0800C4
+			public const int src_in = 2131230916;
+			
+			// aapt resource value: 0x7F0800C5
+			public const int src_over = 2131230917;
+			
+			// aapt resource value: 0x7F0800C6
+			public const int start = 2131230918;
+			
+			// aapt resource value: 0x7F0800C7
+			public const int status_bar_latest_event_content = 2131230919;
+			
+			// aapt resource value: 0x7F0800C8
+			public const int stretch = 2131230920;
+			
+			// aapt resource value: 0x7F0800C9
+			public const int submenuarrow = 2131230921;
+			
+			// aapt resource value: 0x7F0800CA
+			public const int submit_area = 2131230922;
 			
 			// aapt resource value: 0x7F080005
 			public const int SYM = 2131230725;
 			
-			// aapt resource value: 0x7F0800BD
-			public const int tableLayoutMain = 2131230909;
-			
-			// aapt resource value: 0x7F0800BE
-			public const int tableLayoutShop = 2131230910;
-			
-			// aapt resource value: 0x7F0800BF
-			public const int tableRowCurrencies = 2131230911;
-			
-			// aapt resource value: 0x7F0800C0
-			public const int tableRowEmpty = 2131230912;
-			
-			// aapt resource value: 0x7F0800C1
-			public const int tableRowShopTabs = 2131230913;
-			
-			// aapt resource value: 0x7F0800BC
-			public const int tabMode = 2131230908;
-			
-			// aapt resource value: 0x7F0800C2
-			public const int tag_transition_group = 2131230914;
-			
-			// aapt resource value: 0x7F0800C3
-			public const int tag_unhandled_key_event_manager = 2131230915;
-			
-			// aapt resource value: 0x7F0800C4
-			public const int tag_unhandled_key_listeners = 2131230916;
-			
-			// aapt resource value: 0x7F0800C5
-			public const int text = 2131230917;
-			
-			// aapt resource value: 0x7F0800C6
-			public const int text2 = 2131230918;
-			
-			// aapt resource value: 0x7F0800D1
-			public const int textinput_counter = 2131230929;
-			
-			// aapt resource value: 0x7F0800D2
-			public const int textinput_error = 2131230930;
-			
-			// aapt resource value: 0x7F0800D3
-			public const int textinput_helper_text = 2131230931;
-			
-			// aapt resource value: 0x7F0800C7
-			public const int textItemName = 2131230919;
-			
-			// aapt resource value: 0x7F0800C8
-			public const int textSpacerNoButtons = 2131230920;
-			
-			// aapt resource value: 0x7F0800C9
-			public const int textSpacerNoTitle = 2131230921;
-			
-			// aapt resource value: 0x7F0800CA
-			public const int textStart = 2131230922;
-			
-			// aapt resource value: 0x7F0800CB
-			public const int textView1 = 2131230923;
-			
 			// aapt resource value: 0x7F0800CC
-			public const int textViewShopItemItemDescription = 2131230924;
+			public const int tableLayoutMain = 2131230924;
 			
 			// aapt resource value: 0x7F0800CD
-			public const int textViewShopItemItemTitle = 2131230925;
+			public const int tableLayoutShop = 2131230925;
 			
 			// aapt resource value: 0x7F0800CE
-			public const int textViewShopJoyCoins = 2131230926;
+			public const int tableRowCurrencies = 2131230926;
 			
 			// aapt resource value: 0x7F0800CF
-			public const int textViewShopJoyGems = 2131230927;
+			public const int tableRowEmpty = 2131230927;
 			
 			// aapt resource value: 0x7F0800D0
-			public const int text_input_password_toggle = 2131230928;
+			public const int tableRowShopTabs = 2131230928;
+			
+			// aapt resource value: 0x7F0800CB
+			public const int tabMode = 2131230923;
+			
+			// aapt resource value: 0x7F0800D1
+			public const int tag_transition_group = 2131230929;
+			
+			// aapt resource value: 0x7F0800D2
+			public const int tag_unhandled_key_event_manager = 2131230930;
+			
+			// aapt resource value: 0x7F0800D3
+			public const int tag_unhandled_key_listeners = 2131230931;
 			
 			// aapt resource value: 0x7F0800D4
-			public const int time = 2131230932;
+			public const int text = 2131230932;
 			
 			// aapt resource value: 0x7F0800D5
-			public const int title = 2131230933;
-			
-			// aapt resource value: 0x7F0800D6
-			public const int titleDividerNoCustom = 2131230934;
-			
-			// aapt resource value: 0x7F0800D7
-			public const int title_template = 2131230935;
-			
-			// aapt resource value: 0x7F0800D8
-			public const int top = 2131230936;
-			
-			// aapt resource value: 0x7F0800D9
-			public const int topPanel = 2131230937;
-			
-			// aapt resource value: 0x7F0800DA
-			public const int touch_outside = 2131230938;
-			
-			// aapt resource value: 0x7F0800DB
-			public const int transition_current_scene = 2131230939;
-			
-			// aapt resource value: 0x7F0800DC
-			public const int transition_layout_save = 2131230940;
-			
-			// aapt resource value: 0x7F0800DD
-			public const int transition_position = 2131230941;
-			
-			// aapt resource value: 0x7F0800DE
-			public const int transition_scene_layoutid_cache = 2131230942;
-			
-			// aapt resource value: 0x7F0800DF
-			public const int transition_transform = 2131230943;
-			
-			// aapt resource value: 0x7F0800E0
-			public const int txtInventoryItem = 2131230944;
-			
-			// aapt resource value: 0x7F0800E1
-			public const int uniform = 2131230945;
-			
-			// aapt resource value: 0x7F0800E2
-			public const int unlabeled = 2131230946;
-			
-			// aapt resource value: 0x7F0800E3
-			public const int up = 2131230947;
+			public const int text2 = 2131230933;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int useLogo = 2131230948;
+			public const int textinput_counter = 2131230948;
 			
 			// aapt resource value: 0x7F0800E5
-			public const int view_offset_helper = 2131230949;
+			public const int textinput_error = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
-			public const int visible = 2131230950;
+			public const int textinput_helper_text = 2131230950;
+			
+			// aapt resource value: 0x7F0800D6
+			public const int textItemName = 2131230934;
+			
+			// aapt resource value: 0x7F0800D7
+			public const int textSpacerNoButtons = 2131230935;
+			
+			// aapt resource value: 0x7F0800D8
+			public const int textSpacerNoTitle = 2131230936;
+			
+			// aapt resource value: 0x7F0800D9
+			public const int textStart = 2131230937;
+			
+			// aapt resource value: 0x7F0800DA
+			public const int textView1 = 2131230938;
+			
+			// aapt resource value: 0x7F0800DB
+			public const int textView2 = 2131230939;
+			
+			// aapt resource value: 0x7F0800DC
+			public const int textView3 = 2131230940;
+			
+			// aapt resource value: 0x7F0800DD
+			public const int textView4 = 2131230941;
+			
+			// aapt resource value: 0x7F0800DE
+			public const int textView5 = 2131230942;
+			
+			// aapt resource value: 0x7F0800DF
+			public const int textViewShopItemItemDescription = 2131230943;
+			
+			// aapt resource value: 0x7F0800E0
+			public const int textViewShopItemItemTitle = 2131230944;
+			
+			// aapt resource value: 0x7F0800E1
+			public const int textViewShopJoyCoins = 2131230945;
+			
+			// aapt resource value: 0x7F0800E2
+			public const int textViewShopJoyGems = 2131230946;
+			
+			// aapt resource value: 0x7F0800E3
+			public const int text_input_password_toggle = 2131230947;
 			
 			// aapt resource value: 0x7F0800E7
-			public const int withText = 2131230951;
+			public const int time = 2131230951;
 			
 			// aapt resource value: 0x7F0800E8
-			public const int wrap_content = 2131230952;
+			public const int title = 2131230952;
+			
+			// aapt resource value: 0x7F0800E9
+			public const int titleDividerNoCustom = 2131230953;
+			
+			// aapt resource value: 0x7F0800EA
+			public const int title_template = 2131230954;
+			
+			// aapt resource value: 0x7F0800EB
+			public const int top = 2131230955;
+			
+			// aapt resource value: 0x7F0800EC
+			public const int topPanel = 2131230956;
+			
+			// aapt resource value: 0x7F0800ED
+			public const int touch_outside = 2131230957;
+			
+			// aapt resource value: 0x7F0800EE
+			public const int transition_current_scene = 2131230958;
+			
+			// aapt resource value: 0x7F0800EF
+			public const int transition_layout_save = 2131230959;
+			
+			// aapt resource value: 0x7F0800F0
+			public const int transition_position = 2131230960;
+			
+			// aapt resource value: 0x7F0800F1
+			public const int transition_scene_layoutid_cache = 2131230961;
+			
+			// aapt resource value: 0x7F0800F2
+			public const int transition_transform = 2131230962;
+			
+			// aapt resource value: 0x7F0800F3
+			public const int txtGamesHead = 2131230963;
+			
+			// aapt resource value: 0x7F0800F4
+			public const int txtInventoryItem = 2131230964;
+			
+			// aapt resource value: 0x7F0800F5
+			public const int uniform = 2131230965;
+			
+			// aapt resource value: 0x7F0800F6
+			public const int unlabeled = 2131230966;
+			
+			// aapt resource value: 0x7F0800F7
+			public const int up = 2131230967;
+			
+			// aapt resource value: 0x7F0800F8
+			public const int useLogo = 2131230968;
+			
+			// aapt resource value: 0x7F0800F9
+			public const int view_offset_helper = 2131230969;
+			
+			// aapt resource value: 0x7F0800FA
+			public const int visible = 2131230970;
+			
+			// aapt resource value: 0x7F0800FB
+			public const int withText = 2131230971;
+			
+			// aapt resource value: 0x7F0800FC
+			public const int wrap_content = 2131230972;
 			
 			static Id()
 			{
@@ -4115,142 +6749,154 @@ namespace AndroidEmotionCalculator
 			public const int activity_main = 2131427356;
 			
 			// aapt resource value: 0x7F0B001D
-			public const int browser_actions_context_menu_page = 2131427357;
+			public const int BottomTabLayout = 2131427357;
 			
 			// aapt resource value: 0x7F0B001E
-			public const int browser_actions_context_menu_row = 2131427358;
+			public const int browser_actions_context_menu_page = 2131427358;
 			
 			// aapt resource value: 0x7F0B001F
-			public const int calendar = 2131427359;
+			public const int browser_actions_context_menu_row = 2131427359;
 			
 			// aapt resource value: 0x7F0B0020
-			public const int design_bottom_navigation_item = 2131427360;
+			public const int calendar = 2131427360;
 			
 			// aapt resource value: 0x7F0B0021
-			public const int design_bottom_sheet_dialog = 2131427361;
+			public const int design_bottom_navigation_item = 2131427361;
 			
 			// aapt resource value: 0x7F0B0022
-			public const int design_layout_snackbar = 2131427362;
+			public const int design_bottom_sheet_dialog = 2131427362;
 			
 			// aapt resource value: 0x7F0B0023
-			public const int design_layout_snackbar_include = 2131427363;
+			public const int design_layout_snackbar = 2131427363;
 			
 			// aapt resource value: 0x7F0B0024
-			public const int design_layout_tab_icon = 2131427364;
+			public const int design_layout_snackbar_include = 2131427364;
 			
 			// aapt resource value: 0x7F0B0025
-			public const int design_layout_tab_text = 2131427365;
+			public const int design_layout_tab_icon = 2131427365;
 			
 			// aapt resource value: 0x7F0B0026
-			public const int design_menu_item_action_area = 2131427366;
+			public const int design_layout_tab_text = 2131427366;
 			
 			// aapt resource value: 0x7F0B0027
-			public const int design_navigation_item = 2131427367;
+			public const int design_menu_item_action_area = 2131427367;
 			
 			// aapt resource value: 0x7F0B0028
-			public const int design_navigation_item_header = 2131427368;
+			public const int design_navigation_item = 2131427368;
 			
 			// aapt resource value: 0x7F0B0029
-			public const int design_navigation_item_separator = 2131427369;
+			public const int design_navigation_item_header = 2131427369;
 			
 			// aapt resource value: 0x7F0B002A
-			public const int design_navigation_item_subheader = 2131427370;
+			public const int design_navigation_item_separator = 2131427370;
 			
 			// aapt resource value: 0x7F0B002B
-			public const int design_navigation_menu = 2131427371;
+			public const int design_navigation_item_subheader = 2131427371;
 			
 			// aapt resource value: 0x7F0B002C
-			public const int design_navigation_menu_item = 2131427372;
+			public const int design_navigation_menu = 2131427372;
 			
 			// aapt resource value: 0x7F0B002D
-			public const int design_text_input_password_icon = 2131427373;
+			public const int design_navigation_menu_item = 2131427373;
 			
 			// aapt resource value: 0x7F0B002E
-			public const int games = 2131427374;
+			public const int design_text_input_password_icon = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int Inventory = 2131427375;
+			public const int FlyoutContent = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int inventoryItem = 2131427376;
+			public const int games = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int inventoryItemSelect = 2131427377;
+			public const int Inventory = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int mtrl_layout_snackbar = 2131427378;
+			public const int inventoryItem = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int mtrl_layout_snackbar_include = 2131427379;
+			public const int inventoryItemSelect = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int music = 2131427380;
+			public const int mtrl_layout_snackbar = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int notification_action = 2131427381;
+			public const int mtrl_layout_snackbar_include = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int notification_action_tombstone = 2131427382;
+			public const int music = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int notification_media_action = 2131427383;
+			public const int notification_action = 2131427383;
 			
 			// aapt resource value: 0x7F0B0038
-			public const int notification_media_cancel_action = 2131427384;
+			public const int notification_action_tombstone = 2131427384;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int notification_template_big_media = 2131427385;
+			public const int notification_media_action = 2131427385;
 			
 			// aapt resource value: 0x7F0B003A
-			public const int notification_template_big_media_custom = 2131427386;
+			public const int notification_media_cancel_action = 2131427386;
 			
 			// aapt resource value: 0x7F0B003B
-			public const int notification_template_big_media_narrow = 2131427387;
+			public const int notification_template_big_media = 2131427387;
 			
 			// aapt resource value: 0x7F0B003C
-			public const int notification_template_big_media_narrow_custom = 2131427388;
+			public const int notification_template_big_media_custom = 2131427388;
 			
 			// aapt resource value: 0x7F0B003D
-			public const int notification_template_custom_big = 2131427389;
+			public const int notification_template_big_media_narrow = 2131427389;
 			
 			// aapt resource value: 0x7F0B003E
-			public const int notification_template_icon_group = 2131427390;
+			public const int notification_template_big_media_narrow_custom = 2131427390;
 			
 			// aapt resource value: 0x7F0B003F
-			public const int notification_template_lines_media = 2131427391;
+			public const int notification_template_custom_big = 2131427391;
 			
 			// aapt resource value: 0x7F0B0040
-			public const int notification_template_media = 2131427392;
+			public const int notification_template_icon_group = 2131427392;
 			
 			// aapt resource value: 0x7F0B0041
-			public const int notification_template_media_custom = 2131427393;
+			public const int notification_template_lines_media = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int notification_template_part_chronometer = 2131427394;
+			public const int notification_template_media = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int notification_template_part_time = 2131427395;
+			public const int notification_template_media_custom = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int select_dialog_item_material = 2131427396;
+			public const int notification_template_part_chronometer = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int select_dialog_multichoice_material = 2131427397;
+			public const int notification_template_part_time = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int select_dialog_singlechoice_material = 2131427398;
+			public const int RootLayout = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int settings = 2131427399;
+			public const int select_dialog_item_material = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int shop = 2131427400;
+			public const int select_dialog_multichoice_material = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int shop_item = 2131427401;
+			public const int select_dialog_singlechoice_material = 2131427401;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int support_simple_spinner_dropdown_item = 2131427402;
+			public const int settings = 2131427402;
+			
+			// aapt resource value: 0x7F0B004B
+			public const int ShellContent = 2131427403;
+			
+			// aapt resource value: 0x7F0B004C
+			public const int shop = 2131427404;
+			
+			// aapt resource value: 0x7F0B004D
+			public const int shop_item = 2131427405;
+			
+			// aapt resource value: 0x7F0B004E
+			public const int support_simple_spinner_dropdown_item = 2131427406;
 			
 			static Layout()
 			{
@@ -5061,6 +7707,9 @@ namespace AndroidEmotionCalculator
 			
 			// aapt resource value: 0x7F0E00C5
 			public const int CardView_Light = 2131624133;
+			
+			// aapt resource value: 0x7F0E01F5
+			public const int collectionViewStyle = 2131624437;
 			
 			// aapt resource value: 0x7F0E00C6
 			public const int Platform_AppCompat = 2131624134;

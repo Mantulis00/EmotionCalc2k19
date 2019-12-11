@@ -3,6 +3,7 @@ using Android.Support.V4.App;
 
 namespace AndroidEmotionCalculator.Elements.Adapters
 {
+    [Preserve(AllMembers = true)]
     class ScreenAdapter : FragmentPagerAdapter
     {
         readonly JavaList<Fragment> fragments;

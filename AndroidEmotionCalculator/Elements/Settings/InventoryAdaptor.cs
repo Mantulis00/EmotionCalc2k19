@@ -12,36 +12,35 @@ using Android.Widget;
 
 namespace AndroidEmotionCalculator.Fragments.Settings
 {
-    class InventoryAdaptor : BaseAdapter<InventoryModel>
+    [Preserve(AllMembers = true)]
+    class InventoryAdaptor : BaseAdapter<string>
     {
 
-        private List<InventoryModel> itemInfo;
+        private List<string> itemInfo;
         private Context context;
 
 
-        public InventoryAdaptor(Context context, List<InventoryModel> itemInfo)
+
+        public InventoryAdaptor(Context context, List<string> itemInfo)
         {
             this.context = context;
             this.itemInfo = itemInfo;
         }
 
-        public override InventoryModel this[int position]
+        public override string this[int position]
         {
             get { return itemInfo[position]; }
         }
-        //=> throw new NotImplementedException();
 
         public override int Count
         {
             get { return itemInfo.Count; }
         }
-        //=> throw new NotImplementedException();
 
         public override long GetItemId(int position)
         {
             return position;
         }
-        //throw new NotImplementedException();
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
@@ -53,7 +52,7 @@ namespace AndroidEmotionCalculator.Fragments.Settings
             }
 
             TextView txtItem = row.FindViewById<TextView>(Resource.Id.txtInventoryItem);
-            txtItem.Text = itemInfo[position].Name;
+            txtItem.Text = itemInfo[position];
 
             return row;
 

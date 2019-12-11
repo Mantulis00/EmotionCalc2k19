@@ -1,10 +1,12 @@
 ﻿using Android.Runtime;
 using Android.Support.V4.App;
 using AndroidEmotionCalculator.Elements.Fragments;
+using AndroidEmotionCalculator.Fragments.Items;
 using EmotionCalculator.EmotionCalculator.Logic;
 
 namespace AndroidEmotionCalculator.Elements
 {
+    [Preserve(AllMembers = true)]
     static class MainFragmentManager
     {
         public static JavaList<Fragment> GetFragmentList(MainManager mainManager)
@@ -12,9 +14,9 @@ namespace AndroidEmotionCalculator.Elements
             return new JavaList<Fragment>()
             {
                 new ShopFragment(mainManager),
-                new CalendarFragment(),
-                new GamesFragment(),
-                new MusicFragment(),
+                new CalendarFragment(mainManager),
+                new GamesFragment(mainManager),
+                new MusicFragment(mainManager)
             };
         }
     }

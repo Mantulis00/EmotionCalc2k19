@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Widget;
@@ -10,7 +11,7 @@ using static AndroidEmotionCalculator.Elements.MainFragmentManager;
 
 namespace AndroidEmotionCalculator
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", MainLauncher = true ), Preserve(AllMembers = true)]
     public class MainActivity : FragmentActivity
     {
         private ViewPager viewPager;

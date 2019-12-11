@@ -90,6 +90,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/buttonShopTabVanity" />
+            <TextView
+                android:minWidth="30px"
+                android:minHeight="30px"
+                xmlns="http://schemas.android.com/apk/res/android"
+                android:id="@+id/textView1" />
         </TableRow>
         <TableRow
             android:layout_weight="0.75"
@@ -99,6 +104,26 @@
             <ListView
                 android:id="@+id/listViewShop"
                 android:layout_width = "wrap_content"/>
+            <TextView
+                android:minWidth="30px"
+                android:minHeight="30px"
+                xmlns="http://schemas.android.com/apk/res/android"
+                android:id="@+id/textView2" />
+            <TextView
+                android:minWidth="30px"
+                android:minHeight="30px"
+                xmlns="http://schemas.android.com/apk/res/android"
+                android:id="@+id/textView3" />
+            <TextView
+                android:minWidth="30px"
+                android:minHeight="30px"
+                xmlns="http://schemas.android.com/apk/res/android"
+                android:id="@+id/textView4" />
+            <TextView
+                android:minWidth="30px"
+                android:minHeight="30px"
+                xmlns="http://schemas.android.com/apk/res/android"
+                android:id="@+id/textView5" />
         </TableRow>
     </TableLayout>
 </RelativeLayout >
