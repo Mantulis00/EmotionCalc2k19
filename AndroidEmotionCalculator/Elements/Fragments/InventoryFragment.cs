@@ -13,7 +13,7 @@ using System.Linq;
 namespace AndroidEmotionCalculator.Elements.Fragments
 {
     [Preserve(AllMembers = true)]
-    class MusicFragment : Fragment
+    class InventoryFragment : Fragment
     {
         MainManager mainManager;
 
@@ -22,7 +22,7 @@ namespace AndroidEmotionCalculator.Elements.Fragments
 
         Android.Views.View view;
 
-        public MusicFragment(MainManager mainManager) : base()
+        public InventoryFragment(MainManager mainManager) : base()
         {
 
             this.mainManager = mainManager;
@@ -47,9 +47,11 @@ namespace AndroidEmotionCalculator.Elements.Fragments
 
 
             ListInventory.Adapter = adaptor;
-            ListInventory.ItemSelected += ( sender,  e) =>
+            ListInventory.Click += ( sender,  e) =>
             {
-
+               // var item = ListInventory.SelectedItem;
+               // names.Add(item.ToString());
+                names.Add("ll");
             };
 
             return view;

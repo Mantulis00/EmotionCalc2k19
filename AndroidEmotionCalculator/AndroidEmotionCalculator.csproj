@@ -70,7 +70,7 @@
     <Compile Include="Elements\Adapters\ShopListViewAdapter.cs" />
     <Compile Include="Elements\Fragments\CalendarFragment.cs" />
     <Compile Include="Elements\Fragments\GamesFragment.cs" />
-    <Compile Include="Elements\Fragments\MusicFragment.cs" />
+    <Compile Include="Elements\Fragments\InventoryFragment.cs" />
     <Compile Include="Elements\MainFragmentManager.cs" />
     <Compile Include="Elements\Adapters\ScreenAdapter.cs" />
     <Compile Include="Elements\Fragments\ShopFragment.cs" />
