@@ -1,10 +1,11 @@
-﻿using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
-using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
+using WebService.EF;
 
 namespace EntityFrameworkClasses.DB
 {
@@ -100,6 +101,8 @@ namespace EntityFrameworkClasses.DB
 
                     if (dataSet.Tables[0].Rows.Count > 0)
                     {
+                        Debug.WriteLine("Found user with id.");
+
                         var row = dataSet.Tables[0].Rows[0];
 
                         List<KeyValuePair<Emotion, int>> emotions = new List<KeyValuePair<Emotion, int>>();
@@ -118,12 +121,14 @@ namespace EntityFrameworkClasses.DB
                             int.Parse(row["JoyGems"].ToString()),
                             int.Parse(row["DailyStreak"].ToString()),
                             DateTime.Parse(row["LastLogin"].ToString()),
-                            emotions, new OwnedItems());
+                            emotions, OwnedItemsTableManager.SelectItems(userId));
                     }
                     else
                     {
+                        Debug.WriteLine("Didn't find user with id.");
+
                         var userData = new EmotionCalculator.EmotionCalculator.Logic.User.UserData(0, 0, 0, DateTime.Now,
-                            Enumerable.Empty<KeyValuePair<Emotion, int>>(), new OwnedItems());
+                            Enumerable.Empty<KeyValuePair<Emotion, int>>(), OwnedItemsTableManager.SelectItems(userId));
 
                         return userData;
                     }
@@ -163,6 +168,8 @@ namespace EntityFrameworkClasses.DB
 
         public static void UpdateUserData(int userId, EmotionCalculator.EmotionCalculator.Logic.User.UserData userData)
         {
+            Debug.WriteLine("WHAT IS HAPPENING");
+
             using (var connection = new SqlConnection(DBManager.GetConnectionString()))
             {
                 connection.Open();
@@ -178,10 +185,13 @@ namespace EntityFrameworkClasses.DB
 
                     if (dataSet.Tables[0].Rows.Count != 0)
                     {
+                        Debug.WriteLine("Row existed");
+
                         updatedRow = dataSet.Tables[0].Rows[0];
                     }
                     else
                     {
+                        Debug.WriteLine("Creating new row");
                         updatedRow = dataSet.Tables[0].NewRow();
                         updatedRow["UserId"] = userId;
                         dataSet.Tables[0].Rows.Add(updatedRow);
@@ -200,6 +210,8 @@ namespace EntityFrameworkClasses.DB
                     adapter.Update(dataSet.Tables[0]);
                 }
             }
+
+            OwnedItemsTableManager.Update(userId, userData.OwnedItems);
         }
 
         public static void DeleteUserData(int userId)

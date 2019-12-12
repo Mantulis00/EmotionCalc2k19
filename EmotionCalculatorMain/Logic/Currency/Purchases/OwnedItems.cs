@@ -2,6 +2,7 @@
 using EmotionCalculator.EmotionCalculator.Logic.User.Items.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
@@ -10,7 +11,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
     {
         private readonly Dictionary<Item, int> itemCollection;
 
-        internal int this[Item item]
+        public int this[Item item]
         {
             get
             {
@@ -25,7 +26,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             }
         }
 
-        internal IEnumerable<(Item Item, int Count)> Items
+        public IEnumerable<(Item Item, int Count)> Items
         {
             get
             {
@@ -52,12 +53,12 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             itemCollection = new Dictionary<Item, int>();
         }
 
-        internal void AddItem(Item item)
+        public void AddItem(Item item)
         {
             AddItems(item, 1);
         }
 
-        internal void AddItems(Item item, int amount)
+        public void AddItems(Item item, int amount)
         {
             if (item == null)
                 return;
@@ -69,6 +70,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases
             else
             {
                 itemCollection.Add(item, amount);
+                Debug.WriteLine("purchased ok");
             }
 
             itemCollection[item] = Math.Max(itemCollection[item], 0);

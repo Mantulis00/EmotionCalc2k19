@@ -2,6 +2,7 @@
 using Android.Views;
 using Android.Widget;
 using EmotionCalculator.EmotionCalculator.Logic.Currency;
+using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases;
 using EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.Shop;
 using System.Collections.Generic;
 
@@ -50,7 +51,7 @@ namespace AndroidEmotionCalculator.Elements.Adapters
             button.Click +=
                 (o, e) =>
                 {
-                    purchase.Purchase();
+                    OperationStatus operationStatus = purchase.Purchase();
                 };
 
             return newView;

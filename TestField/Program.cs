@@ -30,7 +30,7 @@ namespace TestField
 
             System.Console.WriteLine();
 
-            AndroidAPILoader.ClearAsync(id);
+            AndroidAPILoader.Clear(id);
 
             System.Console.ReadLine();
         }

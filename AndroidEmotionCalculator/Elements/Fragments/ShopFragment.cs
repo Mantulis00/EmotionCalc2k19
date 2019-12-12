@@ -32,8 +32,24 @@ namespace AndroidEmotionCalculator.Elements.Fragments
             SetButtons();
             SetListView();
             FillThemePacks();
+            SetListeners();
 
             return view;
+        }
+
+        private void SetListeners()
+        {
+            mainManager.ReadOnlyUserData.CurrencyChanged +=
+                (o, e) =>
+                {
+                    SetText();
+                };
+
+            mainManager.ReadOnlyUserData.OwnedItems.ConsumablesChanged +=
+              (o, e) =>
+              {
+                  FillThemePacks();
+              };
         }
 
         private void SetImages()

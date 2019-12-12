@@ -4,7 +4,7 @@ namespace EmotionCalculator.Tools.IO.Android
 {
     public class AndroidAPILoader
     {
-        static readonly string uri = "https://localhost:5001/api/User";
+        static readonly string uri = "http://10.0.2.2:5001/api/User";
 
         public static FaceAPIKey Load(int id)
         {
@@ -21,7 +21,7 @@ namespace EmotionCalculator.Tools.IO.Android
             EmotionClient.Instance.Put($"{uri}?id={id}", key);
         }
 
-        public static void ClearAsync(int id)
+        public static void Clear(int id)
         {
             EmotionClient.Instance.DeleteAsync($"{uri}?id={id}");
         }

@@ -1,5 +1,10 @@
-﻿using EntityFrameworkClasses.DB;
+﻿using EmotionCalculator.EmotionCalculator.Tools.API.Containers;
+using EntityFrameworkClasses.DB;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using EmotionUserData = EmotionCalculator.EmotionCalculator.Logic.User.UserData;
 
 namespace WebService.Controllers
@@ -11,7 +16,21 @@ namespace WebService.Controllers
         [HttpGet]
         public ActionResult<EmotionUserData> Get(int id)
         {
-            return UserDataTableManager.SelectUserData(id);
+            try
+            {
+                var data = UserDataTableManager.SelectUserData(id);
+
+                return data;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(e.InnerException);
+                Debug.WriteLine(e.StackTrace);
+
+                return new EmotionUserData(0, 0, 0, DateTime.Now,
+                            Enumerable.Empty<KeyValuePair<Emotion, int>>(), new EmotionCalculator.EmotionCalculator.Logic.Currency.Purchases.OwnedItems());
+            }
         }
 
         [HttpPut]
@@ -19,11 +38,15 @@ namespace WebService.Controllers
         {
             try
             {
+                Console.WriteLine("LISTEN UP:");
+                Console.WriteLine(userData.OwnedItems.Items.Count());
                 UserDataTableManager.UpdateUserData(id, userData);
             }
-            catch
+            catch (Exception e)
             {
-                //Update failed (no user?)
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(e.InnerException);
+                Debug.WriteLine(e.StackTrace);
             }
         }
 
@@ -34,9 +57,11 @@ namespace WebService.Controllers
             {
                 UserDataTableManager.DeleteUserData(id);
             }
-            catch
+            catch (Exception e)
             {
-                //Update failed (no user?)
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(e.InnerException);
+                Debug.WriteLine(e.StackTrace);
             }
         }
     }

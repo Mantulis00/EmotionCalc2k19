@@ -4,12 +4,13 @@ namespace EmotionCalculator.Tools.IO.Android
 {
     public class AndroidMonthLogger : IMonthLogger
     {
-        readonly string uri = "https://localhost:5001/api/month";
+        readonly string uri = "http://10.0.2.2:5001/api/month";
 
         public MonthEmotions LoadMonth(int year, Month month)
         {
-            return EmotionClient.Instance.GetAsync<MonthEmotions>(
-                $"{uri}?year={year}&month={month}").Result;
+            return new MonthEmotions(year, month);
+            //return EmotionClient.Instance.GetAsync<MonthEmotions>(
+            //    $"{uri}?year={year}&month={month}").Result;
         }
 
         public void SaveMonth(MonthEmotions monthEmotions)

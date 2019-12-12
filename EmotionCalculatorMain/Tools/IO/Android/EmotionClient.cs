@@ -28,9 +28,9 @@ namespace EmotionCalculator.Tools.IO.Android
 
         public async Task<T> GetAsync<T>(string uri)
         {
-            using (HttpResponseMessage response = await client.GetAsync(uri))
+            using (HttpResponseMessage response = await client.GetAsync(uri).ConfigureAwait(false))
             {
-                string answer = await response.Content.ReadAsStringAsync();
+                string answer = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 return JsonConvert.DeserializeObject<T>(answer);
             }
         }
@@ -40,7 +40,7 @@ namespace EmotionCalculator.Tools.IO.Android
             using (var httpContent = new StringContent(JsonConvert.SerializeObject(s), Encoding.UTF8, "application/json"))
             using (var httpResponse = client.PutAsync(uri, httpContent).Result)
             {
-                string answer = await httpResponse.Content.ReadAsStringAsync();
+                string answer = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 return JsonConvert.DeserializeObject<T>(answer);
             }
         }

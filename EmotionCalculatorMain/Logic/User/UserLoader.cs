@@ -79,7 +79,7 @@ namespace EmotionCalculator.EmotionCalculator.Logic.User
             return ownedItems;
         }
 
-        private Item GetItemByNameAndType(ItemType itemType, string name)
+        public static Item GetItemByNameAndType(ItemType itemType, string name)
         {
             switch (itemType)
             {

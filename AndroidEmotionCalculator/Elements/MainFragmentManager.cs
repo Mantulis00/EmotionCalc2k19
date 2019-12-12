@@ -12,7 +12,7 @@ namespace AndroidEmotionCalculator.Elements
             return new JavaList<Fragment>()
             {
                 new ShopFragment(mainManager),
-                new CalendarFragment(),
+                new CalendarFragment(mainManager),
                 new GamesFragment(),
                 new MusicFragment(),
             };

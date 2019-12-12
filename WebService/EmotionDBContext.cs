@@ -31,8 +31,6 @@ namespace WebService
         {
             modelBuilder.Entity<Items>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.ItemName)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -46,9 +44,7 @@ namespace WebService
 
             modelBuilder.Entity<OwnedItems>(entity =>
             {
-                entity.HasKey(e => e.UserId);
-
-                entity.Property(e => e.UserId).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Item)
                     .WithMany(p => p.OwnedItems)
@@ -56,8 +52,8 @@ namespace WebService
                     .HasConstraintName("FK_ItemId_ToItems1");
 
                 entity.HasOne(d => d.User)
-                    .WithOne(p => p.OwnedItems)
-                    .HasForeignKey<OwnedItems>(d => d.UserId)
+                    .WithMany(p => p.OwnedItems)
+                    .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_UserId_ToUsers1");
             });
 
